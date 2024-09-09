@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cxgaavewg0jbi"]
+[gd_scene load_steps=9 format=3 uid="uid://cxgaavewg0jbi"]
 
 [ext_resource type="Script" path="res://Scripts/Placeable.gd" id="1_1yjnn"]
 [ext_resource type="AudioStream" uid="uid://ratgcebmg2xd" path="res://Sound/Explosion3__027.wav" id="2_g5u5i"]
+[ext_resource type="PackedScene" uid="uid://c5egotsf7fdg4" path="res://Prefabs/PathNode.tscn" id="2_htq13"]
 [ext_resource type="Texture2D" uid="uid://cq4lo5nuujjv" path="res://Art/Sprites/TetrisPlaceholders/Tetromino_J1_1.png" id="2_riihf"]
 [ext_resource type="AudioStream" uid="uid://p1l3buuxvytl" path="res://Sound/block_impact_01.wav" id="2_uc7ox"]
 [ext_resource type="PackedScene" uid="uid://c4x6g67fj5uq8" path="res://Prefabs/hold_point_generator.tscn" id="3_5mqgh"]
@@ -17,6 +18,7 @@ stream_0/stream = ExtResource("2_uc7ox")
 rotation = 26.7036
 input_pickable = true
 script = ExtResource("1_1yjnn")
+pathnode_prefab = ExtResource("2_htq13")
 
 [node name="Explosion3003" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_g5u5i")

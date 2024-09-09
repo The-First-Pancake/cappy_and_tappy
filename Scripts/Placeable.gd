@@ -6,6 +6,7 @@ enum PlaceState {QUEUED, PLACING, FALLING, HARPOONED, PLACED, DESTROYED}
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
 @export var state : PlaceState = PlaceState.PLACED
+@export var pathnode_prefab : PackedScene
 @export var indestructable: bool = false:
 	set(new_val):
 		indestructable = new_val
@@ -43,6 +44,7 @@ func _ready() -> void:
 	if (state == PlaceState.FALLING):
 		enter_falling()
 	hold_point_generator = $HoldPointGenerator
+	spawn_pathfinding_nodes()
 	destroy_semaphore.post()
 
 var rotate_debounce: bool = false
@@ -193,6 +195,8 @@ func destroy(collision_point_global : Vector2) -> void:
 					continue
 				if child is CollisionPolygon2D:
 					continue
+				if child is PathNode:
+					child.destroy()
 				else: 
 					child.queue_free()
 			enter_placed()
@@ -205,3 +209,11 @@ func _on_mouse_entered() -> void:
 
 func _on_mouse_exited() -> void:
 	mouse_hovering = false
+
+func spawn_pathfinding_nodes() -> void:
+	for spawn_point_idx in len(hold_point_generator.get_generated_points()):
+		var pathnode : Node2D = pathnode_prefab.instantiate()
+		add_child(pathnode)
+		pathnode.position = hold_point_generator.generated_points[spawn_point_idx]
+		var orth_vector : Vector2 = hold_point_generator.generated_orth_vectors[spawn_point_idx]
+		pathnode.rotate(Vector2.UP.angle_to(orth_vector))

@@ -33,6 +33,8 @@ const SAVE_PATH: String = "user://save.tres"
 var current_save: GameSave = null
 var currently_held_object: Node2D = null
 
+signal loaded_new_scene
+
 func _ready() -> void:
 	var silentwolf_api_file: FileAccess = FileAccess.open("res://Keys/SilentwolfAPI.txt", FileAccess.READ)
 	if !silentwolf_api_file:
@@ -60,6 +62,7 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("restart"): 
 		if get_tree().current_scene is not Control: #don't allow restart in menus
 			get_tree().reload_current_scene()
+			emit_signal("loaded_new_scene")
 	if Input.is_action_just_pressed("ui_cancel"):
 		if get_tree().current_scene.name == "LevelSelect":
 			load_level_from_packed(splash_screen_scene)
@@ -87,6 +90,7 @@ func level_complete() -> void:
 func load_level_from_packed(scene: PackedScene) -> void:
 	current_level = scene
 	get_tree().change_scene_to_packed(scene)
+	emit_signal("loaded_new_scene")
 
 func setup_new_save() -> void:
 	print("Resetting Save")
@@ -117,3 +121,4 @@ func player_die() -> void:
 		load_level_from_packed(leaderboard_scene)
 	else:
 		get_tree().reload_current_scene()
+		emit_signal("loaded_new_scene")
