@@ -2,11 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_8tfe6"]
 [ext_resource type="Script" path="res://Scripts/SpawnObject.gd" id="2_h2nwq"]
-[ext_resource type="PackedScene" uid="uid://cn5g0kaav20lj" path="res://Prefabs/Spawn On Blocks/ArrowSpitter.tscn" id="2_oi3tm"]
-[ext_resource type="PackedScene" uid="uid://r1kjk04fwuou" path="res://Prefabs/Spawn On Blocks/Hold.tscn" id="3_k3spf"]
-[ext_resource type="PackedScene" uid="uid://bkatak76uuoli" path="res://Prefabs/Spawn On Blocks/Campfire.tscn" id="4_55j5p"]
-[ext_resource type="PackedScene" uid="uid://dhrgrpwwax6i8" path="res://Prefabs/Spawn On Blocks/Spikes.tscn" id="5_sjo0f"]
-[ext_resource type="PackedScene" uid="uid://hetb2cu4cbew" path="res://Prefabs/Spawn On Blocks/BreakerSpike.tscn" id="7_y05uc"]
+[ext_resource type="PackedScene" uid="uid://r1kjk04fwuou" path="res://Prefabs/Hold.tscn" id="3_k3spf"]
+[ext_resource type="PackedScene" uid="uid://bkatak76uuoli" path="res://Prefabs/Campfire.tscn" id="4_55j5p"]
+[ext_resource type="PackedScene" uid="uid://dhrgrpwwax6i8" path="res://Prefabs/Spikes.tscn" id="5_sjo0f"]
+[ext_resource type="PackedScene" uid="uid://hetb2cu4cbew" path="res://Prefabs/BreakerSpike.tscn" id="7_y05uc"]
+[ext_resource type="PackedScene" uid="uid://elnsaaomqgyw" path="res://Prefabs/enemy.tscn" id="8_jxirs"]
 
 [sub_resource type="Resource" id="Resource_6716m"]
 script = ExtResource("2_h2nwq")
@@ -37,13 +37,11 @@ position = Vector2(1943, 69)
 position = Vector2(-689, -299)
 spawn_objects = Array[ExtResource("2_h2nwq")]([SubResource("Resource_6716m"), SubResource("Resource_b3o7y"), SubResource("Resource_mwrdh"), SubResource("Resource_2esob")])
 
-[node name="Arrow_Spitter" parent="." index="13" instance=ExtResource("2_oi3tm")]
-position = Vector2(728, 672)
-rotation = 0.0
-
-[node name="BreakerSpike" parent="." index="14" instance=ExtResource("7_y05uc")]
-position = Vector2(1643, 1034)
-rotation = 3.13774
+[node name="Water" parent="." index="11"]
+rise_speed = 0.0
 
 [node name="Music" parent="Music Player" index="0"]
 stream = null
+
+[node name="Enemy" parent="." index="17" instance=ExtResource("8_jxirs")]
+position = Vector2(1352, 994)

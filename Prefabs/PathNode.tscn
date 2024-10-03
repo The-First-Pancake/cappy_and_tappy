@@ -5,24 +5,27 @@
 [ext_resource type="Texture2D" uid="uid://dthf4q6o2ncbj" path="res://Art/Sprites/circle.png" id="2_fw5s5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xpqle"]
-radius = 16.0312
+radius = 10.4403
 
 [node name="PathNode" type="Area2D"]
+collision_mask = 3
 script = ExtResource("1_fo5ss")
+
+[node name="Circle" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(3, -23)
+scale = Vector2(-0.685791, -0.685791)
+texture = ExtResource("2_fw5s5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, -23)
+shape = SubResource("CircleShape2D_xpqle")
+
+[node name="NodePosition" type="Marker2D" parent="."]
+position = Vector2(3, -24)
 
 [node name="Squashable" type="Node" parent="."]
 script = ExtResource("1_6ioxd")
 delete_parent_when_squashed = false
-
-[node name="Circle" type="Sprite2D" parent="."]
-position = Vector2(0, -49)
-texture = ExtResource("2_fw5s5")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -49)
-shape = SubResource("CircleShape2D_xpqle")
-
-[node name="NodePosition" type="Marker2D" parent="."]
-position = Vector2(0, -50)
 
 [connection signal="squashed" from="Squashable" to="." method="_on_squashable_squashed"]

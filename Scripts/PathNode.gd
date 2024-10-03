@@ -2,7 +2,7 @@ class_name PathNode
 extends Area2D
 
 var active : bool = false
-var point_id : int = 0
+var point_id : int = randi()
 var is_hold : bool = false
 var node_position : Vector2 :
 	get():
@@ -13,6 +13,8 @@ func _ready() -> void:
 	var parent: Node = get_parent()
 	if parent is Placeable:
 		parent.placed.connect(enter_pathfinding_graph)
+	else:
+		enter_pathfinding_graph()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -33,10 +35,10 @@ func enter_pathfinding_graph() -> void:
 	active = true
 	PathFindingGraph.add_pathfinding_node(self)
 
-func _on_squashable_squashed() -> void:
-	destroy()
-
 func destroy() -> void:
 	if (active):
 		PathFindingGraph.remove_pathfinding_node(self)
 	queue_free()
+
+func _on_squashable_squashed() -> void:
+	destroy()
