@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cb0jgql8gn74x"]
+
+[ext_resource type="PackedScene" uid="uid://c5egotsf7fdg4" path="res://Prefabs/PathNode.tscn" id="1_evjh4"]
+
+[node name="PathNodePair" type="Node2D"]
+
+[node name="PathNode" parent="." instance=ExtResource("1_evjh4")]
+position = Vector2(-26, 0)
+
+[node name="PathNode2" parent="." instance=ExtResource("1_evjh4")]
+position = Vector2(26, 0)

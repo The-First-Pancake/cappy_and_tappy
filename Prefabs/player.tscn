@@ -538,4 +538,5 @@ stream = ExtResource("18_w2nvq")
 volume_db = -20.0
 
 [connection signal="area_entered" from="DieBox" to="." method="on_diebox_hit"]
+[connection signal="body_entered" from="DieBox" to="." method="_on_die_box_body_entered"]
 [connection signal="area_entered" from="CollectBox" to="." method="on_collectbox_hit"]

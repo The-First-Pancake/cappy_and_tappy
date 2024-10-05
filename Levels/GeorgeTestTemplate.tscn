@@ -44,4 +44,4 @@ rise_speed = 0.0
 stream = null
 
 [node name="Enemy" parent="." index="17" instance=ExtResource("8_jxirs")]
-position = Vector2(1352, 994)
+position = Vector2(1889, 994)

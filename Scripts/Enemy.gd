@@ -5,7 +5,7 @@ extends CharacterBody2D
 var jump_velocity: float = -850.0
 var acceleration: float = 3000
 var deceleration: float = 4000
-var max_speed: float = 700
+var max_speed: float = 300
 
 var leap_velocity: float = 1350.0
 
@@ -44,6 +44,7 @@ var campfires: Array[Campfire] = []
 var is_downsliding: bool = false
 
 var path_to_player : Array[PathNode] = []
+var last_path_update : int = Time.get_ticks_msec()
 var diff_vector : Vector2 = Vector2.ZERO
 var horz_move_dir : float = 0
 var should_jump : bool = false
@@ -104,6 +105,7 @@ func emulate_inputs() -> void:
 	while is_next_path_node_reached() or is_next_path_node_held():
 		is_launched = false
 		path_to_player.pop_front()
+		last_path_update = Time.get_ticks_msec()
 	# Check again if we've emptied. this time it means we've reached destination
 	if path_to_player.is_empty():
 		horz_move_dir = 0
@@ -226,7 +228,7 @@ func holding_behavior() -> void:
 			velocity = leap_velocity * hold_aim_dir
 		current_hold = null
 
-@onready var collect_box: Area2D = $CollectBox
+@onready var kill_box: Area2D = $KillBox
 @onready var die_box: Area2D = %DieBox
 @onready var sprite_animator: AnimatedSprite2D = %"Sprite Animator" as AnimatedSprite2D
 @onready var griddy_timer: Timer = %"Griddy Timer" as Timer
@@ -306,7 +308,7 @@ func die() -> void:
 	if dying:return
 	dying = true
 	die_box.process_mode = Node.PROCESS_MODE_DISABLED
-	collect_box.process_mode = Node.PROCESS_MODE_DISABLED
+	kill_box.process_mode = Node.PROCESS_MODE_DISABLED
 	
 	current_hold = null
 	sprite_animator.play("die")
@@ -340,19 +342,19 @@ func apply_gravity(delta: float) -> void:
 	else:
 		velocity += get_gravity()*3 * delta
 
-func on_collectbox_hit(area: Area2D) -> void:
-	# Nothing to do here rn
-	pass
-
 func on_diebox_hit(area: Area2D) -> void:
 	if area.is_in_group("water"):
 		die()
 
 func _on_pathfinding_timer_timeout() -> void:
 	# only do this if not mid launch
-	if is_on_floor() or is_instance_valid(current_hold):
+	if is_on_floor() or is_instance_valid(current_hold) or (Time.get_ticks_msec() - last_path_update > 1000):
+		last_path_update = Time.get_ticks_msec()
 		path_to_player = PathFindingGraph.find_path(global_position, GameManager.player.global_position)
-		print(path_to_player.size())
 
 func _on_launch_timer_timeout() -> void:
 	should_launch = true
+
+func _on_kill_box_body_entered(body: Node2D) -> void:
+	if body is Player:
+		body.die()
