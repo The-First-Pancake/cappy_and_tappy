@@ -1,11 +1,53 @@
-[gd_scene load_steps=5 format=3 uid="uid://mcu32jepdsb3"]
+[gd_scene load_steps=10 format=3 uid="uid://mcu32jepdsb3"]
 
 [ext_resource type="Script" path="res://Scripts/Dynamite.gd" id="1_0xau1"]
-[ext_resource type="Material" uid="uid://cg4fprgafhcxd" path="res://Art/unshaded_material.tres" id="2_nvjlg"]
 [ext_resource type="Texture2D" uid="uid://det8arxk2wg81" path="res://Art/Sprites/Dynamite/Dynamite.png" id="3_8ilru"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nsrqv"]
 size = Vector2(86, 99)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddjt2"]
+atlas = ExtResource("3_8ilru")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_518k8"]
+atlas = ExtResource("3_8ilru")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6cnff"]
+atlas = ExtResource("3_8ilru")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_axg0e"]
+atlas = ExtResource("3_8ilru")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41fuv"]
+atlas = ExtResource("3_8ilru")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mrm8a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ddjt2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_518k8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6cnff")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_axg0e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41fuv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Dynamite" type="Area2D"]
 position = Vector2(-911, 22)
@@ -15,11 +57,9 @@ script = ExtResource("1_0xau1")
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_nsrqv")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-material = ExtResource("2_nvjlg")
-position = Vector2(2, 0)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(3.125, 3.125)
-texture = ExtResource("3_8ilru")
+sprite_frames = SubResource("SpriteFrames_mrm8a")
 
 [node name="Block Detector" type="RayCast2D" parent="."]
 target_position = Vector2(0, 1)
