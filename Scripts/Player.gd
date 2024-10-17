@@ -42,13 +42,14 @@ var campfires: Array[Campfire] = []
 @onready var griddy_sound: AudioStreamPlayer = $Audio/Griddy as AudioStreamPlayer
 
 
-
 var is_entering: bool = false
 var is_exiting: bool = false
 var is_downsliding: bool = false
 
 var normal_z_layer: int = 1
 var inside_door_z_layer: int = -1
+
+var input_direction: Vector2 = Vector2.ZERO
 
 signal crossed_entrance_threshold
 
@@ -82,15 +83,20 @@ func exit_level() -> void:
 
 func _physics_process(delta: float) -> void:
 	targeting_arrow.visible = false
+	
 	if dying: return
+	
+	update_camera_zone()
+	
 	if is_entering or is_exiting:
 		apply_gravity(delta)
 		update_animations()
 		move_and_slide()
 		return
+	
+	input_direction = Input.get_vector("move_left", "move_right","move_up","move_down")
 
 	is_downsliding = is_on_wall() and velocity.y > 0
-	
 	if !is_instance_valid(current_hold):
 		movement(delta)
 	if is_instance_valid(current_hold):
@@ -98,8 +104,18 @@ func _physics_process(delta: float) -> void:
 	
 	update_animations()
 	move_and_slide()
+	try_look_ahead()
 	try_squash()
+	
 
+var current_camera_zone: CameraZone = null
+
+func update_camera_zone() -> void:
+	for area: Area2D in collect_box.get_overlapping_areas():
+		if area is CameraZone:
+			current_camera_zone = area
+			return
+	current_camera_zone = null
 
 func movement(delta: float) -> void:
 	# Add the gravity.
@@ -144,6 +160,7 @@ func movement(delta: float) -> void:
 		land_particles.restart()
 		AudioManager.PlayAudio(land_sound)
 	
+	#Jumping!
 	if (is_on_floor() or has_recently_left_ground) and Input.is_action_just_pressed("jump"):
 		jump_particles.restart()
 		AudioManager.PlayAudio(jump_sound)
@@ -152,41 +169,64 @@ func movement(delta: float) -> void:
 	else:
 		was_on_floor = is_on_floor()
 	
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_direction: float = Input.get_axis("move_left", "move_right")
 	
-	if input_direction: #if we're tryna move
-		if sign(input_direction) != sign(velocity.x):
+	if input_direction.x != 0: #if we're tryna move left/right
+		if sign(input_direction.x) != sign(velocity.x):
 			velocity.x = 0 # for instant turning around
 		if abs(velocity.x) < max_speed:
-			velocity.x += input_direction * acceleration * delta
+			velocity.x += input_direction.x * acceleration * delta
 	else: #if we aint tryna move
 		velocity.x = move_toward(velocity.x, 0, deceleration * delta) #slow down
 	
 	#flipping. Used answer from here: https://forum.godotengine.org/t/why-my-character-scale-keep-changing/13909/5
-	if input_direction > 0:
+	if input_direction.x > 0:
 		transform.x.x = 1
-	elif input_direction < 0:
-		transform.x.x = -1 
+	elif input_direction.x < 0:
+		transform.x.x = -1
+
+
+@onready var look_up_timer: Timer = %"Look Up Timer"
+var look_ahead_hold_time: float = 0.5
+var is_holding_down_look_ahead_input: bool = false
+var looking_up: bool = false
+var looking_down: bool = false
+
+func try_look_ahead() -> void:
+	var can_look_ahead: bool = input_direction.x == 0 and !current_hold and is_on_floor() and !is_downsliding
+	var is_trying_to_look_up: bool = input_direction.y == -1
+	var is_trying_to_look_down: bool = input_direction.y == 1
+	
+	if can_look_ahead and (is_trying_to_look_up or is_trying_to_look_down):
+		if !is_holding_down_look_ahead_input:
+			look_up_timer.start() #make sure timer is goingd
+			is_holding_down_look_ahead_input = true
+		elif look_up_timer.time_left == 0:
+			if is_trying_to_look_up:
+				looking_up = true
+			else:
+				looking_down = true
+	else:
+		look_up_timer.stop()
+		look_up_timer.wait_time = look_ahead_hold_time
+		looking_up = false
+		looking_down = false
+		is_holding_down_look_ahead_input = false
 
 func holding_behavior() -> void:
-	var aim_dir: Vector2 = Input.get_vector("move_left","move_right","move_up","move_down")
-	
 	#targeting arrow
-	if aim_dir != Vector2.ZERO:
+	if input_direction != Vector2.ZERO:
 		targeting_arrow.visible = true
 		if transform.x.x == 1:
-			targeting_arrow.global_rotation = aim_dir.angle() + PI/2
+			targeting_arrow.global_rotation = input_direction.angle() + PI/2
 		else:
-			targeting_arrow.global_rotation = aim_dir.angle() - PI/2
+			targeting_arrow.global_rotation = input_direction.angle() - PI/2
 	
 	var holding_cieling: bool = abs(angle_difference(current_hold.global_rotation, deg_to_rad(180))) < deg_to_rad(20)
 	if holding_cieling:
 		#cieling gold
-		if aim_dir.x > 0: #flip player
+		if input_direction.x > 0: #flip player
 			transform.x.x = 1
-		elif aim_dir.x < 0:
+		elif input_direction.x < 0:
 			transform.x.x = -1 
 		global_position = current_hold.global_position - (top_hand_point.global_position - global_position)
 	else:
@@ -200,12 +240,12 @@ func holding_behavior() -> void:
 	if Input.is_action_just_released("grab_hold"):
 		hold_release_particles.restart()
 		AudioManager.PlayAudio(jump_sound)
-		if abs(aim_dir.y) == 0:
-			velocity = leap_velocity * aim_dir
+		if abs(input_direction.y) == 0:
+			velocity = leap_velocity * input_direction
 			gravity_reduce_timer.wait_time = 0.15
 			gravity_reduce_timer.start()
 		else:
-			velocity = leap_velocity * aim_dir
+			velocity = leap_velocity * input_direction
 		current_hold = null
 
 @onready var collect_box: Area2D = $CollectBox
@@ -377,7 +417,6 @@ func on_collectbox_hit(area: Area2D) -> void:
 		if campfires.has(area): return #skip if we already have it
 		area.is_lit = true
 		campfires.append(area)
-	
 
 func on_diebox_hit(area: Area2D) -> void:
 	if area.is_in_group("spike"):

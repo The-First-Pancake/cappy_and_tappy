@@ -6,7 +6,15 @@ extends Area2D
 var click_debounce: bool = false
 var start_pos: Vector2
 
+@onready var explosion_sound: AudioStreamPlayer = $"Explosion Sound"
+@onready var explosion_animation: AnimatedSprite2D = $"Explosion Animation"
+
+
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+
+
 func _ready() -> void:
+	animated_sprite_2d.play("default")
 	start_pos = global_position
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -14,6 +22,7 @@ func _process(delta: float) -> void:
 	var grid_size: float = GameManager.GRID_SIZE
 	var held: bool = GameManager.currently_held_object == self
 	if held:
+
 		if Input.is_action_just_pressed("drop_block"):
 			click_debounce = false
 		var mouse_pos : Vector2 = get_global_mouse_position()
@@ -24,8 +33,20 @@ func _process(delta: float) -> void:
 			if block_detector.is_colliding():
 				var block_collided_with: Placeable = block_detector.get_collider() as Placeable
 				if block_collided_with:
-					block_collided_with.destroy(global_position)
 					GameManager.currently_held_object = null
+					animated_sprite_2d.play("fuse")
+					await animated_sprite_2d.animation_finished
+					
+					AudioManager.PlayAudio(explosion_sound)
+					
+					explosion_animation.reparent(get_parent())
+					explosion_animation.play("explode")
+					explosion_animation.animation_finished.connect(func()-> void:
+						print("sigma")
+						explosion_animation.queue_free()
+						)
+					
+					block_collided_with.destroy(global_position)
 					queue_free()
 					return
 			global_position = start_pos

@@ -1,7 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://mcu32jepdsb3"]
+[gd_scene load_steps=23 format=3 uid="uid://mcu32jepdsb3"]
 
 [ext_resource type="Script" path="res://Scripts/Dynamite.gd" id="1_0xau1"]
+[ext_resource type="Material" uid="uid://cg4fprgafhcxd" path="res://Art/unshaded_material.tres" id="2_ogn8q"]
 [ext_resource type="Texture2D" uid="uid://det8arxk2wg81" path="res://Art/Sprites/Dynamite/Dynamite.png" id="3_8ilru"]
+[ext_resource type="AudioStream" uid="uid://cbl7cp4unytdt" path="res://Sound/Explosion1__065.wav" id="3_iqbmc"]
+[ext_resource type="Texture2D" uid="uid://cp12ff55etrhe" path="res://Art/Sprites/Dynamite/Explosion.png" id="4_udyqs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nsrqv"]
 size = Vector2(86, 99)
@@ -31,7 +34,12 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ddjt2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
 }, {
+"frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_518k8")
 }, {
@@ -44,13 +52,91 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_41fuv")
 }],
-"loop": true,
+"loop": false,
+"name": &"fuse",
+"speed": 3.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6eaw"]
+atlas = ExtResource("4_udyqs")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hyt6v"]
+atlas = ExtResource("4_udyqs")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rop3m"]
+atlas = ExtResource("4_udyqs")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hkbd"]
+atlas = ExtResource("4_udyqs")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0wdq"]
+atlas = ExtResource("4_udyqs")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhnpw"]
+atlas = ExtResource("4_udyqs")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7ts6"]
+atlas = ExtResource("4_udyqs")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5noi"]
+atlas = ExtResource("4_udyqs")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81l1v"]
+atlas = ExtResource("4_udyqs")
+region = Rect2(1024, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ftbob"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
 "name": &"default",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6eaw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hyt6v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rop3m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8hkbd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0wdq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhnpw")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_o7ts6")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_a5noi")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_81l1v")
+}],
+"loop": true,
+"name": &"explode",
 "speed": 5.0
 }]
 
 [node name="Dynamite" type="Area2D"]
-position = Vector2(-911, 22)
 script = ExtResource("1_0xau1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -58,11 +144,21 @@ position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_nsrqv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = ExtResource("2_ogn8q")
 scale = Vector2(3.125, 3.125)
 sprite_frames = SubResource("SpriteFrames_mrm8a")
 
 [node name="Block Detector" type="RayCast2D" parent="."]
 target_position = Vector2(0, 1)
 hit_from_inside = true
+
+[node name="Explosion Animation" type="AnimatedSprite2D" parent="."]
+material = ExtResource("2_ogn8q")
+scale = Vector2(3.125, 3.125)
+sprite_frames = SubResource("SpriteFrames_ftbob")
+
+[node name="Explosion Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_iqbmc")
+volume_db = -5.0
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
