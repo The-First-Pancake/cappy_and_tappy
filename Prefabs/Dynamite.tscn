@@ -54,7 +54,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"fuse",
-"speed": 3.0
+"speed": 6.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b6eaw"]
@@ -131,9 +131,9 @@ animations = [{
 "duration": 1.5,
 "texture": SubResource("AtlasTexture_81l1v")
 }],
-"loop": true,
+"loop": false,
 "name": &"explode",
-"speed": 5.0
+"speed": 15.0
 }]
 
 [node name="Dynamite" type="Area2D"]
@@ -156,6 +156,9 @@ hit_from_inside = true
 material = ExtResource("2_ogn8q")
 scale = Vector2(3.125, 3.125)
 sprite_frames = SubResource("SpriteFrames_ftbob")
+animation = &"explode"
+frame = 8
+frame_progress = 1.0
 
 [node name="Explosion Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_iqbmc")

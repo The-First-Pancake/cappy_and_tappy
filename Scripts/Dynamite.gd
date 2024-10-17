@@ -15,6 +15,7 @@ var start_pos: Vector2
 
 func _ready() -> void:
 	animated_sprite_2d.play("default")
+	explosion_animation.play("default")
 	start_pos = global_position
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -36,16 +37,12 @@ func _process(delta: float) -> void:
 					GameManager.currently_held_object = null
 					animated_sprite_2d.play("fuse")
 					await animated_sprite_2d.animation_finished
-					
+					#TODO fuse sound
 					AudioManager.PlayAudio(explosion_sound)
 					
 					explosion_animation.reparent(get_parent())
 					explosion_animation.play("explode")
-					explosion_animation.animation_finished.connect(func()-> void:
-						print("sigma")
-						explosion_animation.queue_free()
-						)
-					
+					explosion_animation.animation_finished.connect(explosion_animation.queue_free)
 					block_collided_with.destroy(global_position)
 					queue_free()
 					return
