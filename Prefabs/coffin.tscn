@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://c8njjo4yfo85v"]
+
+[ext_resource type="Script" path="res://Scripts/Coffin.gd" id="1_n8hf1"]
+[ext_resource type="PackedScene" uid="uid://elnsaaomqgyw" path="res://Prefabs/enemy.tscn" id="2_seect"]
+[ext_resource type="Texture2D" uid="uid://s32sg7ua7ooe" path="res://Art/Sprites/coffin.png" id="3_40vdg"]
+[ext_resource type="PackedScene" uid="uid://dohp3cgpxnwcp" path="res://Prefabs/ShardEmitter.tscn" id="4_llids"]
+[ext_resource type="Script" path="res://Prefabs/Squashable.gd" id="4_pigq0"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_cr5yl"]
+light_mode = 1
+
+[node name="Coffin" type="Area2D"]
+script = ExtResource("1_n8hf1")
+enemy_prefab = ExtResource("2_seect")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_cr5yl")
+position = Vector2(-50, -50)
+texture = ExtResource("3_40vdg")
+centered = false
+
+[node name="ShardEmitter" parent="Sprite2D" instance=ExtResource("4_llids")]
+nbr_of_shards = 5
+min_impulse = 50.0
+max_impulse = 200.0
+
+[node name="Squashable" type="Node" parent="."]
+script = ExtResource("4_pigq0")
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(0, -25)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-48, 1, -43, -48, 47, -48, 46, -1)

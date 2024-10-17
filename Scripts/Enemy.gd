@@ -6,6 +6,7 @@ var jump_velocity: float = -850.0
 var acceleration: float = 3000
 var deceleration: float = 4000
 var max_speed: float = 300
+var max_launch_speed : float = 700
 
 var leap_velocity: float = 1350.0
 
@@ -189,6 +190,8 @@ func movement(delta: float) -> void:
 		if sign(horz_move_dir) != sign(velocity.x):
 			velocity.x = 0 # for instant turning around
 		if abs(velocity.x) < max_speed:
+			velocity.x += horz_move_dir * acceleration * delta
+		if is_launched and abs(velocity.x) < max_launch_speed:
 			velocity.x += horz_move_dir * acceleration * delta
 	else: #if we aint tryna move
 		velocity.x = move_toward(velocity.x, 0, deceleration * delta) #slow down

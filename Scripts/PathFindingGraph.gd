@@ -1,6 +1,6 @@
 extends Node2D
 
-var show_debug : bool = true
+var show_debug : bool = false
 var path_nodes : Array[PathNode] = []
 @onready var astar_graph : AStar2D = AStar2D.new()
 var cull_radius :  float = 1080
