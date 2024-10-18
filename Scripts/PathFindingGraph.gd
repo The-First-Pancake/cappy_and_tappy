@@ -163,7 +163,7 @@ func is_path_clear(path_node: PathNode, path_node_to: PathNode) -> bool:
 	# use global coordinates, not local to node
 	var query : PhysicsRayQueryParameters2D = PhysicsRayQueryParameters2D.create(path_node.node_position, path_node_to.node_position)
 	query.exclude = [path_node, path_node_to]
-	query.collision_mask = 1 << 1
+	query.collision_mask = 1 << 0
 	query.collide_with_areas = false
 	var result : Dictionary = space_state.intersect_ray(query)
 	return result.is_empty()
@@ -174,7 +174,7 @@ func is_path_fallable(path_node: PathNode, path_node_to: PathNode) -> bool:
 	var over_fall : Vector2 = Vector2(path_node_to.node_position.x, path_node.node_position.y);
 	var query : PhysicsRayQueryParameters2D = PhysicsRayQueryParameters2D.create(path_node.node_position, over_fall)
 	query.exclude = [path_node, path_node_to]
-	query.collision_mask = 1 << 1
+	query.collision_mask = 1 << 0
 	query.collide_with_areas = false
 	var result : Dictionary = space_state.intersect_ray(query)
 	if not result.is_empty():
@@ -182,7 +182,7 @@ func is_path_fallable(path_node: PathNode, path_node_to: PathNode) -> bool:
 	# Next, check if you can fall straight down from that point
 	query = PhysicsRayQueryParameters2D.create(over_fall, path_node_to.node_position)
 	query.exclude = [path_node, path_node_to]
-	query.collision_mask = 1 << 1
+	query.collision_mask = 1 << 0
 	query.collide_with_areas = false
 	result = space_state.intersect_ray(query)
 	return result.is_empty()
@@ -193,13 +193,13 @@ func is_path_jumpable(path_node: PathNode, path_node_to: PathNode, jump_height_m
 	var jump_position : Vector2 = Vector2(path_node.node_position.x, path_node.node_position.y - jump_height_max)
 	var query : PhysicsRayQueryParameters2D = PhysicsRayQueryParameters2D.create(path_node.node_position, jump_position)
 	query.exclude = [path_node, path_node_to]
-	query.collision_mask = 1 << 1
+	query.collision_mask = 1 << 0
 	query.collide_with_areas = false
 	var result : Dictionary = space_state.intersect_ray(query)
 	# see if rest of the jump is possible
 	query = PhysicsRayQueryParameters2D.create(jump_position, path_node_to.node_position)
 	query.exclude = [path_node, path_node_to]
-	query.collision_mask = 1 << 1
+	query.collision_mask = 1 << 0
 	query.collide_with_areas = false
 	result = space_state.intersect_ray(query)
 	return result.is_empty()

@@ -309,7 +309,7 @@ point_count = 3
 colors = PackedColorArray(0.61, 0.605222, 0.3233, 1, 0.84, 0.72576, 0.4368, 0.576471)
 
 [node name="Enemy" type="CharacterBody2D" groups=["spike"]]
-collision_mask = 3
+collision_layer = 2
 script = ExtResource("1_62qsa")
 
 [node name="Sprite Animator" type="AnimatedSprite2D" parent="."]
@@ -386,6 +386,7 @@ debug_color = Color(1, 0, 0, 0)
 
 [node name="KillBox" type="Area2D" parent="."]
 unique_name_in_owner = true
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillBox"]
 position = Vector2(0, 6)
@@ -532,6 +533,11 @@ stream = ExtResource("16_ny3q0")
 [node name="Griddy" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("17_k1iyg")
 volume_db = -20.0
+
+[node name="Squash detector" type="RayCast2D" parent="."]
+unique_name_in_owner = true
+target_position = Vector2(0, 11)
+hit_from_inside = true
 
 [connection signal="timeout" from="Pathfinding Timer" to="." method="_on_pathfinding_timer_timeout"]
 [connection signal="timeout" from="Launch Timer" to="." method="_on_launch_timer_timeout"]

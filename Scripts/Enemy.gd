@@ -70,6 +70,7 @@ func _process(delta: float) -> void:
 	
 	update_animations()
 	move_and_slide()
+	try_squash()
 
 func _draw() -> void:
 	for i in path_to_player.size() - 1:
@@ -302,9 +303,14 @@ func update_animations() -> void:
 			else:
 				sprite_animator.play("jump_up")
 
+@onready var squash_detector: RayCast2D = %"Squash detector"
+
 func try_squash() -> void:
-	if is_on_floor():
-		die()
+	await get_tree().physics_frame
+	#This method could cause problems if the player temporarily clips into something due to moving really fast, but I've yet to run into that problem
+	if squash_detector.is_colliding(): 
+		if squash_detector.get_collision_normal() == Vector2.ZERO: #the ray is inside the object it's colliding with
+			die()
 
 var dying: bool = false
 func die() -> void:

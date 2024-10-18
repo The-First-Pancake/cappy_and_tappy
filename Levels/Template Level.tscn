@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=4 uid="uid://6dd2cbybvcqg"]
+[gd_scene load_steps=42 format=4 uid="uid://6dd2cbybvcqg"]
 
 [ext_resource type="Texture2D" uid="uid://bqfeqtdw7xcxo" path="res://Art/Sprites/Backgrounds/background.png" id="1_dtx2u"]
 [ext_resource type="PackedScene" uid="uid://dngf3odx0yf5k" path="res://Prefabs/player.tscn" id="2_hossx"]
@@ -27,6 +27,7 @@
 [ext_resource type="Script" path="res://Scripts/MusicPlayer.gd" id="22_y5d0p"]
 [ext_resource type="AudioStream" uid="uid://twgpbnyr1add" path="res://Sound/Music/music_main.wav" id="23_cdry0"]
 [ext_resource type="Script" path="res://Scripts/CameraZone.gd" id="27_rvwtg"]
+[ext_resource type="PackedScene" uid="uid://c5egotsf7fdg4" path="res://Prefabs/PathNode.tscn" id="28_ng7cu"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_sacac"]
 light_mode = 1
@@ -289,3 +290,63 @@ script = ExtResource("22_y5d0p")
 [node name="Music" type="AudioStreamPlayer" parent="Music Player"]
 unique_name_in_owner = true
 stream = ExtResource("23_cdry0")
+
+[node name="PathNode" parent="." instance=ExtResource("28_ng7cu")]
+position = Vector2(900, 1050)
+
+[node name="PathNode2" parent="." instance=ExtResource("28_ng7cu")]
+position = Vector2(950, 1050)
+
+[node name="PathNode3" parent="." instance=ExtResource("28_ng7cu")]
+position = Vector2(1000, 1050)
+
+[node name="PathNode4" parent="." instance=ExtResource("28_ng7cu")]
+position = Vector2(1050, 1050)
+
+[node name="PathNode5" parent="." instance=ExtResource("28_ng7cu")]
+position = Vector2(1100, 1050)
+
+[node name="PathNode6" parent="." instance=ExtResource("28_ng7cu")]
+position = Vector2(1150, 1050)
+
+[node name="PathNode7" parent="." instance=ExtResource("28_ng7cu")]
+position = Vector2(1200, 1050)
+
+[node name="PathNode8" parent="." instance=ExtResource("28_ng7cu")]
+position = Vector2(1250, 1050)
+
+[node name="PathNode9" parent="." instance=ExtResource("28_ng7cu")]
+position = Vector2(1300, 1050)
+
+[node name="PathNode10" parent="." instance=ExtResource("28_ng7cu")]
+position = Vector2(1350, 1050)
+
+[node name="PathNode11" parent="." instance=ExtResource("28_ng7cu")]
+position = Vector2(1400, 1050)
+
+[node name="PathNode12" parent="." instance=ExtResource("28_ng7cu")]
+position = Vector2(1450, 1050)
+
+[node name="PathNode13" parent="." instance=ExtResource("28_ng7cu")]
+position = Vector2(1500, 1050)
+
+[node name="PathNode14" parent="." instance=ExtResource("28_ng7cu")]
+position = Vector2(1550, 1050)
+
+[node name="PathNode15" parent="." instance=ExtResource("28_ng7cu")]
+position = Vector2(1600, 1050)
+
+[node name="PathNode16" parent="." instance=ExtResource("28_ng7cu")]
+position = Vector2(1650, 1050)
+
+[node name="PathNode17" parent="." instance=ExtResource("28_ng7cu")]
+position = Vector2(1700, 1050)
+
+[node name="PathNode18" parent="." instance=ExtResource("28_ng7cu")]
+position = Vector2(1750, 1050)
+
+[node name="PathNode19" parent="." instance=ExtResource("28_ng7cu")]
+position = Vector2(1800, 1050)
+
+[node name="PathNode20" parent="." instance=ExtResource("28_ng7cu")]
+position = Vector2(1850, 1050)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c5egotsf7fdg4"]
 
-[ext_resource type="Script" path="res://Prefabs/Squashable.gd" id="1_6ioxd"]
+[ext_resource type="Script" path="res://Scripts/Squashable.gd" id="1_6ioxd"]
 [ext_resource type="Script" path="res://Scripts/PathNode.gd" id="1_fo5ss"]
 [ext_resource type="Texture2D" uid="uid://dthf4q6o2ncbj" path="res://Art/Sprites/circle.png" id="2_fw5s5"]
 
@@ -8,7 +8,6 @@
 radius = 4.24264
 
 [node name="PathNode" type="Area2D"]
-collision_mask = 2
 script = ExtResource("1_fo5ss")
 
 [node name="Circle" type="Sprite2D" parent="."]

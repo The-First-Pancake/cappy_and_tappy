@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://elnsaaomqgyw" path="res://Prefabs/enemy.tscn" id="2_seect"]
 [ext_resource type="Texture2D" uid="uid://s32sg7ua7ooe" path="res://Art/Sprites/coffin.png" id="3_40vdg"]
 [ext_resource type="PackedScene" uid="uid://dohp3cgpxnwcp" path="res://Prefabs/ShardEmitter.tscn" id="4_llids"]
-[ext_resource type="Script" path="res://Prefabs/Squashable.gd" id="4_pigq0"]
+[ext_resource type="Script" path="res://Scripts/Squashable.gd" id="4_pigq0"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_cr5yl"]
 light_mode = 1

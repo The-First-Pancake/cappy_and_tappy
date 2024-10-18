@@ -2,10 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_8tfe6"]
 [ext_resource type="Script" path="res://Scripts/SpawnObject.gd" id="2_h2nwq"]
-[ext_resource type="PackedScene" uid="uid://r1kjk04fwuou" path="res://Prefabs/Hold.tscn" id="3_k3spf"]
-[ext_resource type="PackedScene" uid="uid://bkatak76uuoli" path="res://Prefabs/Campfire.tscn" id="4_55j5p"]
-[ext_resource type="PackedScene" uid="uid://dhrgrpwwax6i8" path="res://Prefabs/Spikes.tscn" id="5_sjo0f"]
-[ext_resource type="PackedScene" uid="uid://hetb2cu4cbew" path="res://Prefabs/BreakerSpike.tscn" id="7_y05uc"]
+[ext_resource type="PackedScene" uid="uid://r1kjk04fwuou" path="res://Prefabs/Spawn On Blocks/Hold.tscn" id="3_k3spf"]
+[ext_resource type="PackedScene" uid="uid://bkatak76uuoli" path="res://Prefabs/Spawn On Blocks/Campfire.tscn" id="4_55j5p"]
+[ext_resource type="PackedScene" uid="uid://dhrgrpwwax6i8" path="res://Prefabs/Spawn On Blocks/Spikes.tscn" id="5_sjo0f"]
+[ext_resource type="PackedScene" uid="uid://hetb2cu4cbew" path="res://Prefabs/Spawn On Blocks/BreakerSpike.tscn" id="7_y05uc"]
 [ext_resource type="PackedScene" uid="uid://c8njjo4yfo85v" path="res://Prefabs/coffin.tscn" id="8_84xjq"]
 
 [sub_resource type="Resource" id="Resource_6716m"]
@@ -42,11 +42,11 @@ position = Vector2(1943, 69)
 position = Vector2(-689, -299)
 spawn_objects = Array[ExtResource("2_h2nwq")]([SubResource("Resource_6716m"), SubResource("Resource_b3o7y"), SubResource("Resource_mwrdh"), SubResource("Resource_2esob"), SubResource("Resource_cpvsc")])
 
-[node name="Water" parent="." index="11"]
+[node name="Water" parent="." index="9"]
 rise_speed = 0.0
 
 [node name="Music" parent="Music Player" index="0"]
 stream = null
 
-[node name="Coffin" parent="." index="17" instance=ExtResource("8_84xjq")]
+[node name="Coffin" parent="." index="15" instance=ExtResource("8_84xjq")]
 position = Vector2(1750, 1046)

@@ -44,62 +44,42 @@ position = Vector2(68.5599, 573.76)
 scale = Vector2(6.25, 6.25)
 texture = ExtResource("6_jk0d0")
 
-[node name="Entrance Door" parent="." index="2"]
-position = Vector2(1100, 1050)
-
 [node name="Exit Door" parent="." index="3"]
 position = Vector2(1400, -250)
 
 [node name="DirectionalLight2D" parent="." index="4"]
 position = Vector2(950, 186)
 
-[node name="CollisionShape2D" parent="Floor/StaticBody2D" index="0"]
-position = Vector2(168, 133.16)
+[node name="BlockContainer" parent="." index="8"]
+position = Vector2(0, 36)
 
-[node name="Cieling" parent="." index="6"]
-offset_top = -11238.0
-offset_bottom = -10972.0
-
-[node name="Left Wall" parent="." index="7"]
-offset_top = -10492.0
-offset_bottom = -6576.0
-
-[node name="Right Wall" parent="." index="8"]
-offset_top = -10488.0
-offset_bottom = -6572.0
-
-[node name="Camera2D" parent="." index="10"]
+[node name="Camera2D" parent="." index="9"]
 position = Vector2(1133, 717)
 
 [node name="BlockSpawner" parent="Camera2D" index="1"]
 spawn_object_probability = 0.0
 
-[node name="BlockContainer" parent="." index="11"]
-position = Vector2(0, 36)
-
-[node name="Water" parent="." index="12"]
+[node name="Water" parent="." index="10"]
 position = Vector2(1147, 1329)
 rise_speed = 8.0
 
-[node name="Idol" parent="." index="13"]
+[node name="Idol" parent="." index="11"]
 position = Vector2(1900, 436)
 
-[node name="Idol2" parent="." index="14"]
+[node name="Idol2" parent="." index="12"]
 position = Vector2(950, -314)
 
-[node name="Idol3" parent="." index="15"]
+[node name="Idol3" parent="." index="13"]
 position = Vector2(1750, 954)
 
-[node name="RopeHook" parent="." index="16"]
+[node name="RopeHook" parent="." index="14"]
 position = Vector2(2844, 1088)
-
-[node name="2x2 Piiece" parent="." index="17" instance=ExtResource("2_a3p81")]
-position = Vector2(1400, -150)
-collision_layer = 1
-collision_mask = 1
 
 [node name="Music" parent="Music Player" index="0"]
 volume_db = -7.0
+
+[node name="2x2 Piiece" parent="." index="17" instance=ExtResource("2_a3p81")]
+position = Vector2(1400, -150)
 
 [node name="Enemy" parent="." index="19" instance=ExtResource("8_uii20")]
 position = Vector2(1750, 850)
