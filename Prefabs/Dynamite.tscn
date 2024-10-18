@@ -156,9 +156,6 @@ hit_from_inside = true
 material = ExtResource("2_ogn8q")
 scale = Vector2(3.125, 3.125)
 sprite_frames = SubResource("SpriteFrames_ftbob")
-animation = &"explode"
-frame = 8
-frame_progress = 1.0
 
 [node name="Explosion Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_iqbmc")
