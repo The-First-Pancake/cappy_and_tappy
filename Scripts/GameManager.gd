@@ -121,4 +121,4 @@ func player_die() -> void:
 		load_level_from_packed(leaderboard_scene)
 	else:
 		get_tree().reload_current_scene()
-		emit_signal("loaded_new_scene")
+		loaded_new_scene.emit()

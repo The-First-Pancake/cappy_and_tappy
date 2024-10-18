@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dbg7ybfkkk4eo"]
+[gd_scene load_steps=8 format=3 uid="uid://dbg7ybfkkk4eo"]
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_kgcef"]
 [ext_resource type="PackedScene" uid="uid://bdyf8npx3i7xk" path="res://Prefabs/Blocks/2x2-Piece.tscn" id="2_a3p81"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://dgb653myqjguj" path="res://Art/Sprites/glyphs/Glyph_Space.png" id="5_18bfr"]
 [ext_resource type="Texture2D" uid="uid://cb17awt0j13xi" path="res://Art/Sprites/glyphs/Glyph_Hook_Rotate.png" id="5_gmbt6"]
 [ext_resource type="Texture2D" uid="uid://b4pxxldcsvtbj" path="res://Art/Sprites/glyphs/Glyph_WASD.png" id="6_jk0d0"]
-[ext_resource type="PackedScene" uid="uid://elnsaaomqgyw" path="res://Prefabs/enemy.tscn" id="8_uii20"]
 
 [node name="Template Level" instance=ExtResource("1_kgcef")]
 
@@ -80,6 +79,3 @@ volume_db = -7.0
 
 [node name="2x2 Piiece" parent="." index="17" instance=ExtResource("2_a3p81")]
 position = Vector2(1400, -150)
-
-[node name="Enemy" parent="." index="19" instance=ExtResource("8_uii20")]
-position = Vector2(1750, 850)
