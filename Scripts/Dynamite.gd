@@ -45,7 +45,7 @@ func _process(delta: float) -> void:
 					explosion_animation.reparent(get_parent())
 					explosion_animation.play("explode")
 					explosion_animation.animation_finished.connect(explosion_animation.queue_free)
-					block_collided_with.destroy(global_position, 20, 500, 1000)
+					block_collided_with.destroy(global_position, 100, 500, 1000)
 					queue_free()
 					return
 			global_position = start_pos
