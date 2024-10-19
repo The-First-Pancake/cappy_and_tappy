@@ -183,7 +183,7 @@ func check_for_collisions() -> bool:
 		modulate.b = 1
 	return is_instance_valid(collision)
 
-func destroy(collision_point_global : Vector2) -> void:
+func destroy(collision_point_global : Vector2, nbr_of_shards : int = 10, min_impulse : float = 50, max_impulse: float = 200) -> void:
 	if indestructable: return
 	if destroy_semaphore.try_wait():
 		if (state != PlaceState.DESTROYED):
@@ -200,6 +200,9 @@ func destroy(collision_point_global : Vector2) -> void:
 				else: 
 					child.queue_free()
 			enter_placed()
+			$Sprite2D/ShardEmitter.nbr_of_shards = nbr_of_shards
+			$Sprite2D/ShardEmitter.min_impulse = min_impulse
+			$Sprite2D/ShardEmitter.max_impulse = max_impulse
 			$Sprite2D/ShardEmitter.shatter(collision_point_global)
 
 var mouse_hovering: bool = false

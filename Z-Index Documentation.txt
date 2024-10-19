@@ -5,4 +5,5 @@ Here are relevent Z-indexes used by parts of the game:
 - Player: 1
 - Player inside door: -1
 - Player Targeting Arrow: 100
+- Shards: 100
 - Camera: 1000
