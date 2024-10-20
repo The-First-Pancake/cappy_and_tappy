@@ -14,7 +14,8 @@ extends Area2D
 
 @export var bottom_out: bool = true
 @export var top_out: bool = true
-
+@export var right_out: bool = true
+@export var left_out: bool = true
 
 var collision_shape: CollisionShape2D:
 	get:

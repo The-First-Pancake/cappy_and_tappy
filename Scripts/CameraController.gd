@@ -56,6 +56,7 @@ func _process(delta: float) -> void:
 	var cam_zone: CameraZone = GameManager.player.current_camera_zone
 	var target_position: Vector2 = GameManager.player.global_position
 	
+	
 	if GameManager.player.looking_up: #look ahead
 		target_position.y -= look_ahead_distance
 	elif GameManager.player.looking_down:
@@ -67,26 +68,8 @@ func _process(delta: float) -> void:
 			target_position.x = cam_zone.mid_line
 		if current_cam_type == CamType.HORIZONTAL:
 			target_position.y = cam_zone.mid_line
-		if cam_zone.bottom_out:
-			var min_camera_y: float = cam_zone.bot_right.y - get_viewport_rect().size.y/2
-			if target_position.y > min_camera_y:
-				target_position.y = min_camera_y
-		if cam_zone.top_out:
-			var max_camera_y: float = cam_zone.top_left.y + get_viewport_rect().size.y/2
-			if target_position.y < max_camera_y:
-				target_position.y = max_camera_y
 	else:
 		current_cam_type = CamType.FREECAM
-	
-	
-	if is_sliding:
-		var distance_from_target: float = global_position.distance_to(target_position)
-		var pan_speed: float = 180
-		var pan_speed_multiplier: float = clamp(pow(distance_from_target, .5), 1, 1000000000)
-		global_position = global_position.move_toward(target_position, pan_speed * delta * pan_speed_multiplier)
-		if global_position.distance_to(target_position) < 5:
-			is_sliding = false
-	
 	
 	if target_position.y < screen_top + screen_edge_trigger:
 		if current_cam_type != CamType.HORIZONTAL:
@@ -106,5 +89,39 @@ func _process(delta: float) -> void:
 	
 	if current_cam_type != last_frame_cam_type:
 		is_sliding = true
+	
+	if cam_zone: #cap camera movements based on zone end points
+		if cam_zone.bottom_out:
+			if current_cam_type != CamType.HORIZONTAL:
+				var min_camera_y: float = cam_zone.bot_right.y - get_viewport_rect().size.y/2
+				if target_position.y > min_camera_y:
+					target_position.y = min_camera_y
+		if cam_zone.top_out:
+			if current_cam_type != CamType.HORIZONTAL:
+				var max_camera_y: float = cam_zone.top_left.y + get_viewport_rect().size.y/2
+				if target_position.y < max_camera_y:
+					target_position.y = max_camera_y
+		if cam_zone.right_out:
+			if current_cam_type != CamType.VERTICAL:
+				var max_camera_x: float = cam_zone.bot_right.x - get_viewport_rect().size.x/2
+				if target_position.x > max_camera_x:
+					print(max_camera_x)
+					print(target_position)
+					
+					target_position.x = max_camera_x
+		if cam_zone.left_out:
+			if current_cam_type != CamType.VERTICAL:
+				var min_camera_x: float = cam_zone.top_left.x + get_viewport_rect().size.x/2
+				if target_position.x < min_camera_x:
+					target_position.x = min_camera_x
+	
+	if is_sliding:
+		var distance_from_target: float = global_position.distance_to(target_position)
+		var pan_speed: float = 180
+		var pan_speed_multiplier: float = clamp(pow(distance_from_target, .5), 1, 10000000)
+		global_position = global_position.move_toward(target_position, pan_speed * delta * pan_speed_multiplier)
+		if global_position.distance_to(target_position) < 5:
+			is_sliding = false
+	
 	
 	last_frame_cam_type = current_cam_type
