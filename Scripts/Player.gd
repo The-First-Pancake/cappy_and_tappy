@@ -392,7 +392,7 @@ func die() -> void:
 		return
 	
 	await get_tree().physics_frame
-	await get_tree().physics_frame
+	await get_tree().physics_frame #waiting two frams lets the teleport fully resulve so that things like the camera zone have time to update
 	dying = false
 
 func apply_gravity(delta: float) -> void:

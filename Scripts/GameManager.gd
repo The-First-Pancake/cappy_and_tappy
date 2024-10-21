@@ -32,6 +32,7 @@ var leaderboard_scene: PackedScene = preload("res://Levels/Leaderboard.tscn")
 const SAVE_PATH: String = "user://save.tres"
 var current_save: GameSave = null
 var currently_held_object: Node2D = null
+var time_since_level_loaded: float = 0
 
 signal loaded_new_scene
 
@@ -55,14 +56,16 @@ func _ready() -> void:
 		setup_new_save()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
+	time_since_level_loaded += delta
+	
 	if Input.is_action_just_pressed("skip_level"):
 		if get_tree().current_scene is not Control: #don't allow restart in menus
 			level_complete()
 	if Input.is_action_just_pressed("restart"): 
 		if get_tree().current_scene is not Control: #don't allow restart in menus
 			get_tree().reload_current_scene()
-			emit_signal("loaded_new_scene")
+			loaded_new_scene.emit()
 	if Input.is_action_just_pressed("ui_cancel"):
 		if get_tree().current_scene.name == "LevelSelect":
 			load_level_from_packed(splash_screen_scene)
@@ -90,7 +93,8 @@ func level_complete() -> void:
 func load_level_from_packed(scene: PackedScene) -> void:
 	current_level = scene
 	get_tree().change_scene_to_packed(scene)
-	emit_signal("loaded_new_scene")
+	loaded_new_scene.emit()
+	time_since_level_loaded = 0
 
 func setup_new_save() -> void:
 	print("Resetting Save")

@@ -72,7 +72,7 @@ func _physics_process(delta: float) -> void:
 		if (!check_for_collisions() and Input.is_action_just_released("drop_block")):
 			await get_tree().physics_frame
 			if GameManager.currently_held_object == self:
-					GameManager.currently_held_object = null
+				GameManager.currently_held_object = null
 			enter_falling()
 	elif (state == PlaceState.FALLING):
 		# Add the gravity.
@@ -91,8 +91,9 @@ func _physics_process(delta: float) -> void:
 				enter_placed()
 	elif (state == PlaceState.QUEUED):
 		if Input.is_action_just_released("drop_block"): #Pick Up
-			if GameManager.currently_held_object == null:
-				enter_placing()
+			if GameManager.time_since_level_loaded >= 0.2: #don't pick up the block if the level just loaded
+				if GameManager.currently_held_object == null:
+					enter_placing()
 	elif (state == PlaceState.PLACED):
 		if is_instance_valid(GameManager.currently_held_object) and GameManager.currently_held_object is Dynamite and mouse_hovering and !indestructable:
 			modulate = Color.RED
