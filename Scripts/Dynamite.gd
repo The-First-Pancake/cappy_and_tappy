@@ -14,10 +14,11 @@ var start_pos: Vector2
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 
+
 func _ready() -> void:
 	animated_sprite_2d.play("default")
 	explosion_animation.play("default")
-	start_pos = global_position
+	start_pos = position
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -29,7 +30,10 @@ func _process(delta: float) -> void:
 			click_debounce = false
 		var mouse_pos : Vector2 = get_global_mouse_position()
 		global_position = mouse_pos
-
+		
+		if Input.is_action_just_pressed("rotate_block_right"):
+			return_dynamite()
+		
 		#global_position = round(mouse_pos / grid_size) * grid_size # use this if we want to snape to grid. We currently don't cus it's too easy to click between blocks
 		if Input.is_action_just_released("drop_block") and !click_debounce:
 			if block_detector.is_colliding():
@@ -38,6 +42,7 @@ func _process(delta: float) -> void:
 					exploding = true
 					GameManager.currently_held_object = null
 					animated_sprite_2d.play("fuse")
+					reparent(get_viewport().get_camera_2d().get_parent()) #reparent the dynamite off the camera
 					await animated_sprite_2d.animation_finished
 					#TODO fuse sound
 					AudioManager.PlayAudio(explosion_sound)
@@ -48,9 +53,12 @@ func _process(delta: float) -> void:
 					block_collided_with.destroy(global_position, 100, 500, 1000)
 					queue_free()
 					return
-			global_position = start_pos
-			GameManager.currently_held_object = null
+			return_dynamite()
 
+func return_dynamite() -> void:
+	GameManager.currently_held_object = null
+	reparent(get_viewport().get_camera_2d())
+	position = start_pos
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	var m_event: InputEventMouse = event as InputEventMouse
