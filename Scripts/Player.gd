@@ -84,6 +84,7 @@ func exit_level() -> void:
 func _physics_process(delta: float) -> void:
 	targeting_arrow.visible = false
 	
+	
 	if dying: return
 	
 	update_camera_zone()
@@ -381,7 +382,8 @@ func die() -> void:
 	
 	if highest_campfire:
 		#respawn
-		global_position = highest_campfire.global_position
+		global_position = highest_campfire.global_position + Vector2(0,-35) #offset to put play standing on the ground
+		velocity = Vector2.ZERO
 		collect_box.process_mode = Node.PROCESS_MODE_INHERIT
 		die_box.process_mode = Node.PROCESS_MODE_INHERIT
 	else:
@@ -389,6 +391,7 @@ func die() -> void:
 		GameManager.player_die()
 		return
 	
+	await get_tree().physics_frame
 	await get_tree().physics_frame
 	dying = false
 
