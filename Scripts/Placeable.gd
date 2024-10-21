@@ -6,6 +6,7 @@ enum PlaceState {QUEUED, PLACING, FALLING, HARPOONED, PLACED, DESTROYED}
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
 @export var state : PlaceState = PlaceState.PLACED
+@export var pathnode_prefab : PackedScene
 @export var indestructable: bool = false:
 	set(new_val):
 		indestructable = new_val
@@ -43,6 +44,7 @@ func _ready() -> void:
 	if (state == PlaceState.FALLING):
 		enter_falling()
 	hold_point_generator = $HoldPointGenerator
+	spawn_pathfinding_nodes()
 	destroy_semaphore.post()
 
 var rotate_debounce: bool = false
@@ -181,7 +183,7 @@ func check_for_collisions() -> bool:
 		modulate.b = 1
 	return is_instance_valid(collision)
 
-func destroy(collision_point_global : Vector2) -> void:
+func destroy(collision_point_global : Vector2, nbr_of_shards : int = 10, min_impulse : float = 50, max_impulse: float = 200) -> void:
 	if indestructable: return
 	if destroy_semaphore.try_wait():
 		if (state != PlaceState.DESTROYED):
@@ -193,9 +195,14 @@ func destroy(collision_point_global : Vector2) -> void:
 					continue
 				if child is CollisionPolygon2D:
 					continue
+				if child is PathNode:
+					child.destroy()
 				else: 
 					child.queue_free()
 			enter_placed()
+			$Sprite2D/ShardEmitter.nbr_of_shards = nbr_of_shards
+			$Sprite2D/ShardEmitter.min_impulse = min_impulse
+			$Sprite2D/ShardEmitter.max_impulse = max_impulse
 			$Sprite2D/ShardEmitter.shatter(collision_point_global)
 
 var mouse_hovering: bool = false
@@ -205,3 +212,11 @@ func _on_mouse_entered() -> void:
 
 func _on_mouse_exited() -> void:
 	mouse_hovering = false
+
+func spawn_pathfinding_nodes() -> void:
+	for spawn_point_idx in len(hold_point_generator.get_generated_points()):
+		var pathnode : Node2D = pathnode_prefab.instantiate()
+		add_child(pathnode)
+		pathnode.position = hold_point_generator.generated_points[spawn_point_idx]
+		var orth_vector : Vector2 = hold_point_generator.generated_orth_vectors[spawn_point_idx]
+		pathnode.rotate(Vector2.UP.angle_to(orth_vector))

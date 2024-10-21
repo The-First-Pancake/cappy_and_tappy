@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://doan6ultjwvin"]
 
 [node name="Shard" type="RigidBody2D"]
+z_index = 100
 collision_layer = 128
 collision_mask = 128
 sleeping = true

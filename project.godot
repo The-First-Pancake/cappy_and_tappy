@@ -23,6 +23,7 @@ GameManager="*res://Scripts/GameManager.gd"
 AudioManager="*res://Scripts/AudioManager.gd"
 Cursor="*res://Prefabs/cursor.tscn"
 SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
+PathFindingGraph="*res://Scripts/PathFindingGraph.gd"
 
 [debug]
 

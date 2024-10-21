@@ -4,6 +4,7 @@ extends Area2D
 
 @onready var block_detector: RayCast2D = $"Block Detector"
 var click_debounce: bool = false
+var exploding: bool = false
 var start_pos: Vector2
 
 @onready var explosion_sound: AudioStreamPlayer = $"Explosion Sound"
@@ -22,7 +23,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	var grid_size: float = GameManager.GRID_SIZE
 	var held: bool = GameManager.currently_held_object == self
-	if held:
+	if held and not exploding:
 
 		if Input.is_action_just_pressed("drop_block"):
 			click_debounce = false
@@ -34,6 +35,7 @@ func _process(delta: float) -> void:
 			if block_detector.is_colliding():
 				var block_collided_with: Placeable = block_detector.get_collider() as Placeable
 				if block_collided_with:
+					exploding = true
 					GameManager.currently_held_object = null
 					animated_sprite_2d.play("fuse")
 					await animated_sprite_2d.animation_finished
@@ -43,7 +45,7 @@ func _process(delta: float) -> void:
 					explosion_animation.reparent(get_parent())
 					explosion_animation.play("explode")
 					explosion_animation.animation_finished.connect(explosion_animation.queue_free)
-					block_collided_with.destroy(global_position)
+					block_collided_with.destroy(global_position, 100, 500, 1000)
 					queue_free()
 					return
 			global_position = start_pos
@@ -55,6 +57,7 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if !m_event: return
 	if !m_event.is_action_released("drop_block"): return
 	if GameManager.currently_held_object != null: return
+	if exploding: return
 	GameManager.currently_held_object = self
 	click_debounce = true
 	

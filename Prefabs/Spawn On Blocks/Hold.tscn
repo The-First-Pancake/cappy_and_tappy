@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://r1kjk04fwuou"]
+[gd_scene load_steps=7 format=3 uid="uid://r1kjk04fwuou"]
 
+[ext_resource type="Script" path="res://Scripts/Hold.gd" id="1_5se8l"]
 [ext_resource type="Texture2D" uid="uid://dpyoyg7dk52w6" path="res://Art/Sprites/hold/Hold.png" id="1_43tsb"]
 [ext_resource type="Texture2D" uid="uid://bnvyxybj0rs1t" path="res://Art/Sprites/hold/Hold_Normal.png" id="2_q3t11"]
 [ext_resource type="Script" path="res://Scripts/Squashable.gd" id="3_wed4u"]
@@ -9,10 +10,11 @@ diffuse_texture = ExtResource("1_43tsb")
 normal_texture = ExtResource("2_q3t11")
 texture_filter = 1
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_xcslr"]
-radius = 9.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tupp5"]
+size = Vector2(20, 12)
 
 [node name="Hold" type="Area2D" groups=["hold"]]
+script = ExtResource("1_5se8l")
 
 [node name="Default2" type="Sprite2D" parent="."]
 position = Vector2(0, -7)
@@ -21,7 +23,13 @@ texture = SubResource("CanvasTexture_vaxov")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -10)
-shape = SubResource("CircleShape2D_xcslr")
+shape = SubResource("RectangleShape2D_tupp5")
 
 [node name="Squashable" type="Node" parent="."]
 script = ExtResource("3_wed4u")
+delete_parent_when_squashed = false
+
+[node name="NodePosition" type="Marker2D" parent="."]
+position = Vector2(0, -32)
+
+[connection signal="squashed" from="Squashable" to="." method="_on_squashable_squashed"]
