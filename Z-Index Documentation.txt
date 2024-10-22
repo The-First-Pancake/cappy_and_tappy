@@ -7,3 +7,6 @@ Here are relevent Z-indexes used by parts of the game:
 - Player Targeting Arrow: 100
 - Shards: 100
 - Camera: 1000
+
+- Pause Menu: Canvas Layer 1
+- Cursor: Canvas Layer 2

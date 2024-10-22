@@ -6,8 +6,11 @@
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_q8g4b"]
 light_mode = 1
 
-[node name="Cursor" type="Sprite2D"]
-z_index = 500
+[node name="Cursor Canvas Layer" type="CanvasLayer"]
+layer = 2
+
+[node name="Cursor" type="Sprite2D" parent="."]
+process_mode = 3
 material = SubResource("CanvasItemMaterial_q8g4b")
 texture = ExtResource("1_k6h5x")
 centered = false

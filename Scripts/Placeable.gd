@@ -69,7 +69,7 @@ func _physics_process(delta: float) -> void:
 		if (Input.is_action_just_pressed("rotate_block_left")):
 			rotation -= deg_to_rad(90)
 			return
-		if (!check_for_collisions() and Input.is_action_just_released("drop_block")):
+		if (!check_for_collisions() and Input.is_action_just_released("drop_block") and GameManager.time_since_unpause > 0.1):
 			await get_tree().physics_frame
 			if GameManager.currently_held_object == self:
 				GameManager.currently_held_object = null
@@ -91,7 +91,7 @@ func _physics_process(delta: float) -> void:
 				enter_placed()
 	elif (state == PlaceState.QUEUED):
 		if Input.is_action_just_released("drop_block"): #Pick Up
-			if GameManager.time_since_level_loaded >= 0.2: #don't pick up the block if the level just loaded
+			if GameManager.time_since_unpause >= 0.2: #don't pick up the block if the level just loaded
 				if GameManager.currently_held_object == null:
 					enter_placing()
 	elif (state == PlaceState.PLACED):

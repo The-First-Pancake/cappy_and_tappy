@@ -8,4 +8,6 @@ func _process(delta: float) -> void:
 
 
 func _on_water_destroy_area_body_entered(body: Node2D) -> void:
+	if body is TileMapLayer: return
+	
 	body.queue_free()
