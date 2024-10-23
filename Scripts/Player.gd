@@ -77,7 +77,9 @@ func exit_level() -> void:
 		dir = -1
 	is_exiting = true
 	velocity.x = 600 * dir
-	await get_tree().create_timer(0.4).timeout
+	await get_tree().create_timer(0.15).timeout
+	visible = false
+	await get_tree().create_timer(1).timeout
 	GameManager.level_complete()
 	is_exiting = false
 

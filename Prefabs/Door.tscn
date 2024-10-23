@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://def2hxxjwwhvl"]
+[gd_scene load_steps=10 format=3 uid="uid://def2hxxjwwhvl"]
 
 [ext_resource type="Script" path="res://Scripts/Door.gd" id="1_4n4fl"]
 [ext_resource type="Texture2D" uid="uid://cfya30mohgthw" path="res://Art/Sprites/door/Door_Background.png" id="2_ed0te"]
@@ -11,10 +11,13 @@ light_mode = 1
 light_mode = 1
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e0y4u"]
-size = Vector2(3, 165)
+size = Vector2(30, 122)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_el28c"]
 size = Vector2(5, 248)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pelwh"]
+size = Vector2(190, 3)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qkgs3"]
 size = Vector2(77, 151)
@@ -38,7 +41,7 @@ scale = Vector2(3.125, 3.125)
 texture = ExtResource("3_slp37")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -116.5)
+position = Vector2(0, -98)
 shape = SubResource("RectangleShape2D_e0y4u")
 
 [node name="Interior Wall" type="StaticBody2D" parent="."]
@@ -52,6 +55,14 @@ shape = SubResource("RectangleShape2D_el28c")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interior Wall2"]
 position = Vector2(95, -124)
 shape = SubResource("RectangleShape2D_el28c")
+
+[node name="Floor" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_pelwh")
+one_way_collision = true
+one_way_collision_margin = 10.0
 
 [node name="Exit Hitbox" type="Area2D" parent="."]
 collision_mask = 3
