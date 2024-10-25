@@ -1,9 +1,9 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://c2yqv4cc4k5jq"]
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://do15l7m1iq11e"]
 
-[ext_resource type="Texture2D" uid="uid://d1vp8nbk3cefk" path="res://Art/Tilemaps/orange tiles.png" id="1_ihhkl"]
+[ext_resource type="Texture2D" uid="uid://dnvu54ogeugcn" path="res://Art/Tilemaps/spr_template_tile47_16x16_by_lotovik_purple.png" id="1_js610"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qv5ff"]
-texture = ExtResource("1_ihhkl")
+texture = ExtResource("1_js610")
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 0
