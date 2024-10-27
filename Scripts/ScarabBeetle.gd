@@ -5,6 +5,8 @@ extends CharacterBody2D
 @onready var middle_raycast: RayCast2D = $"Middle Raycast"
 @onready var rear_raycast: RayCast2D = $RearRaycast
 @onready var player_kill_box: Area2D = $"Player Kill Box"
+@onready var squash_sound: AudioStreamPlayer = $"Squash Sound"
+
 
 var move_speed: float = 75
 var rotate_speed: float = 20
@@ -75,6 +77,7 @@ func _physics_process(delta: float) -> void:
 @onready var brown_stain: Sprite2D = $"Brown Stain"
 
 func die() -> void:
+	AudioManager.PlayAudio(squash_sound)
 	if middle_raycast.get_collider() is Placeable:
 		middle_raycast.get_collider().add_decal(brown_stain, global_position)
 	queue_free()
