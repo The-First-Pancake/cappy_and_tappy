@@ -1,21 +1,39 @@
-[gd_scene load_steps=31 format=3 uid="uid://bjdpxtqaavny0"]
+[gd_scene load_steps=49 format=3 uid="uid://bjdpxtqaavny0"]
 
 [ext_resource type="Script" path="res://Scripts/LevelSelect.gd" id="1_7k26d"]
 [ext_resource type="Texture2D" uid="uid://bqfeqtdw7xcxo" path="res://Art/Sprites/Backgrounds/background.png" id="1_24j1o"]
 [ext_resource type="PackedScene" uid="uid://b3q4i4rqf26xp" path="res://Prefabs/LevelWeenie.tscn" id="3_66fh1"]
+[ext_resource type="PackedScene" uid="uid://cotgqt74hr8q7" path="res://Levels/World1/level_traverse.tscn" id="4_755wy"]
 [ext_resource type="Script" path="res://Scripts/LevelWeenie.gd" id="4_a2yic"]
 [ext_resource type="PackedScene" uid="uid://cfckjpuscavie" path="res://Levels/Endless Level.tscn" id="4_hscby"]
 [ext_resource type="FontVariation" uid="uid://btbr0dkcrkg1g" path="res://Fonts/CenteredPixelFont.tres" id="4_lwxxi"]
-[ext_resource type="PackedScene" uid="uid://7amxmfedeq7u" path="res://Levels/World1/temple_66_hell.tscn" id="4_ptxlh"]
+[ext_resource type="PackedScene" uid="uid://7amxmfedeq7u" path="res://Levels/World1/level_chamber_666.tscn" id="4_ptxlh"]
+[ext_resource type="PackedScene" uid="uid://dbg7ybfkkk4eo" path="res://Levels/World1/level_first_climb.tscn" id="4_vtdfy"]
 [ext_resource type="Script" path="res://Scripts/Reset_Save.gd" id="5_14hdt"]
+[ext_resource type="PackedScene" uid="uid://bk36onmsb3e5e" path="res://Levels/World1/level_campfires_&_spikes.tscn" id="5_jchui"]
+[ext_resource type="PackedScene" uid="uid://h0xc2uwab1j3" path="res://Levels/World1/level_dynamite.tscn" id="5_v5v4l"]
+[ext_resource type="PackedScene" uid="uid://1fovc0qvw1oq" path="res://Levels/World1/level_climbing_holds.tscn" id="6_6rq07"]
 [ext_resource type="Texture2D" uid="uid://cm1bxb5y7kb" path="res://Art/Sprites/UI/ui_throbber.png" id="6_gtpwf"]
+[ext_resource type="PackedScene" uid="uid://cge4flojubrju" path="res://Levels/World1/level_up_&_up.tscn" id="7_2l6xq"]
 [ext_resource type="FontFile" uid="uid://ck4uibtfurjl4" path="res://Fonts/BlockyPixelFont.TTF" id="7_rccux"]
+[ext_resource type="PackedScene" uid="uid://bp3kgem2ebxnl" path="res://Levels/World1/level_overhangs.tscn" id="8_4i4d7"]
 [ext_resource type="Texture2D" uid="uid://cra8a72oqq7vi" path="res://Art/Sprites/Idol.png" id="8_fxcsu"]
+[ext_resource type="PackedScene" uid="uid://df0wpkdny65ci" path="res://Levels/World1/level_dynamite_2.tscn" id="9_00ax2"]
+[ext_resource type="PackedScene" uid="uid://b8ofjhklhy6o" path="res://Levels/World1/level_overhangs_xtreme.tscn" id="9_gryrf"]
 [ext_resource type="Texture2D" uid="uid://dcxkuua4cd4st" path="res://Art/Sprites/fire_small.png" id="9_wrau7"]
+[ext_resource type="PackedScene" uid="uid://bhw8owhdmmapa" path="res://Levels/World1/level_oops_all_long.tscn" id="10_353i2"]
 [ext_resource type="AudioStream" uid="uid://dlhhob0gaa3fn" path="res://Sound/Start Game FX.wav" id="10_rcq0l"]
+[ext_resource type="PackedScene" uid="uid://cr83b1gdrdbjg" path="res://Levels/World1/level_arrows.tscn" id="11_1hlb2"]
 [ext_resource type="Script" path="res://Scripts/MusicPlayer.gd" id="12_8108v"]
+[ext_resource type="PackedScene" uid="uid://bsbavwvcn76q4" path="res://Levels/World1/level_arrows_2.tscn" id="12_q0a2d"]
+[ext_resource type="PackedScene" uid="uid://fei84gx0n70r" path="res://Levels/World1/level_dynamite_3.tscn" id="13_2gj7q"]
+[ext_resource type="PackedScene" uid="uid://d1iy60hbanyjr" path="res://Levels/World1/level_arrow rain.tscn" id="13_m7ssi"]
 [ext_resource type="AudioStream" uid="uid://b7o0nfcidnbwd" path="res://Sound/Music/title_music.wav" id="13_oohv8"]
 [ext_resource type="Script" path="res://Scripts/UnlockAll.gd" id="13_wubfr"]
+[ext_resource type="PackedScene" uid="uid://cwr06a2yerm2q" path="res://Levels/World1/level_breaker.tscn" id="28_haa0c"]
+[ext_resource type="PackedScene" uid="uid://mvlbswmkxjca" path="res://Levels/World1/level_breaker_2.tscn" id="29_ikqai"]
+[ext_resource type="PackedScene" uid="uid://cetdx52yqt2jy" path="res://Levels/World1/level_break_down.tscn" id="30_r66fg"]
+[ext_resource type="PackedScene" uid="uid://bsxmt0huibfmi" path="res://Levels/World1/level_the_walls_are_moving.tscn" id="31_8gmqv"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_pwuex"]
 light_mode = 1
@@ -107,7 +125,7 @@ animations = [{
 "speed": 7.0
 }]
 
-[node name="LevelSelect" type="Control"]
+[node name="LevelSelect" type="Control" node_paths=PackedStringArray("worlds")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -115,7 +133,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7k26d")
-weenie_prefab = ExtResource("3_66fh1")
+worlds = [NodePath("MarginContainer/VBoxContainer/World 1"), NodePath("World 2")]
 
 [node name="Background" type="TextureRect" parent="."]
 texture_filter = 1
@@ -149,21 +167,64 @@ theme_override_constants/margin_bottom = 25
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="Weenie Container" type="HFlowContainer" parent="MarginContainer/VBoxContainer"]
-unique_name_in_owner = true
+[node name="World 1" type="HFlowContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
+size_flags_vertical = 6
 theme_override_constants/h_separation = 15
 theme_override_constants/v_separation = 20
 alignment = 1
+
+[node name="Level - Traverse" parent="MarginContainer/VBoxContainer/World 1" instance=ExtResource("3_66fh1")]
+layout_mode = 2
+scene_to_load = ExtResource("4_755wy")
+
+[node name="Level - First Climb" parent="MarginContainer/VBoxContainer/World 1" instance=ExtResource("3_66fh1")]
+layout_mode = 2
+scene_to_load = ExtResource("4_vtdfy")
+
+[node name="Level - Dynamite" parent="MarginContainer/VBoxContainer/World 1" instance=ExtResource("3_66fh1")]
+layout_mode = 2
+scene_to_load = ExtResource("5_v5v4l")
+
+[node name="Level - Campfires & Spikes" parent="MarginContainer/VBoxContainer/World 1" instance=ExtResource("3_66fh1")]
+layout_mode = 2
+scene_to_load = ExtResource("5_jchui")
+
+[node name="Level - Climbing Holds" parent="MarginContainer/VBoxContainer/World 1" instance=ExtResource("3_66fh1")]
+layout_mode = 2
+scene_to_load = ExtResource("6_6rq07")
+
+[node name="Level - Up & Up" parent="MarginContainer/VBoxContainer/World 1" instance=ExtResource("3_66fh1")]
+layout_mode = 2
+scene_to_load = ExtResource("7_2l6xq")
+
+[node name="Level - Dynamite 2" parent="MarginContainer/VBoxContainer/World 1" instance=ExtResource("3_66fh1")]
+layout_mode = 2
+scene_to_load = ExtResource("9_00ax2")
+
+[node name="Level - Overhangs" parent="MarginContainer/VBoxContainer/World 1" instance=ExtResource("3_66fh1")]
+layout_mode = 2
+scene_to_load = ExtResource("8_4i4d7")
+
+[node name="Level - Overhangs Xtreme" parent="MarginContainer/VBoxContainer/World 1" instance=ExtResource("3_66fh1")]
+layout_mode = 2
+scene_to_load = ExtResource("9_gryrf")
+
+[node name="Level - Oops All Long" parent="MarginContainer/VBoxContainer/World 1" instance=ExtResource("3_66fh1")]
+layout_mode = 2
+scene_to_load = ExtResource("10_353i2")
+
+[node name="Level - Dynamite 3" parent="MarginContainer/VBoxContainer/World 1" instance=ExtResource("3_66fh1")]
+layout_mode = 2
+scene_to_load = ExtResource("13_2gj7q")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 190
 alignment = 1
 
-[node name="Endless" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Level - Endless Level" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 modulate = Color(0.84375, 1, 0.868164, 1)
 custom_minimum_size = Vector2(220, 330)
 layout_mode = 2
@@ -173,75 +234,72 @@ scene_to_load = ExtResource("4_hscby")
 override_text = "Endless"
 endless = true
 
-[node name="Level Icon" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/Endless"]
+[node name="Level Icon" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/Level - Endless Level"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 texture = ExtResource("6_gtpwf")
 stretch_mode = 5
 
-[node name="Level Title" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Endless"]
+[node name="Level Title" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Level - Endless Level"]
 layout_mode = 2
-text = "Level 1"
+text = "Endless"
 label_settings = SubResource("LabelSettings_d7721")
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/Endless"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/Level - Endless Level"]
 custom_minimum_size = Vector2(0, 52)
 layout_mode = 2
-theme_override_constants/separation = 25
 alignment = 1
 
-[node name="Idol 1" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/Endless/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("8_fxcsu")
-expand_mode = 2
-stretch_mode = 4
-
-[node name="High Score Idol" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Endless/HBoxContainer"]
+[node name="High Score Idol" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Level - Endless Level/HBoxContainer"]
 layout_mode = 2
 text = "00"
 label_settings = SubResource("LabelSettings_d7721")
 horizontal_alignment = 1
 
-[node name="High Score Height" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Endless/HBoxContainer"]
+[node name="Idol 1" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/Level - Endless Level/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("8_fxcsu")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Container" type="Container" parent="MarginContainer/VBoxContainer/HBoxContainer/Level - Endless Level/HBoxContainer"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="High Score Height" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Level - Endless Level/HBoxContainer"]
 layout_mode = 2
 text = "000"
 label_settings = SubResource("LabelSettings_d7721")
 horizontal_alignment = 1
 
-[node name="High Score Height2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Endless/HBoxContainer"]
+[node name="High Score Height2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Level - Endless Level/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "m"
 label_settings = SubResource("LabelSettings_0j0m7")
 horizontal_alignment = 1
 
-[node name="CompletedFlames" type="Node2D" parent="MarginContainer/VBoxContainer/HBoxContainer/Endless"]
-position = Vector2(38, 2)
+[node name="CompletedFlames" type="Node2D" parent="MarginContainer/VBoxContainer/HBoxContainer/Level - Endless Level"]
+position = Vector2(19, -3)
 
-[node name="flame" type="AnimatedSprite2D" parent="MarginContainer/VBoxContainer/HBoxContainer/Endless/CompletedFlames"]
+[node name="flame" type="AnimatedSprite2D" parent="MarginContainer/VBoxContainer/HBoxContainer/Level - Endless Level/CompletedFlames"]
 position = Vector2(87.1429, 101.429)
 scale = Vector2(3.15, 3.15)
 sprite_frames = SubResource("SpriteFrames_8jjmw")
 autoplay = "default"
 frame_progress = 0.832069
 
-[node name="flame2" type="AnimatedSprite2D" parent="MarginContainer/VBoxContainer/HBoxContainer/Endless/CompletedFlames"]
+[node name="flame2" type="AnimatedSprite2D" parent="MarginContainer/VBoxContainer/HBoxContainer/Level - Endless Level/CompletedFlames"]
 position = Vector2(132.857, 101.429)
 scale = Vector2(3.15, 3.15)
 sprite_frames = SubResource("SpriteFrames_8jjmw")
 autoplay = "default"
 frame_progress = 0.601985
 
-[node name="StartGameFx" type="AudioStreamPlayer" parent="MarginContainer/VBoxContainer/HBoxContainer/Endless"]
+[node name="StartGameFx" type="AudioStreamPlayer" parent="MarginContainer/VBoxContainer/HBoxContainer/Level - Endless Level"]
 stream = ExtResource("10_rcq0l")
 volume_db = -5.0
-
-[node name="Level666" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("3_66fh1")]
-modulate = Color(1, 0.550781, 0.550781, 1)
-layout_mode = 2
-scene_to_load = ExtResource("4_ptxlh")
-override_text = "Level 666"
 
 [node name="Unlock All" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 modulate = Color(0.550781, 0.589386, 1, 1)
@@ -398,8 +456,68 @@ theme_override_font_sizes/font_size = 25
 text = "Instagram"
 uri = "https://www.instagram.com/wearethefirstpancake/"
 
-[node name="Music Player" type="Node2D" parent="."]
-position = Vector2(1133, 681)
+[node name="World 2" type="HFlowContainer" parent="."]
+layout_mode = 2
+offset_left = 2049.0
+offset_top = 150.0
+offset_right = 3919.0
+offset_bottom = 480.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 20
+alignment = 1
+
+[node name="Level - Arrows" parent="World 2" instance=ExtResource("3_66fh1")]
+layout_mode = 2
+scene_to_load = ExtResource("11_1hlb2")
+
+[node name="Level - Arrows 2" parent="World 2" instance=ExtResource("3_66fh1")]
+layout_mode = 2
+scene_to_load = ExtResource("12_q0a2d")
+
+[node name="Level - Arrow Rain" parent="World 2" instance=ExtResource("3_66fh1")]
+layout_mode = 2
+scene_to_load = ExtResource("13_m7ssi")
+
+[node name="Level - Breaker" parent="World 2" instance=ExtResource("3_66fh1")]
+layout_mode = 2
+scene_to_load = ExtResource("28_haa0c")
+
+[node name="Level - Breaker 2" parent="World 2" instance=ExtResource("3_66fh1")]
+layout_mode = 2
+scene_to_load = ExtResource("29_ikqai")
+
+[node name="Level - Break Down" parent="World 2" instance=ExtResource("3_66fh1")]
+layout_mode = 2
+scene_to_load = ExtResource("30_r66fg")
+
+[node name="Level - The Walls Are Moving" parent="World 2" instance=ExtResource("3_66fh1")]
+layout_mode = 2
+scene_to_load = ExtResource("31_8gmqv")
+
+[node name="Level - Chamber 666" parent="World 2" instance=ExtResource("3_66fh1")]
+modulate = Color(1, 0.550781, 0.550781, 1)
+layout_mode = 2
+scene_to_load = ExtResource("4_ptxlh")
+
+[node name="Next World Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1637.0
+offset_top = 644.0
+offset_right = 1862.0
+offset_bottom = 722.0
+text = "Next World >"
+
+[node name="Previous World Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 664.0
+offset_right = 258.0
+offset_bottom = 742.0
+text = "< Previous World"
+
+[node name="Music Player" type="Node" parent="."]
 script = ExtResource("12_8108v")
 
 [node name="Music" type="AudioStreamPlayer" parent="Music Player"]
@@ -407,12 +525,14 @@ unique_name_in_owner = true
 stream = ExtResource("13_oohv8")
 volume_db = -7.0
 
-[connection signal="gui_input" from="MarginContainer/VBoxContainer/HBoxContainer/Endless" to="MarginContainer/VBoxContainer/HBoxContainer/Endless" method="_on_gui_input"]
-[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/HBoxContainer/Endless" to="MarginContainer/VBoxContainer/HBoxContainer/Endless" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="MarginContainer/VBoxContainer/HBoxContainer/Endless" to="MarginContainer/VBoxContainer/HBoxContainer/Endless" method="_on_mouse_exited"]
+[connection signal="gui_input" from="MarginContainer/VBoxContainer/HBoxContainer/Level - Endless Level" to="MarginContainer/VBoxContainer/HBoxContainer/Level - Endless Level" method="_on_gui_input"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/HBoxContainer/Level - Endless Level" to="MarginContainer/VBoxContainer/HBoxContainer/Level - Endless Level" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/VBoxContainer/HBoxContainer/Level - Endless Level" to="MarginContainer/VBoxContainer/HBoxContainer/Level - Endless Level" method="_on_mouse_exited"]
 [connection signal="gui_input" from="MarginContainer/VBoxContainer/HBoxContainer/Unlock All" to="MarginContainer/VBoxContainer/HBoxContainer/Unlock All" method="_on_gui_input"]
 [connection signal="mouse_entered" from="MarginContainer/VBoxContainer/HBoxContainer/Unlock All" to="MarginContainer/VBoxContainer/HBoxContainer/Unlock All" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="MarginContainer/VBoxContainer/HBoxContainer/Unlock All" to="MarginContainer/VBoxContainer/HBoxContainer/Unlock All" method="_on_mouse_exited"]
 [connection signal="gui_input" from="MarginContainer/VBoxContainer/HBoxContainer/Reset Save" to="MarginContainer/VBoxContainer/HBoxContainer/Reset Save" method="_on_gui_input"]
 [connection signal="mouse_entered" from="MarginContainer/VBoxContainer/HBoxContainer/Reset Save" to="MarginContainer/VBoxContainer/HBoxContainer/Reset Save" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="MarginContainer/VBoxContainer/HBoxContainer/Reset Save" to="MarginContainer/VBoxContainer/HBoxContainer/Reset Save" method="_on_mouse_exited"]
+[connection signal="button_down" from="Next World Button" to="." method="next_world"]
+[connection signal="button_down" from="Previous World Button" to="." method="previous_world"]

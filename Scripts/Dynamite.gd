@@ -22,7 +22,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	var grid_size: float = GameManager.GRID_SIZE
 	var held: bool = GameManager.currently_held_object == self
 	if held and not exploding:
 

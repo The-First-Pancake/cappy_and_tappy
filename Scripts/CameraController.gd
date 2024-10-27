@@ -52,7 +52,6 @@ func _process(delta: float) -> void:
 	if stationary_cam: return
 	
 	
-	var free_cam: bool = true
 	var cam_zone: CameraZone = GameManager.player.current_camera_zone
 	var target_position: Vector2 = GameManager.player.global_position
 	

@@ -1,39 +1,60 @@
+@tool
 class_name LevelWeenie
 extends Control
 
 var level_idx : int = 1
 
-@export var scene_to_load: PackedScene
+@export var scene_to_load: PackedScene:
+	set(new_val):
+		scene_to_load = new_val
+		if is_node_ready():
+			update_level_name()
+
 @export var override_text: String = ""
 @export var endless: bool = false
 
-
 @onready var start_sound: AudioStreamPlayer = $StartGameFx
-
-@onready var level_title: Label = $"Level Title"
+var level_title: Label:
+	get:
+		return $"Level Title"
 @onready var completed_flames: Node2D = $CompletedFlames
 
 var unlocked: bool = false
 
+func update_level_name() -> void:
+	var level_name: String = override_text
+	if override_text == "":
+		level_name = scene_to_load.resource_path.get_file().get_basename()
+		level_name = level_name.get_slice(".",0)
+		level_name = level_name.replace("level_","")
+		level_name = level_name.capitalize()
+		name = "Level - " + level_name
+	level_title.text = level_name
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if level_idx == 1:
+	update_level_name()
+	
+	if Engine.is_editor_hint():
+		return
+	
+	
+	level_idx = get_index()
+	
+	if level_idx == 0:
 		call_deferred("grab_focus")
 		unlocked = true
 	else:
-		var previous_level: PackedScene = GameManager.levels[level_idx-2]
-		if GameManager.current_save.is_level_complete(previous_level):
+		var levels_in_this_world: Array[Node] = get_parent().get_children()
+		var previous_level: LevelWeenie = levels_in_this_world[level_idx-1] as LevelWeenie
+		if GameManager.current_save.is_level_complete(previous_level.scene_to_load):
 			unlocked = true
-		
-	if override_text != "":
-		level_title.text = override_text
-	else:
-		level_title.text = "Level " + str(level_idx)
-		
+	
+
 	if (GameManager.current_save.is_level_complete(scene_to_load) or endless):
 		unlocked = true
 		completed_flames.show()
-		
+	
 	visible = unlocked
 	if (!endless):
 		var idol_1: TextureRect = $"HBoxContainer/Idol 1"
@@ -59,16 +80,22 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func _on_mouse_entered() -> void:
+	if Engine.is_editor_hint():
+		return
 	modulate.r /= 2
 	modulate.g /= 2
 	modulate.b /= 2
 
 func _on_mouse_exited() -> void:
+	if Engine.is_editor_hint():
+		return
 	modulate.r *= 2
 	modulate.g *= 2
 	modulate.b *= 2
 
 func _on_gui_input(event: InputEvent) -> void:
+	if Engine.is_editor_hint():
+		return
 	if event.is_action_pressed("drop_block"):	
 		AudioManager.PlayAudio(start_sound)
 		GameManager.load_level_from_packed(scene_to_load)

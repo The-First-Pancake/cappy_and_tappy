@@ -6,24 +6,7 @@ var exit_door : Door = null
 
 const GRID_SIZE: float = 50
 
-@onready var levels : Array[PackedScene] = [
-		preload("res://Levels/World1/temple_1_intro.tscn"),
-		preload("res://Levels/World1/temple_2_spikes.tscn"),
-		preload("res://Levels/World1/temple_3_holds.tscn"),
-		preload("res://Levels/World1/temple_4.tscn"),
-		preload("res://Levels/World1/temple_5_overhangs.tscn"),
-		preload("res://Levels/World1/temple_6_overhangs_xtreme.tscn"),
-		preload("res://Levels/World1/temple_7_oops_all_long.tscn"),
-		preload("res://Levels/World1/temple_8_arrows.tscn"),
-		preload("res://Levels/World1/temple_9_arrows_on_holds.tscn"),
-		preload("res://Levels/World1/temple_10_arrow rain.tscn"),
-		preload("res://Levels/World1/temple_11_breaker_intro.tscn"),
-		preload("res://Levels/World1/temple_12_breaker_dropper.tscn"),
-		preload("res://Levels/World1/temple_13_reverse_breaker.tscn"),
-		preload("res://Levels/World1/temple_15_crawlers_everywhere!.tscn"),
-		preload("res://Levels/World1/temple_16_harpoons_intro.tscn"),
-		preload("res://Levels/World1/temple_17_dynamite.tscn"),
-	]
+@onready var levels : Array[PackedScene] = []
 
 var current_level : PackedScene = null
 var level_select_scene: PackedScene = preload("res://Levels/LevelSelect.tscn")
@@ -35,7 +18,7 @@ var current_save: GameSave = null
 var currently_held_object: Node2D = null
 var time_since_level_loaded: float = 0
 var time_since_unpause: float = 0
-
+var current_world: int = 0
 
 signal loaded_new_scene
 

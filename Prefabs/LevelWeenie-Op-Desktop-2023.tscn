@@ -63,9 +63,7 @@ texture = ExtResource("2_u6lqa")
 stretch_mode = 5
 
 [node name="Level Title" type="Label" parent="."]
-custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
-text = "fadfkahdfkj dfhakjhf fak"
 label_settings = SubResource("LabelSettings_d7721")
 horizontal_alignment = 1
 autowrap_mode = 2

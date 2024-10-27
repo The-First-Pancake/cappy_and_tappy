@@ -1,0 +1,296 @@
+[gd_scene load_steps=14 format=3 uid="uid://fei84gx0n70r"]
+
+[ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_ab74x"]
+[ext_resource type="Script" path="res://Scripts/SpawnObject.gd" id="2_a01ky"]
+[ext_resource type="PackedScene" uid="uid://dhrgrpwwax6i8" path="res://Prefabs/Spawn On Blocks/Spikes.tscn" id="2_egqk4"]
+[ext_resource type="PackedScene" uid="uid://hetb2cu4cbew" path="res://Prefabs/Spawn On Blocks/BreakerSpike.tscn" id="3_exrhx"]
+[ext_resource type="AudioStream" uid="uid://bs0ib4ihh3wc1" path="res://Sound/Music/Chill Level Music gmtk game jam 2024.wav" id="5_kw2u5"]
+[ext_resource type="PackedScene" uid="uid://c4safo4pwme48" path="res://Prefabs/Blocks/1x4-Piece.tscn" id="6_bg5ys"]
+[ext_resource type="PackedScene" uid="uid://mcu32jepdsb3" path="res://Prefabs/Dynamite.tscn" id="6_w00kd"]
+[ext_resource type="PackedScene" uid="uid://r1kjk04fwuou" path="res://Prefabs/Spawn On Blocks/Hold.tscn" id="7_prfip"]
+[ext_resource type="PackedScene" uid="uid://b1lrc4bb14deo" path="res://Prefabs/Blocks/L-Piece.tscn" id="8_l02yu"]
+[ext_resource type="PackedScene" uid="uid://cqrk66u8spi3" path="res://Prefabs/Blocks/Z-Piece.tscn" id="9_tieo0"]
+[ext_resource type="PackedScene" uid="uid://bdyf8npx3i7xk" path="res://Prefabs/Blocks/2x2-Piece.tscn" id="10_fg5cn"]
+[ext_resource type="PackedScene" uid="uid://caudmtkjwca1i" path="res://Prefabs/Blocks/L-Piece-Mirrored.tscn" id="11_jubwp"]
+
+[sub_resource type="Resource" id="Resource_xd867"]
+script = ExtResource("2_a01ky")
+spawn_prefab = ExtResource("3_exrhx")
+spawn_count = 1
+
+[node name="Template Level" instance=ExtResource("1_ab74x")]
+
+[node name="Left Wall#Hold5" parent="." index="0" instance=ExtResource("7_prfip")]
+position = Vector2(346.24, 3656.96)
+rotation = 1.57081
+scale = Vector2(0.32, 0.32)
+
+[node name="Floor#Spikes5" parent="." index="1" instance=ExtResource("2_egqk4")]
+position = Vector2(80, 0)
+scale = Vector2(0.32, 0.32)
+
+[node name="Floor#Spikes6" parent="." index="2" instance=ExtResource("2_egqk4")]
+position = Vector2(112, 0)
+scale = Vector2(0.32, 0.32)
+
+[node name="Floor#Spikes7" parent="." index="3" instance=ExtResource("2_egqk4")]
+position = Vector2(144, 0)
+scale = Vector2(0.32, 0.32)
+
+[node name="Floor#Spikes8" parent="." index="4" instance=ExtResource("2_egqk4")]
+position = Vector2(176, 0)
+scale = Vector2(0.32, 0.32)
+
+[node name="Floor#Spikes9" parent="." index="5" instance=ExtResource("2_egqk4")]
+position = Vector2(208, 0)
+scale = Vector2(0.32, 0.32)
+
+[node name="Floor#Spikes10" parent="." index="6" instance=ExtResource("2_egqk4")]
+position = Vector2(240, 0)
+scale = Vector2(0.32, 0.32)
+
+[node name="Floor#Spikes11" parent="." index="7" instance=ExtResource("2_egqk4")]
+position = Vector2(272, 0)
+scale = Vector2(0.32, 0.32)
+
+[node name="Floor#Spikes12" parent="." index="8" instance=ExtResource("2_egqk4")]
+position = Vector2(304, 0)
+scale = Vector2(0.32, 0.32)
+
+[node name="Entrance Door" parent="." index="10"]
+position = Vector2(900, 250)
+
+[node name="Exit Door" parent="." index="11"]
+position = Vector2(900, 750)
+
+[node name="Spikes5" parent="Environment" index="0" instance=ExtResource("2_egqk4")]
+position = Vector2(576, 336)
+scale = Vector2(0.32, 0.32)
+
+[node name="Spikes6" parent="Environment" index="1" instance=ExtResource("2_egqk4")]
+position = Vector2(544, 336)
+scale = Vector2(0.32, 0.32)
+
+[node name="Spikes7" parent="Environment" index="2" instance=ExtResource("2_egqk4")]
+position = Vector2(512, 336)
+scale = Vector2(0.32, 0.32)
+
+[node name="Spikes8" parent="Environment" index="3" instance=ExtResource("2_egqk4")]
+position = Vector2(480, 336)
+scale = Vector2(0.32, 0.32)
+
+[node name="Spikes9" parent="Environment" index="4" instance=ExtResource("2_egqk4")]
+position = Vector2(448, 336)
+scale = Vector2(0.32, 0.32)
+
+[node name="Spikes10" parent="Environment" index="5" instance=ExtResource("2_egqk4")]
+position = Vector2(416, 336)
+scale = Vector2(0.32, 0.32)
+
+[node name="Spikes11" parent="Environment" index="6" instance=ExtResource("2_egqk4")]
+position = Vector2(384, 336)
+scale = Vector2(0.32, 0.32)
+
+[node name="Spikes12" parent="Environment" index="7" instance=ExtResource("2_egqk4")]
+position = Vector2(352, 336)
+scale = Vector2(0.32, 0.32)
+
+[node name="Spikes13" parent="Environment" index="8" instance=ExtResource("2_egqk4")]
+position = Vector2(320, 336)
+scale = Vector2(0.32, 0.32)
+
+[node name="Player" parent="." index="15"]
+position = Vector2(833, 200)
+
+[node name="PlaceableCharacterBody2d14" parent="." index="17" instance=ExtResource("6_bg5ys")]
+position = Vector2(900, 300)
+rotation = 4.7124
+
+[node name="PlaceableCharacterBody2d15" parent="." index="18" instance=ExtResource("6_bg5ys")]
+position = Vector2(900, 400)
+rotation = 4.7124
+
+[node name="PlaceableCharacterBody2d18" parent="." index="19" instance=ExtResource("6_bg5ys")]
+position = Vector2(1400, 800)
+rotation = 7.85399
+
+[node name="Hold4" parent="PlaceableCharacterBody2d18" index="5" instance=ExtResource("7_prfip")]
+position = Vector2(49.9983, -150.001)
+rotation = 1.5708
+
+[node name="Hold5" parent="PlaceableCharacterBody2d18" index="6" instance=ExtResource("7_prfip")]
+position = Vector2(50.0011, 99.9994)
+rotation = 1.5708
+
+[node name="PlaceableCharacterBody2d19" parent="." index="20" instance=ExtResource("6_bg5ys")]
+position = Vector2(1000, 800)
+rotation = 7.85399
+
+[node name="Hold4" parent="PlaceableCharacterBody2d19" index="5" instance=ExtResource("7_prfip")]
+position = Vector2(49.9994, -50.0006)
+rotation = 1.5708
+
+[node name="Hold5" parent="PlaceableCharacterBody2d19" index="6" instance=ExtResource("7_prfip")]
+position = Vector2(0.00169373, 200)
+rotation = 3.14159
+
+[node name="PlaceableCharacterBody2d22" parent="." index="21" instance=ExtResource("6_bg5ys")]
+position = Vector2(1400, 500)
+rotation = 7.85399
+
+[node name="PlaceableCharacterBody2d20" parent="." index="22" instance=ExtResource("6_bg5ys")]
+position = Vector2(1300, 300)
+rotation = 4.7124
+
+[node name="Spikes2" parent="PlaceableCharacterBody2d20" index="5" instance=ExtResource("2_egqk4")]
+position = Vector2(49.9984, -150.001)
+rotation = 1.57079
+
+[node name="Spikes3" parent="PlaceableCharacterBody2d20" index="6" instance=ExtResource("2_egqk4")]
+position = Vector2(50.0005, 49.9994)
+rotation = 1.57079
+
+[node name="PlaceableCharacterBody2d21" parent="." index="23" instance=ExtResource("6_bg5ys")]
+position = Vector2(1700, 300)
+rotation = 4.7124
+
+[node name="Spikes4" parent="PlaceableCharacterBody2d21" index="5" instance=ExtResource("2_egqk4")]
+position = Vector2(49.9983, -150.001)
+rotation = 1.57079
+
+[node name="PlaceableCharacterBody2d6" parent="." index="24" instance=ExtResource("6_bg5ys")]
+position = Vector2(1050, 50)
+rotation = 6.28319
+
+[node name="Hold" parent="PlaceableCharacterBody2d6" index="5" instance=ExtResource("7_prfip")]
+position = Vector2(-50.0003, -49.9998)
+rotation = -1.5708
+
+[node name="Hold2" parent="PlaceableCharacterBody2d6" index="6" instance=ExtResource("7_prfip")]
+position = Vector2(49.9997, -50.0002)
+rotation = 1.5708
+
+[node name="Spikes" parent="PlaceableCharacterBody2d6" index="7" instance=ExtResource("2_egqk4")]
+position = Vector2(-0.000854492, -200)
+
+[node name="PlaceableCharacterBody2d7" parent="." index="25" instance=ExtResource("6_bg5ys")]
+position = Vector2(1250, 50)
+rotation = 6.28319
+
+[node name="Hold" parent="PlaceableCharacterBody2d7" index="5" instance=ExtResource("7_prfip")]
+position = Vector2(-50.0003, -49.9998)
+rotation = -1.5708
+
+[node name="Hold2" parent="PlaceableCharacterBody2d7" index="6" instance=ExtResource("7_prfip")]
+position = Vector2(49.9997, -50.0002)
+rotation = 1.5708
+
+[node name="Spikes" parent="PlaceableCharacterBody2d7" index="7" instance=ExtResource("2_egqk4")]
+position = Vector2(-0.000854492, -200)
+
+[node name="PlaceableCharacterBody2d8" parent="." index="26" instance=ExtResource("6_bg5ys")]
+position = Vector2(1450, 50)
+rotation = 6.28319
+
+[node name="Hold" parent="PlaceableCharacterBody2d8" index="5" instance=ExtResource("7_prfip")]
+position = Vector2(-50.0003, -49.9998)
+rotation = -1.5708
+
+[node name="Hold2" parent="PlaceableCharacterBody2d8" index="6" instance=ExtResource("7_prfip")]
+position = Vector2(49.9997, -50.0002)
+rotation = 1.5708
+
+[node name="Spikes" parent="PlaceableCharacterBody2d8" index="7" instance=ExtResource("2_egqk4")]
+position = Vector2(-0.000854492, -200)
+
+[node name="PlaceableCharacterBody2d9" parent="." index="27" instance=ExtResource("6_bg5ys")]
+position = Vector2(1650, 50)
+rotation = 6.28319
+
+[node name="Hold" parent="PlaceableCharacterBody2d9" index="5" instance=ExtResource("7_prfip")]
+position = Vector2(-50.0003, -49.9998)
+rotation = -1.5708
+
+[node name="Hold2" parent="PlaceableCharacterBody2d9" index="6" instance=ExtResource("7_prfip")]
+position = Vector2(49.9997, -50.0002)
+rotation = 1.5708
+
+[node name="Spikes" parent="PlaceableCharacterBody2d9" index="7" instance=ExtResource("2_egqk4")]
+position = Vector2(-0.000854492, -200)
+
+[node name="PlaceableCharacterBody2d25" parent="." index="28" instance=ExtResource("8_l02yu")]
+position = Vector2(1650, 500)
+rotation = 31.4159
+
+[node name="2x2 Piiece3" parent="." index="29" instance=ExtResource("10_fg5cn")]
+position = Vector2(1850, 450)
+rotation = 3.1416
+
+[node name="PlaceableCharacterBody2d23" parent="." index="30" instance=ExtResource("11_jubwp")]
+position = Vector2(1950, 500)
+rotation = 28.2743
+
+[node name="PlaceableCharacterBody2d24" parent="." index="31" instance=ExtResource("11_jubwp")]
+position = Vector2(1900, 650)
+rotation = 29.8451
+
+[node name="PlaceableCharacterBody2d26" parent="." index="32" instance=ExtResource("11_jubwp")]
+position = Vector2(1950, 900)
+rotation = 31.4159
+
+[node name="Hold3" parent="PlaceableCharacterBody2d26" index="5" instance=ExtResource("7_prfip")]
+position = Vector2(-100, -0.00427246)
+rotation = -1.57075
+
+[node name="PlaceableCharacterBody2d27" parent="." index="33" instance=ExtResource("11_jubwp")]
+position = Vector2(800, 1100)
+rotation = 31.4159
+
+[node name="Z-Piece" parent="." index="34" instance=ExtResource("9_tieo0")]
+position = Vector2(1150, 450)
+rotation = 14.1372
+
+[node name="Z-Piece3" parent="." index="35" instance=ExtResource("9_tieo0")]
+position = Vector2(1200, 650)
+rotation = 14.1372
+
+[node name="Z-Piece4" parent="." index="36" instance=ExtResource("9_tieo0")]
+position = Vector2(1500, 650)
+rotation = 14.1372
+
+[node name="Camera2D" parent="." index="37"]
+position = Vector2(1150, 996)
+
+[node name="BlockSpawner" parent="Camera2D" index="1"]
+block_prefabs = Array[PackedScene]([])
+spawn_objects = Array[ExtResource("2_a01ky")]([SubResource("Resource_xd867")])
+spawn_object_probability = 0.075
+
+[node name="Dynamite" parent="Camera2D" index="2"]
+position = Vector2(-883, 65)
+
+[node name="Dynamite4" parent="Camera2D" index="3" instance=ExtResource("6_w00kd")]
+position = Vector2(-883, -37)
+
+[node name="Dynamite3" parent="Camera2D" index="4"]
+visible = false
+position = Vector2(-883, 265)
+
+[node name="Dynamite2" parent="Camera2D" index="5"]
+position = Vector2(-883, 165)
+
+[node name="Water" parent="." index="38"]
+rise_speed = 0.0
+
+[node name="Idol" parent="." index="39"]
+position = Vector2(850, 950)
+
+[node name="Idol2" parent="." index="40"]
+position = Vector2(1350, 450)
+
+[node name="Idol3" parent="." index="41"]
+position = Vector2(1800, 250)
+
+[node name="Music" parent="Music Player" index="0"]
+stream = ExtResource("5_kw2u5")
+volume_db = -5.0
