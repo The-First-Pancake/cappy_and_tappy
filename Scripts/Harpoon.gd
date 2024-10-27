@@ -34,14 +34,13 @@ func _physics_process(delta: float) -> void:
 				direction = direction.normalized()
 				direction = direction.round()
 				rope.visible = true
-				var tween: Tween = get_tree().create_tween()
 				var range: float = 1600
 				var speed: float = 6000
 				
 				var hit_block: Node2D = null
 				
 				for i in range(range):
-					harpoon_raycast.target_position.y = -speed * delta #The harpoon checks the entire distance it's about to traverse
+					harpoon_raycast.target_position.y = -speed * delta #The harpoon checks the ahead for the distance it's about to traverse
 					if harpoon_raycast.get_collider():
 						hit_block = harpoon_raycast.get_collider()
 						harpoon.global_position = harpoon_raycast.get_collision_point() - direction * 50
@@ -53,7 +52,7 @@ func _physics_process(delta: float) -> void:
 				
 				
 				has_harpoon_landed = true
-				tween.stop()
+
 				if hit_block and hit_block is Placeable:
 					hit_block.enter_harpooned(-direction)
 					var cell_hit_pos: Vector2 = hit_block.get_closest_cell_center(harpoon.global_position)

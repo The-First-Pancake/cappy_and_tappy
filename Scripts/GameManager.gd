@@ -6,7 +6,7 @@ var exit_door : Door = null
 
 const GRID_SIZE: float = 50
 
-@onready var levels : Array[PackedScene] = []
+var levels : Array[PackedScene] = []
 
 var current_level : PackedScene = null
 var level_select_scene: PackedScene = preload("res://Levels/LevelSelect.tscn")

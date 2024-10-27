@@ -11,11 +11,14 @@ func _physics_process(_delta: float) -> void:
 		move_and_slide()
 		var collision : KinematicCollision2D = get_last_slide_collision()
 		if collision:
+			if collision.get_collider() is ScarabBeetle:
+				collision.get_collider().die()
+				return
 			self.reparent(collision.get_collider())
 			stick_in_object()
 			if collision.get_collider() is Player:
 				collision.get_collider().die()
-		
+
 func stick_in_object() -> void:
 	speed = 0
 	show_behind_parent = true

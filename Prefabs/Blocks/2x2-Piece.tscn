@@ -4,17 +4,16 @@
 [ext_resource type="Texture2D" uid="uid://bgbj2rojo6din" path="res://Art/Sprites/Tetronimoes/2x2_Piece.png" id="2_1yifi"]
 [ext_resource type="Texture2D" uid="uid://dl7r6cjditnjt" path="res://Art/Sprites/Tetronimoes/2x2_Piece_Normal.png" id="3_xi0mb"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_jivrq"]
+[sub_resource type="CanvasTexture" id="CanvasTexture_0jdb0"]
 diffuse_texture = ExtResource("2_1yifi")
 normal_texture = ExtResource("3_xi0mb")
-texture_filter = 1
 
 [node name="2x2 Piiece" instance=ExtResource("1_q0m3r")]
 rotation = 7.85398
 
-[node name="Sprite2D" parent="." index="2"]
-position = Vector2(-100, -100)
-texture = SubResource("CanvasTexture_jivrq")
+[node name="Sprite" parent="." index="2"]
+position = Vector2(-99.9998, -100)
+texture = SubResource("CanvasTexture_0jdb0")
 
 [node name="CollisionPolygon2D" parent="." index="3"]
 polygon = PackedVector2Array(-99, 99, -99, -99, 99, -99, 99, 99)

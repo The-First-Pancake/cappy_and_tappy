@@ -191,6 +191,8 @@ Mute={
 
 2d_physics/layer_1="Solids"
 2d_physics/layer_2="Player"
+2d_physics/layer_3="Arrow"
+2d_physics/layer_4="Creatures"
 2d_physics/layer_7="Unplaced"
 2d_physics/layer_8="gibs"
 

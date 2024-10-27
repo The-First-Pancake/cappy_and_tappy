@@ -38,6 +38,8 @@ func _ready() -> void:
 	if Engine.is_editor_hint():
 		return
 	
+	if !GameManager.levels.has(scene_to_load):
+		GameManager.levels.append(scene_to_load)
 	
 	level_idx = get_index()
 	
@@ -55,7 +57,10 @@ func _ready() -> void:
 		unlocked = true
 		completed_flames.show()
 	
-	visible = unlocked
+	if !unlocked:
+		modulate.r /= 3
+		modulate.g /= 3
+		modulate.b /= 3
 	if (!endless):
 		var idol_1: TextureRect = $"HBoxContainer/Idol 1"
 		var idol_2: TextureRect = $"HBoxContainer/Idol 2"
@@ -82,6 +87,8 @@ func _ready() -> void:
 func _on_mouse_entered() -> void:
 	if Engine.is_editor_hint():
 		return
+	if !unlocked:
+		return
 	modulate.r /= 2
 	modulate.g /= 2
 	modulate.b /= 2
@@ -89,12 +96,16 @@ func _on_mouse_entered() -> void:
 func _on_mouse_exited() -> void:
 	if Engine.is_editor_hint():
 		return
+	if !unlocked:
+		return
 	modulate.r *= 2
 	modulate.g *= 2
 	modulate.b *= 2
 
 func _on_gui_input(event: InputEvent) -> void:
 	if Engine.is_editor_hint():
+		return
+	if !unlocked:
 		return
 	if event.is_action_pressed("drop_block"):	
 		AudioManager.PlayAudio(start_sound)

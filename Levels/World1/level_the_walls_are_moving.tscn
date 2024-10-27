@@ -1,13 +1,14 @@
-[gd_scene load_steps=13 format=3 uid="uid://bsxmt0huibfmi"]
+[gd_scene load_steps=15 format=3 uid="uid://bsxmt0huibfmi"]
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_jhrg7"]
 [ext_resource type="Script" path="res://Scripts/SpawnObject.gd" id="2_kk4ad"]
 [ext_resource type="PackedScene" uid="uid://r1kjk04fwuou" path="res://Prefabs/Spawn On Blocks/Hold.tscn" id="3_be4rd"]
 [ext_resource type="PackedScene" uid="uid://dgwixm1vxqs6t" path="res://Prefabs/Spawn On Blocks/Scarab_Beetle.tscn" id="4_qcl3k"]
+[ext_resource type="PackedScene" uid="uid://dhrgrpwwax6i8" path="res://Prefabs/Spawn On Blocks/Spikes.tscn" id="5_8r53u"]
 [ext_resource type="PackedScene" uid="uid://c4safo4pwme48" path="res://Prefabs/Blocks/1x4-Piece.tscn" id="5_dty44"]
 [ext_resource type="PackedScene" uid="uid://bkatak76uuoli" path="res://Prefabs/Spawn On Blocks/Campfire.tscn" id="5_eitee"]
 [ext_resource type="PackedScene" uid="uid://b1lrc4bb14deo" path="res://Prefabs/Blocks/L-Piece.tscn" id="6_ips2k"]
-[ext_resource type="PackedScene" uid="uid://caudmtkjwca1i" path="res://Prefabs/Blocks/L-Piece-Mirrored.tscn" id="7_uonfs"]
+[ext_resource type="PackedScene" uid="uid://cn5g0kaav20lj" path="res://Prefabs/Spawn On Blocks/ArrowSpitter.tscn" id="6_ran0i"]
 [ext_resource type="PackedScene" uid="uid://bdyf8npx3i7xk" path="res://Prefabs/Blocks/2x2-Piece.tscn" id="9_xjyhq"]
 
 [sub_resource type="Resource" id="Resource_fa0pl"]
@@ -15,116 +16,113 @@ script = ExtResource("2_kk4ad")
 spawn_prefab = ExtResource("3_be4rd")
 spawn_count = 10
 
-[sub_resource type="Resource" id="Resource_bl7r2"]
-script = ExtResource("2_kk4ad")
-spawn_prefab = ExtResource("4_qcl3k")
-spawn_count = 15
-
 [sub_resource type="Resource" id="Resource_q3by3"]
 script = ExtResource("2_kk4ad")
 spawn_prefab = ExtResource("5_eitee")
 spawn_count = 5
 
+[sub_resource type="Resource" id="Resource_bl7r2"]
+script = ExtResource("2_kk4ad")
+spawn_prefab = ExtResource("5_8r53u")
+spawn_count = 5
+
+[sub_resource type="Resource" id="Resource_mjlyc"]
+script = ExtResource("2_kk4ad")
+spawn_prefab = ExtResource("6_ran0i")
+spawn_count = 5
+
 [node name="Template Level" instance=ExtResource("1_jhrg7")]
 
-[node name="Entrance Door" parent="." index="1"]
-position = Vector2(1100, 1050)
-
-[node name="Exit Door" parent="." index="2"]
-position = Vector2(1200, -1000)
-
-[node name="Cieling" parent="." index="5"]
-offset_top = -11276.0
-offset_bottom = -11010.0
+[node name="Exit Door" parent="." index="3"]
+position = Vector2(1700, -650)
 
 [node name="BlockSpawner" parent="Camera2D" index="1"]
-spawn_objects = Array[ExtResource("2_kk4ad")]([SubResource("Resource_fa0pl"), SubResource("Resource_bl7r2"), SubResource("Resource_q3by3")])
+spawn_objects = Array[ExtResource("2_kk4ad")]([SubResource("Resource_fa0pl"), SubResource("Resource_q3by3"), SubResource("Resource_bl7r2"), SubResource("Resource_mjlyc")])
 
-[node name="Water" parent="." index="11"]
+[node name="Water" parent="." index="9"]
 rise_speed = 10.0
 
-[node name="Idol" parent="." index="12"]
+[node name="Idol" parent="." index="10"]
 position = Vector2(1950, 700)
 
-[node name="Idol2" parent="." index="13"]
+[node name="Idol2" parent="." index="11"]
 position = Vector2(1000, -100)
 
-[node name="Idol3" parent="." index="14"]
-position = Vector2(1700, -600)
-
-[node name="PlaceableCharacterBody2d" parent="." index="16" instance=ExtResource("5_dty44")]
-position = Vector2(1200, -950)
-rotation = 1.5708
+[node name="Idol3" parent="." index="12"]
+position = Vector2(1000, -800)
 
 [node name="Music" parent="Music Player" index="0"]
 volume_db = -7.0
 
-[node name="PlaceableCharacterBody2d2" parent="." index="18" instance=ExtResource("7_uonfs")]
-position = Vector2(1100, -100)
+[node name="PlaceableCharacterBody2d" parent="." index="16" instance=ExtResource("5_dty44")]
+position = Vector2(1700, -600)
+rotation = 1.5708
+
+[node name="PlaceableCharacterBody2d3" parent="." index="18" instance=ExtResource("6_ips2k")]
+position = Vector2(1600, 400)
 rotation = 3.14159
 
-[node name="PlaceableCharacterBody2d3" parent="." index="19" instance=ExtResource("6_ips2k")]
-position = Vector2(900, -100)
+[node name="Scarab Beetle" parent="." index="19" instance=ExtResource("4_qcl3k")]
+position = Vector2(1550, 250)
+
+[node name="Scarab Beetle15" parent="." index="20" instance=ExtResource("4_qcl3k")]
+position = Vector2(1100, -50)
+
+[node name="Scarab Beetle19" parent="." index="21" instance=ExtResource("4_qcl3k")]
+position = Vector2(1450, 1050)
+
+[node name="Scarab Beetle11" parent="." index="22" instance=ExtResource("4_qcl3k")]
+position = Vector2(1500, 300)
+rotation = -1.5708
+
+[node name="Scarab Beetle12" parent="." index="23" instance=ExtResource("4_qcl3k")]
+position = Vector2(1500, 450)
+rotation = -1.5708
+
+[node name="Scarab Beetle13" parent="." index="24" instance=ExtResource("4_qcl3k")]
+position = Vector2(800, 0)
+rotation = -1.5708
+
+[node name="Scarab Beetle17" parent="." index="25" instance=ExtResource("4_qcl3k")]
+position = Vector2(900, -700)
+rotation = -1.5708
+
+[node name="Scarab Beetle3" parent="." index="26" instance=ExtResource("4_qcl3k")]
+position = Vector2(900, -50)
+
+[node name="Scarab Beetle4" parent="." index="27" instance=ExtResource("4_qcl3k")]
+position = Vector2(1050, -750)
+
+[node name="Scarab Beetle7" parent="." index="28" instance=ExtResource("4_qcl3k")]
+position = Vector2(1700, 500)
+rotation = 1.5708
+
+[node name="Scarab Beetle9" parent="." index="29" instance=ExtResource("4_qcl3k")]
+position = Vector2(1000, 50)
 rotation = 3.14159
 
-[node name="Scarab Beetle" parent="." index="20" instance=ExtResource("4_qcl3k")]
-position = Vector2(850, -250)
+[node name="Scarab Beetle18" parent="." index="30" instance=ExtResource("4_qcl3k")]
+position = Vector2(950, -550)
+rotation = 3.14159
 
-[node name="Scarab Beetle15" parent="." index="21" instance=ExtResource("4_qcl3k")]
-position = Vector2(1000, -50)
+[node name="Scarab Beetle10" parent="." index="31" instance=ExtResource("4_qcl3k")]
+position = Vector2(1600, 550)
+rotation = 3.14159
 
-[node name="Scarab Beetle19" parent="." index="22" instance=ExtResource("4_qcl3k")]
-position = Vector2(1350, 1050)
-
-[node name="Scarab Beetle11" parent="." index="23" instance=ExtResource("4_qcl3k")]
-position = Vector2(800, -200)
-rotation = -1.5708
-
-[node name="Scarab Beetle12" parent="." index="24" instance=ExtResource("4_qcl3k")]
-position = Vector2(800, -50)
-rotation = -1.5708
-
-[node name="Scarab Beetle13" parent="." index="25" instance=ExtResource("4_qcl3k")]
-position = Vector2(1100, -150)
-rotation = -1.5708
-
-[node name="Scarab Beetle17" parent="." index="26" instance=ExtResource("4_qcl3k")]
-position = Vector2(1600, -500)
-rotation = -1.5708
-
-[node name="Scarab Beetle3" parent="." index="27" instance=ExtResource("4_qcl3k")]
-position = Vector2(1150, -250)
-
-[node name="Scarab Beetle4" parent="." index="28" instance=ExtResource("4_qcl3k")]
-position = Vector2(1750, -550)
-
-[node name="Scarab Beetle7" parent="." index="29" instance=ExtResource("4_qcl3k")]
+[node name="Scarab Beetle8" parent="." index="32" instance=ExtResource("4_qcl3k")]
 position = Vector2(1200, 0)
 rotation = 1.5708
 
-[node name="Scarab Beetle9" parent="." index="30" instance=ExtResource("4_qcl3k")]
-position = Vector2(1100, 50)
-rotation = 3.14159
-
-[node name="Scarab Beetle18" parent="." index="31" instance=ExtResource("4_qcl3k")]
-position = Vector2(1650, -350)
-rotation = 3.14159
-
-[node name="Scarab Beetle10" parent="." index="32" instance=ExtResource("4_qcl3k")]
-position = Vector2(900, 50)
-rotation = 3.14159
-
-[node name="Scarab Beetle8" parent="." index="33" instance=ExtResource("4_qcl3k")]
-position = Vector2(1200, -200)
+[node name="Scarab Beetle14" parent="." index="33" instance=ExtResource("4_qcl3k")]
+position = Vector2(1600, 350)
 rotation = 1.5708
 
-[node name="Scarab Beetle14" parent="." index="34" instance=ExtResource("4_qcl3k")]
-position = Vector2(900, -150)
+[node name="Scarab Beetle16" parent="." index="34" instance=ExtResource("4_qcl3k")]
+position = Vector2(1100, -600)
 rotation = 1.5708
 
-[node name="Scarab Beetle16" parent="." index="35" instance=ExtResource("4_qcl3k")]
-position = Vector2(1800, -400)
-rotation = 1.5708
+[node name="2x2 Piiece" parent="." index="35" instance=ExtResource("9_xjyhq")]
+position = Vector2(1000, -650)
 
-[node name="2x2 Piiece" parent="." index="36" instance=ExtResource("9_xjyhq")]
-position = Vector2(1700, -450)
+[node name="1x4 Block" parent="." index="54" instance=ExtResource("5_dty44")]
+position = Vector2(1000, 0)

@@ -1,19 +1,19 @@
 [gd_scene load_steps=5 format=3 uid="uid://caudmtkjwca1i"]
 
 [ext_resource type="PackedScene" uid="uid://cxgaavewg0jbi" path="res://Prefabs/PlaceableCharacterBody2D.tscn" id="1_munif"]
-[ext_resource type="Texture2D" uid="uid://d3j2bjdk81lxb" path="res://Art/Sprites/Tetronimoes/L_Piece_Reflect.png" id="2_yyogb"]
-[ext_resource type="Texture2D" uid="uid://d36qsx1sgqo6y" path="res://Art/Sprites/Tetronimoes/L_Piece_Reflect_Normal.png" id="3_6g6yl"]
+[ext_resource type="Texture2D" uid="uid://ci7qhcnhvvx8c" path="res://Art/Sprites/Tetronimoes/L_Piece.png" id="2_8ii8l"]
+[ext_resource type="Texture2D" uid="uid://c1tqex4pex6ke" path="res://Art/Sprites/Tetronimoes/L_Piece_Normal.png" id="3_2kqk7"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_6s3jl"]
-diffuse_texture = ExtResource("2_yyogb")
-normal_texture = ExtResource("3_6g6yl")
-texture_filter = 1
+[sub_resource type="CanvasTexture" id="CanvasTexture_ii08x"]
+diffuse_texture = ExtResource("2_8ii8l")
+normal_texture = ExtResource("3_2kqk7")
 
 [node name="L-piece (mirrored)" instance=ExtResource("1_munif")]
 
-[node name="Sprite2D" parent="." index="2"]
-position = Vector2(-100, -150)
-texture = SubResource("CanvasTexture_6s3jl")
+[node name="Sprite" parent="." index="2"]
+position = Vector2(-100.009, -149.994)
+texture = SubResource("CanvasTexture_ii08x")
+flip_h = true
 
 [node name="CollisionPolygon2D" parent="." index="3"]
 polygon = PackedVector2Array(-1, 149, -99, 149, -99, -149, 99, -149, 99, -51, -1, -51)

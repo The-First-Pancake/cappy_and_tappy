@@ -4,16 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://caendbhwl2roa" path="res://Art/Sprites/Tetronimoes/Z_Piece.png" id="2_iex5l"]
 [ext_resource type="Texture2D" uid="uid://k5ki1yih68vw" path="res://Art/Sprites/Tetronimoes/Z_Piece_Normal.png" id="3_rdspe"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_ayr3u"]
+[sub_resource type="CanvasTexture" id="CanvasTexture_oybyi"]
 diffuse_texture = ExtResource("2_iex5l")
 normal_texture = ExtResource("3_rdspe")
-texture_filter = 1
 
 [node name="Z-Piece" instance=ExtResource("1_858x5")]
 
-[node name="Sprite2D" parent="." index="2"]
-position = Vector2(-100, -150)
-texture = SubResource("CanvasTexture_ayr3u")
+[node name="Sprite" parent="." index="2"]
+position = Vector2(-100.009, -149.994)
+texture = SubResource("CanvasTexture_oybyi")
 
 [node name="CollisionPolygon2D" parent="." index="3"]
 polygon = PackedVector2Array(1, 49, -99, 49, -99, -149, -1, -149, -1, -49, 99, -49, 99, 149, 1, 149)

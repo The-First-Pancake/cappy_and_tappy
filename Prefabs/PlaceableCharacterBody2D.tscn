@@ -27,11 +27,12 @@ volume_db = -15.22
 [node name="BlockImpact01" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_oimvx")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="."]
+clip_children = 2
 texture = ExtResource("2_riihf")
 centered = false
 
-[node name="ShardEmitter" parent="Sprite2D" instance=ExtResource("3_oyvqx")]
+[node name="ShardEmitter" parent="Sprite" instance=ExtResource("3_oyvqx")]
 nbr_of_shards = 10
 min_impulse = 50.0
 max_impulse = 200.0

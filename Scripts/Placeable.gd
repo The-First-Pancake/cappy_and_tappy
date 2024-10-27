@@ -3,17 +3,17 @@ class_name Placeable
 extends CharacterBody2D
 
 enum PlaceState {QUEUED, PLACING, FALLING, HARPOONED, PLACED, DESTROYED}
-@onready var sprite_2d: Sprite2D = $Sprite2D
 
+@onready var sprite: Sprite2D = $Sprite
 @export var state : PlaceState = PlaceState.PLACED
 @export var pathnode_prefab : PackedScene
 @export var indestructable: bool = false:
 	set(new_val):
 		indestructable = new_val
 		if new_val == true:
-			sprite_2d.modulate = Color(.1,.1,.1)
+			sprite.modulate = Color(.1,.1,.1)
 		else:
-			sprite_2d.modulate = Color.WHITE
+			sprite.modulate = Color.WHITE
 @export var sand_cluster: bool = false
 @export var minecraft_sand_behavior: bool = false
 
@@ -171,7 +171,12 @@ func enter_placed() -> void:
 	CameraController.instance.apply_shake()
 	AudioManager.PlayAudio(impact_sound)
 	placed.emit()
-	
+
+func add_decal(decal: Sprite2D, location: Vector2) -> void:
+	decal.reparent(sprite)
+	decal.visible = true
+	decal.global_position = location
+
 func check_for_collisions() -> bool:
 	var collision : KinematicCollision2D = move_and_collide(Vector2.ZERO, true, 0);
 	if (collision):
@@ -201,10 +206,10 @@ func destroy(collision_point_global : Vector2, nbr_of_shards : int = 10, min_imp
 				else: 
 					child.queue_free()
 			enter_placed()
-			$Sprite2D/ShardEmitter.nbr_of_shards = nbr_of_shards
-			$Sprite2D/ShardEmitter.min_impulse = min_impulse
-			$Sprite2D/ShardEmitter.max_impulse = max_impulse
-			$Sprite2D/ShardEmitter.shatter(collision_point_global)
+			$Sprite/ShardEmitter.nbr_of_shards = nbr_of_shards
+			$Sprite/ShardEmitter.min_impulse = min_impulse
+			$Sprite/ShardEmitter.max_impulse = max_impulse
+			$Sprite/ShardEmitter.shatter(collision_point_global)
 
 var mouse_hovering: bool = false
 

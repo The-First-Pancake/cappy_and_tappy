@@ -9,6 +9,7 @@ extends CharacterBody2D
 var move_speed: float = 75
 var rotate_speed: float = 20
 var fall_speed: float = 0
+var falling_rotation_speed: float = 50
 
 var active: bool = true
 
@@ -38,7 +39,7 @@ func try_squash() -> void:
 		return
 	if front_raycast.is_colliding() and rear_raycast.is_colliding() and middle_raycast.is_colliding():
 		if front_raycast.get_collision_normal() == Vector2.ZERO and rear_raycast.get_collision_normal() == Vector2.ZERO and middle_raycast.get_collision_normal() == Vector2.ZERO:
-			queue_free()
+			die()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
@@ -53,6 +54,7 @@ func _physics_process(delta: float) -> void:
 		else:
 			fall_speed += 980 * delta
 			global_position.y += fall_speed * delta
+			#global_rotation += falling_rotation_speed*delta #spin while falling
 	
 	var correction_speed: float = 30
 	if front_raycast.is_colliding() and rear_raycast.is_colliding():
@@ -69,3 +71,10 @@ func _physics_process(delta: float) -> void:
 		global_position = global_position.move_toward(rear_raycast.get_collision_point(), correction_speed*delta)
 	
 	try_squash()
+
+@onready var brown_stain: Sprite2D = $"Brown Stain"
+
+func die() -> void:
+	if middle_raycast.get_collider() is Placeable:
+		middle_raycast.get_collider().add_decal(brown_stain, global_position)
+	queue_free()

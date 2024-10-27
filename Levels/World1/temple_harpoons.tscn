@@ -25,37 +25,30 @@ spawn_count = 5
 
 [node name="Template Level" instance=ExtResource("1_vgjt7")]
 
-[node name="Entrance Door" parent="." index="1"]
-position = Vector2(1100, 1050)
-
 [node name="Exit Door" parent="." index="2"]
 position = Vector2(1200, -750)
-
-[node name="Cieling" parent="." index="5"]
-offset_top = -11276.0
-offset_bottom = -11010.0
 
 [node name="BlockSpawner" parent="Camera2D" index="1"]
 spawn_objects = Array[ExtResource("2_tmn37")]([SubResource("Resource_42wei"), SubResource("Resource_fa0pl"), SubResource("Resource_e12ps")])
 
-[node name="Water" parent="." index="11"]
+[node name="Water" parent="." index="9"]
 rise_speed = 10.0
 
-[node name="Idol" parent="." index="12"]
+[node name="Idol" parent="." index="10"]
 position = Vector2(724, 1145)
 
-[node name="Idol2" parent="." index="13"]
+[node name="Idol2" parent="." index="11"]
 position = Vector2(800, 250)
 
-[node name="Idol3" parent="." index="14"]
+[node name="Idol3" parent="." index="12"]
 position = Vector2(800, -450)
+
+[node name="Music" parent="Music Player" index="0"]
+volume_db = -7.0
 
 [node name="PlaceableCharacterBody2d" parent="." index="16" instance=ExtResource("6_ounqg")]
 position = Vector2(1200, -700)
 rotation = 1.5708
-
-[node name="Music" parent="Music Player" index="0"]
-volume_db = -7.0
 
 [node name="Harpoon Launcher" parent="." index="18" instance=ExtResource("7_yi58j")]
 position = Vector2(2050, 700)
