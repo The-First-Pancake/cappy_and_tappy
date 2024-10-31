@@ -19,10 +19,10 @@ spawn_count = 1
 
 [node name="Template Level" instance=ExtResource("1_pmrbu")]
 
-[node name="Entrance Door" parent="." index="1"]
+[node name="Entrance Door" parent="." index="2"]
 position = Vector2(1200, 550)
 
-[node name="Exit Door" parent="." index="2"]
+[node name="Exit Door" parent="." index="3"]
 position = Vector2(1750, 1050)
 
 [node name="Player" parent="." index="6"]

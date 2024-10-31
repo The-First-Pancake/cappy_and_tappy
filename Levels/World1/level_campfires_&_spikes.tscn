@@ -18,11 +18,10 @@ spawn_count = 5
 
 [node name="Template Level" instance=ExtResource("1_n5m3r")]
 
-[node name="Exit Door" parent="." index="2"]
+[node name="Exit Door" parent="." index="3"]
 position = Vector2(1350, -550)
 
-[node name="BlockSpawner" parent="Camera2D" index="1"]
-position = Vector2(-683, -281)
+[node name="BlockSpawner" parent="Camera2D" index="3"]
 spawn_objects = Array[ExtResource("2_k6bhr")]([SubResource("Resource_2mh7d"), SubResource("Resource_c1oqr")])
 spawn_object_probability = 0.1
 

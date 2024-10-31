@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=4 uid="uid://cfckjpuscavie"]
+[gd_scene load_steps=56 format=4 uid="uid://cfckjpuscavie"]
 
 [ext_resource type="Texture2D" uid="uid://bqfeqtdw7xcxo" path="res://Art/Sprites/Backgrounds/background.png" id="1_ahsb1"]
 [ext_resource type="PackedScene" uid="uid://def2hxxjwwhvl" path="res://Prefabs/Door.tscn" id="2_d4khg"]
@@ -33,6 +33,8 @@
 [ext_resource type="PackedScene" uid="uid://cn5g0kaav20lj" path="res://Prefabs/Spawn On Blocks/ArrowSpitter.tscn" id="21_kdoe7"]
 [ext_resource type="Script" path="res://Scripts/Rope.gd" id="21_yotb3"]
 [ext_resource type="PackedScene" uid="uid://hetb2cu4cbew" path="res://Prefabs/Spawn On Blocks/BreakerSpike.tscn" id="22_weo7f"]
+[ext_resource type="PackedScene" uid="uid://dgwixm1vxqs6t" path="res://Prefabs/Spawn On Blocks/Scarab_Beetle.tscn" id="25_tpi33"]
+[ext_resource type="PackedScene" uid="uid://2emoy8lav7a0" path="res://Prefabs/Spawn On Blocks/harpoon_launcher.tscn" id="26_qxi5a"]
 [ext_resource type="Script" path="res://Scripts/MusicPlayer.gd" id="32_41nv7"]
 [ext_resource type="AudioStream" uid="uid://bjoyy3kjn3bpj" path="res://Sound/Music/Uptempo Not Crazy Level Music.wav" id="33_043hb"]
 
@@ -69,6 +71,16 @@ spawn_count = 5
 [sub_resource type="Resource" id="Resource_kfj65"]
 script = ExtResource("12_x7t8k")
 spawn_prefab = ExtResource("22_weo7f")
+spawn_count = 5
+
+[sub_resource type="Resource" id="Resource_qf6s7"]
+script = ExtResource("12_x7t8k")
+spawn_prefab = ExtResource("25_tpi33")
+spawn_count = 5
+
+[sub_resource type="Resource" id="Resource_vktho"]
+script = ExtResource("12_x7t8k")
+spawn_prefab = ExtResource("26_qxi5a")
 spawn_count = 5
 
 [sub_resource type="Resource" id="Resource_6716m"]
@@ -215,7 +227,7 @@ texture = ExtResource("10_adrqh")
 [node name="EndlessRandomizer" type="Node2D" parent="Camera2D"]
 script = ExtResource("11_5te7k")
 block_prefabs = Array[PackedScene]([ExtResource("12_liuyp"), ExtResource("13_b1ltq"), ExtResource("14_nvupw"), ExtResource("15_ixg1q"), ExtResource("16_i16r8"), ExtResource("17_51m63"), ExtResource("18_geqs0")])
-dangers = Array[ExtResource("12_x7t8k")]([SubResource("Resource_6f78n"), SubResource("Resource_lpbvl"), SubResource("Resource_kfj65")])
+dangers = Array[ExtResource("12_x7t8k")]([SubResource("Resource_6f78n"), SubResource("Resource_lpbvl"), SubResource("Resource_kfj65"), SubResource("Resource_qf6s7"), SubResource("Resource_vktho")])
 y_level_switch = 10
 
 [node name="BlockSpawner" parent="Camera2D/EndlessRandomizer" node_paths=PackedStringArray("spawn_container") instance=ExtResource("11_o15bl")]

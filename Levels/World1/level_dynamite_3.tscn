@@ -57,10 +57,10 @@ scale = Vector2(0.32, 0.32)
 position = Vector2(304, 0)
 scale = Vector2(0.32, 0.32)
 
-[node name="Entrance Door" parent="." index="10"]
+[node name="Entrance Door" parent="." index="11"]
 position = Vector2(900, 250)
 
-[node name="Exit Door" parent="." index="11"]
+[node name="Exit Door" parent="." index="12"]
 position = Vector2(900, 750)
 
 [node name="Spikes5" parent="Environment" index="0" instance=ExtResource("2_egqk4")]

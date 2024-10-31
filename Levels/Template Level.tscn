@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://Scripts/CameraController.gd" id="4_psc51"]
 [ext_resource type="PackedScene" uid="uid://ctlx3qylqphyo" path="res://Prefabs/BlockSpawner.tscn" id="5_74oay"]
 [ext_resource type="Texture2D" uid="uid://cm1bxb5y7kb" path="res://Art/Sprites/UI/ui_throbber.png" id="5_aae1a"]
-[ext_resource type="TileSet" path="res://Art/Tilemaps/Brown Tileset_Thick Borders.tres" id="5_tg1dj"]
+[ext_resource type="TileSet" uid="uid://gg3bh8fgpw3d" path="res://Art/Tilemaps/Brown Tileset_Thick Borders.tres" id="5_tg1dj"]
 [ext_resource type="Script" path="res://Scripts/SpawnObject.gd" id="6_xpr8c"]
 [ext_resource type="PackedScene" uid="uid://r1kjk04fwuou" path="res://Prefabs/Spawn On Blocks/Hold.tscn" id="7_k1ys1"]
 [ext_resource type="PackedScene" uid="uid://bkatak76uuoli" path="res://Prefabs/Spawn On Blocks/Campfire.tscn" id="8_786g4"]
@@ -121,30 +121,42 @@ tile_set = ExtResource("5_tg1dj")
 [node name="Player" parent="." instance=ExtResource("2_hossx")]
 position = Vector2(1033, 1002)
 
-[node name="BlockContainer" type="Node2D" parent="."]
-
 [node name="Camera2D" type="Camera2D" parent="."]
 z_index = 1000
 position = Vector2(1133, 681)
 script = ExtResource("4_psc51")
 
+[node name="ColorRect" type="ColorRect" parent="Camera2D"]
+offset_left = -960.0
+offset_top = -540.0
+offset_right = -525.0
+offset_bottom = 541.0
+mouse_filter = 1
+color = Color(0, 0, 0, 0.537255)
+
+[node name="ColorRect2" type="ColorRect" parent="Camera2D"]
+offset_left = -909.0
+offset_top = -252.0
+offset_right = -563.0
+offset_bottom = -66.0
+mouse_filter = 1
+color = Color(0, 0, 0, 0.537255)
+
 [node name="UI" type="Node2D" parent="Camera2D" node_paths=PackedStringArray("idol_label", "height_label")]
-z_as_relative = false
 script = ExtResource("10_wtk1j")
 idol_label = NodePath("IdolUI")
 height_label = NodePath("HeightUI")
 
 [node name="UiThrobber" type="Sprite2D" parent="Camera2D/UI"]
 modulate = Color(0.56, 0.56, 0.56, 1)
-z_as_relative = false
-texture_filter = 1
 material = SubResource("CanvasItemMaterial_rc0ob")
-position = Vector2(-790, -400)
+position = Vector2(-841, -474)
 scale = Vector2(3.125, 3.125)
 texture = ExtResource("5_aae1a")
 centered = false
 
 [node name="UiFrame" type="Sprite2D" parent="Camera2D/UI"]
+visible = false
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_ymr2b")
 position = Vector2(-643, 194)
@@ -152,27 +164,27 @@ scale = Vector2(3.125, 3.125)
 texture = ExtResource("10_ixs36")
 
 [node name="IdolUI" type="Label" parent="Camera2D/UI"]
-offset_left = -709.0
-offset_top = 310.0
-offset_right = -562.0
-offset_bottom = 448.0
+offset_left = -773.0
+offset_top = 401.0
+offset_right = -626.0
+offset_bottom = 539.0
 text = "0/3"
 label_settings = SubResource("LabelSettings_448k6")
 
 [node name="HeightUI" type="Label" parent="Camera2D/UI"]
-offset_left = -735.0
-offset_top = 9.0
-offset_right = -645.0
-offset_bottom = 200.0
+offset_left = -845.0
+offset_top = 158.0
+offset_right = -755.0
+offset_bottom = 349.0
 text = "00
 66"
 label_settings = SubResource("LabelSettings_448k6")
 
 [node name="HeightUI2" type="Label" parent="Camera2D/UI"]
-offset_left = -637.0
-offset_top = 9.0
-offset_right = -547.0
-offset_bottom = 200.0
+offset_left = -747.0
+offset_top = 158.0
+offset_right = -657.0
+offset_bottom = 349.0
 text = "m
 m"
 label_settings = SubResource("LabelSettings_448k6")
@@ -180,25 +192,26 @@ label_settings = SubResource("LabelSettings_448k6")
 [node name="Idol" type="Sprite2D" parent="Camera2D/UI"]
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_lftag")
-position = Vector2(-642, 241)
+position = Vector2(-850, 430)
 scale = Vector2(6, 6)
 texture = ExtResource("13_pmlcy")
 
 [node name="BlockSpawner" parent="Camera2D" node_paths=PackedStringArray("spawn_container") instance=ExtResource("5_74oay")]
-z_as_relative = false
-position = Vector2(-688, -299)
+position = Vector2(-741, -374)
 spawn_container = NodePath("../../BlockContainer")
 spawn_objects = Array[ExtResource("6_xpr8c")]([SubResource("Resource_6716m"), SubResource("Resource_b3o7y"), SubResource("Resource_mwrdh")])
 spawn_object_probability = 0.5
 
 [node name="Dynamite" parent="Camera2D" instance=ExtResource("16_3kw41")]
-position = Vector2(-883, 119)
+position = Vector2(-861, 43)
 
 [node name="Dynamite3" parent="Camera2D" instance=ExtResource("16_3kw41")]
-position = Vector2(-883, 319)
+position = Vector2(-660, 44)
 
 [node name="Dynamite2" parent="Camera2D" instance=ExtResource("16_3kw41")]
-position = Vector2(-883, 219)
+position = Vector2(-762, 44)
+
+[node name="BlockContainer" type="Node2D" parent="."]
 
 [node name="Water" type="Node2D" parent="."]
 modulate = Color(1, 1, 1, 0.882353)
@@ -255,7 +268,7 @@ material = SubResource("CanvasItemMaterial_1wnnk")
 offset_left = -4247.0
 offset_top = -37.0
 offset_right = -1159.0
-offset_bottom = 191.0
+offset_bottom = 457.0
 scale = Vector2(3.125, 3.125)
 texture = ExtResource("12_2m3xp")
 stretch_mode = 1

@@ -329,9 +329,10 @@ func update_animations() -> void:
 func try_squash() -> void:
 	await get_tree().physics_frame
 	#This method could cause problems if the player temporarily clips into something due to moving really fast, but I've yet to run into that problem
-	if squash_detector.is_colliding(): 
-		if squash_detector.get_collision_normal() == Vector2.ZERO: #the ray is inside the object it's colliding with
-			die()
+	if squash_detector.is_colliding():
+		#if squash_detector.get_collision_normal() == Vector2.ZERO: #the ray is inside the object it's colliding with
+		print(1)
+		die()
 	
 	#This method is really smart and doesn't work lol
 	#var collision_normals: Array[Vector2] = []
@@ -399,8 +400,7 @@ func die() -> void:
 
 func apply_gravity(delta: float) -> void:
 	if is_on_floor(): return
-	if velocity.y > terminal_velocity: return
-	
+	var is_past_terminal_velocity: bool = velocity.y > terminal_velocity
 	var gravity_reduced: bool = gravity_reduce_timer.time_left > 0
 	if is_downsliding:
 		velocity += get_gravity()*0.5 * delta
@@ -408,6 +408,8 @@ func apply_gravity(delta: float) -> void:
 	elif gravity_reduced:
 		velocity += get_gravity()*0.5 * delta
 		velocity.y = min(velocity.y, downslide_speed)
+	elif is_past_terminal_velocity: #TODO this structure si kinda whack, but as long as downlide speed is less than terminal velocity it should be fine I think -  OP
+		pass
 	else:
 		velocity += get_gravity()*3 * delta
 
