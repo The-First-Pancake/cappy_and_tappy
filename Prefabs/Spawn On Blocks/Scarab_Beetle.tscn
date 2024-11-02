@@ -1,9 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://dgwixm1vxqs6t"]
+[gd_scene load_steps=18 format=3 uid="uid://dgwixm1vxqs6t"]
 
 [ext_resource type="Script" path="res://Scripts/ScarabBeetle.gd" id="1_dvdiv"]
 [ext_resource type="Texture2D" uid="uid://caxkkw4eqdkqo" path="res://Art/Sprites/Scarab Beetle/Beetle.png" id="3_hpaqa"]
 [ext_resource type="Texture2D" uid="uid://4nngdym4r7pc" path="res://Art/Sprites/Scarab Beetle/Brown Stain.png" id="3_hwu8x"]
-[ext_resource type="Material" uid="uid://cg4fprgafhcxd" path="res://Art/unshaded_material.tres" id="3_qjpt0"]
 [ext_resource type="AudioStream" uid="uid://cntq3itbl4fon" path="res://Sound/Squash/squash 1.wav" id="5_fmb3h"]
 [ext_resource type="AudioStream" uid="uid://cdrikgmpsln4y" path="res://Sound/Squash/squash 2.wav" id="6_4qkex"]
 [ext_resource type="AudioStream" uid="uid://bewjiyns10j5g" path="res://Sound/Squash/squash 3.wav" id="7_ypvgd"]
@@ -12,9 +11,6 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k37xf"]
 radius = 11.0
 height = 36.0
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_afsdb"]
-light_mode = 1
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ig2th"]
 atlas = ExtResource("3_hpaqa")
@@ -87,7 +83,6 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_k37xf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-material = SubResource("CanvasItemMaterial_afsdb")
 position = Vector2(0, -24)
 scale = Vector2(-1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_ncgbe")
@@ -119,7 +114,6 @@ debug_color = Color(0.7, 0, 0, 0.42)
 
 [node name="Brown Stain" type="Sprite2D" parent="."]
 visible = false
-material = ExtResource("3_qjpt0")
 scale = Vector2(3, 3)
 texture = ExtResource("3_hwu8x")
 

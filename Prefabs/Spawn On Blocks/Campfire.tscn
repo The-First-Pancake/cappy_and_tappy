@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://bkatak76uuoli"]
+[gd_scene load_steps=39 format=3 uid="uid://bkatak76uuoli"]
 
 [ext_resource type="Script" path="res://Scripts/Campfire.gd" id="1_bl4yb"]
 [ext_resource type="Texture2D" uid="uid://bm87e6wnpph3s" path="res://Art/Sprites/fire/fire_sticks.png" id="3_cwdr7"]
@@ -15,9 +15,6 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r3r1h"]
 size = Vector2(35.7855, 4.5)
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_h2u0m"]
-light_mode = 1
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cltns"]
 size = Vector2(62.3119, 4.20288)
 
@@ -29,9 +26,6 @@ gradient = SubResource("Gradient_mjwa8")
 fill = 1
 fill_from = Vector2(0.517094, 0.457265)
 fill_to = Vector2(0.91453, 0.132479)
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_tc8qf"]
-light_mode = 1
 
 [sub_resource type="Curve" id="Curve_7afx5"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.20073, 0.552395), 0.0, 0.0, 0, 0, Vector2(0.485401, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
@@ -145,9 +139,6 @@ animations = [{
 radius = 11.0
 height = 52.0
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_n3kao"]
-light_mode = 1
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_byol1"]
 atlas = ExtResource("4_lil2o")
 region = Rect2(0, 0, 32, 32)
@@ -204,7 +195,6 @@ shape = SubResource("RectangleShape2D_r3r1h")
 
 [node name="Sprite2D" type="Sprite2D" parent="Gibs/Stick Gib"]
 texture_filter = 1
-material = SubResource("CanvasItemMaterial_h2u0m")
 scale = Vector2(3.125, 3.125)
 texture = ExtResource("3_kyv5v")
 
@@ -221,7 +211,6 @@ shape = SubResource("RectangleShape2D_r3r1h")
 
 [node name="Sprite2D" type="Sprite2D" parent="Gibs/Stick Gib2"]
 texture_filter = 1
-material = SubResource("CanvasItemMaterial_h2u0m")
 scale = Vector2(3.125, 3.125)
 texture = ExtResource("3_kyv5v")
 
@@ -237,7 +226,6 @@ shape = SubResource("RectangleShape2D_cltns")
 
 [node name="Sprite2D" type="Sprite2D" parent="Gibs/Flag Gib"]
 texture_filter = 1
-material = SubResource("CanvasItemMaterial_h2u0m")
 scale = Vector2(3.125, 3.125)
 texture = ExtResource("4_tybef")
 
@@ -246,12 +234,13 @@ position = Vector2(-2, -14)
 scale = Vector2(9.20313, 9.20313)
 color = Color(1, 0.539063, 0, 1)
 energy = 3.0
+range_item_cull_mask = 3
 texture = SubResource("GradientTexture2D_6xj73")
+height = 10.0
 script = ExtResource("5_3u6so")
 
 [node name="Fire Pit" type="Sprite2D" parent="."]
 texture_filter = 1
-material = SubResource("CanvasItemMaterial_tc8qf")
 position = Vector2(0, -12)
 scale = Vector2(3.125, 3.125)
 texture = ExtResource("3_cwdr7")
@@ -317,7 +306,6 @@ debug_color = Color(0.168, 0.7392, 0.84, 0)
 
 [node name="Flag Sprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-material = SubResource("CanvasItemMaterial_n3kao")
 position = Vector2(37, -51)
 scale = Vector2(3.125, 3.125)
 sprite_frames = SubResource("SpriteFrames_yxi0w")

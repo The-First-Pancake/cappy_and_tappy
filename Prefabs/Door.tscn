@@ -5,10 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://cvjveityc31tt" path="res://Art/Sprites/door/Door_Foreground.png" id="3_slp37"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_midbx"]
-light_mode = 1
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_cjcuh"]
-light_mode = 1
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e0y4u"]
 size = Vector2(30, 122)

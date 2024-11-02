@@ -25,10 +25,10 @@ spawn_count = 5
 
 [node name="Template Level" instance=ExtResource("1_vgjt7")]
 
-[node name="Exit Door" parent="." index="2"]
+[node name="Exit Door" parent="." index="3"]
 position = Vector2(1200, -750)
 
-[node name="BlockSpawner" parent="Camera2D" index="1"]
+[node name="BlockSpawner" parent="Camera2D" index="3"]
 spawn_objects = Array[ExtResource("2_tmn37")]([SubResource("Resource_42wei"), SubResource("Resource_fa0pl"), SubResource("Resource_e12ps")])
 
 [node name="Water" parent="." index="9"]

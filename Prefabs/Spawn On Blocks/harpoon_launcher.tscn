@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://2emoy8lav7a0"]
+[gd_scene load_steps=10 format=3 uid="uid://2emoy8lav7a0"]
 
 [ext_resource type="Script" path="res://Scripts/Harpoon.gd" id="1_dcokm"]
 [ext_resource type="Script" path="res://Scripts/Squashable.gd" id="2_64uom"]
-[ext_resource type="Material" uid="uid://cg4fprgafhcxd" path="res://Art/unshaded_material.tres" id="3_2r2oc"]
 [ext_resource type="Texture2D" uid="uid://by7via7sb8iyj" path="res://Art/Sprites/Harpoon Gun/harpoon_rope.png" id="4_3lguc"]
 [ext_resource type="Texture2D" uid="uid://bhvty2fmh6tls" path="res://Art/Sprites/Harpoon Gun/harpoon_spear.png" id="5_cdfdi"]
 [ext_resource type="Texture2D" uid="uid://ds407cwrk87ua" path="res://Art/Sprites/Harpoon Gun/harpoon_base.png" id="6_yuaro"]
@@ -26,14 +25,12 @@ script = ExtResource("1_dcokm")
 
 [node name="Rope" type="Line2D" parent="."]
 texture_repeat = 2
-material = ExtResource("3_2r2oc")
 points = PackedVector2Array(-0.32, -90.88, 6.08, -86.08, 8.96, -83.52, 10.88, -81.6, 14.08, -76.8, 15.04, -73.6, 15.36, -70.4, 15.04, -66.88, 14.4, -63.68, 12.6674, -61.2255, 10.56, -58.24, 8, -56, 5.44, -53.12, -0.32, -50.24)
 width = 12.5
 texture = ExtResource("4_3lguc")
 texture_mode = 1
 
 [node name="Launcher Base" type="Sprite2D" parent="."]
-material = ExtResource("3_2r2oc")
 position = Vector2(0, -5)
 rotation = 1.5708
 scale = Vector2(3.125, 3.125)
@@ -49,7 +46,6 @@ show_behind_parent = true
 position = Vector2(-5.96046e-08, 36)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Harpoon"]
-material = ExtResource("3_2r2oc")
 position = Vector2(-2, -35)
 rotation = 1.5708
 scale = Vector2(3.125, 3.125)

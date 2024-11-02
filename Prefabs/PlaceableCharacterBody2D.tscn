@@ -16,6 +16,7 @@ stream_0/stream = ExtResource("2_uc7ox")
 
 [node name="PlaceableCharacterBody2d" type="CharacterBody2D"]
 rotation = 26.7036
+collision_layer = 2
 input_pickable = true
 script = ExtResource("1_1yjnn")
 pathnode_prefab = ExtResource("2_htq13")
@@ -29,6 +30,7 @@ stream = SubResource("AudioStreamRandomizer_oimvx")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 clip_children = 2
+light_mask = 2
 texture = ExtResource("2_riihf")
 centered = false
 

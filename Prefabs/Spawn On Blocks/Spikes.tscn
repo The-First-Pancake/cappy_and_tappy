@@ -1,10 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dhrgrpwwax6i8"]
+[gd_scene load_steps=4 format=3 uid="uid://dhrgrpwwax6i8"]
 
 [ext_resource type="Texture2D" uid="uid://dl5vghi4ai07t" path="res://Art/Sprites/spikes.png" id="1_qt3w2"]
 [ext_resource type="Script" path="res://Scripts/Squashable.gd" id="2_ebffp"]
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_qen5j"]
-light_mode = 1
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1b7ag"]
 radius = 6.0
@@ -14,7 +11,6 @@ height = 54.0
 
 [node name="Default2" type="Sprite2D" parent="."]
 texture_filter = 1
-material = SubResource("CanvasItemMaterial_qen5j")
 position = Vector2(0, -14)
 scale = Vector2(3.15, 3.15)
 texture = ExtResource("1_qt3w2")

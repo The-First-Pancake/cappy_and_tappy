@@ -1,9 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://b3c0skin4w372"]
+[gd_scene load_steps=4 format=3 uid="uid://b3c0skin4w372"]
 
 [ext_resource type="Texture2D" uid="uid://cra8a72oqq7vi" path="res://Art/Sprites/Idol.png" id="1_3m13c"]
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0pk8k"]
-light_mode = 1
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_pk2ol"]
 diffuse_texture = ExtResource("1_3m13c")
@@ -15,7 +12,6 @@ radius = 21.3776
 [node name="Idol" type="Area2D" groups=["idol"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-material = SubResource("CanvasItemMaterial_0pk8k")
 position = Vector2(-0.125, -19.6875)
 scale = Vector2(3.125, 3.125)
 texture = SubResource("CanvasTexture_pk2ol")
