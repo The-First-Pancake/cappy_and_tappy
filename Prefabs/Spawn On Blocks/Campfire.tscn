@@ -236,7 +236,6 @@ color = Color(1, 0.539063, 0, 1)
 energy = 3.0
 range_item_cull_mask = 3
 texture = SubResource("GradientTexture2D_6xj73")
-height = 10.0
 script = ExtResource("5_3u6so")
 
 [node name="Fire Pit" type="Sprite2D" parent="."]
