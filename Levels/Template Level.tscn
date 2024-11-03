@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=4 uid="uid://6dd2cbybvcqg"]
+[gd_scene load_steps=50 format=4 uid="uid://6dd2cbybvcqg"]
 
 [ext_resource type="Texture2D" uid="uid://bqfeqtdw7xcxo" path="res://Art/Sprites/Backgrounds/background.png" id="1_dtx2u"]
 [ext_resource type="PackedScene" uid="uid://dngf3odx0yf5k" path="res://Prefabs/player.tscn" id="2_hossx"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://Scripts/SpawnObject.gd" id="6_xpr8c"]
 [ext_resource type="PackedScene" uid="uid://r1kjk04fwuou" path="res://Prefabs/Spawn On Blocks/Hold.tscn" id="7_k1ys1"]
 [ext_resource type="PackedScene" uid="uid://bkatak76uuoli" path="res://Prefabs/Spawn On Blocks/Campfire.tscn" id="8_786g4"]
+[ext_resource type="Script" path="res://Scripts/Flicker.gd" id="8_dac0d"]
 [ext_resource type="PackedScene" uid="uid://dhrgrpwwax6i8" path="res://Prefabs/Spawn On Blocks/Spikes.tscn" id="9_teir6"]
 [ext_resource type="Script" path="res://Scripts/WaterLevel.gd" id="10_7kdmf"]
 [ext_resource type="Texture2D" uid="uid://b3oj42r81wxap" path="res://Art/Sprites/UI/ui_frame.png" id="10_ixs36"]
@@ -38,6 +39,17 @@ light_mode = 1
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7gar6"]
 light_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_xjqk1"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.873418, 0.914557, 0.993671, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fgsig"]
+gradient = SubResource("Gradient_xjqk1")
+fill = 1
+fill_from = Vector2(0.517094, 0.457265)
+fill_to = Vector2(0.91453, 0.132479)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_rc0ob"]
 light_mode = 1
@@ -163,6 +175,18 @@ color = Color(0, 0, 0, 0.537255)
 script = ExtResource("10_wtk1j")
 idol_label = NodePath("IdolUI")
 height_label = NodePath("HeightUI")
+
+[node name="NightLight" type="PointLight2D" parent="Camera2D/UI"]
+visible = false
+position = Vector2(-983, -631)
+scale = Vector2(9.20313, 9.20313)
+color = Color(1, 0.841333, 0.66, 1)
+energy = 2.91
+range_item_cull_mask = 2
+texture = SubResource("GradientTexture2D_fgsig")
+texture_scale = 2.0
+height = 10.0
+script = ExtResource("8_dac0d")
 
 [node name="UiThrobber" type="Sprite2D" parent="Camera2D/UI"]
 modulate = Color(0.56, 0.56, 0.56, 1)
