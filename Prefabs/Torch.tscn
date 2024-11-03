@@ -41,7 +41,7 @@ animations = [{
 }]
 
 [sub_resource type="Gradient" id="Gradient_mjwa8"]
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ddbxi"]
 gradient = SubResource("Gradient_mjwa8")
@@ -67,6 +67,7 @@ position = Vector2(4.50015, -25.4998)
 scale = Vector2(9.20313, 9.20313)
 color = Color(1, 0.539063, 0, 1)
 energy = 3.0
+blend_mode = 2
 range_item_cull_mask = 3
 texture = SubResource("GradientTexture2D_ddbxi")
 height = 30.0

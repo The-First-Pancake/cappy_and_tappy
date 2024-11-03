@@ -10,7 +10,7 @@
 size = Vector2(8, 25)
 
 [sub_resource type="Gradient" id="Gradient_mjwa8"]
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ddbxi"]
 gradient = SubResource("Gradient_mjwa8")
@@ -89,6 +89,7 @@ center_of_mass = Vector2(0, 10)
 scale = Vector2(9, 9)
 color = Color(1, 0.539063, 0, 1)
 energy = 3.0
+blend_mode = 2
 range_item_cull_mask = 3
 texture = SubResource("GradientTexture2D_ddbxi")
 texture_scale = 0.1

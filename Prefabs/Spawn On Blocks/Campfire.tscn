@@ -19,7 +19,7 @@ size = Vector2(35.7855, 4.5)
 size = Vector2(62.3119, 4.20288)
 
 [sub_resource type="Gradient" id="Gradient_xjqk1"]
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_6xj73"]
 gradient = SubResource("Gradient_xjqk1")
@@ -234,6 +234,7 @@ position = Vector2(-2, -14)
 scale = Vector2(9.20313, 9.20313)
 color = Color(1, 0.539063, 0, 1)
 energy = 3.0
+blend_mode = 2
 range_item_cull_mask = 3
 texture = SubResource("GradientTexture2D_6xj73")
 height = 10.0
