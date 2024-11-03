@@ -25,16 +25,16 @@ position = Vector2(1350, -550)
 spawn_objects = Array[ExtResource("2_k6bhr")]([SubResource("Resource_2mh7d"), SubResource("Resource_c1oqr")])
 spawn_object_probability = 0.1
 
-[node name="Water" parent="." index="9"]
+[node name="Water" parent="." index="8"]
 rise_speed = 8.0
 
-[node name="Idol" parent="." index="10"]
+[node name="Idol" parent="." index="9"]
 position = Vector2(750, 450)
 
-[node name="Idol2" parent="." index="11"]
+[node name="Idol2" parent="." index="10"]
 position = Vector2(2000, 450)
 
-[node name="Idol3" parent="." index="12"]
+[node name="Idol3" parent="." index="11"]
 position = Vector2(1350, -150)
 
 [node name="Music" parent="Music Player" index="0"]

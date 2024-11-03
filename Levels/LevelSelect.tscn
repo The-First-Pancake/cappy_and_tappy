@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://bjdpxtqaavny0"]
+[gd_scene load_steps=52 format=3 uid="uid://bjdpxtqaavny0"]
 
 [ext_resource type="Script" path="res://Scripts/LevelSelect.gd" id="1_7k26d"]
 [ext_resource type="Texture2D" uid="uid://bqfeqtdw7xcxo" path="res://Art/Sprites/Backgrounds/background.png" id="1_24j1o"]
@@ -34,7 +34,9 @@
 [ext_resource type="PackedScene" uid="uid://mvlbswmkxjca" path="res://Levels/World1/level_breaker_2.tscn" id="29_ikqai"]
 [ext_resource type="PackedScene" uid="uid://cetdx52yqt2jy" path="res://Levels/World1/level_break_down.tscn" id="30_r66fg"]
 [ext_resource type="PackedScene" uid="uid://bsxmt0huibfmi" path="res://Levels/World1/level_the_walls_are_moving.tscn" id="31_8gmqv"]
+[ext_resource type="PackedScene" uid="uid://c8jp0shc73si" path="res://Levels/World1/level_harpoons.tscn" id="31_slj0u"]
 [ext_resource type="PackedScene" uid="uid://cdt2acy760u6v" path="res://Levels/World1/level_creepy_crawly.tscn" id="32_pcxxg"]
+[ext_resource type="PackedScene" uid="uid://bdadvrc0pl2ox" path="res://Levels/World1/level_harpoon_traverse.tscn" id="32_un76u"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_pwuex"]
 light_mode = 1
@@ -492,6 +494,14 @@ scene_to_load = ExtResource("29_ikqai")
 [node name="Level - Break Down" parent="World 2" instance=ExtResource("3_66fh1")]
 layout_mode = 2
 scene_to_load = ExtResource("30_r66fg")
+
+[node name="Level - Harpoons" parent="World 2" instance=ExtResource("3_66fh1")]
+layout_mode = 2
+scene_to_load = ExtResource("31_slj0u")
+
+[node name="Level - Harpoon Traverse" parent="World 2" instance=ExtResource("3_66fh1")]
+layout_mode = 2
+scene_to_load = ExtResource("32_un76u")
 
 [node name="Level - The Walls Are Moving" parent="World 2" instance=ExtResource("3_66fh1")]
 layout_mode = 2

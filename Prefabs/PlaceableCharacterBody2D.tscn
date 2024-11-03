@@ -16,7 +16,6 @@ stream_0/stream = ExtResource("2_uc7ox")
 
 [node name="PlaceableCharacterBody2d" type="CharacterBody2D"]
 rotation = 26.7036
-collision_layer = 2
 input_pickable = true
 script = ExtResource("1_1yjnn")
 pathnode_prefab = ExtResource("2_htq13")

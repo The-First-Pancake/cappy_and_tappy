@@ -38,24 +38,27 @@ spawn_count = 2
 
 [node name="Template Level" instance=ExtResource("1_ycs33")]
 
-[node name="Exit Door" parent="." index="2"]
-position = Vector2(1250, -4876)
+[node name="PointLight2D" parent="Overhead Light" index="0"]
+position = Vector2(1800, -14950)
 
-[node name="Cieling" parent="." index="5"]
-offset_top = -11276.0
-offset_bottom = -11010.0
+[node name="Exit Door" parent="." index="4"]
+position = Vector2(1250, -4750)
 
-[node name="BlockSpawner" parent="Camera2D" index="1"]
+[node name="BlockSpawner" parent="Camera2D" index="3"]
 spawn_objects = Array[ExtResource("2_8tngy")]([SubResource("Resource_6716m"), SubResource("Resource_b3o7y"), SubResource("Resource_mwrdh"), SubResource("Resource_hb8f8"), SubResource("Resource_mfh2x")])
 
-[node name="Idol" parent="." index="12"]
+[node name="Idol" parent="." index="10"]
 position = Vector2(1250, -7400)
 
-[node name="Idol2" parent="." index="13"]
+[node name="Idol2" parent="." index="11"]
 position = Vector2(800, -450)
 
-[node name="Idol3" parent="." index="14"]
+[node name="Idol3" parent="." index="12"]
 position = Vector2(1950, -2650)
+
+[node name="Music" parent="Music Player" index="0"]
+stream = ExtResource("9_3x5qn")
+volume_db = -7.0
 
 [node name="PlaceableCharacterBody2d" parent="." index="16" instance=ExtResource("5_sry7q")]
 position = Vector2(1250, -4700)
@@ -160,10 +163,6 @@ position = Vector2(1850, 1051)
 
 [node name="BreakerSpike4" parent="." index="30" instance=ExtResource("4_j4vyl")]
 position = Vector2(1750, 1051)
-
-[node name="Music" parent="Music Player" index="0"]
-stream = ExtResource("9_3x5qn")
-volume_db = -7.0
 
 [node name="IdolClue" type="Sprite2D" parent="." index="33"]
 modulate = Color(0.22, 0.22, 0.22, 0.294118)

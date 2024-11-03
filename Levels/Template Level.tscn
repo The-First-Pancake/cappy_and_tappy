@@ -31,6 +31,15 @@
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_sacac"]
 
+[sub_resource type="Gradient" id="Gradient_3eomj"]
+colors = PackedColorArray(1, 1, 1, 1, 0.52, 0.52, 0.52, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_o42py"]
+gradient = SubResource("Gradient_3eomj")
+fill = 1
+fill_from = Vector2(0.517094, 0.457265)
+fill_to = Vector2(0.91453, 0.132479)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sf7tr"]
 size = Vector2(1350, 17050)
 
@@ -98,15 +107,6 @@ size = Vector2(9500, 709)
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_e7s6v"]
 light_mode = 1
 
-[sub_resource type="Gradient" id="Gradient_3eomj"]
-colors = PackedColorArray(1, 1, 1, 1, 0.52, 0.52, 0.52, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_o42py"]
-gradient = SubResource("Gradient_3eomj")
-fill = 1
-fill_from = Vector2(0.517094, 0.457265)
-fill_to = Vector2(0.91453, 0.132479)
-
 [node name="Template Level" type="Node2D"]
 
 [node name="Background Parallax" type="Parallax2D" parent="."]
@@ -123,6 +123,17 @@ offset_bottom = -12660.0
 scale = Vector2(3, 5)
 texture = ExtResource("1_dtx2u")
 stretch_mode = 1
+
+[node name="Overhead Light" type="Node2D" parent="."]
+
+[node name="PointLight2D" type="PointLight2D" parent="Overhead Light"]
+position = Vector2(1800, -15262.5)
+scale = Vector2(13.5938, 10.2891)
+energy = 1.5
+range_item_cull_mask = 2
+texture = SubResource("GradientTexture2D_o42py")
+texture_scale = 50.0
+height = 10.0
 
 [node name="Camera Zone" type="Area2D" parent="."]
 script = ExtResource("27_rvwtg")
@@ -405,17 +416,6 @@ position = Vector2(1800, 1050)
 
 [node name="PathNode20" parent="." instance=ExtResource("28_ng7cu")]
 position = Vector2(1850, 1050)
-
-[node name="Overhead Light" type="Node2D" parent="."]
-
-[node name="PointLight2D" type="PointLight2D" parent="Overhead Light"]
-position = Vector2(1800, -15262.5)
-scale = Vector2(13.5938, 10.2891)
-energy = 1.5
-range_item_cull_mask = 2
-texture = SubResource("GradientTexture2D_o42py")
-texture_scale = 50.0
-height = 10.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false

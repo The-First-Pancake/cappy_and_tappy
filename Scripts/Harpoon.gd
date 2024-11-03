@@ -28,8 +28,8 @@ func _physics_process(delta: float) -> void:
 			if tripping_obj.state == Placeable.PlaceState.FALLING:
 				if tripping_obj.targeted_by_harpoon: return #if another harpoon already has plans
 				tripping_obj.targeted_by_harpoon = true
-				
 				launched = true
+				
 				var direction: Vector2 = Vector2.from_angle( global_rotation - deg_to_rad(90))
 				direction = direction.normalized()
 				direction = direction.round()
@@ -39,9 +39,11 @@ func _physics_process(delta: float) -> void:
 				
 				var hit_block: Node2D = null
 				
+				
+				
 				for i in range(range):
-					harpoon_raycast.target_position.y = -speed * delta * 3 #The harpoon checks the ahead for the distance it's about to traverse
-					if harpoon_raycast.get_collider():
+					harpoon_raycast.target_position.y = -speed * delta #The harpoon checks the ahead for the distance it's about to traverse
+					if harpoon_raycast.get_collider() and harpoon_raycast.get_collider() != get_parent():
 						hit_block = harpoon_raycast.get_collider()
 						harpoon.global_position = harpoon_raycast.get_collision_point() - direction * 50
 						break
@@ -52,7 +54,7 @@ func _physics_process(delta: float) -> void:
 				
 				
 				has_harpoon_landed = true
-
+				
 				if hit_block and hit_block is Placeable:
 					hit_block.enter_harpooned(-direction)
 					var cell_hit_pos: Vector2 = hit_block.get_closest_cell_center(harpoon.global_position)

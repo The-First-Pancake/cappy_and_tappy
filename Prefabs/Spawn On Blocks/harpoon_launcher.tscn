@@ -58,6 +58,7 @@ shape = SubResource("CircleShape2D_rkgde")
 [node name="Harpoon Raycast" type="RayCast2D" parent="Harpoon"]
 position = Vector2(5.96046e-08, -60)
 target_position = Vector2(0, -250)
+hit_from_inside = true
 
 [node name="Tripwire" type="RayCast2D" parent="."]
 position = Vector2(5.59506e-08, -1.28)

@@ -16,14 +16,6 @@ size = Vector2(6100, 1000)
 
 [node name="Template Level" instance=ExtResource("1_mna8d")]
 
-[node name="Camera Zone" parent="." index="1"]
-type = 1
-mid_line_offset = 0.0
-
-[node name="CollisionShape2D" parent="Camera Zone" index="0"]
-position = Vector2(3200, 700)
-shape = SubResource("RectangleShape2D_uld0s")
-
 [node name="Glyphs" type="Node2D" parent="." index="2"]
 
 [node name="GlyphHookRotate" type="Sprite2D" parent="Glyphs" index="0"]
@@ -56,7 +48,15 @@ position = Vector2(1600, 900)
 scale = Vector2(6.25, 6.25)
 texture = ExtResource("6_io1w6")
 
-[node name="Exit Door" parent="." index="4"]
+[node name="Camera Zone" parent="." index="3"]
+type = 1
+mid_line_offset = 0.0
+
+[node name="CollisionShape2D" parent="Camera Zone" index="0"]
+position = Vector2(3200, 700)
+shape = SubResource("RectangleShape2D_uld0s")
+
+[node name="Exit Door" parent="." index="5"]
 position = Vector2(6050, 1050)
 
 [node name="Environment" parent="." index="6"]
@@ -72,7 +72,7 @@ position = Vector2(1760, -32)
 rotation = 1.5708
 scale = Vector2(0.32, 0.32)
 
-[node name="BlockSpawner" parent="Camera2D" index="1"]
+[node name="BlockSpawner" parent="Camera2D" index="3"]
 spawn_objects = Array[ExtResource("7_yqrk1")]([])
 
 [node name="Water" parent="." index="10"]
