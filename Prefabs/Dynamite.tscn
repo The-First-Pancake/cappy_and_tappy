@@ -1,10 +1,11 @@
-[gd_scene load_steps=23 format=3 uid="uid://mcu32jepdsb3"]
+[gd_scene load_steps=26 format=3 uid="uid://mcu32jepdsb3"]
 
 [ext_resource type="Script" path="res://Scripts/Dynamite.gd" id="1_0xau1"]
 [ext_resource type="Material" uid="uid://cg4fprgafhcxd" path="res://Art/unshaded_material.tres" id="2_ogn8q"]
 [ext_resource type="Texture2D" uid="uid://det8arxk2wg81" path="res://Art/Sprites/Dynamite/Dynamite.png" id="3_8ilru"]
 [ext_resource type="AudioStream" uid="uid://cbl7cp4unytdt" path="res://Sound/Explosion1__065.wav" id="3_iqbmc"]
 [ext_resource type="Texture2D" uid="uid://cp12ff55etrhe" path="res://Art/Sprites/Dynamite/Explosion.png" id="4_udyqs"]
+[ext_resource type="Script" path="res://Scripts/Flicker.gd" id="5_7217p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nsrqv"]
 size = Vector2(86, 99)
@@ -136,6 +137,15 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="Gradient" id="Gradient_7xhw0"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xgalu"]
+gradient = SubResource("Gradient_7xhw0")
+fill = 1
+fill_from = Vector2(0.517094, 0.457265)
+fill_to = Vector2(0.91453, 0.132479)
+
 [node name="Dynamite" type="Area2D"]
 script = ExtResource("1_0xau1")
 
@@ -156,6 +166,17 @@ hit_from_inside = true
 material = ExtResource("2_ogn8q")
 scale = Vector2(3.125, 3.125)
 sprite_frames = SubResource("SpriteFrames_ftbob")
+
+[node name="PointLight2D" type="PointLight2D" parent="Explosion Animation"]
+position = Vector2(-2, -14)
+scale = Vector2(20, 20)
+enabled = false
+color = Color(0.82, 0.574273, 0.3444, 1)
+energy = 3.0
+range_item_cull_mask = 3
+texture = SubResource("GradientTexture2D_xgalu")
+height = 10.0
+script = ExtResource("5_7217p")
 
 [node name="Explosion Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_iqbmc")
