@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bdfduqoo423pn" path="res://Art/Sprites/fire/flag.png" id="4_lil2o"]
 [ext_resource type="Texture2D" uid="uid://b1qc2obr31t7x" path="res://Art/Sprites/fire/fire_flame.png" id="4_sg8vb"]
 [ext_resource type="Texture2D" uid="uid://cc5uns1b78ycy" path="res://Art/Sprites/fire/flag_gib.png" id="4_tybef"]
-[ext_resource type="Script" path="res://Scripts/Flicker.gd" id="5_3u6so"]
+[ext_resource type="Script" path="res://Scripts/LightFlicker.gd" id="5_3u6so"]
 [ext_resource type="Texture2D" uid="uid://41px2nbwnx3k" path="res://Art/Sprites/dust.png" id="6_jnjs7"]
 [ext_resource type="AudioStream" uid="uid://da4bgebl5ud5n" path="res://Sound/campfire_light.mp3" id="9_5ixnm"]
 [ext_resource type="AudioStream" uid="uid://cmbg6gp144led" path="res://Sound/campfire_extinguish.mp3" id="9_a3xb8"]

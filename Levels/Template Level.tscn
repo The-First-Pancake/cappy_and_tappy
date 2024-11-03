@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://Scripts/SpawnObject.gd" id="6_xpr8c"]
 [ext_resource type="PackedScene" uid="uid://r1kjk04fwuou" path="res://Prefabs/Spawn On Blocks/Hold.tscn" id="7_k1ys1"]
 [ext_resource type="PackedScene" uid="uid://bkatak76uuoli" path="res://Prefabs/Spawn On Blocks/Campfire.tscn" id="8_786g4"]
-[ext_resource type="Script" path="res://Scripts/Flicker.gd" id="8_dac0d"]
+[ext_resource type="Script" path="res://Scripts/LightFlicker.gd" id="8_dac0d"]
 [ext_resource type="PackedScene" uid="uid://dhrgrpwwax6i8" path="res://Prefabs/Spawn On Blocks/Spikes.tscn" id="9_teir6"]
 [ext_resource type="Script" path="res://Scripts/WaterLevel.gd" id="10_7kdmf"]
 [ext_resource type="Texture2D" uid="uid://b3oj42r81wxap" path="res://Art/Sprites/UI/ui_frame.png" id="10_ixs36"]

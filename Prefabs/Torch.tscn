@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cc5uns1b78ycy" path="res://Art/Sprites/fire/flag_gib.png" id="1_2yuss"]
 [ext_resource type="Texture2D" uid="uid://dcxkuua4cd4st" path="res://Art/Sprites/fire_small.png" id="2_6gydv"]
-[ext_resource type="Script" path="res://Scripts/Flicker.gd" id="3_0tdvr"]
+[ext_resource type="Script" path="res://Scripts/LightFlicker.gd" id="3_0tdvr"]
 [ext_resource type="Script" path="res://Scripts/Squashable.gd" id="4_ekdu8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8is8u"]

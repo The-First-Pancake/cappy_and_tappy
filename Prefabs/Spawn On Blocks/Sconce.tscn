@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Sconce.gd" id="1_q8pus"]
 [ext_resource type="Texture2D" uid="uid://cc5uns1b78ycy" path="res://Art/Sprites/fire/flag_gib.png" id="2_ie4to"]
-[ext_resource type="Script" path="res://Scripts/Flicker.gd" id="3_wrrhm"]
+[ext_resource type="Script" path="res://Scripts/LightFlicker.gd" id="3_wrrhm"]
 [ext_resource type="Texture2D" uid="uid://dcxkuua4cd4st" path="res://Art/Sprites/fire_small.png" id="4_vnqon"]
 [ext_resource type="Script" path="res://Scripts/Squashable.gd" id="5_tocvo"]
 

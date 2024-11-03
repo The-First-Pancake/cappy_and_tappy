@@ -9,16 +9,17 @@ var start_pos: Vector2
 
 @onready var explosion_sound: AudioStreamPlayer = $"Explosion Sound"
 @onready var explosion_animation: AnimatedSprite2D = $"Explosion Animation"
-@onready var point_light_2d: PointLight2D = $"Explosion Animation/PointLight2D"
 
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 
 
+
 func _ready() -> void:
 	animated_sprite_2d.play("default")
 	explosion_animation.play("default")
+	explosion_animation.process_mode = Node.NOTIFICATION_DISABLED
 	start_pos = position
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -43,13 +44,15 @@ func _process(delta: float) -> void:
 					GameManager.currently_held_object = null
 					animated_sprite_2d.play("fuse")
 					reparent(get_viewport().get_camera_2d().get_parent()) #reparent the dynamite off the camera
+					
 					await animated_sprite_2d.animation_finished
 					#TODO fuse sound
 					AudioManager.PlayAudio(explosion_sound)
 					
 					explosion_animation.reparent(get_parent())
 					explosion_animation.play("explode")
-					point_light_2d.enabled = true
+					explosion_animation.visible = true
+					explosion_animation.process_mode = Node.PROCESS_MODE_INHERIT
 					explosion_animation.animation_finished.connect(explosion_animation.queue_free)
 					block_collided_with.destroy(global_position, 20, 500, 1000)
 					queue_free()
