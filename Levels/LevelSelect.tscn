@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://bjdpxtqaavny0"]
+[gd_scene load_steps=53 format=3 uid="uid://bjdpxtqaavny0"]
 
 [ext_resource type="Script" path="res://Scripts/LevelSelect.gd" id="1_7k26d"]
 [ext_resource type="Texture2D" uid="uid://bqfeqtdw7xcxo" path="res://Art/Sprites/Backgrounds/background.png" id="1_24j1o"]
@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cotgqt74hr8q7" path="res://Levels/World1/level_traverse.tscn" id="4_755wy"]
 [ext_resource type="Script" path="res://Scripts/LevelWeenie.gd" id="4_a2yic"]
 [ext_resource type="PackedScene" uid="uid://cfckjpuscavie" path="res://Levels/Endless Level.tscn" id="4_hscby"]
-[ext_resource type="FontVariation" uid="uid://btbr0dkcrkg1g" path="res://Fonts/CenteredPixelFont.tres" id="4_lwxxi"]
+[ext_resource type="FontVariation" path="res://Fonts/CenteredPixelFont.tres" id="4_lwxxi"]
 [ext_resource type="PackedScene" uid="uid://7amxmfedeq7u" path="res://Levels/World1/level_chamber_666.tscn" id="4_ptxlh"]
 [ext_resource type="PackedScene" uid="uid://dbg7ybfkkk4eo" path="res://Levels/World1/level_first_climb.tscn" id="4_vtdfy"]
 [ext_resource type="Script" path="res://Scripts/Reset_Save.gd" id="5_14hdt"]
@@ -37,6 +37,7 @@
 [ext_resource type="PackedScene" uid="uid://c8jp0shc73si" path="res://Levels/World1/level_harpoons.tscn" id="31_slj0u"]
 [ext_resource type="PackedScene" uid="uid://cdt2acy760u6v" path="res://Levels/World1/level_creepy_crawly.tscn" id="32_pcxxg"]
 [ext_resource type="PackedScene" uid="uid://bdadvrc0pl2ox" path="res://Levels/World1/level_harpoon_traverse.tscn" id="32_un76u"]
+[ext_resource type="PackedScene" uid="uid://cj80buvkjqk53" path="res://Levels/World1/level_deep_dark.tscn" id="36_7har7"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_pwuex"]
 light_mode = 1
@@ -136,7 +137,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7k26d")
-worlds = [NodePath("MarginContainer/VBoxContainer/World 1"), NodePath("World 2")]
+worlds = [NodePath("MarginContainer/VBoxContainer/World 1"), NodePath("World 2"), NodePath("World 3")]
 
 [node name="Background" type="TextureRect" parent="."]
 texture_filter = 1
@@ -515,6 +516,22 @@ scene_to_load = ExtResource("32_pcxxg")
 modulate = Color(1, 0.550781, 0.550781, 1)
 layout_mode = 2
 scene_to_load = ExtResource("4_ptxlh")
+
+[node name="World 3" type="HFlowContainer" parent="."]
+layout_mode = 2
+offset_left = 2049.0
+offset_top = 150.0
+offset_right = 3919.0
+offset_bottom = 480.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 20
+alignment = 1
+
+[node name="Level - Deep Dark" parent="World 3" instance=ExtResource("3_66fh1")]
+layout_mode = 2
+scene_to_load = ExtResource("36_7har7")
 
 [node name="Next World Button" type="Button" parent="."]
 layout_mode = 0

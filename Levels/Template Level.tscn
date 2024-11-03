@@ -107,7 +107,7 @@ size = Vector2(9500, 709)
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_e7s6v"]
 light_mode = 1
 
-[node name="Template Level" type="Node2D"]
+[node name="Template Level2" type="Node2D"]
 
 [node name="Background Parallax" type="Parallax2D" parent="."]
 scroll_scale = Vector2(1, 0.5)
