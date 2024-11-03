@@ -79,11 +79,13 @@ position = Vector2(0, -2.5)
 shape = SubResource("RectangleShape2D_0fbj1")
 
 [node name="Fire" type="RigidBody2D" parent="."]
-position = Vector2(0, -28)
+position = Vector2(0, -19)
 collision_layer = 0
 collision_mask = 0
+mass = 0.2
 center_of_mass_mode = 1
-center_of_mass = Vector2(0, 10)
+center_of_mass = Vector2(0, 20)
+freeze = true
 
 [node name="PointLight2D" type="PointLight2D" parent="Fire"]
 scale = Vector2(9, 9)
@@ -110,13 +112,13 @@ shape = SubResource("RectangleShape2D_c06ri")
 script = ExtResource("5_tocvo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -8)
+position = Vector2(0, -9)
 shape = SubResource("RectangleShape2D_va83x")
 
 [node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="."]
-position = Vector2(0, -26)
+position = Vector2(0, -21)
 node_a = NodePath("../Base")
 node_b = NodePath("../Fire")
 bias = 0.9
-length = 5.0
+length = 1.0
 damping = 16.0
