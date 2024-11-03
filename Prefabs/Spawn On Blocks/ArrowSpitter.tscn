@@ -21,6 +21,7 @@ script = ExtResource("1_wqj1s")
 arrow_prefab = ExtResource("2_i3f76")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 3
 position = Vector2(28.125, -1.5625)
 scale = Vector2(3.125, 3.125)
 texture = SubResource("CanvasTexture_xq1l8")

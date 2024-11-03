@@ -20,6 +20,7 @@ script = ExtResource("1_h7pqf")
 arrow_prefab = ExtResource("2_yoc54")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 3
 position = Vector2(28.125, -1.5625)
 rotation = 3.14159
 scale = Vector2(-3.125, 3.125)
