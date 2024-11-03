@@ -60,7 +60,6 @@ func return_dynamite() -> void:
 	position = start_pos
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	print(1)
 	var m_event: InputEventMouse = event as InputEventMouse
 	if !m_event: return
 	if !m_event.is_action_released("drop_block"): return

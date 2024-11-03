@@ -331,7 +331,6 @@ func try_squash() -> void:
 	#This method could cause problems if the player temporarily clips into something due to moving really fast, but I've yet to run into that problem
 	if squash_detector.is_colliding():
 		#if squash_detector.get_collision_normal() == Vector2.ZERO: #the ray is inside the object it's colliding with
-		print(1)
 		die()
 	
 	#This method is really smart and doesn't work lol
