@@ -10,6 +10,7 @@ var spawn_timer : Timer
 		refresh_block_bag()
 @export var spawn_objects: Array[SpawnObject]
 @export var spawn_object_probability : float = 0.0
+@export var every_block_spawn_objects: Array[SpawnObject]
 
 var spawned_block : Placeable
 var spawned_object_counts : Array[int] = []
@@ -52,8 +53,14 @@ func generate_and_spawn_block() -> void:
 	spawned_block.enter_queued() # force entering the queued again to force physics layers
 
 func generate_and_spawn_hold_objects(block: Placeable) -> void:
-	for spawn_point_idx in len(block.hold_point_generator.get_generated_points()):
-		if (randf() < spawn_object_probability):
+	var spawn_point_idxs : Array = range(len(block.hold_point_generator.get_generated_points()))
+	spawn_point_idxs.shuffle()
+	var every_block_idx : int = 0
+	for spawn_point_idx : int in spawn_point_idxs:
+		if every_block_idx < len(every_block_spawn_objects):
+			spawn_object_on_hold(every_block_spawn_objects[every_block_idx], block, spawn_point_idx)
+			every_block_idx += 1
+		elif (randf() < spawn_object_probability):
 			var cum_probability : float = 0
 			var object_choice : float = randf()
 			for i in len(spawn_objects):
