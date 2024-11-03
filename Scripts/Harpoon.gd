@@ -40,7 +40,7 @@ func _physics_process(delta: float) -> void:
 				var hit_block: Node2D = null
 				
 				for i in range(range):
-					harpoon_raycast.target_position.y = -speed * delta #The harpoon checks the ahead for the distance it's about to traverse
+					harpoon_raycast.target_position.y = -speed * delta * 3 #The harpoon checks the ahead for the distance it's about to traverse
 					if harpoon_raycast.get_collider():
 						hit_block = harpoon_raycast.get_collider()
 						harpoon.global_position = harpoon_raycast.get_collision_point() - direction * 50
