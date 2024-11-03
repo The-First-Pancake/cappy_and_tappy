@@ -196,7 +196,7 @@ energy = 2.91
 range_item_cull_mask = 2
 texture = SubResource("GradientTexture2D_fgsig")
 texture_scale = 2.0
-height = 10.0
+height = 50.0
 script = ExtResource("8_dac0d")
 
 [node name="UiThrobber" type="Sprite2D" parent="Camera2D/UI"]
