@@ -1,0 +1,121 @@
+[gd_scene load_steps=16 format=3 uid="uid://di2wrjiflt752"]
+
+[ext_resource type="Script" path="res://Scripts/Sconce.gd" id="1_q8pus"]
+[ext_resource type="Texture2D" uid="uid://cc5uns1b78ycy" path="res://Art/Sprites/fire/flag_gib.png" id="2_ie4to"]
+[ext_resource type="Script" path="res://Scripts/Flicker.gd" id="3_wrrhm"]
+[ext_resource type="Texture2D" uid="uid://dcxkuua4cd4st" path="res://Art/Sprites/fire_small.png" id="4_vnqon"]
+[ext_resource type="Script" path="res://Scripts/Squashable.gd" id="5_tocvo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0fbj1"]
+size = Vector2(8, 25)
+
+[sub_resource type="Gradient" id="Gradient_mjwa8"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ddbxi"]
+gradient = SubResource("Gradient_mjwa8")
+fill = 1
+fill_from = Vector2(0.517094, 0.457265)
+fill_to = Vector2(0.91453, 0.111111)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8is8u"]
+atlas = ExtResource("4_vnqon")
+region = Rect2(0, 0, 3, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udlu0"]
+atlas = ExtResource("4_vnqon")
+region = Rect2(3, 0, 3, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_deems"]
+atlas = ExtResource("4_vnqon")
+region = Rect2(6, 0, 3, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_auh6p"]
+atlas = ExtResource("4_vnqon")
+region = Rect2(9, 0, 3, 6)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_40mam"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8is8u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_udlu0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_deems")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_auh6p")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c06ri"]
+size = Vector2(9, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_va83x"]
+size = Vector2(20, 16)
+
+[node name="Sconce" type="Area2D"]
+physics_interpolation_mode = 2
+script = ExtResource("1_q8pus")
+
+[node name="Base" type="StaticBody2D" parent="."]
+position = Vector2(0, -11)
+collision_layer = 0
+collision_mask = 0
+
+[node name="FlagGib" type="Sprite2D" parent="Base"]
+rotation = -0.253073
+scale = Vector2(1.03187, 1.1084)
+texture = ExtResource("2_ie4to")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Base"]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_0fbj1")
+
+[node name="Fire" type="RigidBody2D" parent="."]
+position = Vector2(0, -28)
+collision_layer = 0
+collision_mask = 0
+center_of_mass_mode = 1
+center_of_mass = Vector2(0, 10)
+
+[node name="PointLight2D" type="PointLight2D" parent="Fire"]
+scale = Vector2(9, 9)
+color = Color(1, 0.539063, 0, 1)
+energy = 3.0
+range_item_cull_mask = 3
+texture = SubResource("GradientTexture2D_ddbxi")
+texture_scale = 0.1
+height = 30.0
+script = ExtResource("3_wrrhm")
+
+[node name="flame" type="AnimatedSprite2D" parent="Fire"]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_40mam")
+autoplay = "default"
+frame_progress = 0.939399
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fire"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_c06ri")
+
+[node name="Squashable" type="Node" parent="."]
+script = ExtResource("5_tocvo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_va83x")
+
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="."]
+position = Vector2(0, -26)
+node_a = NodePath("../Base")
+node_b = NodePath("../Fire")
+bias = 0.9
+length = 5.0
+damping = 16.0
