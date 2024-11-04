@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://bjdpxtqaavny0"]
+[gd_scene load_steps=54 format=3 uid="uid://bjdpxtqaavny0"]
 
 [ext_resource type="Script" path="res://Scripts/LevelSelect.gd" id="1_7k26d"]
 [ext_resource type="Texture2D" uid="uid://bqfeqtdw7xcxo" path="res://Art/Sprites/Backgrounds/background.png" id="1_24j1o"]
@@ -38,6 +38,7 @@
 [ext_resource type="PackedScene" uid="uid://cdt2acy760u6v" path="res://Levels/World1/level_creepy_crawly.tscn" id="32_pcxxg"]
 [ext_resource type="PackedScene" uid="uid://bdadvrc0pl2ox" path="res://Levels/World1/level_harpoon_traverse.tscn" id="32_un76u"]
 [ext_resource type="PackedScene" uid="uid://cj80buvkjqk53" path="res://Levels/World1/level_deep_dark.tscn" id="36_7har7"]
+[ext_resource type="PackedScene" uid="uid://bxpxsflrpgcu6" path="res://Levels/World1/level_tomb.tscn" id="37_yrs1g"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_pwuex"]
 light_mode = 1
@@ -532,6 +533,10 @@ alignment = 1
 [node name="Level - Deep Dark" parent="World 3" instance=ExtResource("3_66fh1")]
 layout_mode = 2
 scene_to_load = ExtResource("36_7har7")
+
+[node name="Level - Tomb" parent="World 3" instance=ExtResource("3_66fh1")]
+layout_mode = 2
+scene_to_load = ExtResource("37_yrs1g")
 
 [node name="Next World Button" type="Button" parent="."]
 layout_mode = 0

@@ -1,46 +1,46 @@
 [gd_scene load_steps=20 format=4 uid="uid://bxpxsflrpgcu6"]
 
-[ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_wrxpx"]
-[ext_resource type="PackedScene" uid="uid://dep1x0fmlo6tj" path="res://Prefabs/Torch.tscn" id="2_fktjo"]
-[ext_resource type="Script" path="res://Scripts/SpawnObject.gd" id="2_xwvcy"]
-[ext_resource type="PackedScene" uid="uid://di2wrjiflt752" path="res://Prefabs/Spawn On Blocks/Sconce.tscn" id="3_lok3d"]
-[ext_resource type="PackedScene" uid="uid://r1kjk04fwuou" path="res://Prefabs/Spawn On Blocks/Hold.tscn" id="3_mxx14"]
-[ext_resource type="PackedScene" uid="uid://dhrgrpwwax6i8" path="res://Prefabs/Spawn On Blocks/Spikes.tscn" id="4_w7ddt"]
-[ext_resource type="PackedScene" uid="uid://mcu32jepdsb3" path="res://Prefabs/Dynamite.tscn" id="6_w01yd"]
-[ext_resource type="AudioStream" uid="uid://diuhinfln26yf" path="res://Sound/Music/physics don't make sense no more.wav" id="6_wyoy2"]
-[ext_resource type="PackedScene" uid="uid://bkatak76uuoli" path="res://Prefabs/Spawn On Blocks/Campfire.tscn" id="7_e3slo"]
-[ext_resource type="PackedScene" uid="uid://c4safo4pwme48" path="res://Prefabs/Blocks/1x4-Piece.tscn" id="7_ejtgy"]
-[ext_resource type="PackedScene" uid="uid://c8njjo4yfo85v" path="res://Prefabs/coffin.tscn" id="10_f67a7"]
-[ext_resource type="PackedScene" uid="uid://c5egotsf7fdg4" path="res://Prefabs/PathNode.tscn" id="11_2efaq"]
-[ext_resource type="Script" path="res://Scripts/CameraZone.gd" id="13_15ay0"]
+[ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_ky0qr"]
+[ext_resource type="Script" path="res://Scripts/SpawnObject.gd" id="2_daaum"]
+[ext_resource type="PackedScene" uid="uid://r1kjk04fwuou" path="res://Prefabs/Spawn On Blocks/Hold.tscn" id="3_hxptn"]
+[ext_resource type="PackedScene" uid="uid://dhrgrpwwax6i8" path="res://Prefabs/Spawn On Blocks/Spikes.tscn" id="4_m3854"]
+[ext_resource type="PackedScene" uid="uid://bkatak76uuoli" path="res://Prefabs/Spawn On Blocks/Campfire.tscn" id="5_014aj"]
+[ext_resource type="PackedScene" uid="uid://di2wrjiflt752" path="res://Prefabs/Spawn On Blocks/Sconce.tscn" id="6_6jwv2"]
+[ext_resource type="PackedScene" uid="uid://mcu32jepdsb3" path="res://Prefabs/Dynamite.tscn" id="7_vw862"]
+[ext_resource type="AudioStream" uid="uid://diuhinfln26yf" path="res://Sound/Music/physics don't make sense no more.wav" id="8_h4xwq"]
+[ext_resource type="PackedScene" uid="uid://dep1x0fmlo6tj" path="res://Prefabs/Torch.tscn" id="9_8sh3d"]
+[ext_resource type="PackedScene" uid="uid://c4safo4pwme48" path="res://Prefabs/Blocks/1x4-Piece.tscn" id="10_78xtq"]
+[ext_resource type="PackedScene" uid="uid://c8njjo4yfo85v" path="res://Prefabs/coffin.tscn" id="11_d4fom"]
+[ext_resource type="PackedScene" uid="uid://c5egotsf7fdg4" path="res://Prefabs/PathNode.tscn" id="12_ho5uk"]
+[ext_resource type="Script" path="res://Scripts/CameraZone.gd" id="13_e4s57"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vme8j"]
 size = Vector2(800, 16025)
 
 [sub_resource type="Resource" id="Resource_6716m"]
-script = ExtResource("2_xwvcy")
-spawn_prefab = ExtResource("3_mxx14")
+script = ExtResource("2_daaum")
+spawn_prefab = ExtResource("3_hxptn")
 spawn_count = 10
 
 [sub_resource type="Resource" id="Resource_mwrdh"]
-script = ExtResource("2_xwvcy")
-spawn_prefab = ExtResource("4_w7ddt")
+script = ExtResource("2_daaum")
+spawn_prefab = ExtResource("4_m3854")
 spawn_count = 10
 
 [sub_resource type="Resource" id="Resource_lt208"]
-script = ExtResource("2_xwvcy")
-spawn_prefab = ExtResource("7_e3slo")
+script = ExtResource("2_daaum")
+spawn_prefab = ExtResource("5_014aj")
 spawn_count = 5
 
 [sub_resource type="Resource" id="Resource_47l2v"]
-script = ExtResource("2_xwvcy")
-spawn_prefab = ExtResource("3_lok3d")
+script = ExtResource("2_daaum")
+spawn_prefab = ExtResource("6_6jwv2")
 spawn_count = 1
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5x3f"]
 size = Vector2(1150, 10000)
 
-[node name="Template Level2" instance=ExtResource("1_wrxpx")]
+[node name="Template Level2" instance=ExtResource("1_ky0qr")]
 
 [node name="Overhead Light" parent="." index="1"]
 visible = false
@@ -63,16 +63,16 @@ visible = true
 
 [node name="BlockSpawner" parent="Camera2D" index="3"]
 position = Vector2(-733, -381)
-spawn_objects = Array[ExtResource("2_xwvcy")]([SubResource("Resource_6716m"), SubResource("Resource_mwrdh"), SubResource("Resource_lt208")])
-every_block_spawn_objects = Array[ExtResource("2_xwvcy")]([SubResource("Resource_47l2v")])
+spawn_objects = Array[ExtResource("2_daaum")]([SubResource("Resource_6716m"), SubResource("Resource_mwrdh"), SubResource("Resource_lt208")])
+every_block_spawn_objects = Array[ExtResource("2_daaum")]([SubResource("Resource_47l2v")])
 
-[node name="Dynamite4" parent="Camera2D" index="5" instance=ExtResource("6_w01yd")]
+[node name="Dynamite4" parent="Camera2D" index="5" instance=ExtResource("7_vw862")]
 position = Vector2(-833, -81)
 
-[node name="Dynamite6" parent="Camera2D" index="7" instance=ExtResource("6_w01yd")]
+[node name="Dynamite6" parent="Camera2D" index="7" instance=ExtResource("7_vw862")]
 position = Vector2(-633, -81)
 
-[node name="Dynamite5" parent="Camera2D" index="9" instance=ExtResource("6_w01yd")]
+[node name="Dynamite5" parent="Camera2D" index="9" instance=ExtResource("7_vw862")]
 position = Vector2(-733, -81)
 
 [node name="Water" parent="." index="9"]
@@ -88,225 +88,225 @@ position = Vector2(4250, -1300)
 position = Vector2(1450, -3400)
 
 [node name="Music" parent="Music Player" index="0"]
-stream = ExtResource("6_wyoy2")
+stream = ExtResource("8_h4xwq")
 
-[node name="Campfire" parent="Music Player" index="1" instance=ExtResource("7_e3slo")]
+[node name="Campfire" parent="Music Player" index="1" instance=ExtResource("5_014aj")]
 position = Vector2(1900, -1300)
 
 [node name="CanvasModulate" parent="." index="35"]
 visible = true
 
-[node name="Torch" parent="." index="36" instance=ExtResource("2_fktjo")]
+[node name="Torch" parent="." index="36" instance=ExtResource("9_8sh3d")]
 position = Vector2(1200, 950)
 
-[node name="Torch2" parent="." index="37" instance=ExtResource("2_fktjo")]
+[node name="Torch2" parent="." index="37" instance=ExtResource("9_8sh3d")]
 position = Vector2(1550, 950)
 
-[node name="1x4 Block3" parent="." index="38" instance=ExtResource("7_ejtgy")]
+[node name="1x4 Block3" parent="." index="38" instance=ExtResource("10_78xtq")]
 position = Vector2(1750, -1500)
 rotation = 28.2744
 
-[node name="Torch3" parent="." index="39" instance=ExtResource("2_fktjo")]
+[node name="Torch3" parent="." index="39" instance=ExtResource("9_8sh3d")]
 position = Vector2(1450, -1450)
 
-[node name="Coffin" parent="." index="40" instance=ExtResource("10_f67a7")]
+[node name="Coffin" parent="." index="40" instance=ExtResource("11_d4fom")]
 position = Vector2(2850, -1300)
 
-[node name="Torch4" parent="." index="41" instance=ExtResource("2_fktjo")]
+[node name="Torch4" parent="." index="41" instance=ExtResource("9_8sh3d")]
 position = Vector2(2400, 1000)
 
-[node name="Torch5" parent="." index="42" instance=ExtResource("2_fktjo")]
+[node name="Torch5" parent="." index="42" instance=ExtResource("9_8sh3d")]
 position = Vector2(2900, 1000)
 
-[node name="Torch6" parent="." index="43" instance=ExtResource("2_fktjo")]
+[node name="Torch6" parent="." index="43" instance=ExtResource("9_8sh3d")]
 position = Vector2(3350, 1000)
 
-[node name="Coffin2" parent="." index="44" instance=ExtResource("10_f67a7")]
+[node name="Coffin2" parent="." index="44" instance=ExtResource("11_d4fom")]
 position = Vector2(2850, -1650)
 
-[node name="PathNode21" parent="." index="45" instance=ExtResource("11_2efaq")]
+[node name="PathNode21" parent="." index="45" instance=ExtResource("12_ho5uk")]
 position = Vector2(850, 1050)
 
-[node name="PathNode22" parent="." index="46" instance=ExtResource("11_2efaq")]
+[node name="PathNode22" parent="." index="46" instance=ExtResource("12_ho5uk")]
 position = Vector2(800, 1050)
 
-[node name="PathNode23" parent="." index="47" instance=ExtResource("11_2efaq")]
+[node name="PathNode23" parent="." index="47" instance=ExtResource("12_ho5uk")]
 position = Vector2(750, 1050)
 
-[node name="Coffin3" parent="." index="48" instance=ExtResource("10_f67a7")]
+[node name="Coffin3" parent="." index="48" instance=ExtResource("11_d4fom")]
 position = Vector2(2850, -2000)
 
-[node name="Coffin4" parent="." index="49" instance=ExtResource("10_f67a7")]
+[node name="Coffin4" parent="." index="49" instance=ExtResource("11_d4fom")]
 position = Vector2(2850, -2350)
 
-[node name="Coffin5" parent="." index="50" instance=ExtResource("10_f67a7")]
+[node name="Coffin5" parent="." index="50" instance=ExtResource("11_d4fom")]
 position = Vector2(2850, -2700)
 
-[node name="Coffin6" parent="." index="51" instance=ExtResource("10_f67a7")]
+[node name="Coffin6" parent="." index="51" instance=ExtResource("11_d4fom")]
 position = Vector2(2850, -3050)
 
-[node name="Hold" parent="." index="52" instance=ExtResource("3_mxx14")]
+[node name="Hold" parent="." index="52" instance=ExtResource("3_hxptn")]
 position = Vector2(2000, -1450)
 rotation = -1.5708
 
-[node name="PathNode24" parent="." index="53" instance=ExtResource("11_2efaq")]
+[node name="PathNode24" parent="." index="53" instance=ExtResource("12_ho5uk")]
 position = Vector2(2150, -1300)
 
-[node name="PathNode25" parent="." index="54" instance=ExtResource("11_2efaq")]
+[node name="PathNode25" parent="." index="54" instance=ExtResource("12_ho5uk")]
 position = Vector2(2200, -1300)
 
-[node name="PathNode26" parent="." index="55" instance=ExtResource("11_2efaq")]
+[node name="PathNode26" parent="." index="55" instance=ExtResource("12_ho5uk")]
 position = Vector2(2250, -1300)
 
-[node name="PathNode27" parent="." index="56" instance=ExtResource("11_2efaq")]
+[node name="PathNode27" parent="." index="56" instance=ExtResource("12_ho5uk")]
 position = Vector2(2300, -1300)
 
-[node name="PathNode28" parent="." index="57" instance=ExtResource("11_2efaq")]
+[node name="PathNode28" parent="." index="57" instance=ExtResource("12_ho5uk")]
 position = Vector2(2350, -1300)
 
-[node name="PathNode29" parent="." index="58" instance=ExtResource("11_2efaq")]
+[node name="PathNode29" parent="." index="58" instance=ExtResource("12_ho5uk")]
 position = Vector2(2400, -1300)
 
-[node name="PathNode30" parent="." index="59" instance=ExtResource("11_2efaq")]
+[node name="PathNode30" parent="." index="59" instance=ExtResource("12_ho5uk")]
 position = Vector2(2450, -1300)
 
-[node name="PathNode31" parent="." index="60" instance=ExtResource("11_2efaq")]
+[node name="PathNode31" parent="." index="60" instance=ExtResource("12_ho5uk")]
 position = Vector2(2500, -1300)
 
-[node name="PathNode32" parent="." index="61" instance=ExtResource("11_2efaq")]
+[node name="PathNode32" parent="." index="61" instance=ExtResource("12_ho5uk")]
 position = Vector2(2550, -1300)
 
-[node name="PathNode33" parent="." index="62" instance=ExtResource("11_2efaq")]
+[node name="PathNode33" parent="." index="62" instance=ExtResource("12_ho5uk")]
 position = Vector2(2600, -1300)
 
-[node name="PathNode34" parent="." index="63" instance=ExtResource("11_2efaq")]
+[node name="PathNode34" parent="." index="63" instance=ExtResource("12_ho5uk")]
 position = Vector2(2650, -1300)
 
-[node name="PathNode35" parent="." index="64" instance=ExtResource("11_2efaq")]
+[node name="PathNode35" parent="." index="64" instance=ExtResource("12_ho5uk")]
 position = Vector2(2700, -1300)
 
-[node name="PathNode36" parent="." index="65" instance=ExtResource("11_2efaq")]
+[node name="PathNode36" parent="." index="65" instance=ExtResource("12_ho5uk")]
 position = Vector2(2750, -1300)
 
-[node name="PathNode37" parent="." index="66" instance=ExtResource("11_2efaq")]
+[node name="PathNode37" parent="." index="66" instance=ExtResource("12_ho5uk")]
 position = Vector2(2800, -1300)
 
-[node name="PathNode38" parent="." index="67" instance=ExtResource("11_2efaq")]
+[node name="PathNode38" parent="." index="67" instance=ExtResource("12_ho5uk")]
 position = Vector2(2850, -1300)
 
-[node name="PathNode39" parent="." index="68" instance=ExtResource("11_2efaq")]
+[node name="PathNode39" parent="." index="68" instance=ExtResource("12_ho5uk")]
 position = Vector2(2800, -1650)
 
-[node name="PathNode40" parent="." index="69" instance=ExtResource("11_2efaq")]
+[node name="PathNode40" parent="." index="69" instance=ExtResource("12_ho5uk")]
 position = Vector2(2850, -1650)
 
-[node name="PathNode41" parent="." index="70" instance=ExtResource("11_2efaq")]
+[node name="PathNode41" parent="." index="70" instance=ExtResource("12_ho5uk")]
 position = Vector2(2750, -1650)
 
-[node name="PathNode42" parent="." index="71" instance=ExtResource("11_2efaq")]
+[node name="PathNode42" parent="." index="71" instance=ExtResource("12_ho5uk")]
 position = Vector2(2750, -2000)
 
-[node name="PathNode43" parent="." index="72" instance=ExtResource("11_2efaq")]
+[node name="PathNode43" parent="." index="72" instance=ExtResource("12_ho5uk")]
 position = Vector2(2800, -2000)
 
-[node name="PathNode44" parent="." index="73" instance=ExtResource("11_2efaq")]
+[node name="PathNode44" parent="." index="73" instance=ExtResource("12_ho5uk")]
 position = Vector2(2850, -2000)
 
-[node name="PathNode45" parent="." index="74" instance=ExtResource("11_2efaq")]
+[node name="PathNode45" parent="." index="74" instance=ExtResource("12_ho5uk")]
 position = Vector2(2750, -2350)
 
-[node name="PathNode46" parent="." index="75" instance=ExtResource("11_2efaq")]
+[node name="PathNode46" parent="." index="75" instance=ExtResource("12_ho5uk")]
 position = Vector2(2800, -2350)
 
-[node name="PathNode47" parent="." index="76" instance=ExtResource("11_2efaq")]
+[node name="PathNode47" parent="." index="76" instance=ExtResource("12_ho5uk")]
 position = Vector2(2850, -2350)
 
-[node name="PathNode48" parent="." index="77" instance=ExtResource("11_2efaq")]
+[node name="PathNode48" parent="." index="77" instance=ExtResource("12_ho5uk")]
 position = Vector2(2750, -2700)
 
-[node name="PathNode49" parent="." index="78" instance=ExtResource("11_2efaq")]
+[node name="PathNode49" parent="." index="78" instance=ExtResource("12_ho5uk")]
 position = Vector2(2800, -2700)
 
-[node name="PathNode50" parent="." index="79" instance=ExtResource("11_2efaq")]
+[node name="PathNode50" parent="." index="79" instance=ExtResource("12_ho5uk")]
 position = Vector2(2850, -2700)
 
-[node name="PathNode51" parent="." index="80" instance=ExtResource("11_2efaq")]
+[node name="PathNode51" parent="." index="80" instance=ExtResource("12_ho5uk")]
 position = Vector2(2850, -3050)
 
-[node name="PathNode52" parent="." index="81" instance=ExtResource("11_2efaq")]
+[node name="PathNode52" parent="." index="81" instance=ExtResource("12_ho5uk")]
 position = Vector2(2800, -3050)
 
-[node name="PathNode53" parent="." index="82" instance=ExtResource("11_2efaq")]
+[node name="PathNode53" parent="." index="82" instance=ExtResource("12_ho5uk")]
 position = Vector2(2750, -3050)
 
-[node name="PathNode54" parent="." index="83" instance=ExtResource("11_2efaq")]
+[node name="PathNode54" parent="." index="83" instance=ExtResource("12_ho5uk")]
 position = Vector2(1900, -2000)
 
-[node name="PathNode55" parent="." index="84" instance=ExtResource("11_2efaq")]
+[node name="PathNode55" parent="." index="84" instance=ExtResource("12_ho5uk")]
 position = Vector2(1950, -2000)
 
-[node name="PathNode56" parent="." index="85" instance=ExtResource("11_2efaq")]
+[node name="PathNode56" parent="." index="85" instance=ExtResource("12_ho5uk")]
 position = Vector2(2000, -2000)
 
-[node name="PathNode57" parent="." index="86" instance=ExtResource("11_2efaq")]
+[node name="PathNode57" parent="." index="86" instance=ExtResource("12_ho5uk")]
 position = Vector2(1900, -2350)
 
-[node name="PathNode58" parent="." index="87" instance=ExtResource("11_2efaq")]
+[node name="PathNode58" parent="." index="87" instance=ExtResource("12_ho5uk")]
 position = Vector2(1950, -2350)
 
-[node name="PathNode59" parent="." index="88" instance=ExtResource("11_2efaq")]
+[node name="PathNode59" parent="." index="88" instance=ExtResource("12_ho5uk")]
 position = Vector2(2000, -2350)
 
-[node name="PathNode60" parent="." index="89" instance=ExtResource("11_2efaq")]
+[node name="PathNode60" parent="." index="89" instance=ExtResource("12_ho5uk")]
 position = Vector2(1900, -2700)
 
-[node name="PathNode61" parent="." index="90" instance=ExtResource("11_2efaq")]
+[node name="PathNode61" parent="." index="90" instance=ExtResource("12_ho5uk")]
 position = Vector2(1950, -2700)
 
-[node name="PathNode62" parent="." index="91" instance=ExtResource("11_2efaq")]
+[node name="PathNode62" parent="." index="91" instance=ExtResource("12_ho5uk")]
 position = Vector2(2000, -2700)
 
-[node name="PathNode63" parent="." index="92" instance=ExtResource("11_2efaq")]
+[node name="PathNode63" parent="." index="92" instance=ExtResource("12_ho5uk")]
 position = Vector2(1900, -3050)
 
-[node name="PathNode64" parent="." index="93" instance=ExtResource("11_2efaq")]
+[node name="PathNode64" parent="." index="93" instance=ExtResource("12_ho5uk")]
 position = Vector2(1950, -3050)
 
-[node name="PathNode65" parent="." index="94" instance=ExtResource("11_2efaq")]
+[node name="PathNode65" parent="." index="94" instance=ExtResource("12_ho5uk")]
 position = Vector2(2000, -3050)
 
-[node name="PathNode66" parent="." index="95" instance=ExtResource("11_2efaq")]
+[node name="PathNode66" parent="." index="95" instance=ExtResource("12_ho5uk")]
 position = Vector2(1900, -3400)
 
-[node name="PathNode67" parent="." index="96" instance=ExtResource("11_2efaq")]
+[node name="PathNode67" parent="." index="96" instance=ExtResource("12_ho5uk")]
 position = Vector2(1950, -3400)
 
-[node name="PathNode68" parent="." index="97" instance=ExtResource("11_2efaq")]
+[node name="PathNode68" parent="." index="97" instance=ExtResource("12_ho5uk")]
 position = Vector2(2000, -3400)
 
-[node name="Torch7" parent="." index="98" instance=ExtResource("2_fktjo")]
+[node name="Torch7" parent="." index="98" instance=ExtResource("9_8sh3d")]
 position = Vector2(2200, -1400)
 
-[node name="Torch8" parent="." index="99" instance=ExtResource("2_fktjo")]
+[node name="Torch8" parent="." index="99" instance=ExtResource("9_8sh3d")]
 position = Vector2(2450, -1400)
 
-[node name="Torch9" parent="." index="100" instance=ExtResource("2_fktjo")]
+[node name="Torch9" parent="." index="100" instance=ExtResource("9_8sh3d")]
 position = Vector2(2650, -1400)
 
 [node name="Camera Zone2" type="Area2D" parent="." index="101"]
 position = Vector2(1350, -2500)
-script = ExtResource("13_15ay0")
+script = ExtResource("13_e4s57")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera Zone2" index="0"]
 position = Vector2(1025, -3700)
 shape = SubResource("RectangleShape2D_l5x3f")
 debug_color = Color(0.268719, 0, 0.701961, 0)
 
-[node name="Torch10" parent="." index="102" instance=ExtResource("2_fktjo")]
+[node name="Torch10" parent="." index="102" instance=ExtResource("9_8sh3d")]
 position = Vector2(3850, -1350)
 
-[node name="Torch11" parent="." index="103" instance=ExtResource("2_fktjo")]
+[node name="Torch11" parent="." index="103" instance=ExtResource("9_8sh3d")]
 position = Vector2(3250, -2400)
 
-[node name="Torch12" parent="." index="104" instance=ExtResource("2_fktjo")]
+[node name="Torch12" parent="." index="104" instance=ExtResource("9_8sh3d")]
 position = Vector2(1450, -3450)
