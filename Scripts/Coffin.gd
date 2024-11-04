@@ -1,7 +1,7 @@
 extends Area2D
 @export var enemy_prefab : PackedScene
 @export var spawn_delay : float = 1
-@export var trip_radius : float = 300
+@export var trip_radius : float = 400
 var tripped : bool = false
 
 # Called when the node enters the scene tree for the first time.

@@ -269,11 +269,12 @@ func update_animations() -> void:
 			footstep_animator.play("footsteps")
 		else:
 			if griddy_timer.time_left == 0:
-				sprite_animator.play("dance")
-				footstep_animator.play("footsteps")
-				if griddy_sound.playing == false:
-					AudioManager.current_music.stream_paused = true
-					griddy_sound.play()
+				pass
+				#sprite_animator.play("dance")
+				#footstep_animator.play("footsteps")
+				#if griddy_sound.playing == false:
+					#AudioManager.current_music.stream_paused = true
+					#griddy_sound.play()
 			else:
 				sprite_animator.play("idle")
 				if AudioManager.current_music.stream_paused == true:
