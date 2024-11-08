@@ -74,7 +74,7 @@ energy = 3.0
 blend_mode = 2
 range_item_cull_mask = 3
 texture = SubResource("GradientTexture2D_ddbxi")
-height = 30.0
+height = 100.0
 script = ExtResource("3_0tdvr")
 
 [node name="Squashable" type="Node" parent="."]

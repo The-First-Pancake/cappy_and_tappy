@@ -135,6 +135,10 @@ texture = SubResource("GradientTexture2D_o42py")
 texture_scale = 50.0
 height = 10.0
 
+[node name="Darkness" type="CanvasModulate" parent="."]
+visible = false
+color = Color(0.0846898, 0.08469, 0.0846899, 1)
+
 [node name="Camera Zone" type="Area2D" parent="."]
 script = ExtResource("27_rvwtg")
 mid_line_offset = -242.0
@@ -416,7 +420,3 @@ position = Vector2(1800, 1050)
 
 [node name="PathNode20" parent="." instance=ExtResource("28_ng7cu")]
 position = Vector2(1850, 1050)
-
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
-color = Color(0.0846898, 0.08469, 0.0846899, 1)
