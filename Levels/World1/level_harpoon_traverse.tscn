@@ -1,11 +1,6 @@
-[gd_scene load_steps=13 format=4 uid="uid://bdadvrc0pl2ox"]
+[gd_scene load_steps=8 format=4 uid="uid://bdadvrc0pl2ox"]
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_78jrs"]
-[ext_resource type="Texture2D" uid="uid://cb17awt0j13xi" path="res://Art/Sprites/glyphs/Glyph_Hook_Rotate.png" id="2_2dlen"]
-[ext_resource type="Texture2D" uid="uid://ce0qm3ti416bl" path="res://Art/Sprites/glyphs/Glyph_Hook_Attach.png" id="3_a52dg"]
-[ext_resource type="Texture2D" uid="uid://cvdukla2r3ows" path="res://Art/Sprites/glyphs/Glyph_Hook_Release.png" id="4_073dh"]
-[ext_resource type="Texture2D" uid="uid://dgb653myqjguj" path="res://Art/Sprites/glyphs/Glyph_Space.png" id="5_755qp"]
-[ext_resource type="Texture2D" uid="uid://b4pxxldcsvtbj" path="res://Art/Sprites/glyphs/Glyph_WASD.png" id="6_hvoos"]
 [ext_resource type="PackedScene" uid="uid://2emoy8lav7a0" path="res://Prefabs/Spawn On Blocks/harpoon_launcher.tscn" id="7_64x70"]
 [ext_resource type="PackedScene" uid="uid://r1kjk04fwuou" path="res://Prefabs/Spawn On Blocks/Hold.tscn" id="7_m31e7"]
 [ext_resource type="Script" path="res://Scripts/SpawnObject.gd" id="8_5tte7"]
@@ -20,38 +15,6 @@ spawn_prefab = ExtResource("7_m31e7")
 spawn_count = 100
 
 [node name="Template Level" instance=ExtResource("1_78jrs")]
-
-[node name="Glyphs" type="Node2D" parent="." index="2"]
-
-[node name="GlyphHookRotate" type="Sprite2D" parent="Glyphs" index="0"]
-modulate = Color(0.29, 0.231082, 0.1363, 0.294118)
-position = Vector2(1715.63, 392.188)
-scale = Vector2(3.125, 3.125)
-texture = ExtResource("2_2dlen")
-
-[node name="GlyphHookAttach" type="Sprite2D" parent="Glyphs" index="1"]
-modulate = Color(0.29, 0.231082, 0.1363, 0.294118)
-position = Vector2(1465.63, 392.188)
-scale = Vector2(3.125, 3.125)
-texture = ExtResource("3_a52dg")
-
-[node name="GlyphHookRelease" type="Sprite2D" parent="Glyphs" index="2"]
-modulate = Color(0.29, 0.231082, 0.1363, 0.294118)
-position = Vector2(1965.63, 392.188)
-scale = Vector2(3.125, 3.125)
-texture = ExtResource("4_073dh")
-
-[node name="Space Glyph" type="Sprite2D" parent="Glyphs" index="3"]
-modulate = Color(0.29, 0.231082, 0.1363, 0.294118)
-position = Vector2(1800, 900)
-scale = Vector2(6.25, 6.25)
-texture = ExtResource("5_755qp")
-
-[node name="Wasd Glyph" type="Sprite2D" parent="Glyphs" index="4"]
-modulate = Color(0.29, 0.231082, 0.1363, 0.294118)
-position = Vector2(1600, 900)
-scale = Vector2(6.25, 6.25)
-texture = ExtResource("6_hvoos")
 
 [node name="Camera Zone" parent="." index="3"]
 type = 1

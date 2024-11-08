@@ -72,7 +72,7 @@ light_mode = 1
 [sub_resource type="LabelSettings" id="LabelSettings_448k6"]
 font = ExtResource("10_xbpyp")
 font_size = 60
-font_color = Color(0.28, 0.2352, 0.168, 1)
+font_color = Color(0.566406, 0.477905, 0.345154, 1)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_r3n8n"]
 light_mode = 1
@@ -99,7 +99,7 @@ spawn_prefab = ExtResource("9_teir6")
 spawn_count = 10
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x6sbg"]
-size = Vector2(2100, 219.255)
+size = Vector2(9466, 219.255)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j4yru"]
 size = Vector2(9500, 709)
@@ -282,7 +282,7 @@ rise_speed = 16.0
 [node name="Piranah Swim Area" type="Area2D" parent="Water"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Water/Piranah Swim Area"]
-position = Vector2(0, -2.62744)
+position = Vector2(557, -2.62744)
 shape = SubResource("RectangleShape2D_x6sbg")
 debug_color = Color(0, 0.191406, 0.7, 0)
 

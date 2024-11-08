@@ -1,0 +1,5 @@
+To set up a dark level:
+	
+- Toggle off daylight
+- Toggle on darkness
+- in the UI, turn on the light so that queud blocks can be lit

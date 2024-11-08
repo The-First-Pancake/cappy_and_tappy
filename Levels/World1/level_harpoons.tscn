@@ -25,22 +25,22 @@ spawn_count = 5
 
 [node name="Template Level" instance=ExtResource("1_bq2w4")]
 
-[node name="Exit Door" parent="." index="4"]
+[node name="Exit Door" parent="." index="5"]
 position = Vector2(1200, -750)
 
 [node name="BlockSpawner" parent="Camera2D" index="3"]
 spawn_objects = Array[ExtResource("2_xkwx5")]([SubResource("Resource_42wei"), SubResource("Resource_fa0pl"), SubResource("Resource_e12ps")])
 
-[node name="Water" parent="." index="9"]
+[node name="Water" parent="." index="10"]
 rise_speed = 10.0
 
-[node name="Idol" parent="." index="10"]
+[node name="Idol" parent="." index="11"]
 position = Vector2(724, 1145)
 
-[node name="Idol2" parent="." index="11"]
+[node name="Idol2" parent="." index="12"]
 position = Vector2(800, 250)
 
-[node name="Idol3" parent="." index="12"]
+[node name="Idol3" parent="." index="13"]
 position = Vector2(800, -450)
 
 [node name="Music" parent="Music Player" index="0"]

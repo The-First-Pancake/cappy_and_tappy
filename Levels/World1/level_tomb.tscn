@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://bxpxsflrpgcu6"]
+[gd_scene load_steps=21 format=4 uid="uid://bxpxsflrpgcu6"]
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_ky0qr"]
 [ext_resource type="Script" path="res://Scripts/SpawnObject.gd" id="2_daaum"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://c8njjo4yfo85v" path="res://Prefabs/coffin.tscn" id="11_d4fom"]
 [ext_resource type="PackedScene" uid="uid://c5egotsf7fdg4" path="res://Prefabs/PathNode.tscn" id="12_ho5uk"]
 [ext_resource type="Script" path="res://Scripts/CameraZone.gd" id="13_e4s57"]
+[ext_resource type="Texture2D" uid="uid://crbu2wb5c6kc8" path="res://Art/cappypasta.png" id="14_eakl1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vme8j"]
 size = Vector2(800, 16025)
@@ -310,3 +311,8 @@ position = Vector2(3250, -2400)
 
 [node name="Torch12" parent="." index="104" instance=ExtResource("9_8sh3d")]
 position = Vector2(1450, -3450)
+
+[node name="Cappypasta" type="Sprite2D" parent="." index="105"]
+position = Vector2(1666, -861)
+scale = Vector2(1.87742, 1.76428)
+texture = ExtResource("14_eakl1")

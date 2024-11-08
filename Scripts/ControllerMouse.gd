@@ -19,6 +19,11 @@ func _process(_delta: float) -> void:
 	global_position = get_global_mouse_position()
 	if (Input.is_action_just_pressed("controller_mouse_click")):
 		fake_press()
+	
+	if GameManager.currently_held_object is Placeable and GameManager.currently_held_object.check_for_collisions():
+		modulate = Color.RED
+	else:
+		modulate = Color.WHITE
 
 func fake_press() -> void:
 	var a : InputEventMouseButton = InputEventMouseButton.new()
