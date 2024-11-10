@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://bjdpxtqaavny0"]
+[gd_scene load_steps=56 format=3 uid="uid://bjdpxtqaavny0"]
 
 [ext_resource type="Script" path="res://Scripts/LevelSelect.gd" id="1_7k26d"]
 [ext_resource type="Texture2D" uid="uid://bqfeqtdw7xcxo" path="res://Art/Sprites/Backgrounds/background.png" id="1_24j1o"]
@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cotgqt74hr8q7" path="res://Levels/World1/level_traverse.tscn" id="4_755wy"]
 [ext_resource type="Script" path="res://Scripts/LevelWeenie.gd" id="4_a2yic"]
 [ext_resource type="PackedScene" uid="uid://cfckjpuscavie" path="res://Levels/Endless Level.tscn" id="4_hscby"]
-[ext_resource type="FontVariation" uid="uid://btbr0dkcrkg1g" path="res://Fonts/CenteredPixelFont.tres" id="4_lwxxi"]
+[ext_resource type="FontVariation" path="res://Fonts/CenteredPixelFont.tres" id="4_lwxxi"]
 [ext_resource type="PackedScene" uid="uid://7amxmfedeq7u" path="res://Levels/World1/level_chamber_666.tscn" id="4_ptxlh"]
 [ext_resource type="PackedScene" uid="uid://dbg7ybfkkk4eo" path="res://Levels/World1/level_first_climb.tscn" id="4_vtdfy"]
 [ext_resource type="Script" path="res://Scripts/Reset_Save.gd" id="5_14hdt"]
@@ -40,6 +40,7 @@
 [ext_resource type="PackedScene" uid="uid://cfco1avf7mqdc" path="res://Levels/World1/level_fastball.tscn" id="33_dlnxx"]
 [ext_resource type="PackedScene" uid="uid://cj80buvkjqk53" path="res://Levels/World1/level_deep_dark.tscn" id="36_7har7"]
 [ext_resource type="PackedScene" uid="uid://bxpxsflrpgcu6" path="res://Levels/World1/level_tomb.tscn" id="37_yrs1g"]
+[ext_resource type="PackedScene" uid="uid://66qq3h005we5" path="res://Levels/World1/level_escape.tscn" id="39_mjmu6"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_pwuex"]
 light_mode = 1
@@ -542,6 +543,10 @@ scene_to_load = ExtResource("36_7har7")
 [node name="Level - Tomb" parent="World 3" instance=ExtResource("3_66fh1")]
 layout_mode = 2
 scene_to_load = ExtResource("37_yrs1g")
+
+[node name="Level - Escape" parent="World 3" instance=ExtResource("3_66fh1")]
+layout_mode = 2
+scene_to_load = ExtResource("39_mjmu6")
 
 [node name="Next World Button" type="Button" parent="."]
 layout_mode = 0
