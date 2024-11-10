@@ -46,9 +46,6 @@ size = Vector2(1150, 10000)
 [node name="Overhead Light" parent="." index="1"]
 visible = false
 
-[node name="Darkness" parent="." index="2"]
-visible = true
-
 [node name="Camera Zone" parent="." index="3"]
 mid_line_offset = 0.0
 

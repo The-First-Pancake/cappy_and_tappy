@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://di2wrjiflt752"]
+[gd_scene load_steps=17 format=3 uid="uid://di2wrjiflt752"]
 
 [ext_resource type="Script" path="res://Scripts/Sconce.gd" id="1_q8pus"]
 [ext_resource type="Texture2D" uid="uid://cc5uns1b78ycy" path="res://Art/Sprites/fire/flag_gib.png" id="2_ie4to"]
 [ext_resource type="Script" path="res://Scripts/LightFlicker.gd" id="3_wrrhm"]
 [ext_resource type="Texture2D" uid="uid://dcxkuua4cd4st" path="res://Art/Sprites/fire_small.png" id="4_vnqon"]
 [ext_resource type="Script" path="res://Scripts/Squashable.gd" id="5_tocvo"]
+[ext_resource type="Script" path="res://Scripts/Extinguishable.gd" id="6_vp8al"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0fbj1"]
 size = Vector2(8, 25)
@@ -110,6 +111,10 @@ shape = SubResource("RectangleShape2D_c06ri")
 
 [node name="Squashable" type="Node" parent="."]
 script = ExtResource("5_tocvo")
+
+[node name="Extinguishable" type="Node" parent="." node_paths=PackedStringArray("nodes_to_disable")]
+script = ExtResource("6_vp8al")
+nodes_to_disable = [NodePath("../Fire")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -9)

@@ -6,23 +6,16 @@
 
 [node name="Template Level" instance=ExtResource("1_lv8xn")]
 
-[node name="Entrance Door" parent="." index="1"]
-position = Vector2(1100, 1050)
-
-[node name="Exit Door" parent="." index="2"]
+[node name="Exit Door" parent="." index="5"]
 position = Vector2(1750, -3150)
 
-[node name="Cieling" parent="." index="5"]
-offset_top = -11276.0
-offset_bottom = -11010.0
-
-[node name="Idol" parent="." index="12"]
+[node name="Idol" parent="." index="11"]
 position = Vector2(950, -150)
 
-[node name="Idol2" parent="." index="13"]
+[node name="Idol2" parent="." index="12"]
 position = Vector2(850, -1550)
 
-[node name="Idol3" parent="." index="14"]
+[node name="Idol3" parent="." index="13"]
 position = Vector2(1850, -2800)
 
 [node name="PlaceableCharacterBody2d2" parent="." index="15" instance=ExtResource("2_sc1g2")]

@@ -1,10 +1,10 @@
 class_name LightFlicker
 extends PointLight2D
 
-var initial_energy: float = 0
-var percent_variance: float = .9
-var noise_gen: FastNoiseLite
+@export var percent_variance: float = .9
 
+var initial_energy: float = 0
+var noise_gen: FastNoiseLite
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

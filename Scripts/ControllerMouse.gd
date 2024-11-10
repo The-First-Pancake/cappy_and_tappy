@@ -20,7 +20,7 @@ func _process(_delta: float) -> void:
 	if (Input.is_action_just_pressed("controller_mouse_click")):
 		fake_press()
 	
-	if GameManager.currently_held_object is Placeable and GameManager.currently_held_object.check_for_collisions():
+	if is_instance_valid(GameManager.currently_held_object) and GameManager.currently_held_object is Placeable and GameManager.currently_held_object.check_for_collisions():
 		modulate = Color.RED
 	else:
 		modulate = Color.WHITE

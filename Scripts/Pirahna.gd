@@ -12,23 +12,20 @@ var splash_particles: PackedScene = preload("res://Prefabs/Pirahnas/splash_parti
 
 @onready var noise_offset: float = randf_range(0,10000)
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	noise_gen.noise_type = FastNoiseLite.TYPE_PERLIN
 
-
 var was_submerged: bool = true
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta: float) -> void:
 	var is_submerged: bool = get_overlapping_areas().has(swim_area)
 	var is_above_waterline: bool = !is_submerged and global_position.y < swim_area.global_position.y
-	#var player: Player = GameManager.player
-	
+	var player: Player = GameManager.player
 	
 	if is_submerged:
 		var rand_angle: float = noise_gen.get_noise_1d(Time.get_ticks_msec()*angular_accel + noise_offset) * angular_vel
-		#if player: # I tried biasing the movment towards the player this way. It made them jump a little too much and it didn't make a huge difference
-		#	rand_angle = abs(rand_angle) * sign(global_position.angle_to_point(player.global_position))
+		if player: # I tried biasing the movment towards the player this way. It made them jump a little too much and it didn't make a huge difference
+			rand_angle = abs(rand_angle) * sign(global_position.angle_to_point(player.global_position))
 		swim_dir = swim_dir.rotated(rand_angle * delta)
 	else:
 		var angle_to_home: float = (swim_area.global_position - global_position).angle()

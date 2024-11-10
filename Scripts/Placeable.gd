@@ -34,7 +34,7 @@ const UNPLACED_COLLISION_LAYER : int = 7
 
 var destroy_semaphore : Semaphore = Semaphore.new()
 var targeted_by_harpoon: bool = false
-var harpooned_accel: float = 3500
+var harpooned_accel: float = 3000
 var harpooned_dir: Vector2 = Vector2.RIGHT
 
 func _ready() -> void:
