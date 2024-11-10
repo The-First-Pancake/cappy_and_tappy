@@ -2,7 +2,7 @@ extends Area2D
 @export var enemy_prefab : PackedScene
 @export var spawn_delay : float = 1
 @export var trip_radius : float = 400
-var tripped : bool = false
+var tripped : bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,7 +11,11 @@ func _ready() -> void:
 		parent.placed.connect(func() -> void:
 			if abs(global_rotation_degrees) > 20:
 				destroy()
+			else:
+				tripped = false
 		)
+	else:
+		tripped = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
