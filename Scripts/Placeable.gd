@@ -47,6 +47,7 @@ func _ready() -> void:
 	spawn_pathfinding_nodes()
 	destroy_semaphore.post()
 
+
 var rotate_debounce: bool = false
 func _physics_process(delta: float) -> void:
 	if Engine.is_editor_hint(): #editor tools
@@ -90,10 +91,7 @@ func _physics_process(delta: float) -> void:
 			elif (collision.get_angle(-harpooned_dir) < deg_to_rad(45) and collision.get_angle(-harpooned_dir) > deg_to_rad(-45)):
 				enter_placed()
 	elif (state == PlaceState.QUEUED):
-		if Input.is_action_just_released("drop_block"): #Pick Up
-			if GameManager.time_since_unpause >= 0.2: #don't pick up the block if the level just loaded
-				if GameManager.currently_held_object == null:
-					enter_placing()
+		pass
 	elif (state == PlaceState.PLACED):
 		if is_instance_valid(GameManager.currently_held_object) and GameManager.currently_held_object is Dynamite and mouse_hovering and !indestructable:
 			modulate = Color.RED
@@ -123,8 +121,10 @@ func enter_harpooned(dir: Vector2) -> void:
 
 func enter_queued() -> void:
 	state = PlaceState.QUEUED
+	
 	set_collision_layer_value(DEFAULT_COLLISION_LAYER, false);
 	set_collision_layer_value(UNPLACED_COLLISION_LAYER, true);
+	modulate = Color.WHITE # make solid
 	# Deal with child nodes
 	for child in get_children():
 		if (child is Area2D):

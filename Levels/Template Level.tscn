@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=4 uid="uid://6dd2cbybvcqg"]
+[gd_scene load_steps=52 format=4 uid="uid://6dd2cbybvcqg"]
 
 [ext_resource type="Texture2D" uid="uid://bqfeqtdw7xcxo" path="res://Art/Sprites/Backgrounds/background.png" id="1_dtx2u"]
 [ext_resource type="PackedScene" uid="uid://dngf3odx0yf5k" path="res://Prefabs/player.tscn" id="2_hossx"]
@@ -60,9 +60,6 @@ fill = 1
 fill_from = Vector2(0.517094, 0.457265)
 fill_to = Vector2(0.91453, 0.132479)
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_rc0ob"]
-light_mode = 1
-
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ymr2b"]
 light_mode = 1
 
@@ -97,6 +94,25 @@ spawn_count = 2
 script = ExtResource("6_xpr8c")
 spawn_prefab = ExtResource("9_teir6")
 spawn_count = 10
+
+[sub_resource type="GDScript" id="GDScript_ehm88"]
+script/source = "extends Area2D
+
+
+
+func _on_mouse_entered() -> void:
+	print(10)
+
+
+func _on_mouse_exited() -> void:
+	pass # Replace with function body.
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4eaip"]
+size = Vector2(241, 236)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_rc0ob"]
+light_mode = 1
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x6sbg"]
 size = Vector2(9466, 219.255)
@@ -164,7 +180,6 @@ tile_set = ExtResource("5_tg1dj")
 position = Vector2(1033, 1002)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-z_index = 1000
 position = Vector2(1133, 681)
 script = ExtResource("4_psc51")
 
@@ -179,10 +194,10 @@ color = Color(0, 0, 0, 0.537255)
 
 [node name="ColorRect2" type="ColorRect" parent="Camera2D"]
 material = SubResource("CanvasItemMaterial_7gar6")
-offset_left = -909.0
-offset_top = -252.0
-offset_right = -563.0
-offset_bottom = -66.0
+offset_left = -914.0
+offset_top = -222.0
+offset_right = -568.0
+offset_bottom = -36.0
 mouse_filter = 1
 color = Color(0, 0, 0, 0.537255)
 
@@ -202,14 +217,6 @@ texture = SubResource("GradientTexture2D_fgsig")
 texture_scale = 2.0
 height = 50.0
 script = ExtResource("8_dac0d")
-
-[node name="UiThrobber" type="Sprite2D" parent="Camera2D/UI"]
-modulate = Color(0.56, 0.56, 0.56, 1)
-material = SubResource("CanvasItemMaterial_rc0ob")
-position = Vector2(-841, -474)
-scale = Vector2(3.125, 3.125)
-texture = ExtResource("5_aae1a")
-centered = false
 
 [node name="UiFrame" type="Sprite2D" parent="Camera2D/UI"]
 visible = false
@@ -261,14 +268,30 @@ spawn_container = NodePath("../../BlockContainer")
 spawn_objects = Array[ExtResource("6_xpr8c")]([SubResource("Resource_6716m"), SubResource("Resource_b3o7y"), SubResource("Resource_mwrdh")])
 spawn_object_probability = 0.5
 
+[node name="Return Block Click Area" type="Area2D" parent="Camera2D/BlockSpawner"]
+position = Vector2(-100, -100)
+script = SubResource("GDScript_ehm88")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/BlockSpawner/Return Block Click Area"]
+position = Vector2(101, 99)
+shape = SubResource("RectangleShape2D_4eaip")
+
+[node name="Block Queue" type="Sprite2D" parent="Camera2D/BlockSpawner"]
+modulate = Color(0.56, 0.56, 0.56, 1)
+material = SubResource("CanvasItemMaterial_rc0ob")
+position = Vector2(-100, -100)
+scale = Vector2(3.125, 3.125)
+texture = ExtResource("5_aae1a")
+centered = false
+
 [node name="Dynamite" parent="Camera2D" instance=ExtResource("16_3kw41")]
 position = Vector2(-861, 43)
 
-[node name="Dynamite3" parent="Camera2D" instance=ExtResource("16_3kw41")]
-position = Vector2(-660, 44)
-
 [node name="Dynamite2" parent="Camera2D" instance=ExtResource("16_3kw41")]
 position = Vector2(-762, 44)
+
+[node name="Dynamite3" parent="Camera2D" instance=ExtResource("16_3kw41")]
+position = Vector2(-660, 44)
 
 [node name="BlockContainer" type="Node2D" parent="."]
 
@@ -420,3 +443,6 @@ position = Vector2(1800, 1050)
 
 [node name="PathNode20" parent="." instance=ExtResource("28_ng7cu")]
 position = Vector2(1850, 1050)
+
+[connection signal="mouse_entered" from="Camera2D/BlockSpawner/Return Block Click Area" to="Camera2D/BlockSpawner/Return Block Click Area" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Camera2D/BlockSpawner/Return Block Click Area" to="Camera2D/BlockSpawner/Return Block Click Area" method="_on_mouse_exited"]

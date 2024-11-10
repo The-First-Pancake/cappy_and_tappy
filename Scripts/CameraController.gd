@@ -50,6 +50,7 @@ func _process(delta: float) -> void:
 	if !GameManager.player: return
 	if GameManager.player.dying: return
 	if stationary_cam: return
+	if GameManager.time_since_level_loaded < 0.5: return
 	
 	
 	var cam_zone: CameraZone = GameManager.player.current_camera_zone
@@ -117,7 +118,7 @@ func _process(delta: float) -> void:
 	if is_sliding:
 		var distance_from_target: float = global_position.distance_to(target_position)
 		var pan_speed: float = 180
-		var pan_speed_multiplier: float = clamp(pow(distance_from_target, .5), 1, 10000000)
+		var pan_speed_multiplier: float = clamp(pow(distance_from_target, .4), 1, 100)
 		global_position = global_position.move_toward(target_position, pan_speed * delta * pan_speed_multiplier)
 		if global_position.distance_to(target_position) < 5:
 			is_sliding = false

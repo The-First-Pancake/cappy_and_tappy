@@ -57,10 +57,10 @@ scale = Vector2(0.32, 0.32)
 position = Vector2(304, 0)
 scale = Vector2(0.32, 0.32)
 
-[node name="Entrance Door" parent="." index="11"]
+[node name="Entrance Door" parent="." index="13"]
 position = Vector2(900, 250)
 
-[node name="Exit Door" parent="." index="12"]
+[node name="Exit Door" parent="." index="14"]
 position = Vector2(900, 750)
 
 [node name="Spikes5" parent="Environment" index="0" instance=ExtResource("2_egqk4")]
@@ -99,29 +99,8 @@ scale = Vector2(0.32, 0.32)
 position = Vector2(320, 336)
 scale = Vector2(0.32, 0.32)
 
-[node name="Player" parent="." index="14"]
+[node name="Player" parent="." index="16"]
 position = Vector2(833, 200)
-
-[node name="Camera2D" parent="." index="15"]
-position = Vector2(1150, 996)
-
-[node name="Dynamite4" parent="Camera2D" index="3" instance=ExtResource("6_w00kd")]
-position = Vector2(-883, -37)
-
-[node name="BlockSpawner" parent="Camera2D" index="4"]
-block_prefabs = Array[PackedScene]([])
-spawn_objects = Array[ExtResource("2_a01ky")]([SubResource("Resource_xd867")])
-spawn_object_probability = 0.075
-
-[node name="Dynamite" parent="Camera2D" index="5"]
-position = Vector2(-883, 65)
-
-[node name="Dynamite3" parent="Camera2D" index="6"]
-visible = false
-position = Vector2(-883, 265)
-
-[node name="Dynamite2" parent="Camera2D" index="7"]
-position = Vector2(-883, 165)
 
 [node name="PlaceableCharacterBody2d14" parent="." index="17" instance=ExtResource("6_bg5ys")]
 position = Vector2(900, 300)
@@ -279,16 +258,37 @@ rotation = 14.1372
 position = Vector2(1500, 650)
 rotation = 14.1372
 
-[node name="Water" parent="." index="37"]
+[node name="Camera2D" parent="." index="37"]
+position = Vector2(1150, 996)
+
+[node name="Dynamite4" parent="Camera2D" index="3" instance=ExtResource("6_w00kd")]
+position = Vector2(-883, -37)
+
+[node name="BlockSpawner" parent="Camera2D" index="4"]
+block_prefabs = Array[PackedScene]([])
+spawn_objects = Array[ExtResource("2_a01ky")]([SubResource("Resource_xd867")])
+spawn_object_probability = 0.075
+
+[node name="Dynamite" parent="Camera2D" index="5"]
+position = Vector2(-883, 65)
+
+[node name="Dynamite3" parent="Camera2D" index="6"]
+visible = false
+position = Vector2(-883, 265)
+
+[node name="Dynamite2" parent="Camera2D" index="7"]
+position = Vector2(-883, 165)
+
+[node name="Water" parent="." index="39"]
 rise_speed = 0.0
 
-[node name="Idol" parent="." index="38"]
+[node name="Idol" parent="." index="40"]
 position = Vector2(850, 950)
 
-[node name="Idol2" parent="." index="39"]
+[node name="Idol2" parent="." index="41"]
 position = Vector2(1350, 450)
 
-[node name="Idol3" parent="." index="40"]
+[node name="Idol3" parent="." index="42"]
 position = Vector2(1800, 250)
 
 [node name="Music" parent="Music Player" index="0"]

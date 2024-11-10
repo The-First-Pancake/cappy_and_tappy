@@ -20,42 +20,37 @@ spawn_count = 1
 
 [node name="Template Level" instance=ExtResource("1_1ye1x")]
 
-[node name="Entrance Door" parent="." index="1"]
+[node name="Entrance Door" parent="." index="4"]
 position = Vector2(1350, 250)
 
-[node name="Exit Door" parent="." index="2"]
-position = Vector2(1750, 1050)
+[node name="Exit Door" parent="." index="5"]
+position = Vector2(1725, 1050)
 
-[node name="Player" parent="." index="5"]
+[node name="Player" parent="." index="7"]
 position = Vector2(1275, 200)
 
-[node name="Camera2D" parent="." index="7"]
+[node name="Camera2D" parent="." index="8"]
 position = Vector2(1150, 996)
-reverse_level = true
-
-[node name="BlockSpawner" parent="Camera2D" index="1"]
-block_prefabs = Array[PackedScene]([])
-spawn_objects = Array[ExtResource("2_7k4e2")]([SubResource("Resource_xd867")])
-spawn_object_probability = 0.075
 
 [node name="Dynamite4" parent="Camera2D" index="3" instance=ExtResource("4_vgq27")]
 position = Vector2(-883, 21)
 
-[node name="Water" parent="." index="8"]
+[node name="BlockSpawner" parent="Camera2D" index="4"]
+block_prefabs = Array[PackedScene]([])
+spawn_objects = Array[ExtResource("2_7k4e2")]([SubResource("Resource_xd867")])
+spawn_object_probability = 0.075
+
+[node name="Water" parent="." index="10"]
 rise_speed = 0.0
 
-[node name="Idol" parent="." index="9"]
+[node name="Idol" parent="." index="11"]
 position = Vector2(1050, 50)
 
-[node name="Idol2" parent="." index="10"]
+[node name="Idol2" parent="." index="12"]
 position = Vector2(850, 650)
 
-[node name="Idol3" parent="." index="11"]
+[node name="Idol3" parent="." index="13"]
 position = Vector2(1600, 550)
-
-[node name="Music" parent="Music Player" index="0"]
-stream = ExtResource("5_2qevy")
-volume_db = -5.0
 
 [node name="PlaceableCharacterBody2d14" parent="." index="14" instance=ExtResource("6_uelmd")]
 position = Vector2(1350, 300)
@@ -164,3 +159,7 @@ rotation = 9.42478
 [node name="PlaceableCharacterBody2d" parent="." index="38" instance=ExtResource("12_opbgf")]
 position = Vector2(1150, 850)
 rotation = 1.5708
+
+[node name="Music" parent="Music Player" index="0"]
+stream = ExtResource("5_2qevy")
+volume_db = -5.0
