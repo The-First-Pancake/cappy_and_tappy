@@ -41,7 +41,7 @@ fill_from = Vector2(0.517094, 0.457265)
 fill_to = Vector2(0.91453, 0.132479)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sf7tr"]
-size = Vector2(5950, 7050)
+size = Vector2(1350, 16994)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_faxfi"]
 light_mode = 1
@@ -127,7 +127,7 @@ scale = Vector2(3, 5)
 texture = ExtResource("1_dtx2u")
 stretch_mode = 1
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
+[node name="Darkness Layer" type="CanvasModulate" parent="."]
 visible = false
 color = Color(0.0846898, 0.08469, 0.0846899, 1)
 
@@ -147,7 +147,7 @@ script = ExtResource("27_rvwtg")
 mid_line_offset = -242.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera Zone"]
-position = Vector2(1375, -7325)
+position = Vector2(1375, -7353)
 shape = SubResource("RectangleShape2D_sf7tr")
 debug_color = Color(0.268719, 0, 0.701961, 0)
 
@@ -166,13 +166,15 @@ tile_set = ExtResource("5_tg1dj")
 [node name="Player" parent="." instance=ExtResource("2_hossx")]
 position = Vector2(1033, 1002)
 
-[node name="Idol" parent="." instance=ExtResource("13_jfp1q")]
+[node name="Idols" type="Node2D" parent="."]
+
+[node name="Idol" parent="Idols" instance=ExtResource("13_jfp1q")]
 position = Vector2(1350, 750)
 
-[node name="Idol2" parent="." instance=ExtResource("13_jfp1q")]
+[node name="Idol2" parent="Idols" instance=ExtResource("13_jfp1q")]
 position = Vector2(1350, 650)
 
-[node name="Idol3" parent="." instance=ExtResource("13_jfp1q")]
+[node name="Idol3" parent="Idols" instance=ExtResource("13_jfp1q")]
 position = Vector2(1350, 550)
 
 [node name="Block Container" type="Node2D" parent="."]
