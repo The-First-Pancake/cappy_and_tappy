@@ -122,8 +122,9 @@ func enter_placing() -> void:
 	GameManager.currently_held_object = self
 	await get_tree().process_frame
 	picked_up.emit()
+	reparent(BlockSpawner.instance.held_block_container)
 	modulate.a = 0.5 # make transparent
-	state = PlaceState.PLACING 
+	state = PlaceState.PLACING
 
 func enter_falling() -> void:
 	set_collision_mask_value(PLAYER_COLLISION_LAYER,false)
@@ -136,6 +137,8 @@ func enter_falling() -> void:
 			var area_2d_child : Area2D = child as Area2D
 			area_2d_child.set_collision_layer_value(DEFAULT_COLLISION_LAYER, true);
 			area_2d_child.set_collision_layer_value(UNPLACED_COLLISION_LAYER, false);
+	
+	reparent(BlockSpawner.instance.block_container)
 	modulate.a = 1 # make solid
 	state = PlaceState.FALLING
 	falling.emit()

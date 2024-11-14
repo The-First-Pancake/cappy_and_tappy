@@ -21,9 +21,9 @@ func _process(_delta: float) -> void:
 		fake_press()
 	
 	if is_instance_valid(GameManager.currently_held_object) and GameManager.currently_held_object is Placeable and GameManager.currently_held_object.check_for_collisions():
-		modulate = Color.RED
+		self_modulate = Color.RED
 	else:
-		modulate = Color.WHITE
+		self_modulate = Color.WHITE
 
 func fake_press() -> void:
 	var a : InputEventMouseButton = InputEventMouseButton.new()
