@@ -22,11 +22,11 @@ spawn_count = 0
 
 [node name="Template Level" instance=ExtResource("1_sxkng")]
 
-[node name="Overhead Light" parent="." index="1"]
-visible = false
-
-[node name="Darkness" parent="." index="2"]
+[node name="CanvasModulate" parent="." index="1"]
 visible = true
+
+[node name="Overhead Light" parent="." index="2"]
+visible = false
 
 [node name="Exit Door" parent="." index="5"]
 position = Vector2(1350, -350)
@@ -64,16 +64,16 @@ position = Vector2(-608, 44)
 [node name="Dynamite4" parent="Camera2D" index="7" instance=ExtResource("6_xmhdf")]
 position = Vector2(-683, 44)
 
-[node name="Water" parent="." index="13"]
+[node name="Water" parent="." index="14"]
 rise_speed = 0.0
 
-[node name="Idol" parent="." index="14"]
+[node name="Idol" parent="." index="15"]
 position = Vector2(1350, -100)
 
-[node name="Idol2" parent="." index="15"]
+[node name="Idol2" parent="." index="16"]
 position = Vector2(2351, 640)
 
-[node name="Idol3" parent="." index="16"]
+[node name="Idol3" parent="." index="17"]
 position = Vector2(3825, -1050)
 
 [node name="Music" parent="Music Player" index="0"]

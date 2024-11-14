@@ -43,7 +43,10 @@ size = Vector2(1150, 10000)
 
 [node name="Template Level2" instance=ExtResource("1_ky0qr")]
 
-[node name="Overhead Light" parent="." index="1"]
+[node name="CanvasModulate" parent="." index="1"]
+visible = true
+
+[node name="Overhead Light" parent="." index="2"]
 visible = false
 
 [node name="Camera Zone" parent="." index="3"]
@@ -76,16 +79,16 @@ position = Vector2(-633, -81)
 [node name="Dynamite5" parent="Camera2D" index="9" instance=ExtResource("7_vw862")]
 position = Vector2(-733, -81)
 
-[node name="Water" parent="." index="10"]
+[node name="Water" parent="." index="11"]
 rise_speed = 0.0
 
-[node name="Idol" parent="." index="11"]
+[node name="Idol" parent="." index="12"]
 position = Vector2(3300, -2350)
 
-[node name="Idol2" parent="." index="12"]
+[node name="Idol2" parent="." index="13"]
 position = Vector2(4250, -1300)
 
-[node name="Idol3" parent="." index="13"]
+[node name="Idol3" parent="." index="14"]
 position = Vector2(1450, -3400)
 
 [node name="Music" parent="Music Player" index="0"]
