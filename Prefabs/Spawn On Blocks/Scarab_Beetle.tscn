@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dgwixm1vxqs6t"]
+[gd_scene load_steps=19 format=3 uid="uid://dgwixm1vxqs6t"]
 
 [ext_resource type="Script" path="res://Scripts/ScarabBeetle.gd" id="1_dvdiv"]
 [ext_resource type="Texture2D" uid="uid://caxkkw4eqdkqo" path="res://Art/Sprites/Scarab Beetle/Beetle.png" id="3_hpaqa"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://cdrikgmpsln4y" path="res://Sound/Squash/squash 2.wav" id="6_4qkex"]
 [ext_resource type="AudioStream" uid="uid://bewjiyns10j5g" path="res://Sound/Squash/squash 3.wav" id="7_ypvgd"]
 [ext_resource type="AudioStream" uid="uid://biegkwdet178f" path="res://Sound/Squash/squash 8.wav" id="8_j5akp"]
+[ext_resource type="Script" path="res://Scripts/LevelBuildingTools.gd" id="8_thf5x"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k37xf"]
 radius = 11.0
@@ -121,3 +122,6 @@ texture = ExtResource("3_hwu8x")
 stream = SubResource("AudioStreamRandomizer_hp4wb")
 volume_db = -10.0
 pitch_scale = 1.5
+
+[node name="LevelBuildingTools" type="Node" parent="."]
+script = ExtResource("8_thf5x")

@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://2emoy8lav7a0"]
+[gd_scene load_steps=11 format=3 uid="uid://2emoy8lav7a0"]
 
 [ext_resource type="Script" path="res://Scripts/Harpoon.gd" id="1_dcokm"]
 [ext_resource type="Script" path="res://Scripts/Squashable.gd" id="2_64uom"]
 [ext_resource type="Texture2D" uid="uid://by7via7sb8iyj" path="res://Art/Sprites/Harpoon Gun/harpoon_rope.png" id="4_3lguc"]
 [ext_resource type="Texture2D" uid="uid://bhvty2fmh6tls" path="res://Art/Sprites/Harpoon Gun/harpoon_spear.png" id="5_cdfdi"]
+[ext_resource type="Script" path="res://Scripts/LevelBuildingTools.gd" id="6_skuvu"]
 [ext_resource type="Texture2D" uid="uid://ds407cwrk87ua" path="res://Art/Sprites/Harpoon Gun/harpoon_base.png" id="6_yuaro"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v85wb"]
@@ -73,5 +74,8 @@ modulate = Color(1, 1, 1, 0.270588)
 position = Vector2(-7.45058e-09, -199.68)
 scale = Vector2(-0.00889633, 6.14283)
 texture = SubResource("GradientTexture2D_x4vvd")
+
+[node name="LevelBuildingTools" type="Node" parent="."]
+script = ExtResource("6_skuvu")
 
 [connection signal="body_entered" from="Harpoon" to="." method="_on_harpoon_body_entered"]

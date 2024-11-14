@@ -1,4 +1,3 @@
-@tool
 class_name Placeable
 extends CharacterBody2D
 
@@ -38,9 +37,6 @@ var harpooned_accel: float = 3000
 var harpooned_dir: Vector2 = Vector2.RIGHT
 
 func _ready() -> void:
-	if Engine.is_editor_hint():
-		return
-	
 	if (state == PlaceState.FALLING):
 		enter_falling()
 	hold_point_generator = $HoldPointGenerator
@@ -48,18 +44,7 @@ func _ready() -> void:
 	destroy_semaphore.post()
 
 
-var rotate_debounce: bool = false
 func _physics_process(delta: float) -> void:
-	if Engine.is_editor_hint(): #editor tools
-		if self in EditorInterface.get_selection().get_selected_nodes():
-			if Input.is_key_pressed(KEY_V):
-				if rotate_debounce == false:
-					rotate_debounce = true
-					rotate(PI/2)
-			else:
-				rotate_debounce = false
-		return
-	
 	if (state == PlaceState.PLACING):
 		var grid_size: float = GameManager.GRID_SIZE
 		var mouse_pos : Vector2 = get_global_mouse_position()

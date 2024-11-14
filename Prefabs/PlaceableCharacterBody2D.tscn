@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cxgaavewg0jbi"]
+[gd_scene load_steps=10 format=3 uid="uid://cxgaavewg0jbi"]
 
 [ext_resource type="Script" path="res://Scripts/Placeable.gd" id="1_1yjnn"]
 [ext_resource type="AudioStream" uid="uid://ratgcebmg2xd" path="res://Sound/Explosion3__027.wav" id="2_g5u5i"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://p1l3buuxvytl" path="res://Sound/block_impact_01.wav" id="2_uc7ox"]
 [ext_resource type="PackedScene" uid="uid://c4x6g67fj5uq8" path="res://Prefabs/hold_point_generator.tscn" id="3_5mqgh"]
 [ext_resource type="PackedScene" uid="uid://dohp3cgpxnwcp" path="res://Prefabs/ShardEmitter.tscn" id="3_oyvqx"]
+[ext_resource type="Script" path="res://Scripts/LevelBuildingTools.gd" id="8_gi86g"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_oimvx"]
 random_pitch = 1.5
@@ -44,6 +45,9 @@ polygon = PackedVector2Array(15, 0, -45, 0, -45, -30, 45, -30, 45, 30, 15, 30)
 
 [node name="HoldPointGenerator" parent="." instance=ExtResource("3_5mqgh")]
 z_index = 2
+
+[node name="LevelBuildingTools" type="Node" parent="."]
+script = ExtResource("8_gi86g")
 
 [connection signal="input_event" from="." to="." method="on_collision_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

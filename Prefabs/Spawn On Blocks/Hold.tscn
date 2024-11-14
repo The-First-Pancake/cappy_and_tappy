@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://r1kjk04fwuou"]
+[gd_scene load_steps=8 format=3 uid="uid://r1kjk04fwuou"]
 
 [ext_resource type="Script" path="res://Scripts/Hold.gd" id="1_5se8l"]
 [ext_resource type="Texture2D" uid="uid://dpyoyg7dk52w6" path="res://Art/Sprites/hold/Hold.png" id="1_43tsb"]
 [ext_resource type="Texture2D" uid="uid://bnvyxybj0rs1t" path="res://Art/Sprites/hold/Hold_Normal.png" id="2_q3t11"]
 [ext_resource type="Script" path="res://Scripts/Squashable.gd" id="3_wed4u"]
+[ext_resource type="Script" path="res://Scripts/LevelBuildingTools.gd" id="5_4knqi"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_vaxov"]
 diffuse_texture = ExtResource("1_43tsb")
@@ -32,5 +33,8 @@ delete_parent_when_squashed = false
 
 [node name="NodePosition" type="Marker2D" parent="."]
 position = Vector2(0, -32)
+
+[node name="LevelBuildingTools" type="Node" parent="."]
+script = ExtResource("5_4knqi")
 
 [connection signal="squashed" from="Squashable" to="." method="_on_squashable_squashed"]

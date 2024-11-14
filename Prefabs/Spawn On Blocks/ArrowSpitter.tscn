@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cn5g0kaav20lj"]
+[gd_scene load_steps=10 format=3 uid="uid://cn5g0kaav20lj"]
 
 [ext_resource type="Texture2D" uid="uid://877faua8cohc" path="res://Art/Sprites/arrow spitter/Arrow_Spitter.png" id="1_8oe8a"]
 [ext_resource type="Script" path="res://Scripts/arrow_spitter.gd" id="1_wqj1s"]
 [ext_resource type="Texture2D" uid="uid://ds8g7sxp3ncou" path="res://Art/Sprites/arrow spitter/Arrow_Spitter_Normal.png" id="2_d86ec"]
 [ext_resource type="PackedScene" uid="uid://betjiy4umvrpf" path="res://Prefabs/Arrow.tscn" id="2_i3f76"]
+[ext_resource type="Script" path="res://Scripts/LevelBuildingTools.gd" id="5_blift"]
 [ext_resource type="AudioStream" uid="uid://qoar0l5a8mol" path="res://Sound/hawk-tuah_SRaUp2L.mp3" id="5_gb5oo"]
 [ext_resource type="Script" path="res://Scripts/Squashable.gd" id="6_ioq8a"]
 
@@ -16,7 +17,7 @@ texture_filter = 1
 size = Vector2(10, 85)
 
 [node name="Arrow_Spitter" type="Area2D"]
-rotation = -1.5708
+rotation = 4.71239
 script = ExtResource("1_wqj1s")
 arrow_prefab = ExtResource("2_i3f76")
 
@@ -40,5 +41,8 @@ shape = SubResource("RectangleShape2D_wsqbg")
 
 [node name="Squashable" type="Node" parent="."]
 script = ExtResource("6_ioq8a")
+
+[node name="LevelBuildingTools" type="Node" parent="."]
+script = ExtResource("5_blift")
 
 [connection signal="timeout" from="SpitTimer" to="." method="_on_spit_timer_timeout"]
