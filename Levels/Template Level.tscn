@@ -166,6 +166,15 @@ tile_set = ExtResource("5_tg1dj")
 [node name="Player" parent="." instance=ExtResource("2_hossx")]
 position = Vector2(1033, 1002)
 
+[node name="Idol" parent="." instance=ExtResource("13_jfp1q")]
+position = Vector2(1350, 750)
+
+[node name="Idol2" parent="." instance=ExtResource("13_jfp1q")]
+position = Vector2(1350, 650)
+
+[node name="Idol3" parent="." instance=ExtResource("13_jfp1q")]
+position = Vector2(1350, 550)
+
 [node name="Block Container" type="Node2D" parent="."]
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -347,15 +356,6 @@ stretch_mode = 1
 position = Vector2(553, 308.5)
 shape = SubResource("RectangleShape2D_j4yru")
 debug_color = Color(0, 0.595, 0.7, 0)
-
-[node name="Idol" parent="." instance=ExtResource("13_jfp1q")]
-position = Vector2(1350, 750)
-
-[node name="Idol2" parent="." instance=ExtResource("13_jfp1q")]
-position = Vector2(1350, 650)
-
-[node name="Idol3" parent="." instance=ExtResource("13_jfp1q")]
-position = Vector2(1350, 550)
 
 [node name="RopeHook" type="Sprite2D" parent="."]
 material = SubResource("CanvasItemMaterial_e7s6v")

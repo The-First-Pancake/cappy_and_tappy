@@ -634,6 +634,34 @@ scale = Vector2(0.32, 0.32)
 [node name="Player" parent="." index="6"]
 position = Vector2(1084, 1000)
 
+[node name="1x4 Block" parent="Block Container" index="0" instance=ExtResource("30_34o7i")]
+position = Vector2(2100, -1300)
+rotation = 1.57087
+
+[node name="1x4 Block2" parent="Block Container" index="1" instance=ExtResource("30_34o7i")]
+position = Vector2(300, -1400)
+rotation = 1.57087
+
+[node name="1x4 Block3" parent="Block Container" index="2" instance=ExtResource("30_34o7i")]
+position = Vector2(-100, -1400)
+rotation = 1.57087
+
+[node name="L-Piece" parent="Block Container" index="3" instance=ExtResource("31_u2xsj")]
+position = Vector2(-1250, -2350)
+rotation = 1.57087
+
+[node name="L-Piece2" parent="Block Container" index="4" instance=ExtResource("31_u2xsj")]
+position = Vector2(-1250, -2450)
+rotation = -1.57071
+
+[node name="1x4 Block4" parent="Block Container" index="5" instance=ExtResource("30_34o7i")]
+position = Vector2(850, -3300)
+rotation = -1.57071
+
+[node name="1x4 Block5" parent="Block Container" index="6" instance=ExtResource("30_34o7i")]
+position = Vector2(850, -3500)
+rotation = -1.57071
+
 [node name="Idol" parent="." index="11"]
 position = Vector2(3300, -2200)
 
@@ -642,31 +670,3 @@ position = Vector2(2250, -2850)
 
 [node name="Idol3" parent="." index="13"]
 position = Vector2(-1250, -2350)
-
-[node name="1x4 Block" parent="." index="37" instance=ExtResource("30_34o7i")]
-position = Vector2(2100, -1300)
-rotation = 32.9868
-
-[node name="1x4 Block2" parent="." index="38" instance=ExtResource("30_34o7i")]
-position = Vector2(300, -1400)
-rotation = 32.9868
-
-[node name="1x4 Block3" parent="." index="39" instance=ExtResource("30_34o7i")]
-position = Vector2(-100, -1400)
-rotation = 32.9868
-
-[node name="L-Piece" parent="." index="40" instance=ExtResource("31_u2xsj")]
-position = Vector2(-1250, -2350)
-rotation = 32.9868
-
-[node name="L-Piece2" parent="." index="41" instance=ExtResource("31_u2xsj")]
-position = Vector2(-1250, -2450)
-rotation = 36.1284
-
-[node name="1x4 Block4" parent="." index="42" instance=ExtResource("30_34o7i")]
-position = Vector2(850, -3300)
-rotation = 36.1284
-
-[node name="1x4 Block5" parent="." index="43" instance=ExtResource("30_34o7i")]
-position = Vector2(850, -3500)
-rotation = 36.1284
