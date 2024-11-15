@@ -127,15 +127,12 @@ func _spawn_timer_finished() -> void:
 
 
 func put_back_current_block() -> void:
-	
-	
 	if queued_block: # if there's already a queued block already spawned, return it to the bag
 		queued_block.queue_free()
 		queued_block = null
 	
 	queued_block = GameManager.currently_held_object as Placeable
 	GameManager.currently_held_object = null
-	queued_block
 	queued_block.reparent(self)
+	queued_block.enter_queued()
 	queued_block.global_position = global_position
-	queued_block.enter_queued() # force entering the queued again to force physics layers

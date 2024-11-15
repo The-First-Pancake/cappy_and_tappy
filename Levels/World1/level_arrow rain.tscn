@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d1iy60hbanyjr"]
+[gd_scene load_steps=8 format=3 uid="uid://d1iy60hbanyjr"]
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_v0i14"]
 [ext_resource type="PackedScene" uid="uid://c4safo4pwme48" path="res://Prefabs/Blocks/1x4-Piece.tscn" id="2_r7x6o"]
@@ -7,25 +7,24 @@
 [ext_resource type="PackedScene" uid="uid://r1kjk04fwuou" path="res://Prefabs/Spawn On Blocks/Hold.tscn" id="6_iyacb"]
 [ext_resource type="AudioStream" uid="uid://bs0ib4ihh3wc1" path="res://Sound/Music/Chill Level Music gmtk game jam 2024.wav" id="7_j4s4t"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jlamu"]
+size = Vector2(1350, 17100)
+
 [node name="Template Level" instance=ExtResource("1_v0i14")]
 
-[node name="Entrance Door" parent="." index="1"]
-position = Vector2(1100, 1050)
+[node name="CollisionShape2D" parent="Camera Zone" index="0"]
+shape = SubResource("RectangleShape2D_jlamu")
 
-[node name="Exit Door" parent="." index="2"]
+[node name="Exit Door" parent="." index="5"]
 position = Vector2(900, -1550)
 
-[node name="Cieling" parent="." index="5"]
-offset_top = -11276.0
-offset_bottom = -11010.0
-
-[node name="Idol" parent="." index="12"]
+[node name="Idol" parent="." index="8"]
 position = Vector2(1950, -150)
 
-[node name="Idol2" parent="." index="13"]
+[node name="Idol2" parent="." index="9"]
 position = Vector2(850, -750)
 
-[node name="Idol3" parent="." index="14"]
+[node name="Idol3" parent="." index="10"]
 position = Vector2(2000, -1100)
 
 [node name="PlaceableCharacterBody2d3" parent="." index="15" instance=ExtResource("2_r7x6o")]

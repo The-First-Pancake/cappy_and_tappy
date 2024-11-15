@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bsbavwvcn76q4"]
+[gd_scene load_steps=11 format=3 uid="uid://bsbavwvcn76q4"]
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_hx6d2"]
 [ext_resource type="Script" path="res://Scripts/SpawnObject.gd" id="2_g7o34"]
@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://r1kjk04fwuou" path="res://Prefabs/Spawn On Blocks/Hold.tscn" id="3_mhqar"]
 [ext_resource type="PackedScene" uid="uid://bkatak76uuoli" path="res://Prefabs/Spawn On Blocks/Campfire.tscn" id="4_ptrkp"]
 [ext_resource type="PackedScene" uid="uid://cn5g0kaav20lj" path="res://Prefabs/Spawn On Blocks/ArrowSpitter.tscn" id="5_mwpor"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kcyiy"]
+size = Vector2(1350, 17100)
 
 [sub_resource type="Resource" id="Resource_6716m"]
 script = ExtResource("2_g7o34")
@@ -24,28 +27,23 @@ spawn_count = 3
 
 [node name="Template Level" instance=ExtResource("1_hx6d2")]
 
-[node name="Entrance Door" parent="." index="1"]
-position = Vector2(1100, 1050)
+[node name="CollisionShape2D" parent="Camera Zone" index="0"]
+shape = SubResource("RectangleShape2D_kcyiy")
 
-[node name="Exit Door" parent="." index="2"]
+[node name="Exit Door" parent="." index="5"]
 position = Vector2(1750, -1950)
 
-[node name="Cieling" parent="." index="5"]
-offset_top = -11276.0
-offset_bottom = -11010.0
-
-[node name="BlockSpawner" parent="Camera2D" index="1"]
-position = Vector2(-698, -306)
-spawn_objects = Array[ExtResource("2_g7o34")]([SubResource("Resource_6716m"), SubResource("Resource_b3o7y"), SubResource("Resource_e1vjw")])
-
-[node name="Idol" parent="." index="12"]
+[node name="Idol" parent="." index="8"]
 position = Vector2(1900, -450)
 
-[node name="Idol2" parent="." index="13"]
+[node name="Idol2" parent="." index="9"]
 position = Vector2(900, -1450)
 
-[node name="Idol3" parent="." index="14"]
+[node name="Idol3" parent="." index="10"]
 position = Vector2(900, -50)
+
+[node name="BlockSpawner" parent="Camera2D" index="3"]
+spawn_objects = Array[ExtResource("2_g7o34")]([SubResource("Resource_6716m"), SubResource("Resource_b3o7y"), SubResource("Resource_e1vjw")])
 
 [node name="PlaceableCharacterBody2d" parent="." index="15" instance=ExtResource("2_ma814")]
 position = Vector2(1750, -1900)

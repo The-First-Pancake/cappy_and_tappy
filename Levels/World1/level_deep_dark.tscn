@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://cj80buvkjqk53"]
+[gd_scene load_steps=13 format=4 uid="uid://cj80buvkjqk53"]
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_sxkng"]
 [ext_resource type="PackedScene" uid="uid://dep1x0fmlo6tj" path="res://Prefabs/Torch.tscn" id="2_pdr2v"]
@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://mcu32jepdsb3" path="res://Prefabs/Dynamite.tscn" id="6_xmhdf"]
 [ext_resource type="PackedScene" uid="uid://hetb2cu4cbew" path="res://Prefabs/Spawn On Blocks/BreakerSpike.tscn" id="7_4dpml"]
 [ext_resource type="PackedScene" uid="uid://dhrgrpwwax6i8" path="res://Prefabs/Spawn On Blocks/Spikes.tscn" id="8_2jioi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x881o"]
+size = Vector2(1350, 17100)
 
 [sub_resource type="Resource" id="Resource_phf7e"]
 script = ExtResource("2_qqjne")
@@ -22,11 +25,11 @@ spawn_count = 0
 
 [node name="Template Level" instance=ExtResource("1_sxkng")]
 
-[node name="CanvasModulate" parent="." index="1"]
-visible = true
-
 [node name="Overhead Light" parent="." index="2"]
 visible = false
+
+[node name="CollisionShape2D" parent="Camera Zone" index="0"]
+shape = SubResource("RectangleShape2D_x881o")
 
 [node name="Exit Door" parent="." index="5"]
 position = Vector2(1350, -350)
@@ -46,6 +49,15 @@ position = Vector2(2104, 1000)
 [node name="Player" parent="." index="10"]
 position = Vector2(1025, 1000)
 
+[node name="Idol" parent="." index="11"]
+position = Vector2(1350, -100)
+
+[node name="Idol2" parent="." index="12"]
+position = Vector2(2351, 640)
+
+[node name="Idol3" parent="." index="13"]
+position = Vector2(3825, -1050)
+
 [node name="NightLight" parent="Camera2D/UI" index="0"]
 visible = true
 
@@ -64,17 +76,8 @@ position = Vector2(-608, 44)
 [node name="Dynamite4" parent="Camera2D" index="7" instance=ExtResource("6_xmhdf")]
 position = Vector2(-683, 44)
 
-[node name="Water" parent="." index="14"]
+[node name="Water" parent="." index="17"]
 rise_speed = 0.0
-
-[node name="Idol" parent="." index="15"]
-position = Vector2(1350, -100)
-
-[node name="Idol2" parent="." index="16"]
-position = Vector2(2351, 640)
-
-[node name="Idol3" parent="." index="17"]
-position = Vector2(3825, -1050)
 
 [node name="Music" parent="Music Player" index="0"]
 stream = ExtResource("5_jiid7")

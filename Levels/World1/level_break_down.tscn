@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cetdx52yqt2jy"]
+[gd_scene load_steps=15 format=3 uid="uid://cetdx52yqt2jy"]
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_ai21b"]
 [ext_resource type="PackedScene" uid="uid://cqrk66u8spi3" path="res://Prefabs/Blocks/Z-Piece.tscn" id="2_uqgpm"]
@@ -13,6 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://bkatak76uuoli" path="res://Prefabs/Spawn On Blocks/Campfire.tscn" id="11_icgcv"]
 [ext_resource type="AudioStream" uid="uid://bs0ib4ihh3wc1" path="res://Sound/Music/Chill Level Music gmtk game jam 2024.wav" id="12_xttfj"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rs1yc"]
+size = Vector2(1350, 17100)
+
 [sub_resource type="Resource" id="Resource_xd867"]
 script = ExtResource("7_7omhc")
 spawn_prefab = ExtResource("8_8yufu")
@@ -20,44 +23,34 @@ spawn_count = 1
 
 [node name="Template Level" instance=ExtResource("1_ai21b")]
 
-[node name="Background" parent="Parallax2D" index="0"]
-offset_left = 400.0
-offset_top = -16500.0
-offset_right = 1040.0
-offset_bottom = -12815.0
+[node name="CollisionShape2D" parent="Camera Zone" index="0"]
+shape = SubResource("RectangleShape2D_rs1yc")
 
-[node name="Entrance Door" parent="." index="1"]
+[node name="Entrance Door" parent="." index="4"]
 position = Vector2(1350, -3050)
 
-[node name="Exit Door" parent="." index="2"]
+[node name="Exit Door" parent="." index="5"]
 position = Vector2(1350, 1050)
 
-[node name="Cieling" parent="." index="5"]
-offset_top = -11276.0
-offset_bottom = -11010.0
-
-[node name="Player" parent="." index="8"]
+[node name="Player" parent="." index="7"]
 position = Vector2(1300, -3100)
 
-[node name="Camera2D" parent="." index="9"]
+[node name="Idol" parent="." index="8"]
+position = Vector2(900, -1579)
+
+[node name="Idol3" parent="." index="10"]
+position = Vector2(1350, -500)
+
+[node name="Camera2D" parent="." index="12"]
 position = Vector2(1150, 950)
 
-[node name="BlockSpawner" parent="Camera2D" index="1"]
+[node name="BlockSpawner" parent="Camera2D" index="3"]
 block_prefabs = Array[PackedScene]([ExtResource("2_uqgpm"), ExtResource("3_xds0s"), ExtResource("4_jgxbk"), ExtResource("5_1r8jc"), ExtResource("6_udgby"), ExtResource("2_uqgpm")])
 spawn_objects = Array[ExtResource("7_7omhc")]([SubResource("Resource_xd867")])
 spawn_object_probability = 0.15
 
-[node name="Water" parent="." index="11"]
+[node name="Water" parent="." index="14"]
 rise_speed = 0.0
-
-[node name="Idol" parent="." index="12"]
-position = Vector2(900, -1579)
-
-[node name="Idol2" parent="." index="13"]
-position = Vector2(1350, 650)
-
-[node name="Idol3" parent="." index="14"]
-position = Vector2(1350, -500)
 
 [node name="2x2 Piiece2" parent="." index="15" instance=ExtResource("9_i6e5t")]
 position = Vector2(1350, -2950)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c8jp0shc73si"]
+[gd_scene load_steps=12 format=3 uid="uid://c8jp0shc73si"]
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_bq2w4"]
 [ext_resource type="Script" path="res://Scripts/SpawnObject.gd" id="2_xkwx5"]
@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://dhrgrpwwax6i8" path="res://Prefabs/Spawn On Blocks/Spikes.tscn" id="5_jro00"]
 [ext_resource type="PackedScene" uid="uid://c4safo4pwme48" path="res://Prefabs/Blocks/1x4-Piece.tscn" id="6_r0jta"]
 [ext_resource type="PackedScene" uid="uid://2emoy8lav7a0" path="res://Prefabs/Spawn On Blocks/harpoon_launcher.tscn" id="7_f5f8t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bn7ml"]
+size = Vector2(1350, 17100)
 
 [sub_resource type="Resource" id="Resource_42wei"]
 script = ExtResource("2_xkwx5")
@@ -25,30 +28,33 @@ spawn_count = 5
 
 [node name="Template Level" instance=ExtResource("1_bq2w4")]
 
+[node name="CollisionShape2D" parent="Camera Zone" index="0"]
+shape = SubResource("RectangleShape2D_bn7ml")
+
 [node name="Exit Door" parent="." index="5"]
 position = Vector2(1200, -750)
+
+[node name="Idol" parent="." index="8"]
+position = Vector2(724, 1145)
+
+[node name="Idol2" parent="." index="9"]
+position = Vector2(800, 250)
+
+[node name="Idol3" parent="." index="10"]
+position = Vector2(800, -450)
 
 [node name="BlockSpawner" parent="Camera2D" index="3"]
 spawn_objects = Array[ExtResource("2_xkwx5")]([SubResource("Resource_42wei"), SubResource("Resource_fa0pl"), SubResource("Resource_e12ps")])
 
-[node name="Water" parent="." index="10"]
+[node name="Water" parent="." index="14"]
 rise_speed = 10.0
-
-[node name="Idol" parent="." index="11"]
-position = Vector2(724, 1145)
-
-[node name="Idol2" parent="." index="12"]
-position = Vector2(800, 250)
-
-[node name="Idol3" parent="." index="13"]
-position = Vector2(800, -450)
-
-[node name="Music" parent="Music Player" index="0"]
-volume_db = -7.0
 
 [node name="PlaceableCharacterBody2d" parent="." index="16" instance=ExtResource("6_r0jta")]
 position = Vector2(1200, -700)
 rotation = 1.5708
+
+[node name="Music" parent="Music Player" index="0"]
+volume_db = -7.0
 
 [node name="Harpoon Launcher" parent="." index="18" instance=ExtResource("7_f5f8t")]
 position = Vector2(2050, 700)

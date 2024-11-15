@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bhw8owhdmmapa"]
+[gd_scene load_steps=17 format=3 uid="uid://bhw8owhdmmapa"]
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_sdp6r"]
 [ext_resource type="Script" path="res://Scripts/SpawnObject.gd" id="2_6wj6x"]
@@ -12,6 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://caudmtkjwca1i" path="res://Prefabs/Blocks/L-Piece-Mirrored.tscn" id="9_qo082"]
 [ext_resource type="PackedScene" uid="uid://cqrk66u8spi3" path="res://Prefabs/Blocks/Z-Piece.tscn" id="11_bkrlc"]
 [ext_resource type="AudioStream" uid="uid://bs0ib4ihh3wc1" path="res://Sound/Music/Chill Level Music gmtk game jam 2024.wav" id="12_umudb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_loanw"]
+size = Vector2(1350, 17100)
 
 [sub_resource type="Resource" id="Resource_dc5oc"]
 script = ExtResource("2_6wj6x")
@@ -30,15 +33,14 @@ spawn_count = 3
 
 [node name="Template Level" instance=ExtResource("1_sdp6r")]
 
-[node name="Entrance Door" parent="." index="1"]
-position = Vector2(1100, 1050)
+[node name="CollisionShape2D" parent="Camera Zone" index="0"]
+shape = SubResource("RectangleShape2D_loanw")
 
-[node name="Exit Door" parent="." index="2"]
+[node name="Exit Door" parent="." index="5"]
 position = Vector2(1350, -3150)
 
-[node name="Cieling" parent="." index="5"]
-offset_top = -11276.0
-offset_bottom = -11010.0
+[node name="Idol" parent="." index="8"]
+position = Vector2(1900, -2450)
 
 [node name="PlaceableCharacterBody2d3" parent="." index="9" instance=ExtResource("2_sxolh")]
 position = Vector2(1650, 550)
@@ -148,18 +150,15 @@ rotation = 15.708
 position = Vector2(2000, -1650)
 rotation = 15.708
 
-[node name="BlockSpawner" parent="Camera2D" index="1"]
-block_prefabs = Array[PackedScene]([ExtResource("2_sxolh")])
-spawn_objects = Array[ExtResource("2_6wj6x")]([SubResource("Resource_dc5oc"), SubResource("Resource_qwmcm"), SubResource("Resource_00i5c")])
-
-[node name="Idol" parent="." index="27"]
-position = Vector2(1900, -2450)
-
-[node name="Idol2" parent="." index="28"]
+[node name="Idol2" parent="." index="24"]
 position = Vector2(1750, 681)
 
-[node name="Idol3" parent="." index="29"]
+[node name="Idol3" parent="." index="25"]
 position = Vector2(750, -878)
+
+[node name="BlockSpawner" parent="Camera2D" index="3"]
+block_prefabs = Array[PackedScene]([ExtResource("2_sxolh")])
+spawn_objects = Array[ExtResource("2_6wj6x")]([SubResource("Resource_dc5oc"), SubResource("Resource_qwmcm"), SubResource("Resource_00i5c")])
 
 [node name="2x2 Piiece2" parent="." index="30" instance=ExtResource("4_4fcrj")]
 position = Vector2(1350, -3050)

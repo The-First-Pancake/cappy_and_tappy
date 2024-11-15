@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=4 uid="uid://6dd2cbybvcqg"]
+[gd_scene load_steps=50 format=4 uid="uid://6dd2cbybvcqg"]
 
 [ext_resource type="Texture2D" uid="uid://bqfeqtdw7xcxo" path="res://Art/Sprites/Backgrounds/background.png" id="1_dtx2u"]
 [ext_resource type="PackedScene" uid="uid://dngf3odx0yf5k" path="res://Prefabs/player.tscn" id="2_hossx"]
@@ -39,9 +39,6 @@ gradient = SubResource("Gradient_3eomj")
 fill = 1
 fill_from = Vector2(0.517094, 0.457265)
 fill_to = Vector2(0.91453, 0.132479)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sf7tr"]
-size = Vector2(1350, 17100)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_faxfi"]
 light_mode = 1
@@ -148,7 +145,6 @@ mid_line_offset = -242.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera Zone"]
 position = Vector2(1375, -7300)
-shape = SubResource("RectangleShape2D_sf7tr")
 debug_color = Color(0.268719, 0, 0.701961, 0)
 
 [node name="Entrance Door" parent="." instance=ExtResource("19_owl44")]
