@@ -134,5 +134,5 @@ func put_back_current_block() -> void:
 	queued_block = GameManager.currently_held_object as Placeable
 	GameManager.currently_held_object = null
 	queued_block.reparent(self)
-	queued_block.enter_queued()
 	queued_block.global_position = global_position
+	queued_block.enter_queued()

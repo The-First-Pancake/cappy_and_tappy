@@ -56,6 +56,7 @@ func _physics_process(delta: float) -> void:
 			rotation -= deg_to_rad(90)
 			return
 		if (!check_for_collisions() and Input.is_action_just_released("drop_block") and GameManager.time_since_unpause > 0.1):
+			 #TODO this will be where we need to fix the block return code
 			await get_tree().physics_frame
 			if GameManager.currently_held_object == self:
 				GameManager.currently_held_object = null
@@ -106,7 +107,7 @@ func enter_harpooned(dir: Vector2) -> void:
 
 func enter_queued() -> void:
 	state = PlaceState.QUEUED
-	
+	print(state)
 	set_collision_layer_value(DEFAULT_COLLISION_LAYER, false);
 	set_collision_layer_value(UNPLACED_COLLISION_LAYER, true);
 	modulate = Color.WHITE # make solid
