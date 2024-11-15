@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=4 uid="uid://6dd2cbybvcqg"]
+[gd_scene load_steps=50 format=4 uid="uid://6dd2cbybvcqg"]
 
 [ext_resource type="Texture2D" uid="uid://bqfeqtdw7xcxo" path="res://Art/Sprites/Backgrounds/background.png" id="1_dtx2u"]
 [ext_resource type="PackedScene" uid="uid://dngf3odx0yf5k" path="res://Prefabs/player.tscn" id="2_hossx"]
@@ -40,9 +40,6 @@ fill = 1
 fill_from = Vector2(0.517094, 0.457265)
 fill_to = Vector2(0.91453, 0.132479)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sf7tr"]
-size = Vector2(1350, 17050)
-
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_faxfi"]
 light_mode = 1
 
@@ -69,7 +66,7 @@ light_mode = 1
 [sub_resource type="LabelSettings" id="LabelSettings_448k6"]
 font = ExtResource("10_xbpyp")
 font_size = 60
-font_color = Color(0.566406, 0.477905, 0.345154, 1)
+font_color = Color(0.28, 0.2352, 0.168, 1)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_r3n8n"]
 light_mode = 1
@@ -95,27 +92,14 @@ script = ExtResource("6_xpr8c")
 spawn_prefab = ExtResource("9_teir6")
 spawn_count = 10
 
-[sub_resource type="GDScript" id="GDScript_ehm88"]
-script/source = "extends Area2D
-
-
-
-func _on_mouse_entered() -> void:
-	print(10)
-
-
-func _on_mouse_exited() -> void:
-	pass # Replace with function body.
-"
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4eaip"]
-size = Vector2(241, 236)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vvcjm"]
+size = Vector2(237, 224)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_rc0ob"]
 light_mode = 1
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x6sbg"]
-size = Vector2(9466, 219.255)
+size = Vector2(2100, 219.255)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j4yru"]
 size = Vector2(9500, 709)
@@ -140,6 +124,10 @@ scale = Vector2(3, 5)
 texture = ExtResource("1_dtx2u")
 stretch_mode = 1
 
+[node name="Dark Layer" type="CanvasModulate" parent="."]
+visible = false
+color = Color(0.0846898, 0.08469, 0.0846899, 1)
+
 [node name="Overhead Light" type="Node2D" parent="."]
 
 [node name="PointLight2D" type="PointLight2D" parent="Overhead Light"]
@@ -151,17 +139,12 @@ texture = SubResource("GradientTexture2D_o42py")
 texture_scale = 50.0
 height = 10.0
 
-[node name="Darkness" type="CanvasModulate" parent="."]
-visible = false
-color = Color(0.0846898, 0.08469, 0.0846899, 1)
-
 [node name="Camera Zone" type="Area2D" parent="."]
 script = ExtResource("27_rvwtg")
 mid_line_offset = -242.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera Zone"]
-position = Vector2(1375, -7325)
-shape = SubResource("RectangleShape2D_sf7tr")
+position = Vector2(1375, -7300)
 debug_color = Color(0.268719, 0, 0.701961, 0)
 
 [node name="Entrance Door" parent="." instance=ExtResource("19_owl44")]
@@ -179,6 +162,17 @@ tile_set = ExtResource("5_tg1dj")
 [node name="Player" parent="." instance=ExtResource("2_hossx")]
 position = Vector2(1033, 1002)
 
+[node name="Idol" parent="." instance=ExtResource("13_jfp1q")]
+position = Vector2(1350, 750)
+
+[node name="Idol2" parent="." instance=ExtResource("13_jfp1q")]
+position = Vector2(1350, 650)
+
+[node name="Idol3" parent="." instance=ExtResource("13_jfp1q")]
+position = Vector2(1350, 550)
+
+[node name="Block Container" type="Node2D" parent="."]
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1133, 681)
 script = ExtResource("4_psc51")
@@ -194,10 +188,10 @@ color = Color(0, 0, 0, 0.537255)
 
 [node name="ColorRect2" type="ColorRect" parent="Camera2D"]
 material = SubResource("CanvasItemMaterial_7gar6")
-offset_left = -914.0
-offset_top = -222.0
-offset_right = -568.0
-offset_bottom = -36.0
+offset_left = -909.0
+offset_top = -252.0
+offset_right = -563.0
+offset_bottom = -66.0
 mouse_filter = 1
 color = Color(0, 0, 0, 0.537255)
 
@@ -262,21 +256,20 @@ position = Vector2(-850, 430)
 scale = Vector2(6, 6)
 texture = ExtResource("13_pmlcy")
 
-[node name="BlockSpawner" parent="Camera2D" node_paths=PackedStringArray("spawn_container") instance=ExtResource("5_74oay")]
+[node name="BlockSpawner" parent="Camera2D" node_paths=PackedStringArray("block_container", "held_block_container") instance=ExtResource("5_74oay")]
 position = Vector2(-741, -374)
-spawn_container = NodePath("../../BlockContainer")
+block_container = NodePath("../../Block Container")
+held_block_container = NodePath("../../Held Block Container")
 spawn_objects = Array[ExtResource("6_xpr8c")]([SubResource("Resource_6716m"), SubResource("Resource_b3o7y"), SubResource("Resource_mwrdh")])
 spawn_object_probability = 0.5
 
 [node name="Return Block Click Area" type="Area2D" parent="Camera2D/BlockSpawner"]
-position = Vector2(-100, -100)
-script = SubResource("GDScript_ehm88")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/BlockSpawner/Return Block Click Area"]
-position = Vector2(101, 99)
-shape = SubResource("RectangleShape2D_4eaip")
+position = Vector2(-1.5, 0)
+shape = SubResource("RectangleShape2D_vvcjm")
 
-[node name="Block Queue" type="Sprite2D" parent="Camera2D/BlockSpawner"]
+[node name="Block Queue Icon" type="Sprite2D" parent="Camera2D/BlockSpawner"]
 modulate = Color(0.56, 0.56, 0.56, 1)
 material = SubResource("CanvasItemMaterial_rc0ob")
 position = Vector2(-100, -100)
@@ -287,13 +280,13 @@ centered = false
 [node name="Dynamite" parent="Camera2D" instance=ExtResource("16_3kw41")]
 position = Vector2(-861, 43)
 
-[node name="Dynamite2" parent="Camera2D" instance=ExtResource("16_3kw41")]
-position = Vector2(-762, 44)
-
 [node name="Dynamite3" parent="Camera2D" instance=ExtResource("16_3kw41")]
 position = Vector2(-660, 44)
 
-[node name="BlockContainer" type="Node2D" parent="."]
+[node name="Dynamite2" parent="Camera2D" instance=ExtResource("16_3kw41")]
+position = Vector2(-762, 44)
+
+[node name="Held Block Container" type="Node2D" parent="."]
 
 [node name="Water" type="Node2D" parent="."]
 modulate = Color(1, 1, 1, 0.882353)
@@ -305,7 +298,7 @@ rise_speed = 16.0
 [node name="Piranah Swim Area" type="Area2D" parent="Water"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Water/Piranah Swim Area"]
-position = Vector2(557, -2.62744)
+position = Vector2(0, -2.62744)
 shape = SubResource("RectangleShape2D_x6sbg")
 debug_color = Color(0, 0.191406, 0.7, 0)
 
@@ -360,15 +353,6 @@ position = Vector2(553, 308.5)
 shape = SubResource("RectangleShape2D_j4yru")
 debug_color = Color(0, 0.595, 0.7, 0)
 
-[node name="Idol" parent="." instance=ExtResource("13_jfp1q")]
-position = Vector2(1450, 1000)
-
-[node name="Idol2" parent="." instance=ExtResource("13_jfp1q")]
-position = Vector2(1550, 1000)
-
-[node name="Idol3" parent="." instance=ExtResource("13_jfp1q")]
-position = Vector2(1650, 1000)
-
 [node name="RopeHook" type="Sprite2D" parent="."]
 material = SubResource("CanvasItemMaterial_e7s6v")
 position = Vector2(2844, 1052)
@@ -377,7 +361,7 @@ texture = ExtResource("20_71uq3")
 offset = Vector2(0, -186.98)
 script = ExtResource("21_xxhgi")
 
-[node name="Music Player" type="Node2D" parent="."]
+[node name="Music Player" type="Node" parent="."]
 script = ExtResource("22_y5d0p")
 
 [node name="Music" type="AudioStreamPlayer" parent="Music Player"]
@@ -443,6 +427,3 @@ position = Vector2(1800, 1050)
 
 [node name="PathNode20" parent="." instance=ExtResource("28_ng7cu")]
 position = Vector2(1850, 1050)
-
-[connection signal="mouse_entered" from="Camera2D/BlockSpawner/Return Block Click Area" to="Camera2D/BlockSpawner/Return Block Click Area" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Camera2D/BlockSpawner/Return Block Click Area" to="Camera2D/BlockSpawner/Return Block Click Area" method="_on_mouse_exited"]

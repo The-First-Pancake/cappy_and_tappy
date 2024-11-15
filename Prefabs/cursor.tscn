@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://fq6lpryclmx1"]
 
 [ext_resource type="Texture2D" uid="uid://br0oban6yicud" path="res://Art/cursor.png" id="1_k6h5x"]
-[ext_resource type="Script" path="res://Scripts/ControllerMouse.gd" id="2_cvanp"]
+[ext_resource type="Script" path="res://Scripts/Cursor.gd" id="2_cvanp"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_q8g4b"]
 light_mode = 1

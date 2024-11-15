@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://r1kjk04fwuou" path="res://Prefabs/Spawn On Blocks/Hold.tscn" id="5_m3nip"]
 [ext_resource type="PackedScene" uid="uid://c5egotsf7fdg4" path="res://Prefabs/PathNode.tscn" id="7_bxvrp"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uld0s"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lhbjh"]
 size = Vector2(2900, 1000)
 
 [sub_resource type="Resource" id="Resource_ypo5q"]
@@ -30,7 +30,7 @@ mid_line_offset = 0.0
 
 [node name="CollisionShape2D" parent="Camera Zone" index="0"]
 position = Vector2(1750, 650)
-shape = SubResource("RectangleShape2D_uld0s")
+shape = SubResource("RectangleShape2D_lhbjh")
 
 [node name="Entrance Door" parent="." index="4"]
 position = Vector2(1150, 1050)
@@ -75,7 +75,16 @@ scale = Vector2(0.32, 0.32)
 [node name="Player" parent="." index="7"]
 position = Vector2(1075, 1000)
 
-[node name="Camera2D" parent="." index="8"]
+[node name="Idol" parent="." index="8"]
+position = Vector2(1250, 716)
+
+[node name="Idol2" parent="." index="9"]
+position = Vector2(2100, 915)
+
+[node name="Idol3" parent="." index="10"]
+position = Vector2(1550, 516)
+
+[node name="Camera2D" parent="." index="12"]
 position = Vector2(1489, 650)
 stationary_cam = true
 
@@ -85,19 +94,10 @@ spawn_objects = Array[ExtResource("4_t468c")]([SubResource("Resource_ypo5q")])
 spawn_object_probability = 0.2
 every_block_spawn_objects = Array[ExtResource("4_t468c")]([SubResource("Resource_5gqwk")])
 
-[node name="Water" parent="." index="10"]
+[node name="Water" parent="." index="14"]
 rise_speed = 0.0
 
-[node name="Idol" parent="." index="11"]
-position = Vector2(1250, 716)
-
-[node name="Idol2" parent="." index="12"]
-position = Vector2(2100, 915)
-
-[node name="Idol3" parent="." index="13"]
-position = Vector2(1550, 516)
-
-[node name="RopeHook" parent="." index="14"]
+[node name="RopeHook" parent="." index="15"]
 position = Vector2(2150, 1000)
 
 [node name="PathNode21" parent="." index="24" instance=ExtResource("7_bxvrp")]

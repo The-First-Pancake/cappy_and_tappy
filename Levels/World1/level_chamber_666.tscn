@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://7amxmfedeq7u"]
+[gd_scene load_steps=17 format=3 uid="uid://7amxmfedeq7u"]
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_ycs33"]
 [ext_resource type="Script" path="res://Scripts/SpawnObject.gd" id="2_8tngy"]
@@ -10,6 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://cn5g0kaav20lj" path="res://Prefabs/Spawn On Blocks/ArrowSpitter.tscn" id="7_t561k"]
 [ext_resource type="AudioStream" uid="uid://bjoyy3kjn3bpj" path="res://Sound/Music/Uptempo Not Crazy Level Music.wav" id="9_3x5qn"]
 [ext_resource type="Texture2D" uid="uid://c0lrrkts2q73h" path="res://Art/Sprites/idol clue.png" id="10_isyu4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m46el"]
+size = Vector2(1350, 17100)
 
 [sub_resource type="Resource" id="Resource_6716m"]
 script = ExtResource("2_8tngy")
@@ -41,24 +44,23 @@ spawn_count = 2
 [node name="PointLight2D" parent="Overhead Light" index="0"]
 position = Vector2(1800, -14950)
 
-[node name="Exit Door" parent="." index="4"]
+[node name="CollisionShape2D" parent="Camera Zone" index="0"]
+shape = SubResource("RectangleShape2D_m46el")
+
+[node name="Exit Door" parent="." index="5"]
 position = Vector2(1250, -4750)
+
+[node name="Idol" parent="." index="8"]
+position = Vector2(1250, -7400)
+
+[node name="Idol2" parent="." index="9"]
+position = Vector2(800, -450)
+
+[node name="Idol3" parent="." index="10"]
+position = Vector2(1950, -2650)
 
 [node name="BlockSpawner" parent="Camera2D" index="3"]
 spawn_objects = Array[ExtResource("2_8tngy")]([SubResource("Resource_6716m"), SubResource("Resource_b3o7y"), SubResource("Resource_mwrdh"), SubResource("Resource_hb8f8"), SubResource("Resource_mfh2x")])
-
-[node name="Idol" parent="." index="10"]
-position = Vector2(1250, -7400)
-
-[node name="Idol2" parent="." index="11"]
-position = Vector2(800, -450)
-
-[node name="Idol3" parent="." index="12"]
-position = Vector2(1950, -2650)
-
-[node name="Music" parent="Music Player" index="0"]
-stream = ExtResource("9_3x5qn")
-volume_db = -7.0
 
 [node name="PlaceableCharacterBody2d" parent="." index="16" instance=ExtResource("5_sry7q")]
 position = Vector2(1250, -4700)
@@ -163,6 +165,10 @@ position = Vector2(1850, 1051)
 
 [node name="BreakerSpike4" parent="." index="30" instance=ExtResource("4_j4vyl")]
 position = Vector2(1750, 1051)
+
+[node name="Music" parent="Music Player" index="0"]
+stream = ExtResource("9_3x5qn")
+volume_db = -7.0
 
 [node name="IdolClue" type="Sprite2D" parent="." index="33"]
 modulate = Color(0.22, 0.22, 0.22, 0.294118)

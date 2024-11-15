@@ -3,7 +3,10 @@ extends Marker2D
 
 @onready var spawn_timer : Timer = $SpawnTimer as Timer
 
-@export var spawn_container : Node2D
+@export var block_container : Node2D
+@export var held_block_container : Node2D
+
+
 @export var block_prefabs : Array[PackedScene] :
 	set(_block_prefabs):
 		block_prefabs = _block_prefabs
@@ -20,8 +23,11 @@ var appended_spawns : int = 0
 @onready var return_block_click_area: Area2D = $"Return Block Click Area"
 var mouse_in_return_block_click_area: bool = false
 
+static var instance: BlockSpawner
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	instance = self
 	spawned_object_counts.resize(len(spawn_objects))
 	refresh_block_bag()
 	refresh_spawn_object_counts()
@@ -42,7 +48,8 @@ func _process(delta: float) -> void:
 			 #try to pick the block up
 			if GameManager.time_since_unpause >= 0.2 and GameManager.currently_held_object == null and is_instance_valid(queued_block): #don't pick up the block if the level just loaded
 				queued_block.enter_placing()
-				queued_block_picked_up()
+				queued_block = null
+				spawn_timer.start()
 
 func add_spawn_object(object : SpawnObject) -> void:
 	spawn_objects.append(object)
@@ -113,10 +120,6 @@ func refresh_block_bag() -> void:
 	block_bag.shuffle()
 	
 
-func queued_block_picked_up() -> void:
-	spawn_timer.start()
-	queued_block.reparent(spawn_container)
-	queued_block = null
 
 func _spawn_timer_finished() -> void:
 	if queued_block == null:
@@ -124,15 +127,12 @@ func _spawn_timer_finished() -> void:
 
 
 func put_back_current_block() -> void:
-	
-	
 	if queued_block: # if there's already a queued block already spawned, return it to the bag
 		queued_block.queue_free()
 		queued_block = null
 	
 	queued_block = GameManager.currently_held_object as Placeable
 	GameManager.currently_held_object = null
-	queued_block
 	queued_block.reparent(self)
 	queued_block.global_position = global_position
-	queued_block.enter_queued() # force entering the queued again to force physics layers
+	queued_block.enter_queued()

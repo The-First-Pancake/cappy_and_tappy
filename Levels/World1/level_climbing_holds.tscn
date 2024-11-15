@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://1fovc0qvw1oq"]
+[gd_scene load_steps=10 format=3 uid="uid://1fovc0qvw1oq"]
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_w3jxh"]
 [ext_resource type="PackedScene" uid="uid://bdyf8npx3i7xk" path="res://Prefabs/Blocks/2x2-Piece.tscn" id="2_bl821"]
@@ -7,6 +7,9 @@
 [ext_resource type="Script" path="res://Scripts/SpawnObject.gd" id="3_ovksb"]
 [ext_resource type="PackedScene" uid="uid://r1kjk04fwuou" path="res://Prefabs/Spawn On Blocks/Hold.tscn" id="4_cbys8"]
 [ext_resource type="Texture2D" uid="uid://myc5ko8clsbs" path="res://Art/Sprites/glyphs/Glyph_Handhold_Release.png" id="4_kfenh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_63r1a"]
+size = Vector2(1350, 17100)
 
 [sub_resource type="Resource" id="Resource_6716m"]
 script = ExtResource("3_ovksb")
@@ -36,28 +39,31 @@ position = Vector2(263, 98)
 scale = Vector2(3.125, 3.125)
 texture = ExtResource("4_kfenh")
 
-[node name="Exit Door" parent="." index="3"]
+[node name="CollisionShape2D" parent="Camera Zone" index="0"]
+shape = SubResource("RectangleShape2D_63r1a")
+
+[node name="Exit Door" parent="." index="6"]
 position = Vector2(1400, -950)
 
-[node name="BlockSpawner" parent="Camera2D" index="1"]
+[node name="Idol" parent="." index="9"]
+position = Vector2(900, -750)
+
+[node name="Idol2" parent="." index="10"]
+position = Vector2(1950, -150)
+
+[node name="Idol3" parent="." index="11"]
+position = Vector2(950, 750)
+
+[node name="BlockSpawner" parent="Camera2D" index="3"]
 block_prefabs = Array[PackedScene]([ExtResource("2_bl821")])
 spawn_objects = Array[ExtResource("3_ovksb")]([SubResource("Resource_6716m")])
 spawn_object_probability = 0.3
 
-[node name="Water" parent="." index="10"]
+[node name="Water" parent="." index="15"]
 rise_speed = 12.0
-
-[node name="Idol" parent="." index="11"]
-position = Vector2(900, -750)
-
-[node name="Idol2" parent="." index="12"]
-position = Vector2(1950, -150)
-
-[node name="Idol3" parent="." index="13"]
-position = Vector2(950, 750)
-
-[node name="Music" parent="Music Player" index="0"]
-volume_db = -7.0
 
 [node name="2x2 Piiece" parent="." index="17" instance=ExtResource("2_bl821")]
 position = Vector2(1400, -850)
+
+[node name="Music" parent="Music Player" index="0"]
+volume_db = -7.0

@@ -1,9 +1,15 @@
-[gd_scene load_steps=3 format=4 uid="uid://b8ofjhklhy6o"]
+[gd_scene load_steps=4 format=4 uid="uid://b8ofjhklhy6o"]
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_f2c2y"]
 [ext_resource type="Texture2D" uid="uid://c0lrrkts2q73h" path="res://Art/Sprites/idol clue.png" id="2_7cosh"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xu3kl"]
+size = Vector2(1350, 17100)
+
 [node name="Template Level" instance=ExtResource("1_f2c2y")]
+
+[node name="CollisionShape2D" parent="Camera Zone" index="0"]
+shape = SubResource("RectangleShape2D_xu3kl")
 
 [node name="Exit Door" parent="." index="5"]
 position = Vector2(1350, -3150)
@@ -18,13 +24,13 @@ position = Vector2(950, -3350)
 scale = Vector2(3.125, 3.125)
 texture = ExtResource("2_7cosh")
 
-[node name="Idol" parent="." index="12"]
+[node name="Idol" parent="." index="9"]
 position = Vector2(1350, -3900)
 
-[node name="Idol2" parent="." index="13"]
+[node name="Idol2" parent="." index="10"]
 position = Vector2(1900, -350)
 
-[node name="Idol3" parent="." index="14"]
+[node name="Idol3" parent="." index="11"]
 position = Vector2(850, -1900)
 
 [node name="Music" parent="Music Player" index="0"]

@@ -1,21 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://bp3kgem2ebxnl"]
+[gd_scene load_steps=5 format=3 uid="uid://bp3kgem2ebxnl"]
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_lv8xn"]
 [ext_resource type="PackedScene" uid="uid://c4safo4pwme48" path="res://Prefabs/Blocks/1x4-Piece.tscn" id="2_sc1g2"]
 [ext_resource type="PackedScene" uid="uid://bdyf8npx3i7xk" path="res://Prefabs/Blocks/2x2-Piece.tscn" id="3_7qaxh"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pv3m8"]
+size = Vector2(1350, 17100)
+
 [node name="Template Level" instance=ExtResource("1_lv8xn")]
+
+[node name="CollisionShape2D" parent="Camera Zone" index="0"]
+shape = SubResource("RectangleShape2D_pv3m8")
 
 [node name="Exit Door" parent="." index="5"]
 position = Vector2(1750, -3150)
 
-[node name="Idol" parent="." index="11"]
+[node name="Idol" parent="." index="8"]
 position = Vector2(950, -150)
 
-[node name="Idol2" parent="." index="12"]
+[node name="Idol2" parent="." index="9"]
 position = Vector2(850, -1550)
 
-[node name="Idol3" parent="." index="13"]
+[node name="Idol3" parent="." index="10"]
 position = Vector2(1850, -2800)
 
 [node name="PlaceableCharacterBody2d2" parent="." index="15" instance=ExtResource("2_sc1g2")]

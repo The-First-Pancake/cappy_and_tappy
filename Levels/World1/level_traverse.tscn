@@ -11,7 +11,7 @@
 [ext_resource type="Material" uid="uid://cg4fprgafhcxd" path="res://Art/unshaded_material.tres" id="8_xevie"]
 [ext_resource type="Texture2D" uid="uid://dxwrgo8gd0pqj" path="res://Art/latest-1985960378.jpg" id="9_fstg2"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uld0s"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5hh5y"]
 size = Vector2(6100, 1000)
 
 [node name="Template Level" instance=ExtResource("1_mna8d")]
@@ -54,7 +54,7 @@ mid_line_offset = 0.0
 
 [node name="CollisionShape2D" parent="Camera Zone" index="0"]
 position = Vector2(3200, 700)
-shape = SubResource("RectangleShape2D_uld0s")
+shape = SubResource("RectangleShape2D_5hh5y")
 
 [node name="Exit Door" parent="." index="6"]
 position = Vector2(6050, 1050)
@@ -72,20 +72,20 @@ position = Vector2(1760, -32)
 rotation = 1.5708
 scale = Vector2(0.32, 0.32)
 
+[node name="Idol" parent="." index="9"]
+position = Vector2(1850, 1000)
+
+[node name="Idol2" parent="." index="10"]
+position = Vector2(3650, 300)
+
+[node name="Idol3" parent="." index="11"]
+position = Vector2(5400, 1050)
+
 [node name="BlockSpawner" parent="Camera2D" index="3"]
 spawn_objects = Array[ExtResource("7_yqrk1")]([])
 
-[node name="Water" parent="." index="11"]
+[node name="Water" parent="." index="15"]
 rise_speed = 0.0
-
-[node name="Idol" parent="." index="12"]
-position = Vector2(1850, 1000)
-
-[node name="Idol2" parent="." index="13"]
-position = Vector2(3650, 300)
-
-[node name="Idol3" parent="." index="14"]
-position = Vector2(5400, 1050)
 
 [node name="Latest-1985960378" type="Sprite2D" parent="." index="36"]
 material = ExtResource("8_xevie")
