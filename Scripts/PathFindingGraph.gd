@@ -206,8 +206,9 @@ func is_path_jumpable(path_node: PathNode, path_node_to: PathNode, jump_height_m
 
 func clear_astar_connections() -> void:
 	for path_node in path_nodes:
-		for connection_id in astar_graph.get_point_connections(path_node.point_id):
-			astar_graph.disconnect_points(path_node.point_id, connection_id)
+		if is_instance_valid(path_node):
+			for connection_id in astar_graph.get_point_connections(path_node.point_id):
+				astar_graph.disconnect_points(path_node.point_id, connection_id)
 	
 func is_node_self(path_node_1 : PathNode, path_node_2 : PathNode) -> bool:
 	return path_node_2.point_id == path_node_1.point_id
