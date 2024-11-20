@@ -105,9 +105,6 @@ func _process(delta: float) -> void:
 			if current_cam_type != CamType.VERTICAL:
 				var max_camera_x: float = cam_zone.bot_right.x - get_viewport_rect().size.x/2
 				if target_position.x > max_camera_x:
-					print(max_camera_x)
-					print(target_position)
-					
 					target_position.x = max_camera_x
 		if cam_zone.left_out:
 			if current_cam_type != CamType.VERTICAL:

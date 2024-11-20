@@ -40,13 +40,28 @@ func _ready() -> void:
 		)
 
 func _process(delta: float) -> void:
+	
 	if Input.is_action_just_released("drop_block"):
-		if mouse_in_return_block_click_area and is_instance_valid(GameManager.currently_held_object) and GameManager.currently_held_object is Placeable:
-			 #put the block back
-			put_back_current_block()
+		if GameManager.time_since_unpause <= 0.2: return
+		var hovering_dynamite: Dynamite = null
+		
+		for obj: Node in GameManager.objects_hovering:
+			if not is_instance_valid(obj): continue
+			if obj is Dynamite:
+				hovering_dynamite = obj
+		
+		if is_instance_valid(GameManager.currently_held_object): #if we're holding something
+			if GameManager.currently_held_object is Placeable:
+				if mouse_in_return_block_click_area:
+					put_back_held_block() #put the block back
+				else:
+					GameManager.currently_held_object.try_to_drop_block()
+			if GameManager.currently_held_object is Dynamite:
+				GameManager.currently_held_object.try_to_detonate()
 		else:
-			 #try to pick the block up
-			if GameManager.time_since_unpause >= 0.2 and GameManager.currently_held_object == null and is_instance_valid(queued_block): #don't pick up the block if the level just loaded
+			if hovering_dynamite:
+				hovering_dynamite.try_pickup()
+			elif is_instance_valid(queued_block): #If there is a block ready to be picked up
 				queued_block.enter_placing()
 				queued_block = null
 				spawn_timer.start()
@@ -126,7 +141,7 @@ func _spawn_timer_finished() -> void:
 		generate_and_spawn_block()
 
 
-func put_back_current_block() -> void:
+func put_back_held_block() -> void:
 	if queued_block: # if there's already a queued block already spawned, return it to the bag
 		queued_block.queue_free()
 		queued_block = null
