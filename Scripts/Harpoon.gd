@@ -15,7 +15,7 @@ func _ready() -> void:
 	rope.visible = false
 	rope.clear_points()
 
-
+#TODO Decide what should bebehavior for destroyed harpoons. RN i think it causes errors
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	var parent: Node = get_parent()

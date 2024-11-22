@@ -20,6 +20,8 @@ var time_since_level_loaded: float = 0
 var time_since_unpause: float = 0
 var current_world: int = 0
 
+var objects_hovering: Array[Node] = []
+
 signal loaded_new_scene
 
 func _ready() -> void:

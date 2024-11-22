@@ -55,11 +55,6 @@ func _physics_process(delta: float) -> void:
 		if (Input.is_action_just_pressed("rotate_block_left")):
 			rotation -= deg_to_rad(90)
 			return
-		if (!check_for_collisions() and Input.is_action_just_released("drop_block") and GameManager.time_since_unpause > 0.1):
-			await get_tree().physics_frame
-			if GameManager.currently_held_object == self:
-				GameManager.currently_held_object = null
-			enter_falling()
 	elif (state == PlaceState.FALLING):
 		# Add the gravity.
 		velocity += get_gravity() * delta
@@ -106,7 +101,7 @@ func enter_harpooned(dir: Vector2) -> void:
 
 func enter_queued() -> void:
 	state = PlaceState.QUEUED
-	
+	print(state)
 	set_collision_layer_value(DEFAULT_COLLISION_LAYER, false);
 	set_collision_layer_value(UNPLACED_COLLISION_LAYER, true);
 	modulate = Color.WHITE # make solid
@@ -125,6 +120,11 @@ func enter_placing() -> void:
 	reparent(BlockSpawner.instance.held_block_container)
 	modulate.a = 0.5 # make transparent
 	state = PlaceState.PLACING
+
+func try_to_drop_block() -> void:
+	if !check_for_collisions():
+		GameManager.currently_held_object = null
+		enter_falling()
 
 func enter_falling() -> void:
 	set_collision_mask_value(PLAYER_COLLISION_LAYER,false)

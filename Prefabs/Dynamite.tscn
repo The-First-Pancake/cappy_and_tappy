@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://mcu32jepdsb3"]
+[gd_scene load_steps=28 format=3 uid="uid://mcu32jepdsb3"]
 
 [ext_resource type="Script" path="res://Scripts/Dynamite.gd" id="1_0xau1"]
 [ext_resource type="Material" uid="uid://cg4fprgafhcxd" path="res://Art/unshaded_material.tres" id="2_ogn8q"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://cbl7cp4unytdt" path="res://Sound/Explosion1__065.wav" id="3_iqbmc"]
 [ext_resource type="Texture2D" uid="uid://cp12ff55etrhe" path="res://Art/Sprites/Dynamite/Explosion.png" id="4_udyqs"]
 [ext_resource type="Script" path="res://Scripts/LightFlash.gd" id="5_6sdnl"]
+[ext_resource type="Script" path="res://Scripts/HoverDetector.gd" id="7_5le46"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nsrqv"]
 size = Vector2(86, 99)
@@ -186,5 +187,8 @@ flash_curve = SubResource("Curve_n2jfs")
 [node name="Explosion Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_iqbmc")
 volume_db = -5.0
+
+[node name="HoverDetector" type="Node" parent="."]
+script = ExtResource("7_5le46")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

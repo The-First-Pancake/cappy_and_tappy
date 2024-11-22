@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://cotgqt74hr8q7"]
+[gd_scene load_steps=18 format=4 uid="uid://cotgqt74hr8q7"]
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_mna8d"]
 [ext_resource type="Texture2D" uid="uid://cb17awt0j13xi" path="res://Art/Sprites/glyphs/Glyph_Hook_Rotate.png" id="2_gtgmq"]
@@ -8,11 +8,17 @@
 [ext_resource type="Texture2D" uid="uid://b4pxxldcsvtbj" path="res://Art/Sprites/glyphs/Glyph_WASD.png" id="6_io1w6"]
 [ext_resource type="PackedScene" uid="uid://r1kjk04fwuou" path="res://Prefabs/Spawn On Blocks/Hold.tscn" id="7_8g385"]
 [ext_resource type="Script" path="res://Scripts/SpawnObject.gd" id="7_yqrk1"]
+[ext_resource type="PackedScene" uid="uid://c4safo4pwme48" path="res://Prefabs/Blocks/1x4-Piece.tscn" id="8_hrm7m"]
 [ext_resource type="Material" uid="uid://cg4fprgafhcxd" path="res://Art/unshaded_material.tres" id="8_xevie"]
+[ext_resource type="PackedScene" uid="uid://caudmtkjwca1i" path="res://Prefabs/Blocks/L-Piece-Mirrored.tscn" id="9_57uvg"]
 [ext_resource type="Texture2D" uid="uid://dxwrgo8gd0pqj" path="res://Art/latest-1985960378.jpg" id="9_fstg2"]
+[ext_resource type="PackedScene" uid="uid://b1lrc4bb14deo" path="res://Prefabs/Blocks/L-Piece.tscn" id="10_cr0wi"]
+[ext_resource type="PackedScene" uid="uid://c7c8vai4olkeh" path="res://Prefabs/Blocks/T-Piece.tscn" id="11_j1sbp"]
+[ext_resource type="PackedScene" uid="uid://b60t64b6u40dy" path="res://Prefabs/Blocks/Z-Piece-Mirrored.tscn" id="12_hguw2"]
+[ext_resource type="PackedScene" uid="uid://cqrk66u8spi3" path="res://Prefabs/Blocks/Z-Piece.tscn" id="13_r83ux"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5hh5y"]
-size = Vector2(6100, 1000)
+size = Vector2(5600, 1000)
 
 [node name="Template Level" instance=ExtResource("1_mna8d")]
 
@@ -50,10 +56,9 @@ texture = ExtResource("6_io1w6")
 
 [node name="Camera Zone" parent="." index="4"]
 type = 1
-mid_line_offset = 0.0
 
 [node name="CollisionShape2D" parent="Camera Zone" index="0"]
-position = Vector2(3200, 700)
+position = Vector2(3450, 700)
 shape = SubResource("RectangleShape2D_5hh5y")
 
 [node name="Exit Door" parent="." index="6"]
@@ -82,6 +87,7 @@ position = Vector2(3650, 300)
 position = Vector2(5400, 1050)
 
 [node name="BlockSpawner" parent="Camera2D" index="3"]
+block_prefabs = Array[PackedScene]([ExtResource("8_hrm7m"), ExtResource("9_57uvg"), ExtResource("10_cr0wi"), ExtResource("11_j1sbp"), ExtResource("12_hguw2"), ExtResource("13_r83ux")])
 spawn_objects = Array[ExtResource("7_yqrk1")]([])
 
 [node name="Water" parent="." index="15"]
