@@ -4,7 +4,7 @@ extends Camera2D
 static var instance: CameraController
 @export_category("Stepping Movement")
 var screen_edge_trigger: float = 300
-var left_screen_edge_trigger: float = 740
+var left_UI_size: float = 440
 @export var stationary_cam: bool = false
 var look_ahead_distance: float = 400
 
@@ -36,11 +36,23 @@ func apply_shake() -> void:
 func random_offset() -> Vector2:
 	return Vector2(RNG.randf_range(-shake_strength, shake_strength), RNG.randf_range(-shake_strength, shake_strength))
 
+var left_edge_UI_width: float = 440
+
+var cam_size: Vector2:
+	get:
+		return get_viewport_rect().size - Vector2(left_edge_UI_width,0)
+
+var cam_pos: Vector2:
+	get:
+		return global_position + Vector2(left_edge_UI_width,0)/2
+	set(new_val):
+		global_position = new_val - Vector2(left_edge_UI_width,0)/2
+
 func _process(delta: float) -> void:
-	var screen_left: float = global_position.x - get_viewport_rect().size.x/2
-	var screen_right: float = global_position.x + get_viewport_rect().size.x/2
-	var screen_top: float = global_position.y - get_viewport_rect().size.y/2
-	var screen_bottom: float = global_position.y + get_viewport_rect().size.y/2
+	var screen_left: float = cam_pos.x - cam_size.x/2
+	var screen_right: float = cam_pos.x + cam_size.x/2
+	var screen_top: float = cam_pos.y - cam_size.y/2
+	var screen_bottom: float = cam_pos.y + cam_size.y/2
 	
 	if shake_strength > 0:
 		shake_strength = lerpf(shake_strength,0,shake_fade * delta)
@@ -79,7 +91,7 @@ func _process(delta: float) -> void:
 		if current_cam_type != CamType.HORIZONTAL:
 			is_sliding = true
 
-	if target_position.x < screen_left + left_screen_edge_trigger:
+	if target_position.x < screen_left + screen_edge_trigger:
 		if current_cam_type != CamType.VERTICAL:
 			is_sliding = true
 	
@@ -93,31 +105,31 @@ func _process(delta: float) -> void:
 	if cam_zone: #cap camera movements based on zone end points
 		if cam_zone.bottom_out:
 			if current_cam_type != CamType.HORIZONTAL:
-				var min_camera_y: float = cam_zone.bot_right.y - get_viewport_rect().size.y/2
+				var min_camera_y: float = cam_zone.bot_right.y - cam_size.y/2
 				if target_position.y > min_camera_y:
 					target_position.y = min_camera_y
 		if cam_zone.top_out:
 			if current_cam_type != CamType.HORIZONTAL:
-				var max_camera_y: float = cam_zone.top_left.y + get_viewport_rect().size.y/2
+				var max_camera_y: float = cam_zone.top_left.y + cam_size.y/2
 				if target_position.y < max_camera_y:
 					target_position.y = max_camera_y
 		if cam_zone.right_out:
 			if current_cam_type != CamType.VERTICAL:
-				var max_camera_x: float = cam_zone.bot_right.x - get_viewport_rect().size.x/2
+				var max_camera_x: float = cam_zone.bot_right.x - cam_size.x/2
 				if target_position.x > max_camera_x:
 					target_position.x = max_camera_x
 		if cam_zone.left_out:
 			if current_cam_type != CamType.VERTICAL:
-				var min_camera_x: float = cam_zone.top_left.x + get_viewport_rect().size.x/2
+				var min_camera_x: float = cam_zone.top_left.x + cam_size.x/2
 				if target_position.x < min_camera_x:
 					target_position.x = min_camera_x
 	
 	if is_sliding:
-		var distance_from_target: float = global_position.distance_to(target_position)
+		var distance_from_target: float = cam_pos.distance_to(target_position)
 		var pan_speed: float = 180
 		var pan_speed_multiplier: float = clamp(pow(distance_from_target, .4), 1, 100)
-		global_position = global_position.move_toward(target_position, pan_speed * delta * pan_speed_multiplier)
-		if global_position.distance_to(target_position) < 5:
+		cam_pos = cam_pos.move_toward(target_position, pan_speed * delta * pan_speed_multiplier)
+		if cam_pos.distance_to(target_position) < 5:
 			is_sliding = false
 	
 	

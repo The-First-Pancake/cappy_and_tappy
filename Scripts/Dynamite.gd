@@ -26,9 +26,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	var held: bool = GameManager.currently_held_object == self
 	if held and not exploding:
-
 		var mouse_pos : Vector2 = get_global_mouse_position()
 		global_position = mouse_pos
+
 		
 		#if Input.is_action_just_pressed("rotate_block_right"):
 			#return_dynamite()
@@ -65,5 +65,6 @@ func return_dynamite() -> void:
 
 func try_pickup() -> void:
 	if exploding: return
+	reparent(BlockSpawner.instance.held_block_container)
 	GameManager.currently_held_object = self
 	

@@ -38,7 +38,7 @@
 [ext_resource type="PackedScene" uid="uid://cdt2acy760u6v" path="res://Levels/World1/level_creepy_crawly.tscn" id="32_pcxxg"]
 [ext_resource type="PackedScene" uid="uid://bdadvrc0pl2ox" path="res://Levels/World1/level_harpoon_traverse.tscn" id="32_un76u"]
 [ext_resource type="PackedScene" uid="uid://cfco1avf7mqdc" path="res://Levels/World1/level_fastball.tscn" id="33_dlnxx"]
-[ext_resource type="PackedScene" path="res://Levels/World1/level_elevator.tscn" id="34_ylhnh"]
+[ext_resource type="PackedScene" uid="uid://dbuiky84u4biu" path="res://Levels/World1/level_elevator.tscn" id="34_ylhnh"]
 [ext_resource type="PackedScene" uid="uid://cj80buvkjqk53" path="res://Levels/World1/level_deep_dark.tscn" id="36_7har7"]
 [ext_resource type="PackedScene" uid="uid://dl6b1ro27n7pa" path="res://Levels/World1/level_diamond.tscn" id="36_ydi2r"]
 [ext_resource type="PackedScene" uid="uid://bxpxsflrpgcu6" path="res://Levels/World1/level_tomb.tscn" id="37_yrs1g"]
