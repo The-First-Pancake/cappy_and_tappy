@@ -141,7 +141,6 @@ height = 10.0
 
 [node name="Camera Zone" type="Area2D" parent="."]
 script = ExtResource("27_rvwtg")
-mid_line_offset = -242.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera Zone"]
 position = Vector2(1375, -7300)
