@@ -25,6 +25,9 @@ spawn_count = 0
 
 [node name="Template Level" instance=ExtResource("1_sxkng")]
 
+[node name="Dark Layer" parent="." index="1"]
+visible = true
+
 [node name="Overhead Light" parent="." index="2"]
 visible = false
 
