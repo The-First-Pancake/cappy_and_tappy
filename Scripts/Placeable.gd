@@ -101,7 +101,6 @@ func enter_harpooned(dir: Vector2) -> void:
 
 func enter_queued() -> void:
 	state = PlaceState.QUEUED
-	print(state)
 	set_collision_layer_value(DEFAULT_COLLISION_LAYER, false);
 	set_collision_layer_value(UNPLACED_COLLISION_LAYER, true);
 	modulate = Color.WHITE # make solid
