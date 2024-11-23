@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://1fovc0qvw1oq"]
+[gd_scene load_steps=12 format=3 uid="uid://1fovc0qvw1oq"]
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_w3jxh"]
 [ext_resource type="PackedScene" uid="uid://bdyf8npx3i7xk" path="res://Prefabs/Blocks/2x2-Piece.tscn" id="2_bl821"]
 [ext_resource type="Texture2D" uid="uid://cfwthgghjptlu" path="res://Art/Sprites/glyphs/Glyph_Handhold_Hold.png" id="2_bsear"]
+[ext_resource type="PackedScene" uid="uid://drkcihqmmm3u3" path="res://Prefabs/Set Dressing/Glyph.tscn" id="2_kyjnv"]
 [ext_resource type="Texture2D" uid="uid://ckqbqnfws6rvb" path="res://Art/Sprites/glyphs/Glyph_Handhold_Dir.png" id="3_f6p84"]
 [ext_resource type="Script" path="res://Scripts/SpawnObject.gd" id="3_ovksb"]
 [ext_resource type="PackedScene" uid="uid://r1kjk04fwuou" path="res://Prefabs/Spawn On Blocks/Hold.tscn" id="4_cbys8"]
@@ -23,32 +24,23 @@ spawn_count = 1
 
 [node name="Template Level" instance=ExtResource("1_w3jxh")]
 
-[node name="Glyphs" type="Node2D" parent="." index="1"]
-position = Vector2(1292, 357)
-
-[node name="GlyphHookAttach" type="Sprite2D" parent="Glyphs" index="0"]
-modulate = Color(0.29, 0.231082, 0.1363, 0.294118)
-position = Vector2(-192, 93)
-scale = Vector2(3.125, 3.125)
-texture = ExtResource("2_bsear")
-
-[node name="GlyphHookRotate" type="Sprite2D" parent="Glyphs" index="1"]
-modulate = Color(0.29, 0.231082, 0.1363, 0.294118)
-position = Vector2(26, 88)
-scale = Vector2(3.125, 3.125)
-texture = ExtResource("3_f6p84")
-
-[node name="GlyphHookRelease" type="Sprite2D" parent="Glyphs" index="2"]
-modulate = Color(0.29, 0.231082, 0.1363, 0.294118)
-position = Vector2(263, 98)
-scale = Vector2(3.125, 3.125)
-texture = ExtResource("4_kfenh")
-
 [node name="CollisionShape2D" parent="Camera Zone" index="0"]
 shape = SubResource("RectangleShape2D_63r1a")
 
-[node name="Exit Door" parent="." index="6"]
+[node name="Exit Door" parent="." index="5"]
 position = Vector2(1400, -950)
+
+[node name="Glyph" parent="Glyph Container" index="0" instance=ExtResource("2_kyjnv")]
+position = Vector2(1110.94, 575)
+texture = ExtResource("2_bsear")
+
+[node name="Glyph2" parent="Glyph Container" index="1" instance=ExtResource("2_kyjnv")]
+position = Vector2(1360.94, 575)
+texture = ExtResource("3_f6p84")
+
+[node name="Glyph3" parent="Glyph Container" index="2" instance=ExtResource("2_kyjnv")]
+position = Vector2(1610.94, 575)
+texture = ExtResource("4_kfenh")
 
 [node name="Idol" parent="." index="9"]
 position = Vector2(900, -750)
@@ -68,8 +60,9 @@ every_block_spawn_objects = Array[ExtResource("3_ovksb")]([SubResource("Resource
 [node name="Water" parent="." index="15"]
 rise_speed = 12.0
 
-[node name="2x2 Piiece" parent="." index="17" instance=ExtResource("2_bl821")]
+[node name="2x2 Piiece" parent="." index="16" instance=ExtResource("2_bl821")]
 position = Vector2(1400, -850)
+rotation = 1.57079
 
 [node name="Music" parent="Music Player" index="0"]
 volume_db = -7.0

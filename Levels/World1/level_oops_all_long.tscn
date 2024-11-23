@@ -39,17 +39,17 @@ shape = SubResource("RectangleShape2D_loanw")
 [node name="Exit Door" parent="." index="5"]
 position = Vector2(1350, -3150)
 
-[node name="Idol" parent="." index="8"]
+[node name="Idol" parent="." index="9"]
 position = Vector2(1900, -2450)
 
-[node name="Idol2" parent="." index="9"]
-position = Vector2(1750, 681)
+[node name="Idol2" parent="." index="10"]
+position = Vector2(1700, 681)
 
-[node name="Idol3" parent="." index="10"]
+[node name="Idol3" parent="." index="11"]
 position = Vector2(750, -878)
 
 [node name="PlaceableCharacterBody2d3" parent="Block Container" index="0" instance=ExtResource("2_sxolh")]
-position = Vector2(1650, 550)
+position = Vector2(1600, 550)
 rotation = 4.39167e-05
 
 [node name="Spikes" parent="Block Container/PlaceableCharacterBody2d3" index="5" instance=ExtResource("6_dsxgq")]
@@ -60,7 +60,7 @@ position = Vector2(50, 50)
 rotation = 1.5708
 
 [node name="PlaceableCharacterBody2d4" parent="Block Container" index="1" instance=ExtResource("2_sxolh")]
-position = Vector2(1850, 550)
+position = Vector2(1800, 550)
 rotation = 4.39167e-05
 
 [node name="Hold" parent="Block Container/PlaceableCharacterBody2d4" index="5" instance=ExtResource("5_xt33w")]
@@ -71,11 +71,11 @@ rotation = -1.57079
 position = Vector2(0, -200)
 
 [node name="PlaceableCharacterBody2d5" parent="Block Container" index="2" instance=ExtResource("3_g40tp")]
-position = Vector2(1750, 950)
+position = Vector2(1700, 950)
 rotation = 1.57079
 
 [node name="PlaceableCharacterBody2d6" parent="Block Container" index="3" instance=ExtResource("3_g40tp")]
-position = Vector2(1750, 850)
+position = Vector2(1700, 850)
 rotation = -1.57079
 
 [node name="PlaceableCharacterBody2d7" parent="Block Container" index="4" instance=ExtResource("2_sxolh")]
