@@ -1,0 +1,9 @@
+[gd_resource type="CanvasTexture" load_steps=3 format=3 uid="uid://b7fckc2d8odmw"]
+
+[ext_resource type="Texture2D" uid="uid://mk28qk3ppieo" path="res://Art/Sprites/Slicks/Slick_Slime.png" id="1_tablg"]
+[ext_resource type="Texture2D" uid="uid://dddj8nxg78iis" path="res://Art/Sprites/Slicks/Slick_Slime_Normal.png" id="2_e1sj6"]
+
+[resource]
+diffuse_texture = ExtResource("1_tablg")
+normal_texture = ExtResource("2_e1sj6")
+texture_filter = 1
