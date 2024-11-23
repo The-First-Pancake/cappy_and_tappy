@@ -497,10 +497,6 @@ scene_to_load = ExtResource("28_haa0c")
 layout_mode = 2
 scene_to_load = ExtResource("29_ikqai")
 
-[node name="Level - Break Down" parent="World 2" instance=ExtResource("3_66fh1")]
-layout_mode = 2
-scene_to_load = ExtResource("30_r66fg")
-
 [node name="Level - Harpoons" parent="World 2" instance=ExtResource("3_66fh1")]
 layout_mode = 2
 scene_to_load = ExtResource("31_slj0u")
@@ -513,21 +509,13 @@ scene_to_load = ExtResource("32_un76u")
 layout_mode = 2
 scene_to_load = ExtResource("33_dlnxx")
 
+[node name="Level - Break Down" parent="World 2" instance=ExtResource("3_66fh1")]
+layout_mode = 2
+scene_to_load = ExtResource("30_r66fg")
+
 [node name="Level - Elevator" parent="World 2" instance=ExtResource("3_66fh1")]
 layout_mode = 2
 scene_to_load = ExtResource("34_ylhnh")
-
-[node name="Level - The Walls Are Moving" parent="World 2" instance=ExtResource("3_66fh1")]
-layout_mode = 2
-scene_to_load = ExtResource("31_8gmqv")
-
-[node name="Level - Creepy Crawly" parent="World 2" instance=ExtResource("3_66fh1")]
-layout_mode = 2
-scene_to_load = ExtResource("32_pcxxg")
-
-[node name="Level - Diamond" parent="World 2" instance=ExtResource("3_66fh1")]
-layout_mode = 2
-scene_to_load = ExtResource("36_ydi2r")
 
 [node name="Level - Chamber 666" parent="World 2" instance=ExtResource("3_66fh1")]
 modulate = Color(1, 0.550781, 0.550781, 1)
@@ -545,6 +533,18 @@ size_flags_vertical = 6
 theme_override_constants/h_separation = 15
 theme_override_constants/v_separation = 20
 alignment = 1
+
+[node name="Level - Diamond" parent="World 3" instance=ExtResource("3_66fh1")]
+layout_mode = 2
+scene_to_load = ExtResource("36_ydi2r")
+
+[node name="Level - The Walls Are Moving" parent="World 3" instance=ExtResource("3_66fh1")]
+layout_mode = 2
+scene_to_load = ExtResource("31_8gmqv")
+
+[node name="Level - Creepy Crawly" parent="World 3" instance=ExtResource("3_66fh1")]
+layout_mode = 2
+scene_to_load = ExtResource("32_pcxxg")
 
 [node name="Level - Deep Dark" parent="World 3" instance=ExtResource("3_66fh1")]
 layout_mode = 2

@@ -42,13 +42,13 @@ shape = SubResource("RectangleShape2D_235e4")
 [node name="Exit Door" parent="." index="5"]
 position = Vector2(1700, -650)
 
-[node name="Idol" parent="." index="8"]
+[node name="Idol" parent="." index="10"]
 position = Vector2(1950, 700)
 
-[node name="Idol2" parent="." index="9"]
+[node name="Idol2" parent="." index="11"]
 position = Vector2(1000, -100)
 
-[node name="Idol3" parent="." index="10"]
+[node name="Idol3" parent="." index="12"]
 position = Vector2(1000, -800)
 
 [node name="PlaceableCharacterBody2d" parent="Block Container" index="0" instance=ExtResource("5_dty44")]
@@ -70,11 +70,8 @@ rotation = 1.57086
 [node name="BlockSpawner" parent="Camera2D" index="3"]
 spawn_objects = Array[ExtResource("2_kk4ad")]([SubResource("Resource_fa0pl"), SubResource("Resource_q3by3"), SubResource("Resource_bl7r2"), SubResource("Resource_mjlyc")])
 
-[node name="Water" parent="." index="14"]
+[node name="Water" parent="." index="16"]
 rise_speed = 10.0
-
-[node name="Music" parent="Music Player" index="0"]
-volume_db = -7.0
 
 [node name="Scarab Beetle" parent="." index="17" instance=ExtResource("4_qcl3k")]
 position = Vector2(1550, 250)
@@ -134,3 +131,6 @@ rotation = 1.5708
 [node name="Scarab Beetle16" parent="." index="32" instance=ExtResource("4_qcl3k")]
 position = Vector2(1100, -600)
 rotation = 1.5708
+
+[node name="Music" parent="Music Player" index="0"]
+volume_db = -7.0
