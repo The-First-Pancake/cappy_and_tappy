@@ -6,7 +6,10 @@ static var instance: CameraController
 var screen_edge_trigger: float = 300
 var left_UI_size: float = 440
 @export var stationary_cam: bool = false
-var look_ahead_distance: float = 400
+
+var look_ahead_distance: float:
+	get:
+		return cam_size.y/2 - screen_edge_trigger/2
 
 @export_category("Screen Shake")
 @export var random_stength: float = 15.0

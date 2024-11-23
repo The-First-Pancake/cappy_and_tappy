@@ -22,6 +22,10 @@ var current_world: int = 0
 
 var objects_hovering: Array[Node] = []
 
+var current_level_info: LevelInfo:
+	get:
+		return get_tree().current_scene as LevelInfo
+
 signal loaded_new_scene
 
 func _ready() -> void:

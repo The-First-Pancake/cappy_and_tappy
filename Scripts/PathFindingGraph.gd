@@ -1,5 +1,7 @@
+class_name PathFindingGraph
 extends Node2D
 
+@export var enabled: bool = false
 var show_debug : bool = false
 var path_nodes : Array[PathNode] = []
 @onready var astar_graph : AStar2D = AStar2D.new()
@@ -14,12 +16,14 @@ var path_semaphore : Semaphore = Semaphore.new()
 var graph_recalc_semaphore : Semaphore = Semaphore.new()
 var last_path : Array[PathNode] = []
 
+static var instance: PathFindingGraph
 signal graph_changed
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	instance = self
 	path_semaphore.post()
-	z_index = 1000
+	z_index = 1000 #For debug View
 	GameManager.connect("loaded_new_scene", _gamemanager_new_scene_loaded)
 	pass # Replace with function body.
 
@@ -54,6 +58,7 @@ func find_node_with_id(id: int) -> PathNode:
 	return null
 	
 func add_pathfinding_node(path_node : PathNode) -> void:
+	if !enabled: return
 	path_semaphore.wait()
 	path_node.point_id = astar_graph.get_available_point_id()
 	astar_graph.add_point(path_node.point_id, path_node.node_position)
@@ -62,6 +67,7 @@ func add_pathfinding_node(path_node : PathNode) -> void:
 	path_semaphore.post()
 
 func remove_pathfinding_node(path_node : PathNode) -> void:
+	if !enabled: return
 	path_semaphore.wait()
 	astar_graph.remove_point(path_node.point_id)
 	for i in path_nodes.size():

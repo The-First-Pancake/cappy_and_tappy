@@ -1,9 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://fei84gx0n70r"]
+[gd_scene load_steps=17 format=3 uid="uid://fei84gx0n70r"]
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_ab74x"]
 [ext_resource type="Script" path="res://Scripts/SpawnObject.gd" id="2_a01ky"]
 [ext_resource type="PackedScene" uid="uid://dhrgrpwwax6i8" path="res://Prefabs/Spawn On Blocks/Spikes.tscn" id="2_egqk4"]
 [ext_resource type="PackedScene" uid="uid://hetb2cu4cbew" path="res://Prefabs/Spawn On Blocks/BreakerSpike.tscn" id="3_exrhx"]
+[ext_resource type="PackedScene" uid="uid://drkcihqmmm3u3" path="res://Prefabs/Set Dressing/Glyph.tscn" id="3_vd6ry"]
+[ext_resource type="Texture2D" uid="uid://yqk8e8r8iqt" path="res://Art/Sprites/glyphs/hold s.png" id="4_6rgbx"]
 [ext_resource type="AudioStream" uid="uid://bs0ib4ihh3wc1" path="res://Sound/Music/Chill Level Music gmtk game jam 2024.wav" id="5_kw2u5"]
 [ext_resource type="PackedScene" uid="uid://c4safo4pwme48" path="res://Prefabs/Blocks/1x4-Piece.tscn" id="6_bg5ys"]
 [ext_resource type="PackedScene" uid="uid://r1kjk04fwuou" path="res://Prefabs/Spawn On Blocks/Hold.tscn" id="7_prfip"]
@@ -67,6 +69,10 @@ scale = Vector2(0.32, 0.32)
 [node name="Spikes13" parent="Environment" index="8" instance=ExtResource("2_egqk4")]
 position = Vector2(320, 336)
 scale = Vector2(0.32, 0.32)
+
+[node name="Glyph" parent="Glyph Container" index="0" instance=ExtResource("3_vd6ry")]
+position = Vector2(900, -150)
+texture = ExtResource("4_6rgbx")
 
 [node name="Player" parent="." index="8"]
 position = Vector2(833, 200)
