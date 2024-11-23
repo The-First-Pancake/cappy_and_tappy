@@ -1,9 +1,9 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://ro1rbgwi0tgc"]
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://qi31weyfqxcu"]
 
-[ext_resource type="Texture2D" uid="uid://dnvu54ogeugcn" path="res://Art/Tilemaps/spr_template_tile47_16x16_by_lotovik_purple.png" id="1_js610"]
+[ext_resource type="Texture2D" uid="uid://cmk448mcpkysq" path="res://Art/Tilemaps/Tiles_Cave.png" id="1_dndq3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qv5ff"]
-texture = ExtResource("1_js610")
+texture = ExtResource("1_dndq3")
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 0
@@ -405,6 +405,7 @@ texture = ExtResource("1_js610")
 9:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:1/0/terrains_peering_bit/right_side = 0
 9:1/0/terrains_peering_bit/bottom_side = 0
+9:1/0/terrains_peering_bit/bottom_left_corner = 0
 9:1/0/terrains_peering_bit/left_side = 0
 9:1/0/terrains_peering_bit/top_side = 0
 9:1/0/terrains_peering_bit/top_right_corner = 0

@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bqfeqtdw7xcxo" path="res://Art/Sprites/Backgrounds/background.png" id="1_ny6uj"]
 [ext_resource type="PackedScene" uid="uid://def2hxxjwwhvl" path="res://Prefabs/Door.tscn" id="2_loew8"]
 [ext_resource type="Material" uid="uid://cg4fprgafhcxd" path="res://Art/unshaded_material.tres" id="3_bvfeq"]
-[ext_resource type="TileSet" uid="uid://gg3bh8fgpw3d" path="res://Art/Tilemaps/Brown Tileset_Thick Borders.tres" id="4_rprbn"]
+[ext_resource type="TileSet" uid="uid://gg3bh8fgpw3d" path="res://Art/Tilemaps/Tilemap_Brown Bricks.tres" id="4_rprbn"]
 [ext_resource type="Script" path="res://Scripts/CameraZone.gd" id="5_rhqwm"]
 [ext_resource type="PackedScene" uid="uid://dngf3odx0yf5k" path="res://Prefabs/player.tscn" id="5_rxtx0"]
 [ext_resource type="Script" path="res://Scripts/CameraController.gd" id="6_ub6kg"]

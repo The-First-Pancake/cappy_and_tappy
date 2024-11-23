@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c4safo4pwme48" path="res://Prefabs/Blocks/1x4-Piece.tscn" id="5_sry7q"]
 [ext_resource type="PackedScene" uid="uid://cn5g0kaav20lj" path="res://Prefabs/Spawn On Blocks/ArrowSpitter.tscn" id="7_t561k"]
 [ext_resource type="AudioStream" uid="uid://bjoyy3kjn3bpj" path="res://Sound/Music/Uptempo Not Crazy Level Music.wav" id="9_3x5qn"]
-[ext_resource type="Texture2D" uid="uid://c0lrrkts2q73h" path="res://Art/Sprites/idol clue.png" id="10_isyu4"]
+[ext_resource type="Texture2D" uid="uid://c0lrrkts2q73h" path="res://Art/Sprites/glyphs/idol clue.png" id="10_isyu4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m46el"]
 size = Vector2(1350, 17100)

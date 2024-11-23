@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crs2i2d6w0n24"
-path="res://.godot/imported/spr_template_tile47_16x16_by_lotovik.png-3157cb00acf3907c0e70f4c00ceded49.ctex"
+uid="uid://ixvhpkfrrlks"
+path="res://.godot/imported/Purple Tileset.png-6989da001d269700e996bd4511f4e6aa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Tilemaps/spr_template_tile47_16x16_by_lotovik.png"
-dest_files=["res://.godot/imported/spr_template_tile47_16x16_by_lotovik.png-3157cb00acf3907c0e70f4c00ceded49.ctex"]
+source_file="res://Art/Tilemaps/Archive/Purple Tileset.png"
+dest_files=["res://.godot/imported/Purple Tileset.png-6989da001d269700e996bd4511f4e6aa.ctex"]
 
 [params]
 

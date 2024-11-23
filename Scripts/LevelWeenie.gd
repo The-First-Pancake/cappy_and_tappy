@@ -44,7 +44,7 @@ func _ready() -> void:
 	level_idx = get_index()
 	
 	if level_idx == 0:
-		call_deferred("grab_focus")
+		#call_deferred("grab_focus") TODO: Idk what this did, but it was causing a lot of warnings
 		unlocked = true
 	else:
 		var levels_in_this_world: Array[Node] = get_parent().get_children()

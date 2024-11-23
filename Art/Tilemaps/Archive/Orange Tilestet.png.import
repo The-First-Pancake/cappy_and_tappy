@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1vp8nbk3cefk"
-path="res://.godot/imported/orange tiles.png-ce149a5dc8bea0453f72a42d71e32e17.ctex"
+uid="uid://bcujm4yi6wfbl"
+path="res://.godot/imported/Orange Tilestet.png-f86f5f223a27277e81844c177c48ace7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Tilemaps/orange tiles.png"
-dest_files=["res://.godot/imported/orange tiles.png-ce149a5dc8bea0453f72a42d71e32e17.ctex"]
+source_file="res://Art/Tilemaps/Archive/Orange Tilestet.png"
+dest_files=["res://.godot/imported/Orange Tilestet.png-f86f5f223a27277e81844c177c48ace7.ctex"]
 
 [params]
 

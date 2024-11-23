@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bonoxx2nend1o"
-path="res://.godot/imported/background_tile.png-0027f601978410e88280b230745ce1e7.ctex"
+uid="uid://b537xlunnmss2"
+path="res://.godot/imported/Tiles_Brown Bricks.png-c739f47dce71e6e327dfb12f475ea066.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Tilemaps/background_tile.png"
-dest_files=["res://.godot/imported/background_tile.png-0027f601978410e88280b230745ce1e7.ctex"]
+source_file="res://Art/Tilemaps/Tiles_Brown Bricks.png"
+dest_files=["res://.godot/imported/Tiles_Brown Bricks.png-c739f47dce71e6e327dfb12f475ea066.ctex"]
 
 [params]
 

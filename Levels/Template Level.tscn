@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://Scripts/CameraController.gd" id="4_psc51"]
 [ext_resource type="PackedScene" uid="uid://ctlx3qylqphyo" path="res://Prefabs/BlockSpawner.tscn" id="5_74oay"]
 [ext_resource type="Texture2D" uid="uid://cm1bxb5y7kb" path="res://Art/Sprites/UI/ui_throbber.png" id="5_aae1a"]
-[ext_resource type="TileSet" uid="uid://gg3bh8fgpw3d" path="res://Art/Tilemaps/Brown Tileset_Thick Borders.tres" id="5_tg1dj"]
+[ext_resource type="TileSet" uid="uid://gg3bh8fgpw3d" path="res://Art/Tilemaps/Tilemap_Brown Bricks.tres" id="5_tg1dj"]
 [ext_resource type="Script" path="res://Scripts/SpawnObject.gd" id="6_xpr8c"]
 [ext_resource type="PackedScene" uid="uid://r1kjk04fwuou" path="res://Prefabs/Spawn On Blocks/Hold.tscn" id="7_k1ys1"]
 [ext_resource type="PackedScene" uid="uid://bkatak76uuoli" path="res://Prefabs/Spawn On Blocks/Campfire.tscn" id="8_786g4"]

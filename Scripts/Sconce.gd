@@ -11,7 +11,7 @@ func _ready() -> void:
 			fire.freeze = false
 		)
 		parent.placed.connect(func() -> void:
-			point_light_2d.texture_scale = 2
+			point_light_2d.texture_scale = 18
 		)
 
 

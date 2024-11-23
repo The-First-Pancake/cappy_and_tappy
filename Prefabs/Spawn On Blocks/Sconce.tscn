@@ -71,12 +71,12 @@ position = Vector2(-0.25, -26)
 shape = SubResource("RectangleShape2D_va83x")
 
 [node name="Base" type="StaticBody2D" parent="."]
-position = Vector2(0, -58)
+position = Vector2(0, -43)
 collision_layer = 0
 collision_mask = 0
 
-[node name="FlagGib" type="Sprite2D" parent="Base"]
-position = Vector2(0, 29)
+[node name="Stick Sprite" type="Sprite2D" parent="Base"]
+position = Vector2(0, 22)
 scale = Vector2(3.125, 3.355)
 texture = ExtResource("2_pjmqv")
 
@@ -84,42 +84,39 @@ texture = ExtResource("2_pjmqv")
 shape = SubResource("RectangleShape2D_0fbj1")
 
 [node name="Fire" type="RigidBody2D" parent="."]
-position = Vector2(0, -29)
+position = Vector2(0, -18)
 collision_layer = 0
 collision_mask = 129
 mass = 0.2
 center_of_mass_mode = 1
 center_of_mass = Vector2(0, 20)
 freeze = true
-angular_velocity = 0.174533
-angular_damp = 8.0
+angular_velocity = 6.10865
+angular_damp = 0.5
 
 [node name="flame" type="AnimatedSprite2D" parent="Fire"]
-position = Vector2(-0.199999, -3.125)
+position = Vector2(0, -3.125)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_40mam")
 autoplay = "default"
 frame_progress = 0.939399
 
 [node name="PointLight2D" type="PointLight2D" parent="Fire"]
-position = Vector2(-0.199999, 2.875)
-scale = Vector2(9, 9)
 color = Color(1, 0.539063, 0, 1)
 energy = 3.0
 blend_mode = 2
 range_item_cull_mask = 3
 texture = SubResource("GradientTexture2D_ddbxi")
-texture_scale = 0.1
 height = 30.0
 script = ExtResource("3_wrrhm")
+percent_variance = 0.2
 
 [node name="Brasier" type="Sprite2D" parent="Fire"]
-position = Vector2(-0.200001, -8.125)
+position = Vector2(0, -8.125)
 scale = Vector2(3.125, 3.125)
 texture = ExtResource("3_5hlsx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fire"]
-position = Vector2(-0.199999, -0.125)
 shape = SubResource("RectangleShape2D_c06ri")
 
 [node name="Squashable" type="Node" parent="."]
@@ -130,7 +127,7 @@ script = ExtResource("6_vp8al")
 nodes_to_disable = [NodePath("../Fire")]
 
 [node name="PinJoint2D" type="PinJoint2D" parent="."]
-position = Vector2(0, -58)
+position = Vector2(0, -43)
 node_a = NodePath("../Base")
 node_b = NodePath("../Fire")
 bias = 0.9
