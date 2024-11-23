@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://fei84gx0n70r"]
+[gd_scene load_steps=16 format=3 uid="uid://fei84gx0n70r"]
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_ab74x"]
 [ext_resource type="Script" path="res://Scripts/SpawnObject.gd" id="2_a01ky"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c4safo4pwme48" path="res://Prefabs/Blocks/1x4-Piece.tscn" id="6_bg5ys"]
 [ext_resource type="PackedScene" uid="uid://mcu32jepdsb3" path="res://Prefabs/Dynamite.tscn" id="6_w00kd"]
 [ext_resource type="PackedScene" uid="uid://r1kjk04fwuou" path="res://Prefabs/Spawn On Blocks/Hold.tscn" id="7_prfip"]
+[ext_resource type="PackedScene" uid="uid://cn5g0kaav20lj" path="res://Prefabs/Spawn On Blocks/ArrowSpitter.tscn" id="8_2urm1"]
 [ext_resource type="PackedScene" uid="uid://b1lrc4bb14deo" path="res://Prefabs/Blocks/L-Piece.tscn" id="8_l02yu"]
 [ext_resource type="PackedScene" uid="uid://cqrk66u8spi3" path="res://Prefabs/Blocks/Z-Piece.tscn" id="9_tieo0"]
 [ext_resource type="PackedScene" uid="uid://bdyf8npx3i7xk" path="res://Prefabs/Blocks/2x2-Piece.tscn" id="10_fg5cn"]
@@ -71,172 +72,176 @@ scale = Vector2(0.32, 0.32)
 [node name="Player" parent="." index="7"]
 position = Vector2(833, 200)
 
-[node name="PlaceableCharacterBody2d14" parent="." index="8" instance=ExtResource("6_bg5ys")]
+[node name="Idol" parent="." index="8"]
+position = Vector2(850, 950)
+
+[node name="Idol2" parent="." index="9"]
+position = Vector2(1350, 450)
+
+[node name="Idol3" parent="." index="10"]
+position = Vector2(1800, 250)
+
+[node name="PlaceableCharacterBody2d14" parent="Block Container" index="0" instance=ExtResource("6_bg5ys")]
 position = Vector2(900, 300)
-rotation = 4.7124
+rotation = -1.57079
 
-[node name="PlaceableCharacterBody2d15" parent="." index="9" instance=ExtResource("6_bg5ys")]
+[node name="PlaceableCharacterBody2d15" parent="Block Container" index="1" instance=ExtResource("6_bg5ys")]
 position = Vector2(900, 400)
-rotation = 4.7124
+rotation = -1.57079
 
-[node name="PlaceableCharacterBody2d18" parent="." index="10" instance=ExtResource("6_bg5ys")]
+[node name="PlaceableCharacterBody2d18" parent="Block Container" index="2" instance=ExtResource("6_bg5ys")]
 position = Vector2(1400, 800)
-rotation = 7.85399
+rotation = 1.5708
 
-[node name="Hold4" parent="PlaceableCharacterBody2d18" index="5" instance=ExtResource("7_prfip")]
+[node name="Hold4" parent="Block Container/PlaceableCharacterBody2d18" index="5" instance=ExtResource("7_prfip")]
 position = Vector2(49.9983, -150.001)
 rotation = 1.5708
 
-[node name="Hold5" parent="PlaceableCharacterBody2d18" index="6" instance=ExtResource("7_prfip")]
+[node name="Hold5" parent="Block Container/PlaceableCharacterBody2d18" index="6" instance=ExtResource("7_prfip")]
 position = Vector2(50.0011, 99.9994)
 rotation = 1.5708
 
-[node name="PlaceableCharacterBody2d19" parent="." index="11" instance=ExtResource("6_bg5ys")]
+[node name="PlaceableCharacterBody2d19" parent="Block Container" index="3" instance=ExtResource("6_bg5ys")]
 position = Vector2(1000, 800)
-rotation = 7.85399
+rotation = 1.5708
 
-[node name="Hold4" parent="PlaceableCharacterBody2d19" index="5" instance=ExtResource("7_prfip")]
+[node name="Hold4" parent="Block Container/PlaceableCharacterBody2d19" index="5" instance=ExtResource("7_prfip")]
 position = Vector2(49.9994, -50.0006)
 rotation = 1.5708
 
-[node name="Hold5" parent="PlaceableCharacterBody2d19" index="6" instance=ExtResource("7_prfip")]
+[node name="Hold5" parent="Block Container/PlaceableCharacterBody2d19" index="6" instance=ExtResource("7_prfip")]
 position = Vector2(0.00169373, 200)
 rotation = 3.14159
 
-[node name="PlaceableCharacterBody2d22" parent="." index="12" instance=ExtResource("6_bg5ys")]
+[node name="PlaceableCharacterBody2d22" parent="Block Container" index="4" instance=ExtResource("6_bg5ys")]
 position = Vector2(1400, 500)
-rotation = 7.85399
+rotation = 1.5708
 
-[node name="PlaceableCharacterBody2d20" parent="." index="13" instance=ExtResource("6_bg5ys")]
+[node name="PlaceableCharacterBody2d20" parent="Block Container" index="5" instance=ExtResource("6_bg5ys")]
 position = Vector2(1300, 300)
-rotation = 4.7124
+rotation = -1.57079
 
-[node name="Spikes2" parent="PlaceableCharacterBody2d20" index="5" instance=ExtResource("2_egqk4")]
+[node name="Spikes2" parent="Block Container/PlaceableCharacterBody2d20" index="5" instance=ExtResource("2_egqk4")]
 position = Vector2(49.9984, -150.001)
 rotation = 1.57079
 
-[node name="Spikes3" parent="PlaceableCharacterBody2d20" index="6" instance=ExtResource("2_egqk4")]
+[node name="Spikes3" parent="Block Container/PlaceableCharacterBody2d20" index="6" instance=ExtResource("2_egqk4")]
 position = Vector2(50.0005, 49.9994)
 rotation = 1.57079
 
-[node name="PlaceableCharacterBody2d21" parent="." index="14" instance=ExtResource("6_bg5ys")]
+[node name="PlaceableCharacterBody2d21" parent="Block Container" index="6" instance=ExtResource("6_bg5ys")]
 position = Vector2(1700, 300)
-rotation = 4.7124
+rotation = -1.57079
 
-[node name="Spikes4" parent="PlaceableCharacterBody2d21" index="5" instance=ExtResource("2_egqk4")]
+[node name="Spikes4" parent="Block Container/PlaceableCharacterBody2d21" index="5" instance=ExtResource("2_egqk4")]
 position = Vector2(49.9983, -150.001)
 rotation = 1.57079
 
-[node name="PlaceableCharacterBody2d6" parent="." index="15" instance=ExtResource("6_bg5ys")]
+[node name="PlaceableCharacterBody2d6" parent="Block Container" index="7" instance=ExtResource("6_bg5ys")]
 position = Vector2(1050, 50)
-rotation = 6.28319
+rotation = 4.46638e-06
 
-[node name="Hold" parent="PlaceableCharacterBody2d6" index="5" instance=ExtResource("7_prfip")]
+[node name="Hold" parent="Block Container/PlaceableCharacterBody2d6" index="5" instance=ExtResource("7_prfip")]
 position = Vector2(-50.0003, -49.9998)
 rotation = -1.5708
 
-[node name="Hold2" parent="PlaceableCharacterBody2d6" index="6" instance=ExtResource("7_prfip")]
+[node name="Hold2" parent="Block Container/PlaceableCharacterBody2d6" index="6" instance=ExtResource("7_prfip")]
 position = Vector2(49.9997, -50.0002)
 rotation = 1.5708
 
-[node name="Spikes" parent="PlaceableCharacterBody2d6" index="7" instance=ExtResource("2_egqk4")]
+[node name="Spikes" parent="Block Container/PlaceableCharacterBody2d6" index="7" instance=ExtResource("2_egqk4")]
 position = Vector2(-0.000854492, -200)
 
-[node name="PlaceableCharacterBody2d7" parent="." index="16" instance=ExtResource("6_bg5ys")]
+[node name="PlaceableCharacterBody2d7" parent="Block Container" index="8" instance=ExtResource("6_bg5ys")]
 position = Vector2(1250, 50)
-rotation = 6.28319
+rotation = 4.46638e-06
 
-[node name="Hold" parent="PlaceableCharacterBody2d7" index="5" instance=ExtResource("7_prfip")]
+[node name="Hold" parent="Block Container/PlaceableCharacterBody2d7" index="5" instance=ExtResource("7_prfip")]
 position = Vector2(-50.0003, -49.9998)
 rotation = -1.5708
 
-[node name="Hold2" parent="PlaceableCharacterBody2d7" index="6" instance=ExtResource("7_prfip")]
+[node name="Hold2" parent="Block Container/PlaceableCharacterBody2d7" index="6" instance=ExtResource("7_prfip")]
 position = Vector2(49.9997, -50.0002)
 rotation = 1.5708
 
-[node name="Spikes" parent="PlaceableCharacterBody2d7" index="7" instance=ExtResource("2_egqk4")]
+[node name="Spikes" parent="Block Container/PlaceableCharacterBody2d7" index="7" instance=ExtResource("2_egqk4")]
 position = Vector2(-0.000854492, -200)
 
-[node name="PlaceableCharacterBody2d8" parent="." index="17" instance=ExtResource("6_bg5ys")]
+[node name="PlaceableCharacterBody2d8" parent="Block Container" index="9" instance=ExtResource("6_bg5ys")]
 position = Vector2(1450, 50)
-rotation = 6.28319
+rotation = 4.46638e-06
 
-[node name="Hold" parent="PlaceableCharacterBody2d8" index="5" instance=ExtResource("7_prfip")]
+[node name="Hold" parent="Block Container/PlaceableCharacterBody2d8" index="5" instance=ExtResource("7_prfip")]
 position = Vector2(-50.0003, -49.9998)
 rotation = -1.5708
 
-[node name="Hold2" parent="PlaceableCharacterBody2d8" index="6" instance=ExtResource("7_prfip")]
+[node name="Hold2" parent="Block Container/PlaceableCharacterBody2d8" index="6" instance=ExtResource("7_prfip")]
 position = Vector2(49.9997, -50.0002)
 rotation = 1.5708
 
-[node name="Spikes" parent="PlaceableCharacterBody2d8" index="7" instance=ExtResource("2_egqk4")]
+[node name="Spikes" parent="Block Container/PlaceableCharacterBody2d8" index="7" instance=ExtResource("2_egqk4")]
 position = Vector2(-0.000854492, -200)
 
-[node name="PlaceableCharacterBody2d9" parent="." index="18" instance=ExtResource("6_bg5ys")]
+[node name="PlaceableCharacterBody2d9" parent="Block Container" index="10" instance=ExtResource("6_bg5ys")]
 position = Vector2(1650, 50)
-rotation = 6.28319
+rotation = 4.46638e-06
 
-[node name="Hold" parent="PlaceableCharacterBody2d9" index="5" instance=ExtResource("7_prfip")]
+[node name="Hold" parent="Block Container/PlaceableCharacterBody2d9" index="5" instance=ExtResource("7_prfip")]
 position = Vector2(-50.0003, -49.9998)
 rotation = -1.5708
 
-[node name="Hold2" parent="PlaceableCharacterBody2d9" index="6" instance=ExtResource("7_prfip")]
+[node name="Hold2" parent="Block Container/PlaceableCharacterBody2d9" index="6" instance=ExtResource("7_prfip")]
 position = Vector2(49.9997, -50.0002)
 rotation = 1.5708
 
-[node name="Spikes" parent="PlaceableCharacterBody2d9" index="7" instance=ExtResource("2_egqk4")]
+[node name="Spikes" parent="Block Container/PlaceableCharacterBody2d9" index="7" instance=ExtResource("2_egqk4")]
 position = Vector2(-0.000854492, -200)
 
-[node name="PlaceableCharacterBody2d25" parent="." index="19" instance=ExtResource("8_l02yu")]
+[node name="PlaceableCharacterBody2d25" parent="Block Container" index="11" instance=ExtResource("8_l02yu")]
 position = Vector2(1650, 500)
-rotation = 31.4159
+rotation = -2.72592e-05
 
-[node name="2x2 Piiece3" parent="." index="20" instance=ExtResource("10_fg5cn")]
+[node name="2x2 Piiece3" parent="Block Container" index="12" instance=ExtResource("10_fg5cn")]
 position = Vector2(1850, 450)
-rotation = 3.1416
+rotation = -3.14159
 
-[node name="PlaceableCharacterBody2d23" parent="." index="21" instance=ExtResource("11_jubwp")]
+[node name="PlaceableCharacterBody2d23" parent="Block Container" index="13" instance=ExtResource("11_jubwp")]
 position = Vector2(1950, 500)
-rotation = 28.2743
+rotation = 3.14156
 
-[node name="PlaceableCharacterBody2d24" parent="." index="22" instance=ExtResource("11_jubwp")]
+[node name="PlaceableCharacterBody2d24" parent="Block Container" index="14" instance=ExtResource("11_jubwp")]
 position = Vector2(1900, 650)
-rotation = 29.8451
+rotation = -1.57083
 
-[node name="PlaceableCharacterBody2d26" parent="." index="23" instance=ExtResource("11_jubwp")]
+[node name="PlaceableCharacterBody2d26" parent="Block Container" index="15" instance=ExtResource("11_jubwp")]
 position = Vector2(1950, 900)
-rotation = 31.4159
+rotation = -2.72592e-05
 
-[node name="Hold3" parent="PlaceableCharacterBody2d26" index="5" instance=ExtResource("7_prfip")]
+[node name="Hold3" parent="Block Container/PlaceableCharacterBody2d26" index="5" instance=ExtResource("7_prfip")]
 position = Vector2(-100, -0.00427246)
 rotation = -1.57075
 
-[node name="PlaceableCharacterBody2d27" parent="." index="24" instance=ExtResource("11_jubwp")]
+[node name="PlaceableCharacterBody2d27" parent="Block Container" index="16" instance=ExtResource("11_jubwp")]
 position = Vector2(800, 1100)
-rotation = 31.4159
+rotation = -2.72592e-05
 
-[node name="Z-Piece" parent="." index="25" instance=ExtResource("9_tieo0")]
+[node name="Arrow_Spitter" parent="Block Container/PlaceableCharacterBody2d27" index="6" instance=ExtResource("8_2urm1")]
+position = Vector2(100.003, -99.9973)
+rotation = 2.83877e-05
+
+[node name="Z-Piece" parent="Block Container" index="17" instance=ExtResource("9_tieo0")]
 position = Vector2(1150, 450)
-rotation = 14.1372
+rotation = 1.57083
 
-[node name="Z-Piece3" parent="." index="26" instance=ExtResource("9_tieo0")]
+[node name="Z-Piece3" parent="Block Container" index="18" instance=ExtResource("9_tieo0")]
 position = Vector2(1200, 650)
-rotation = 14.1372
+rotation = 1.57083
 
-[node name="Z-Piece4" parent="." index="27" instance=ExtResource("9_tieo0")]
+[node name="Z-Piece4" parent="Block Container" index="19" instance=ExtResource("9_tieo0")]
 position = Vector2(1500, 650)
-rotation = 14.1372
+rotation = 1.57083
 
-[node name="Idol" parent="." index="28"]
-position = Vector2(850, 950)
-
-[node name="Idol2" parent="." index="29"]
-position = Vector2(1350, 450)
-
-[node name="Idol3" parent="." index="30"]
-position = Vector2(1800, 250)
-
-[node name="Camera2D" parent="." index="32"]
+[node name="Camera2D" parent="." index="12"]
 position = Vector2(1150, 996)
 
 [node name="Dynamite4" parent="Camera2D" index="3" instance=ExtResource("6_w00kd")]
@@ -257,7 +262,7 @@ position = Vector2(-883, 265)
 [node name="Dynamite2" parent="Camera2D" index="7"]
 position = Vector2(-883, 165)
 
-[node name="Water" parent="." index="34"]
+[node name="Water" parent="." index="14"]
 rise_speed = 0.0
 
 [node name="Music" parent="Music Player" index="0"]

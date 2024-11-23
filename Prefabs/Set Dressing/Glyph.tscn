@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://drkcihqmmm3u3"]
+
+[ext_resource type="Texture2D" uid="uid://u3d3dq567vab" path="res://Art/Sprites/glyphs/Arrows_Warning.png" id="1_8oe5c"]
+[ext_resource type="Script" path="res://Scripts/LevelBuildingTools.gd" id="1_frypt"]
+
+[node name="Glyph" type="Sprite2D"]
+self_modulate = Color(0.831373, 0.67451, 0.388235, 0.380392)
+scale = Vector2(3.125, 3.125)
+texture = ExtResource("1_8oe5c")
+
+[node name="LevelBuildingTools" type="Node" parent="."]
+script = ExtResource("1_frypt")
+auto_parent_to = "Glyph Container"

@@ -45,7 +45,7 @@ custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_constants/separation = 50
+theme_override_constants/separation = 20
 alignment = 1
 
 [node name="Name Label" type="Label" parent="PauseMenu/Shrink Container/MarginContainer/Control"]
@@ -65,6 +65,14 @@ theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = ExtResource("2_u4wfa")
 text = "Continue"
 
+[node name="Restart Level" type="Button" parent="PauseMenu/Shrink Container/MarginContainer/Control"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_05e3d")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = ExtResource("2_u4wfa")
+text = "Restart level"
+
 [node name="Quit to Menu" type="Button" parent="PauseMenu/Shrink Container/MarginContainer/Control"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
@@ -74,4 +82,5 @@ theme_override_styles/normal = ExtResource("2_u4wfa")
 text = "Quit to Menu"
 
 [connection signal="pressed" from="PauseMenu/Shrink Container/MarginContainer/Control/Continue" to="PauseMenu" method="unpause"]
+[connection signal="pressed" from="PauseMenu/Shrink Container/MarginContainer/Control/Restart Level" to="PauseMenu" method="restart_level"]
 [connection signal="pressed" from="PauseMenu/Shrink Container/MarginContainer/Control/Quit to Menu" to="PauseMenu" method="main_menu"]

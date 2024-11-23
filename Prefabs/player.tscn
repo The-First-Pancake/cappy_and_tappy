@@ -288,7 +288,7 @@ height = 78.0
 radius = 58.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1uqg7"]
-radius = 38.0132
+radius = 24.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_018a7"]
 radius = 13.0
@@ -344,6 +344,7 @@ unique_name_in_owner = true
 position = Vector2(4, -18)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Grounded Hold Detector2"]
+position = Vector2(11, 8)
 shape = SubResource("CircleShape2D_1uqg7")
 debug_color = Color(0.767667, 0.18, 1, 0)
 

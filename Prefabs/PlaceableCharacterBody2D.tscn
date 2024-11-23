@@ -48,6 +48,7 @@ z_index = 2
 
 [node name="LevelBuildingTools" type="Node" parent="."]
 script = ExtResource("8_gi86g")
+auto_parent_to = "Block Container"
 
 [connection signal="input_event" from="." to="." method="on_collision_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

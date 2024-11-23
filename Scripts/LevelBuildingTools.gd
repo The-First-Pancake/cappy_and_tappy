@@ -2,9 +2,19 @@
 class_name LevelBuildingTools
 extends Node
 
+@export var auto_parent_to: String = ""
 
 var rotate_debounce: bool = false
 var parenting_debounce: bool = false
+
+func _ready() -> void:
+	if Engine.is_editor_hint():
+		#await get_tree().process_frame
+		if auto_parent_to:
+			var new_parent: Node = get_tree().get_first_node_in_group(auto_parent_to)
+			if new_parent:
+				get_parent().reparent(new_parent)
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var parent: Node2D = get_parent()

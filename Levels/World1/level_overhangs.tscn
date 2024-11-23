@@ -24,42 +24,49 @@ position = Vector2(850, -1550)
 [node name="Idol3" parent="." index="10"]
 position = Vector2(1850, -2800)
 
-[node name="PlaceableCharacterBody2d2" parent="." index="15" instance=ExtResource("2_sc1g2")]
+[node name="PlaceableCharacterBody2d2" parent="Block Container" index="0" instance=ExtResource("2_sc1g2")]
 position = Vector2(1850, -100)
 rotation = 1.5708
 
-[node name="PlaceableCharacterBody2d3" parent="." index="16" instance=ExtResource("2_sc1g2")]
+[node name="PlaceableCharacterBody2d3" parent="Block Container" index="1" instance=ExtResource("2_sc1g2")]
 position = Vector2(1450, -100)
 rotation = 1.5708
 
-[node name="PlaceableCharacterBody2d4" parent="." index="17" instance=ExtResource("2_sc1g2")]
+[node name="PlaceableCharacterBody2d4" parent="Block Container" index="2" instance=ExtResource("2_sc1g2")]
 position = Vector2(900, -1700)
 rotation = 1.5708
 
-[node name="PlaceableCharacterBody2d5" parent="." index="18" instance=ExtResource("2_sc1g2")]
+[node name="PlaceableCharacterBody2d5" parent="Block Container" index="3" instance=ExtResource("2_sc1g2")]
 position = Vector2(1300, -1700)
 rotation = 1.5708
 
-[node name="2x2 Piiece" parent="." index="19" instance=ExtResource("3_7qaxh")]
+[node name="2x2 Piiece" parent="Block Container" index="4" instance=ExtResource("3_7qaxh")]
 position = Vector2(1950, -3050)
+rotation = 1.57079
 
-[node name="2x2 Piiece2" parent="." index="20" instance=ExtResource("3_7qaxh")]
+[node name="2x2 Piiece2" parent="Block Container" index="5" instance=ExtResource("3_7qaxh")]
 position = Vector2(1750, -3050)
+rotation = 1.57079
 
-[node name="2x2 Piiece3" parent="." index="21" instance=ExtResource("3_7qaxh")]
+[node name="2x2 Piiece3" parent="Block Container" index="6" instance=ExtResource("3_7qaxh")]
 position = Vector2(1550, -3050)
+rotation = 1.57079
 
-[node name="2x2 Piiece4" parent="." index="22" instance=ExtResource("3_7qaxh")]
+[node name="2x2 Piiece4" parent="Block Container" index="7" instance=ExtResource("3_7qaxh")]
 position = Vector2(1350, -3050)
+rotation = 1.57079
 
-[node name="2x2 Piiece5" parent="." index="23" instance=ExtResource("3_7qaxh")]
+[node name="2x2 Piiece5" parent="Block Container" index="8" instance=ExtResource("3_7qaxh")]
 position = Vector2(1150, -3050)
+rotation = 1.57079
 
-[node name="2x2 Piiece6" parent="." index="24" instance=ExtResource("3_7qaxh")]
+[node name="2x2 Piiece6" parent="Block Container" index="9" instance=ExtResource("3_7qaxh")]
 position = Vector2(1100, -1550)
+rotation = 1.57079
 
-[node name="2x2 Piiece7" parent="." index="25" instance=ExtResource("3_7qaxh")]
+[node name="2x2 Piiece7" parent="Block Container" index="10" instance=ExtResource("3_7qaxh")]
 position = Vector2(1100, -1350)
+rotation = 1.57079
 
 [node name="Music" parent="Music Player" index="0"]
 volume_db = -7.0

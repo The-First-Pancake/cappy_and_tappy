@@ -48,139 +48,140 @@ position = Vector2(1000, -100)
 [node name="Idol3" parent="." index="10"]
 position = Vector2(1700, -600)
 
+[node name="PlaceableCharacterBody2d" parent="Block Container" index="0" instance=ExtResource("6_if8es")]
+position = Vector2(1200, -900)
+rotation = 1.5708
+
+[node name="PlaceableCharacterBody2d2" parent="Block Container" index="1" instance=ExtResource("7_c0com")]
+position = Vector2(1100, -100)
+rotation = 3.14159
+
+[node name="PlaceableCharacterBody2d3" parent="Block Container" index="2" instance=ExtResource("8_x6fxm")]
+position = Vector2(900, -100)
+rotation = 3.14159
+
+[node name="1x4 Block" parent="Block Container" index="3" instance=ExtResource("6_if8es")]
+position = Vector2(2350, 150)
+rotation = -3.14153
+
 [node name="BlockSpawner" parent="Camera2D" index="3"]
 spawn_objects = Array[ExtResource("2_b1p7q")]([SubResource("Resource_fa0pl"), SubResource("Resource_bl7r2"), SubResource("Resource_q3by3")])
 
 [node name="Water" parent="." index="14"]
 rise_speed = 10.0
 
-[node name="PlaceableCharacterBody2d" parent="." index="16" instance=ExtResource("6_if8es")]
-position = Vector2(1200, -900)
-rotation = 1.5708
-
 [node name="Music" parent="Music Player" index="0"]
 volume_db = -7.0
 
-[node name="PlaceableCharacterBody2d2" parent="." index="18" instance=ExtResource("7_c0com")]
-position = Vector2(1100, -100)
-rotation = 3.14159
-
-[node name="PlaceableCharacterBody2d3" parent="." index="19" instance=ExtResource("8_x6fxm")]
-position = Vector2(900, -100)
-rotation = 3.14159
-
-[node name="Scarab Beetle" parent="." index="20" instance=ExtResource("4_rqqel")]
+[node name="Scarab Beetle" parent="." index="17" instance=ExtResource("4_rqqel")]
 position = Vector2(850, -250)
 
-[node name="Scarab Beetle15" parent="." index="21" instance=ExtResource("4_rqqel")]
+[node name="Scarab Beetle15" parent="." index="18" instance=ExtResource("4_rqqel")]
 position = Vector2(1000, -50)
 
-[node name="Scarab Beetle11" parent="." index="22" instance=ExtResource("4_rqqel")]
+[node name="Scarab Beetle11" parent="." index="19" instance=ExtResource("4_rqqel")]
 position = Vector2(800, -200)
 rotation = -1.5708
 
-[node name="Scarab Beetle12" parent="." index="23" instance=ExtResource("4_rqqel")]
+[node name="Scarab Beetle12" parent="." index="20" instance=ExtResource("4_rqqel")]
 position = Vector2(800, -50)
 rotation = -1.5708
 
-[node name="Scarab Beetle13" parent="." index="24" instance=ExtResource("4_rqqel")]
+[node name="Scarab Beetle13" parent="." index="21" instance=ExtResource("4_rqqel")]
 position = Vector2(1100, -150)
 rotation = -1.5708
 
-[node name="Scarab Beetle20" parent="." index="25" instance=ExtResource("4_rqqel")]
+[node name="Scarab Beetle20" parent="." index="22" instance=ExtResource("4_rqqel")]
 position = Vector2(1600, -400)
 rotation = -1.5708
 
-[node name="Scarab Beetle24" parent="." index="26" instance=ExtResource("4_rqqel")]
+[node name="Scarab Beetle24" parent="." index="23" instance=ExtResource("4_rqqel")]
 position = Vector2(2700, 300)
 rotation = -1.5708
 
-[node name="Scarab Beetle30" parent="." index="27" instance=ExtResource("4_rqqel")]
+[node name="Scarab Beetle30" parent="." index="24" instance=ExtResource("4_rqqel")]
 position = Vector2(2800, 200)
 rotation = -1.5708
 
-[node name="Scarab Beetle27" parent="." index="28" instance=ExtResource("4_rqqel")]
+[node name="Scarab Beetle27" parent="." index="25" instance=ExtResource("4_rqqel")]
 position = Vector2(2700, 0)
 rotation = -1.5708
 
-[node name="Scarab Beetle35" parent="." index="29" instance=ExtResource("4_rqqel")]
+[node name="Scarab Beetle35" parent="." index="26" instance=ExtResource("4_rqqel")]
 position = Vector2(2700, 100)
 rotation = -1.5708
 
-[node name="Scarab Beetle3" parent="." index="30" instance=ExtResource("4_rqqel")]
+[node name="Scarab Beetle3" parent="." index="27" instance=ExtResource("4_rqqel")]
 position = Vector2(1150, -250)
 
-[node name="Scarab Beetle6" parent="." index="31" instance=ExtResource("4_rqqel")]
+[node name="Scarab Beetle6" parent="." index="28" instance=ExtResource("4_rqqel")]
 position = Vector2(2450, 350)
 
-[node name="Scarab Beetle26" parent="." index="32" instance=ExtResource("4_rqqel")]
+[node name="Scarab Beetle26" parent="." index="29" instance=ExtResource("4_rqqel")]
 position = Vector2(2650, 350)
 
-[node name="Scarab Beetle31" parent="." index="33" instance=ExtResource("4_rqqel")]
+[node name="Scarab Beetle31" parent="." index="30" instance=ExtResource("4_rqqel")]
 position = Vector2(2550, 350)
 
-[node name="Scarab Beetle5" parent="." index="34" instance=ExtResource("4_rqqel")]
+[node name="Scarab Beetle5" parent="." index="31" instance=ExtResource("4_rqqel")]
 position = Vector2(1650, -550)
 
-[node name="Scarab Beetle7" parent="." index="35" instance=ExtResource("4_rqqel")]
+[node name="Scarab Beetle7" parent="." index="32" instance=ExtResource("4_rqqel")]
 position = Vector2(1200, 0)
 rotation = 1.5708
 
-[node name="Scarab Beetle9" parent="." index="36" instance=ExtResource("4_rqqel")]
+[node name="Scarab Beetle9" parent="." index="33" instance=ExtResource("4_rqqel")]
 position = Vector2(1100, 50)
 rotation = 3.14159
 
-[node name="Scarab Beetle22" parent="." index="37" instance=ExtResource("4_rqqel")]
+[node name="Scarab Beetle22" parent="." index="34" instance=ExtResource("4_rqqel")]
 position = Vector2(1750, -350)
 rotation = 3.14159
 
-[node name="Scarab Beetle25" parent="." index="38" instance=ExtResource("4_rqqel")]
+[node name="Scarab Beetle25" parent="." index="35" instance=ExtResource("4_rqqel")]
 position = Vector2(2450, -50)
 rotation = 3.14159
 
-[node name="Scarab Beetle32" parent="." index="39" instance=ExtResource("4_rqqel")]
+[node name="Scarab Beetle32" parent="." index="36" instance=ExtResource("4_rqqel")]
 position = Vector2(2550, -50)
 rotation = 3.14159
 
-[node name="Scarab Beetle29" parent="." index="40" instance=ExtResource("4_rqqel")]
+[node name="Scarab Beetle29" parent="." index="37" instance=ExtResource("4_rqqel")]
 position = Vector2(2650, -50)
 rotation = 3.14159
 
-[node name="Scarab Beetle10" parent="." index="41" instance=ExtResource("4_rqqel")]
+[node name="Scarab Beetle10" parent="." index="38" instance=ExtResource("4_rqqel")]
 position = Vector2(900, 50)
 rotation = 3.14159
 
-[node name="Scarab Beetle8" parent="." index="42" instance=ExtResource("4_rqqel")]
+[node name="Scarab Beetle8" parent="." index="39" instance=ExtResource("4_rqqel")]
 position = Vector2(1200, -200)
 rotation = 1.5708
 
-[node name="Scarab Beetle14" parent="." index="43" instance=ExtResource("4_rqqel")]
+[node name="Scarab Beetle14" parent="." index="40" instance=ExtResource("4_rqqel")]
 position = Vector2(900, -150)
 rotation = 1.5708
 
-[node name="Scarab Beetle23" parent="." index="44" instance=ExtResource("4_rqqel")]
+[node name="Scarab Beetle23" parent="." index="41" instance=ExtResource("4_rqqel")]
 position = Vector2(2400, 200)
 rotation = 1.5708
 
-[node name="Scarab Beetle34" parent="." index="45" instance=ExtResource("4_rqqel")]
+[node name="Scarab Beetle34" parent="." index="42" instance=ExtResource("4_rqqel")]
 position = Vector2(2400, 300)
 rotation = 1.5708
 
-[node name="Scarab Beetle28" parent="." index="46" instance=ExtResource("4_rqqel")]
+[node name="Scarab Beetle28" parent="." index="43" instance=ExtResource("4_rqqel")]
 position = Vector2(2400, 0)
 rotation = 1.5708
 
-[node name="Scarab Beetle33" parent="." index="47" instance=ExtResource("4_rqqel")]
+[node name="Scarab Beetle33" parent="." index="44" instance=ExtResource("4_rqqel")]
 position = Vector2(2400, 100)
 rotation = 1.5708
 
-[node name="Scarab Beetle21" parent="." index="48" instance=ExtResource("4_rqqel")]
+[node name="Scarab Beetle21" parent="." index="45" instance=ExtResource("4_rqqel")]
 position = Vector2(1800, -500)
 rotation = 1.5708
 
-[node name="2x2 Piiece" parent="." index="49" instance=ExtResource("9_ax44s")]
+[node name="2x2 Piiece" parent="." index="46" instance=ExtResource("9_ax44s")]
 position = Vector2(1700, -450)
-
-[node name="1x4 Block" parent="." index="68" instance=ExtResource("6_if8es")]
-position = Vector2(2350, 150)
-rotation = 28.2744
+rotation = 1.57079
