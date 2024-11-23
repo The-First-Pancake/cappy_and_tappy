@@ -193,98 +193,98 @@ rise_speed = 0.0
 [node name="Music" parent="Music Player" index="0"]
 stream = ExtResource("5_jiid7")
 
-[node name="Torch4" parent="." index="40" instance=ExtResource("2_pdr2v")]
+[node name="Torch4" parent="." index="24" instance=ExtResource("2_pdr2v")]
 position = Vector2(3450, 750)
 
-[node name="Torch5" parent="." index="41" instance=ExtResource("2_pdr2v")]
+[node name="Torch5" parent="." index="25" instance=ExtResource("2_pdr2v")]
 position = Vector2(3800, 750)
 
-[node name="Torch6" parent="." index="42" instance=ExtResource("2_pdr2v")]
+[node name="Torch6" parent="." index="26" instance=ExtResource("2_pdr2v")]
 position = Vector2(4150, 600)
 
-[node name="Torch7" parent="." index="43" instance=ExtResource("2_pdr2v")]
+[node name="Torch7" parent="." index="27" instance=ExtResource("2_pdr2v")]
 position = Vector2(1500, -450)
 
-[node name="Torch8" parent="." index="44" instance=ExtResource("2_pdr2v")]
+[node name="Torch8" parent="." index="28" instance=ExtResource("2_pdr2v")]
 position = Vector2(1200, -450)
 
-[node name="Spikes" parent="." index="45" instance=ExtResource("8_2jioi")]
+[node name="Spikes" parent="." index="29" instance=ExtResource("8_2jioi")]
 position = Vector2(2500, -200)
 
-[node name="Spikes2" parent="." index="46" instance=ExtResource("8_2jioi")]
+[node name="Spikes2" parent="." index="30" instance=ExtResource("8_2jioi")]
 position = Vector2(2650, -150)
 
-[node name="Spikes3" parent="." index="47" instance=ExtResource("8_2jioi")]
+[node name="Spikes3" parent="." index="31" instance=ExtResource("8_2jioi")]
 position = Vector2(2750, -150)
 
-[node name="Spikes4" parent="." index="48" instance=ExtResource("8_2jioi")]
+[node name="Spikes4" parent="." index="32" instance=ExtResource("8_2jioi")]
 position = Vector2(2850, -150)
 
-[node name="Spikes5" parent="." index="49" instance=ExtResource("8_2jioi")]
+[node name="Spikes5" parent="." index="33" instance=ExtResource("8_2jioi")]
 position = Vector2(2950, -100)
 
-[node name="Spikes6" parent="." index="50" instance=ExtResource("8_2jioi")]
+[node name="Spikes6" parent="." index="34" instance=ExtResource("8_2jioi")]
 position = Vector2(3050, -100)
 
-[node name="Spikes7" parent="." index="51" instance=ExtResource("8_2jioi")]
+[node name="Spikes7" parent="." index="35" instance=ExtResource("8_2jioi")]
 position = Vector2(3150, -100)
 
-[node name="Spikes8" parent="." index="52" instance=ExtResource("8_2jioi")]
+[node name="Spikes8" parent="." index="36" instance=ExtResource("8_2jioi")]
 position = Vector2(3250, -100)
 
-[node name="Spikes9" parent="." index="53" instance=ExtResource("8_2jioi")]
+[node name="Spikes9" parent="." index="37" instance=ExtResource("8_2jioi")]
 position = Vector2(3350, -150)
 
-[node name="Spikes10" parent="." index="54" instance=ExtResource("8_2jioi")]
+[node name="Spikes10" parent="." index="38" instance=ExtResource("8_2jioi")]
 position = Vector2(3450, -150)
 
-[node name="Spikes11" parent="." index="55" instance=ExtResource("8_2jioi")]
+[node name="Spikes11" parent="." index="39" instance=ExtResource("8_2jioi")]
 position = Vector2(3550, -150)
 
-[node name="Spikes12" parent="." index="56" instance=ExtResource("8_2jioi")]
+[node name="Spikes12" parent="." index="40" instance=ExtResource("8_2jioi")]
 position = Vector2(3750, -300)
 
-[node name="Spikes13" parent="." index="57" instance=ExtResource("8_2jioi")]
+[node name="Spikes13" parent="." index="41" instance=ExtResource("8_2jioi")]
 position = Vector2(3150, -650)
 rotation = 1.57079
 
-[node name="Spikes14" parent="." index="58" instance=ExtResource("8_2jioi")]
+[node name="Spikes14" parent="." index="42" instance=ExtResource("8_2jioi")]
 position = Vector2(3150, -550)
 rotation = 1.57079
 
-[node name="Spikes15" parent="." index="59" instance=ExtResource("8_2jioi")]
+[node name="Spikes15" parent="." index="43" instance=ExtResource("8_2jioi")]
 position = Vector2(3150, -450)
 rotation = 1.57079
 
-[node name="Spikes16" parent="." index="60" instance=ExtResource("8_2jioi")]
+[node name="Spikes16" parent="." index="44" instance=ExtResource("8_2jioi")]
 position = Vector2(3250, -800)
 rotation = 1.57079
 
-[node name="Spikes17" parent="." index="61" instance=ExtResource("8_2jioi")]
+[node name="Spikes17" parent="." index="45" instance=ExtResource("8_2jioi")]
 position = Vector2(3050, -800)
 rotation = -1.57079
 
-[node name="Spikes18" parent="." index="62" instance=ExtResource("8_2jioi")]
+[node name="Spikes18" parent="." index="46" instance=ExtResource("8_2jioi")]
 position = Vector2(3050, -700)
 rotation = -1.57079
 
-[node name="Spikes19" parent="." index="63" instance=ExtResource("8_2jioi")]
+[node name="Spikes19" parent="." index="47" instance=ExtResource("8_2jioi")]
 position = Vector2(3050, -600)
 rotation = -1.57079
 
-[node name="Spikes20" parent="." index="64" instance=ExtResource("8_2jioi")]
+[node name="Spikes20" parent="." index="48" instance=ExtResource("8_2jioi")]
 position = Vector2(3050, -500)
 rotation = -1.57079
 
-[node name="Hold2" parent="." index="65" instance=ExtResource("4_2p85c")]
+[node name="Hold2" parent="." index="49" instance=ExtResource("4_2p85c")]
 position = Vector2(3850, -625)
 rotation = -1.5708
 
-[node name="SetDressingBase" parent="." index="67" instance=ExtResource("11_sg68s")]
+[node name="SetDressingBase" parent="." index="50" instance=ExtResource("11_sg68s")]
 position = Vector2(1450, 1050)
 
-[node name="SetDressingBase2" parent="." index="68" instance=ExtResource("12_ngjyq")]
+[node name="SetDressingBase2" parent="." index="51" instance=ExtResource("12_ngjyq")]
 position = Vector2(1500, 1050)
 
-[node name="SetDressingBase3" parent="." index="69" instance=ExtResource("13_cjqau")]
+[node name="SetDressingBase3" parent="." index="52" instance=ExtResource("13_cjqau")]
 position = Vector2(1400, 1050)
