@@ -9,7 +9,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pnp7k"]
 size = Vector2(1350, 17100)
 
-[node name="Template Level" instance=ExtResource("1_pdxa0")]
+[node name="Template Level2" instance=ExtResource("1_pdxa0")]
 
 [node name="CollisionShape2D" parent="Camera Zone" index="0"]
 shape = SubResource("RectangleShape2D_pnp7k")

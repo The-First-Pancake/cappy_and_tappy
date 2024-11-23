@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://fei84gx0n70r"]
+[gd_scene load_steps=16 format=3 uid="uid://fei84gx0n70r"]
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_ab74x"]
 [ext_resource type="Script" path="res://Scripts/SpawnObject.gd" id="2_a01ky"]
@@ -9,7 +9,6 @@
 [ext_resource type="AudioStream" uid="uid://bs0ib4ihh3wc1" path="res://Sound/Music/Chill Level Music gmtk game jam 2024.wav" id="5_kw2u5"]
 [ext_resource type="PackedScene" uid="uid://c4safo4pwme48" path="res://Prefabs/Blocks/1x4-Piece.tscn" id="6_bg5ys"]
 [ext_resource type="PackedScene" uid="uid://r1kjk04fwuou" path="res://Prefabs/Spawn On Blocks/Hold.tscn" id="7_prfip"]
-[ext_resource type="PackedScene" uid="uid://cn5g0kaav20lj" path="res://Prefabs/Spawn On Blocks/ArrowSpitter.tscn" id="8_2urm1"]
 [ext_resource type="PackedScene" uid="uid://b1lrc4bb14deo" path="res://Prefabs/Blocks/L-Piece.tscn" id="8_l02yu"]
 [ext_resource type="PackedScene" uid="uid://cqrk66u8spi3" path="res://Prefabs/Blocks/Z-Piece.tscn" id="9_tieo0"]
 [ext_resource type="PackedScene" uid="uid://bdyf8npx3i7xk" path="res://Prefabs/Blocks/2x2-Piece.tscn" id="10_fg5cn"]
@@ -74,16 +73,16 @@ scale = Vector2(0.32, 0.32)
 position = Vector2(900, -150)
 texture = ExtResource("4_6rgbx")
 
-[node name="Player" parent="." index="8"]
+[node name="Player" parent="." index="9"]
 position = Vector2(833, 200)
 
-[node name="Idol" parent="." index="9"]
+[node name="Idol" parent="." index="10"]
 position = Vector2(850, 950)
 
-[node name="Idol2" parent="." index="10"]
+[node name="Idol2" parent="." index="11"]
 position = Vector2(1350, 450)
 
-[node name="Idol3" parent="." index="11"]
+[node name="Idol3" parent="." index="12"]
 position = Vector2(1850, 250)
 
 [node name="PlaceableCharacterBody2d14" parent="Block Container" index="0" instance=ExtResource("6_bg5ys")]
@@ -230,10 +229,6 @@ rotation = -1.57075
 position = Vector2(800, 1100)
 rotation = -2.72592e-05
 
-[node name="Arrow_Spitter" parent="Block Container/PlaceableCharacterBody2d27" index="6" instance=ExtResource("8_2urm1")]
-position = Vector2(100.003, -99.9973)
-rotation = 2.83877e-05
-
 [node name="Z-Piece" parent="Block Container" index="17" instance=ExtResource("9_tieo0")]
 position = Vector2(1150, 450)
 rotation = 1.57083
@@ -246,7 +241,7 @@ rotation = 1.57083
 position = Vector2(1500, 650)
 rotation = 1.57083
 
-[node name="Camera2D" parent="." index="13"]
+[node name="Camera2D" parent="." index="14"]
 position = Vector2(1150, 996)
 
 [node name="BlockSpawner" parent="Camera2D" index="3"]
@@ -264,7 +259,7 @@ position = Vector2(-883, 265)
 [node name="Dynamite2" parent="Camera2D" index="6"]
 position = Vector2(-700, 4)
 
-[node name="Water" parent="." index="15"]
+[node name="Water" parent="." index="16"]
 rise_speed = 0.0
 
 [node name="Music" parent="Music Player" index="0"]

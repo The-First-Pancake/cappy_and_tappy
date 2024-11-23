@@ -34,7 +34,7 @@ script = ExtResource("2_kk4ad")
 spawn_prefab = ExtResource("6_ran0i")
 spawn_count = 5
 
-[node name="Template Level" instance=ExtResource("1_jhrg7")]
+[node name="Template Level2" instance=ExtResource("1_jhrg7")]
 
 [node name="CollisionShape2D" parent="Camera Zone" index="0"]
 shape = SubResource("RectangleShape2D_235e4")

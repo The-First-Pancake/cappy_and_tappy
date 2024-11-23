@@ -27,7 +27,7 @@
 [ext_resource type="Script" path="res://Scripts/MusicPlayer.gd" id="12_8108v"]
 [ext_resource type="PackedScene" uid="uid://bsbavwvcn76q4" path="res://Levels/World1/level_arrows_2.tscn" id="12_q0a2d"]
 [ext_resource type="PackedScene" uid="uid://fei84gx0n70r" path="res://Levels/World1/level_dynamite_3.tscn" id="13_2gj7q"]
-[ext_resource type="PackedScene" uid="uid://d1iy60hbanyjr" path="res://Levels/World1/level_arrow rain.tscn" id="13_m7ssi"]
+[ext_resource type="PackedScene" uid="uid://d1iy60hbanyjr" path="res://Levels/World1/level_rain.tscn" id="13_m7ssi"]
 [ext_resource type="AudioStream" uid="uid://b7o0nfcidnbwd" path="res://Sound/Music/title_music.wav" id="13_oohv8"]
 [ext_resource type="Script" path="res://Scripts/UnlockAll.gd" id="13_wubfr"]
 [ext_resource type="PackedScene" uid="uid://cwr06a2yerm2q" path="res://Levels/World1/level_breaker.tscn" id="28_haa0c"]
@@ -485,7 +485,7 @@ scene_to_load = ExtResource("11_1hlb2")
 layout_mode = 2
 scene_to_load = ExtResource("12_q0a2d")
 
-[node name="Level - Arrow Rain" parent="World 2" instance=ExtResource("3_66fh1")]
+[node name="Level - Rain" parent="World 2" instance=ExtResource("3_66fh1")]
 layout_mode = 2
 scene_to_load = ExtResource("13_m7ssi")
 
@@ -496,6 +496,10 @@ scene_to_load = ExtResource("28_haa0c")
 [node name="Level - Breaker 2" parent="World 2" instance=ExtResource("3_66fh1")]
 layout_mode = 2
 scene_to_load = ExtResource("29_ikqai")
+
+[node name="Level - Break Down" parent="World 2" instance=ExtResource("3_66fh1")]
+layout_mode = 2
+scene_to_load = ExtResource("30_r66fg")
 
 [node name="Level - Harpoons" parent="World 2" instance=ExtResource("3_66fh1")]
 layout_mode = 2
@@ -508,10 +512,6 @@ scene_to_load = ExtResource("32_un76u")
 [node name="Level - Fastball" parent="World 2" instance=ExtResource("3_66fh1")]
 layout_mode = 2
 scene_to_load = ExtResource("33_dlnxx")
-
-[node name="Level - Break Down" parent="World 2" instance=ExtResource("3_66fh1")]
-layout_mode = 2
-scene_to_load = ExtResource("30_r66fg")
 
 [node name="Level - Elevator" parent="World 2" instance=ExtResource("3_66fh1")]
 layout_mode = 2
@@ -534,10 +534,6 @@ theme_override_constants/h_separation = 15
 theme_override_constants/v_separation = 20
 alignment = 1
 
-[node name="Level - Diamond" parent="World 3" instance=ExtResource("3_66fh1")]
-layout_mode = 2
-scene_to_load = ExtResource("36_ydi2r")
-
 [node name="Level - The Walls Are Moving" parent="World 3" instance=ExtResource("3_66fh1")]
 layout_mode = 2
 scene_to_load = ExtResource("31_8gmqv")
@@ -549,6 +545,10 @@ scene_to_load = ExtResource("32_pcxxg")
 [node name="Level - Deep Dark" parent="World 3" instance=ExtResource("3_66fh1")]
 layout_mode = 2
 scene_to_load = ExtResource("36_7har7")
+
+[node name="Level - Diamond" parent="World 3" instance=ExtResource("3_66fh1")]
+layout_mode = 2
+scene_to_load = ExtResource("36_ydi2r")
 
 [node name="Level - Tomb" parent="World 3" instance=ExtResource("3_66fh1")]
 layout_mode = 2
