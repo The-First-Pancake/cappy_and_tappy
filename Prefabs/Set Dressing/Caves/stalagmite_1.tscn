@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3f5c6dr5lv7n"]
+
+[ext_resource type="PackedScene" uid="uid://skkd531ff5me" path="res://Prefabs/Set Dressing/SetDressingBase.tscn" id="1_cc7rm"]
+[ext_resource type="Texture2D" uid="uid://de26ihreyps5l" path="res://Art/Sprites/caves/cave elements/stalagmite 1_diffuse.png" id="2_inkp1"]
+[ext_resource type="Texture2D" uid="uid://d1xxkklxoilep" path="res://Art/Sprites/caves/cave elements/stalagmite 1_normal.png" id="3_gdbo4"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_prh68"]
+diffuse_texture = ExtResource("2_inkp1")
+normal_texture = ExtResource("3_gdbo4")
+
+[node name="SetDressingBase" instance=ExtResource("1_cc7rm")]
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(-0.300005, -94.4)
+texture = SubResource("CanvasTexture_prh68")
+
+[node name="ShardEmitter" parent="Sprite2D" index="0"]
+nbr_of_shards = 1
+
+[node name="CollisionPolygon2D" parent="." index="2"]
+position = Vector2(31.7, -54.4)
+polygon = PackedVector2Array(-21.6, 31.3, -7.6, -41.7, 1.4, 32.3, 5.4, 51.3, -31.6, 50.3)

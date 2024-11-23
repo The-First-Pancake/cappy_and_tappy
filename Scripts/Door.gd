@@ -3,6 +3,7 @@ extends Area2D
 
 
 @export var is_exit: bool = false
+@export var door_frame_texture: Texture2D
 @onready var door_frame: Sprite2D = $"Door Frame" as Sprite2D
 @onready var interior_wall: StaticBody2D = $"Interior Wall"
 @onready var interior_wall_2: StaticBody2D = $"Interior Wall2"
@@ -12,6 +13,7 @@ extends Area2D
 var player_inside: bool = false
 
 func _ready() -> void:
+	door_frame.texture = door_frame_texture
 	await  get_tree().process_frame
 	if is_exit:
 		interior_wall.process_mode = Node.PROCESS_MODE_DISABLED

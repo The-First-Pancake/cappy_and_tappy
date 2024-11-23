@@ -1,11 +1,12 @@
-[gd_scene load_steps=18 format=3 uid="uid://di2wrjiflt752"]
+[gd_scene load_steps=20 format=3 uid="uid://di2wrjiflt752"]
 
 [ext_resource type="Script" path="res://Scripts/Sconce.gd" id="1_q8pus"]
 [ext_resource type="Texture2D" uid="uid://dp4ktlytg0qdm" path="res://Art/Sprites/fire/brasier_stick.png" id="2_pjmqv"]
-[ext_resource type="Texture2D" uid="uid://baarsrd4j3ej4" path="res://Art/Sprites/fire/brasier.png" id="3_5hlsx"]
 [ext_resource type="Script" path="res://Scripts/LightFlicker.gd" id="3_wrrhm"]
 [ext_resource type="Texture2D" uid="uid://dcxkuua4cd4st" path="res://Art/Sprites/fire_small.png" id="4_vnqon"]
 [ext_resource type="Script" path="res://Scripts/Squashable.gd" id="5_tocvo"]
+[ext_resource type="Texture2D" uid="uid://dff743tq0a8p" path="res://Art/Sprites/fire/brasier_diffuse.png" id="5_veta7"]
+[ext_resource type="Texture2D" uid="uid://dmtwgjndb7tmo" path="res://Art/Sprites/fire/brasier_normal.png" id="6_6hw1l"]
 [ext_resource type="Script" path="res://Scripts/Extinguishable.gd" id="6_vp8al"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_va83x"]
@@ -59,6 +60,10 @@ fill = 1
 fill_from = Vector2(0.517094, 0.457265)
 fill_to = Vector2(0.91453, 0.111111)
 
+[sub_resource type="CanvasTexture" id="CanvasTexture_hsrsl"]
+diffuse_texture = ExtResource("5_veta7")
+normal_texture = ExtResource("6_6hw1l")
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c06ri"]
 size = Vector2(9, 10)
 
@@ -85,7 +90,7 @@ shape = SubResource("RectangleShape2D_0fbj1")
 [node name="Fire" type="RigidBody2D" parent="."]
 position = Vector2(0, -18)
 collision_layer = 0
-collision_mask = 131
+collision_mask = 129
 mass = 0.2
 center_of_mass_mode = 1
 center_of_mass = Vector2(0, 20)
@@ -113,7 +118,7 @@ percent_variance = 0.2
 [node name="Brasier" type="Sprite2D" parent="Fire"]
 position = Vector2(0, -8.125)
 scale = Vector2(3.125, 3.125)
-texture = ExtResource("3_5hlsx")
+texture = SubResource("CanvasTexture_hsrsl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fire"]
 shape = SubResource("RectangleShape2D_c06ri")
