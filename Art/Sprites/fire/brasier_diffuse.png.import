@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://22dhetwgepde"
-path="res://.godot/imported/Background_Cave.png-4af9682ccd2d90f50bb208809cbc9e6f.ctex"
+uid="uid://dff743tq0a8p"
+path="res://.godot/imported/brasier_diffuse.png-bfd0a2c2fc675ebfcb37f9c981dff62e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Tilemaps/Background_Cave.png"
-dest_files=["res://.godot/imported/Background_Cave.png-4af9682ccd2d90f50bb208809cbc9e6f.ctex"]
+source_file="res://Art/Sprites/fire/brasier_diffuse.png"
+dest_files=["res://.godot/imported/brasier_diffuse.png-bfd0a2c2fc675ebfcb37f9c981dff62e.ctex"]
 
 [params]
 

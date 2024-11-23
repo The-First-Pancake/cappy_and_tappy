@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://skkd531ff5me"]
+[gd_scene load_steps=7 format=3 uid="uid://skkd531ff5me"]
 
 [ext_resource type="Texture2D" uid="uid://bv2kxkm7eoe72" path="res://Art/Sprites/caves/cave elements/rock 1_diffuse.png" id="1_8nut2"]
 [ext_resource type="Texture2D" uid="uid://bfo1ej2wpwhg6" path="res://Art/Sprites/caves/cave elements/rock 1_normal.png" id="2_rk6e3"]
 [ext_resource type="PackedScene" uid="uid://dohp3cgpxnwcp" path="res://Prefabs/ShardEmitter.tscn" id="4_ej71l"]
+[ext_resource type="Script" path="res://Scripts/LevelBuildingTools.gd" id="5_b3bff"]
 [ext_resource type="Script" path="res://Scripts/Squashable.gd" id="5_rn803"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_chkes"]
@@ -28,5 +29,9 @@ delete_parent_when_squashed = false
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(3, 8)
 polygon = PackedVector2Array(-45, -11, -22, -49, 8, -49, 22, -30, 33, -26, 37, -11)
+
+[node name="LevelBuildingTools" type="Node" parent="."]
+script = ExtResource("5_b3bff")
+auto_parent_to = "Environment Container"
 
 [connection signal="squashed" from="Squashable" to="Sprite2D/ShardEmitter" method="_on_squashable_squashed"]
