@@ -43,103 +43,103 @@ position = Vector2(800, 250)
 [node name="Idol3" parent="." index="10"]
 position = Vector2(800, -450)
 
+[node name="PlaceableCharacterBody2d" parent="Block Container" index="0" instance=ExtResource("6_r0jta")]
+position = Vector2(1200, -700)
+rotation = 1.5708
+
 [node name="BlockSpawner" parent="Camera2D" index="3"]
 spawn_objects = Array[ExtResource("2_xkwx5")]([SubResource("Resource_42wei"), SubResource("Resource_fa0pl"), SubResource("Resource_e12ps")])
 
 [node name="Water" parent="." index="14"]
 rise_speed = 10.0
 
-[node name="PlaceableCharacterBody2d" parent="." index="16" instance=ExtResource("6_r0jta")]
-position = Vector2(1200, -700)
-rotation = 1.5708
-
 [node name="Music" parent="Music Player" index="0"]
 volume_db = -7.0
 
-[node name="Harpoon Launcher" parent="." index="18" instance=ExtResource("7_f5f8t")]
+[node name="Harpoon Launcher" parent="." index="17" instance=ExtResource("7_f5f8t")]
 position = Vector2(2050, 700)
 rotation = -1.5708
 
-[node name="Harpoon Launcher2" parent="." index="19" instance=ExtResource("7_f5f8t")]
+[node name="Harpoon Launcher2" parent="." index="18" instance=ExtResource("7_f5f8t")]
 position = Vector2(2050, 600)
 rotation = -1.5708
 
-[node name="Harpoon Launcher3" parent="." index="20" instance=ExtResource("7_f5f8t")]
+[node name="Harpoon Launcher3" parent="." index="19" instance=ExtResource("7_f5f8t")]
 position = Vector2(2050, 500)
 rotation = -1.5708
 
-[node name="Harpoon Launcher16" parent="." index="21" instance=ExtResource("7_f5f8t")]
+[node name="Harpoon Launcher16" parent="." index="20" instance=ExtResource("7_f5f8t")]
 position = Vector2(2050, 1000)
 rotation = -1.5708
 
-[node name="Harpoon Launcher17" parent="." index="22" instance=ExtResource("7_f5f8t")]
+[node name="Harpoon Launcher17" parent="." index="21" instance=ExtResource("7_f5f8t")]
 position = Vector2(2050, 900)
 rotation = -1.5708
 
-[node name="Harpoon Launcher18" parent="." index="23" instance=ExtResource("7_f5f8t")]
+[node name="Harpoon Launcher18" parent="." index="22" instance=ExtResource("7_f5f8t")]
 position = Vector2(2050, 800)
 rotation = -1.5708
 
-[node name="Harpoon Launcher4" parent="." index="24" instance=ExtResource("7_f5f8t")]
+[node name="Harpoon Launcher4" parent="." index="23" instance=ExtResource("7_f5f8t")]
 position = Vector2(2050, 400)
 rotation = -1.5708
 
-[node name="Harpoon Launcher5" parent="." index="25" instance=ExtResource("7_f5f8t")]
+[node name="Harpoon Launcher5" parent="." index="24" instance=ExtResource("7_f5f8t")]
 position = Vector2(700, 300)
 rotation = 1.5708
 
-[node name="Harpoon Launcher6" parent="." index="26" instance=ExtResource("7_f5f8t")]
+[node name="Harpoon Launcher6" parent="." index="25" instance=ExtResource("7_f5f8t")]
 position = Vector2(700, 200)
 rotation = 1.5708
 
-[node name="Harpoon Launcher7" parent="." index="27" instance=ExtResource("7_f5f8t")]
+[node name="Harpoon Launcher7" parent="." index="26" instance=ExtResource("7_f5f8t")]
 position = Vector2(700, 100)
 rotation = 1.5708
 
-[node name="Harpoon Launcher8" parent="." index="28" instance=ExtResource("7_f5f8t")]
+[node name="Harpoon Launcher8" parent="." index="27" instance=ExtResource("7_f5f8t")]
 position = Vector2(700, 6.10352e-05)
 rotation = 1.5708
 
-[node name="Harpoon Launcher9" parent="." index="29" instance=ExtResource("7_f5f8t")]
+[node name="Harpoon Launcher9" parent="." index="28" instance=ExtResource("7_f5f8t")]
 position = Vector2(700, -100)
 rotation = 1.5708
 
-[node name="Harpoon Launcher15" parent="." index="30" instance=ExtResource("7_f5f8t")]
+[node name="Harpoon Launcher15" parent="." index="29" instance=ExtResource("7_f5f8t")]
 position = Vector2(700, -200)
 rotation = 1.5708
 
-[node name="Harpoon Launcher19" parent="." index="31" instance=ExtResource("7_f5f8t")]
+[node name="Harpoon Launcher19" parent="." index="30" instance=ExtResource("7_f5f8t")]
 position = Vector2(700, -300)
 rotation = 1.5708
 
-[node name="Harpoon Launcher20" parent="." index="32" instance=ExtResource("7_f5f8t")]
+[node name="Harpoon Launcher20" parent="." index="31" instance=ExtResource("7_f5f8t")]
 position = Vector2(700, -400)
 rotation = 1.5708
 
-[node name="Harpoon Launcher21" parent="." index="33" instance=ExtResource("7_f5f8t")]
+[node name="Harpoon Launcher21" parent="." index="32" instance=ExtResource("7_f5f8t")]
 position = Vector2(700, -500)
 rotation = 1.5708
 
-[node name="Harpoon Launcher22" parent="." index="34" instance=ExtResource("7_f5f8t")]
+[node name="Harpoon Launcher22" parent="." index="33" instance=ExtResource("7_f5f8t")]
 position = Vector2(700, -600)
 rotation = 1.5708
 
-[node name="Harpoon Launcher10" parent="." index="35" instance=ExtResource("7_f5f8t")]
+[node name="Harpoon Launcher10" parent="." index="34" instance=ExtResource("7_f5f8t")]
 position = Vector2(2050, -200)
 rotation = -1.5708
 
-[node name="Harpoon Launcher11" parent="." index="36" instance=ExtResource("7_f5f8t")]
+[node name="Harpoon Launcher11" parent="." index="35" instance=ExtResource("7_f5f8t")]
 position = Vector2(2050, -300)
 rotation = -1.5708
 
-[node name="Harpoon Launcher12" parent="." index="37" instance=ExtResource("7_f5f8t")]
+[node name="Harpoon Launcher12" parent="." index="36" instance=ExtResource("7_f5f8t")]
 position = Vector2(2050, -400)
 rotation = -1.5708
 
-[node name="Harpoon Launcher13" parent="." index="38" instance=ExtResource("7_f5f8t")]
+[node name="Harpoon Launcher13" parent="." index="37" instance=ExtResource("7_f5f8t")]
 position = Vector2(2050, -500)
 rotation = -1.5708
 
-[node name="Harpoon Launcher14" parent="." index="39" instance=ExtResource("7_f5f8t")]
+[node name="Harpoon Launcher14" parent="." index="38" instance=ExtResource("7_f5f8t")]
 position = Vector2(2050, -600)
 rotation = -1.5708

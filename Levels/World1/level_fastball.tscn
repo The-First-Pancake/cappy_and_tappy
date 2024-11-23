@@ -26,7 +26,6 @@ spawn_count = 1
 [node name="Camera Zone" parent="." index="3"]
 visible = false
 type = 1
-mid_line_offset = 0.0
 
 [node name="CollisionShape2D" parent="Camera Zone" index="0"]
 position = Vector2(1750, 650)

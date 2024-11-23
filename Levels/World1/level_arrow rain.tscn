@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://d1iy60hbanyjr"]
+[gd_scene load_steps=9 format=3 uid="uid://d1iy60hbanyjr"]
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_v0i14"]
 [ext_resource type="PackedScene" uid="uid://c4safo4pwme48" path="res://Prefabs/Blocks/1x4-Piece.tscn" id="2_r7x6o"]
 [ext_resource type="PackedScene" uid="uid://cn5g0kaav20lj" path="res://Prefabs/Spawn On Blocks/ArrowSpitter.tscn" id="4_sevu7"]
 [ext_resource type="PackedScene" uid="uid://dhrgrpwwax6i8" path="res://Prefabs/Spawn On Blocks/Spikes.tscn" id="5_slinm"]
 [ext_resource type="PackedScene" uid="uid://r1kjk04fwuou" path="res://Prefabs/Spawn On Blocks/Hold.tscn" id="6_iyacb"]
+[ext_resource type="PackedScene" uid="uid://drkcihqmmm3u3" path="res://Prefabs/Set Dressing/Glyph.tscn" id="7_0un8d"]
 [ext_resource type="AudioStream" uid="uid://bs0ib4ihh3wc1" path="res://Sound/Music/Chill Level Music gmtk game jam 2024.wav" id="7_j4s4t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jlamu"]
@@ -18,139 +19,143 @@ shape = SubResource("RectangleShape2D_jlamu")
 [node name="Exit Door" parent="." index="5"]
 position = Vector2(900, -1550)
 
-[node name="Idol" parent="." index="8"]
+[node name="Glyph" parent="Glyph Container" index="0" instance=ExtResource("7_0un8d")]
+self_modulate = Color(0.83, 0.676035, 0.3901, 0.380392)
+position = Vector2(1050, 500)
+
+[node name="Idol" parent="." index="9"]
 position = Vector2(1950, -150)
 
-[node name="Idol2" parent="." index="9"]
+[node name="Idol2" parent="." index="10"]
 position = Vector2(850, -750)
 
-[node name="Idol3" parent="." index="10"]
+[node name="Idol3" parent="." index="11"]
 position = Vector2(2000, -1100)
 
-[node name="PlaceableCharacterBody2d3" parent="." index="15" instance=ExtResource("2_r7x6o")]
+[node name="PlaceableCharacterBody2d3" parent="Block Container" index="0" instance=ExtResource("2_r7x6o")]
 position = Vector2(1450, -1000)
 rotation = 1.5708
 
-[node name="Spikes4" parent="PlaceableCharacterBody2d3" index="5" instance=ExtResource("5_slinm")]
+[node name="Spikes4" parent="Block Container/PlaceableCharacterBody2d3" index="5" instance=ExtResource("5_slinm")]
 position = Vector2(-50.0004, -150)
 rotation = -1.5708
 
-[node name="Spikes6" parent="PlaceableCharacterBody2d3" index="6" instance=ExtResource("5_slinm")]
+[node name="Spikes6" parent="Block Container/PlaceableCharacterBody2d3" index="6" instance=ExtResource("5_slinm")]
 position = Vector2(-50, -49.9998)
 rotation = -1.5708
 
-[node name="Spikes8" parent="PlaceableCharacterBody2d3" index="7" instance=ExtResource("5_slinm")]
+[node name="Spikes8" parent="Block Container/PlaceableCharacterBody2d3" index="7" instance=ExtResource("5_slinm")]
 position = Vector2(-49.9999, 50.0002)
 rotation = -1.5708
 
-[node name="Spikes9" parent="PlaceableCharacterBody2d3" index="8" instance=ExtResource("5_slinm")]
+[node name="Spikes9" parent="Block Container/PlaceableCharacterBody2d3" index="8" instance=ExtResource("5_slinm")]
 position = Vector2(-49.9995, 150)
 rotation = -1.5708
 
-[node name="Arrow_Spitter5" parent="PlaceableCharacterBody2d3" index="9" instance=ExtResource("4_sevu7")]
+[node name="Arrow_Spitter5" parent="Block Container/PlaceableCharacterBody2d3" index="9" instance=ExtResource("4_sevu7")]
 position = Vector2(50.0005, 150)
 rotation = 0.0
 fire_rate = 4.0
 
-[node name="Arrow_Spitter6" parent="PlaceableCharacterBody2d3" index="10" instance=ExtResource("4_sevu7")]
+[node name="Arrow_Spitter6" parent="Block Container/PlaceableCharacterBody2d3" index="10" instance=ExtResource("4_sevu7")]
 position = Vector2(50.0001, 49.9999)
 rotation = 0.0
 fire_rate = 4.0
 
-[node name="Arrow_Spitter7" parent="PlaceableCharacterBody2d3" index="11" instance=ExtResource("4_sevu7")]
+[node name="Arrow_Spitter7" parent="Block Container/PlaceableCharacterBody2d3" index="11" instance=ExtResource("4_sevu7")]
 position = Vector2(49.9999, -50.0001)
 rotation = 0.0
 fire_rate = 4.0
 
-[node name="Arrow_Spitter8" parent="PlaceableCharacterBody2d3" index="12" instance=ExtResource("4_sevu7")]
+[node name="Arrow_Spitter8" parent="Block Container/PlaceableCharacterBody2d3" index="12" instance=ExtResource("4_sevu7")]
 position = Vector2(49.9995, -150)
 rotation = 0.0
 fire_rate = 4.0
 
-[node name="Hold2" parent="PlaceableCharacterBody2d3" index="13" instance=ExtResource("6_iyacb")]
+[node name="Hold2" parent="Block Container/PlaceableCharacterBody2d3" index="13" instance=ExtResource("6_iyacb")]
 position = Vector2(0.000732422, 200)
 rotation = 3.14159
 
-[node name="PlaceableCharacterBody2d6" parent="." index="16" instance=ExtResource("2_r7x6o")]
+[node name="PlaceableCharacterBody2d6" parent="Block Container" index="1" instance=ExtResource("2_r7x6o")]
 position = Vector2(1850, -1000)
 rotation = 1.5708
 
-[node name="Spikes6" parent="PlaceableCharacterBody2d6" index="5" instance=ExtResource("5_slinm")]
+[node name="Spikes6" parent="Block Container/PlaceableCharacterBody2d6" index="5" instance=ExtResource("5_slinm")]
 position = Vector2(-50, -49.9998)
 rotation = -1.5708
 
-[node name="Spikes8" parent="PlaceableCharacterBody2d6" index="6" instance=ExtResource("5_slinm")]
+[node name="Spikes8" parent="Block Container/PlaceableCharacterBody2d6" index="6" instance=ExtResource("5_slinm")]
 position = Vector2(-49.9999, 50.0002)
 rotation = -1.5708
 
-[node name="Spikes9" parent="PlaceableCharacterBody2d6" index="7" instance=ExtResource("5_slinm")]
+[node name="Spikes9" parent="Block Container/PlaceableCharacterBody2d6" index="7" instance=ExtResource("5_slinm")]
 position = Vector2(-49.9995, 150)
 rotation = -1.5708
 
-[node name="Arrow_Spitter5" parent="PlaceableCharacterBody2d6" index="8" instance=ExtResource("4_sevu7")]
+[node name="Arrow_Spitter5" parent="Block Container/PlaceableCharacterBody2d6" index="8" instance=ExtResource("4_sevu7")]
 position = Vector2(50.0005, 150)
 rotation = 0.0
 fire_rate = 4.0
 
-[node name="Arrow_Spitter6" parent="PlaceableCharacterBody2d6" index="9" instance=ExtResource("4_sevu7")]
+[node name="Arrow_Spitter6" parent="Block Container/PlaceableCharacterBody2d6" index="9" instance=ExtResource("4_sevu7")]
 position = Vector2(50.0001, 49.9999)
 rotation = 0.0
 fire_rate = 4.0
 
-[node name="Arrow_Spitter7" parent="PlaceableCharacterBody2d6" index="10" instance=ExtResource("4_sevu7")]
+[node name="Arrow_Spitter7" parent="Block Container/PlaceableCharacterBody2d6" index="10" instance=ExtResource("4_sevu7")]
 position = Vector2(49.9999, -50.0001)
 rotation = 0.0
 fire_rate = 4.0
 
-[node name="Arrow_Spitter8" parent="PlaceableCharacterBody2d6" index="11" instance=ExtResource("4_sevu7")]
+[node name="Arrow_Spitter8" parent="Block Container/PlaceableCharacterBody2d6" index="11" instance=ExtResource("4_sevu7")]
 position = Vector2(49.9995, -150)
 rotation = 0.0
 fire_rate = 4.0
 
-[node name="PlaceableCharacterBody2d5" parent="." index="17" instance=ExtResource("2_r7x6o")]
+[node name="PlaceableCharacterBody2d5" parent="Block Container" index="2" instance=ExtResource("2_r7x6o")]
 position = Vector2(900, -1000)
 rotation = 1.5708
 
-[node name="Spikes4" parent="PlaceableCharacterBody2d5" index="5" instance=ExtResource("5_slinm")]
+[node name="Spikes4" parent="Block Container/PlaceableCharacterBody2d5" index="5" instance=ExtResource("5_slinm")]
 position = Vector2(-50.0004, -150)
 rotation = -1.5708
 
-[node name="Spikes6" parent="PlaceableCharacterBody2d5" index="6" instance=ExtResource("5_slinm")]
+[node name="Spikes6" parent="Block Container/PlaceableCharacterBody2d5" index="6" instance=ExtResource("5_slinm")]
 position = Vector2(-50, -49.9998)
 rotation = -1.5708
 
-[node name="Spikes8" parent="PlaceableCharacterBody2d5" index="7" instance=ExtResource("5_slinm")]
+[node name="Spikes8" parent="Block Container/PlaceableCharacterBody2d5" index="7" instance=ExtResource("5_slinm")]
 position = Vector2(-49.9999, 50.0002)
 rotation = -1.5708
 
-[node name="Spikes9" parent="PlaceableCharacterBody2d5" index="8" instance=ExtResource("5_slinm")]
+[node name="Spikes9" parent="Block Container/PlaceableCharacterBody2d5" index="8" instance=ExtResource("5_slinm")]
 position = Vector2(-49.9995, 150)
 rotation = -1.5708
 
-[node name="Arrow_Spitter5" parent="PlaceableCharacterBody2d5" index="9" instance=ExtResource("4_sevu7")]
+[node name="Arrow_Spitter5" parent="Block Container/PlaceableCharacterBody2d5" index="9" instance=ExtResource("4_sevu7")]
 position = Vector2(50.0005, 150)
 rotation = 0.0
 fire_rate = 4.0
 
-[node name="Arrow_Spitter6" parent="PlaceableCharacterBody2d5" index="10" instance=ExtResource("4_sevu7")]
+[node name="Arrow_Spitter6" parent="Block Container/PlaceableCharacterBody2d5" index="10" instance=ExtResource("4_sevu7")]
 position = Vector2(50.0001, 49.9999)
 rotation = 0.0
 fire_rate = 4.0
 
-[node name="Arrow_Spitter7" parent="PlaceableCharacterBody2d5" index="11" instance=ExtResource("4_sevu7")]
+[node name="Arrow_Spitter7" parent="Block Container/PlaceableCharacterBody2d5" index="11" instance=ExtResource("4_sevu7")]
 position = Vector2(49.9999, -50.0001)
 rotation = 0.0
 fire_rate = 4.0
 
-[node name="Arrow_Spitter8" parent="PlaceableCharacterBody2d5" index="12" instance=ExtResource("4_sevu7")]
+[node name="Arrow_Spitter8" parent="Block Container/PlaceableCharacterBody2d5" index="12" instance=ExtResource("4_sevu7")]
 position = Vector2(49.9995, -150)
 rotation = 0.0
 fire_rate = 4.0
 
-[node name="Hold" parent="PlaceableCharacterBody2d5" index="13" instance=ExtResource("6_iyacb")]
+[node name="Hold" parent="Block Container/PlaceableCharacterBody2d5" index="13" instance=ExtResource("6_iyacb")]
 position = Vector2(-0.000732422, -200)
 
-[node name="PlaceableCharacterBody2d8" parent="." index="18" instance=ExtResource("2_r7x6o")]
+[node name="PlaceableCharacterBody2d8" parent="Block Container" index="3" instance=ExtResource("2_r7x6o")]
 position = Vector2(900, -1500)
 rotation = 1.5708
 

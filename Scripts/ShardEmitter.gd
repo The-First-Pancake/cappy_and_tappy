@@ -28,14 +28,14 @@ func add_shards() -> void:
 	for s in shards:
 		get_parent().add_child(s)
 
-func shatter(impact_point_global : Vector2) -> void:
+func shatter(impact_point_global : Vector2, use_impact_point : bool = true) -> void:
 	if get_parent() is Sprite2D:
 		var _rect : Rect2 = get_parent().get_rect()
 		var collisionpolygon2d : CollisionPolygon2D = $"../../CollisionPolygon2D"
 		var points : PackedVector2Array = []
 		#add outer frame points
-		
-		points.append(to_local(impact_point_global))
+		if (use_impact_point):
+			points.append(to_local(impact_point_global))
 		for point in collisionpolygon2d.get_polygon():
 			points.append(to_local((point.rotated(collisionpolygon2d.global_rotation) + collisionpolygon2d.global_position)))
 		collisionpolygon2d.queue_free()
@@ -91,7 +91,11 @@ func shatter(impact_point_global : Vector2) -> void:
 	randomize()
 	get_parent().self_modulate.a = 0
 	for s : RigidBody2D in shards:
-		var direction : Vector2 = (s.position - to_local(impact_point_global)).normalized()
+		var direction : Vector2
+		if use_impact_point:
+			direction = (s.position - to_local(impact_point_global)).normalized()
+		else:
+			direction = Vector2(randf() - 0.5, randf() - 0.5).normalized()
 		var impulse : float = randf_range(min_impulse, max_impulse)
 		s.linear_velocity = Vector2.ZERO
 		s.apply_central_impulse(direction * impulse)
@@ -110,3 +114,8 @@ func _draw() -> void:
 			draw_line(i[0], i[1], Color.WHITE, 1)
 			draw_line(i[1], i[2], Color.WHITE, 1)
 			draw_line(i[2], i[0], Color.WHITE, 1)
+
+
+func _on_squashable_squashed() -> void:
+	# Shatter with default args
+	shatter(Vector2.ZERO, false)

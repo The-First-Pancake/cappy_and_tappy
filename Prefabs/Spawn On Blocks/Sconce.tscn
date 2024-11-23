@@ -63,7 +63,6 @@ fill_to = Vector2(0.91453, 0.111111)
 size = Vector2(9, 10)
 
 [node name="Sconce" type="Area2D"]
-physics_interpolation_mode = 2
 script = ExtResource("1_q8pus")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -86,7 +85,7 @@ shape = SubResource("RectangleShape2D_0fbj1")
 [node name="Fire" type="RigidBody2D" parent="."]
 position = Vector2(0, -18)
 collision_layer = 0
-collision_mask = 129
+collision_mask = 131
 mass = 0.2
 center_of_mass_mode = 1
 center_of_mass = Vector2(0, 20)

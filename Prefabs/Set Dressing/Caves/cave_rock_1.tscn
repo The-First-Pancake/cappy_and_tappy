@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://ow664p7dqy8t"]
+
+[ext_resource type="PackedScene" uid="uid://skkd531ff5me" path="res://Prefabs/Set Dressing/SetDressingBase.tscn" id="1_la71x"]
+
+[node name="SetDressingBase" instance=ExtResource("1_la71x")]

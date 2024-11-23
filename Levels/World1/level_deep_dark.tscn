@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://cj80buvkjqk53"]
+[gd_scene load_steps=17 format=4 uid="uid://cj80buvkjqk53"]
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_sxkng"]
 [ext_resource type="TileSet" uid="uid://qi31weyfqxcu" path="res://Art/Tilemaps/Tilemap_Cave.tres" id="2_3gao6"]
@@ -10,6 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://mcu32jepdsb3" path="res://Prefabs/Dynamite.tscn" id="6_xmhdf"]
 [ext_resource type="PackedScene" uid="uid://hetb2cu4cbew" path="res://Prefabs/Spawn On Blocks/BreakerSpike.tscn" id="7_4dpml"]
 [ext_resource type="PackedScene" uid="uid://dhrgrpwwax6i8" path="res://Prefabs/Spawn On Blocks/Spikes.tscn" id="8_2jioi"]
+[ext_resource type="PackedScene" uid="uid://skkd531ff5me" path="res://Prefabs/Set Dressing/SetDressingBase.tscn" id="11_sg68s"]
+[ext_resource type="PackedScene" uid="uid://bvfwpw4rca00l" path="res://Prefabs/Set Dressing/Caves/cave_rock_2.tscn" id="12_ngjyq"]
+[ext_resource type="PackedScene" uid="uid://ddfihgi7jv5e6" path="res://Prefabs/Set Dressing/Caves/cave_rock_3.tscn" id="13_cjqau"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x881o"]
 size = Vector2(1350, 17100)
@@ -213,3 +216,12 @@ rotation = -1.57079
 [node name="Hold2" parent="." index="74" instance=ExtResource("4_2p85c")]
 position = Vector2(3850, -625)
 rotation = -1.5708
+
+[node name="SetDressingBase" parent="." index="76" instance=ExtResource("11_sg68s")]
+position = Vector2(1300, 1050)
+
+[node name="SetDressingBase2" parent="." index="77" instance=ExtResource("12_ngjyq")]
+position = Vector2(1250, 1050)
+
+[node name="SetDressingBase3" parent="." index="78" instance=ExtResource("13_cjqau")]
+position = Vector2(1300, 1050)
