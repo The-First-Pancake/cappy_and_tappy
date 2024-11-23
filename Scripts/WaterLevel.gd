@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var rise_speed: float = 10
-@export var rise_direction: Vector2 = Vector2(0,1)
+@export var rise_direction: Vector2 = Vector2.UP
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
