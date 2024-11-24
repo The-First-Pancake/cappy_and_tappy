@@ -566,7 +566,7 @@ scene_to_load = ExtResource("40_gi62s")
 layout_mode = 2
 scene_to_load = ExtResource("37_yrs1g")
 
-[node name="Level - Escape2" parent="Temple 3" instance=ExtResource("3_66fh1")]
+[node name="Level - Escape" parent="Temple 3" instance=ExtResource("3_66fh1")]
 layout_mode = 2
 scene_to_load = ExtResource("39_mjmu6")
 
