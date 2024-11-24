@@ -62,7 +62,7 @@ fill_to = Vector2(0.91453, 0.132479)
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ymr2b"]
 light_mode = 1
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_kpfuo"]
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_r3n8n"]
 light_mode = 1
 
 [sub_resource type="LabelSettings" id="LabelSettings_448k6"]
@@ -70,11 +70,13 @@ font = ExtResource("10_xbpyp")
 font_size = 60
 font_color = Color(0.73, 0.6132, 0.438, 1)
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_r3n8n"]
-light_mode = 1
-
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_bkhke"]
 light_mode = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_onxjg"]
+font = ExtResource("10_xbpyp")
+font_size = 35
+font_color = Color(0.73, 0.6132, 0.438, 1)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_lftag"]
 light_mode = 1
@@ -201,10 +203,11 @@ offset_bottom = -66.0
 mouse_filter = 1
 color = Color(0, 0, 0, 0.537255)
 
-[node name="UI" type="Node2D" parent="Camera2D" node_paths=PackedStringArray("idol_label", "height_label")]
+[node name="UI" type="Node2D" parent="Camera2D" node_paths=PackedStringArray("idol_label", "height_label", "idol_icons")]
 script = ExtResource("10_wtk1j")
-idol_label = NodePath("IdolUI")
+idol_label = NodePath("")
 height_label = NodePath("HeightUI")
+idol_icons = [NodePath("Idol1"), NodePath("Idol2"), NodePath("Idol3")]
 
 [node name="NightLight" type="PointLight2D" parent="Camera2D/UI"]
 visible = false
@@ -226,39 +229,45 @@ position = Vector2(-643, 194)
 scale = Vector2(3.125, 3.125)
 texture = ExtResource("10_ixs36")
 
-[node name="IdolUI" type="Label" parent="Camera2D/UI"]
-material = SubResource("CanvasItemMaterial_kpfuo")
-offset_left = -773.0
-offset_top = 401.0
-offset_right = -626.0
-offset_bottom = 539.0
-text = "0/3"
-label_settings = SubResource("LabelSettings_448k6")
-
 [node name="HeightUI" type="Label" parent="Camera2D/UI"]
 material = SubResource("CanvasItemMaterial_r3n8n")
-offset_left = -845.0
-offset_top = 158.0
-offset_right = -755.0
-offset_bottom = 349.0
-text = "00
-66"
+offset_left = -853.0
+offset_top = 135.0
+offset_right = -641.0
+offset_bottom = 218.0
+text = "00m"
 label_settings = SubResource("LabelSettings_448k6")
+horizontal_alignment = 1
 
 [node name="HeightUI2" type="Label" parent="Camera2D/UI"]
 material = SubResource("CanvasItemMaterial_bkhke")
-offset_left = -747.0
-offset_top = 158.0
-offset_right = -657.0
-offset_bottom = 349.0
-text = "m
-m"
-label_settings = SubResource("LabelSettings_448k6")
+offset_left = -865.0
+offset_top = 223.0
+offset_right = -624.0
+offset_bottom = 273.0
+text = "To Escape!"
+label_settings = SubResource("LabelSettings_onxjg")
+horizontal_alignment = 1
 
-[node name="Idol" type="Sprite2D" parent="Camera2D/UI"]
+[node name="Idol1" type="Sprite2D" parent="Camera2D/UI"]
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_lftag")
-position = Vector2(-850, 430)
+position = Vector2(-841, 358)
+scale = Vector2(6, 6)
+texture = ExtResource("13_pmlcy")
+
+[node name="Idol2" type="Sprite2D" parent="Camera2D/UI"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_lftag")
+position = Vector2(-741, 358)
+scale = Vector2(6, 6)
+texture = ExtResource("13_pmlcy")
+
+[node name="Idol3" type="Sprite2D" parent="Camera2D/UI"]
+self_modulate = Color(0.254902, 0.254902, 0.254902, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_lftag")
+position = Vector2(-641, 358)
 scale = Vector2(6, 6)
 texture = ExtResource("13_pmlcy")
 

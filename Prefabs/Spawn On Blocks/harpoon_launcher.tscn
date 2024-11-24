@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://2emoy8lav7a0"]
+[gd_scene load_steps=14 format=3 uid="uid://2emoy8lav7a0"]
 
 [ext_resource type="Script" path="res://Scripts/Harpoon.gd" id="1_dcokm"]
 [ext_resource type="Script" path="res://Scripts/Squashable.gd" id="2_64uom"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://bhvty2fmh6tls" path="res://Art/Sprites/Harpoon Gun/harpoon_spear.png" id="5_cdfdi"]
 [ext_resource type="Script" path="res://Scripts/LevelBuildingTools.gd" id="6_skuvu"]
 [ext_resource type="Texture2D" uid="uid://ds407cwrk87ua" path="res://Art/Sprites/Harpoon Gun/harpoon_base.png" id="6_yuaro"]
+[ext_resource type="AudioStream" uid="uid://y5t333tcvtyr" path="res://Sound/Harpoon/punch-or-kick-sound-effect-2-239695.mp3" id="7_ad543"]
+[ext_resource type="AudioStream" uid="uid://bcdaufsogyqju" path="res://Sound/Harpoon/boow_sound.wav" id="8_68p6f"]
+[ext_resource type="AudioStream" uid="uid://ctuthv84x4m3n" path="res://Sound/Harpoon/reel.wav" id="9_21asn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v85wb"]
 radius = 4.0
@@ -77,5 +80,16 @@ texture = SubResource("GradientTexture2D_x4vvd")
 
 [node name="LevelBuildingTools" type="Node" parent="."]
 script = ExtResource("6_skuvu")
+
+[node name="Hit Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_ad543")
+volume_db = -5.0
+
+[node name="Launch Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_68p6f")
+volume_db = -5.0
+
+[node name="Reel Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_21asn")
 
 [connection signal="body_entered" from="Harpoon" to="." method="_on_harpoon_body_entered"]

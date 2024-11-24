@@ -9,6 +9,10 @@ var has_harpoon_landed: bool = false
 
 @onready var rope: Line2D = $Rope
 
+@onready var launch_sound: AudioStreamPlayer = $"Launch Sound"
+@onready var hit_sound: AudioStreamPlayer = $"Hit Sound"
+@onready var reel_sound: AudioStreamPlayer = $"Reel Sound"
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -29,6 +33,8 @@ func _physics_process(delta: float) -> void:
 				if tripping_obj.targeted_by_harpoon: return #if another harpoon already has plans
 				tripping_obj.targeted_by_harpoon = true
 				launched = true
+				
+				AudioManager.PlayAudio(launch_sound)
 				
 				var direction: Vector2 = Vector2.from_angle( global_rotation - deg_to_rad(90))
 				direction = direction.normalized()
@@ -52,6 +58,7 @@ func _physics_process(delta: float) -> void:
 					
 					await get_tree().process_frame
 				
+				AudioManager.PlayAudio(hit_sound)
 				
 				has_harpoon_landed = true
 				

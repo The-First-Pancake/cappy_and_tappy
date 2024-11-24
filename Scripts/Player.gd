@@ -372,19 +372,21 @@ func die() -> void:
 	tween.tween_property(self, "global_position:y", global_position.y + 800, 0.5)
 	await tween.finished
 
-	var highest_campfire: Campfire = null
+	var respawn_fire: Campfire = null
 	for campfire: Campfire in campfires:
 		if campfire == null: continue
 		if campfire.is_lit == false: continue
-		if highest_campfire == null:
-			highest_campfire = campfire
-			continue
-		if campfire.global_position.y < highest_campfire.global_position.y:
-			highest_campfire = campfire
+		#this would make it so it's actually the highest. We cut this once we added horizontal levels
+		#if campfire.global_position.y < respawn_fire.global_position.y:
+		#	respawn_fire = campfire
+			#continue
+		respawn_fire = campfire
 	
-	if highest_campfire:
+	
+	
+	if respawn_fire:
 		#respawn
-		global_position = highest_campfire.global_position + Vector2(0,-35) #offset to put play standing on the ground
+		global_position = respawn_fire.global_position + Vector2(0,-35) #offset to put play standing on the ground
 		velocity = Vector2.ZERO
 		collect_box.process_mode = Node.PROCESS_MODE_INHERIT
 		die_box.process_mode = Node.PROCESS_MODE_INHERIT

@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://bjdpxtqaavny0"]
+[gd_scene load_steps=59 format=3 uid="uid://bjdpxtqaavny0"]
 
 [ext_resource type="Script" path="res://Scripts/LevelSelect.gd" id="1_7k26d"]
 [ext_resource type="Texture2D" uid="uid://bqfeqtdw7xcxo" path="res://Art/Sprites/Backgrounds/background.png" id="1_24j1o"]
@@ -43,6 +43,7 @@
 [ext_resource type="PackedScene" uid="uid://dl6b1ro27n7pa" path="res://Levels/World1/level_diamond.tscn" id="36_ydi2r"]
 [ext_resource type="PackedScene" uid="uid://bxpxsflrpgcu6" path="res://Levels/World1/level_tomb.tscn" id="37_yrs1g"]
 [ext_resource type="PackedScene" uid="uid://66qq3h005we5" path="res://Levels/World1/level_escape.tscn" id="39_mjmu6"]
+[ext_resource type="StyleBox" uid="uid://chxj0ri352x13" path="res://UI/Button Sytlebox.tres" id="42_n7y0p"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_pwuex"]
 light_mode = 1
@@ -134,7 +135,7 @@ animations = [{
 "speed": 7.0
 }]
 
-[node name="LevelSelect" type="Control" node_paths=PackedStringArray("worlds")]
+[node name="LevelSelect" type="Control" node_paths=PackedStringArray("temples")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -142,7 +143,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7k26d")
-worlds = [NodePath("MarginContainer/VBoxContainer/World 1"), NodePath("World 2"), NodePath("World 3")]
+temples = [NodePath("MarginContainer/VBoxContainer/Temple 1"), NodePath("Temple 2"), NodePath("Temple 3")]
 
 [node name="Background" type="TextureRect" parent="."]
 texture_filter = 1
@@ -176,7 +177,7 @@ theme_override_constants/margin_bottom = 25
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="World 1" type="HFlowContainer" parent="MarginContainer/VBoxContainer"]
+[node name="Temple 1" type="HFlowContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
@@ -184,47 +185,47 @@ theme_override_constants/h_separation = 15
 theme_override_constants/v_separation = 20
 alignment = 1
 
-[node name="Level - Traverse" parent="MarginContainer/VBoxContainer/World 1" instance=ExtResource("3_66fh1")]
+[node name="Level - Traverse" parent="MarginContainer/VBoxContainer/Temple 1" instance=ExtResource("3_66fh1")]
 layout_mode = 2
 scene_to_load = ExtResource("4_755wy")
 
-[node name="Level - First Climb" parent="MarginContainer/VBoxContainer/World 1" instance=ExtResource("3_66fh1")]
+[node name="Level - First Climb" parent="MarginContainer/VBoxContainer/Temple 1" instance=ExtResource("3_66fh1")]
 layout_mode = 2
 scene_to_load = ExtResource("4_vtdfy")
 
-[node name="Level - Dynamite" parent="MarginContainer/VBoxContainer/World 1" instance=ExtResource("3_66fh1")]
+[node name="Level - Dynamite" parent="MarginContainer/VBoxContainer/Temple 1" instance=ExtResource("3_66fh1")]
 layout_mode = 2
 scene_to_load = ExtResource("5_v5v4l")
 
-[node name="Level - Campfires & Spikes" parent="MarginContainer/VBoxContainer/World 1" instance=ExtResource("3_66fh1")]
+[node name="Level - Campfires & Spikes" parent="MarginContainer/VBoxContainer/Temple 1" instance=ExtResource("3_66fh1")]
 layout_mode = 2
 scene_to_load = ExtResource("5_jchui")
 
-[node name="Level - Climbing Holds" parent="MarginContainer/VBoxContainer/World 1" instance=ExtResource("3_66fh1")]
+[node name="Level - Climbing Holds" parent="MarginContainer/VBoxContainer/Temple 1" instance=ExtResource("3_66fh1")]
 layout_mode = 2
 scene_to_load = ExtResource("6_6rq07")
 
-[node name="Level - Up & Up" parent="MarginContainer/VBoxContainer/World 1" instance=ExtResource("3_66fh1")]
+[node name="Level - Up & Up" parent="MarginContainer/VBoxContainer/Temple 1" instance=ExtResource("3_66fh1")]
 layout_mode = 2
 scene_to_load = ExtResource("7_2l6xq")
 
-[node name="Level - Dynamite 2" parent="MarginContainer/VBoxContainer/World 1" instance=ExtResource("3_66fh1")]
+[node name="Level - Dynamite 2" parent="MarginContainer/VBoxContainer/Temple 1" instance=ExtResource("3_66fh1")]
 layout_mode = 2
 scene_to_load = ExtResource("9_00ax2")
 
-[node name="Level - Overhangs" parent="MarginContainer/VBoxContainer/World 1" instance=ExtResource("3_66fh1")]
+[node name="Level - Overhangs" parent="MarginContainer/VBoxContainer/Temple 1" instance=ExtResource("3_66fh1")]
 layout_mode = 2
 scene_to_load = ExtResource("8_4i4d7")
 
-[node name="Level - Overhangs Xtreme" parent="MarginContainer/VBoxContainer/World 1" instance=ExtResource("3_66fh1")]
+[node name="Level - Overhangs Xtreme" parent="MarginContainer/VBoxContainer/Temple 1" instance=ExtResource("3_66fh1")]
 layout_mode = 2
 scene_to_load = ExtResource("9_gryrf")
 
-[node name="Level - Oops All Long" parent="MarginContainer/VBoxContainer/World 1" instance=ExtResource("3_66fh1")]
+[node name="Level - Oops All Long" parent="MarginContainer/VBoxContainer/Temple 1" instance=ExtResource("3_66fh1")]
 layout_mode = 2
 scene_to_load = ExtResource("10_353i2")
 
-[node name="Level - Dynamite 3" parent="MarginContainer/VBoxContainer/World 1" instance=ExtResource("3_66fh1")]
+[node name="Level - Dynamite 3" parent="MarginContainer/VBoxContainer/Temple 1" instance=ExtResource("3_66fh1")]
 layout_mode = 2
 scene_to_load = ExtResource("13_2gj7q")
 
@@ -465,7 +466,7 @@ theme_override_font_sizes/font_size = 25
 text = "Instagram"
 uri = "https://www.instagram.com/wearethefirstpancake/"
 
-[node name="World 2" type="HFlowContainer" parent="."]
+[node name="Temple 2" type="HFlowContainer" parent="."]
 layout_mode = 2
 offset_left = 2049.0
 offset_top = 150.0
@@ -477,52 +478,52 @@ theme_override_constants/h_separation = 15
 theme_override_constants/v_separation = 20
 alignment = 1
 
-[node name="Level - Arrows" parent="World 2" instance=ExtResource("3_66fh1")]
+[node name="Level - Arrows" parent="Temple 2" instance=ExtResource("3_66fh1")]
 layout_mode = 2
 scene_to_load = ExtResource("11_1hlb2")
 
-[node name="Level - Arrows 2" parent="World 2" instance=ExtResource("3_66fh1")]
+[node name="Level - Arrows 2" parent="Temple 2" instance=ExtResource("3_66fh1")]
 layout_mode = 2
 scene_to_load = ExtResource("12_q0a2d")
 
-[node name="Level - Rain" parent="World 2" instance=ExtResource("3_66fh1")]
+[node name="Level - Rain" parent="Temple 2" instance=ExtResource("3_66fh1")]
 layout_mode = 2
 scene_to_load = ExtResource("13_m7ssi")
 
-[node name="Level - Breaker" parent="World 2" instance=ExtResource("3_66fh1")]
+[node name="Level - Breaker" parent="Temple 2" instance=ExtResource("3_66fh1")]
 layout_mode = 2
 scene_to_load = ExtResource("28_haa0c")
 
-[node name="Level - Breaker 2" parent="World 2" instance=ExtResource("3_66fh1")]
+[node name="Level - Breaker 2" parent="Temple 2" instance=ExtResource("3_66fh1")]
 layout_mode = 2
 scene_to_load = ExtResource("29_ikqai")
 
-[node name="Level - Break Down" parent="World 2" instance=ExtResource("3_66fh1")]
+[node name="Level - Break Down" parent="Temple 2" instance=ExtResource("3_66fh1")]
 layout_mode = 2
 scene_to_load = ExtResource("30_r66fg")
 
-[node name="Level - Harpoons" parent="World 2" instance=ExtResource("3_66fh1")]
+[node name="Level - Harpoons" parent="Temple 2" instance=ExtResource("3_66fh1")]
 layout_mode = 2
 scene_to_load = ExtResource("31_slj0u")
 
-[node name="Level - Harpoon Traverse" parent="World 2" instance=ExtResource("3_66fh1")]
+[node name="Level - Harpoon Traverse" parent="Temple 2" instance=ExtResource("3_66fh1")]
 layout_mode = 2
 scene_to_load = ExtResource("32_un76u")
 
-[node name="Level - Fastball" parent="World 2" instance=ExtResource("3_66fh1")]
+[node name="Level - Fastball" parent="Temple 2" instance=ExtResource("3_66fh1")]
 layout_mode = 2
 scene_to_load = ExtResource("33_dlnxx")
 
-[node name="Level - Elevator" parent="World 2" instance=ExtResource("3_66fh1")]
+[node name="Level - Elevator" parent="Temple 2" instance=ExtResource("3_66fh1")]
 layout_mode = 2
 scene_to_load = ExtResource("34_ylhnh")
 
-[node name="Level - Chamber 666" parent="World 2" instance=ExtResource("3_66fh1")]
+[node name="Level - Chamber 666" parent="Temple 2" instance=ExtResource("3_66fh1")]
 modulate = Color(1, 0.550781, 0.550781, 1)
 layout_mode = 2
 scene_to_load = ExtResource("4_ptxlh")
 
-[node name="World 3" type="HFlowContainer" parent="."]
+[node name="Temple 3" type="HFlowContainer" parent="."]
 layout_mode = 2
 offset_left = 4161.0
 offset_top = 107.0
@@ -534,45 +535,49 @@ theme_override_constants/h_separation = 15
 theme_override_constants/v_separation = 20
 alignment = 1
 
-[node name="Level - The Walls Are Moving" parent="World 3" instance=ExtResource("3_66fh1")]
+[node name="Level - The Walls Are Moving" parent="Temple 3" instance=ExtResource("3_66fh1")]
 layout_mode = 2
 scene_to_load = ExtResource("31_8gmqv")
 
-[node name="Level - Creepy Crawly" parent="World 3" instance=ExtResource("3_66fh1")]
+[node name="Level - Creepy Crawly" parent="Temple 3" instance=ExtResource("3_66fh1")]
 layout_mode = 2
 scene_to_load = ExtResource("32_pcxxg")
 
-[node name="Level - Deep Dark" parent="World 3" instance=ExtResource("3_66fh1")]
+[node name="Level - Deep Dark" parent="Temple 3" instance=ExtResource("3_66fh1")]
 layout_mode = 2
 scene_to_load = ExtResource("36_7har7")
 
-[node name="Level - Diamond" parent="World 3" instance=ExtResource("3_66fh1")]
+[node name="Level - Diamond" parent="Temple 3" instance=ExtResource("3_66fh1")]
 layout_mode = 2
 scene_to_load = ExtResource("36_ydi2r")
 
-[node name="Level - Tomb" parent="World 3" instance=ExtResource("3_66fh1")]
+[node name="Level - Tomb" parent="Temple 3" instance=ExtResource("3_66fh1")]
 layout_mode = 2
 scene_to_load = ExtResource("37_yrs1g")
 
-[node name="Level - Escape" parent="World 3" instance=ExtResource("3_66fh1")]
+[node name="Level - Escape" parent="Temple 3" instance=ExtResource("3_66fh1")]
 layout_mode = 2
 scene_to_load = ExtResource("39_mjmu6")
 
-[node name="Next World Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 1637.0
-offset_top = 644.0
-offset_right = 1862.0
-offset_bottom = 722.0
-text = "Next World >"
+[node name="Previous Temple Button" type="Button" parent="."]
+offset_left = 24.0
+offset_top = 570.0
+offset_right = 294.0
+offset_bottom = 640.0
+theme_override_fonts/font = ExtResource("7_rccux")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("42_n7y0p")
+text = " < Previous Temple "
 
-[node name="Previous World Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 33.0
-offset_top = 664.0
-offset_right = 258.0
-offset_bottom = 742.0
-text = "< Previous World"
+[node name="Next Temple Button" type="Button" parent="."]
+offset_left = 1612.0
+offset_top = 562.0
+offset_right = 1882.0
+offset_bottom = 632.0
+theme_override_fonts/font = ExtResource("7_rccux")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("42_n7y0p")
+text = "Next Temple >"
 
 [node name="Music Player" type="Node" parent="."]
 script = ExtResource("12_8108v")
@@ -591,5 +596,5 @@ volume_db = -7.0
 [connection signal="gui_input" from="MarginContainer/VBoxContainer/HBoxContainer/Reset Save" to="MarginContainer/VBoxContainer/HBoxContainer/Reset Save" method="_on_gui_input"]
 [connection signal="mouse_entered" from="MarginContainer/VBoxContainer/HBoxContainer/Reset Save" to="MarginContainer/VBoxContainer/HBoxContainer/Reset Save" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="MarginContainer/VBoxContainer/HBoxContainer/Reset Save" to="MarginContainer/VBoxContainer/HBoxContainer/Reset Save" method="_on_mouse_exited"]
-[connection signal="button_down" from="Next World Button" to="." method="next_world"]
-[connection signal="button_down" from="Previous World Button" to="." method="previous_world"]
+[connection signal="pressed" from="Previous Temple Button" to="." method="previous_temple"]
+[connection signal="pressed" from="Next Temple Button" to="." method="next_temple"]

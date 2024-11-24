@@ -23,13 +23,13 @@ position = Vector2(900, -1550)
 self_modulate = Color(0.83, 0.676035, 0.3901, 0.380392)
 position = Vector2(1050, 500)
 
-[node name="Idol" parent="." index="9"]
+[node name="Idol" parent="." index="10"]
 position = Vector2(1950, -150)
 
-[node name="Idol2" parent="." index="10"]
+[node name="Idol2" parent="." index="11"]
 position = Vector2(850, -750)
 
-[node name="Idol3" parent="." index="11"]
+[node name="Idol3" parent="." index="12"]
 position = Vector2(2000, -1100)
 
 [node name="PlaceableCharacterBody2d3" parent="Block Container" index="0" instance=ExtResource("3_s6k0r")]
