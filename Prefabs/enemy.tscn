@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://elnsaaomqgyw"]
+[gd_scene load_steps=60 format=3 uid="uid://elnsaaomqgyw"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_62qsa"]
 [ext_resource type="Texture2D" uid="uid://cmpjljnlwij5k" path="res://Art/Player/Player_dance_texture.tres" id="2_jg5do"]
@@ -17,6 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://dld0w7i55tup8" path="res://Sound/scream_01.wav" id="15_ocxyy"]
 [ext_resource type="AudioStream" uid="uid://debulnj550wpv" path="res://Sound/DAAAAAAAMN_01.wav" id="16_ny3q0"]
 [ext_resource type="AudioStream" uid="uid://c3tdtwgpt8i02" path="res://Sound/Music/griddy.wav" id="17_k1iyg"]
+[ext_resource type="Texture2D" uid="uid://4tnwt4jcdig3" path="res://Art/white_pixel.png" id="18_ladjc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_04ng4"]
 atlas = ExtResource("2_jg5do")
@@ -308,6 +309,15 @@ point_count = 3
 [sub_resource type="Gradient" id="Gradient_87cxs"]
 colors = PackedColorArray(0.61, 0.605222, 0.3233, 1, 0.84, 0.72576, 0.4368, 0.576471)
 
+[sub_resource type="Gradient" id="Gradient_cs67i"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jb3yj"]
+gradient = SubResource("Gradient_cs67i")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
 [node name="Enemy" type="CharacterBody2D" groups=["spike"]]
 collision_layer = 2
 script = ExtResource("1_62qsa")
@@ -315,11 +325,11 @@ script = ExtResource("1_62qsa")
 [node name="Sprite Animator" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 modulate = Color(0, 0, 0, 1)
-z_index = 1
 scale = Vector2(3.125, 3.125)
 sprite_frames = SubResource("SpriteFrames_2xloi")
-animation = &"dance"
+animation = &"walk"
 autoplay = "idle"
+frame_progress = 0.364615
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite Animator"]
 deterministic = true
@@ -538,6 +548,24 @@ volume_db = -20.0
 unique_name_in_owner = true
 target_position = Vector2(0, 11)
 hit_from_inside = true
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(3.64063, -27)
+color = Color(0.078125, 1, 0, 1)
+energy = 3.0
+texture = SubResource("GradientTexture2D_jb3yj")
+
+[node name="Evil Eye" type="Sprite2D" parent="."]
+self_modulate = Color(0.0457163, 0.90625, 0.0389404, 1)
+position = Vector2(5, -26)
+scale = Vector2(5.28125, 3.125)
+texture = ExtResource("18_ladjc")
+
+[node name="Evil Eye2" type="Sprite2D" parent="."]
+self_modulate = Color(0.0457163, 0.90625, 0.0389404, 1)
+position = Vector2(5, -26)
+scale = Vector2(5.28125, 3.125)
+texture = ExtResource("18_ladjc")
 
 [connection signal="timeout" from="Pathfinding Timer" to="." method="_on_pathfinding_timer_timeout"]
 [connection signal="timeout" from="Launch Timer" to="." method="_on_launch_timer_timeout"]

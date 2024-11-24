@@ -2,7 +2,7 @@ class_name LevelSelect
 extends Control
 
 @export var temples: Array[Control] = []
-@onready var temple_container: VBoxContainer = $MarginContainer/VBoxContainer
+@onready var temple_container: Container = $"MarginContainer/VBoxContainer/Temple Container"
 @onready var next_temple_button: Button = $"Next Temple Button"
 @onready var previous_temple_button: Button = $"Previous Temple Button"
 

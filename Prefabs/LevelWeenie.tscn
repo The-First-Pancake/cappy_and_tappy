@@ -49,15 +49,15 @@ animations = [{
 }]
 
 [node name="LevelWeenie" type="VBoxContainer"]
-custom_minimum_size = Vector2(220, 330)
+custom_minimum_size = Vector2(220, 200)
 offset_right = 220.0
-offset_bottom = 329.0
+offset_bottom = 317.0
 scale = Vector2(0.7, 0.7)
 theme_override_constants/separation = 10
 script = ExtResource("1_13nni")
 
 [node name="Level Icon" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(200, 200)
+custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 texture = ExtResource("2_u6lqa")
 stretch_mode = 5
