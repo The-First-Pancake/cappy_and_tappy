@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://bjdpxtqaavny0"]
+[gd_scene load_steps=60 format=3 uid="uid://bjdpxtqaavny0"]
 
 [ext_resource type="Script" path="res://Scripts/LevelSelect.gd" id="1_7k26d"]
 [ext_resource type="Texture2D" uid="uid://bqfeqtdw7xcxo" path="res://Art/Sprites/Backgrounds/background.png" id="1_24j1o"]
@@ -43,6 +43,7 @@
 [ext_resource type="PackedScene" uid="uid://dl6b1ro27n7pa" path="res://Levels/World1/level_diamond.tscn" id="36_ydi2r"]
 [ext_resource type="PackedScene" uid="uid://bxpxsflrpgcu6" path="res://Levels/World1/level_tomb.tscn" id="37_yrs1g"]
 [ext_resource type="PackedScene" uid="uid://66qq3h005we5" path="res://Levels/World1/level_escape.tscn" id="39_mjmu6"]
+[ext_resource type="PackedScene" uid="uid://b8yf51jyd28c5" path="res://Levels/World1/level_choke.tscn" id="40_gi62s"]
 [ext_resource type="StyleBox" uid="uid://chxj0ri352x13" path="res://UI/Button Sytlebox.tres" id="42_n7y0p"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_pwuex"]
@@ -557,23 +558,15 @@ scene_to_load = ExtResource("36_7har7")
 layout_mode = 2
 scene_to_load = ExtResource("36_ydi2r")
 
+[node name="Level - Choke" parent="Temple 3" instance=ExtResource("3_66fh1")]
+layout_mode = 2
+scene_to_load = ExtResource("40_gi62s")
+
 [node name="Level - Tomb" parent="Temple 3" instance=ExtResource("3_66fh1")]
 layout_mode = 2
 scene_to_load = ExtResource("37_yrs1g")
 
-[node name="Level - Escape" parent="Temple 3" instance=ExtResource("3_66fh1")]
-layout_mode = 2
-scene_to_load = ExtResource("39_mjmu6")
-
 [node name="Level - Escape2" parent="Temple 3" instance=ExtResource("3_66fh1")]
-layout_mode = 2
-scene_to_load = ExtResource("39_mjmu6")
-
-[node name="Level - Escape3" parent="Temple 3" instance=ExtResource("3_66fh1")]
-layout_mode = 2
-scene_to_load = ExtResource("39_mjmu6")
-
-[node name="Level - Escape4" parent="Temple 3" instance=ExtResource("3_66fh1")]
 layout_mode = 2
 scene_to_load = ExtResource("39_mjmu6")
 

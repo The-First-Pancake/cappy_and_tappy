@@ -23,13 +23,16 @@ const SHARD : PackedScene = preload("res://Prefabs/Shard.tscn")
 var triangles : Array[PackedVector2Array] = []
 var shards : Array[Node2D] = []
 
+var shattered : bool = false
+
 
 func add_shards() -> void:
 	for s in shards:
 		get_parent().add_child(s)
 
 func shatter(impact_point_global : Vector2, use_impact_point : bool = true) -> void:
-	if get_parent() is Sprite2D:
+	if not shattered and get_parent() is Sprite2D:
+		shattered = true
 		var _rect : Rect2 = get_parent().get_rect()
 		var collisionpolygon2d : CollisionPolygon2D = $"../../CollisionPolygon2D"
 		var points : PackedVector2Array = []

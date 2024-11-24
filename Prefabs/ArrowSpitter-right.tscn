@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bi6dqttan0e3f"]
+[gd_scene load_steps=9 format=3 uid="uid://bi6dqttan0e3f"]
 
 [ext_resource type="Script" path="res://Scripts/arrow_spitter.gd" id="1_h7pqf"]
 [ext_resource type="PackedScene" uid="uid://betjiy4umvrpf" path="res://Prefabs/Arrow.tscn" id="2_yoc54"]
 [ext_resource type="Texture2D" uid="uid://877faua8cohc" path="res://Art/Sprites/arrow spitter/Arrow_Spitter.png" id="3_dcik3"]
 [ext_resource type="Texture2D" uid="uid://ds8g7sxp3ncou" path="res://Art/Sprites/arrow spitter/Arrow_Spitter_Normal.png" id="4_u8ipw"]
 [ext_resource type="AudioStream" uid="uid://qoar0l5a8mol" path="res://Sound/hawk-tuah_SRaUp2L.mp3" id="5_shc2t"]
+[ext_resource type="Script" path="res://Scripts/LevelBuildingTools.gd" id="6_wxbyd"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_xq1l8"]
 diffuse_texture = ExtResource("3_dcik3")
@@ -37,5 +38,8 @@ stream = ExtResource("5_shc2t")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(5, -2.5)
 shape = SubResource("RectangleShape2D_wsqbg")
+
+[node name="LevelBuildingTools" type="Node" parent="."]
+script = ExtResource("6_wxbyd")
 
 [connection signal="timeout" from="SpitTimer" to="." method="_on_spit_timer_timeout"]
