@@ -25,9 +25,10 @@ size = Vector2(5600, 1000)
 
 [node name="Camera Zone" parent="." index="3"]
 type = 1
+mid_line_offset = -50.0
 
 [node name="CollisionShape2D" parent="Camera Zone" index="0"]
-position = Vector2(3500, 750)
+position = Vector2(3450, 750)
 shape = SubResource("RectangleShape2D_5hh5y")
 
 [node name="Exit Door" parent="." index="5"]
@@ -76,6 +77,9 @@ position = Vector2(3650, 300)
 
 [node name="Idol3" parent="." index="12"]
 position = Vector2(5400, 930)
+
+[node name="Camera2D" parent="." index="14"]
+position = Vector2(1168, 700)
 
 [node name="BlockSpawner" parent="Camera2D" index="3"]
 block_prefabs = Array[PackedScene]([ExtResource("8_hrm7m"), ExtResource("9_57uvg"), ExtResource("10_cr0wi"), ExtResource("11_j1sbp"), ExtResource("12_hguw2"), ExtResource("13_r83ux")])

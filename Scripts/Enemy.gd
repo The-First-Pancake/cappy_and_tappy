@@ -355,6 +355,8 @@ func apply_gravity(delta: float) -> void:
 func on_diebox_hit(area: Area2D) -> void:
 	if area.is_in_group("water"):
 		die()
+	if area is Campfire:
+		area.extinguish()
 
 func _on_pathfinding_timer_timeout() -> void:
 	# only do this if not mid launch

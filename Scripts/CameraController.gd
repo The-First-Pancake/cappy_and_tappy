@@ -65,7 +65,7 @@ func _process(delta: float) -> void:
 	if !GameManager.player: return
 	if GameManager.player.dying: return
 	if stationary_cam: return
-	if GameManager.time_since_level_loaded < 0.5: return
+	if GameManager.time_since_level_loaded < 0.5: return #freeze frame for the beginning to help preview levels
 	
 	
 	var cam_zone: CameraZone = GameManager.player.current_camera_zone
@@ -111,21 +111,25 @@ func _process(delta: float) -> void:
 				var min_camera_y: float = cam_zone.bot_right.y - cam_size.y/2
 				if target_position.y > min_camera_y:
 					target_position.y = min_camera_y
+					is_sliding = false
 		if cam_zone.top_out:
 			if current_cam_type != CamType.HORIZONTAL:
 				var max_camera_y: float = cam_zone.top_left.y + cam_size.y/2
 				if target_position.y < max_camera_y:
 					target_position.y = max_camera_y
+					is_sliding = false
 		if cam_zone.right_out:
 			if current_cam_type != CamType.VERTICAL:
 				var max_camera_x: float = cam_zone.bot_right.x - cam_size.x/2
 				if target_position.x > max_camera_x:
 					target_position.x = max_camera_x
+					is_sliding = false
 		if cam_zone.left_out:
 			if current_cam_type != CamType.VERTICAL:
 				var min_camera_x: float = cam_zone.top_left.x + cam_size.x/2
 				if target_position.x < min_camera_x:
 					target_position.x = min_camera_x
+					is_sliding = false
 	
 	if is_sliding:
 		var distance_from_target: float = cam_pos.distance_to(target_position)

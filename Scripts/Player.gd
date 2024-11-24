@@ -40,6 +40,8 @@ var campfires: Array[Campfire] = []
 @onready var grab_sound: AudioStreamPlayer = $Audio/Footstep1012 as AudioStreamPlayer
 @onready var idol_get_sound: AudioStreamPlayer = $Audio/IdolGet as AudioStreamPlayer
 @onready var griddy_sound: AudioStreamPlayer = $Audio/Griddy as AudioStreamPlayer
+@onready var respawn_sound: AudioStreamPlayer = $Audio/Respawn as AudioStreamPlayer
+
 
 
 var is_entering: bool = false
@@ -386,6 +388,7 @@ func die() -> void:
 	
 	if respawn_fire:
 		#respawn
+		AudioManager.PlayAudio(respawn_sound)
 		global_position = respawn_fire.global_position + Vector2(0,-35) #offset to put play standing on the ground
 		velocity = Vector2.ZERO
 		collect_box.process_mode = Node.PROCESS_MODE_INHERIT
@@ -422,9 +425,9 @@ func on_collectbox_hit(area: Area2D) -> void:
 		AudioManager.PlayAudio(idol_get_sound)
 		return
 	if area is Campfire:
-		if campfires.has(area): return #skip if we already have it
 		area.is_lit = true
-		campfires.append(area)
+		if !campfires.has(area): #skip if we already have it
+			campfires.append(area)
 
 func on_diebox_hit(area: Area2D) -> void:
 	if area.is_in_group("spike"):

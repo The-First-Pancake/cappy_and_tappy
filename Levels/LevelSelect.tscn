@@ -477,8 +477,8 @@ uri = "https://www.instagram.com/wearethefirstpancake/"
 layout_mode = 2
 offset_left = 2049.0
 offset_top = 150.0
-offset_right = 3919.0
-offset_bottom = 480.0
+offset_right = 3737.0
+offset_bottom = 770.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
 theme_override_constants/h_separation = 15
@@ -534,8 +534,8 @@ scene_to_load = ExtResource("4_ptxlh")
 layout_mode = 2
 offset_left = 4161.0
 offset_top = 107.0
-offset_right = 6031.0
-offset_bottom = 437.0
+offset_right = 5831.0
+offset_bottom = 727.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
 theme_override_constants/h_separation = 15
@@ -546,13 +546,13 @@ alignment = 1
 layout_mode = 2
 scene_to_load = ExtResource("31_8gmqv")
 
-[node name="Level - Creepy Crawly" parent="Temple 3" instance=ExtResource("3_66fh1")]
-layout_mode = 2
-scene_to_load = ExtResource("32_pcxxg")
-
 [node name="Level - Deep Dark" parent="Temple 3" instance=ExtResource("3_66fh1")]
 layout_mode = 2
 scene_to_load = ExtResource("36_7har7")
+
+[node name="Level - Creepy Crawly" parent="Temple 3" instance=ExtResource("3_66fh1")]
+layout_mode = 2
+scene_to_load = ExtResource("32_pcxxg")
 
 [node name="Level - Diamond" parent="Temple 3" instance=ExtResource("3_66fh1")]
 layout_mode = 2
