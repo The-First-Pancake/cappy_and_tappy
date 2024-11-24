@@ -1,10 +1,10 @@
-[gd_scene load_steps=56 format=4 uid="uid://cfckjpuscavie"]
+[gd_scene load_steps=57 format=4 uid="uid://cfckjpuscavie"]
 
 [ext_resource type="Texture2D" uid="uid://bqfeqtdw7xcxo" path="res://Art/Sprites/Backgrounds/background.png" id="1_ahsb1"]
 [ext_resource type="PackedScene" uid="uid://def2hxxjwwhvl" path="res://Prefabs/Door.tscn" id="2_d4khg"]
 [ext_resource type="Material" uid="uid://cg4fprgafhcxd" path="res://Art/unshaded_material.tres" id="3_imge7"]
 [ext_resource type="Script" path="res://Scripts/CameraZone.gd" id="3_nyl6j"]
-[ext_resource type="TileSet" uid="uid://cpo1wlqrhcktl" path="res://Art/Tilemaps/Brown Tileset.tres" id="4_b6bxa"]
+[ext_resource type="TileSet" uid="uid://gg3bh8fgpw3d" path="res://Art/Tilemaps/Tilemap_Brown Bricks.tres" id="4_b6bxa"]
 [ext_resource type="PackedScene" uid="uid://dngf3odx0yf5k" path="res://Prefabs/player.tscn" id="4_irwxl"]
 [ext_resource type="Script" path="res://Scripts/CameraController.gd" id="5_h6pdm"]
 [ext_resource type="Script" path="res://Scripts/EndlessScoreManager.gd" id="6_gswen"]
@@ -43,9 +43,6 @@ light_mode = 1
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hyotq"]
 size = Vector2(1350, 52100)
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_rc0ob"]
-light_mode = 1
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ymr2b"]
 light_mode = 1
@@ -98,6 +95,12 @@ script = ExtResource("12_x7t8k")
 spawn_prefab = ExtResource("19_j6m1q")
 spawn_count = 1
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5miec"]
+size = Vector2(237, 224)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_rc0ob"]
+light_mode = 1
+
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1wnnk"]
 light_mode = 1
 
@@ -127,8 +130,8 @@ scale = Vector2(3, 5)
 texture = ExtResource("1_ahsb1")
 stretch_mode = 1
 
-[node name="Entrance Door" parent="." instance=ExtResource("2_d4khg")]
-position = Vector2(1050, 1050)
+[node name="Entrance Door2" parent="." instance=ExtResource("2_d4khg")]
+position = Vector2(1100, 1050)
 is_exit = false
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
@@ -144,15 +147,16 @@ tile_set = ExtResource("4_b6bxa")
 
 [node name="Camera Zone" type="Area2D" parent="."]
 script = ExtResource("3_nyl6j")
-mid_line_offset = -242.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera Zone"]
-position = Vector2(1375, -24850)
+position = Vector2(1376, -24850)
 shape = SubResource("RectangleShape2D_hyotq")
 debug_color = Color(0.268719, 0, 0.701961, 0)
 
 [node name="Player" parent="." instance=ExtResource("4_irwxl")]
-position = Vector2(982, 1000)
+position = Vector2(1028, 1000)
+
+[node name="Block Container" type="Node2D" parent="."]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 z_index = 1000
@@ -165,16 +169,6 @@ script = ExtResource("6_gswen")
 idol_label = NodePath("IdolUI")
 idol_high_label = NodePath("IdolHighUI")
 height_label = NodePath("HeightUI")
-
-[node name="UiThrobber" type="Sprite2D" parent="Camera2D/UI"]
-modulate = Color(0.56, 0.56, 0.56, 1)
-z_as_relative = false
-texture_filter = 1
-material = SubResource("CanvasItemMaterial_rc0ob")
-position = Vector2(-790, -400)
-scale = Vector2(3.125, 3.125)
-texture = ExtResource("7_u8im4")
-centered = false
 
 [node name="UiFrame" type="Sprite2D" parent="Camera2D/UI"]
 texture_filter = 1
@@ -230,14 +224,31 @@ block_prefabs = Array[PackedScene]([ExtResource("12_liuyp"), ExtResource("13_b1l
 dangers = Array[ExtResource("12_x7t8k")]([SubResource("Resource_6f78n"), SubResource("Resource_lpbvl"), SubResource("Resource_kfj65"), SubResource("Resource_qf6s7"), SubResource("Resource_vktho")])
 y_level_switch = 10
 
-[node name="BlockSpawner" parent="Camera2D/EndlessRandomizer" node_paths=PackedStringArray("spawn_container") instance=ExtResource("11_o15bl")]
+[node name="BlockSpawner" parent="Camera2D/EndlessRandomizer" node_paths=PackedStringArray("block_container", "held_block_container") instance=ExtResource("11_o15bl")]
 z_as_relative = false
 position = Vector2(-688, -299)
-spawn_container = NodePath("../../../BlockContainer")
+block_container = NodePath("../../../Block Container")
+held_block_container = NodePath("../../../Held Block Container")
 spawn_objects = Array[ExtResource("12_x7t8k")]([SubResource("Resource_6716m"), SubResource("Resource_b3o7y"), SubResource("Resource_p0i3i")])
 spawn_object_probability = 0.5
 
-[node name="BlockContainer" type="Node2D" parent="."]
+[node name="Return Block Click Area" type="Area2D" parent="Camera2D/EndlessRandomizer/BlockSpawner"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/EndlessRandomizer/BlockSpawner/Return Block Click Area"]
+position = Vector2(-1.5, 0)
+shape = SubResource("RectangleShape2D_5miec")
+
+[node name="UiThrobber" type="Sprite2D" parent="Camera2D/EndlessRandomizer/BlockSpawner"]
+modulate = Color(0.56, 0.56, 0.56, 1)
+z_as_relative = false
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_rc0ob")
+position = Vector2(-102, -101)
+scale = Vector2(3.125, 3.125)
+texture = ExtResource("7_u8im4")
+centered = false
+
+[node name="Held Block Container" type="Node2D" parent="."]
 
 [node name="Wtf Lol" type="Label" parent="."]
 offset_left = 1050.0

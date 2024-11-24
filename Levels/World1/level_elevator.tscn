@@ -136,31 +136,36 @@ position = Vector2(1200, 64)
 rotation = -1.5708
 scale = Vector2(0.32, 0.32)
 
-[node name="BreakerSpike2" parent="Environment" index="14" instance=ExtResource("6_4j2r8")]
+[node name="Harpoon Launcher7" parent="Environment" index="14" instance=ExtResource("2_ghsyp")]
+position = Vector2(1200, 96)
+rotation = -1.5708
+scale = Vector2(0.32, 0.32)
+
+[node name="BreakerSpike2" parent="Environment" index="15" instance=ExtResource("6_4j2r8")]
 position = Vector2(976, 144)
 scale = Vector2(0.32, 0.32)
 
-[node name="Spikes" parent="Environment" index="15" instance=ExtResource("7_7nlg3")]
+[node name="Spikes" parent="Environment" index="16" instance=ExtResource("7_7nlg3")]
 position = Vector2(1008, 144)
 scale = Vector2(0.32, 0.32)
 
-[node name="BreakerSpike3" parent="Environment" index="16" instance=ExtResource("6_4j2r8")]
+[node name="BreakerSpike3" parent="Environment" index="17" instance=ExtResource("6_4j2r8")]
 position = Vector2(1040, 144)
 scale = Vector2(0.32, 0.32)
 
-[node name="Spikes2" parent="Environment" index="17" instance=ExtResource("7_7nlg3")]
+[node name="Spikes2" parent="Environment" index="18" instance=ExtResource("7_7nlg3")]
 position = Vector2(1072, 144)
 scale = Vector2(0.32, 0.32)
 
-[node name="BreakerSpike4" parent="Environment" index="18" instance=ExtResource("6_4j2r8")]
+[node name="BreakerSpike4" parent="Environment" index="19" instance=ExtResource("6_4j2r8")]
 position = Vector2(1104, 144)
 scale = Vector2(0.32, 0.32)
 
-[node name="Spikes3" parent="Environment" index="19" instance=ExtResource("7_7nlg3")]
+[node name="Spikes3" parent="Environment" index="20" instance=ExtResource("7_7nlg3")]
 position = Vector2(1136, 144)
 scale = Vector2(0.32, 0.32)
 
-[node name="BreakerSpike5" parent="Environment" index="20" instance=ExtResource("6_4j2r8")]
+[node name="BreakerSpike5" parent="Environment" index="21" instance=ExtResource("6_4j2r8")]
 position = Vector2(1168, 144)
 scale = Vector2(0.32, 0.32)
 

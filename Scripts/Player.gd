@@ -42,8 +42,6 @@ var campfires: Array[Campfire] = []
 @onready var griddy_sound: AudioStreamPlayer = $Audio/Griddy as AudioStreamPlayer
 @onready var respawn_sound: AudioStreamPlayer = $Audio/Respawn as AudioStreamPlayer
 
-
-
 var is_entering: bool = false
 var is_exiting: bool = false
 var is_downsliding: bool = false

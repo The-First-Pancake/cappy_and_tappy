@@ -203,9 +203,8 @@ offset_bottom = -66.0
 mouse_filter = 1
 color = Color(0, 0, 0, 0.537255)
 
-[node name="UI" type="Node2D" parent="Camera2D" node_paths=PackedStringArray("idol_label", "height_label", "idol_icons")]
+[node name="UI" type="Node2D" parent="Camera2D" node_paths=PackedStringArray("height_label", "idol_icons")]
 script = ExtResource("10_wtk1j")
-idol_label = NodePath("")
 height_label = NodePath("HeightUI")
 idol_icons = [NodePath("Idol1"), NodePath("Idol2"), NodePath("Idol3")]
 
