@@ -49,12 +49,13 @@ func _physics_process(delta: float) -> void:
 	
 	var falling: bool = !front_raycast.is_colliding() and !rear_raycast.is_colliding()
 	if falling:
-		var collision: KinematicCollision2D =  move_and_collide(Vector2.ZERO, true)
+		var collision: KinematicCollision2D =  move_and_collide(Vector2(0,fall_speed*delta), true)
 		if collision:
 			fall_speed = 0
 			rotate(rotate_speed * delta)
 		else:
 			fall_speed += 980 * delta
+			fall_speed = clamp(fall_speed,0,2000)
 			global_position.y += fall_speed * delta
 			#global_rotation += falling_rotation_speed*delta #spin while falling
 	

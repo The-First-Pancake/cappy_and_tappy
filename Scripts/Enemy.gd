@@ -355,12 +355,14 @@ func apply_gravity(delta: float) -> void:
 func on_diebox_hit(area: Area2D) -> void:
 	if area.is_in_group("water"):
 		die()
+	if area is Campfire:
+		area.extinguish()
 
 func _on_pathfinding_timer_timeout() -> void:
 	# only do this if not mid launch
 	if is_on_floor() or is_instance_valid(current_hold) or (Time.get_ticks_msec() - last_path_update > 1000):
 		last_path_update = Time.get_ticks_msec()
-		path_to_player = PathFindingGraph.find_path(global_position, GameManager.player.global_position)
+		path_to_player = PathFindingGraph.instance.find_path(global_position, GameManager.player.global_position)
 
 func _on_launch_timer_timeout() -> void:
 	should_launch = true

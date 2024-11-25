@@ -13,6 +13,8 @@ extends Area2D
 
 var is_lit: bool:
 	set(val):
+		if is_lit == val:
+			return
 		is_lit = val
 		smoke_particle_fx.emitting = val
 		ember_particle_fx.emitting = val
@@ -52,6 +54,7 @@ func fall() -> void:
 	queue_free()
 
 func extinguish() -> void:
+	if !is_lit: return
 	AudioManager.PlayAudio(extinguish_sound)
 	is_lit = false
 

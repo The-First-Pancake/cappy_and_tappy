@@ -11,6 +11,7 @@ var node_position : Vector2 :
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	await get_tree().process_frame
 	var parent: Node = get_parent()
 	if parent is Placeable:
 		parent.placed.connect(enter_pathfinding_graph)
@@ -27,7 +28,8 @@ func _process(delta: float) -> void:
 
 func _exit_tree() -> void:
 	if active:
-		PathFindingGraph.remove_pathfinding_node(self)
+		if is_instance_valid(PathFindingGraph.instance):
+			PathFindingGraph.instance.remove_pathfinding_node(self)
 
 func enter_pathfinding_graph() -> void:
 	# Destroy most nodes if placed sideways
@@ -37,13 +39,15 @@ func enter_pathfinding_graph() -> void:
 	# Don't add holds to pathfinding if placed faceup
 	if is_hold and abs(global_rotation_degrees) < 20:
 		return
-	PathFindingGraph.add_pathfinding_node(self)
+	if is_instance_valid(PathFindingGraph.instance):
+		PathFindingGraph.instance.add_pathfinding_node(self)
 	placed = true
 	active = true
 
 func remove_from_pathfinding_graph() -> void:
 	if (active):
-		PathFindingGraph.remove_pathfinding_node(self)
+		if is_instance_valid(PathFindingGraph.instance):
+			PathFindingGraph.instance.remove_pathfinding_node(self)
 	active = false
 	
 func destroy() -> void:

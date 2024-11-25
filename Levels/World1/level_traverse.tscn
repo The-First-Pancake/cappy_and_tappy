@@ -1,22 +1,27 @@
-[gd_scene load_steps=19 format=4 uid="uid://cotgqt74hr8q7"]
+[gd_scene load_steps=24 format=4 uid="uid://cotgqt74hr8q7"]
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_mna8d"]
 [ext_resource type="Texture2D" uid="uid://cb17awt0j13xi" path="res://Art/Sprites/glyphs/Glyph_Hook_Rotate.png" id="2_gtgmq"]
 [ext_resource type="PackedScene" uid="uid://drkcihqmmm3u3" path="res://Prefabs/Set Dressing/Glyph.tscn" id="3_m3gds"]
 [ext_resource type="Texture2D" uid="uid://ce0qm3ti416bl" path="res://Art/Sprites/glyphs/Glyph_Hook_Attach.png" id="3_qxh8j"]
 [ext_resource type="Texture2D" uid="uid://cvdukla2r3ows" path="res://Art/Sprites/glyphs/Glyph_Hook_Release.png" id="4_a7vs2"]
+[ext_resource type="Texture2D" uid="uid://dyic2xtxjt0rw" path="res://Art/Sprites/glyphs/ControllerAlts/Glyph_Space.png" id="5_4nkn4"]
 [ext_resource type="Texture2D" uid="uid://dgb653myqjguj" path="res://Art/Sprites/glyphs/Glyph_Space.png" id="5_rh0ew"]
 [ext_resource type="Texture2D" uid="uid://b4pxxldcsvtbj" path="res://Art/Sprites/glyphs/Glyph_WASD.png" id="6_io1w6"]
 [ext_resource type="PackedScene" uid="uid://r1kjk04fwuou" path="res://Prefabs/Spawn On Blocks/Hold.tscn" id="7_8g385"]
+[ext_resource type="Texture2D" uid="uid://crxmla1e6cu12" path="res://Art/Sprites/glyphs/ControllerAlts/Glyph_Hook_Attach.png" id="7_gcyk8"]
 [ext_resource type="Script" path="res://Scripts/SpawnObject.gd" id="7_yqrk1"]
 [ext_resource type="PackedScene" uid="uid://c4safo4pwme48" path="res://Prefabs/Blocks/1x4-Piece.tscn" id="8_hrm7m"]
 [ext_resource type="Material" uid="uid://cg4fprgafhcxd" path="res://Art/unshaded_material.tres" id="8_xevie"]
+[ext_resource type="Texture2D" uid="uid://dd3u5e2q2yqgq" path="res://Art/Sprites/glyphs/ControllerAlts/Glyph_Hook_Rotate.png" id="9_2a5c0"]
 [ext_resource type="PackedScene" uid="uid://caudmtkjwca1i" path="res://Prefabs/Blocks/L-Piece-Mirrored.tscn" id="9_57uvg"]
 [ext_resource type="Texture2D" uid="uid://dxwrgo8gd0pqj" path="res://Art/latest-1985960378.jpg" id="9_fstg2"]
 [ext_resource type="PackedScene" uid="uid://b1lrc4bb14deo" path="res://Prefabs/Blocks/L-Piece.tscn" id="10_cr0wi"]
 [ext_resource type="PackedScene" uid="uid://c7c8vai4olkeh" path="res://Prefabs/Blocks/T-Piece.tscn" id="11_j1sbp"]
+[ext_resource type="Texture2D" uid="uid://c1d3071q8buq3" path="res://Art/Sprites/glyphs/ControllerAlts/Glyph_Hook_Release.png" id="11_tmgau"]
 [ext_resource type="PackedScene" uid="uid://b60t64b6u40dy" path="res://Prefabs/Blocks/Z-Piece-Mirrored.tscn" id="12_hguw2"]
 [ext_resource type="PackedScene" uid="uid://cqrk66u8spi3" path="res://Prefabs/Blocks/Z-Piece.tscn" id="13_r83ux"]
+[ext_resource type="Texture2D" uid="uid://tx6ssjonac4v" path="res://Art/Sprites/glyphs/ControllerAlts/Glyph_WASD.png" id="13_xg22y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5hh5y"]
 size = Vector2(5600, 1000)
@@ -25,9 +30,10 @@ size = Vector2(5600, 1000)
 
 [node name="Camera Zone" parent="." index="3"]
 type = 1
+mid_line_offset = -50.0
 
 [node name="CollisionShape2D" parent="Camera Zone" index="0"]
-position = Vector2(3350, 350)
+position = Vector2(3450, 750)
 shape = SubResource("RectangleShape2D_5hh5y")
 
 [node name="Exit Door" parent="." index="5"]
@@ -50,41 +56,49 @@ scale = Vector2(0.32, 0.32)
 position = Vector2(1650, 915)
 scale = Vector2(5.685, 5.685)
 texture = ExtResource("5_rh0ew")
+controller_texture = ExtResource("5_4nkn4")
 
 [node name="Glyph3" parent="Glyph Container" index="1" instance=ExtResource("3_m3gds")]
 position = Vector2(1765.63, 440.625)
 texture = ExtResource("3_qxh8j")
+controller_texture = ExtResource("7_gcyk8")
 
 [node name="Glyph4" parent="Glyph Container" index="2" instance=ExtResource("3_m3gds")]
 position = Vector2(1965.63, 415.625)
 texture = ExtResource("2_gtgmq")
+controller_texture = ExtResource("9_2a5c0")
 
 [node name="Glyph5" parent="Glyph Container" index="3" instance=ExtResource("3_m3gds")]
 position = Vector2(2165.63, 451.625)
 texture = ExtResource("4_a7vs2")
+controller_texture = ExtResource("11_tmgau")
 
 [node name="Glyph2" parent="Glyph Container" index="4" instance=ExtResource("3_m3gds")]
 position = Vector2(1550, 800)
 scale = Vector2(5.00887, 5.085)
 texture = ExtResource("6_io1w6")
+controller_texture = ExtResource("13_xg22y")
 
-[node name="Idol" parent="." index="9"]
+[node name="Idol" parent="." index="10"]
 position = Vector2(1850, 1000)
 
-[node name="Idol2" parent="." index="10"]
+[node name="Idol2" parent="." index="11"]
 position = Vector2(3650, 300)
 
-[node name="Idol3" parent="." index="11"]
+[node name="Idol3" parent="." index="12"]
 position = Vector2(5400, 930)
+
+[node name="Camera2D" parent="." index="14"]
+position = Vector2(1168, 700)
 
 [node name="BlockSpawner" parent="Camera2D" index="3"]
 block_prefabs = Array[PackedScene]([ExtResource("8_hrm7m"), ExtResource("9_57uvg"), ExtResource("10_cr0wi"), ExtResource("11_j1sbp"), ExtResource("12_hguw2"), ExtResource("13_r83ux")])
 spawn_objects = Array[ExtResource("7_yqrk1")]([])
 
-[node name="Water" parent="." index="15"]
+[node name="Water" parent="." index="16"]
 rise_speed = 0.0
 
-[node name="Latest-1985960378" type="Sprite2D" parent="." index="35"]
+[node name="Latest-1985960378" type="Sprite2D" parent="." index="20"]
 material = ExtResource("8_xevie")
 position = Vector2(-350, -200)
 scale = Vector2(0.107414, 0.13764)

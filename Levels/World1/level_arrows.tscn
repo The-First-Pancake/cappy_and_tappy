@@ -9,7 +9,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pnp7k"]
 size = Vector2(1350, 17100)
 
-[node name="Template Level" instance=ExtResource("1_pdxa0")]
+[node name="Template Level2" instance=ExtResource("1_pdxa0")]
 
 [node name="CollisionShape2D" parent="Camera Zone" index="0"]
 shape = SubResource("RectangleShape2D_pnp7k")
@@ -17,13 +17,13 @@ shape = SubResource("RectangleShape2D_pnp7k")
 [node name="Exit Door" parent="." index="5"]
 position = Vector2(1750, -2050)
 
-[node name="Idol" parent="." index="9"]
+[node name="Idol" parent="." index="10"]
 position = Vector2(1800, -450)
 
-[node name="Idol2" parent="." index="10"]
+[node name="Idol2" parent="." index="11"]
 position = Vector2(900, -1450)
 
-[node name="Idol3" parent="." index="11"]
+[node name="Idol3" parent="." index="12"]
 position = Vector2(900, -2600)
 
 [node name="PlaceableCharacterBody2d" parent="." index="15" instance=ExtResource("2_f6xab")]

@@ -40,7 +40,7 @@ var campfires: Array[Campfire] = []
 @onready var grab_sound: AudioStreamPlayer = $Audio/Footstep1012 as AudioStreamPlayer
 @onready var idol_get_sound: AudioStreamPlayer = $Audio/IdolGet as AudioStreamPlayer
 @onready var griddy_sound: AudioStreamPlayer = $Audio/Griddy as AudioStreamPlayer
-
+@onready var respawn_sound: AudioStreamPlayer = $Audio/Respawn as AudioStreamPlayer
 
 var is_entering: bool = false
 var is_exiting: bool = false
@@ -372,19 +372,22 @@ func die() -> void:
 	tween.tween_property(self, "global_position:y", global_position.y + 800, 0.5)
 	await tween.finished
 
-	var highest_campfire: Campfire = null
+	var respawn_fire: Campfire = null
 	for campfire: Campfire in campfires:
 		if campfire == null: continue
 		if campfire.is_lit == false: continue
-		if highest_campfire == null:
-			highest_campfire = campfire
-			continue
-		if campfire.global_position.y < highest_campfire.global_position.y:
-			highest_campfire = campfire
+		#this would make it so it's actually the highest. We cut this once we added horizontal levels
+		#if campfire.global_position.y < respawn_fire.global_position.y:
+		#	respawn_fire = campfire
+			#continue
+		respawn_fire = campfire
 	
-	if highest_campfire:
+	
+	
+	if respawn_fire:
 		#respawn
-		global_position = highest_campfire.global_position + Vector2(0,-35) #offset to put play standing on the ground
+		AudioManager.PlayAudio(respawn_sound)
+		global_position = respawn_fire.global_position + Vector2(0,-35) #offset to put play standing on the ground
 		velocity = Vector2.ZERO
 		collect_box.process_mode = Node.PROCESS_MODE_INHERIT
 		die_box.process_mode = Node.PROCESS_MODE_INHERIT
@@ -420,9 +423,9 @@ func on_collectbox_hit(area: Area2D) -> void:
 		AudioManager.PlayAudio(idol_get_sound)
 		return
 	if area is Campfire:
-		if campfires.has(area): return #skip if we already have it
 		area.is_lit = true
-		campfires.append(area)
+		if !campfires.has(area): #skip if we already have it
+			campfires.append(area)
 
 func on_diebox_hit(area: Area2D) -> void:
 	if area.is_in_group("spike"):

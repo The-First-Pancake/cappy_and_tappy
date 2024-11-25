@@ -635,16 +635,16 @@ position = Vector2(112, 112)
 rotation = 9.42478
 scale = Vector2(0.32, 0.32)
 
-[node name="Player" parent="." index="8"]
+[node name="Player" parent="." index="9"]
 position = Vector2(1084, 1000)
 
-[node name="Idol" parent="." index="9"]
+[node name="Idol" parent="." index="10"]
 position = Vector2(3300, -2200)
 
-[node name="Idol2" parent="." index="10"]
+[node name="Idol2" parent="." index="11"]
 position = Vector2(2250, -2850)
 
-[node name="Idol3" parent="." index="11"]
+[node name="Idol3" parent="." index="12"]
 position = Vector2(-1250, -2350)
 
 [node name="1x4 Block" parent="Block Container" index="0" instance=ExtResource("30_34o7i")]

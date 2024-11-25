@@ -1,5 +1,19 @@
 extends Node2D
 
+var two_controller_mode : bool = false
+var pl1_act_to_remap : Array[String] = ["move_up",
+										"move_down",
+										"move_left",
+										"move_right",
+										"jump",
+										"grab_hold"]
+var pl2_act_to_remap : Array[String] = ["controller_mouse_left", 
+										"controller_mouse_right", 
+										"controller_mouse_up", 
+										"controller_mouse_down",
+										"controller_mouse_click",
+										"block_rotate_left",
+										"block_rotate_right"]
 var mouse_pos : Vector2 = Vector2()
 var mouse_speed : float = 25
 
@@ -9,6 +23,7 @@ func _ready() -> void:
 	pass
 
 func _process(_delta: float) -> void:
+	check_for_controllers()
 	var mouse_rel : Vector2 = Vector2.ZERO
 	var move_dir : Vector2 = Input.get_vector("controller_mouse_left","controller_mouse_right",
 											  "controller_mouse_up","controller_mouse_down")
@@ -37,3 +52,37 @@ func fake_press() -> void:
 	await get_tree().process_frame
 	a.pressed = false
 	Input.parse_input_event(a)
+
+func check_for_controllers() -> void:
+	if (not two_controller_mode and Input.get_connected_joypads().size() > 1):
+		two_controller_mode = true
+		remap_controllers(two_controller_mode)
+	elif (two_controller_mode and Input.get_connected_joypads().size() <= 1):
+		two_controller_mode = false
+		remap_controllers(two_controller_mode)
+
+func remap_controllers(two_player: bool) -> void:
+	var joypads : Array[int] = Input.get_connected_joypads()
+	if two_player:
+		for action in pl1_act_to_remap:
+			var events : Array[InputEvent] = InputMap.action_get_events(action)
+			for event in events:
+				if event is InputEventJoypadButton or event is InputEventJoypadMotion:
+					InputMap.action_erase_event(action, event)
+					event.device = joypads[0]
+					InputMap.action_add_event(action, event)
+		for action in pl2_act_to_remap:
+			var events : Array[InputEvent] = InputMap.action_get_events(action)
+			for event in events:
+				if event is InputEventJoypadButton or event is InputEventJoypadMotion:
+					InputMap.action_erase_event(action, event)
+					event.device = joypads[1]
+					InputMap.action_add_event(action, event)
+	else:
+		for action in InputMap.get_actions():
+			var events : Array[InputEvent] = InputMap.action_get_events(action)
+			for event in events:
+				if event is InputEventJoypadButton or event is InputEventJoypadMotion:
+					InputMap.action_erase_event(action, event)
+					event.device = joypads[0]
+					InputMap.action_add_event(action, event)

@@ -1,8 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://def2hxxjwwhvl"]
+[gd_scene load_steps=11 format=3 uid="uid://def2hxxjwwhvl"]
 
 [ext_resource type="Script" path="res://Scripts/Door.gd" id="1_4n4fl"]
-[ext_resource type="Texture2D" uid="uid://cfya30mohgthw" path="res://Art/Sprites/door/Door_Background.png" id="2_ed0te"]
+[ext_resource type="Texture2D" uid="uid://bbtysg0f5rsj4" path="res://Art/Sprites/caves/cave elements/Door_Background_Cave.png" id="3_616bk"]
 [ext_resource type="Texture2D" uid="uid://cvjveityc31tt" path="res://Art/Sprites/door/Door_Foreground.png" id="3_slp37"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_va6go"]
+diffuse_texture = ExtResource("3_slp37")
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_midbx"]
 
@@ -24,13 +27,14 @@ size = Vector2(77, 151)
 collision_mask = 3
 script = ExtResource("1_4n4fl")
 is_exit = true
+door_frame_texture = SubResource("CanvasTexture_va6go")
 
 [node name="Door Background" type="Sprite2D" parent="."]
 z_index = -900
 material = SubResource("CanvasItemMaterial_midbx")
 position = Vector2(0, -102)
 scale = Vector2(3.125, 3.125)
-texture = ExtResource("2_ed0te")
+texture = ExtResource("3_616bk")
 
 [node name="Door Frame" type="Sprite2D" parent="."]
 material = SubResource("CanvasItemMaterial_cjcuh")

@@ -1,13 +1,14 @@
 class_name LevelSelect
 extends Control
 
-@export var worlds: Array[Control] = []
-@onready var world_container: VBoxContainer = $MarginContainer/VBoxContainer
-@onready var next_world_button: Button = $"Next World Button"
-@onready var previous_world_button: Button = $"Previous World Button"
+@export var temples: Array[Control] = []
+@onready var temple_container: Container = $"MarginContainer/VBoxContainer/Temple Container"
+@onready var next_temple_button: Button = $"Next Temple Button"
+@onready var previous_temple_button: Button = $"Previous Temple Button"
+
 
 func _ready() -> void:
-	change_worlds(GameManager.current_world)
+	change_temple(GameManager.current_temple)
 	#var i: int = 0
 	#for level: PackedScene in GameManager.levels:
 		#var spawned_obj : LevelWeenie = weenie_prefab.instantiate() as LevelWeenie
@@ -18,27 +19,27 @@ func _ready() -> void:
 		#if i == 0:
 			#spawned_obj.grab_focus()
 
-func change_worlds(idx: int = 0) -> void:
-	if idx < 0 or idx >= worlds.size():
+func change_temple(idx: int = 0) -> void:
+	if idx < 0 or idx >= temples.size():
 		print("Tried to switch to world #", idx, " but that world don't exist!")
 		return
-	GameManager.current_world = idx
+	GameManager.current_temple = idx
 	var i: int = 0
-	for world: Control in worlds:
+	for temple: Control in temples:
 		if idx == i:
-			world.visible = true
-			world.reparent(world_container)
-			world_container.move_child(world,0)
+			temple.visible = true
+			temple.reparent(temple_container)
+			temple_container.move_child(temple,0)
 			
 		else:
-			world.visible = false
+			temple.visible = false
 		i+= 1
 	
-	previous_world_button.visible = idx != 0
-	next_world_button.visible = idx != worlds.size()-1
+	previous_temple_button.visible = idx != 0
+	next_temple_button.visible = idx != temples.size()-1
 
-func next_world() -> void:
-	change_worlds(GameManager.current_world + 1)
+func next_temple() -> void:
+	change_temple(GameManager.current_temple + 1)
 
-func previous_world() -> void:
-	change_worlds(GameManager.current_world - 1)
+func previous_temple() -> void:
+	change_temple(GameManager.current_temple - 1)

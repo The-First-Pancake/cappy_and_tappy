@@ -1,11 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://betjiy4umvrpf"]
+[gd_scene load_steps=11 format=3 uid="uid://betjiy4umvrpf"]
 
 [ext_resource type="Script" path="res://Scripts/Arrows.gd" id="1_6kdnr"]
 [ext_resource type="Texture2D" uid="uid://d3xnvubmydavd" path="res://Art/Sprites/arrow.png" id="2_8r618"]
 [ext_resource type="Texture2D" uid="uid://cv2y41c1qcq3y" path="res://Art/Sprites/arrow_single.png" id="3_bt6pd"]
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_vphad"]
-light_mode = 1
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kxqyk"]
 atlas = ExtResource("2_8r618")
@@ -54,9 +51,6 @@ animations = [{
 radius = 1.59998
 height = 20.0
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ib3p1"]
-light_mode = 1
-
 [node name="Arrow" type="CharacterBody2D"]
 show_behind_parent = true
 collision_layer = 4
@@ -66,7 +60,6 @@ speed = 500.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-material = SubResource("CanvasItemMaterial_vphad")
 position = Vector2(0, 46)
 rotation = 3.14159
 scale = Vector2(3.125, 3.125)
@@ -83,7 +76,6 @@ shape = SubResource("CapsuleShape2D_3eewm")
 [node name="ArrowSingle" type="Sprite2D" parent="."]
 visible = false
 texture_filter = 1
-material = SubResource("CanvasItemMaterial_ib3p1")
 position = Vector2(0, 46)
 rotation = 3.14159
 scale = Vector2(3.125, 3.125)

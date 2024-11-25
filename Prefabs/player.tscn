@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://dngf3odx0yf5k"]
+[gd_scene load_steps=59 format=3 uid="uid://dngf3odx0yf5k"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_auxp4"]
 [ext_resource type="Texture2D" uid="uid://bapsbp2dcsltk" path="res://Art/Player/Player_canvas_texture.tres" id="2_g2orv"]
@@ -15,8 +15,18 @@
 [ext_resource type="AudioStream" uid="uid://4lb06b18i35c" path="res://Sound/Pickup__190.wav" id="14_k2j5i"]
 [ext_resource type="AudioStream" uid="uid://twgpbnyr1add" path="res://Sound/Music/music_main.wav" id="15_gqcg7"]
 [ext_resource type="AudioStream" uid="uid://dld0w7i55tup8" path="res://Sound/scream_01.wav" id="16_cqgpe"]
+[ext_resource type="AudioStream" uid="uid://drwklr2harjpn" path="res://Sound/Respawn.wav" id="17_3wd0r"]
 [ext_resource type="AudioStream" uid="uid://debulnj550wpv" path="res://Sound/DAAAAAAAMN_01.wav" id="17_8twbf"]
 [ext_resource type="AudioStream" uid="uid://c3tdtwgpt8i02" path="res://Sound/Music/griddy.wav" id="18_w2nvq"]
+
+[sub_resource type="Gradient" id="Gradient_octt3"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ygfsp"]
+gradient = SubResource("Gradient_octt3")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 0.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_04ng4"]
 atlas = ExtResource("2_uqpry")
@@ -311,6 +321,15 @@ z_index = 1
 collision_layer = 2
 script = ExtResource("1_auxp4")
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 0.25
+range_item_cull_mask = 3
+texture = SubResource("GradientTexture2D_ygfsp")
+texture_scale = 1.5
+height = 1000.0
+
 [node name="Sprite Animator" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 light_mask = 2
@@ -528,6 +547,10 @@ stream = ExtResource("16_cqgpe")
 
 [node name="Daaaaaaamn" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("17_8twbf")
+
+[node name="Respawn" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("17_3wd0r")
+volume_db = -10.0
 
 [node name="Griddy" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("18_w2nvq")

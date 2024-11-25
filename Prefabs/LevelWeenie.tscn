@@ -49,15 +49,15 @@ animations = [{
 }]
 
 [node name="LevelWeenie" type="VBoxContainer"]
-custom_minimum_size = Vector2(220, 330)
+custom_minimum_size = Vector2(220, 200)
 offset_right = 220.0
-offset_bottom = 329.0
+offset_bottom = 317.0
 scale = Vector2(0.7, 0.7)
 theme_override_constants/separation = 10
 script = ExtResource("1_13nni")
 
 [node name="Level Icon" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(200, 200)
+custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 texture = ExtResource("2_u6lqa")
 stretch_mode = 5
@@ -98,17 +98,16 @@ expand_mode = 2
 stretch_mode = 4
 
 [node name="CompletedFlames" type="Node2D" parent="."]
-visible = false
 
 [node name="flame" type="AnimatedSprite2D" parent="CompletedFlames"]
-position = Vector2(87.1429, 101.429)
+position = Vector2(88.5714, 85.7143)
 scale = Vector2(3.15, 3.15)
 sprite_frames = SubResource("SpriteFrames_8jjmw")
 autoplay = "default"
 frame_progress = 0.832069
 
 [node name="flame2" type="AnimatedSprite2D" parent="CompletedFlames"]
-position = Vector2(132.857, 101.429)
+position = Vector2(131.429, 85.7143)
 scale = Vector2(3.15, 3.15)
 sprite_frames = SubResource("SpriteFrames_8jjmw")
 autoplay = "default"

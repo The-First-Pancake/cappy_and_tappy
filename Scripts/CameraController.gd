@@ -6,7 +6,10 @@ static var instance: CameraController
 var screen_edge_trigger: float = 300
 var left_UI_size: float = 440
 @export var stationary_cam: bool = false
-var look_ahead_distance: float = 400
+
+var look_ahead_distance: float:
+	get:
+		return cam_size.y/2 - screen_edge_trigger/2
 
 @export_category("Screen Shake")
 @export var random_stength: float = 15.0
@@ -62,7 +65,7 @@ func _process(delta: float) -> void:
 	if !GameManager.player: return
 	if GameManager.player.dying: return
 	if stationary_cam: return
-	if GameManager.time_since_level_loaded < 0.5: return
+	if GameManager.time_since_level_loaded < 0.5: return #freeze frame for the beginning to help preview levels
 	
 	
 	var cam_zone: CameraZone = GameManager.player.current_camera_zone
@@ -124,13 +127,14 @@ func _process(delta: float) -> void:
 				if target_position.x < min_camera_x:
 					target_position.x = min_camera_x
 	
+	if cam_pos.distance_to(target_position) < 5:
+			is_sliding = false
+	
 	if is_sliding:
 		var distance_from_target: float = cam_pos.distance_to(target_position)
 		var pan_speed: float = 180
 		var pan_speed_multiplier: float = clamp(pow(distance_from_target, .4), 1, 100)
 		cam_pos = cam_pos.move_toward(target_position, pan_speed * delta * pan_speed_multiplier)
-		if cam_pos.distance_to(target_position) < 5:
-			is_sliding = false
 	
 	
 	last_frame_cam_type = current_cam_type
