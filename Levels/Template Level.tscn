@@ -181,14 +181,15 @@ script = ExtResource("4_psc51")
 [node name="TextureRect" type="TextureRect" parent="Camera2D"]
 modulate = Color(0, 0, 0, 0.596078)
 material = ExtResource("9_tcfxi")
-offset_left = -960.0
-offset_top = -740.0
-offset_right = -409.0
-offset_bottom = 723.0
+offset_left = -1074.0
+offset_top = -798.0
+offset_right = -471.0
+offset_bottom = 895.0
 texture = ExtResource("9_g2wcy")
 stretch_mode = 4
 
 [node name="UI" type="Node2D" parent="Camera2D" node_paths=PackedStringArray("height_label", "idol_icons")]
+position = Vector2(-40.062, -3)
 script = ExtResource("10_wtk1j")
 height_label = NodePath("HeightUI")
 idol_icons = [NodePath("Idol1"), NodePath("Idol2"), NodePath("Idol3")]
@@ -274,7 +275,7 @@ scale = Vector2(3.125, 3.125)
 texture = ExtResource("16_ajrd8")
 
 [node name="BlockSpawner" parent="Camera2D" node_paths=PackedStringArray("block_container", "held_block_container") instance=ExtResource("5_74oay")]
-position = Vector2(-741, -374)
+position = Vector2(-744, -377)
 block_container = NodePath("../../Block Container")
 held_block_container = NodePath("../../Held Block Container")
 spawn_objects = Array[ExtResource("6_xpr8c")]([SubResource("Resource_6716m"), SubResource("Resource_b3o7y"), SubResource("Resource_mwrdh")])
@@ -287,13 +288,13 @@ position = Vector2(-1.5, 0)
 shape = SubResource("RectangleShape2D_vvcjm")
 
 [node name="Dynamite" parent="Camera2D" instance=ExtResource("16_3kw41")]
-position = Vector2(-823.938, -85)
+position = Vector2(-864, -88)
 
 [node name="Dynamite3" parent="Camera2D" instance=ExtResource("16_3kw41")]
-position = Vector2(-622.938, -84)
+position = Vector2(-663, -87)
 
 [node name="Dynamite2" parent="Camera2D" instance=ExtResource("16_3kw41")]
-position = Vector2(-724.938, -84)
+position = Vector2(-765, -87)
 
 [node name="Held Block Container" type="Node2D" parent="."]
 

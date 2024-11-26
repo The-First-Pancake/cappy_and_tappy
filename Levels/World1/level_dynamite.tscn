@@ -117,16 +117,16 @@ spawn_objects = Array[ExtResource("2_qe506")]([SubResource("Resource_xd867")])
 spawn_object_probability = 0.075
 
 [node name="Dynamite4" parent="Camera2D" index="3" instance=ExtResource("4_0nkxk")]
-position = Vector2(-853, -85)
+position = Vector2(-898, -86)
 
 [node name="Dynamite" parent="Camera2D" index="4"]
-position = Vector2(-752, -84)
+position = Vector2(-797, -85)
 
 [node name="Dynamite3" parent="Camera2D" index="5"]
-position = Vector2(-551, -83)
+position = Vector2(-596, -84)
 
 [node name="Dynamite2" parent="Camera2D" index="6"]
-position = Vector2(-653, -83)
+position = Vector2(-698, -84)
 
 [node name="Water" parent="." index="16"]
 rise_speed = 0.0
