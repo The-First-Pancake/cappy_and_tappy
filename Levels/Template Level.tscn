@@ -1,16 +1,17 @@
-[gd_scene load_steps=52 format=4 uid="uid://6dd2cbybvcqg"]
+[gd_scene load_steps=51 format=4 uid="uid://6dd2cbybvcqg"]
 
 [ext_resource type="Texture2D" uid="uid://bqfeqtdw7xcxo" path="res://Art/Sprites/Backgrounds/background.png" id="1_dtx2u"]
 [ext_resource type="Script" path="res://Scripts/LevelInfo.gd" id="1_jxryb"]
 [ext_resource type="PackedScene" uid="uid://dngf3odx0yf5k" path="res://Prefabs/player.tscn" id="2_hossx"]
 [ext_resource type="Script" path="res://Scripts/CameraController.gd" id="4_psc51"]
 [ext_resource type="PackedScene" uid="uid://ctlx3qylqphyo" path="res://Prefabs/BlockSpawner.tscn" id="5_74oay"]
-[ext_resource type="Texture2D" uid="uid://cm1bxb5y7kb" path="res://Art/Sprites/UI/ui_throbber.png" id="5_aae1a"]
 [ext_resource type="TileSet" uid="uid://gg3bh8fgpw3d" path="res://Art/Tilemaps/Tilemap_Brown Bricks.tres" id="5_tg1dj"]
 [ext_resource type="Script" path="res://Scripts/SpawnObject.gd" id="6_xpr8c"]
 [ext_resource type="PackedScene" uid="uid://r1kjk04fwuou" path="res://Prefabs/Spawn On Blocks/Hold.tscn" id="7_k1ys1"]
 [ext_resource type="PackedScene" uid="uid://bkatak76uuoli" path="res://Prefabs/Spawn On Blocks/Campfire.tscn" id="8_786g4"]
 [ext_resource type="Script" path="res://Scripts/LightFlicker.gd" id="8_dac0d"]
+[ext_resource type="Texture2D" uid="uid://b0vi320ea7lth" path="res://Art/Sprites/UI/ui_background.png" id="9_g2wcy"]
+[ext_resource type="Material" uid="uid://cg4fprgafhcxd" path="res://Art/unshaded_material.tres" id="9_tcfxi"]
 [ext_resource type="PackedScene" uid="uid://dhrgrpwwax6i8" path="res://Prefabs/Spawn On Blocks/Spikes.tscn" id="9_teir6"]
 [ext_resource type="Script" path="res://Scripts/WaterLevel.gd" id="10_7kdmf"]
 [ext_resource type="Texture2D" uid="uid://b3oj42r81wxap" path="res://Art/Sprites/UI/ui_frame.png" id="10_ixs36"]
@@ -21,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://b3c0skin4w372" path="res://Prefabs/Spawn On Blocks/idol.tscn" id="13_jfp1q"]
 [ext_resource type="Texture2D" uid="uid://cra8a72oqq7vi" path="res://Art/Sprites/Idol.png" id="13_pmlcy"]
 [ext_resource type="PackedScene" uid="uid://mcu32jepdsb3" path="res://Prefabs/Dynamite.tscn" id="16_3kw41"]
+[ext_resource type="Texture2D" uid="uid://dsu3it2jkk2ou" path="res://Art/Sprites/UI/ui_divider.png" id="16_ajrd8"]
 [ext_resource type="PackedScene" uid="uid://def2hxxjwwhvl" path="res://Prefabs/Door.tscn" id="19_owl44"]
 [ext_resource type="PackedScene" uid="uid://cah82i8ualvd0" path="res://Prefabs/Pirahnas/pirahna.tscn" id="19_q2wtl"]
 [ext_resource type="Texture2D" uid="uid://dg585ad1tpgdc" path="res://Art/Sprites/Rope_Hook.png" id="20_71uq3"]
@@ -41,12 +43,6 @@ gradient = SubResource("Gradient_3eomj")
 fill = 1
 fill_from = Vector2(0.517094, 0.457265)
 fill_to = Vector2(0.91453, 0.132479)
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_faxfi"]
-light_mode = 1
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7gar6"]
-light_mode = 1
 
 [sub_resource type="Gradient" id="Gradient_xjqk1"]
 interpolation_mode = 1
@@ -98,9 +94,6 @@ spawn_count = 10
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vvcjm"]
 size = Vector2(237, 224)
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_rc0ob"]
-light_mode = 1
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x6sbg"]
 size = Vector2(2100, 219.255)
@@ -185,23 +178,15 @@ position = Vector2(1350, 550)
 position = Vector2(1133, 681)
 script = ExtResource("4_psc51")
 
-[node name="ColorRect" type="ColorRect" parent="Camera2D"]
-material = SubResource("CanvasItemMaterial_faxfi")
+[node name="TextureRect" type="TextureRect" parent="Camera2D"]
+modulate = Color(0, 0, 0, 0.596078)
+material = ExtResource("9_tcfxi")
 offset_left = -960.0
-offset_top = -540.0
-offset_right = -525.0
-offset_bottom = 541.0
-mouse_filter = 1
-color = Color(0, 0, 0, 0.537255)
-
-[node name="ColorRect2" type="ColorRect" parent="Camera2D"]
-material = SubResource("CanvasItemMaterial_7gar6")
-offset_left = -909.0
-offset_top = -252.0
-offset_right = -563.0
-offset_bottom = -66.0
-mouse_filter = 1
-color = Color(0, 0, 0, 0.537255)
+offset_top = -740.0
+offset_right = -409.0
+offset_bottom = 723.0
+texture = ExtResource("9_g2wcy")
+stretch_mode = 4
 
 [node name="UI" type="Node2D" parent="Camera2D" node_paths=PackedStringArray("height_label", "idol_icons")]
 script = ExtResource("10_wtk1j")
@@ -230,20 +215,20 @@ texture = ExtResource("10_ixs36")
 
 [node name="HeightUI" type="Label" parent="Camera2D/UI"]
 material = SubResource("CanvasItemMaterial_r3n8n")
-offset_left = -853.0
-offset_top = 135.0
-offset_right = -641.0
-offset_bottom = 218.0
+offset_left = -826.938
+offset_top = 60.0
+offset_right = -614.938
+offset_bottom = 143.0
 text = "00m"
 label_settings = SubResource("LabelSettings_448k6")
 horizontal_alignment = 1
 
 [node name="HeightUI2" type="Label" parent="Camera2D/UI"]
 material = SubResource("CanvasItemMaterial_bkhke")
-offset_left = -865.0
-offset_top = 223.0
-offset_right = -624.0
-offset_bottom = 273.0
+offset_left = -838.938
+offset_top = 148.0
+offset_right = -597.938
+offset_bottom = 198.0
 text = "To Escape!"
 label_settings = SubResource("LabelSettings_onxjg")
 horizontal_alignment = 1
@@ -251,14 +236,14 @@ horizontal_alignment = 1
 [node name="Idol1" type="Sprite2D" parent="Camera2D/UI"]
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_lftag")
-position = Vector2(-841, 358)
+position = Vector2(-820.938, 328)
 scale = Vector2(6, 6)
 texture = ExtResource("13_pmlcy")
 
 [node name="Idol2" type="Sprite2D" parent="Camera2D/UI"]
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_lftag")
-position = Vector2(-741, 358)
+position = Vector2(-720.938, 328)
 scale = Vector2(6, 6)
 texture = ExtResource("13_pmlcy")
 
@@ -266,9 +251,27 @@ texture = ExtResource("13_pmlcy")
 self_modulate = Color(0.254902, 0.254902, 0.254902, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_lftag")
-position = Vector2(-641, 358)
+position = Vector2(-620.938, 328)
 scale = Vector2(6, 6)
 texture = ExtResource("13_pmlcy")
+
+[node name="UiDivider" type="Sprite2D" parent="Camera2D/UI"]
+material = ExtResource("9_tcfxi")
+position = Vector2(-716.938, 415)
+scale = Vector2(3.125, 3.125)
+texture = ExtResource("16_ajrd8")
+
+[node name="UiDivider2" type="Sprite2D" parent="Camera2D/UI"]
+material = ExtResource("9_tcfxi")
+position = Vector2(-713.938, 241)
+scale = Vector2(3.125, 3.125)
+texture = ExtResource("16_ajrd8")
+
+[node name="UiDivider3" type="Sprite2D" parent="Camera2D/UI"]
+material = ExtResource("9_tcfxi")
+position = Vector2(-716.938, -1)
+scale = Vector2(3.125, 3.125)
+texture = ExtResource("16_ajrd8")
 
 [node name="BlockSpawner" parent="Camera2D" node_paths=PackedStringArray("block_container", "held_block_container") instance=ExtResource("5_74oay")]
 position = Vector2(-741, -374)
@@ -283,22 +286,14 @@ spawn_object_probability = 0.5
 position = Vector2(-1.5, 0)
 shape = SubResource("RectangleShape2D_vvcjm")
 
-[node name="Block Queue Icon" type="Sprite2D" parent="Camera2D/BlockSpawner"]
-modulate = Color(0.56, 0.56, 0.56, 1)
-material = SubResource("CanvasItemMaterial_rc0ob")
-position = Vector2(-100, -100)
-scale = Vector2(3.125, 3.125)
-texture = ExtResource("5_aae1a")
-centered = false
-
 [node name="Dynamite" parent="Camera2D" instance=ExtResource("16_3kw41")]
-position = Vector2(-861, 43)
+position = Vector2(-823.938, -85)
 
 [node name="Dynamite3" parent="Camera2D" instance=ExtResource("16_3kw41")]
-position = Vector2(-660, 44)
+position = Vector2(-622.938, -84)
 
 [node name="Dynamite2" parent="Camera2D" instance=ExtResource("16_3kw41")]
-position = Vector2(-762, 44)
+position = Vector2(-724.938, -84)
 
 [node name="Held Block Container" type="Node2D" parent="."]
 

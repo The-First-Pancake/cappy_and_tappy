@@ -36,20 +36,19 @@ position = Vector2(1725, 1050)
 
 [node name="Glyph" parent="Glyph Container" index="0" instance=ExtResource("2_ekx62")]
 position = Vector2(1350, -100)
-rotation = 6.28319
 texture = ExtResource("3_t5v33")
 offset = Vector2(2.43836, -1.56176)
 
-[node name="Player" parent="." index="8"]
+[node name="Player" parent="." index="9"]
 position = Vector2(1275, 200)
 
-[node name="Idol" parent="." index="9"]
+[node name="Idol" parent="." index="10"]
 position = Vector2(1050, 50)
 
-[node name="Idol2" parent="." index="10"]
+[node name="Idol2" parent="." index="11"]
 position = Vector2(850, 650)
 
-[node name="Idol3" parent="." index="11"]
+[node name="Idol3" parent="." index="12"]
 position = Vector2(1600, 550)
 
 [node name="PlaceableCharacterBody2d14" parent="Block Container" index="0" instance=ExtResource("6_uelmd")]
@@ -160,18 +159,27 @@ rotation = -3.14159
 position = Vector2(1150, 850)
 rotation = 1.5708
 
-[node name="Camera2D" parent="." index="13"]
+[node name="Camera2D" parent="." index="14"]
 position = Vector2(1150, 996)
 
-[node name="Dynamite4" parent="Camera2D" index="3" instance=ExtResource("4_vgq27")]
-position = Vector2(-883, 21)
-
-[node name="BlockSpawner" parent="Camera2D" index="4"]
+[node name="BlockSpawner" parent="Camera2D" index="2"]
 block_prefabs = Array[PackedScene]([])
 spawn_objects = Array[ExtResource("2_7k4e2")]([SubResource("Resource_xd867")])
 spawn_object_probability = 0.075
 
-[node name="Water" parent="." index="15"]
+[node name="Dynamite4" parent="Camera2D" index="3" instance=ExtResource("4_vgq27")]
+position = Vector2(-858, -88)
+
+[node name="Dynamite" parent="Camera2D" index="4"]
+position = Vector2(-757, -87)
+
+[node name="Dynamite3" parent="Camera2D" index="5"]
+position = Vector2(-556, -87)
+
+[node name="Dynamite2" parent="Camera2D" index="6"]
+position = Vector2(-658, -87)
+
+[node name="Water" parent="." index="16"]
 rise_speed = 0.0
 
 [node name="Music" parent="Music Player" index="0"]
