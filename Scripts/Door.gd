@@ -13,7 +13,8 @@ extends Area2D
 var player_inside: bool = false
 
 func _ready() -> void:
-	door_frame.texture = door_frame_texture
+	if is_instance_valid(door_frame_texture):
+		door_frame.texture = door_frame_texture
 	await  get_tree().process_frame
 	if is_exit:
 		interior_wall.process_mode = Node.PROCESS_MODE_DISABLED

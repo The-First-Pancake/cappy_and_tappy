@@ -59,7 +59,7 @@ position = Vector2(800, -450)
 [node name="Idol3" parent="." index="12"]
 position = Vector2(1950, -2650)
 
-[node name="BlockSpawner" parent="Camera2D" index="3"]
+[node name="BlockSpawner" parent="Camera2D" index="2"]
 spawn_objects = Array[ExtResource("2_8tngy")]([SubResource("Resource_6716m"), SubResource("Resource_b3o7y"), SubResource("Resource_mwrdh"), SubResource("Resource_hb8f8"), SubResource("Resource_mfh2x")])
 
 [node name="PlaceableCharacterBody2d" parent="." index="16" instance=ExtResource("5_sry7q")]

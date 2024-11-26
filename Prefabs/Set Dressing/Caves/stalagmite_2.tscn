@@ -19,4 +19,4 @@ nbr_of_shards = 1
 
 [node name="CollisionPolygon2D" parent="." index="2"]
 position = Vector2(31.7, -54.4)
-polygon = PackedVector2Array(-21.6, 31.3, -7.6, -41.7, 1.4, 32.3, 5.4, 51.3, -31.6, 50.3)
+polygon = PackedVector2Array(-21.6, 31.3, -7.6, -41.7, 1.4, 32.3, 9.3, 48.4, -28.7, 48.4)
