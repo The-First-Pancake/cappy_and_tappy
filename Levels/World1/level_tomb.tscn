@@ -104,19 +104,19 @@ rotation = -3.14153
 [node name="NightLight" parent="Camera2D/UI" index="0"]
 visible = true
 
-[node name="BlockSpawner" parent="Camera2D" index="3"]
+[node name="BlockSpawner" parent="Camera2D" index="2"]
 position = Vector2(-733, -381)
 spawn_objects = Array[ExtResource("2_daaum")]([SubResource("Resource_6716m"), SubResource("Resource_mwrdh"), SubResource("Resource_lt208")])
 every_block_spawn_objects = Array[ExtResource("2_daaum")]([SubResource("Resource_47l2v")])
 
 [node name="Dynamite4" parent="Camera2D" index="5" instance=ExtResource("7_vw862")]
-position = Vector2(-833, -81)
+position = Vector2(-817, -182)
 
 [node name="Dynamite6" parent="Camera2D" index="7" instance=ExtResource("7_vw862")]
-position = Vector2(-633, -81)
+position = Vector2(-614, -187)
 
-[node name="Dynamite5" parent="Camera2D" index="9" instance=ExtResource("7_vw862")]
-position = Vector2(-733, -81)
+[node name="Dynamite5" parent="Camera2D" index="8" instance=ExtResource("7_vw862")]
+position = Vector2(-721, -187)
 
 [node name="Water" parent="." index="17"]
 rise_speed = 0.0
