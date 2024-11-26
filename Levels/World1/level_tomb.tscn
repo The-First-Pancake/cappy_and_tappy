@@ -110,13 +110,13 @@ spawn_objects = Array[ExtResource("2_daaum")]([SubResource("Resource_6716m"), Su
 every_block_spawn_objects = Array[ExtResource("2_daaum")]([SubResource("Resource_47l2v")])
 
 [node name="Dynamite4" parent="Camera2D" index="5" instance=ExtResource("7_vw862")]
-position = Vector2(-817, -182)
+position = Vector2(-853, -183)
 
 [node name="Dynamite6" parent="Camera2D" index="7" instance=ExtResource("7_vw862")]
-position = Vector2(-614, -187)
+position = Vector2(-650, -188)
 
 [node name="Dynamite5" parent="Camera2D" index="8" instance=ExtResource("7_vw862")]
-position = Vector2(-721, -187)
+position = Vector2(-757, -188)
 
 [node name="Water" parent="." index="17"]
 rise_speed = 0.0

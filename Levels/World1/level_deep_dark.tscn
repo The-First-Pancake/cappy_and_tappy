@@ -172,20 +172,23 @@ position = Vector2(3825, -1050)
 [node name="NightLight" parent="Camera2D/UI" index="0"]
 visible = true
 
-[node name="BlockSpawner" parent="Camera2D" index="3"]
+[node name="BlockSpawner" parent="Camera2D" index="2"]
 position = Vector2(-733, -331)
 spawn_objects = Array[ExtResource("2_qqjne")]([SubResource("Resource_phf7e")])
 spawn_object_probability = 0.2
 every_block_spawn_objects = Array[ExtResource("2_qqjne")]([SubResource("Resource_2thv6")])
 
-[node name="Dynamite" parent="Camera2D" index="4"]
-position = Vector2(-833, 44)
+[node name="Dynamite" parent="Camera2D" index="3"]
+position = Vector2(-867, -86)
 
-[node name="Dynamite3" parent="Camera2D" index="5"]
-position = Vector2(-608, 44)
+[node name="Dynamite3" parent="Camera2D" index="4"]
+position = Vector2(-642, -86)
 
-[node name="Dynamite4" parent="Camera2D" index="7" instance=ExtResource("6_xmhdf")]
-position = Vector2(-683, 44)
+[node name="Dynamite2" parent="Camera2D" index="5"]
+position = Vector2(-791, -87)
+
+[node name="Dynamite4" parent="Camera2D" index="6" instance=ExtResource("6_xmhdf")]
+position = Vector2(-717, -86)
 
 [node name="Water" parent="." index="20"]
 rise_speed = 0.0
