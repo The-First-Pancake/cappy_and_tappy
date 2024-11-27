@@ -249,7 +249,7 @@ scale = Vector2(6, 6)
 texture = ExtResource("13_pmlcy")
 
 [node name="Idol3" type="Sprite2D" parent="Camera2D/UI"]
-self_modulate = Color(0.254902, 0.254902, 0.254902, 1)
+self_modulate = Color(1, 1, 1, 0.129412)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_lftag")
 position = Vector2(-620.938, 328)

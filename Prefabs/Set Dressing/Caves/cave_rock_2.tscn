@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bvfwpw4rca00l"]
 
-[ext_resource type="PackedScene" uid="uid://skkd531ff5me" path="res://Prefabs/Set Dressing/SetDressingBase.tscn" id="1_sqjl8"]
+[ext_resource type="PackedScene" path="res://Prefabs/Set Dressing/SetDressingBase.tscn" id="1_sqjl8"]
 [ext_resource type="Texture2D" uid="uid://d3adjehoi15x4" path="res://Art/Sprites/caves/cave elements/rock 2_diffuse.png" id="2_4xhpw"]
 [ext_resource type="Texture2D" uid="uid://b2vnqa5h4sl3a" path="res://Art/Sprites/caves/cave elements/rock 2_normal.png" id="3_rv8fi"]
 
@@ -8,7 +8,7 @@
 diffuse_texture = ExtResource("2_4xhpw")
 normal_texture = ExtResource("3_rv8fi")
 
-[node name="SetDressingBase" instance=ExtResource("1_sqjl8")]
+[node name="Cave Rock 2" instance=ExtResource("1_sqjl8")]
 
 [node name="Sprite2D" parent="." index="0"]
 position = Vector2(-29, -25)

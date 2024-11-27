@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://3dyyiy80bsc1"]
+[gd_scene load_steps=5 format=3 uid="uid://ctu5rnc5fj1qa"]
 
-[ext_resource type="PackedScene" uid="uid://skkd531ff5me" path="res://Prefabs/Set Dressing/SetDressingBase.tscn" id="1_ffjxm"]
+[ext_resource type="PackedScene" path="res://Prefabs/Set Dressing/SetDressingBase.tscn" id="1_ffjxm"]
 [ext_resource type="Texture2D" uid="uid://ce5nou708g37" path="res://Art/Sprites/caves/cave elements/stalactite 2_diffuse.png" id="2_t1cqo"]
 [ext_resource type="Texture2D" uid="uid://bhlrdimg6wfn1" path="res://Art/Sprites/caves/cave elements/stalactite 2_normal.png" id="3_5wtgq"]
 
@@ -8,7 +8,7 @@
 diffuse_texture = ExtResource("2_t1cqo")
 normal_texture = ExtResource("3_5wtgq")
 
-[node name="SetDressingBase" instance=ExtResource("1_ffjxm")]
+[node name="Stalagtite" instance=ExtResource("1_ffjxm")]
 
 [node name="Sprite2D" parent="." index="0"]
 position = Vector2(-0.6, 0.399998)

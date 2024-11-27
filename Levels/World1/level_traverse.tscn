@@ -91,7 +91,7 @@ position = Vector2(5400, 930)
 [node name="Camera2D" parent="." index="14"]
 position = Vector2(1168, 700)
 
-[node name="BlockSpawner" parent="Camera2D" index="3"]
+[node name="BlockSpawner" parent="Camera2D" index="2"]
 block_prefabs = Array[PackedScene]([ExtResource("8_hrm7m"), ExtResource("9_57uvg"), ExtResource("10_cr0wi"), ExtResource("11_j1sbp"), ExtResource("12_hguw2"), ExtResource("13_r83ux")])
 spawn_objects = Array[ExtResource("7_yqrk1")]([])
 
