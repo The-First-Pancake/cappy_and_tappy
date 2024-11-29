@@ -309,9 +309,9 @@ func update_animations() -> void:
 func try_squash() -> void:
 	await get_tree().physics_frame
 	#This method could cause problems if the player temporarily clips into something due to moving really fast, but I've yet to run into that problem
-	if squash_detector.is_colliding(): 
-		if squash_detector.get_collision_normal() == Vector2.ZERO: #the ray is inside the object it's colliding with
-			die()
+	if squash_detector.is_colliding():
+		#if squash_detector.get_collision_normal() == Vector2.ZERO: #the ray is inside the object it's colliding with
+		die()
 
 var dying: bool = false
 func die() -> void:

@@ -16,15 +16,15 @@ func _ready() -> void:
 	if parent is Placeable:
 		parent.placed.connect(enter_pathfinding_graph)
 	else:
-		enter_pathfinding_graph()
+		call_deferred("enter_pathfinding_graph")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if placed:
 		if not active and not has_overlapping_bodies():
-			enter_pathfinding_graph()
+			call_deferred("enter_pathfinding_graph")
 		if active and has_overlapping_bodies():
-			remove_from_pathfinding_graph()
+			call_deferred("remove_from_pathfinding_graph")
 
 func _exit_tree() -> void:
 	if active:
