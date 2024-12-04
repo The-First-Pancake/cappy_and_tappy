@@ -60,13 +60,15 @@ position = Vector2(5.96046e-08, -61)
 shape = SubResource("CircleShape2D_rkgde")
 
 [node name="Harpoon Raycast" type="RayCast2D" parent="Harpoon"]
+visible = false
 position = Vector2(5.96046e-08, -60)
 target_position = Vector2(0, -250)
 hit_from_inside = true
 
 [node name="Tripwire" type="RayCast2D" parent="."]
-position = Vector2(5.59506e-08, -1.28)
+position = Vector2(0, -2)
 target_position = Vector2(0, -1600)
+hit_from_inside = true
 
 [node name="Squashable" type="Node" parent="."]
 script = ExtResource("2_64uom")
@@ -91,5 +93,7 @@ volume_db = -5.0
 
 [node name="Reel Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_21asn")
+volume_db = -10.0
+pitch_scale = 1.1
 
 [connection signal="body_entered" from="Harpoon" to="." method="_on_harpoon_body_entered"]

@@ -34,27 +34,24 @@ shape = SubResource("RectangleShape2D_bn7ml")
 [node name="Exit Door" parent="." index="5"]
 position = Vector2(1200, -750)
 
-[node name="Idol" parent="." index="8"]
+[node name="Idol" parent="." index="10"]
 position = Vector2(724, 1145)
 
-[node name="Idol2" parent="." index="9"]
+[node name="Idol2" parent="." index="11"]
 position = Vector2(800, 250)
 
-[node name="Idol3" parent="." index="10"]
+[node name="Idol3" parent="." index="12"]
 position = Vector2(800, -450)
 
 [node name="PlaceableCharacterBody2d" parent="Block Container" index="0" instance=ExtResource("6_r0jta")]
 position = Vector2(1200, -700)
 rotation = 1.5708
 
-[node name="BlockSpawner" parent="Camera2D" index="3"]
+[node name="BlockSpawner" parent="Camera2D" index="2"]
 spawn_objects = Array[ExtResource("2_xkwx5")]([SubResource("Resource_42wei"), SubResource("Resource_fa0pl"), SubResource("Resource_e12ps")])
 
-[node name="Water" parent="." index="14"]
+[node name="Water" parent="." index="16"]
 rise_speed = 10.0
-
-[node name="Music" parent="Music Player" index="0"]
-volume_db = -7.0
 
 [node name="Harpoon Launcher" parent="." index="17" instance=ExtResource("7_f5f8t")]
 position = Vector2(2050, 700)
@@ -143,3 +140,6 @@ rotation = -1.5708
 [node name="Harpoon Launcher14" parent="." index="38" instance=ExtResource("7_f5f8t")]
 position = Vector2(2050, -600)
 rotation = -1.5708
+
+[node name="Music" parent="Music Player" index="0"]
+volume_db = -7.0

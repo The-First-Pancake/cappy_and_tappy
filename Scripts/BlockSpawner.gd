@@ -54,17 +54,29 @@ func _process(delta: float) -> void:
 			if GameManager.currently_held_object is Placeable:
 				if mouse_in_return_block_click_area:
 					put_back_held_block() #put the block back
+				elif hovering_dynamite:
+					put_back_held_block()
+					hovering_dynamite.try_pickup()
 				else:
 					GameManager.currently_held_object.try_to_drop_block()
-			if GameManager.currently_held_object is Dynamite:
-				GameManager.currently_held_object.try_to_detonate()
+			elif GameManager.currently_held_object is Dynamite:
+				if mouse_in_return_block_click_area:
+					GameManager.currently_held_object.return_dynamite()
+					try_pickup_queued_block()
+				else:
+					GameManager.currently_held_object.try_to_detonate()
+					
 		else:
 			if hovering_dynamite:
 				hovering_dynamite.try_pickup()
-			elif is_instance_valid(queued_block): #If there is a block ready to be picked up
-				queued_block.enter_placing()
-				queued_block = null
-				spawn_timer.start()
+			else: #If there is a block ready to be picked up
+				try_pickup_queued_block()
+
+func try_pickup_queued_block() -> void:
+	if is_instance_valid(queued_block):
+		queued_block.enter_placing()
+		queued_block = null
+		spawn_timer.start()
 
 func add_spawn_object(object : SpawnObject) -> void:
 	spawn_objects.append(object)

@@ -1,9 +1,12 @@
-[gd_scene load_steps=14 format=3 uid="uid://h0xc2uwab1j3"]
+[gd_scene load_steps=17 format=3 uid="uid://h0xc2uwab1j3"]
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_pmrbu"]
+[ext_resource type="PackedScene" uid="uid://drkcihqmmm3u3" path="res://Prefabs/Set Dressing/Glyph.tscn" id="2_funkm"]
 [ext_resource type="Script" path="res://Scripts/SpawnObject.gd" id="2_qe506"]
+[ext_resource type="Texture2D" uid="uid://cikpid8cgqp1j" path="res://Art/Sprites/glyphs/glyph_arrow.png" id="3_3jd2f"]
 [ext_resource type="PackedScene" uid="uid://hetb2cu4cbew" path="res://Prefabs/Spawn On Blocks/BreakerSpike.tscn" id="3_jo624"]
 [ext_resource type="PackedScene" uid="uid://mcu32jepdsb3" path="res://Prefabs/Dynamite.tscn" id="4_0nkxk"]
+[ext_resource type="Texture2D" uid="uid://ci7oba5g2rfwe" path="res://Art/Sprites/glyphs/glyph_tnt.png" id="4_aax5q"]
 [ext_resource type="PackedScene" uid="uid://c4safo4pwme48" path="res://Prefabs/Blocks/1x4-Piece.tscn" id="5_qg14s"]
 [ext_resource type="PackedScene" uid="uid://caudmtkjwca1i" path="res://Prefabs/Blocks/L-Piece-Mirrored.tscn" id="6_vvt3v"]
 [ext_resource type="PackedScene" uid="uid://b1lrc4bb14deo" path="res://Prefabs/Blocks/L-Piece.tscn" id="7_k8bjb"]
@@ -31,6 +34,15 @@ position = Vector2(1200, 550)
 [node name="Exit Door" parent="." index="5"]
 position = Vector2(1750, 1050)
 
+[node name="_Sprite2D_54129" parent="Glyph Container" index="0" instance=ExtResource("2_funkm")]
+position = Vector2(850, 400)
+rotation = 2.55297
+texture = ExtResource("3_3jd2f")
+
+[node name="_Sprite2D_54130" parent="Glyph Container" index="1" instance=ExtResource("2_funkm")]
+position = Vector2(1000, 300)
+texture = ExtResource("4_aax5q")
+
 [node name="Player" parent="." index="9"]
 position = Vector2(1125, 501)
 
@@ -44,7 +56,7 @@ position = Vector2(951, 1050)
 position = Vector2(1400, 950)
 
 [node name="PlaceableCharacterBody2d3" parent="Block Container" index="0" instance=ExtResource("5_qg14s")]
-position = Vector2(1050, 800)
+position = Vector2(1000, 800)
 rotation = 1.5708
 
 [node name="PlaceableCharacterBody2d13" parent="Block Container" index="1" instance=ExtResource("5_qg14s")]
@@ -60,7 +72,7 @@ position = Vector2(1200, 750)
 rotation = 1.5708
 
 [node name="PlaceableCharacterBody2d11" parent="Block Container" index="4" instance=ExtResource("7_k8bjb")]
-position = Vector2(850, 800)
+position = Vector2(800, 800)
 rotation = 3.14159
 
 [node name="PlaceableCharacterBody2d12" parent="Block Container" index="5" instance=ExtResource("7_k8bjb")]
@@ -99,11 +111,7 @@ rotation = 1.57079
 position = Vector2(1500, 550)
 rotation = -1.57079
 
-[node name="PlaceableCharacterBody2d2" parent="Block Container" index="14" instance=ExtResource("10_iquic")]
-position = Vector2(850, 500)
-rotation = 3.14159
-
-[node name="PlaceableCharacterBody2d10" parent="Block Container" index="15" instance=ExtResource("6_vvt3v")]
+[node name="PlaceableCharacterBody2d10" parent="Block Container" index="14" instance=ExtResource("6_vvt3v")]
 position = Vector2(1700, 750)
 rotation = 1.5708
 
