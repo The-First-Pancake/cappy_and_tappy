@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://Scripts/HoverDetector.gd" id="7_5le46"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nsrqv"]
-size = Vector2(86, 99)
+size = Vector2(98, 99)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ddjt2"]
 atlas = ExtResource("3_8ilru")
@@ -155,7 +155,6 @@ point_count = 5
 script = ExtResource("1_0xau1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_nsrqv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

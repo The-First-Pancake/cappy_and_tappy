@@ -13,6 +13,7 @@ var has_harpoon_landed: bool = false
 @onready var hit_sound: AudioStreamPlayer = $"Hit Sound"
 @onready var reel_sound: AudioStreamPlayer = $"Reel Sound"
 
+signal launch_approved
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -28,50 +29,60 @@ func _physics_process(delta: float) -> void:
 			return
 	if !launched:
 		var tripping_obj: Object = tripwire.get_collider()
-		if tripping_obj is Placeable:
-			if tripping_obj.state == Placeable.PlaceState.FALLING:
-				if tripping_obj.targeted_by_harpoon: return #if another harpoon already has plans
-				tripping_obj.targeted_by_harpoon = true
-				launched = true
+		if tripping_obj is Placeable and tripping_obj.state == Placeable.PlaceState.FALLING:
+			if tripping_obj.targeted_by_harpoon: return #if the block has already negotiated which harpoon will target it
+			tripping_obj.try_to_target_by_harpoon(self)
+			
+			await launch_approved
+			launched = true
+			
+			AudioManager.PlayAudio(launch_sound)
+			
+			var direction: Vector2 = Vector2.from_angle( global_rotation - deg_to_rad(90))
+			direction = direction.normalized()
+			direction = direction.round()
+			rope.visible = true
+			var range: float = 1600
+			var speed: float = 5000
+			
+			var hit_block: Node2D = null
+			
+			
+			
+			while global_position.distance_to(harpoon.global_position) < range: #at a certain point, give up on the harpoon
+				harpoon_raycast.target_position.y = -speed * delta #The harpoon checks the ahead for the distance it's about to traverse
+				if harpoon_raycast.get_collider():
+					#and harpoon_raycast.get_collider() != get_parent()
+					hit_block = harpoon_raycast.get_collider()
+					harpoon.global_position = harpoon_raycast.get_collision_point() - direction * 50 #Back up the harpoon
+					break
+				else:
+					harpoon.global_position += delta*speed*direction
 				
-				AudioManager.PlayAudio(launch_sound)
+				await get_tree().process_frame
+			
+			AudioManager.PlayAudio(hit_sound)
+			
+			
+			
+			
+			has_harpoon_landed = true
+			
+			if hit_block and hit_block is Placeable:
+				var current_reel_sound: AudioStreamPlayer=  AudioManager.PlayAudio(reel_sound)
+				hit_block.enter_harpooned(-direction)
+				var cell_hit_pos: Vector2 = hit_block.get_closest_cell_center(harpoon.global_position)
+				var cell_local_pos: Vector2 = cell_hit_pos - hit_block.global_position
+				if direction.y == 0:
+					hit_block.global_position.y  = global_position.y - cell_local_pos.y
+				else:
+					hit_block.global_position.x  = global_position.x- cell_local_pos.x
+				harpoon.reparent(hit_block)
+				await hit_block.placed
+				current_reel_sound.stop()
+			elif hit_block:
+				harpoon.reparent(hit_block)
 				
-				var direction: Vector2 = Vector2.from_angle( global_rotation - deg_to_rad(90))
-				direction = direction.normalized()
-				direction = direction.round()
-				rope.visible = true
-				var range: float = 1600
-				var speed: float = 6000
-				
-				var hit_block: Node2D = null
-				
-				
-				
-				for i in range(range):
-					harpoon_raycast.target_position.y = -speed * delta #The harpoon checks the ahead for the distance it's about to traverse
-					if harpoon_raycast.get_collider() and harpoon_raycast.get_collider() != get_parent():
-						hit_block = harpoon_raycast.get_collider()
-						harpoon.global_position = harpoon_raycast.get_collision_point() - direction * 50
-						break
-					else:
-						harpoon.global_position += delta*speed*direction
-					
-					await get_tree().process_frame
-				
-				AudioManager.PlayAudio(hit_sound)
-				
-				has_harpoon_landed = true
-				
-				if hit_block and hit_block is Placeable:
-					hit_block.enter_harpooned(-direction)
-					var cell_hit_pos: Vector2 = hit_block.get_closest_cell_center(harpoon.global_position)
-					var cell_local_pos: Vector2 = cell_hit_pos - hit_block.global_position
-					if direction.y == 0:
-						hit_block.global_position.y  = global_position.y - cell_local_pos.y
-					else:
-						hit_block.global_position.x  = global_position.x- cell_local_pos.x
-					harpoon.global_position -= direction * 0 #Back up the harpoon
-					harpoon.reparent(hit_block)
 	else:
 		if is_instance_valid(harpoon):
 			if has_harpoon_landed:

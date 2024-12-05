@@ -65,6 +65,6 @@ func return_dynamite() -> void:
 
 func try_pickup() -> void:
 	if exploding: return
+	
 	reparent(BlockSpawner.instance.held_block_container)
 	GameManager.currently_held_object = self
-	

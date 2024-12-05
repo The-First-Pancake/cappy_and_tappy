@@ -32,9 +32,6 @@ const UNPLACED_COLLISION_LAYER : int = 7
 @onready var shatter_sound : AudioStreamPlayer = $Explosion3003 as AudioStreamPlayer
 
 var destroy_semaphore : Semaphore = Semaphore.new()
-var targeted_by_harpoon: bool = false
-var harpooned_accel: float = 3000
-var harpooned_dir: Vector2 = Vector2.RIGHT
 
 func _ready() -> void:
 	if (state == PlaceState.FALLING):
@@ -62,6 +59,10 @@ func _physics_process(delta: float) -> void:
 		if (collision):
 			if (collision.get_angle(up_direction) < deg_to_rad(45) and collision.get_angle(up_direction) > deg_to_rad(-45)):
 				enter_placed()
+		if closest_harpoon and !targeted_by_harpoon:
+			targeted_by_harpoon = true
+			closest_harpoon.launch_approved.emit()
+			
 	elif state == PlaceState.HARPOONED:
 		velocity += harpooned_accel * harpooned_dir * delta
 		var collision : KinematicCollision2D = move_and_collide(velocity * delta)
@@ -81,6 +82,18 @@ func _physics_process(delta: float) -> void:
 			var collision: KinematicCollision2D = move_and_collide(Vector2.DOWN * 20, true)
 			if !collision:
 				enter_falling()
+
+var targeted_by_harpoon: bool = false
+var closest_harpoon: Node2D = null
+var harpooned_accel: float = 2500
+var harpooned_dir: Vector2 = Vector2.RIGHT
+
+func try_to_target_by_harpoon(harpoon: Node2D) -> void:
+	if closest_harpoon == null:
+		closest_harpoon = harpoon
+	else:
+		if global_position.distance_to(closest_harpoon.global_position) > global_position.distance_to(harpoon.global_position):
+			closest_harpoon = harpoon
 
 func align_to_grid() -> void:
 	var grid_size: float = GameManager.GRID_SIZE
