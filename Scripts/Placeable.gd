@@ -150,7 +150,8 @@ func enter_falling() -> void:
 			area_2d_child.set_collision_layer_value(DEFAULT_COLLISION_LAYER, true);
 			area_2d_child.set_collision_layer_value(UNPLACED_COLLISION_LAYER, false);
 	
-	reparent(BlockSpawner.instance.block_container)
+	if is_instance_valid(BlockSpawner.instance):
+		reparent(BlockSpawner.instance.block_container)
 	modulate.a = 1 # make solid
 	state = PlaceState.FALLING
 	falling.emit()

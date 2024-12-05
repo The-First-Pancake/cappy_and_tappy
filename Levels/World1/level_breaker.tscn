@@ -1,9 +1,12 @@
-[gd_scene load_steps=17 format=3 uid="uid://cwr06a2yerm2q"]
+[gd_scene load_steps=21 format=3 uid="uid://cwr06a2yerm2q"]
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_vxill"]
 [ext_resource type="PackedScene" uid="uid://c4safo4pwme48" path="res://Prefabs/Blocks/1x4-Piece.tscn" id="2_r8fog"]
 [ext_resource type="Script" path="res://Scripts/SpawnObject.gd" id="2_tlwih"]
+[ext_resource type="Texture2D" uid="uid://dkxik361t2ox1" path="res://Art/Tilemaps/Background_Egypt.png" id="2_xlq5t"]
 [ext_resource type="PackedScene" uid="uid://hetb2cu4cbew" path="res://Prefabs/Spawn On Blocks/BreakerSpike.tscn" id="3_5a57g"]
+[ext_resource type="TileSet" uid="uid://cdp351ovo7gk4" path="res://Art/Tilemaps/Tilemap_Egypt.tres" id="3_307q7"]
+[ext_resource type="Texture2D" uid="uid://de7qarsddqn83" path="res://Art/Sprites/egypt/door_diffuse.png" id="3_ant1a"]
 [ext_resource type="PackedScene" uid="uid://r1kjk04fwuou" path="res://Prefabs/Spawn On Blocks/Hold.tscn" id="3_vod7p"]
 [ext_resource type="PackedScene" uid="uid://bkatak76uuoli" path="res://Prefabs/Spawn On Blocks/Campfire.tscn" id="4_vfsf8"]
 [ext_resource type="PackedScene" uid="uid://b1lrc4bb14deo" path="res://Prefabs/Blocks/L-Piece.tscn" id="4_wgcho"]
@@ -12,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://c7c8vai4olkeh" path="res://Prefabs/Blocks/T-Piece.tscn" id="6_kb5xa"]
 [ext_resource type="PackedScene" uid="uid://cn5g0kaav20lj" path="res://Prefabs/Spawn On Blocks/ArrowSpitter.tscn" id="7_cqoqo"]
 [ext_resource type="PackedScene" uid="uid://bdyf8npx3i7xk" path="res://Prefabs/Blocks/2x2-Piece.tscn" id="8_mfjac"]
+[ext_resource type="AudioStream" uid="uid://d2kuoqyw1rd57" path="res://Sound/Music/the pharaoh's curse.wav" id="15_0ssrv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ntxp"]
 size = Vector2(1350, 17100)
@@ -32,131 +36,150 @@ spawn_prefab = ExtResource("5_2opmn")
 spawn_count = 10
 
 [node name="Template Level" instance=ExtResource("1_vxill")]
+temple_type = 1
+
+[node name="Background" parent="Background Parallax" index="0"]
+texture = ExtResource("2_xlq5t")
 
 [node name="CollisionShape2D" parent="Camera Zone" index="0"]
 shape = SubResource("RectangleShape2D_5ntxp")
 
+[node name="Entrance Door" parent="." index="4"]
+door_frame_texture = ExtResource("3_ant1a")
+
 [node name="Exit Door" parent="." index="5"]
 position = Vector2(1150, -2150)
+door_frame_texture = ExtResource("3_ant1a")
 
-[node name="Idol" parent="." index="8"]
-position = Vector2(950, -750)
+[node name="Environment" parent="." index="6"]
+tile_set = ExtResource("3_307q7")
 
-[node name="Idol2" parent="." index="9"]
-position = Vector2(1250, -750)
+[node name="BreakerSpike3" parent="Environment" index="0" instance=ExtResource("3_5a57g")]
+position = Vector2(576, 336.64)
+scale = Vector2(0.32, 0.32)
 
-[node name="Idol3" parent="." index="10"]
-position = Vector2(1550, -750)
+[node name="BreakerSpike5" parent="Environment" index="1" instance=ExtResource("3_5a57g")]
+position = Vector2(544, 336.64)
+scale = Vector2(0.32, 0.32)
 
-[node name="BlockSpawner" parent="Camera2D" index="3"]
-spawn_objects = Array[ExtResource("2_tlwih")]([SubResource("Resource_6716m"), SubResource("Resource_24x4w"), SubResource("Resource_mwrdh")])
+[node name="BreakerSpike8" parent="Environment" index="2" instance=ExtResource("3_5a57g")]
+position = Vector2(512, 336.64)
+scale = Vector2(0.32, 0.32)
 
-[node name="BreakerSpike" parent="." index="15" instance=ExtResource("3_5a57g")]
-position = Vector2(1850, 1051)
+[node name="BreakerSpike10" parent="Environment" index="3" instance=ExtResource("3_5a57g")]
+position = Vector2(480, 336.64)
+rotation = -3.14159
+scale = Vector2(0.32, 0.32)
 
-[node name="BreakerSpike3" parent="." index="16" instance=ExtResource("3_5a57g")]
-position = Vector2(1750, 1052)
+[node name="BreakerSpike12" parent="Environment" index="4" instance=ExtResource("3_5a57g")]
+position = Vector2(448, 336.64)
+rotation = -3.14159
+scale = Vector2(0.32, 0.32)
 
-[node name="BreakerSpike5" parent="." index="17" instance=ExtResource("3_5a57g")]
-position = Vector2(1650, 1052)
+[node name="BreakerSpike14" parent="Environment" index="5" instance=ExtResource("3_5a57g")]
+position = Vector2(416, 336.64)
+rotation = -3.14159
+scale = Vector2(0.32, 0.32)
 
-[node name="BreakerSpike8" parent="." index="18" instance=ExtResource("3_5a57g")]
-position = Vector2(1550, 1052)
-
-[node name="BreakerSpike9" parent="." index="19" instance=ExtResource("3_5a57g")]
-position = Vector2(1350, -900)
-
-[node name="BreakerSpike13" parent="." index="20" instance=ExtResource("3_5a57g")]
+[node name="BreakerSpike13" parent="Environment Container" index="0" instance=ExtResource("3_5a57g")]
 position = Vector2(1150, -800)
 
-[node name="BreakerSpike15" parent="." index="21" instance=ExtResource("3_5a57g")]
+[node name="BreakerSpike15" parent="Environment Container" index="1" instance=ExtResource("3_5a57g")]
 position = Vector2(1050, -900)
 
-[node name="BreakerSpike16" parent="." index="22" instance=ExtResource("3_5a57g")]
+[node name="BreakerSpike16" parent="Environment Container" index="2" instance=ExtResource("3_5a57g")]
 position = Vector2(750, -900)
 
-[node name="BreakerSpike17" parent="." index="23" instance=ExtResource("3_5a57g")]
+[node name="BreakerSpike17" parent="Environment Container" index="3" instance=ExtResource("3_5a57g")]
 position = Vector2(850, -800)
 
-[node name="BreakerSpike11" parent="." index="24" instance=ExtResource("3_5a57g")]
+[node name="BreakerSpike9" parent="Environment Container" index="4" instance=ExtResource("3_5a57g")]
+position = Vector2(1350, -900)
+
+[node name="BreakerSpike11" parent="Environment Container" index="5" instance=ExtResource("3_5a57g")]
 position = Vector2(1450, -800)
 
-[node name="BreakerSpike10" parent="." index="25" instance=ExtResource("3_5a57g")]
-position = Vector2(1450, 1052)
+[node name="Idol" parent="." index="10"]
+position = Vector2(950, -750)
 
-[node name="BreakerSpike12" parent="." index="26" instance=ExtResource("3_5a57g")]
-position = Vector2(1350, 1052)
+[node name="Idol2" parent="." index="11"]
+position = Vector2(1250, -750)
 
-[node name="BreakerSpike14" parent="." index="27" instance=ExtResource("3_5a57g")]
-position = Vector2(1250, 1052)
+[node name="Idol3" parent="." index="12"]
+position = Vector2(1550, -750)
 
-[node name="PlaceableCharacterBody2d2" parent="." index="29" instance=ExtResource("4_wgcho")]
+[node name="PlaceableCharacterBody2d2" parent="Block Container" index="0" instance=ExtResource("4_wgcho")]
 position = Vector2(850, -500)
 rotation = 1.5708
 
-[node name="PlaceableCharacterBody2d3" parent="." index="30" instance=ExtResource("4_wgcho")]
+[node name="PlaceableCharacterBody2d3" parent="Block Container" index="1" instance=ExtResource("4_wgcho")]
 position = Vector2(1150, -500)
 rotation = 1.5708
 
-[node name="PlaceableCharacterBody2d4" parent="." index="31" instance=ExtResource("4_wgcho")]
+[node name="PlaceableCharacterBody2d4" parent="Block Container" index="2" instance=ExtResource("4_wgcho")]
 position = Vector2(1450, -500)
 rotation = 1.5708
 
-[node name="PlaceableCharacterBody2d5" parent="." index="32" instance=ExtResource("5_wjv2m")]
+[node name="PlaceableCharacterBody2d5" parent="Block Container" index="3" instance=ExtResource("5_wjv2m")]
 position = Vector2(850, -600)
 rotation = 1.5708
 
-[node name="PlaceableCharacterBody2d6" parent="." index="33" instance=ExtResource("5_wjv2m")]
+[node name="PlaceableCharacterBody2d6" parent="Block Container" index="4" instance=ExtResource("5_wjv2m")]
 position = Vector2(1150, -600)
 rotation = 1.5708
 
-[node name="PlaceableCharacterBody2d7" parent="." index="34" instance=ExtResource("5_wjv2m")]
+[node name="PlaceableCharacterBody2d7" parent="Block Container" index="5" instance=ExtResource("5_wjv2m")]
 position = Vector2(1450, -600)
 rotation = 1.5708
 
-[node name="PlaceableCharacterBody2d8" parent="." index="35" instance=ExtResource("5_wjv2m")]
+[node name="PlaceableCharacterBody2d8" parent="Block Container" index="6" instance=ExtResource("5_wjv2m")]
 position = Vector2(1450, -600)
 rotation = 1.5708
 
-[node name="PlaceableCharacterBody2d9" parent="." index="36" instance=ExtResource("6_kb5xa")]
+[node name="PlaceableCharacterBody2d9" parent="Block Container" index="7" instance=ExtResource("6_kb5xa")]
 position = Vector2(800, -750)
 rotation = 3.14159
 
-[node name="PlaceableCharacterBody2d10" parent="." index="37" instance=ExtResource("6_kb5xa")]
+[node name="PlaceableCharacterBody2d10" parent="Block Container" index="8" instance=ExtResource("6_kb5xa")]
 position = Vector2(1100, -750)
 rotation = 3.14159
 
-[node name="PlaceableCharacterBody2d11" parent="." index="38" instance=ExtResource("6_kb5xa")]
+[node name="PlaceableCharacterBody2d11" parent="Block Container" index="9" instance=ExtResource("6_kb5xa")]
 position = Vector2(1400, -750)
 rotation = 3.14159
 
-[node name="PlaceableCharacterBody2d12" parent="." index="39" instance=ExtResource("2_r8fog")]
+[node name="PlaceableCharacterBody2d12" parent="Block Container" index="10" instance=ExtResource("2_r8fog")]
 position = Vector2(900, -2001)
 rotation = 1.5708
 
-[node name="Arrow_Spitter" parent="PlaceableCharacterBody2d12" index="5" instance=ExtResource("7_cqoqo")]
+[node name="Arrow_Spitter" parent="Block Container/PlaceableCharacterBody2d12" index="5" instance=ExtResource("7_cqoqo")]
 position = Vector2(49.9998, -50.0002)
 rotation = 0.0
 
-[node name="PlaceableCharacterBody2d13" parent="." index="40" instance=ExtResource("2_r8fog")]
+[node name="PlaceableCharacterBody2d13" parent="Block Container" index="11" instance=ExtResource("2_r8fog")]
 position = Vector2(1400, -2001)
 rotation = 1.5708
 
-[node name="Arrow_Spitter3" parent="PlaceableCharacterBody2d13" index="5" instance=ExtResource("7_cqoqo")]
+[node name="Arrow_Spitter3" parent="Block Container/PlaceableCharacterBody2d13" index="5" instance=ExtResource("7_cqoqo")]
 position = Vector2(50.0005, 150)
 rotation = 0.0
 
-[node name="Arrow_Spitter2" parent="PlaceableCharacterBody2d13" index="6" instance=ExtResource("7_cqoqo")]
+[node name="Arrow_Spitter2" parent="Block Container/PlaceableCharacterBody2d13" index="6" instance=ExtResource("7_cqoqo")]
 position = Vector2(49.9995, -150)
 rotation = 0.0
 
-[node name="PlaceableCharacterBody2d14" parent="." index="41" instance=ExtResource("6_kb5xa")]
+[node name="PlaceableCharacterBody2d14" parent="Block Container" index="12" instance=ExtResource("6_kb5xa")]
 position = Vector2(1150, -2051)
 rotation = -1.5708
 
-[node name="2x2 Piiece" parent="." index="42" instance=ExtResource("8_mfjac")]
+[node name="2x2 Piiece" parent="Block Container" index="13" instance=ExtResource("8_mfjac")]
 position = Vector2(1500, 250)
+rotation = 1.57079
 state = 2
 
+[node name="BlockSpawner" parent="Camera2D" index="2"]
+spawn_objects = Array[ExtResource("2_tlwih")]([SubResource("Resource_6716m"), SubResource("Resource_24x4w"), SubResource("Resource_mwrdh")])
+
 [node name="Music" parent="Music Player" index="0"]
-volume_db = -7.0
+stream = ExtResource("15_0ssrv")
+volume_db = -9.0

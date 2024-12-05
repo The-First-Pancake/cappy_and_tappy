@@ -45,24 +45,21 @@ position = Vector2(752, -464)
 rotation = 3.14159
 scale = Vector2(0.32, 0.32)
 
-[node name="Player" parent="." index="7"]
+[node name="Player" parent="." index="9"]
 position = Vector2(1029, 1000)
 
-[node name="Idol" parent="." index="8"]
+[node name="Idol" parent="." index="10"]
 position = Vector2(850, -350)
 
-[node name="Idol2" parent="." index="9"]
+[node name="Idol2" parent="." index="11"]
 position = Vector2(2750, -1350)
 
-[node name="Idol3" parent="." index="10"]
+[node name="Idol3" parent="." index="12"]
 position = Vector2(900, -2650)
-
-[node name="Water" parent="." index="14"]
-rise_speed = 12.0
 
 [node name="PlaceableCharacterBody2d" parent="." index="15" instance=ExtResource("2_35457")]
 position = Vector2(1750, -2500)
 rotation = 1.5708
 
-[node name="Music" parent="Music Player" index="0"]
-volume_db = -7.0
+[node name="Water" parent="." index="17"]
+rise_speed = 12.0

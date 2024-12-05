@@ -1,17 +1,19 @@
-[gd_scene load_steps=9 format=3 uid="uid://cr83b1gdrdbjg"]
+[gd_scene load_steps=10 format=3 uid="uid://cr83b1gdrdbjg"]
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_pdxa0"]
 [ext_resource type="PackedScene" uid="uid://c4safo4pwme48" path="res://Prefabs/Blocks/1x4-Piece.tscn" id="2_f6xab"]
 [ext_resource type="Texture2D" uid="uid://dkxik361t2ox1" path="res://Art/Tilemaps/Background_Egypt.png" id="2_gdr0f"]
 [ext_resource type="PackedScene" uid="uid://cn5g0kaav20lj" path="res://Prefabs/Spawn On Blocks/ArrowSpitter.tscn" id="3_0s6mf"]
 [ext_resource type="TileSet" uid="uid://cdp351ovo7gk4" path="res://Art/Tilemaps/Tilemap_Egypt.tres" id="3_8oekr"]
+[ext_resource type="Texture2D" uid="uid://de7qarsddqn83" path="res://Art/Sprites/egypt/door_diffuse.png" id="3_nn5y0"]
 [ext_resource type="PackedScene" uid="uid://bi6dqttan0e3f" path="res://Prefabs/ArrowSpitter-right.tscn" id="4_q65wd"]
-[ext_resource type="AudioStream" uid="uid://bs0ib4ihh3wc1" path="res://Sound/Music/Chill Level Music gmtk game jam 2024.wav" id="5_gjxcd"]
+[ext_resource type="AudioStream" uid="uid://d2kuoqyw1rd57" path="res://Sound/Music/the pharaoh's curse.wav" id="7_aim0b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pnp7k"]
 size = Vector2(1350, 17100)
 
 [node name="Template Level2" instance=ExtResource("1_pdxa0")]
+temple_type = 1
 
 [node name="Background" parent="Background Parallax" index="0"]
 texture = ExtResource("2_gdr0f")
@@ -19,8 +21,12 @@ texture = ExtResource("2_gdr0f")
 [node name="CollisionShape2D" parent="Camera Zone" index="0"]
 shape = SubResource("RectangleShape2D_pnp7k")
 
+[node name="Entrance Door" parent="." index="4"]
+door_frame_texture = ExtResource("3_nn5y0")
+
 [node name="Exit Door" parent="." index="5"]
 position = Vector2(1750, -2050)
+door_frame_texture = ExtResource("3_nn5y0")
 
 [node name="Environment" parent="." index="6"]
 tile_set = ExtResource("3_8oekr")
@@ -67,5 +73,5 @@ position = Vector2(2050, -2600)
 rotation = 3.14159
 
 [node name="Music" parent="Music Player" index="0"]
-stream = ExtResource("5_gjxcd")
-volume_db = -5.0
+stream = ExtResource("7_aim0b")
+volume_db = -9.0

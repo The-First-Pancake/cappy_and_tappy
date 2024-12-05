@@ -15,8 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://bdyf8npx3i7xk" path="res://Prefabs/Blocks/2x2-Piece.tscn" id="10_fg5cn"]
 [ext_resource type="PackedScene" uid="uid://caudmtkjwca1i" path="res://Prefabs/Blocks/L-Piece-Mirrored.tscn" id="11_jubwp"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vp3xe"]
-size = Vector2(1350, 17100)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pm82u"]
+size = Vector2(1350, 1600)
 
 [sub_resource type="Resource" id="Resource_xd867"]
 script = ExtResource("2_a01ky")
@@ -26,7 +26,8 @@ spawn_count = 1
 [node name="Template Level" instance=ExtResource("1_ab74x")]
 
 [node name="CollisionShape2D" parent="Camera Zone" index="0"]
-shape = SubResource("RectangleShape2D_vp3xe")
+position = Vector2(1375, 450)
+shape = SubResource("RectangleShape2D_pm82u")
 
 [node name="Entrance Door" parent="." index="4"]
 position = Vector2(900, 250)

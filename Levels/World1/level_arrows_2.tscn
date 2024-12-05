@@ -1,11 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://bsbavwvcn76q4"]
+[gd_scene load_steps=15 format=3 uid="uid://bsbavwvcn76q4"]
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_hx6d2"]
 [ext_resource type="Script" path="res://Scripts/SpawnObject.gd" id="2_g7o34"]
 [ext_resource type="PackedScene" uid="uid://c4safo4pwme48" path="res://Prefabs/Blocks/1x4-Piece.tscn" id="2_ma814"]
+[ext_resource type="Texture2D" uid="uid://dkxik361t2ox1" path="res://Art/Tilemaps/Background_Egypt.png" id="2_vaj0f"]
 [ext_resource type="PackedScene" uid="uid://r1kjk04fwuou" path="res://Prefabs/Spawn On Blocks/Hold.tscn" id="3_mhqar"]
+[ext_resource type="Texture2D" uid="uid://de7qarsddqn83" path="res://Art/Sprites/egypt/door_diffuse.png" id="3_qxn4j"]
+[ext_resource type="TileSet" uid="uid://cdp351ovo7gk4" path="res://Art/Tilemaps/Tilemap_Egypt.tres" id="3_uk3gg"]
 [ext_resource type="PackedScene" uid="uid://bkatak76uuoli" path="res://Prefabs/Spawn On Blocks/Campfire.tscn" id="4_ptrkp"]
 [ext_resource type="PackedScene" uid="uid://cn5g0kaav20lj" path="res://Prefabs/Spawn On Blocks/ArrowSpitter.tscn" id="5_mwpor"]
+[ext_resource type="AudioStream" uid="uid://d2kuoqyw1rd57" path="res://Sound/Music/the pharaoh's curse.wav" id="9_3d3gk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kcyiy"]
 size = Vector2(1350, 17100)
@@ -26,23 +30,34 @@ spawn_prefab = ExtResource("5_mwpor")
 spawn_count = 3
 
 [node name="Template Level" instance=ExtResource("1_hx6d2")]
+temple_type = 1
+
+[node name="Background" parent="Background Parallax" index="0"]
+texture = ExtResource("2_vaj0f")
 
 [node name="CollisionShape2D" parent="Camera Zone" index="0"]
 shape = SubResource("RectangleShape2D_kcyiy")
 
+[node name="Entrance Door" parent="." index="4"]
+door_frame_texture = ExtResource("3_qxn4j")
+
 [node name="Exit Door" parent="." index="5"]
 position = Vector2(1750, -1950)
+door_frame_texture = ExtResource("3_qxn4j")
 
-[node name="Idol" parent="." index="8"]
+[node name="Environment" parent="." index="6"]
+tile_set = ExtResource("3_uk3gg")
+
+[node name="Idol" parent="." index="10"]
 position = Vector2(1900, -450)
 
-[node name="Idol2" parent="." index="9"]
+[node name="Idol2" parent="." index="11"]
 position = Vector2(900, -1450)
 
-[node name="Idol3" parent="." index="10"]
+[node name="Idol3" parent="." index="12"]
 position = Vector2(900, -50)
 
-[node name="BlockSpawner" parent="Camera2D" index="3"]
+[node name="BlockSpawner" parent="Camera2D" index="2"]
 spawn_objects = Array[ExtResource("2_g7o34")]([SubResource("Resource_6716m"), SubResource("Resource_b3o7y"), SubResource("Resource_e1vjw")])
 
 [node name="PlaceableCharacterBody2d" parent="." index="15" instance=ExtResource("2_ma814")]
@@ -50,4 +65,5 @@ position = Vector2(1750, -1900)
 rotation = 1.5708
 
 [node name="Music" parent="Music Player" index="0"]
-volume_db = -7.0
+stream = ExtResource("9_3d3gk")
+volume_db = -9.0

@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://def2hxxjwwhvl"]
+[gd_scene load_steps=12 format=3 uid="uid://def2hxxjwwhvl"]
 
 [ext_resource type="Script" path="res://Scripts/Door.gd" id="1_4n4fl"]
 [ext_resource type="Texture2D" uid="uid://bbtysg0f5rsj4" path="res://Art/Sprites/caves/cave elements/Door_Background_Cave.png" id="3_616bk"]
 [ext_resource type="Texture2D" uid="uid://cvjveityc31tt" path="res://Art/Sprites/door/Door_Foreground.png" id="3_slp37"]
+[ext_resource type="Texture2D" uid="uid://de7qarsddqn83" path="res://Art/Sprites/egypt/door_diffuse.png" id="4_pqp24"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_va6go"]
 diffuse_texture = ExtResource("3_slp37")
@@ -40,7 +41,8 @@ texture = ExtResource("3_616bk")
 material = SubResource("CanvasItemMaterial_cjcuh")
 position = Vector2(0, -125)
 scale = Vector2(3.125, 3.125)
-texture = ExtResource("3_slp37")
+texture = ExtResource("4_pqp24")
+region_rect = Rect2(42.9908, 0, 21.0092, 20.2225)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -98)

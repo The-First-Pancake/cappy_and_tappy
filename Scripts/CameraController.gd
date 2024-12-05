@@ -51,6 +51,11 @@ var cam_pos: Vector2:
 	set(new_val):
 		global_position = new_val - Vector2(left_edge_UI_width,0)/2
 
+#TODO these don't really work right for reverse levels. Cutting them for now
+var last_camera_slide_dir: Vector2 = Vector2.ZERO
+var momentum_bonus: float = 100 #modifies the target position of the camera in the direction of last camera slide
+var momentum_trigger_modifier: float = 100 #modifies the trigger area in the direction of last camera slide
+
 func _process(delta: float) -> void:
 	var screen_left: float = cam_pos.x - cam_size.x/2
 	var screen_right: float = cam_pos.x + cam_size.x/2
@@ -71,6 +76,7 @@ func _process(delta: float) -> void:
 	var cam_zone: CameraZone = GameManager.player.current_camera_zone
 	var target_position: Vector2 = GameManager.player.global_position
 	
+	#target_position += momentum_bonus * last_camera_slide_dir
 	
 	if GameManager.player.looking_up: #look ahead
 		target_position.y -= look_ahead_distance
@@ -86,20 +92,26 @@ func _process(delta: float) -> void:
 	else:
 		current_cam_type = CamType.FREECAM
 	
-	if target_position.y < screen_top + screen_edge_trigger:
+	var top_trigger: float = screen_top + screen_edge_trigger
+	#if last_camera_slide_dir == Vector2.UP: top_trigger += momentum_trigger_modifier
+	if target_position.y < top_trigger:
 		if current_cam_type != CamType.HORIZONTAL:
+			last_camera_slide_dir = Vector2.UP
 			is_sliding = true
 		
 	if target_position.y > screen_bottom - screen_edge_trigger:
 		if current_cam_type != CamType.HORIZONTAL:
+			last_camera_slide_dir = Vector2.DOWN
 			is_sliding = true
 
 	if target_position.x < screen_left + screen_edge_trigger:
 		if current_cam_type != CamType.VERTICAL:
+			last_camera_slide_dir = Vector2.LEFT
 			is_sliding = true
 	
 	if target_position.x > screen_right - screen_edge_trigger:
 		if current_cam_type != CamType.VERTICAL:
+			last_camera_slide_dir = Vector2.RIGHT
 			is_sliding = true
 	
 	if current_cam_type != last_frame_cam_type:

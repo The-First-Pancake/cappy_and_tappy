@@ -550,7 +550,7 @@ stream = ExtResource("17_8twbf")
 
 [node name="Respawn" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("17_3wd0r")
-volume_db = -10.0
+volume_db = -20.0
 
 [node name="Griddy" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("18_w2nvq")

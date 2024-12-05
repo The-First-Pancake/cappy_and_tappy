@@ -108,7 +108,7 @@ light_mode = 1
 script = ExtResource("1_jxryb")
 
 [node name="Background Parallax" type="Parallax2D" parent="."]
-scroll_scale = Vector2(0.5, 0.5)
+scroll_scale = Vector2(0.8, 0.8)
 
 [node name="Background" type="TextureRect" parent="Background Parallax"]
 z_index = -1000
@@ -440,3 +440,4 @@ script = ExtResource("22_y5d0p")
 [node name="Music" type="AudioStreamPlayer" parent="Music Player"]
 unique_name_in_owner = true
 stream = ExtResource("23_cdry0")
+volume_db = -7.0

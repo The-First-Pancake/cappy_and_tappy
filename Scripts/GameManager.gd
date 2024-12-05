@@ -57,9 +57,9 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("skip_level"):
 		if get_tree().current_scene is not Control: #don't allow skip in menus
 			level_complete()
-	if Input.is_action_just_pressed("restart"): 
-		if get_tree().current_scene is not Control: #don't allow restart in menus
-			restart_level()
+	#if Input.is_action_just_pressed("restart"): 
+		#if get_tree().current_scene is not Control: #don't allow restart in menus
+			#restart_level()
 	if Input.is_action_just_pressed("ui_cancel"):
 		if get_tree().current_scene.name == "LevelSelect":
 			load_level_from_packed(splash_screen_scene)

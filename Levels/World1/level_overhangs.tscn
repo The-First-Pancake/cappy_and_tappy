@@ -15,13 +15,13 @@ shape = SubResource("RectangleShape2D_pv3m8")
 [node name="Exit Door" parent="." index="5"]
 position = Vector2(1750, -2450)
 
-[node name="Idol" parent="." index="9"]
+[node name="Idol" parent="." index="10"]
 position = Vector2(950, -150)
 
-[node name="Idol2" parent="." index="10"]
+[node name="Idol2" parent="." index="11"]
 position = Vector2(850, -1200)
 
-[node name="Idol3" parent="." index="11"]
+[node name="Idol3" parent="." index="12"]
 position = Vector2(1850, -2100)
 
 [node name="PlaceableCharacterBody2d2" parent="Block Container" index="0" instance=ExtResource("2_sc1g2")]
@@ -33,11 +33,11 @@ position = Vector2(1450, -100)
 rotation = 1.5708
 
 [node name="PlaceableCharacterBody2d4" parent="Block Container" index="2" instance=ExtResource("2_sc1g2")]
-position = Vector2(900, -1350)
+position = Vector2(900, -1400)
 rotation = 1.5708
 
 [node name="PlaceableCharacterBody2d5" parent="Block Container" index="3" instance=ExtResource("2_sc1g2")]
-position = Vector2(1300, -1350)
+position = Vector2(1300, -1400)
 rotation = 1.5708
 
 [node name="2x2 Piiece" parent="Block Container" index="4" instance=ExtResource("3_7qaxh")]
@@ -61,11 +61,11 @@ position = Vector2(1150, -2350)
 rotation = 1.57079
 
 [node name="2x2 Piiece6" parent="Block Container" index="9" instance=ExtResource("3_7qaxh")]
-position = Vector2(1100, -1200)
+position = Vector2(1100, -1250)
 rotation = 1.57079
 
 [node name="2x2 Piiece7" parent="Block Container" index="10" instance=ExtResource("3_7qaxh")]
-position = Vector2(1100, -1000)
+position = Vector2(1100, -1050)
 rotation = 1.57079
 
 [node name="Music" parent="Music Player" index="0"]

@@ -92,6 +92,47 @@ scale = Vector2(0.32, 0.32)
 position = Vector2(392, -855.36)
 scale = Vector2(0.32, 0.32)
 
+[node name="Scarab Beetle" parent="Environment Container" index="0" instance=ExtResource("11_wghro")]
+position = Vector2(700, -1150)
+
+[node name="Scarab Beetle9" parent="Environment Container" index="1" instance=ExtResource("11_wghro")]
+position = Vector2(550, -1150)
+
+[node name="Scarab Beetle10" parent="Environment Container" index="2" instance=ExtResource("11_wghro")]
+position = Vector2(450, -1150)
+
+[node name="Scarab Beetle2" parent="Environment Container" index="3" instance=ExtResource("11_wghro")]
+position = Vector2(800, -1300)
+rotation = -1.5708
+
+[node name="Scarab Beetle3" parent="Environment Container" index="4" instance=ExtResource("11_wghro")]
+position = Vector2(800, -1400)
+rotation = -1.5708
+
+[node name="Scarab Beetle4" parent="Environment Container" index="5" instance=ExtResource("11_wghro")]
+position = Vector2(700, -1550)
+rotation = -3.14159
+
+[node name="Scarab Beetle11" parent="Environment Container" index="6" instance=ExtResource("11_wghro")]
+position = Vector2(600, -1550)
+rotation = -3.14159
+
+[node name="Scarab Beetle5" parent="Environment Container" index="7" instance=ExtResource("11_wghro")]
+position = Vector2(500, -1550)
+rotation = -3.14159
+
+[node name="Scarab Beetle6" parent="Environment Container" index="8" instance=ExtResource("11_wghro")]
+position = Vector2(400, -1400)
+rotation = 1.57083
+
+[node name="Scarab Beetle7" parent="Environment Container" index="9" instance=ExtResource("11_wghro")]
+position = Vector2(400, -1500)
+rotation = 1.57083
+
+[node name="Scarab Beetle8" parent="Environment Container" index="10" instance=ExtResource("11_wghro")]
+position = Vector2(400, -1250)
+rotation = 1.57083
+
 [node name="Player" parent="." index="9"]
 position = Vector2(1178, 1000)
 
@@ -113,44 +154,3 @@ visible = true
 
 [node name="BlockSpawner" parent="Camera2D" index="2"]
 every_block_spawn_objects = Array[ExtResource("21_xtkim")]([SubResource("Resource_ub1w8")])
-
-[node name="Scarab Beetle" parent="." index="20" instance=ExtResource("11_wghro")]
-position = Vector2(700, -1150)
-
-[node name="Scarab Beetle9" parent="." index="21" instance=ExtResource("11_wghro")]
-position = Vector2(550, -1150)
-
-[node name="Scarab Beetle10" parent="." index="22" instance=ExtResource("11_wghro")]
-position = Vector2(450, -1150)
-
-[node name="Scarab Beetle2" parent="." index="23" instance=ExtResource("11_wghro")]
-position = Vector2(800, -1300)
-rotation = 4.71239
-
-[node name="Scarab Beetle3" parent="." index="24" instance=ExtResource("11_wghro")]
-position = Vector2(800, -1400)
-rotation = 4.71239
-
-[node name="Scarab Beetle4" parent="." index="25" instance=ExtResource("11_wghro")]
-position = Vector2(700, -1550)
-rotation = 9.42478
-
-[node name="Scarab Beetle11" parent="." index="26" instance=ExtResource("11_wghro")]
-position = Vector2(600, -1550)
-rotation = 9.42478
-
-[node name="Scarab Beetle5" parent="." index="27" instance=ExtResource("11_wghro")]
-position = Vector2(500, -1550)
-rotation = 9.42478
-
-[node name="Scarab Beetle6" parent="." index="28" instance=ExtResource("11_wghro")]
-position = Vector2(400, -1400)
-rotation = 14.1372
-
-[node name="Scarab Beetle7" parent="." index="29" instance=ExtResource("11_wghro")]
-position = Vector2(400, -1500)
-rotation = 14.1372
-
-[node name="Scarab Beetle8" parent="." index="30" instance=ExtResource("11_wghro")]
-position = Vector2(400, -1250)
-rotation = 14.1372
