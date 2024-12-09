@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://dngf3odx0yf5k"]
+[gd_scene load_steps=60 format=3 uid="uid://dngf3odx0yf5k"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_auxp4"]
 [ext_resource type="Texture2D" uid="uid://bapsbp2dcsltk" path="res://Art/Player/Player_canvas_texture.tres" id="2_g2orv"]
@@ -309,11 +309,16 @@ radius = 19.0
 height = 78.0
 
 [sub_resource type="Curve" id="Curve_tpu5v"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.1, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.747253), 0.0, 0.0, 0, 0]
-point_count = 3
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.835165), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="Gradient" id="Gradient_87cxs"]
-colors = PackedColorArray(0.61, 0.605222, 0.3233, 1, 0.84, 0.72576, 0.4368, 0.576471)
+offsets = PackedFloat32Array(0, 0.335025, 1)
+colors = PackedColorArray(0.611765, 0.603922, 0.321569, 0.780392, 0.84, 0.72576, 0.4368, 0.576471, 0.839216, 0.72549, 0.435294, 0)
+
+[sub_resource type="Curve" id="Curve_kuvxb"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.802198), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [node name="Player" type="CharacterBody2D"]
 light_mask = 2
@@ -436,16 +441,17 @@ color_ramp = SubResource("Gradient_87cxs")
 
 [node name="Hold Release Particles" type="CPUParticles2D" parent="."]
 z_as_relative = false
-position = Vector2(20, 37)
+position = Vector2(0, 37)
 emitting = false
-amount = 5
+amount = 10
 one_shot = true
-explosiveness = 1.0
-lifetime_randomness = 1.0
+explosiveness = 0.8
+randomness = 0.36
+lifetime_randomness = 0.13
 texture = ExtResource("3_xrsng")
 direction = Vector2(-1, -1)
 spread = 49.045
-gravity = Vector2(0, 0)
+gravity = Vector2(0, 100)
 initial_velocity_min = 28.07
 initial_velocity_max = 28.07
 angular_velocity_min = -121.69
@@ -464,8 +470,10 @@ emitting = false
 amount = 3
 one_shot = true
 explosiveness = 1.0
-lifetime_randomness = 1.0
+randomness = 1.0
 texture = ExtResource("3_xrsng")
+emission_shape = 3
+emission_rect_extents = Vector2(20, 1)
 direction = Vector2(-1, -1)
 spread = 49.045
 gravity = Vector2(0, 0)
@@ -480,21 +488,39 @@ scale_amount_max = 1.15
 scale_amount_curve = SubResource("Curve_tpu5v")
 color_ramp = SubResource("Gradient_87cxs")
 
-[node name="Land Particles" type="CPUParticles2D" parent="."]
+[node name="Jump Trail Particles" type="CPUParticles2D" parent="."]
 z_as_relative = false
 position = Vector2(1, 51)
 emitting = false
-amount = 3
-one_shot = true
-preprocess = 1.0
-explosiveness = 1.0
+amount = 50
+randomness = 1.0
 lifetime_randomness = 1.0
 texture = ExtResource("3_xrsng")
 direction = Vector2(-1, -1)
 spread = 49.045
-gravity = Vector2(0, 0)
+gravity = Vector2(0, 200)
 initial_velocity_min = 28.07
 initial_velocity_max = 28.07
+angular_velocity_min = -121.69
+angular_velocity_max = 121.69
+angle_min = -567.9
+angle_max = 567.9
+scale_amount_min = 0.5
+scale_amount_curve = SubResource("Curve_kuvxb")
+color_ramp = SubResource("Gradient_87cxs")
+
+[node name="Land Particles" type="CPUParticles2D" parent="."]
+z_as_relative = false
+position = Vector2(1, 51)
+emitting = false
+amount = 2
+lifetime = 0.5
+texture = ExtResource("3_xrsng")
+direction = Vector2(0, -1)
+spread = 18.06
+gravity = Vector2(0, 437.46)
+initial_velocity_min = 69.06
+initial_velocity_max = 151.02
 angular_velocity_min = -121.69
 angular_velocity_max = 121.69
 angle_min = -567.9

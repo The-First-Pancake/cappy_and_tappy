@@ -29,6 +29,7 @@ var campfires: Array[Campfire] = []
 #Particles
 @onready var slide_particles: CPUParticles2D = $"Slide Particles" as CPUParticles2D
 @onready var jump_particles: CPUParticles2D = $"Jump Particles" as CPUParticles2D
+@onready var jump_trail_particles: CPUParticles2D = $"Jump Trail Particles" as CPUParticles2D
 @onready var land_particles: CPUParticles2D = $"Land Particles" as CPUParticles2D
 @onready var hold_release_particles: CPUParticles2D = $"Hold Release Particles" as CPUParticles2D
 
@@ -108,8 +109,7 @@ func _physics_process(delta: float) -> void:
 	update_animations()
 	move_and_slide()
 	try_look_ahead()
-	try_squash()
-	
+	try_squash()	
 
 var current_camera_zone: CameraZone = null
 
@@ -160,7 +160,7 @@ func movement(delta: float) -> void:
 	var has_recently_left_ground: bool = coyote_timer.time_left != 0
 	
 	if !was_on_floor and is_on_floor():
-		land_particles.restart()
+		land_particles.emitting = true
 		AudioManager.PlayAudio(land_sound)
 	
 	#Jumping!
@@ -169,6 +169,9 @@ func movement(delta: float) -> void:
 		AudioManager.PlayAudio(jump_sound)
 		was_on_floor = false
 		velocity.y = jump_velocity
+		jump_trail_particles.emitting = true
+		await get_tree().create_timer(0.1).timeout
+		jump_trail_particles.emitting = false
 	else:
 		was_on_floor = is_on_floor()
 	
@@ -282,6 +285,7 @@ func update_animations() -> void:
 			slide_sound_playing = AudioManager.PlayAudio(slide_sound)
 		footstep_animator.stop()
 		sprite_animator.play("downslide")
+		land_particles.emitting = false
 		slide_particles.emitting = true
 	elif is_on_floor():
 		if is_instance_valid(slide_sound_playing):
@@ -292,6 +296,7 @@ func update_animations() -> void:
 				griddy_sound.stop()
 			sprite_animator.play("walk")
 			footstep_animator.play("footsteps")
+			land_particles.emitting = true
 		else:
 			if griddy_timer.time_left == 0:
 				sprite_animator.play("dance")
@@ -301,6 +306,7 @@ func update_animations() -> void:
 					griddy_sound.play()
 			else:
 				sprite_animator.play("idle")
+				land_particles.emitting = false
 				if AudioManager.current_music:
 					if AudioManager.current_music.stream_paused == true:
 						AudioManager.current_music.stream_paused = false
@@ -316,7 +322,9 @@ func update_animations() -> void:
 				griddy_sound.stop()
 		if abs(velocity.x) > 750:
 			sprite_animator.play("jump_reach")
+			land_particles.emitting = false
 		else:
+			land_particles.emitting = false
 			if abs(velocity.y) < 200:
 				sprite_animator.play("jump_hang")
 			elif velocity.y > 0:
