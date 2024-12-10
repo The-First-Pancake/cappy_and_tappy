@@ -12,7 +12,8 @@ script = ExtResource("1_n8hf1")
 enemy_prefab = ExtResource("2_seect")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-50, -50)
+position = Vector2(-59, -56)
+scale = Vector2(3.11111, 3.11111)
 texture = ExtResource("3_40vdg")
 centered = false
 
@@ -29,7 +30,7 @@ position = Vector2(0, -25)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(1, -1)
-polygon = PackedVector2Array(-37, -7, -36, -39, 36, -38, 37, -8)
+polygon = PackedVector2Array(-43, -3, -43, -40, 37, -40, 37, -3)
 
 [node name="LevelBuildingTools" type="Node" parent="."]
 script = ExtResource("6_cchq0")
