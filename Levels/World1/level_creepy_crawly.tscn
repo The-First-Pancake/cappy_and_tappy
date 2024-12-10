@@ -9,13 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://dgwixm1vxqs6t" path="res://Prefabs/Spawn On Blocks/Scarab_Beetle.tscn" id="4_rqqel"]
 [ext_resource type="TileSet" uid="uid://qi31weyfqxcu" path="res://Art/Tilemaps/Tilemap_Cave.tres" id="5_alr3a"]
 [ext_resource type="PackedScene" uid="uid://bkatak76uuoli" path="res://Prefabs/Spawn On Blocks/Campfire.tscn" id="5_wmk4b"]
-[ext_resource type="PackedScene" uid="uid://kehnr8pnv8uw" path="res://Prefabs/Set Dressing/Caves/stalagmite_3.tscn" id="6_c6g8b"]
+[ext_resource type="PackedScene" uid="uid://bqy74q6ja4k8y" path="res://Prefabs/Set Dressing/Caves/stalagmite_3.tscn" id="6_c6g8b"]
 [ext_resource type="PackedScene" uid="uid://c4safo4pwme48" path="res://Prefabs/Blocks/1x4-Piece.tscn" id="6_if8es"]
-[ext_resource type="PackedScene" uid="uid://3dyyiy80bsc1" path="res://Prefabs/Set Dressing/Caves/stalagtite_2.tscn" id="7_b1u3d"]
+[ext_resource type="PackedScene" uid="uid://ctu5rnc5fj1qa" path="res://Prefabs/Set Dressing/Caves/stalagtite_2.tscn" id="7_b1u3d"]
 [ext_resource type="PackedScene" uid="uid://caudmtkjwca1i" path="res://Prefabs/Blocks/L-Piece-Mirrored.tscn" id="7_c0com"]
-[ext_resource type="PackedScene" uid="uid://beyrhdb7gtcwe" path="res://Prefabs/Set Dressing/Caves/stalagtite_1.tscn" id="8_mlyat"]
+[ext_resource type="PackedScene" uid="uid://cydun7vf2fv0l" path="res://Prefabs/Set Dressing/Caves/stalagtite_1.tscn" id="8_mlyat"]
 [ext_resource type="PackedScene" uid="uid://b1lrc4bb14deo" path="res://Prefabs/Blocks/L-Piece.tscn" id="8_x6fxm"]
-[ext_resource type="PackedScene" uid="uid://mb3ersfadfnf" path="res://Prefabs/Set Dressing/Caves/stalagtite_3.tscn" id="9_057mk"]
+[ext_resource type="PackedScene" uid="uid://8w6gj777jn13" path="res://Prefabs/Set Dressing/Caves/stalagtite_3.tscn" id="9_057mk"]
 [ext_resource type="PackedScene" uid="uid://bdyf8npx3i7xk" path="res://Prefabs/Blocks/2x2-Piece.tscn" id="9_ax44s"]
 [ext_resource type="PackedScene" uid="uid://ddfihgi7jv5e6" path="res://Prefabs/Set Dressing/Caves/cave_rock_3.tscn" id="10_gnhdg"]
 [ext_resource type="PackedScene" uid="uid://ow664p7dqy8t" path="res://Prefabs/Set Dressing/Caves/cave_rock_1.tscn" id="11_5cuj2"]
@@ -49,6 +49,8 @@ spawn_prefab = ExtResource("5_wmk4b")
 spawn_count = 5
 
 [node name="Template Level" instance=ExtResource("1_arf61")]
+temple_type = 2
+dark = true
 
 [node name="Background" parent="Background Parallax" index="0"]
 texture = ExtResource("2_ecxdw")
@@ -116,6 +118,9 @@ rotation = 3.14159
 [node name="1x4 Block" parent="Block Container" index="3" instance=ExtResource("6_if8es")]
 position = Vector2(2350, 150)
 rotation = -3.14153
+
+[node name="NightLight" parent="Camera2D/UI" index="0"]
+visible = true
 
 [node name="BlockSpawner" parent="Camera2D" index="2"]
 spawn_objects = Array[ExtResource("2_b1p7q")]([SubResource("Resource_fa0pl"), SubResource("Resource_bl7r2"), SubResource("Resource_q3by3")])
@@ -235,9 +240,6 @@ rotation = 1.5708
 [node name="2x2 Piiece" parent="." index="46" instance=ExtResource("9_ax44s")]
 position = Vector2(1700, -450)
 rotation = 1.57079
-
-[node name="Music" parent="Music Player" index="0"]
-volume_db = -7.0
 
 [node name="Torch" parent="." index="50" instance=ExtResource("21_a3x5b")]
 position = Vector2(1350, -1050)

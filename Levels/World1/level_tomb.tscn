@@ -54,6 +54,8 @@ spawn_prefab = ExtResource("6_6jwv2")
 spawn_count = 1
 
 [node name="Template Level2" instance=ExtResource("1_ky0qr")]
+temple_type = 2
+dark = true
 
 [node name="Background" parent="Background Parallax" index="0"]
 texture = ExtResource("2_l8hg7")

@@ -32,11 +32,9 @@ enum TEMPLE_TYPE{
 	set(new_val):
 		dark = new_val
 		var dark_layer: CanvasModulate = $"Dark Layer"
-		var overhead_light: Node2D = $"Overhead Light"
 		var night_light: PointLight2D = $Camera2D/UI/NightLight
 		
 		dark_layer.visible = dark
-		overhead_light.visible = !dark
 		night_light.visible = dark
 
 @export var override_music: AudioStream = null:
@@ -48,7 +46,7 @@ enum TEMPLE_TYPE{
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	GameManager.level_info = self
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

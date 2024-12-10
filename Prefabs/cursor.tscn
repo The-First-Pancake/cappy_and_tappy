@@ -1,10 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://fq6lpryclmx1"]
+[gd_scene load_steps=7 format=3 uid="uid://fq6lpryclmx1"]
 
 [ext_resource type="Texture2D" uid="uid://br0oban6yicud" path="res://Art/cursor.png" id="1_k6h5x"]
 [ext_resource type="Script" path="res://Scripts/Cursor.gd" id="2_cvanp"]
+[ext_resource type="Script" path="res://Scripts/LightFlicker.gd" id="3_w6o6g"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_q8g4b"]
 light_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_mjwa8"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ex0ec"]
+gradient = SubResource("Gradient_mjwa8")
+fill = 1
+fill_from = Vector2(0.517094, 0.457265)
+fill_to = Vector2(0.91453, 0.111111)
 
 [node name="Cursor Canvas Layer" type="CanvasLayer"]
 layer = 2
@@ -15,3 +25,13 @@ material = SubResource("CanvasItemMaterial_q8g4b")
 texture = ExtResource("1_k6h5x")
 centered = false
 script = ExtResource("2_cvanp")
+
+[node name="PointLight2D" type="PointLight2D" parent="Cursor"]
+visible = false
+scale = Vector2(9.20313, 9.20313)
+color = Color(1, 0.889001, 0.811483, 1)
+energy = 0.55
+range_item_cull_mask = 3
+texture = SubResource("GradientTexture2D_ex0ec")
+height = 100.0
+script = ExtResource("3_w6o6g")

@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://8w6gj777jn13" path="res://Prefabs/Set Dressing/Caves/stalagtite_3.tscn" id="9_uhbuw"]
 [ext_resource type="PackedScene" uid="uid://cjstar8v3xqfj" path="res://Prefabs/Set Dressing/Caves/stalagtite_4.tscn" id="10_o3j3w"]
 [ext_resource type="PackedScene" uid="uid://cy5frea0jg8y6" path="res://Prefabs/Set Dressing/Caves/stalagmite_1.tscn" id="11_a150d"]
-[ext_resource type="PackedScene" path="res://Prefabs/Set Dressing/SetDressingBase.tscn" id="11_sg68s"]
+[ext_resource type="PackedScene" uid="uid://skkd531ff5me" path="res://Prefabs/Set Dressing/SetDressingBase.tscn" id="11_sg68s"]
 [ext_resource type="PackedScene" uid="uid://shunhb8lqjuh" path="res://Prefabs/Set Dressing/Caves/stalagmite_4.tscn" id="12_hey53"]
 [ext_resource type="PackedScene" uid="uid://bvfwpw4rca00l" path="res://Prefabs/Set Dressing/Caves/cave_rock_2.tscn" id="12_ngjyq"]
 [ext_resource type="PackedScene" uid="uid://ddfihgi7jv5e6" path="res://Prefabs/Set Dressing/Caves/cave_rock_3.tscn" id="13_cjqau"]
@@ -44,6 +44,8 @@ spawn_prefab = ExtResource("3_cmueb")
 spawn_count = 0
 
 [node name="Template Level2" instance=ExtResource("1_sxkng")]
+temple_type = 2
+dark = true
 
 [node name="Background" parent="Background Parallax" index="0"]
 texture = ExtResource("2_hc8rj")
