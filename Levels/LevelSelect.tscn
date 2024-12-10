@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://bjdpxtqaavny0"]
+[gd_scene load_steps=62 format=3 uid="uid://bjdpxtqaavny0"]
 
 [ext_resource type="Script" path="res://Scripts/LevelSelect.gd" id="1_7k26d"]
 [ext_resource type="Texture2D" uid="uid://bqfeqtdw7xcxo" path="res://Art/Sprites/Backgrounds/background.png" id="1_24j1o"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://bp3kgem2ebxnl" path="res://Levels/World1/level_overhangs.tscn" id="8_4i4d7"]
 [ext_resource type="Texture2D" uid="uid://cra8a72oqq7vi" path="res://Art/Sprites/Idol.png" id="8_fxcsu"]
 [ext_resource type="PackedScene" uid="uid://df0wpkdny65ci" path="res://Levels/World1/level_dynamite_2.tscn" id="9_00ax2"]
+[ext_resource type="PackedScene" uid="uid://c10tw0ejl1xjv" path="res://Levels/World1/level_climb_time.tscn" id="9_2x5l4"]
 [ext_resource type="PackedScene" uid="uid://b8ofjhklhy6o" path="res://Levels/World1/level_overhangs_xtreme.tscn" id="9_gryrf"]
 [ext_resource type="Texture2D" uid="uid://dcxkuua4cd4st" path="res://Art/Sprites/fire_small.png" id="9_wrau7"]
 [ext_resource type="PackedScene" uid="uid://bhw8owhdmmapa" path="res://Levels/World1/level_oops_all_long.tscn" id="10_353i2"]
@@ -212,6 +213,10 @@ scene_to_load = ExtResource("5_jchui")
 [node name="Level - Climbing Holds" parent="MarginContainer/VBoxContainer/Temple Container/Temple 1" instance=ExtResource("3_66fh1")]
 layout_mode = 2
 scene_to_load = ExtResource("6_6rq07")
+
+[node name="Level - Climb Time" parent="MarginContainer/VBoxContainer/Temple Container/Temple 1" instance=ExtResource("3_66fh1")]
+layout_mode = 2
+scene_to_load = ExtResource("9_2x5l4")
 
 [node name="Level - Up & Up" parent="MarginContainer/VBoxContainer/Temple Container/Temple 1" instance=ExtResource("3_66fh1")]
 layout_mode = 2

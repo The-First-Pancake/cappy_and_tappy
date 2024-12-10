@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://Prefabs/Set Dressing/Glyph.gd" id="2_1pghp"]
 
 [node name="Glyph" type="Sprite2D"]
-self_modulate = Color(0.831373, 0.67451, 0.388235, 0.380392)
+self_modulate = Color(0.831373, 0.713726, 0.498039, 0.380392)
 scale = Vector2(3.125, 3.125)
 texture = ExtResource("1_f2q7k")
 script = ExtResource("2_1pghp")
