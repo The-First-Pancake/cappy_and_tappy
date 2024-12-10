@@ -69,13 +69,11 @@ texture = ExtResource("2_bsear")
 controller_texture = ExtResource("4_vccbm")
 
 [node name="Glyph2" parent="Glyph Container" index="1" instance=ExtResource("2_kyjnv")]
-self_modulate = Color(0.831373, 0.713726, 0.498039, 0.380392)
 position = Vector2(1392.94, 948)
 texture = ExtResource("3_f6p84")
 controller_texture = ExtResource("6_dlufx")
 
 [node name="Glyph3" parent="Glyph Container" index="2" instance=ExtResource("2_kyjnv")]
-self_modulate = Color(0.831373, 0.713726, 0.498039, 0.380392)
 position = Vector2(1642.94, 948)
 texture = ExtResource("4_kfenh")
 controller_texture = ExtResource("8_fv7xg")
@@ -108,7 +106,7 @@ rotation = 1.57086
 
 [node name="L-Piece2" parent="Block Container" index="2" instance=ExtResource("12_grxer")]
 position = Vector2(1300, -100)
-rotation = 4.71245
+rotation = -1.57074
 
 [node name="1x4 Block" parent="Block Container" index="3" instance=ExtResource("13_v366v")]
 position = Vector2(1100, 400)

@@ -291,9 +291,10 @@ func update_animations() -> void:
 		if is_instance_valid(slide_sound_playing):
 			slide_sound_playing.queue_free()
 		if abs(velocity.x) > 10:
-			if AudioManager.current_music.stream_paused == true:
-				AudioManager.current_music.stream_paused = false
-				griddy_sound.stop()
+			if AudioManager.current_music:
+				if AudioManager.current_music.stream_paused == true:
+					AudioManager.current_music.stream_paused = false
+					griddy_sound.stop()
 			sprite_animator.play("walk")
 			footstep_animator.play("footsteps")
 			land_particles.emitting = true
