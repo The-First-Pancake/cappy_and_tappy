@@ -44,6 +44,8 @@ spawn_prefab = ExtResource("6_cj40t")
 spawn_count = 1
 
 [node name="Template Level2" instance=ExtResource("1_bq42n")]
+temple_type = 2
+dark = true
 
 [node name="Dark Layer" parent="." index="1"]
 visible = true
@@ -141,7 +143,7 @@ position = Vector2(-150, -1250)
 [node name="NightLight" parent="Camera2D/UI" index="0"]
 visible = true
 
-[node name="BlockSpawner" parent="Camera2D" index="3"]
+[node name="BlockSpawner" parent="Camera2D" index="2"]
 spawn_objects = Array[ExtResource("2_urr5l")]([SubResource("Resource_6716m"), SubResource("Resource_b3o7y"), SubResource("Resource_ni2ws")])
 every_block_spawn_objects = Array[ExtResource("2_urr5l")]([SubResource("Resource_jqfj3")])
 

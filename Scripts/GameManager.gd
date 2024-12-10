@@ -1,6 +1,7 @@
 extends Node
 
 var player : Player = null
+var level_info : LevelInfo = null
 var entrance_door : Door = null
 var exit_door : Door = null
 
@@ -111,6 +112,9 @@ func level_complete() -> void:
 func load_level_from_packed(scene: PackedScene) -> void:
 	current_level = scene
 	get_tree().change_scene_to_packed(scene)
+	# Takes two frames for this to actually happen
+	await get_tree().process_frame
+	await get_tree().process_frame
 	loaded_new_scene.emit()
 	time_since_unpause = 0
 	time_since_level_loaded = 0

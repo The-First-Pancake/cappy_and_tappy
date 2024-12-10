@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://dda8nqg6tucpi"]
+[gd_scene load_steps=16 format=4 uid="uid://dda8nqg6tucpi"]
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_5r77p"]
 [ext_resource type="Texture2D" uid="uid://22dhetwgepde" path="res://Art/Tilemaps/Background_Cave.png" id="2_gigp0"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dep1x0fmlo6tj" path="res://Prefabs/Torch.tscn" id="8_m4076"]
 [ext_resource type="PackedScene" uid="uid://caqkg5q5tvg35" path="res://Prefabs/Spawn On Blocks/scarab_spawner.tscn" id="10_junqt"]
 [ext_resource type="PackedScene" uid="uid://dgwixm1vxqs6t" path="res://Prefabs/Spawn On Blocks/Scarab_Beetle.tscn" id="11_wghro"]
+[ext_resource type="AudioStream" uid="uid://d2kuoqyw1rd57" path="res://Sound/Music/the pharaoh's curse.wav" id="12_mu60j"]
 [ext_resource type="Script" path="res://Scripts/SpawnObject.gd" id="21_xtkim"]
 [ext_resource type="PackedScene" uid="uid://di2wrjiflt752" path="res://Prefabs/Spawn On Blocks/Sconce.tscn" id="22_ii2b5"]
 
@@ -26,6 +27,8 @@ spawn_prefab = ExtResource("22_ii2b5")
 spawn_count = 0
 
 [node name="Template Level" instance=ExtResource("1_5r77p")]
+temple_type = 2
+dark = true
 
 [node name="Background" parent="Background Parallax" index="0"]
 texture = ExtResource("2_gigp0")
@@ -154,3 +157,7 @@ visible = true
 
 [node name="BlockSpawner" parent="Camera2D" index="2"]
 every_block_spawn_objects = Array[ExtResource("21_xtkim")]([SubResource("Resource_ub1w8")])
+
+[node name="Music" parent="Music Player" index="0"]
+stream = ExtResource("12_mu60j")
+volume_db = -9.0

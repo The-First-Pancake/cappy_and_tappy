@@ -17,10 +17,20 @@ var pl2_act_to_remap : Array[String] = ["controller_mouse_left",
 var mouse_pos : Vector2 = Vector2()
 var mouse_speed : float = 25
 
+@onready var point_light_2d: LightFlicker = $PointLight2D
+
 func _ready() -> void:
 	mouse_pos = get_window().get_mouse_position()
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	GameManager.loaded_new_scene.connect(on_scene_load)
 	pass
+
+func on_scene_load() -> void:
+	if is_instance_valid(GameManager.level_info):
+		point_light_2d.visible = GameManager.level_info.dark
+	else:
+		point_light_2d.visible = false
+	
 
 func _process(_delta: float) -> void:
 	check_for_controllers()

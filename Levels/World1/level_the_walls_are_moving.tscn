@@ -13,9 +13,9 @@
 [ext_resource type="TileSet" uid="uid://qi31weyfqxcu" path="res://Art/Tilemaps/Tilemap_Cave.tres" id="5_gtrh7"]
 [ext_resource type="PackedScene" uid="uid://b1lrc4bb14deo" path="res://Prefabs/Blocks/L-Piece.tscn" id="6_ips2k"]
 [ext_resource type="PackedScene" uid="uid://cn5g0kaav20lj" path="res://Prefabs/Spawn On Blocks/ArrowSpitter.tscn" id="6_ran0i"]
-[ext_resource type="PackedScene" uid="uid://d3f5c6dr5lv7n" path="res://Prefabs/Set Dressing/Caves/stalagmite_1.tscn" id="6_u1hag"]
+[ext_resource type="PackedScene" uid="uid://cy5frea0jg8y6" path="res://Prefabs/Set Dressing/Caves/stalagmite_1.tscn" id="6_u1hag"]
 [ext_resource type="PackedScene" uid="uid://b18bfarstrufp" path="res://Prefabs/Set Dressing/Caves/stalagmite_2.tscn" id="7_w6yy8"]
-[ext_resource type="PackedScene" uid="uid://kehnr8pnv8uw" path="res://Prefabs/Set Dressing/Caves/stalagmite_3.tscn" id="8_48dqk"]
+[ext_resource type="PackedScene" uid="uid://bqy74q6ja4k8y" path="res://Prefabs/Set Dressing/Caves/stalagmite_3.tscn" id="8_48dqk"]
 [ext_resource type="PackedScene" uid="uid://bvfwpw4rca00l" path="res://Prefabs/Set Dressing/Caves/cave_rock_2.tscn" id="9_p7hs0"]
 [ext_resource type="PackedScene" uid="uid://bdyf8npx3i7xk" path="res://Prefabs/Blocks/2x2-Piece.tscn" id="9_xjyhq"]
 [ext_resource type="PackedScene" uid="uid://ow664p7dqy8t" path="res://Prefabs/Set Dressing/Caves/cave_rock_1.tscn" id="10_n2h1r"]
@@ -53,6 +53,8 @@ spawn_prefab = ExtResource("6_ran0i")
 spawn_count = 5
 
 [node name="Template Level2" instance=ExtResource("1_jhrg7")]
+temple_type = 2
+dark = true
 
 [node name="Background" parent="Background Parallax" index="0"]
 texture = ExtResource("2_q2nbq")
@@ -116,6 +118,9 @@ rotation = 1.57079
 [node name="1x4 Block" parent="Block Container" index="3" instance=ExtResource("5_dty44")]
 position = Vector2(1000, 0)
 rotation = 1.57086
+
+[node name="NightLight" parent="Camera2D/UI" index="0"]
+visible = true
 
 [node name="BlockSpawner" parent="Camera2D" index="2"]
 spawn_objects = Array[ExtResource("2_kk4ad")]([SubResource("Resource_fa0pl"), SubResource("Resource_q3by3"), SubResource("Resource_bl7r2"), SubResource("Resource_mjlyc")])
@@ -181,6 +186,3 @@ rotation = 1.5708
 [node name="Scarab Beetle16" parent="." index="32" instance=ExtResource("4_qcl3k")]
 position = Vector2(1100, -600)
 rotation = 1.5708
-
-[node name="Music" parent="Music Player" index="0"]
-volume_db = -7.0
