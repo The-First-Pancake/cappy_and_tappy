@@ -31,6 +31,56 @@ door_frame_texture = ExtResource("3_nn5y0")
 [node name="Environment" parent="." index="6"]
 tile_set = ExtResource("3_8oekr")
 
+[node name="Arrow_Spitter" parent="Environment" index="0" instance=ExtResource("3_0s6mf")]
+position = Vector2(224, 32)
+rotation = 0.0
+scale = Vector2(0.32, 0.32)
+
+[node name="Arrow_Spitter2" parent="Environment" index="1" instance=ExtResource("3_0s6mf")]
+position = Vector2(224, -320)
+rotation = 0.0
+scale = Vector2(0.32, 0.32)
+
+[node name="Arrow_Spitter3" parent="Environment" index="2" instance=ExtResource("3_0s6mf")]
+position = Vector2(224, -640)
+rotation = 0.0
+scale = Vector2(0.32, 0.32)
+
+[node name="Arrow_Spitter6" parent="Environment" index="3" instance=ExtResource("4_q65wd")]
+position = Vector2(656, 160)
+rotation = 3.14159
+scale = Vector2(0.32, 0.32)
+
+[node name="Arrow_Spitter7" parent="Environment" index="4" instance=ExtResource("4_q65wd")]
+position = Vector2(656, -160)
+rotation = 3.14159
+scale = Vector2(0.32, 0.32)
+
+[node name="Arrow_Spitter8" parent="Environment" index="5" instance=ExtResource("4_q65wd")]
+position = Vector2(656, -480)
+rotation = 3.14159
+scale = Vector2(0.32, 0.32)
+
+[node name="Arrow_Spitter10" parent="Environment" index="6" instance=ExtResource("4_q65wd")]
+position = Vector2(656, -800)
+rotation = 3.14159
+scale = Vector2(0.32, 0.32)
+
+[node name="Arrow_Spitter12" parent="Environment" index="7" instance=ExtResource("4_q65wd")]
+position = Vector2(656, -768)
+rotation = 3.14159
+scale = Vector2(0.32, 0.32)
+
+[node name="Arrow_Spitter11" parent="Environment" index="8" instance=ExtResource("4_q65wd")]
+position = Vector2(656, -864)
+rotation = 3.14159
+scale = Vector2(0.32, 0.32)
+
+[node name="Arrow_Spitter9" parent="Environment" index="9" instance=ExtResource("4_q65wd")]
+position = Vector2(656, -832)
+rotation = 3.14159
+scale = Vector2(0.32, 0.32)
+
 [node name="Idol" parent="." index="10"]
 position = Vector2(1800, -450)
 
@@ -40,37 +90,9 @@ position = Vector2(900, -1450)
 [node name="Idol3" parent="." index="12"]
 position = Vector2(900, -2600)
 
-[node name="PlaceableCharacterBody2d" parent="." index="15" instance=ExtResource("2_f6xab")]
+[node name="PlaceableCharacterBody2d" parent="Block Container" index="0" instance=ExtResource("2_f6xab")]
 position = Vector2(1750, -2000)
 rotation = 1.5708
-
-[node name="Arrow_Spitter" parent="." index="16" instance=ExtResource("3_0s6mf")]
-position = Vector2(700, 100)
-rotation = 0.0
-
-[node name="Arrow_Spitter2" parent="." index="17" instance=ExtResource("3_0s6mf")]
-position = Vector2(700, -1000)
-rotation = 0.0
-
-[node name="Arrow_Spitter3" parent="." index="18" instance=ExtResource("3_0s6mf")]
-position = Vector2(700, -2000)
-rotation = 0.0
-
-[node name="Arrow_Spitter6" parent="." index="19" instance=ExtResource("4_q65wd")]
-position = Vector2(2050, 500)
-rotation = 3.14159
-
-[node name="Arrow_Spitter7" parent="." index="20" instance=ExtResource("4_q65wd")]
-position = Vector2(2050, -500)
-rotation = 3.14159
-
-[node name="Arrow_Spitter8" parent="." index="21" instance=ExtResource("4_q65wd")]
-position = Vector2(2050, -1500)
-rotation = 3.14159
-
-[node name="Arrow_Spitter9" parent="." index="22" instance=ExtResource("4_q65wd")]
-position = Vector2(2050, -2600)
-rotation = 3.14159
 
 [node name="Music" parent="Music Player" index="0"]
 stream = ExtResource("7_aim0b")
