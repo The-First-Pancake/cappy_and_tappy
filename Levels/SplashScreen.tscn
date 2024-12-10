@@ -1,14 +1,13 @@
-[gd_scene load_steps=25 format=3 uid="uid://c1n23ueu3dwlh"]
+[gd_scene load_steps=28 format=3 uid="uid://c1n23ueu3dwlh"]
 
 [ext_resource type="Script" path="res://Scripts/CameraController.gd" id="1_1wwk0"]
-[ext_resource type="Texture2D" uid="uid://bqfeqtdw7xcxo" path="res://Art/Sprites/Backgrounds/background.png" id="1_xpyhk"]
+[ext_resource type="Script" path="res://Scripts/SplashScreen.gd" id="1_8ow0h"]
 [ext_resource type="Texture2D" uid="uid://cen2ir6mxe6q1" path="res://Art/Logos/splash_wide.png" id="2_xmtac"]
 [ext_resource type="Texture2D" uid="uid://caev0mlo587q8" path="res://Art/Logos/cappy_logo.png" id="3_bhv66"]
 [ext_resource type="Texture2D" uid="uid://qt2dvlp4wp4l" path="res://Art/Logos/splash_wide_cutout.png" id="4_hbkag"]
 [ext_resource type="Script" path="res://Scripts/text_animation.gd" id="4_maahe"]
 [ext_resource type="Texture2D" uid="uid://b3sbft701rdw0" path="res://Art/Logos/amp_logo.png" id="5_4xpqi"]
 [ext_resource type="Texture2D" uid="uid://domg2irqksxev" path="res://Art/Logos/tappy_logo.png" id="6_4knye"]
-[ext_resource type="Script" path="res://Scripts/MusicPlayer.gd" id="6_e8hx0"]
 [ext_resource type="AudioStream" uid="uid://b7o0nfcidnbwd" path="res://Sound/Music/title_music.wav" id="7_32xas"]
 [ext_resource type="Texture2D" uid="uid://t881d103ovb2" path="res://Art/Logos/temple_of_logo.png" id="8_ohgge"]
 [ext_resource type="Texture2D" uid="uid://pd15bogxobpb" path="res://Art/Logos/peril_logo.png" id="9_f5l5f"]
@@ -18,9 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://c46chrwfo1c27" path="res://Art/Logos/button_play_normal.png" id="14_lcmns"]
 [ext_resource type="Script" path="res://Scripts/start_game.gd" id="15_fa2f7"]
 [ext_resource type="FontFile" uid="uid://cgi4dy0exfybn" path="res://Art/Fonts/FFFFORWA.TTF" id="17_qiu6a"]
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0kfgu"]
-light_mode = 1
+[ext_resource type="VideoStream" path="res://Art/Video/gameplay_trailer.ogv" id="19_pio2k"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wxx1c"]
 
@@ -36,7 +33,136 @@ texture = ExtResource("14_lcmns")
 [sub_resource type="LabelSettings" id="LabelSettings_ex5la"]
 font = ExtResource("17_qiu6a")
 font_size = 31
-font_color = Color(0.282353, 0.235294, 0.152941, 1)
+font_color = Color(1, 1, 1, 0.235294)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8hfix"]
+font = ExtResource("17_qiu6a")
+font_size = 31
+font_color = Color(1, 1, 1, 0)
+
+[sub_resource type="Animation" id="Animation_gvb0r"]
+resource_name = "fade_to_black"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer2/CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Move to play:label_settings:font_color:r")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Move to play:label_settings:font_color:g")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/Move to play:label_settings:font_color:b")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/Move to play:label_settings:font_color:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.392157, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="Animation" id="Animation_hsptx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer2/CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Move to play:label_settings:font_color:r")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Move to play:label_settings:font_color:g")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/Move to play:label_settings:font_color:b")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/Move to play:label_settings:font_color:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nvjdn"]
+_data = {
+"RESET": SubResource("Animation_hsptx"),
+"fade_to_black": SubResource("Animation_gvb0r")
+}
 
 [node name="SplashScreen" type="Control"]
 layout_mode = 3
@@ -45,38 +171,19 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Background" type="TextureRect" parent="."]
-texture_filter = 1
-material = SubResource("CanvasItemMaterial_0kfgu")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -3950.0
-offset_top = -1600.0
-offset_right = -2638.0
-offset_bottom = -1232.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(3.125, 3.125)
-texture = ExtResource("1_xpyhk")
-stretch_mode = 1
+script = ExtResource("1_8ow0h")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 z_index = 1000
-position = Vector2(1133, 681)
 script = ExtResource("1_1wwk0")
 
-[node name="BlockContainer" type="Node2D" parent="."]
-
 [node name="SplashWide" type="Sprite2D" parent="."]
-position = Vector2(1150, 700)
+position = Vector2(24, 0)
 scale = Vector2(0.555556, 0.555556)
 texture = ExtResource("2_xmtac")
 
 [node name="CappyNTappy" type="Sprite2D" parent="."]
-position = Vector2(1100, 700)
+position = Vector2(-25.9999, 6.29425e-05)
 scale = Vector2(0.509259, 0.509259)
 texture = ExtResource("3_bhv66")
 script = ExtResource("4_maahe")
@@ -85,7 +192,7 @@ enter_delay = 0.25
 shake = true
 
 [node name="CappyNTappy2" type="Sprite2D" parent="."]
-position = Vector2(1100, 700)
+position = Vector2(-25.9999, 6.29425e-05)
 scale = Vector2(0.509259, 0.509259)
 texture = ExtResource("5_4xpqi")
 script = ExtResource("4_maahe")
@@ -93,7 +200,7 @@ direction = Vector2(0, 1)
 enter_delay = 0.3
 
 [node name="CappyNTappy3" type="Sprite2D" parent="."]
-position = Vector2(1100, 700)
+position = Vector2(-25.9999, 6.29425e-05)
 scale = Vector2(0.509259, 0.509259)
 texture = ExtResource("6_4knye")
 script = ExtResource("4_maahe")
@@ -102,12 +209,12 @@ enter_delay = 0.65
 shake = true
 
 [node name="SplashWide2" type="Sprite2D" parent="."]
-position = Vector2(1150, 700)
+position = Vector2(24, 0)
 scale = Vector2(0.555556, 0.555556)
 texture = ExtResource("4_hbkag")
 
 [node name="TempleOfPeril" type="Sprite2D" parent="."]
-position = Vector2(1100, 750)
+position = Vector2(-25.9999, 50.0001)
 scale = Vector2(0.462963, 0.462963)
 texture = ExtResource("8_ohgge")
 script = ExtResource("4_maahe")
@@ -115,7 +222,7 @@ enter_delay = 1.0
 enter_time = 1.0
 
 [node name="TempleOfPeril2" type="Sprite2D" parent="."]
-position = Vector2(1100, 750)
+position = Vector2(-25.9999, 50.0001)
 scale = Vector2(0.462963, 0.462963)
 texture = ExtResource("9_f5l5f")
 script = ExtResource("4_maahe")
@@ -124,7 +231,7 @@ enter_time = 1.0
 shake = true
 
 [node name="Music Player" type="Node2D" parent="."]
-script = ExtResource("6_e8hx0")
+position = Vector2(-1126, -700)
 
 [node name="Music" type="AudioStreamPlayer" parent="Music Player"]
 unique_name_in_owner = true
@@ -133,10 +240,10 @@ volume_db = -7.0
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1600.0
-offset_top = 1000.0
-offset_right = 2028.0
-offset_bottom = 1140.0
+offset_left = 474.0
+offset_top = 300.0
+offset_right = 902.0
+offset_bottom = 440.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_wxx1c")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ud14a")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_c50pt")
@@ -149,11 +256,61 @@ volume_db = -5.0
 
 [node name="Esc to Quit" type="Label" parent="."]
 layout_mode = 0
-offset_left = 200.0
-offset_top = 1154.0
-offset_right = 533.0
-offset_bottom = 1211.0
+offset_left = -926.0
+offset_top = 454.0
+offset_right = -593.0
+offset_bottom = 511.0
 text = "ESC to quit"
 label_settings = SubResource("LabelSettings_ex5la")
 
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2"]
+custom_minimum_size = Vector2(1920, 1080)
+offset_left = -1062.0
+offset_top = -667.0
+offset_right = 858.0
+offset_bottom = 413.0
+scale = Vector2(1.151, 1.22386)
+color = Color(0, 0, 0, 1)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer2"]
+position = Vector2(-1062, -667)
+scale = Vector2(1.151, 1.22386)
+color = Color(0, 0, 0, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="CanvasLayer"]
+offset_left = -962.0
+offset_top = -543.0
+offset_right = 958.0
+offset_bottom = 545.0
+stream = ExtResource("19_pio2k")
+volume_db = -7.0
+expand = true
+loop = true
+
+[node name="Move to play" type="Label" parent="CanvasLayer"]
+offset_left = -314.0
+offset_top = 490.0
+offset_right = 349.0
+offset_bottom = 547.0
+text = "Move mouse or controller to play"
+label_settings = SubResource("LabelSettings_8hfix")
+horizontal_alignment = 1
+
+[node name="Trailer Timer" type="Timer" parent="."]
+wait_time = 30.0
+one_shot = true
+autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_nvjdn")
+}
+
 [connection signal="button_down" from="Button" to="Button" method="_on_button_down"]
+[connection signal="timeout" from="Trailer Timer" to="." method="_on_trailer_timer_timeout"]
