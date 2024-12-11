@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=4 uid="uid://b63gbe5mojyrm"]
+[gd_scene load_steps=54 format=4 uid="uid://b63gbe5mojyrm"]
 
 [ext_resource type="Script" path="res://Scripts/LevelInfo.gd" id="1_04w0d"]
 [ext_resource type="Texture2D" uid="uid://bqfeqtdw7xcxo" path="res://Art/Sprites/Backgrounds/background.png" id="1_ny6uj"]
@@ -33,6 +33,8 @@
 [ext_resource type="AudioStream" uid="uid://twgpbnyr1add" path="res://Sound/Music/music_main.wav" id="26_8dxtb"]
 [ext_resource type="Script" path="res://Scripts/PathFindingGraph.gd" id="29_8lxan"]
 [ext_resource type="PackedScene" uid="uid://c5egotsf7fdg4" path="res://Prefabs/PathNode.tscn" id="30_wiu1k"]
+[ext_resource type="PackedScene" uid="uid://boxcc56yjq7wc" path="res://Prefabs/Pot_Short.tscn" id="34_hbphy"]
+[ext_resource type="PackedScene" uid="uid://dqou2dcng8cvg" path="res://Prefabs/Pot_Tall.tscn" id="35_hm1cb"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_sacac"]
 
@@ -445,3 +447,12 @@ volume_db = -7.0
 
 [node name="Coffin" parent="." instance=ExtResource("5_co7kh")]
 position = Vector2(1583, 1049)
+
+[node name="Pot_Short" parent="." instance=ExtResource("34_hbphy")]
+position = Vector2(1288, 1050)
+
+[node name="Pot_Tall" parent="." instance=ExtResource("35_hm1cb")]
+position = Vector2(1322, 1050)
+
+[node name="Pot_Tall2" parent="." instance=ExtResource("35_hm1cb")]
+position = Vector2(1303, 1050)

@@ -1,20 +1,25 @@
-[gd_scene load_steps=7 format=3 uid="uid://c8njjo4yfo85v"]
+[gd_scene load_steps=9 format=3 uid="uid://c8njjo4yfo85v"]
 
 [ext_resource type="Script" path="res://Scripts/Coffin.gd" id="1_n8hf1"]
 [ext_resource type="PackedScene" uid="uid://elnsaaomqgyw" path="res://Prefabs/enemy.tscn" id="2_seect"]
-[ext_resource type="Texture2D" uid="uid://s32sg7ua7ooe" path="res://Art/Sprites/coffin.png" id="3_40vdg"]
+[ext_resource type="Texture2D" uid="uid://dt5v4j01isx7o" path="res://Art/Sprites/Coffin/Coffin_Diffuse.png" id="3_p5hnx"]
+[ext_resource type="Texture2D" uid="uid://c5k676cb4olek" path="res://Art/Sprites/Coffin/Coffin_Normal.png" id="4_hrdc6"]
 [ext_resource type="PackedScene" uid="uid://dohp3cgpxnwcp" path="res://Prefabs/ShardEmitter.tscn" id="4_llids"]
 [ext_resource type="Script" path="res://Scripts/Squashable.gd" id="4_pigq0"]
 [ext_resource type="Script" path="res://Scripts/LevelBuildingTools.gd" id="6_cchq0"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_pqdip"]
+diffuse_texture = ExtResource("3_p5hnx")
+normal_texture = ExtResource("4_hrdc6")
 
 [node name="Coffin" type="Area2D"]
 script = ExtResource("1_n8hf1")
 enemy_prefab = ExtResource("2_seect")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-59, -56)
-scale = Vector2(3.11111, 3.11111)
-texture = ExtResource("3_40vdg")
+position = Vector2(-59, -54)
+scale = Vector2(3, 3)
+texture = SubResource("CanvasTexture_pqdip")
 centered = false
 
 [node name="ShardEmitter" parent="Sprite2D" instance=ExtResource("4_llids")]

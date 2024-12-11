@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://dqou2dcng8cvg"]
+
+[ext_resource type="Texture2D" uid="uid://bembhi3mpi0wc" path="res://Art/Sprites/Pots/Pot_Tall_Diffuse.png" id="3_ap8eg"]
+[ext_resource type="Texture2D" uid="uid://d1r3jg6n7rown" path="res://Art/Sprites/Pots/Pot_Tall_Normal.png" id="4_eilgo"]
+[ext_resource type="PackedScene" uid="uid://dohp3cgpxnwcp" path="res://Prefabs/ShardEmitter.tscn" id="5_4l8xd"]
+[ext_resource type="Script" path="res://Scripts/Squashable.gd" id="6_b241t"]
+[ext_resource type="Script" path="res://Scripts/LevelBuildingTools.gd" id="7_0nb3f"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_wt6ac"]
+diffuse_texture = ExtResource("3_ap8eg")
+normal_texture = ExtResource("4_eilgo")
+
+[node name="Pot_Tall" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-12, -57)
+scale = Vector2(3, 3)
+texture = SubResource("CanvasTexture_wt6ac")
+centered = false
+
+[node name="ShardEmitter" parent="Sprite2D" instance=ExtResource("5_4l8xd")]
+nbr_of_shards = 5
+min_impulse = 50.0
+max_impulse = 200.0
+
+[node name="Squashable" type="Node" parent="."]
+script = ExtResource("6_b241t")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(1, -2.3)
+scale = Vector2(1, 0.980769)
+polygon = PackedVector2Array(-9, 0, -9, -52, 7, -52, 7, 0)
+
+[node name="LevelBuildingTools" type="Node" parent="."]
+script = ExtResource("7_0nb3f")
