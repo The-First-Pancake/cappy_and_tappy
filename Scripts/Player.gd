@@ -317,7 +317,7 @@ func update_animations() -> void:
 		if (is_instance_valid(slide_sound_playing)):
 			slide_sound_playing.queue_free()
 		footstep_animator.stop()
-		if AudioManager.current_music:
+		if is_instance_valid(AudioManager.current_music):
 			if AudioManager.current_music.stream_paused == true:
 				AudioManager.current_music.stream_paused = false
 				griddy_sound.stop()
