@@ -33,8 +33,8 @@
 [ext_resource type="AudioStream" uid="uid://twgpbnyr1add" path="res://Sound/Music/music_main.wav" id="26_8dxtb"]
 [ext_resource type="Script" path="res://Scripts/PathFindingGraph.gd" id="29_8lxan"]
 [ext_resource type="PackedScene" uid="uid://c5egotsf7fdg4" path="res://Prefabs/PathNode.tscn" id="30_wiu1k"]
-[ext_resource type="PackedScene" uid="uid://boxcc56yjq7wc" path="res://Prefabs/Pot_Short.tscn" id="34_hbphy"]
-[ext_resource type="PackedScene" uid="uid://dqou2dcng8cvg" path="res://Prefabs/Pot_Tall.tscn" id="35_hm1cb"]
+[ext_resource type="PackedScene" uid="uid://boxcc56yjq7wc" path="res://Prefabs/Set Dressing/Egypt/Pot_Short.tscn" id="34_hbphy"]
+[ext_resource type="PackedScene" uid="uid://dqou2dcng8cvg" path="res://Prefabs/Set Dressing/Egypt/Pot_Tall.tscn" id="35_hm1cb"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_sacac"]
 
