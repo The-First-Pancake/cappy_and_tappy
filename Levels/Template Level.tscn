@@ -93,7 +93,7 @@ spawn_prefab = ExtResource("9_teir6")
 spawn_count = 10
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vvcjm"]
-size = Vector2(350, 350)
+size = Vector2(400, 400)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x6sbg"]
 size = Vector2(2100, 219.255)
@@ -284,7 +284,7 @@ spawn_object_probability = 0.5
 [node name="Return Block Click Area" type="Area2D" parent="Camera2D/BlockSpawner"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/BlockSpawner/Return Block Click Area"]
-position = Vector2(-14, 21)
+position = Vector2(-39, -4)
 shape = SubResource("RectangleShape2D_vvcjm")
 
 [node name="Dynamite" parent="Camera2D" instance=ExtResource("16_3kw41")]

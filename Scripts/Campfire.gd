@@ -10,11 +10,14 @@ extends Area2D
 @onready var extinguish_sound: AudioStreamPlayer = $CampfireExtinguish as AudioStreamPlayer
 @onready var squashable: Squashable = $Squashable
 
+var flat_angle: float = 20
 
 var is_lit: bool:
 	set(val):
 		if is_lit == val:
 			return
+		if val == true and abs(global_rotation_degrees) > flat_angle:
+			return #cannot light if not upright
 		is_lit = val
 		smoke_particle_fx.emitting = val
 		ember_particle_fx.emitting = val
@@ -34,12 +37,12 @@ func _ready() -> void:
 	var parent: Node = get_parent()
 	if parent is Placeable:
 		parent.placed.connect(func() -> void:
-			if abs(global_rotation_degrees) > 20:
-				fall()
+			if abs(global_rotation_degrees) > flat_angle:
+				break_apart()
 		)
-	squashable.squashed.connect(fall)
+	squashable.squashed.connect(break_apart)
 
-func fall() -> void:
+func break_apart() -> void:
 	if is_lit:
 		extinguish()
 	var gibs: Node2D = %Gibs as Node2D

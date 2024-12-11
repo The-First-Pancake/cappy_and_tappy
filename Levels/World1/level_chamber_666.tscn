@@ -1,9 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://7amxmfedeq7u"]
+[gd_scene load_steps=22 format=3 uid="uid://7amxmfedeq7u"]
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_ycs33"]
 [ext_resource type="Texture2D" uid="uid://dkxik361t2ox1" path="res://Art/Tilemaps/Background_Egypt.png" id="2_4m5iy"]
 [ext_resource type="Script" path="res://Scripts/SpawnObject.gd" id="2_8tngy"]
 [ext_resource type="PackedScene" uid="uid://r1kjk04fwuou" path="res://Prefabs/Spawn On Blocks/Hold.tscn" id="3_2dg56"]
+[ext_resource type="Texture2D" uid="uid://de7qarsddqn83" path="res://Art/Sprites/egypt/door_diffuse.png" id="3_7njca"]
 [ext_resource type="TileSet" uid="uid://cdp351ovo7gk4" path="res://Art/Tilemaps/Tilemap_Egypt.tres" id="3_fecue"]
 [ext_resource type="PackedScene" uid="uid://bkatak76uuoli" path="res://Prefabs/Spawn On Blocks/Campfire.tscn" id="4_5qjo6"]
 [ext_resource type="PackedScene" uid="uid://2emoy8lav7a0" path="res://Prefabs/Spawn On Blocks/harpoon_launcher.tscn" id="4_h6b51"]
@@ -57,8 +58,12 @@ position = Vector2(1800, -14950)
 [node name="CollisionShape2D" parent="Camera Zone" index="0"]
 shape = SubResource("RectangleShape2D_m46el")
 
+[node name="Entrance Door" parent="." index="4"]
+door_frame_texture = ExtResource("3_7njca")
+
 [node name="Exit Door" parent="." index="5"]
 position = Vector2(1250, -4750)
+door_frame_texture = ExtResource("3_7njca")
 
 [node name="Environment" parent="." index="6"]
 tile_set = ExtResource("3_fecue")
@@ -111,6 +116,74 @@ scale = Vector2(0.32, 0.32)
 [node name="Harpoon Launcher10" parent="Environment" index="9" instance=ExtResource("4_h6b51")]
 position = Vector2(656, -1280)
 rotation = -1.5708
+scale = Vector2(0.32, 0.32)
+
+[node name="Arrow_Spitter" parent="Environment" index="10" instance=ExtResource("7_t561k")]
+position = Vector2(224, -96)
+rotation = 0.0
+scale = Vector2(0.32, 0.32)
+
+[node name="Arrow_Spitter2" parent="Environment" index="11" instance=ExtResource("7_t561k")]
+position = Vector2(223.04, -592)
+rotation = 0.0
+scale = Vector2(0.32, 0.32)
+
+[node name="Arrow_Spitter3" parent="Environment" index="12" instance=ExtResource("7_t561k")]
+position = Vector2(224, -2368)
+rotation = 0.0
+scale = Vector2(0.32, 0.32)
+
+[node name="Arrow_Spitter4" parent="Environment" index="13" instance=ExtResource("7_t561k")]
+position = Vector2(224, -2336)
+rotation = 0.0
+scale = Vector2(0.32, 0.32)
+
+[node name="Arrow_Spitter5" parent="Environment" index="14" instance=ExtResource("7_t561k")]
+position = Vector2(224, -2400)
+rotation = 0.0
+scale = Vector2(0.32, 0.32)
+
+[node name="Arrow_Spitter6" parent="Environment" index="15" instance=ExtResource("7_t561k")]
+position = Vector2(656, -2400)
+rotation = -3.14159
+scale = Vector2(0.32, 0.32)
+
+[node name="Arrow_Spitter7" parent="Environment" index="16" instance=ExtResource("7_t561k")]
+position = Vector2(656, -2368)
+rotation = -3.14159
+scale = Vector2(0.32, 0.32)
+
+[node name="Arrow_Spitter8" parent="Environment" index="17" instance=ExtResource("7_t561k")]
+position = Vector2(656, -2336)
+rotation = -3.14159
+scale = Vector2(0.32, 0.32)
+
+[node name="BreakerSpike6" parent="Environment" index="18" instance=ExtResource("4_j4vyl")]
+position = Vector2(336, 336.32)
+scale = Vector2(0.32, 0.32)
+
+[node name="BreakerSpike5" parent="Environment" index="19" instance=ExtResource("4_j4vyl")]
+position = Vector2(304, 336.32)
+scale = Vector2(0.32, 0.32)
+
+[node name="BreakerSpike7" parent="Environment" index="20" instance=ExtResource("4_j4vyl")]
+position = Vector2(368, 336.32)
+scale = Vector2(0.32, 0.32)
+
+[node name="BreakerSpike8" parent="Environment" index="21" instance=ExtResource("4_j4vyl")]
+position = Vector2(400, 336)
+scale = Vector2(0.32, 0.32)
+
+[node name="BreakerSpike" parent="Environment" index="22" instance=ExtResource("4_j4vyl")]
+position = Vector2(512.32, 336.32)
+scale = Vector2(0.32, 0.32)
+
+[node name="BreakerSpike3" parent="Environment" index="23" instance=ExtResource("4_j4vyl")]
+position = Vector2(576, 336)
+scale = Vector2(0.32, 0.32)
+
+[node name="BreakerSpike4" parent="Environment" index="24" instance=ExtResource("4_j4vyl")]
+position = Vector2(544, 336)
 scale = Vector2(0.32, 0.32)
 
 [node name="@Sprite2D@98792" parent="Glyph Container" index="0" instance=ExtResource("5_skumh")]
@@ -200,38 +273,6 @@ rotation = 1.57079
 
 [node name="BlockSpawner" parent="Camera2D" index="2"]
 spawn_objects = Array[ExtResource("2_8tngy")]([SubResource("Resource_6716m"), SubResource("Resource_b3o7y"), SubResource("Resource_mwrdh"), SubResource("Resource_hb8f8"), SubResource("Resource_mfh2x")])
-
-[node name="Arrow_Spitter" parent="." index="16" instance=ExtResource("7_t561k")]
-position = Vector2(700, -300)
-rotation = 0.0
-
-[node name="Arrow_Spitter2" parent="." index="17" instance=ExtResource("7_t561k")]
-position = Vector2(697, -1850)
-rotation = 0.0
-
-[node name="BreakerSpike" parent="." index="18" instance=ExtResource("4_j4vyl")]
-position = Vector2(1651, 1052)
-
-[node name="BreakerSpike2" parent="." index="19" instance=ExtResource("4_j4vyl")]
-position = Vector2(1550, 1051)
-
-[node name="BreakerSpike5" parent="." index="20" instance=ExtResource("4_j4vyl")]
-position = Vector2(900, 1052)
-
-[node name="BreakerSpike6" parent="." index="21" instance=ExtResource("4_j4vyl")]
-position = Vector2(1000, 1052)
-
-[node name="BreakerSpike7" parent="." index="22" instance=ExtResource("4_j4vyl")]
-position = Vector2(1100, 1052)
-
-[node name="BreakerSpike8" parent="." index="23" instance=ExtResource("4_j4vyl")]
-position = Vector2(1200, 1051)
-
-[node name="BreakerSpike3" parent="." index="24" instance=ExtResource("4_j4vyl")]
-position = Vector2(1850, 1051)
-
-[node name="BreakerSpike4" parent="." index="25" instance=ExtResource("4_j4vyl")]
-position = Vector2(1750, 1051)
 
 [node name="Music" parent="Music Player" index="0"]
 stream = ExtResource("12_selq6")

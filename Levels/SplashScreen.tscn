@@ -300,7 +300,8 @@ offset_left = -314.0
 offset_top = 490.0
 offset_right = 349.0
 offset_bottom = 547.0
-text = "Move mouse or controller to play"
+mouse_filter = 1
+text = "Press Any Button to Start!"
 label_settings = SubResource("LabelSettings_8hfix")
 horizontal_alignment = 1
 

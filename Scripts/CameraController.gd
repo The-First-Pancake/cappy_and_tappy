@@ -62,6 +62,8 @@ func _process(delta: float) -> void:
 	var screen_top: float = cam_pos.y - cam_size.y/2
 	var screen_bottom: float = cam_pos.y + cam_size.y/2
 	
+	if shake_strength < 1:
+		shake_strength = 0 #Kill long tail
 	if shake_strength > 0:
 		shake_strength = lerpf(shake_strength,0,shake_fade * delta)
 		

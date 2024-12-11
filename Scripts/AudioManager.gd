@@ -2,6 +2,8 @@ extends Node
 
 func _ready() -> void:
 	AudioServer.set_bus_mute(0,GameManager.current_save.setting_mute)
+	GameManager.loaded_new_scene.connect(func() -> void:
+		)
 
 
 func _process(delta: float) -> void:
@@ -15,6 +17,11 @@ func _process(delta: float) -> void:
 		Input.start_joy_vibration(0, haptics_mag, haptics_mag)
 	else:
 		Input.stop_joy_vibration(0)
+
+func clear_all_sounds() -> void:
+	for child: Node in get_children():
+		if child != current_music:
+			child.queue_free()
 
 func PlayAudio(audio: AudioStreamPlayer, is_haptics: bool = true) -> AudioStreamPlayer:
 	var audio_dupe: AudioStreamPlayer = audio.duplicate()

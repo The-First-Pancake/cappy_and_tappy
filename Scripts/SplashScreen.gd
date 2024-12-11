@@ -8,7 +8,7 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	AudioManager.PlayMusic(title_music)	
+	AudioManager.PlayMusic(title_music)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -21,11 +21,13 @@ func _on_trailer_timer_timeout() -> void:
 	gameplay_trailer.play()
 
 func _input(event: InputEvent) -> void:
+	if !event.is_pressed(): return #only care about button presses
 	blackout.color = Color(0,0,0,0)
 	animation_player.stop()
+	
 	if gameplay_trailer.is_playing():
 		gameplay_trailer.stop()
-		
+	
 	if AudioManager.current_music.playing == false:
 		AudioManager.current_music.play()
 	
