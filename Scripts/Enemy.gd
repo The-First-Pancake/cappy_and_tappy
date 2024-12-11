@@ -126,7 +126,7 @@ func emulate_inputs() -> void:
 		horz_move_dir = 0
 	else:
 		horz_move_dir = diff_vector.normalized().x
-	should_jump = abs(diff_vector.y) > 50 and not is_launched
+	should_jump = diff_vector.y > 50 and not is_launched
 	if (abs(diff_vector.y) < 200):
 		hold_aim_dir = (Vector2.UP + diff_vector.normalized()).normalized()
 	else:
