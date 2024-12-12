@@ -5,11 +5,11 @@
 
 [node name="SetDressingBase" instance=ExtResource("1_rhh20")]
 
-[node name="Sprite2D" parent="." index="0"]
+[node name="CollisionPolygon2D" parent="." index="1"]
+position = Vector2(31, -11.2)
+polygon = PackedVector2Array(-27, 42, -28, 7, -20, 12, -19, 43)
+
+[node name="Sprite2D" parent="." index="3"]
 position = Vector2(0, -0.200001)
 scale = Vector2(3.125, 3.125)
 texture = ExtResource("2_aplmw")
-
-[node name="CollisionPolygon2D" parent="." index="2"]
-position = Vector2(31, -11.2)
-polygon = PackedVector2Array(-27, 42, -28, 7, -20, 12, -19, 43)

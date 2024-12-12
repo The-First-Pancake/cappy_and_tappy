@@ -6,6 +6,7 @@ extends Node
 
 var rotate_debounce: bool = false
 var parenting_debounce: bool = false
+var flip_debounce: bool = false
 
 func _ready() -> void:
 	if Engine.is_editor_hint():
@@ -27,6 +28,13 @@ func _process(delta: float) -> void:
 						parent.rotate(PI/2)
 				else:
 					rotate_debounce = false
+					
+				if Input.is_key_pressed(KEY_C): #flip key
+					if flip_debounce == false:
+						flip_debounce = true
+						parent.apply_scale(Vector2(-1, 1))
+				else:
+					flip_debounce = false
 				
 				if EditorInterface.get_selection().get_selected_nodes().size() == 2:
 					if Input.is_key_pressed(KEY_B): #parent

@@ -12,16 +12,6 @@ normal_texture = ExtResource("4_sdew1")
 
 [node name="Pot_Short" type="Area2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-15, -31)
-texture = SubResource("CanvasTexture_1ndj3")
-centered = false
-
-[node name="ShardEmitter" parent="Sprite2D" instance=ExtResource("5_vuo1u")]
-nbr_of_shards = 5
-min_impulse = 50.0
-max_impulse = 200.0
-
 [node name="Squashable" type="Node" parent="."]
 script = ExtResource("6_frabq")
 delete_parent_when_squashed = false
@@ -34,5 +24,15 @@ polygon = PackedVector2Array(-8.68, -7.6186, -11.24, -21.1628, -6.76, -55.9907, 
 [node name="LevelBuildingTools" type="Node" parent="."]
 script = ExtResource("7_n0s0x")
 auto_parent_to = "Environment Container"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-15, -31)
+texture = SubResource("CanvasTexture_1ndj3")
+centered = false
+
+[node name="ShardEmitter" parent="Sprite2D" instance=ExtResource("5_vuo1u")]
+nbr_of_shards = 5
+min_impulse = 50.0
+max_impulse = 200.0
 
 [connection signal="squashed" from="Squashable" to="Sprite2D/ShardEmitter" method="_on_squashable_squashed"]
