@@ -38,7 +38,7 @@ size = Vector2(5600, 1000)
 override_music = ExtResource("2_gmdn8")
 
 [node name="Camera Zone" parent="." index="3"]
-position = Vector2(700, 0)
+position = Vector2(700, 100)
 type = 1
 mid_line_offset = -50.0
 
@@ -61,19 +61,22 @@ offset_bottom = 1050.0
 [node name="Pot_Tall" parent="Environment Container" index="1" instance=ExtResource("4_fq4lm")]
 position = Vector2(1300, 1050)
 scale = Vector2(0.998844, 0.666667)
+script = null
 
 [node name="AztecWallStatue" parent="Environment Container" index="2" instance=ExtResource("5_qr0bx")]
 position = Vector2(1100, 800)
+scale = Vector2(-1, 1)
 
 [node name="SetDressingBase" parent="Environment Container" index="3" instance=ExtResource("6_j7ik6")]
 position = Vector2(950, 1050)
 rotation = 3.14159
 scale = Vector2(1, -1)
+script = null
 
 [node name="SetDressingBase5" parent="Environment Container" index="4" instance=ExtResource("8_ldp8m")]
 position = Vector2(900, 600)
 scale = Vector2(1, 1)
-is_squishable = false
+script = null
 
 [node name="@VBoxContainer@84534" parent="Environment Container" index="5" instance=ExtResource("3_d0hot")]
 offset_left = 1200.0
@@ -86,16 +89,18 @@ pivot_offset = Vector2(50, 150)
 position = Vector2(2300, 850)
 rotation = -3.14156
 scale = Vector2(1, -1)
+script = null
 
 [node name="_Area2D_95510" parent="Environment Container" index="7" instance=ExtResource("8_ldp8m")]
 position = Vector2(1200, 1050)
 rotation = 3.14159
 scale = Vector2(1, -1)
+script = null
 
 [node name="SetDressingBase4" parent="Environment Container" index="8" instance=ExtResource("9_xex0k")]
 position = Vector2(700, 250)
 scale = Vector2(1, 1)
-is_squishable = false
+script = null
 
 [node name="@VBoxContainer@101643" parent="Environment Container" index="9" instance=ExtResource("3_d0hot")]
 offset_left = 2850.0
@@ -112,35 +117,40 @@ offset_bottom = 1050.0
 [node name="SetDressingBase6" parent="Environment Container" index="11" instance=ExtResource("8_ldp8m")]
 position = Vector2(2850, 1050)
 scale = Vector2(1, 1)
+script = null
 
 [node name="SetDressingBase7" parent="Environment Container" index="12" instance=ExtResource("6_j7ik6")]
 position = Vector2(3450, 1050)
 rotation = 3.14159
 scale = Vector2(1, -1)
+script = null
 
 [node name="@Area2D@104961" parent="Environment Container" index="13" instance=ExtResource("4_fq4lm")]
 position = Vector2(2500, 850)
+script = null
 
 [node name="@Area2D@105895" parent="Environment Container" index="14" instance=ExtResource("4_fq4lm")]
 position = Vector2(2200, 1050)
 scale = Vector2(1.38406, 1.38406)
+script = null
 
 [node name="_Area2D_105895" parent="Environment Container" index="15" instance=ExtResource("4_fq4lm")]
 position = Vector2(2150, 1050)
 rotation = 3.14159
 scale = Vector2(0.934238, -0.711354)
+script = null
 
 [node name="SetDressingBase10" parent="Environment Container" index="16" instance=ExtResource("8_ldp8m")]
 position = Vector2(3500, 650)
 rotation = 3.14159
 scale = Vector2(1, -1)
-is_squishable = false
+script = null
 
 [node name="SetDressingBase11" parent="Environment Container" index="17" instance=ExtResource("9_xex0k")]
 position = Vector2(3423, 871)
 rotation = 3.14159
 scale = Vector2(1, -1)
-is_squishable = false
+script = null
 
 [node name="Pillar2" parent="Environment Container" index="18" instance=ExtResource("3_d0hot")]
 offset_left = 3850.0
@@ -170,13 +180,13 @@ offset = Vector2(0, -156)
 position = Vector2(22, -181)
 rotation = -3.14159
 scale = Vector2(1, -1)
-is_squishable = false
+script = null
 
 [node name="@Area2D@141145" parent="Environment Container" index="22" instance=ExtResource("6_j7ik6")]
 position = Vector2(4450, 1129)
 rotation = 2.71297
 scale = Vector2(1, -1)
-is_squishable = false
+script = null
 
 [node name="Pillar4" parent="Environment Container" index="23" instance=ExtResource("3_d0hot")]
 offset_left = 6100.0
@@ -189,45 +199,53 @@ position = Vector2(6050, 800)
 
 [node name="Pot_Tall2" parent="Environment Container" index="25" instance=ExtResource("4_fq4lm")]
 position = Vector2(5950, 1050)
+script = null
 
 [node name="Pot_Tall3" parent="Environment Container" index="26" instance=ExtResource("4_fq4lm")]
 position = Vector2(6150, 650)
 scale = Vector2(1.43056, 1.43056)
+script = null
 
 [node name="SetDressingBase3" parent="Environment Container" index="27" instance=ExtResource("6_j7ik6")]
 position = Vector2(5950, 1050)
 rotation = 3.14159
 scale = Vector2(1, -1)
+script = null
 
 [node name="SetDressingBase9" parent="Environment Container" index="28" instance=ExtResource("6_j7ik6")]
 position = Vector2(4900, 1050)
 scale = Vector2(1, 1)
+script = null
 
 [node name="SetDressingBase12" parent="Environment Container" index="29" instance=ExtResource("8_ldp8m")]
 position = Vector2(3750, 1050)
 scale = Vector2(1, 1)
+script = null
 
 [node name="SetDressingBase13" parent="Environment Container" index="30" instance=ExtResource("8_ldp8m")]
 position = Vector2(3900, 1050)
 rotation = 3.14159
 scale = Vector2(1, -1)
+script = null
 
 [node name="Pot_Tall4" parent="Environment Container" index="31" instance=ExtResource("4_fq4lm")]
 position = Vector2(3850, 1050)
+script = null
 
 [node name="@Area2D@149878" parent="Environment Container" index="32" instance=ExtResource("8_ldp8m")]
 position = Vector2(2550, 1050)
 scale = Vector2(1, 1)
+script = null
 
 [node name="SetDressingBase8" parent="Environment Container" index="33" instance=ExtResource("12_a0tfv")]
 position = Vector2(2850, 769)
 scale = Vector2(1, 1)
-is_squishable = false
+script = null
 
 [node name="@Area2D@152290" parent="Environment Container" index="34" instance=ExtResource("6_j7ik6")]
 position = Vector2(2500, 1000)
 scale = Vector2(1, 1)
-is_squishable = false
+script = null
 
 [node name="@VBoxContainer@157725" parent="Environment Container" index="35" instance=ExtResource("3_d0hot")]
 offset_left = 5200.0
@@ -239,53 +257,59 @@ rotation = 0.328698
 [node name="SetDressingBase14" parent="Environment Container" index="36" instance=ExtResource("8_ldp8m")]
 position = Vector2(1252, 226)
 scale = Vector2(1, 1)
-is_squishable = false
+script = null
 
 [node name="SetDressingBase16" parent="Environment Container" index="37" instance=ExtResource("8_ldp8m")]
 position = Vector2(1399, 226)
 rotation = 3.14159
 scale = Vector2(1, -1)
-is_squishable = false
+script = null
 
 [node name="SetDressingBase17" parent="Environment Container" index="38" instance=ExtResource("12_a0tfv")]
 position = Vector2(4197, 234)
 scale = Vector2(1, 1)
-is_squishable = false
+script = null
 
 [node name="SetDressingBase18" parent="Environment Container" index="39" instance=ExtResource("8_ldp8m")]
 position = Vector2(4125, 229)
 scale = Vector2(1, 1)
-is_squishable = false
+script = null
 
 [node name="SetDressingBase15" parent="Environment Container" index="40" instance=ExtResource("7_blsfs")]
 position = Vector2(6200, 250)
 rotation = 3.14159
 scale = Vector2(1, -1)
+script = null
 
 [node name="SetDressingBase19" parent="Environment Container" index="41" instance=ExtResource("9_xex0k")]
 position = Vector2(6200, 300)
 rotation = 3.14159
 scale = Vector2(1, -1)
+script = null
 
 [node name="SetDressingBase20" parent="Environment Container" index="42" instance=ExtResource("8_ldp8m")]
 position = Vector2(6200, 1050)
 rotation = 3.14159
 scale = Vector2(1, -1)
+script = null
 
 [node name="SetDressingBase21" parent="Environment Container" index="43" instance=ExtResource("8_ldp8m")]
 position = Vector2(5510, 227)
 rotation = 3.14159
 scale = Vector2(1, -1)
+script = null
 
 [node name="SetDressingBase22" parent="Environment Container" index="44" instance=ExtResource("8_ldp8m")]
 position = Vector2(5583, 227)
 rotation = -3.14159
 scale = Vector2(1, -1)
+script = null
 
 [node name="@Area2D@274502" parent="Environment Container" index="45" instance=ExtResource("8_ldp8m")]
 position = Vector2(5286, 1127)
-rotation = 3.50633
+rotation = -2.77686
 scale = Vector2(1, -1)
+script = null
 
 [node name="Glyph" parent="Glyph Container" index="0" instance=ExtResource("3_m3gds")]
 position = Vector2(1650, 915)
