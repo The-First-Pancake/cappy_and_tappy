@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://mcu32jepdsb3"]
+[gd_scene load_steps=32 format=3 uid="uid://mcu32jepdsb3"]
 
 [ext_resource type="Script" path="res://Scripts/Dynamite.gd" id="1_0xau1"]
 [ext_resource type="Material" uid="uid://cg4fprgafhcxd" path="res://Art/unshaded_material.tres" id="2_ogn8q"]
@@ -7,9 +7,23 @@
 [ext_resource type="Texture2D" uid="uid://cp12ff55etrhe" path="res://Art/Sprites/Dynamite/Explosion.png" id="4_udyqs"]
 [ext_resource type="Script" path="res://Scripts/LightFlash.gd" id="5_6sdnl"]
 [ext_resource type="Script" path="res://Scripts/HoverDetector.gd" id="7_5le46"]
+[ext_resource type="Texture2D" uid="uid://c44dsqli58hcu" path="res://Art/Sprites/dust_3.png" id="8_tjw87"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nsrqv"]
 size = Vector2(98, 99)
+
+[sub_resource type="Curve" id="Curve_fs6jc"]
+max_value = 100.0
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 54.9451), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_75yqk"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.0711111, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.912088), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_5j85f"]
+offsets = PackedFloat32Array(0.00507614, 0.253807, 0.527919)
+colors = PackedColorArray(1, 1, 1, 0.968627, 0.803922, 0.803922, 0.803922, 0.741176, 0.4, 0.4, 0.4, 0)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ddjt2"]
 atlas = ExtResource("3_8ilru")
@@ -156,6 +170,35 @@ script = ExtResource("1_0xau1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_nsrqv")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+visible = false
+emitting = false
+amount = 10
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+randomness = 0.56
+lifetime_randomness = 0.61
+texture = ExtResource("8_tjw87")
+emission_shape = 1
+emission_sphere_radius = 15.69
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 100)
+initial_velocity_min = 196.71
+initial_velocity_max = 401.63
+angular_velocity_min = 23.6
+angular_velocity_max = 82.62
+damping_min = 29.507
+damping_max = 49.179
+damping_curve = SubResource("Curve_fs6jc")
+angle_min = -436.7
+angle_max = 306.9
+scale_amount_min = 2.0
+scale_amount_max = 5.0
+scale_amount_curve = SubResource("Curve_75yqk")
+color_ramp = SubResource("Gradient_5j85f")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = ExtResource("2_ogn8q")
