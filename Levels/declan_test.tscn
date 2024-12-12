@@ -212,15 +212,18 @@ scale = Vector2(0.32, 0.32)
 position = Vector2(-599.04, 353.28)
 scale = Vector2(0.32, 0.32)
 
-[node name="Player" parent="." index="7"]
+[node name="Player" parent="." index="10"]
 position = Vector2(-2576, 1000)
 
-[node name="Camera2D" parent="." index="12"]
+[node name="Camera2D" parent="." index="14"]
 position = Vector2(-2104, 696)
 
-[node name="Water" parent="." index="14"]
+[node name="Water" parent="." index="16"]
 z_index = -1000
 position = Vector2(-3992, 888)
 rotation = 1.57079
 rise_speed = 250.0
 rise_direction = Vector2(1, 0)
+
+[node name="Music" parent="Music Player" index="0"]
+stream = null
