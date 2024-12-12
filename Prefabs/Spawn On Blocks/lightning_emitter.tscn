@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://cru1gnfdmrvea"]
+
+[ext_resource type="Script" path="res://Scripts/LightningEmitter.gd" id="1_ecwrw"]
+[ext_resource type="Material" uid="uid://cg4fprgafhcxd" path="res://Art/unshaded_material.tres" id="2_2ms8p"]
+[ext_resource type="Texture2D" uid="uid://xwwgf7xumuwv" path="res://Art/Sprites/Lightning Emitter/Lightnint Emitter.png" id="3_nxdyy"]
+[ext_resource type="Texture2D" uid="uid://bodcvpvs4sh7p" path="res://Art/Sprites/Lightning Emitter/lightning.png" id="4_ry4re"]
+[ext_resource type="Script" path="res://Scripts/Squashable.gd" id="5_dhc5m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6ynli"]
+radius = 23.0868
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_m2or7"]
+b = Vector2(981, -5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0uagj"]
+radius = 562.004
+
+[node name="Lightning Emitter" type="Area2D"]
+position = Vector2(1546, 652)
+script = ExtResource("1_ecwrw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -25)
+shape = SubResource("CircleShape2D_6ynli")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = ExtResource("2_2ms8p")
+position = Vector2(-1, -52)
+scale = Vector2(3.125, 3.125)
+texture = ExtResource("3_nxdyy")
+
+[node name="Lightning Beam" type="Area2D" parent="." groups=["spike"]]
+position = Vector2(-1, -50)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Lightning Beam"]
+material = ExtResource("2_2ms8p")
+position = Vector2(501, -6)
+scale = Vector2(3.125, 3.125)
+texture = ExtResource("4_ry4re")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lightning Beam"]
+shape = SubResource("SegmentShape2D_m2or7")
+
+[node name="Squashable" type="Node" parent="."]
+script = ExtResource("5_dhc5m")
+
+[node name="Lightning Rod Detector" type="Area2D" parent="."]
+position = Vector2(0, -49)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lightning Rod Detector"]
+shape = SubResource("CircleShape2D_0uagj")
+debug_color = Color(0.701961, 0.641636, 0, 0)

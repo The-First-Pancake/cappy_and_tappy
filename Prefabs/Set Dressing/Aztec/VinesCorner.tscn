@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b62sn1w33pqdi" path="res://Art/Sprites/aztec/vines_corner.png" id="2_45tmh"]
 
 [node name="SetDressingBase" instance=ExtResource("1_vbhm1")]
+script = null
 
 [node name="CollisionPolygon2D" parent="." index="1"]
 position = Vector2(35, -16)

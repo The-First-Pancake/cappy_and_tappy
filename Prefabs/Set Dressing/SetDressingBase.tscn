@@ -1,6 +1,5 @@
-[gd_scene load_steps=8 format=3 uid="uid://skkd531ff5me"]
+[gd_scene load_steps=7 format=3 uid="uid://skkd531ff5me"]
 
-[ext_resource type="Script" path="res://Scripts/SetDressingBase.gd" id="1_02kpq"]
 [ext_resource type="Texture2D" uid="uid://bv2kxkm7eoe72" path="res://Art/Sprites/caves/cave elements/rock 1_diffuse.png" id="1_8nut2"]
 [ext_resource type="Texture2D" uid="uid://bfo1ej2wpwhg6" path="res://Art/Sprites/caves/cave elements/rock 1_normal.png" id="2_rk6e3"]
 [ext_resource type="PackedScene" uid="uid://dohp3cgpxnwcp" path="res://Prefabs/ShardEmitter.tscn" id="4_ej71l"]
@@ -12,8 +11,8 @@ diffuse_texture = ExtResource("1_8nut2")
 normal_texture = ExtResource("2_rk6e3")
 
 [node name="SetDressingBase" type="Area2D"]
+rotation = 6.28319
 scale = Vector2(-1, 1)
-script = ExtResource("1_02kpq")
 
 [node name="Squashable" type="Node" parent="."]
 script = ExtResource("5_rn803")

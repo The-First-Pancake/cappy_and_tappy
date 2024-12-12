@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c44u10ggyqwsp"]
+
+[ext_resource type="Texture2D" uid="uid://b5s0wm54ju5i2" path="res://Art/Sprites/aztec/Vine.png" id="1_yqfhv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e7b2x"]
+size = Vector2(15, 30)
+
+[node name="Rope Segment" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_e7b2x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3.125, 3.125)
+texture = ExtResource("1_yqfhv")

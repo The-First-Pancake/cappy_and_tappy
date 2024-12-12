@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdr2y4c1vqaws"]
+
+[ext_resource type="Texture2D" uid="uid://c24e2b0m8s8uh" path="res://Art/Sprites/aztec/crack_vines_1.png" id="1_5la0r"]
+[ext_resource type="Script" path="res://Scripts/LevelBuildingTools.gd" id="2_cd7gw"]
+
+[node name="Cosmetic Dressing" type="Node2D"]
+scale = Vector2(-1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3.125, 3.125)
+texture = ExtResource("1_5la0r")
+
+[node name="LevelBuildingTools" type="Node" parent="."]
+script = ExtResource("2_cd7gw")
+auto_parent_to = "Environment Container"

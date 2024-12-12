@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1iouhsfvhkdu"]
+
+[ext_resource type="PackedScene" uid="uid://bdr2y4c1vqaws" path="res://Prefabs/Set Dressing/Cosmetic_Dressing.tscn" id="1_jrnev"]
+
+[node name="Cosmetic Dressing" instance=ExtResource("1_jrnev")]
+rotation = 18.8496
+scale = Vector2(1, 1)
