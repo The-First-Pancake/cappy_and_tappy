@@ -28,6 +28,7 @@ max_impulse = 200.0
 
 [node name="Squashable" type="Node" parent="."]
 script = ExtResource("4_pigq0")
+delete_parent_when_squashed = false
 
 [node name="SpawnPoint" type="Marker2D" parent="."]
 position = Vector2(0, -25)
@@ -38,3 +39,5 @@ polygon = PackedVector2Array(-43, -3, -59, -14, -43, -40, 27, -41, 45, -47, 54, 
 
 [node name="LevelBuildingTools" type="Node" parent="."]
 script = ExtResource("6_cchq0")
+
+[connection signal="squashed" from="Squashable" to="." method="destroy"]

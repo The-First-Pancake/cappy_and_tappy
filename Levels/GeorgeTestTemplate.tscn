@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://c3dgw1fpl6k3x"]
+[gd_scene load_steps=14 format=3 uid="uid://c3dgw1fpl6k3x"]
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_8tfe6"]
 [ext_resource type="Script" path="res://Scripts/SpawnObject.gd" id="2_h2nwq"]
+[ext_resource type="PackedScene" uid="uid://b2m3shx51tdva" path="res://Prefabs/Set Dressing/Aztec/Vines.tscn" id="2_lvjad"]
 [ext_resource type="PackedScene" uid="uid://r1kjk04fwuou" path="res://Prefabs/Spawn On Blocks/Hold.tscn" id="3_k3spf"]
 [ext_resource type="PackedScene" uid="uid://bkatak76uuoli" path="res://Prefabs/Spawn On Blocks/Campfire.tscn" id="4_55j5p"]
 [ext_resource type="PackedScene" uid="uid://dhrgrpwwax6i8" path="res://Prefabs/Spawn On Blocks/Spikes.tscn" id="5_sjo0f"]
@@ -37,6 +38,9 @@ spawn_count = 1
 
 [node name="Exit Door" parent="." index="5"]
 position = Vector2(1943, 69)
+
+[node name="SetDressingBase" parent="Environment Container" index="0" instance=ExtResource("2_lvjad")]
+position = Vector2(1800, 1050)
 
 [node name="BlockSpawner" parent="Camera2D" index="2"]
 position = Vector2(-689, -299)
