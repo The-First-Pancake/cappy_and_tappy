@@ -160,6 +160,8 @@ tile_set = ExtResource("5_tg1dj")
 
 [node name="Glyph Container" type="Node2D" parent="." groups=["Glyph Container"]]
 
+[node name="Block Container" type="Node2D" parent="." groups=["Block Container"]]
+
 [node name="Player" parent="." instance=ExtResource("2_hossx")]
 position = Vector2(1033, 1002)
 
@@ -171,8 +173,6 @@ position = Vector2(1350, 650)
 
 [node name="Idol3" parent="." instance=ExtResource("13_jfp1q")]
 position = Vector2(1350, 550)
-
-[node name="Block Container" type="Node2D" parent="." groups=["Block Container"]]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1133, 681)
