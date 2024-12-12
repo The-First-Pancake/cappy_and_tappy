@@ -198,10 +198,14 @@ var look_ahead_dir: Vector2 = Vector2.ZERO
 func try_look_ahead() -> void:
 	var can_look_ahead: bool = velocity.x == 0 and is_on_floor() and !is_downsliding
 	
-	if Input.is_key_pressed(KEY_SHIFT) and can_look_ahead:
-		look_ahead_dir = input_direction
-	else:
-		look_ahead_dir = Vector2.ZERO
+	var d_pad_input: Vector2 = Input.get_vector("controller_peek_left","controller_peek_right","controller_mouse_up","controller_peek_down")
+	
+	look_ahead_dir = Vector2.ZERO
+	if can_look_ahead:
+		if Input.is_key_pressed(KEY_SHIFT):
+			look_ahead_dir = input_direction
+		elif d_pad_input != Vector2.ZERO:
+			look_ahead_dir = d_pad_input
 	
 	#var is_trying_to_look_up: bool = input_direction.y == -1
 	#var is_trying_to_look_down: bool = input_direction.y == 1
