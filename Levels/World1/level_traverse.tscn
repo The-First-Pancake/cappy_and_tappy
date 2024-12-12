@@ -84,3 +84,6 @@ spawn_objects = Array[ExtResource("7_yqrk1")]([])
 
 [node name="Water" parent="." index="16"]
 rise_speed = 0.0
+
+[node name="PathFindingGraph" parent="." index="18"]
+visible = false

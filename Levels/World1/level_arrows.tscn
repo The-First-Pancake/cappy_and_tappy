@@ -130,6 +130,12 @@ position = Vector2(768, -32)
 rotation = 7.85398
 scale = Vector2(0.32, 0.32)
 
+[node name="Pot_Short" parent="Environment Container" index="0" instance=ExtResource("11_2ws1q")]
+position = Vector2(1319, 1050)
+
+[node name="Pot_Tall" parent="Environment Container" index="1" instance=ExtResource("12_bwa5a")]
+position = Vector2(1352, 1049)
+
 [node name="Player" parent="." index="9"]
 position = Vector2(1028, 1000)
 
@@ -149,9 +155,3 @@ rotation = 1.5708
 [node name="Music" parent="Music Player" index="0"]
 stream = ExtResource("7_aim0b")
 volume_db = -9.0
-
-[node name="Pot_Short" parent="." index="20" instance=ExtResource("11_2ws1q")]
-position = Vector2(1319, 1046)
-
-[node name="Pot_Tall" parent="." index="21" instance=ExtResource("12_bwa5a")]
-position = Vector2(1352, 1049)

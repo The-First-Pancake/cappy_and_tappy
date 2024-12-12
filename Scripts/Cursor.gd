@@ -33,14 +33,19 @@ func on_scene_load() -> void:
 	
 
 func _process(_delta: float) -> void:
+
 	check_for_controllers()
 	var mouse_rel : Vector2 = Vector2.ZERO
 	var move_dir : Vector2 = Input.get_vector("controller_mouse_left","controller_mouse_right",
 											  "controller_mouse_up","controller_mouse_down")
+	
+	
 	mouse_rel += move_dir * mouse_speed
 	if mouse_rel != Vector2.ZERO:
 		mouse_pos = get_viewport().get_mouse_position()
+		#mouse_pos = global_position * get_viewport_transform()
 		get_viewport().warp_mouse(mouse_pos + mouse_rel)
+	
 	global_position = get_global_mouse_position()
 	if (Input.is_action_just_pressed("controller_mouse_click")):
 		fake_press()

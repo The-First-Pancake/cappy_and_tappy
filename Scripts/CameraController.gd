@@ -3,13 +3,15 @@ extends Camera2D
 
 static var instance: CameraController
 @export_category("Stepping Movement")
-var screen_edge_trigger: float = 300
+var vert_screen_edge_trigger: float = 300
+var horz_screen_edge_trigger: float = 350
+
 var left_UI_size: float = 440
 @export var stationary_cam: bool = false
 
 var look_ahead_distance: float:
 	get:
-		return cam_size.y/2 - screen_edge_trigger/2
+		return cam_size.x/2 - horz_screen_edge_trigger*0.9
 
 @export_category("Screen Shake")
 @export var random_stength: float = 15.0
@@ -53,7 +55,7 @@ var cam_pos: Vector2:
 
 #TODO these don't really work right for reverse levels. Cutting them for now
 var last_camera_slide_dir: Vector2 = Vector2.ZERO
-var momentum_bonus: float = 100 #modifies the target position of the camera in the direction of last camera slide
+var momentum_bonus: float = 0 #modifies the target position of the camera in the direction of last camera slide
 var momentum_trigger_modifier: float = 100 #modifies the trigger area in the direction of last camera slide
 
 func _process(delta: float) -> void:
@@ -77,14 +79,21 @@ func _process(delta: float) -> void:
 	
 	var cam_zone: CameraZone = GameManager.player.current_camera_zone
 	var target_position: Vector2 = GameManager.player.global_position
+	target_position += momentum_bonus * last_camera_slide_dir
 	
-	#target_position += momentum_bonus * last_camera_slide_dir
+	#Bias the target position based on the mouse
+	#var max_mouse_bias: float = 500
+	#var mouse_bias: Vector2 = get_global_mouse_position() - GameManager.player.global_position
+	#var mouse_bias_mag: float = mouse_bias.length()
+	#if mouse_bias_mag > max_mouse_bias:
+		#mouse_bias = mouse_bias.normalized() * max_mouse_bias
+	#target_position += mouse_bias / 2
 	
-	if GameManager.player.looking_up: #look ahead
-		target_position.y -= look_ahead_distance
-	elif GameManager.player.looking_down:
-		target_position.y += look_ahead_distance
-		
+	var look_ahead_offest: Vector2 = (GameManager.player.look_ahead_dir * look_ahead_distance)
+	if look_ahead_offest!= Vector2.ZERO:
+		target_position += look_ahead_offest
+		is_sliding = true 
+	
 	if cam_zone:
 		current_cam_type = cam_zone.type
 		if current_cam_type == CamType.VERTICAL:
@@ -94,24 +103,23 @@ func _process(delta: float) -> void:
 	else:
 		current_cam_type = CamType.FREECAM
 	
-	var top_trigger: float = screen_top + screen_edge_trigger
 	#if last_camera_slide_dir == Vector2.UP: top_trigger += momentum_trigger_modifier
-	if target_position.y < top_trigger:
+	if target_position.y < screen_top + vert_screen_edge_trigger:
 		if current_cam_type != CamType.HORIZONTAL:
 			last_camera_slide_dir = Vector2.UP
 			is_sliding = true
 		
-	if target_position.y > screen_bottom - screen_edge_trigger:
+	if target_position.y > screen_bottom - vert_screen_edge_trigger:
 		if current_cam_type != CamType.HORIZONTAL:
 			last_camera_slide_dir = Vector2.DOWN
 			is_sliding = true
 
-	if target_position.x < screen_left + screen_edge_trigger:
+	if target_position.x < screen_left + horz_screen_edge_trigger:
 		if current_cam_type != CamType.VERTICAL:
 			last_camera_slide_dir = Vector2.LEFT
 			is_sliding = true
 	
-	if target_position.x > screen_right - screen_edge_trigger:
+	if target_position.x > screen_right - horz_screen_edge_trigger:
 		if current_cam_type != CamType.VERTICAL:
 			last_camera_slide_dir = Vector2.RIGHT
 			is_sliding = true
@@ -145,10 +153,18 @@ func _process(delta: float) -> void:
 			is_sliding = false
 	
 	if is_sliding:
+		var pan_speed: float = 10
+		var max_pan_speed: float = 2000
+		var dead_zone: float = 0
 		var distance_from_target: float = cam_pos.distance_to(target_position)
-		var pan_speed: float = 180
-		var pan_speed_multiplier: float = clamp(pow(distance_from_target, .4), 1, 100)
-		cam_pos = cam_pos.move_toward(target_position, pan_speed * delta * pan_speed_multiplier)
+		distance_from_target = max(distance_from_target - dead_zone,0)
+		var pan_speed_multiplier: float = clamp(pow(distance_from_target,1), 1, max_pan_speed/pan_speed)
+		var destination: Vector2 = cam_pos.move_toward(target_position, pan_speed * delta * pan_speed_multiplier)
+		#var move_diff: Vector2 =  cam_pos - destination  # Trying out having the mouse left behind during came moves. Doesn't really work or feel right
+		#print(move_diff)
+		#var mous_pos: Vector2 = get_viewport().get_mouse_position()
+		#get_viewport().warp_mouse(mous_pos + move_diff)
+		cam_pos = destination
 	
 	
 	last_frame_cam_type = current_cam_type

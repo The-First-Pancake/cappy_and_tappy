@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://c4safo4pwme48" path="res://Prefabs/Blocks/1x4-Piece.tscn" id="13_v366v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_63r1a"]
-size = Vector2(1350, 1400)
+size = Vector2(1350, 1500)
 
 [node name="Template Level" instance=ExtResource("1_w3jxh")]
 

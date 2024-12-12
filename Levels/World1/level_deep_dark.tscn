@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://cj80buvkjqk53"]
+[gd_scene load_steps=33 format=4 uid="uid://cj80buvkjqk53"]
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_sxkng"]
 [ext_resource type="TileSet" uid="uid://qi31weyfqxcu" path="res://Art/Tilemaps/Tilemap_Cave.tres" id="2_3gao6"]
@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://8w6gj777jn13" path="res://Prefabs/Set Dressing/Caves/stalagtite_3.tscn" id="9_uhbuw"]
 [ext_resource type="PackedScene" uid="uid://cjstar8v3xqfj" path="res://Prefabs/Set Dressing/Caves/stalagtite_4.tscn" id="10_o3j3w"]
 [ext_resource type="PackedScene" uid="uid://cy5frea0jg8y6" path="res://Prefabs/Set Dressing/Caves/stalagmite_1.tscn" id="11_a150d"]
-[ext_resource type="PackedScene" uid="uid://skkd531ff5me" path="res://Prefabs/Set Dressing/SetDressingBase.tscn" id="11_sg68s"]
+[ext_resource type="PackedScene" path="res://Prefabs/Set Dressing/SetDressingBase.tscn" id="11_sg68s"]
 [ext_resource type="PackedScene" uid="uid://shunhb8lqjuh" path="res://Prefabs/Set Dressing/Caves/stalagmite_4.tscn" id="12_hey53"]
 [ext_resource type="PackedScene" uid="uid://bvfwpw4rca00l" path="res://Prefabs/Set Dressing/Caves/cave_rock_2.tscn" id="12_ngjyq"]
 [ext_resource type="PackedScene" uid="uid://ddfihgi7jv5e6" path="res://Prefabs/Set Dressing/Caves/cave_rock_3.tscn" id="13_cjqau"]
@@ -25,6 +25,8 @@
 [ext_resource type="PackedScene" uid="uid://ow664p7dqy8t" path="res://Prefabs/Set Dressing/Caves/cave_rock_1.tscn" id="19_gsqe4"]
 [ext_resource type="PackedScene" uid="uid://b18bfarstrufp" path="res://Prefabs/Set Dressing/Caves/stalagmite_2.tscn" id="20_chsud"]
 [ext_resource type="PackedScene" uid="uid://bqy74q6ja4k8y" path="res://Prefabs/Set Dressing/Caves/stalagmite_3.tscn" id="21_dbou4"]
+[ext_resource type="PackedScene" uid="uid://drkcihqmmm3u3" path="res://Prefabs/Set Dressing/Glyph.tscn" id="22_splno"]
+[ext_resource type="Texture2D" uid="uid://cikpid8cgqp1j" path="res://Art/Sprites/glyphs/glyph_arrow.png" id="23_po1eh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x881o"]
 size = Vector2(1350, 17100)
@@ -301,18 +303,22 @@ position = Vector2(1050, -350)
 [node name="Stalagmite 4" parent="Environment Container" index="72" instance=ExtResource("20_chsud")]
 position = Vector2(1086, -350)
 
-[node name="Glyph Container2" type="Node2D" parent="." index="8" groups=["Glyph Container"]]
+[node name="Glyph" parent="Glyph Container" index="0" instance=ExtResource("22_splno")]
+position = Vector2(1250, -650)
+rotation = 1.5708
+texture = ExtResource("23_po1eh")
+offset = Vector2(-32, -32)
 
-[node name="Player" parent="." index="10"]
+[node name="Player" parent="." index="9"]
 position = Vector2(1027, 1000)
 
-[node name="Idol" parent="." index="11"]
+[node name="Idol" parent="." index="10"]
 position = Vector2(1350, -100)
 
-[node name="Idol2" parent="." index="12"]
+[node name="Idol2" parent="." index="11"]
 position = Vector2(2351, 640)
 
-[node name="Idol3" parent="." index="13"]
+[node name="Idol3" parent="." index="12"]
 position = Vector2(3825, -1050)
 
 [node name="NightLight" parent="Camera2D/UI" index="0"]
@@ -336,7 +342,7 @@ position = Vector2(-791, -87)
 [node name="Dynamite4" parent="Camera2D" index="6" instance=ExtResource("6_xmhdf")]
 position = Vector2(-717, -86)
 
-[node name="Water" parent="." index="17"]
+[node name="Water" parent="." index="16"]
 rise_speed = 0.0
 
 [node name="Music" parent="Music Player" index="0"]

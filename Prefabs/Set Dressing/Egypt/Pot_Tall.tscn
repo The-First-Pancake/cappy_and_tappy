@@ -33,5 +33,6 @@ polygon = PackedVector2Array(-9, 0, -12, -24.1647, -9, -52, 7, -52, 10, -24.1647
 
 [node name="LevelBuildingTools" type="Node" parent="."]
 script = ExtResource("7_0nb3f")
+auto_parent_to = "Environment Container"
 
 [connection signal="squashed" from="Squashable" to="Sprite2D/ShardEmitter" method="_on_squashable_squashed"]

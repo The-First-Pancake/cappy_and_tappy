@@ -47,7 +47,7 @@ var is_entering: bool = false
 var is_exiting: bool = false
 var is_downsliding: bool = false
 
-var normal_z_layer: int = 1
+var normal_z_layer: int = 0
 var inside_door_z_layer: int = -1
 
 var input_direction: Vector2 = Vector2.ZERO
@@ -164,7 +164,7 @@ func movement(delta: float) -> void:
 		AudioManager.PlayAudio(land_sound)
 	
 	#Jumping!
-	if (is_on_floor() or has_recently_left_ground) and Input.is_action_just_pressed("jump"):
+	if (is_on_floor() or has_recently_left_ground) and Input.is_action_just_pressed("jump") and !Input.is_key_pressed(KEY_SHIFT):
 		jump_particles.restart()
 		AudioManager.PlayAudio(jump_sound)
 		was_on_floor = false
@@ -175,8 +175,7 @@ func movement(delta: float) -> void:
 	else:
 		was_on_floor = is_on_floor()
 	
-	
-	if input_direction.x != 0: #if we're tryna move left/right
+	if input_direction.x != 0 and !Input.is_key_pressed(KEY_SHIFT): #if we're tryna move left/right
 		if sign(input_direction.x) != sign(velocity.x):
 			velocity.x = 0 # for instant turning around
 		if abs(velocity.x) < max_speed:
@@ -194,29 +193,33 @@ func movement(delta: float) -> void:
 @onready var look_up_timer: Timer = %"Look Up Timer"
 var look_ahead_hold_time: float = 0.5
 var is_holding_down_look_ahead_input: bool = false
-var looking_up: bool = false
-var looking_down: bool = false
+var look_ahead_dir: Vector2 = Vector2.ZERO
 
 func try_look_ahead() -> void:
-	var can_look_ahead: bool = input_direction.x == 0 and !current_hold and is_on_floor() and !is_downsliding
-	var is_trying_to_look_up: bool = input_direction.y == -1
-	var is_trying_to_look_down: bool = input_direction.y == 1
+	var can_look_ahead: bool = velocity.x == 0 and is_on_floor() and !is_downsliding
 	
-	if can_look_ahead and (is_trying_to_look_up or is_trying_to_look_down):
-		if !is_holding_down_look_ahead_input:
-			look_up_timer.start() #make sure timer is goingd
-			is_holding_down_look_ahead_input = true
-		elif look_up_timer.time_left == 0:
-			if is_trying_to_look_up:
-				looking_up = true
-			else:
-				looking_down = true
+	if Input.is_key_pressed(KEY_SHIFT) and can_look_ahead:
+		look_ahead_dir = input_direction
 	else:
-		look_up_timer.stop()
-		look_up_timer.wait_time = look_ahead_hold_time
-		looking_up = false
-		looking_down = false
-		is_holding_down_look_ahead_input = false
+		look_ahead_dir = Vector2.ZERO
+	
+	#var is_trying_to_look_up: bool = input_direction.y == -1
+	#var is_trying_to_look_down: bool = input_direction.y == 1
+	#
+	#if can_look_ahead and (is_trying_to_look_up or is_trying_to_look_down):
+		#if !is_holding_down_look_ahead_input:
+			#look_up_timer.start() #make sure timer is goingd
+			#is_holding_down_look_ahead_input = true
+		#elif look_up_timer.time_left == 0:
+			#if is_trying_to_look_up:
+				#look_ahead_dir = Vector2.UP
+			#else:
+				#look_ahead_dir = Vector2.DOWN
+	#else:
+		#look_up_timer.stop()
+		#look_up_timer.wait_time = look_ahead_hold_time
+		#look_ahead_dir = Vector2.ZERO
+		#is_holding_down_look_ahead_input = false
 
 func holding_behavior() -> void:
 	#targeting arrow
