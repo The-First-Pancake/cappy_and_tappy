@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bdyf8npx3i7xk" path="res://Prefabs/Blocks/2x2-Piece.tscn" id="9_i6e5t"]
 [ext_resource type="PackedScene" uid="uid://c4safo4pwme48" path="res://Prefabs/Blocks/1x4-Piece.tscn" id="10_uwfru"]
 [ext_resource type="PackedScene" uid="uid://bkatak76uuoli" path="res://Prefabs/Spawn On Blocks/Campfire.tscn" id="11_icgcv"]
-[ext_resource type="AudioStream" uid="uid://d2kuoqyw1rd57" path="res://Sound/Music/the pharaoh's curse.wav" id="16_n81wf"]
+[ext_resource type="AudioStream" uid="uid://d2kuoqyw1rd57" path="res://Sound/Music/Egypt/the pharaoh's curse.wav" id="16_n81wf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rs1yc"]
 size = Vector2(1350, 17100)

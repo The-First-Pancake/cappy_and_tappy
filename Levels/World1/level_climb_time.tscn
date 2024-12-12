@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://c10tw0ejl1xjv"]
+[gd_scene load_steps=16 format=3 uid="uid://c10tw0ejl1xjv"]
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_dk5iv"]
+[ext_resource type="AudioStream" uid="uid://b8wc5muowahkv" path="res://Sound/Music/Aztec/Jungle Jammin.wav" id="2_30a3s"]
 [ext_resource type="PackedScene" uid="uid://drkcihqmmm3u3" path="res://Prefabs/Set Dressing/Glyph.tscn" id="2_jrqy3"]
 [ext_resource type="Texture2D" uid="uid://cfwthgghjptlu" path="res://Art/Sprites/glyphs/Glyph_Handhold_Hold.png" id="3_ds4mp"]
 [ext_resource type="Texture2D" uid="uid://dmscbkx2u2p7o" path="res://Art/Sprites/glyphs/ControllerAlts/Glyph_Handhold_Hold.png" id="4_0ews1"]
@@ -26,6 +27,7 @@ spawn_prefab = ExtResource("11_ixknf")
 spawn_count = 1
 
 [node name="Template Level" instance=ExtResource("1_dk5iv")]
+override_music = ExtResource("2_30a3s")
 
 [node name="CollisionShape2D" parent="Camera Zone" index="0"]
 shape = SubResource("RectangleShape2D_63r1a")
@@ -48,16 +50,16 @@ position = Vector2(1610.94, 575)
 texture = ExtResource("7_q70uw")
 controller_texture = ExtResource("8_knp4e")
 
-[node name="Idol" parent="." index="10"]
+[node name="Idol" parent="." index="11"]
 position = Vector2(900, -750)
 
-[node name="Idol2" parent="." index="11"]
+[node name="Idol2" parent="." index="12"]
 position = Vector2(1950, -150)
 
-[node name="Idol3" parent="." index="12"]
+[node name="Idol3" parent="." index="13"]
 position = Vector2(950, 750)
 
-[node name="BlockSpawner" parent="Camera2D" index="3"]
+[node name="BlockSpawner" parent="Camera2D" index="2"]
 block_prefabs = Array[PackedScene]([ExtResource("9_wcidy")])
 spawn_objects = Array[ExtResource("10_6erhb")]([SubResource("Resource_6716m")])
 spawn_object_probability = 0.2
@@ -71,4 +73,4 @@ rotation = 1.57079
 rise_speed = 12.0
 
 [node name="Music" parent="Music Player" index="0"]
-volume_db = -7.0
+stream = ExtResource("2_30a3s")

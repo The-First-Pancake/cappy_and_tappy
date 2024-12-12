@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=4 uid="uid://bk36onmsb3e5e"]
+[gd_scene load_steps=11 format=4 uid="uid://bk36onmsb3e5e"]
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_n5m3r"]
+[ext_resource type="AudioStream" uid="uid://lvnq520jc1ju" path="res://Sound/Music/Aztec/That Belongs in a Museum!.wav" id="2_k1uoq"]
 [ext_resource type="Script" path="res://Scripts/SpawnObject.gd" id="2_k6bhr"]
 [ext_resource type="PackedScene" uid="uid://c4safo4pwme48" path="res://Prefabs/Blocks/1x4-Piece.tscn" id="3_2kitc"]
 [ext_resource type="PackedScene" uid="uid://bkatak76uuoli" path="res://Prefabs/Spawn On Blocks/Campfire.tscn" id="3_smlu6"]
@@ -21,6 +22,7 @@ spawn_prefab = ExtResource("4_pm1t3")
 spawn_count = 5
 
 [node name="Template Level" instance=ExtResource("1_n5m3r")]
+override_music = ExtResource("2_k1uoq")
 
 [node name="CollisionShape2D" parent="Camera Zone" index="0"]
 shape = SubResource("RectangleShape2D_o2hoc")
@@ -35,15 +37,6 @@ tile_map_data = PackedByteArray("AAANACYAAAACAAEAAAANACUAAAACAAEAAAANACQAAAACAAE
 position = Vector2(416, 336)
 scale = Vector2(0.32, 0.32)
 
-[node name="Idol" parent="." index="10"]
-position = Vector2(750, 450)
-
-[node name="Idol2" parent="." index="11"]
-position = Vector2(2400, 350)
-
-[node name="Idol3" parent="." index="12"]
-position = Vector2(1350, -150)
-
 [node name="2x2 Piiece" parent="Block Container" index="0" instance=ExtResource("5_et5i6")]
 position = Vector2(1350, -450)
 rotation = 1.57079
@@ -52,9 +45,21 @@ rotation = 1.57079
 position = Vector2(2300, 150)
 rotation = -3.14154
 
+[node name="Idol" parent="." index="11"]
+position = Vector2(750, 450)
+
+[node name="Idol2" parent="." index="12"]
+position = Vector2(2400, 350)
+
+[node name="Idol3" parent="." index="13"]
+position = Vector2(1350, -150)
+
 [node name="BlockSpawner" parent="Camera2D" index="2"]
 spawn_objects = Array[ExtResource("2_k6bhr")]([SubResource("Resource_2mh7d"), SubResource("Resource_c1oqr")])
 spawn_object_probability = 0.2
 
 [node name="Water" parent="." index="16"]
 rise_speed = 8.0
+
+[node name="Music" parent="Music Player" index="0"]
+stream = ExtResource("2_k1uoq")

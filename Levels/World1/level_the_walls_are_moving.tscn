@@ -1,7 +1,8 @@
-[gd_scene load_steps=28 format=3 uid="uid://bsxmt0huibfmi"]
+[gd_scene load_steps=29 format=3 uid="uid://bsxmt0huibfmi"]
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_jhrg7"]
 [ext_resource type="Script" path="res://Scripts/SpawnObject.gd" id="2_kk4ad"]
+[ext_resource type="AudioStream" uid="uid://c74whkl7noajs" path="res://Sound/Music/Caves/Lonely Stalactites.wav" id="2_omn6i"]
 [ext_resource type="Texture2D" uid="uid://22dhetwgepde" path="res://Art/Tilemaps/Background_Cave.png" id="2_q2nbq"]
 [ext_resource type="PackedScene" uid="uid://r1kjk04fwuou" path="res://Prefabs/Spawn On Blocks/Hold.tscn" id="3_be4rd"]
 [ext_resource type="Texture2D" uid="uid://drcbr0bwewvte" path="res://Art/Sprites/caves/cave elements/door_diffuse.png" id="3_dipd7"]
@@ -55,6 +56,7 @@ spawn_count = 5
 [node name="Template Level2" instance=ExtResource("1_jhrg7")]
 temple_type = 2
 dark = true
+override_music = ExtResource("2_omn6i")
 
 [node name="Background" parent="Background Parallax" index="0"]
 texture = ExtResource("2_q2nbq")
@@ -94,15 +96,6 @@ position = Vector2(1350, 1050)
 [node name="@Area2D@45802" parent="Environment Container" index="5" instance=ExtResource("11_x6ro6")]
 position = Vector2(1400, 1050)
 
-[node name="Idol" parent="." index="10"]
-position = Vector2(1950, 700)
-
-[node name="Idol2" parent="." index="11"]
-position = Vector2(1000, -100)
-
-[node name="Idol3" parent="." index="12"]
-position = Vector2(1000, -800)
-
 [node name="PlaceableCharacterBody2d" parent="Block Container" index="0" instance=ExtResource("5_dty44")]
 position = Vector2(1700, -600)
 rotation = 1.5708
@@ -118,6 +111,15 @@ rotation = 1.57079
 [node name="1x4 Block" parent="Block Container" index="3" instance=ExtResource("5_dty44")]
 position = Vector2(1000, 0)
 rotation = 1.57086
+
+[node name="Idol" parent="." index="11"]
+position = Vector2(1950, 700)
+
+[node name="Idol2" parent="." index="12"]
+position = Vector2(1000, -100)
+
+[node name="Idol3" parent="." index="13"]
+position = Vector2(1000, -800)
 
 [node name="NightLight" parent="Camera2D/UI" index="0"]
 visible = true
@@ -186,3 +188,6 @@ rotation = 1.5708
 [node name="Scarab Beetle16" parent="." index="32" instance=ExtResource("4_qcl3k")]
 position = Vector2(1100, -600)
 rotation = 1.5708
+
+[node name="Music" parent="Music Player" index="0"]
+stream = ExtResource("2_omn6i")

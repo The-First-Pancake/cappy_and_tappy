@@ -1,6 +1,7 @@
-[gd_scene load_steps=28 format=4 uid="uid://cdt2acy760u6v"]
+[gd_scene load_steps=29 format=4 uid="uid://cdt2acy760u6v"]
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_arf61"]
+[ext_resource type="AudioStream" uid="uid://bfen6vgx127w6" path="res://Sound/Music/Caves/crystal crevice.wav" id="2_557nm"]
 [ext_resource type="Script" path="res://Scripts/SpawnObject.gd" id="2_b1p7q"]
 [ext_resource type="Texture2D" uid="uid://22dhetwgepde" path="res://Art/Tilemaps/Background_Cave.png" id="2_ecxdw"]
 [ext_resource type="PackedScene" uid="uid://r1kjk04fwuou" path="res://Prefabs/Spawn On Blocks/Hold.tscn" id="3_06ojt"]
@@ -51,6 +52,7 @@ spawn_count = 5
 [node name="Template Level" instance=ExtResource("1_arf61")]
 temple_type = 2
 dark = true
+override_music = ExtResource("2_557nm")
 
 [node name="Background" parent="Background Parallax" index="0"]
 texture = ExtResource("2_ecxdw")
@@ -94,15 +96,6 @@ position = Vector2(1450, 1050)
 [node name="@Area2D@61428" parent="Environment Container" index="6" instance=ExtResource("12_5xu74")]
 position = Vector2(1500, 1050)
 
-[node name="Idol" parent="." index="10"]
-position = Vector2(2750, 250)
-
-[node name="Idol2" parent="." index="11"]
-position = Vector2(1000, -100)
-
-[node name="Idol3" parent="." index="12"]
-position = Vector2(1700, -600)
-
 [node name="PlaceableCharacterBody2d" parent="Block Container" index="0" instance=ExtResource("6_if8es")]
 position = Vector2(1200, -900)
 rotation = 1.5708
@@ -118,6 +111,15 @@ rotation = 3.14159
 [node name="1x4 Block" parent="Block Container" index="3" instance=ExtResource("6_if8es")]
 position = Vector2(2350, 150)
 rotation = -3.14153
+
+[node name="Idol" parent="." index="11"]
+position = Vector2(2750, 250)
+
+[node name="Idol2" parent="." index="12"]
+position = Vector2(1000, -100)
+
+[node name="Idol3" parent="." index="13"]
+position = Vector2(1700, -600)
 
 [node name="NightLight" parent="Camera2D/UI" index="0"]
 visible = true
@@ -240,6 +242,9 @@ rotation = 1.5708
 [node name="2x2 Piiece" parent="." index="46" instance=ExtResource("9_ax44s")]
 position = Vector2(1700, -450)
 rotation = 1.57079
+
+[node name="Music" parent="Music Player" index="0"]
+stream = ExtResource("2_557nm")
 
 [node name="Torch" parent="." index="50" instance=ExtResource("21_a3x5b")]
 position = Vector2(1350, -1050)

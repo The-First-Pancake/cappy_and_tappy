@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=4 uid="uid://1fovc0qvw1oq"]
+[gd_scene load_steps=16 format=4 uid="uid://1fovc0qvw1oq"]
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_w3jxh"]
 [ext_resource type="PackedScene" uid="uid://bdyf8npx3i7xk" path="res://Prefabs/Blocks/2x2-Piece.tscn" id="2_bl821"]
 [ext_resource type="Texture2D" uid="uid://cfwthgghjptlu" path="res://Art/Sprites/glyphs/Glyph_Handhold_Hold.png" id="2_bsear"]
 [ext_resource type="PackedScene" uid="uid://drkcihqmmm3u3" path="res://Prefabs/Set Dressing/Glyph.tscn" id="2_kyjnv"]
+[ext_resource type="AudioStream" uid="uid://c74whkl7noajs" path="res://Sound/Music/Caves/Lonely Stalactites.wav" id="2_yqksk"]
 [ext_resource type="Texture2D" uid="uid://ckqbqnfws6rvb" path="res://Art/Sprites/glyphs/Glyph_Handhold_Dir.png" id="3_f6p84"]
 [ext_resource type="PackedScene" uid="uid://r1kjk04fwuou" path="res://Prefabs/Spawn On Blocks/Hold.tscn" id="4_cbys8"]
 [ext_resource type="Texture2D" uid="uid://myc5ko8clsbs" path="res://Art/Sprites/glyphs/Glyph_Handhold_Release.png" id="4_kfenh"]
@@ -18,6 +19,7 @@
 size = Vector2(1350, 1500)
 
 [node name="Template Level" instance=ExtResource("1_w3jxh")]
+override_music = ExtResource("2_yqksk")
 
 [node name="CollisionShape2D" parent="Camera Zone" index="0"]
 position = Vector2(1375, 450)
@@ -84,18 +86,6 @@ rotation = -0.716313
 scale = Vector2(1, 1)
 texture = ExtResource("10_5skly")
 
-[node name="Player" parent="." index="9"]
-position = Vector2(775, 1050)
-
-[node name="Idol" parent="." index="10"]
-position = Vector2(1900, 300)
-
-[node name="Idol2" parent="." index="11"]
-position = Vector2(1600, -131)
-
-[node name="Idol3" parent="." index="12"]
-position = Vector2(1600, 300)
-
 [node name="2x2 Piiece" parent="Block Container" index="0" instance=ExtResource("2_bl821")]
 position = Vector2(1450, 0)
 rotation = 1.57079
@@ -112,6 +102,18 @@ rotation = -1.57074
 position = Vector2(1050, 400)
 rotation = 6.45479e-05
 
+[node name="Player" parent="." index="10"]
+position = Vector2(775, 1050)
+
+[node name="Idol" parent="." index="11"]
+position = Vector2(1900, 300)
+
+[node name="Idol2" parent="." index="12"]
+position = Vector2(1600, -131)
+
+[node name="Idol3" parent="." index="13"]
+position = Vector2(1600, 300)
+
 [node name="Camera2D" parent="." index="14"]
 position = Vector2(1150, 624)
 
@@ -124,3 +126,6 @@ rise_speed = 0.0
 
 [node name="PathFindingGraph" parent="." index="18"]
 visible = false
+
+[node name="Music" parent="Music Player" index="0"]
+stream = ExtResource("2_yqksk")

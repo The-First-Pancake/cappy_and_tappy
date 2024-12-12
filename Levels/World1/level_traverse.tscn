@@ -1,6 +1,7 @@
-[gd_scene load_steps=21 format=4 uid="uid://cotgqt74hr8q7"]
+[gd_scene load_steps=22 format=4 uid="uid://cotgqt74hr8q7"]
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_mna8d"]
+[ext_resource type="AudioStream" uid="uid://lvnq520jc1ju" path="res://Sound/Music/Aztec/That Belongs in a Museum!.wav" id="2_gmdn8"]
 [ext_resource type="Texture2D" uid="uid://cb17awt0j13xi" path="res://Art/Sprites/glyphs/Glyph_Hook_Rotate.png" id="2_gtgmq"]
 [ext_resource type="PackedScene" uid="uid://drkcihqmmm3u3" path="res://Prefabs/Set Dressing/Glyph.tscn" id="3_m3gds"]
 [ext_resource type="Texture2D" uid="uid://ce0qm3ti416bl" path="res://Art/Sprites/glyphs/Glyph_Hook_Attach.png" id="3_qxh8j"]
@@ -24,6 +25,7 @@
 size = Vector2(5600, 1000)
 
 [node name="Template Level" instance=ExtResource("1_mna8d")]
+override_music = ExtResource("2_gmdn8")
 
 [node name="Camera Zone" parent="." index="3"]
 type = 1
@@ -66,13 +68,13 @@ scale = Vector2(5.00887, 5.085)
 texture = ExtResource("6_io1w6")
 controller_texture = ExtResource("13_xg22y")
 
-[node name="Idol" parent="." index="10"]
+[node name="Idol" parent="." index="11"]
 position = Vector2(1850, 1000)
 
-[node name="Idol2" parent="." index="11"]
+[node name="Idol2" parent="." index="12"]
 position = Vector2(3650, 300)
 
-[node name="Idol3" parent="." index="12"]
+[node name="Idol3" parent="." index="13"]
 position = Vector2(5400, 930)
 
 [node name="Camera2D" parent="." index="14"]
@@ -87,3 +89,6 @@ rise_speed = 0.0
 
 [node name="PathFindingGraph" parent="." index="18"]
 visible = false
+
+[node name="Music" parent="Music Player" index="0"]
+stream = ExtResource("2_gmdn8")

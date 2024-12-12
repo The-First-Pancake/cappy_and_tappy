@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://r1kjk04fwuou" path="res://Prefabs/Spawn On Blocks/Hold.tscn" id="7_m31e7"]
 [ext_resource type="Script" path="res://Scripts/SpawnObject.gd" id="8_5tte7"]
 [ext_resource type="PackedScene" uid="uid://bkatak76uuoli" path="res://Prefabs/Spawn On Blocks/Campfire.tscn" id="8_ogfsl"]
-[ext_resource type="AudioStream" uid="uid://d2kuoqyw1rd57" path="res://Sound/Music/the pharaoh's curse.wav" id="8_rovfj"]
+[ext_resource type="AudioStream" uid="uid://d2kuoqyw1rd57" path="res://Sound/Music/Egypt/the pharaoh's curse.wav" id="8_rovfj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cn8bt"]
 size = Vector2(5750, 1000)

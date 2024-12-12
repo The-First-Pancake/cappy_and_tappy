@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://di2wrjiflt752" path="res://Prefabs/Spawn On Blocks/Sconce.tscn" id="3_cmueb"]
 [ext_resource type="Texture2D" uid="uid://rpwwxk8bf3mk" path="res://Art/Sprites/caves/cave elements/door_normal.png" id="3_tfylx"]
 [ext_resource type="PackedScene" uid="uid://r1kjk04fwuou" path="res://Prefabs/Spawn On Blocks/Hold.tscn" id="4_2p85c"]
-[ext_resource type="AudioStream" uid="uid://diuhinfln26yf" path="res://Sound/Music/physics don't make sense no more.wav" id="5_jiid7"]
+[ext_resource type="AudioStream" uid="uid://diuhinfln26yf" path="res://Sound/Music/Caves/physics don't make sense no more.wav" id="5_jiid7"]
 [ext_resource type="PackedScene" uid="uid://mcu32jepdsb3" path="res://Prefabs/Dynamite.tscn" id="6_xmhdf"]
 [ext_resource type="PackedScene" uid="uid://cydun7vf2fv0l" path="res://Prefabs/Set Dressing/Caves/stalagtite_1.tscn" id="7_rp3nq"]
 [ext_resource type="PackedScene" uid="uid://dhrgrpwwax6i8" path="res://Prefabs/Spawn On Blocks/Spikes.tscn" id="8_2jioi"]
@@ -52,6 +52,7 @@ spawn_count = 0
 [node name="Template Level2" instance=ExtResource("1_sxkng")]
 temple_type = 2
 dark = true
+override_music = ExtResource("5_jiid7")
 
 [node name="Background" parent="Background Parallax" index="0"]
 texture = ExtResource("2_hc8rj")
@@ -309,16 +310,16 @@ rotation = 1.5708
 texture = ExtResource("23_po1eh")
 offset = Vector2(-32, -32)
 
-[node name="Player" parent="." index="9"]
+[node name="Player" parent="." index="10"]
 position = Vector2(1027, 1000)
 
-[node name="Idol" parent="." index="10"]
+[node name="Idol" parent="." index="11"]
 position = Vector2(1350, -100)
 
-[node name="Idol2" parent="." index="11"]
+[node name="Idol2" parent="." index="12"]
 position = Vector2(2351, 640)
 
-[node name="Idol3" parent="." index="12"]
+[node name="Idol3" parent="." index="13"]
 position = Vector2(3825, -1050)
 
 [node name="NightLight" parent="Camera2D/UI" index="0"]

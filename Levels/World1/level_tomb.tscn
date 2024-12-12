@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://rpwwxk8bf3mk" path="res://Art/Sprites/caves/cave elements/door_normal.png" id="5_atjie"]
 [ext_resource type="PackedScene" uid="uid://di2wrjiflt752" path="res://Prefabs/Spawn On Blocks/Sconce.tscn" id="6_6jwv2"]
 [ext_resource type="PackedScene" uid="uid://mcu32jepdsb3" path="res://Prefabs/Dynamite.tscn" id="7_vw862"]
-[ext_resource type="AudioStream" uid="uid://diuhinfln26yf" path="res://Sound/Music/physics don't make sense no more.wav" id="8_h4xwq"]
+[ext_resource type="AudioStream" uid="uid://diuhinfln26yf" path="res://Sound/Music/Caves/physics don't make sense no more.wav" id="8_h4xwq"]
 [ext_resource type="PackedScene" uid="uid://dep1x0fmlo6tj" path="res://Prefabs/Torch.tscn" id="9_8sh3d"]
 [ext_resource type="PackedScene" uid="uid://c4safo4pwme48" path="res://Prefabs/Blocks/1x4-Piece.tscn" id="10_78xtq"]
 [ext_resource type="PackedScene" uid="uid://c8njjo4yfo85v" path="res://Prefabs/coffin.tscn" id="11_d4fom"]
@@ -56,6 +56,7 @@ spawn_count = 1
 [node name="Template Level2" instance=ExtResource("1_ky0qr")]
 temple_type = 2
 dark = true
+override_music = ExtResource("8_h4xwq")
 
 [node name="Background" parent="Background Parallax" index="0"]
 texture = ExtResource("2_l8hg7")
@@ -169,21 +170,21 @@ position = Vector2(2800, -2800)
 [node name="PathNode3" parent="Environment Container" index="24" instance=ExtResource("12_ho5uk")]
 position = Vector2(2750, -2800)
 
-[node name="Player" parent="." index="10"]
-position = Vector2(1016, 949)
-
-[node name="Idol" parent="." index="11"]
-position = Vector2(3300, -2200)
-
-[node name="Idol2" parent="." index="12"]
-position = Vector2(4250, -1300)
-
-[node name="Idol3" parent="." index="13"]
-position = Vector2(1450, -3400)
-
 [node name="1x4 Block3" parent="Block Container" index="0" instance=ExtResource("10_78xtq")]
 position = Vector2(1750, -1500)
 rotation = -3.14153
+
+[node name="Player" parent="." index="11"]
+position = Vector2(1016, 949)
+
+[node name="Idol" parent="." index="12"]
+position = Vector2(3300, -2200)
+
+[node name="Idol2" parent="." index="13"]
+position = Vector2(4250, -1300)
+
+[node name="Idol3" parent="." index="14"]
+position = Vector2(1450, -3400)
 
 [node name="NightLight" parent="Camera2D/UI" index="0"]
 visible = true

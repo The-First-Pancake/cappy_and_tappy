@@ -13,7 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://1l1hnp6thcfk" path="res://Sound/Ouch__006.wav" id="11_la8t0"]
 [ext_resource type="AudioStream" uid="uid://owoo0sg3cpg4" path="res://Sound/Footstep1__012.wav" id="12_gq3j6"]
 [ext_resource type="AudioStream" uid="uid://4lb06b18i35c" path="res://Sound/Pickup__190.wav" id="13_yj16q"]
-[ext_resource type="AudioStream" uid="uid://twgpbnyr1add" path="res://Sound/Music/music_main.wav" id="14_0vum8"]
+[ext_resource type="AudioStream" uid="uid://twgpbnyr1add" path="res://Sound/music_main.wav" id="14_0vum8"]
 [ext_resource type="AudioStream" uid="uid://dld0w7i55tup8" path="res://Sound/scream_01.wav" id="15_ocxyy"]
 [ext_resource type="AudioStream" uid="uid://debulnj550wpv" path="res://Sound/DAAAAAAAMN_01.wav" id="16_ny3q0"]
 [ext_resource type="AudioStream" uid="uid://c3tdtwgpt8i02" path="res://Sound/Music/griddy.wav" id="17_k1iyg"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=4 uid="uid://cge4flojubrju"]
+[gd_scene load_steps=7 format=4 uid="uid://cge4flojubrju"]
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_sy0s0"]
 [ext_resource type="PackedScene" uid="uid://c4safo4pwme48" path="res://Prefabs/Blocks/1x4-Piece.tscn" id="2_35457"]
+[ext_resource type="AudioStream" uid="uid://3cioslj4nwip" path="res://Sound/Music/Aztec/The First Step draft.wav" id="2_mwxrv"]
 [ext_resource type="PackedScene" uid="uid://dhrgrpwwax6i8" path="res://Prefabs/Spawn On Blocks/Spikes.tscn" id="2_silcq"]
 [ext_resource type="PackedScene" uid="uid://r1kjk04fwuou" path="res://Prefabs/Spawn On Blocks/Hold.tscn" id="3_2cegy"]
 
@@ -9,6 +10,7 @@
 size = Vector2(1350, 17100)
 
 [node name="Template Level" instance=ExtResource("1_sy0s0")]
+override_music = ExtResource("2_mwxrv")
 
 [node name="CollisionShape2D" parent="Camera Zone" index="0"]
 shape = SubResource("RectangleShape2D_m0obr")
@@ -45,16 +47,16 @@ position = Vector2(752, -464)
 rotation = 3.14159
 scale = Vector2(0.32, 0.32)
 
-[node name="Player" parent="." index="9"]
+[node name="Player" parent="." index="10"]
 position = Vector2(1029, 1000)
 
-[node name="Idol" parent="." index="10"]
+[node name="Idol" parent="." index="11"]
 position = Vector2(850, -350)
 
-[node name="Idol2" parent="." index="11"]
+[node name="Idol2" parent="." index="12"]
 position = Vector2(2750, -1350)
 
-[node name="Idol3" parent="." index="12"]
+[node name="Idol3" parent="." index="13"]
 position = Vector2(900, -2650)
 
 [node name="PlaceableCharacterBody2d" parent="." index="15" instance=ExtResource("2_35457")]
@@ -63,3 +65,6 @@ rotation = 1.5708
 
 [node name="Water" parent="." index="17"]
 rise_speed = 12.0
+
+[node name="Music" parent="Music Player" index="0"]
+stream = ExtResource("2_mwxrv")

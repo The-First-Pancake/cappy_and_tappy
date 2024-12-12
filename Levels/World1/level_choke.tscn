@@ -1,9 +1,10 @@
-[gd_scene load_steps=26 format=4 uid="uid://b8yf51jyd28c5"]
+[gd_scene load_steps=27 format=4 uid="uid://b8yf51jyd28c5"]
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_8n0tx"]
 [ext_resource type="Texture2D" uid="uid://22dhetwgepde" path="res://Art/Tilemaps/Background_Cave.png" id="2_avvh3"]
 [ext_resource type="PackedScene" uid="uid://dhrgrpwwax6i8" path="res://Prefabs/Spawn On Blocks/Spikes.tscn" id="2_mgcvm"]
 [ext_resource type="Script" path="res://Scripts/SpawnObject.gd" id="2_n1ftx"]
+[ext_resource type="AudioStream" uid="uid://bfen6vgx127w6" path="res://Sound/Music/Caves/crystal crevice.wav" id="2_st76p"]
 [ext_resource type="Texture2D" uid="uid://drcbr0bwewvte" path="res://Art/Sprites/caves/cave elements/door_diffuse.png" id="3_5cnwk"]
 [ext_resource type="PackedScene" uid="uid://di2wrjiflt752" path="res://Prefabs/Spawn On Blocks/Sconce.tscn" id="3_cmgmo"]
 [ext_resource type="TileSet" uid="uid://qi31weyfqxcu" path="res://Art/Tilemaps/Tilemap_Cave.tres" id="3_pety8"]
@@ -39,6 +40,7 @@ spawn_count = 0
 [node name="Template Level" instance=ExtResource("1_8n0tx")]
 temple_type = 2
 dark = true
+override_music = ExtResource("2_st76p")
 
 [node name="Background" parent="Background Parallax" index="0"]
 texture = ExtResource("2_avvh3")
@@ -236,16 +238,16 @@ position = Vector2(1850, 400)
 [node name="SetDressingBase23" parent="Environment Container" index="33" instance=ExtResource("11_gar8t")]
 position = Vector2(2000, 400)
 
-[node name="Player" parent="." index="9"]
+[node name="Player" parent="." index="10"]
 position = Vector2(1175, 1050)
 
-[node name="Idol" parent="." index="10"]
+[node name="Idol" parent="." index="11"]
 position = Vector2(2300, -800)
 
-[node name="Idol2" parent="." index="11"]
+[node name="Idol2" parent="." index="12"]
 position = Vector2(350, -1750)
 
-[node name="Idol3" parent="." index="12"]
+[node name="Idol3" parent="." index="13"]
 position = Vector2(2000, -3000)
 
 [node name="NightLight" parent="Camera2D/UI" index="0"]
@@ -253,6 +255,9 @@ visible = true
 
 [node name="BlockSpawner" parent="Camera2D" index="2"]
 every_block_spawn_objects = Array[ExtResource("2_n1ftx")]([SubResource("Resource_ub1w8")])
+
+[node name="Music" parent="Music Player" index="0"]
+stream = ExtResource("2_st76p")
 
 [node name="Torch" parent="." index="20" instance=ExtResource("3_u1pl7")]
 position = Vector2(2450, -850)

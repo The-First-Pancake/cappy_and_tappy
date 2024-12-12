@@ -25,7 +25,7 @@ func update_temple_type() -> void:
 	
 	if temple_type == TEMPLE_TYPE.AZTEC:
 		if !override_music:
-			music_player.stream = preload("res://Sound/Music/music_main.wav")
+			music_player.stream = preload("res://Sound/Music/Aztec/Jungle Jammin.wav")
 			music_player.volume_db = -7
 		environment.tile_set = preload("res://Art/Tilemaps/Tilemap_Brown Bricks.tres")
 		background.texture = preload("res://Art/Sprites/Backgrounds/background.png")
@@ -34,7 +34,7 @@ func update_temple_type() -> void:
 	
 	if temple_type == TEMPLE_TYPE.EGYPT:
 		if !override_music:
-			music_player.stream = preload("res://Sound/Music/the pharaoh's curse.wav")
+			music_player.stream = preload("res://Sound/Music/Egypt/the pharaoh's curse.wav")
 			music_player.volume_db = -9
 		environment.tile_set = preload("res://Art/Tilemaps/Tilemap_Egypt.tres")
 		background.texture = preload("res://Art/Tilemaps/Background_Egypt.png")

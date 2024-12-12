@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=4 uid="uid://b8ofjhklhy6o"]
+[gd_scene load_steps=7 format=4 uid="uid://b8ofjhklhy6o"]
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_f2c2y"]
 [ext_resource type="PackedScene" uid="uid://drkcihqmmm3u3" path="res://Prefabs/Set Dressing/Glyph.tscn" id="2_j6dc3"]
+[ext_resource type="AudioStream" uid="uid://lvnq520jc1ju" path="res://Sound/Music/Aztec/That Belongs in a Museum!.wav" id="2_usxv3"]
 [ext_resource type="Texture2D" uid="uid://cikpid8cgqp1j" path="res://Art/Sprites/glyphs/glyph_arrow.png" id="3_c8w08"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xu3kl"]
@@ -11,6 +12,7 @@ size = Vector2(1350, 17100)
 load_path = "res://.godot/imported/idol clue.png-ed2f1a31871507f953f24687960712e6.ctex"
 
 [node name="Template Level" instance=ExtResource("1_f2c2y")]
+override_music = ExtResource("2_usxv3")
 
 [node name="CollisionShape2D" parent="Camera Zone" index="0"]
 shape = SubResource("RectangleShape2D_xu3kl")
@@ -30,11 +32,14 @@ position = Vector2(900, 100)
 rotation = -1.5708
 texture = ExtResource("3_c8w08")
 
-[node name="Idol" parent="." index="10"]
+[node name="Idol" parent="." index="11"]
 position = Vector2(1350, -3600)
 
-[node name="Idol2" parent="." index="11"]
+[node name="Idol2" parent="." index="12"]
 position = Vector2(1950, 123)
 
-[node name="Idol3" parent="." index="12"]
+[node name="Idol3" parent="." index="13"]
 position = Vector2(800, -1500)
+
+[node name="Music" parent="Music Player" index="0"]
+stream = ExtResource("2_usxv3")

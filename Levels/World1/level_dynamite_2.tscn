@@ -1,12 +1,13 @@
-[gd_scene load_steps=17 format=3 uid="uid://df0wpkdny65ci"]
+[gd_scene load_steps=18 format=3 uid="uid://df0wpkdny65ci"]
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_1ye1x"]
 [ext_resource type="Script" path="res://Scripts/SpawnObject.gd" id="2_7k4e2"]
 [ext_resource type="PackedScene" uid="uid://drkcihqmmm3u3" path="res://Prefabs/Set Dressing/Glyph.tscn" id="2_ekx62"]
+[ext_resource type="AudioStream" uid="uid://c74whkl7noajs" path="res://Sound/Music/Caves/Lonely Stalactites.wav" id="2_gcdug"]
 [ext_resource type="PackedScene" uid="uid://hetb2cu4cbew" path="res://Prefabs/Spawn On Blocks/BreakerSpike.tscn" id="3_54hbo"]
-[ext_resource type="Texture2D" uid="uid://yqk8e8r8iqt" path="res://Art/Sprites/glyphs/hold s.png" id="3_t5v33"]
+[ext_resource type="Texture2D" uid="uid://tngyq04aua4s" path="res://Art/Sprites/glyphs/peeking_controls.png" id="3_mcg8p"]
+[ext_resource type="Texture2D" uid="uid://h88d1tiaojhk" path="res://Art/Sprites/glyphs/ControllerAlts/d-pad-down.png" id="4_khff2"]
 [ext_resource type="PackedScene" uid="uid://mcu32jepdsb3" path="res://Prefabs/Dynamite.tscn" id="4_vgq27"]
-[ext_resource type="AudioStream" uid="uid://bs0ib4ihh3wc1" path="res://Sound/Music/Chill Level Music gmtk game jam 2024.wav" id="5_2qevy"]
 [ext_resource type="PackedScene" uid="uid://c4safo4pwme48" path="res://Prefabs/Blocks/1x4-Piece.tscn" id="6_uelmd"]
 [ext_resource type="PackedScene" uid="uid://r1kjk04fwuou" path="res://Prefabs/Spawn On Blocks/Hold.tscn" id="7_wbtym"]
 [ext_resource type="PackedScene" uid="uid://b1lrc4bb14deo" path="res://Prefabs/Blocks/L-Piece.tscn" id="8_jnvga"]
@@ -24,6 +25,7 @@ spawn_prefab = ExtResource("3_54hbo")
 spawn_count = 1
 
 [node name="Template Level" instance=ExtResource("1_1ye1x")]
+override_music = ExtResource("2_gcdug")
 
 [node name="CollisionShape2D" parent="Camera Zone" index="0"]
 shape = SubResource("RectangleShape2D_kofcp")
@@ -36,20 +38,9 @@ position = Vector2(1725, 1050)
 
 [node name="Glyph" parent="Glyph Container" index="0" instance=ExtResource("2_ekx62")]
 position = Vector2(1350, -100)
-texture = ExtResource("3_t5v33")
+texture = ExtResource("3_mcg8p")
 offset = Vector2(2.43836, -1.56176)
-
-[node name="Player" parent="." index="9"]
-position = Vector2(1275, 200)
-
-[node name="Idol" parent="." index="10"]
-position = Vector2(1050, 50)
-
-[node name="Idol2" parent="." index="11"]
-position = Vector2(850, 650)
-
-[node name="Idol3" parent="." index="12"]
-position = Vector2(1600, 550)
+controller_texture = ExtResource("4_khff2")
 
 [node name="PlaceableCharacterBody2d14" parent="Block Container" index="0" instance=ExtResource("6_uelmd")]
 position = Vector2(1350, 300)
@@ -159,6 +150,18 @@ rotation = -3.14159
 position = Vector2(1150, 850)
 rotation = 1.5708
 
+[node name="Player" parent="." index="10"]
+position = Vector2(1275, 200)
+
+[node name="Idol" parent="." index="11"]
+position = Vector2(1050, 50)
+
+[node name="Idol2" parent="." index="12"]
+position = Vector2(850, 650)
+
+[node name="Idol3" parent="." index="13"]
+position = Vector2(1600, 550)
+
 [node name="Camera2D" parent="." index="14"]
 position = Vector2(1150, 996)
 
@@ -183,5 +186,4 @@ position = Vector2(-698, -87)
 rise_speed = 0.0
 
 [node name="Music" parent="Music Player" index="0"]
-stream = ExtResource("5_2qevy")
-volume_db = -5.0
+stream = ExtResource("2_gcdug")

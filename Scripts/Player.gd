@@ -198,7 +198,7 @@ var look_ahead_dir: Vector2 = Vector2.ZERO
 func try_look_ahead() -> void:
 	var can_look_ahead: bool = velocity.x == 0 and is_on_floor() and !is_downsliding
 	
-	var d_pad_input: Vector2 = Input.get_vector("controller_peek_left","controller_peek_right","controller_mouse_up","controller_peek_down")
+	var d_pad_input: Vector2 = Input.get_vector("controller_peek_left","controller_peek_right","controller_peek_up","controller_peek_down")
 	
 	look_ahead_dir = Vector2.ZERO
 	if can_look_ahead:
@@ -298,7 +298,7 @@ func update_animations() -> void:
 		if is_instance_valid(slide_sound_playing):
 			slide_sound_playing.queue_free()
 		if abs(velocity.x) > 10:
-			if AudioManager.current_music:
+			if is_instance_valid(AudioManager.current_music):
 				if AudioManager.current_music.stream_paused == true:
 					AudioManager.current_music.stream_paused = false
 					griddy_sound.stop()
@@ -315,7 +315,7 @@ func update_animations() -> void:
 			else:
 				sprite_animator.play("idle")
 				land_particles.emitting = false
-				if AudioManager.current_music:
+				if is_instance_valid(AudioManager.current_music):
 					if AudioManager.current_music.stream_paused == true:
 						AudioManager.current_music.stream_paused = false
 						griddy_sound.stop()

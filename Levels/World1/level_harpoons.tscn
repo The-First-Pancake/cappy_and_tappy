@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_bq2w4"]
 [ext_resource type="Texture2D" uid="uid://dkxik361t2ox1" path="res://Art/Tilemaps/Background_Egypt.png" id="2_n1uye"]
+[ext_resource type="AudioStream" uid="uid://b416is8d58t4y" path="res://Sound/Music/Egypt/dune tunes.wav" id="2_stsre"]
 [ext_resource type="Script" path="res://Scripts/SpawnObject.gd" id="2_xkwx5"]
 [ext_resource type="PackedScene" uid="uid://bkatak76uuoli" path="res://Prefabs/Spawn On Blocks/Campfire.tscn" id="3_8e531"]
 [ext_resource type="TileSet" uid="uid://cdp351ovo7gk4" path="res://Art/Tilemaps/Tilemap_Egypt.tres" id="3_bdqn0"]
@@ -9,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://dhrgrpwwax6i8" path="res://Prefabs/Spawn On Blocks/Spikes.tscn" id="5_jro00"]
 [ext_resource type="PackedScene" uid="uid://c4safo4pwme48" path="res://Prefabs/Blocks/1x4-Piece.tscn" id="6_r0jta"]
 [ext_resource type="PackedScene" uid="uid://2emoy8lav7a0" path="res://Prefabs/Spawn On Blocks/harpoon_launcher.tscn" id="7_f5f8t"]
-[ext_resource type="AudioStream" uid="uid://d2kuoqyw1rd57" path="res://Sound/Music/the pharaoh's curse.wav" id="10_u30hj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bn7ml"]
 size = Vector2(1350, 17100)
@@ -31,6 +31,7 @@ spawn_count = 5
 
 [node name="Template Level" instance=ExtResource("1_bq2w4")]
 temple_type = 1
+override_music = ExtResource("2_stsre")
 
 [node name="Background" parent="Background Parallax" index="0"]
 texture = ExtResource("2_n1uye")
@@ -44,18 +45,18 @@ position = Vector2(1200, -750)
 [node name="Environment" parent="." index="6"]
 tile_set = ExtResource("3_bdqn0")
 
-[node name="Idol" parent="." index="10"]
-position = Vector2(724, 1145)
-
-[node name="Idol2" parent="." index="11"]
-position = Vector2(800, 250)
-
-[node name="Idol3" parent="." index="12"]
-position = Vector2(800, -450)
-
 [node name="PlaceableCharacterBody2d" parent="Block Container" index="0" instance=ExtResource("6_r0jta")]
 position = Vector2(1200, -700)
 rotation = 1.5708
+
+[node name="Idol" parent="." index="11"]
+position = Vector2(724, 1145)
+
+[node name="Idol2" parent="." index="12"]
+position = Vector2(800, 250)
+
+[node name="Idol3" parent="." index="13"]
+position = Vector2(800, -450)
 
 [node name="BlockSpawner" parent="Camera2D" index="2"]
 spawn_objects = Array[ExtResource("2_xkwx5")]([SubResource("Resource_42wei"), SubResource("Resource_fa0pl"), SubResource("Resource_e12ps")])
@@ -152,5 +153,5 @@ position = Vector2(2050, -600)
 rotation = -1.5708
 
 [node name="Music" parent="Music Player" index="0"]
-stream = ExtResource("10_u30hj")
+stream = ExtResource("2_stsre")
 volume_db = -9.0

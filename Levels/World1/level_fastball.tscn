@@ -2,13 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_emlrj"]
 [ext_resource type="Texture2D" uid="uid://dkxik361t2ox1" path="res://Art/Tilemaps/Background_Egypt.png" id="2_3ephr"]
+[ext_resource type="AudioStream" uid="uid://b416is8d58t4y" path="res://Sound/Music/Egypt/dune tunes.wav" id="2_bf3n3"]
 [ext_resource type="PackedScene" uid="uid://hetb2cu4cbew" path="res://Prefabs/Spawn On Blocks/BreakerSpike.tscn" id="2_co4uu"]
 [ext_resource type="PackedScene" uid="uid://2emoy8lav7a0" path="res://Prefabs/Spawn On Blocks/harpoon_launcher.tscn" id="2_egc28"]
 [ext_resource type="TileSet" uid="uid://cdp351ovo7gk4" path="res://Art/Tilemaps/Tilemap_Egypt.tres" id="3_mumhd"]
 [ext_resource type="PackedScene" uid="uid://bdyf8npx3i7xk" path="res://Prefabs/Blocks/2x2-Piece.tscn" id="4_6jfae"]
 [ext_resource type="Script" path="res://Scripts/SpawnObject.gd" id="4_t468c"]
 [ext_resource type="PackedScene" uid="uid://r1kjk04fwuou" path="res://Prefabs/Spawn On Blocks/Hold.tscn" id="5_m3nip"]
-[ext_resource type="AudioStream" uid="uid://d2kuoqyw1rd57" path="res://Sound/Music/the pharaoh's curse.wav" id="9_1wgne"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lhbjh"]
 size = Vector2(2900, 1000)
@@ -25,6 +25,7 @@ spawn_count = 1
 
 [node name="Template Level" instance=ExtResource("1_emlrj")]
 temple_type = 1
+override_music = ExtResource("2_bf3n3")
 
 [node name="Background" parent="Background Parallax" index="0"]
 texture = ExtResource("2_3ephr")
@@ -78,16 +79,16 @@ position = Vector2(768, 288)
 rotation = -1.5708
 scale = Vector2(0.32, 0.32)
 
-[node name="Player" parent="." index="9"]
+[node name="Player" parent="." index="10"]
 position = Vector2(1075, 1000)
 
-[node name="Idol" parent="." index="10"]
+[node name="Idol" parent="." index="11"]
 position = Vector2(1250, 716)
 
-[node name="Idol2" parent="." index="11"]
+[node name="Idol2" parent="." index="12"]
 position = Vector2(2100, 915)
 
-[node name="Idol3" parent="." index="12"]
+[node name="Idol3" parent="." index="13"]
 position = Vector2(1550, 516)
 
 [node name="Camera2D" parent="." index="14"]
@@ -107,5 +108,5 @@ rise_speed = 0.0
 position = Vector2(2150, 1000)
 
 [node name="Music" parent="Music Player" index="0"]
-stream = ExtResource("9_1wgne")
+stream = ExtResource("2_bf3n3")
 volume_db = -9.0
