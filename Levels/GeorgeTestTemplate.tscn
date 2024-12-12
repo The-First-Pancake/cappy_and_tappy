@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://c3dgw1fpl6k3x"]
+[gd_scene load_steps=23 format=4 uid="uid://c3dgw1fpl6k3x"]
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_8tfe6"]
 [ext_resource type="Script" path="res://Scripts/SpawnObject.gd" id="2_h2nwq"]
@@ -15,6 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://c8njjo4yfo85v" path="res://Prefabs/coffin.tscn" id="8_84xjq"]
 [ext_resource type="PackedScene" uid="uid://8h01cgx3713q" path="res://Prefabs/Set Dressing/Aztec/VinesSide2.tscn" id="8_eo6x4"]
 [ext_resource type="PackedScene" uid="uid://cu2taoo64nrva" path="res://Prefabs/Set Dressing/Aztec/VinesTop.tscn" id="9_5bkq4"]
+[ext_resource type="PackedScene" uid="uid://xc3aksbuoys1" path="res://Prefabs/Set Dressing/Aztec/AztecSmallIdol.tscn" id="10_t3nds"]
+[ext_resource type="PackedScene" uid="uid://cwbmn06hbsdre" path="res://Prefabs/Set Dressing/Aztec/AztecWallStatue.tscn" id="11_1m2hr"]
 
 [sub_resource type="Resource" id="Resource_6716m"]
 script = ExtResource("2_h2nwq")
@@ -83,6 +85,12 @@ position = Vector2(1900, 550)
 
 [node name="SetDressingBase3" parent="Environment Container" index="9" instance=ExtResource("9_5bkq4")]
 position = Vector2(1857, 550)
+
+[node name="@Area2D@22879" parent="Environment Container" index="10" instance=ExtResource("10_t3nds")]
+position = Vector2(1350, 1050)
+
+[node name="AztecWallStatue" parent="Environment Container" index="11" instance=ExtResource("11_1m2hr")]
+position = Vector2(1650, 950)
 
 [node name="BlockSpawner" parent="Camera2D" index="2"]
 position = Vector2(-689, -299)

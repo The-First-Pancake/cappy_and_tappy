@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://xc3aksbuoys1"]
+
+[ext_resource type="Texture2D" uid="uid://cs4aopctuux2t" path="res://Art/Sprites/aztec/Aztec_Statue_Small.png" id="1_h8a6m"]
+[ext_resource type="PackedScene" uid="uid://dohp3cgpxnwcp" path="res://Prefabs/ShardEmitter.tscn" id="3_mvnqw"]
+[ext_resource type="Script" path="res://Scripts/Squashable.gd" id="4_xh7rm"]
+[ext_resource type="Script" path="res://Scripts/LevelBuildingTools.gd" id="5_cdf57"]
+
+[node name="Pot_Tall" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-22, -66)
+texture = ExtResource("1_h8a6m")
+centered = false
+
+[node name="ShardEmitter" parent="Sprite2D" instance=ExtResource("3_mvnqw")]
+nbr_of_shards = 5
+min_impulse = 50.0
+max_impulse = 200.0
+
+[node name="Squashable" type="Node" parent="."]
+script = ExtResource("4_xh7rm")
+delete_parent_when_squashed = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(1, -2.3)
+scale = Vector2(1, 0.980769)
+polygon = PackedVector2Array(-21, 0.305882, -21, -35.3804, -9, -65.9686, 7, -65.9686, 19, -33.3412, 21, 0.305882)
+
+[node name="LevelBuildingTools" type="Node" parent="."]
+script = ExtResource("5_cdf57")
+auto_parent_to = "Environment Container"
+
+[connection signal="squashed" from="Squashable" to="Sprite2D/ShardEmitter" method="_on_squashable_squashed"]

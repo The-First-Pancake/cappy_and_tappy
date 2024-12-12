@@ -1,0 +1,84 @@
+[gd_scene load_steps=13 format=3 uid="uid://cwbmn06hbsdre"]
+
+[ext_resource type="Texture2D" uid="uid://vn4t0qc60yqk" path="res://Art/Sprites/aztec/Aztec_WallLight_Diffuse.png" id="1_d37yl"]
+[ext_resource type="Script" path="res://Scripts/LightFlicker.gd" id="2_ioodv"]
+[ext_resource type="Script" path="res://Scripts/LevelBuildingTools.gd" id="3_kt4nh"]
+[ext_resource type="Script" path="res://Scripts/Squashable.gd" id="4_ltyww"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_inf1c"]
+atlas = ExtResource("1_d37yl")
+region = Rect2(21, 0, 21, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8y3te"]
+atlas = ExtResource("1_d37yl")
+region = Rect2(42, 0, 21, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xexq3"]
+atlas = ExtResource("1_d37yl")
+region = Rect2(63, 0, 21, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_38io1"]
+atlas = ExtResource("1_d37yl")
+region = Rect2(84, 0, 21, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w5uae"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_inf1c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8y3te")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xexq3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_38io1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_mjwa8"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_p61h1"]
+gradient = SubResource("Gradient_mjwa8")
+fill = 1
+fill_from = Vector2(0.517094, 0.457265)
+fill_to = Vector2(0.91453, 0.111111)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jcw3o"]
+
+[node name="AztecWallStatue" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1, -3.8147e-06)
+scale = Vector2(3.125, 3.125)
+sprite_frames = SubResource("SpriteFrames_w5uae")
+autoplay = "default"
+frame_progress = 0.925222
+speed_scale = 3.0
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(4.50015, -25.4998)
+scale = Vector2(9.20313, 9.20313)
+color = Color(1, 0.539063, 0, 1)
+energy = 0.75
+range_item_cull_mask = 3
+texture = SubResource("GradientTexture2D_p61h1")
+height = 100.0
+script = ExtResource("2_ioodv")
+
+[node name="LevelBuildingTools" type="Node" parent="."]
+script = ExtResource("3_kt4nh")
+auto_parent_to = "Environment Container"
+
+[node name="Squashable" type="Node" parent="."]
+script = ExtResource("4_ltyww")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jcw3o")
