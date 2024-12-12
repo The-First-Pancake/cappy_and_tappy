@@ -26,7 +26,7 @@ func update_level_name() -> void:
 	if override_text == "":
 		level_name = scene_to_load.resource_path.get_file().get_basename()
 		level_name = level_name.get_slice(".",0)
-		level_name = level_name.replace("level_","")
+		level_name = level_name.right(-12)
 		level_name = level_name.capitalize()
 		name = "Level - " + level_name
 	level_title.text = level_name
