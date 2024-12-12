@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://1fovc0qvw1oq"]
+[gd_scene load_steps=23 format=4 uid="uid://1fovc0qvw1oq"]
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_w3jxh"]
 [ext_resource type="PackedScene" uid="uid://bdyf8npx3i7xk" path="res://Prefabs/Blocks/2x2-Piece.tscn" id="2_bl821"]
@@ -9,8 +9,15 @@
 [ext_resource type="PackedScene" uid="uid://r1kjk04fwuou" path="res://Prefabs/Spawn On Blocks/Hold.tscn" id="4_cbys8"]
 [ext_resource type="Texture2D" uid="uid://myc5ko8clsbs" path="res://Art/Sprites/glyphs/Glyph_Handhold_Release.png" id="4_kfenh"]
 [ext_resource type="Texture2D" uid="uid://dmscbkx2u2p7o" path="res://Art/Sprites/glyphs/ControllerAlts/Glyph_Handhold_Hold.png" id="4_vccbm"]
+[ext_resource type="PackedScene" uid="uid://8h01cgx3713q" path="res://Prefabs/Set Dressing/Aztec/VinesSide2.tscn" id="4_wlefj"]
+[ext_resource type="PackedScene" uid="uid://cu2taoo64nrva" path="res://Prefabs/Set Dressing/Aztec/VinesTop.tscn" id="5_4uray"]
+[ext_resource type="PackedScene" uid="uid://cgx704rt6s324" path="res://Prefabs/Set Dressing/Aztec/VinesHanging.tscn" id="5_4uv81"]
+[ext_resource type="PackedScene" uid="uid://cj67im7x3lvxj" path="res://Prefabs/Set Dressing/Aztec/VinesSide1.tscn" id="5_wj8sq"]
 [ext_resource type="Texture2D" uid="uid://bkq2kkcb4wf4x" path="res://Art/Sprites/glyphs/ControllerAlts/Glyph_Handhold_Dir.png" id="6_dlufx"]
+[ext_resource type="PackedScene" uid="uid://xc3aksbuoys1" path="res://Prefabs/Set Dressing/Aztec/AztecSmallIdol.tscn" id="7_dfvn0"]
+[ext_resource type="PackedScene" uid="uid://cwbmn06hbsdre" path="res://Prefabs/Set Dressing/Aztec/AztecWallStatue.tscn" id="7_k62ik"]
 [ext_resource type="Texture2D" uid="uid://d36b0vuh2yt5j" path="res://Art/Sprites/glyphs/ControllerAlts/Glyph_Handhold_Release.png" id="8_fv7xg"]
+[ext_resource type="PackedScene" uid="uid://b2m3shx51tdva" path="res://Prefabs/Set Dressing/Aztec/VinesCorner.tscn" id="9_o8lqo"]
 [ext_resource type="Texture2D" uid="uid://cikpid8cgqp1j" path="res://Art/Sprites/glyphs/glyph_arrow.png" id="10_5skly"]
 [ext_resource type="PackedScene" uid="uid://b1lrc4bb14deo" path="res://Prefabs/Blocks/L-Piece.tscn" id="12_grxer"]
 [ext_resource type="PackedScene" uid="uid://c4safo4pwme48" path="res://Prefabs/Blocks/1x4-Piece.tscn" id="13_v366v"]
@@ -22,7 +29,7 @@ size = Vector2(1350, 1500)
 override_music = ExtResource("2_yqksk")
 
 [node name="CollisionShape2D" parent="Camera Zone" index="0"]
-position = Vector2(1375, 450)
+position = Vector2(1350, 450)
 shape = SubResource("RectangleShape2D_63r1a")
 
 [node name="Entrance Door" parent="." index="4"]
@@ -63,6 +70,62 @@ scale = Vector2(0.32, 0.32)
 position = Vector2(224, 80)
 rotation = 7.85398
 scale = Vector2(0.32, 0.32)
+
+[node name="@Area2D@23451" parent="Environment Container" index="0" instance=ExtResource("5_4uray")]
+position = Vector2(1622, 700)
+rotation = -3.14159
+scale = Vector2(1, -1)
+
+[node name="SetDressingBase2" parent="Environment Container" index="1" instance=ExtResource("5_wj8sq")]
+position = Vector2(1550, 750)
+rotation = -3.14159
+scale = Vector2(1, -1)
+script = null
+
+[node name="SetDressingBase" parent="Environment Container" index="2" instance=ExtResource("4_wlefj")]
+position = Vector2(1550, 708)
+rotation = -3.14159
+scale = Vector2(1, -1)
+script = null
+
+[node name="Pot_Tall" parent="Environment Container" index="3" instance=ExtResource("7_dfvn0")]
+position = Vector2(1900, 700)
+script = null
+
+[node name="SetDressingBase3" parent="Environment Container" index="4" instance=ExtResource("5_4uv81")]
+position = Vector2(1850, 700)
+rotation = -3.14159
+scale = Vector2(1, -1)
+script = null
+
+[node name="@Area2D@35009" parent="Environment Container" index="5" instance=ExtResource("9_o8lqo")]
+position = Vector2(850, 100)
+rotation = -3.14159
+scale = Vector2(1, -1)
+script = null
+
+[node name="SetDressingBase4" parent="Environment Container" index="6" instance=ExtResource("5_4uv81")]
+position = Vector2(1850, 100)
+rotation = -3.14159
+scale = Vector2(1, -1)
+script = null
+
+[node name="SetDressingBase5" parent="Environment Container" index="7" instance=ExtResource("5_4uv81")]
+position = Vector2(2000, 100)
+rotation = -3.14159
+scale = Vector2(1, -1)
+script = null
+
+[node name="SetDressingBase6" parent="Environment Container" index="8" instance=ExtResource("5_wj8sq")]
+position = Vector2(700, -200)
+scale = Vector2(1, 1)
+script = null
+
+[node name="AztecWallStatue" parent="Environment Container" index="9" instance=ExtResource("7_k62ik")]
+position = Vector2(850, 873)
+
+[node name="AztecWallStatue2" parent="Environment Container" index="10" instance=ExtResource("7_k62ik")]
+position = Vector2(1900, -125)
 
 [node name="Glyph" parent="Glyph Container" index="0" instance=ExtResource("2_kyjnv")]
 self_modulate = Color(0.83, 0.7138, 0.498, 0.380392)
