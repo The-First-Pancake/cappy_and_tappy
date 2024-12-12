@@ -18,7 +18,7 @@
 [ext_resource type="FontFile" uid="uid://ck4uibtfurjl4" path="res://Fonts/BlockyPixelFont.TTF" id="7_rccux"]
 [ext_resource type="PackedScene" uid="uid://bp3kgem2ebxnl" path="res://Levels/World 1/level_overhangs.tscn" id="8_4i4d7"]
 [ext_resource type="Texture2D" uid="uid://cra8a72oqq7vi" path="res://Art/Sprites/Idol.png" id="8_fxcsu"]
-[ext_resource type="PackedScene" uid="uid://df0wpkdny65ci" path="res://Levels/World 1/level_dynamite_2.tscn" id="9_00ax2"]
+[ext_resource type="PackedScene" uid="uid://df0wpkdny65ci" path="res://Levels/World 1/level_demolition.tscn" id="9_00ax2"]
 [ext_resource type="PackedScene" uid="uid://c10tw0ejl1xjv" path="res://Levels/World 1/level_climb_time.tscn" id="9_2x5l4"]
 [ext_resource type="PackedScene" uid="uid://b8ofjhklhy6o" path="res://Levels/World 1/level_overhangs_xtreme.tscn" id="9_gryrf"]
 [ext_resource type="Texture2D" uid="uid://dcxkuua4cd4st" path="res://Art/Sprites/fire_small.png" id="9_wrau7"]
@@ -27,7 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://cr83b1gdrdbjg" path="res://Levels/World 2/level_arrows.tscn" id="11_1hlb2"]
 [ext_resource type="Script" path="res://Scripts/MusicPlayer.gd" id="12_8108v"]
 [ext_resource type="PackedScene" uid="uid://bsbavwvcn76q4" path="res://Levels/World 2/level_arrows_2.tscn" id="12_q0a2d"]
-[ext_resource type="PackedScene" uid="uid://fei84gx0n70r" path="res://Levels/World 1/level_dynamite_3.tscn" id="13_2gj7q"]
+[ext_resource type="PackedScene" uid="uid://fei84gx0n70r" path="res://Levels/World 1/level_deeper still.tscn" id="13_2gj7q"]
 [ext_resource type="PackedScene" uid="uid://d1iy60hbanyjr" path="res://Levels/World 2/level_ain.tscn" id="13_m7ssi"]
 [ext_resource type="AudioStream" uid="uid://b7o0nfcidnbwd" path="res://Sound/Music/title_music.wav" id="13_oohv8"]
 [ext_resource type="Script" path="res://Scripts/UnlockAll.gd" id="13_wubfr"]
@@ -222,7 +222,7 @@ scene_to_load = ExtResource("9_2x5l4")
 layout_mode = 2
 scene_to_load = ExtResource("7_2l6xq")
 
-[node name="Level - Dynamite 2" parent="MarginContainer/VBoxContainer/Temple Container/Temple 1" instance=ExtResource("3_66fh1")]
+[node name="Level - Demolition" parent="MarginContainer/VBoxContainer/Temple Container/Temple 1" instance=ExtResource("3_66fh1")]
 layout_mode = 2
 scene_to_load = ExtResource("9_00ax2")
 
