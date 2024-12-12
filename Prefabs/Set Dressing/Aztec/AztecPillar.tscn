@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://iexpf1ixw807"]
 
-[ext_resource type="Texture2D" uid="uid://dt45fwqn30cvj" path="res://Art/Sprites/egypt/column_top_diffuset.png" id="1_0yff5"]
-[ext_resource type="Texture2D" uid="uid://bq3p1325y40y4" path="res://Art/Sprites/egypt/column_middle_diffuse.png" id="2_3ja7x"]
-[ext_resource type="Texture2D" uid="uid://0368tin3bekk" path="res://Art/Sprites/egypt/column_bottom_diffuset.png" id="3_4itlj"]
+[ext_resource type="Texture2D" uid="uid://bk52eu2v2wbol" path="res://Art/Sprites/aztec/column_top_diffuse.png" id="1_bnu6d"]
+[ext_resource type="Texture2D" uid="uid://iqj5p212ib5v" path="res://Art/Sprites/aztec/column_middle_diffuse.png" id="2_56h74"]
+[ext_resource type="Texture2D" uid="uid://3mo7ebuub1su" path="res://Art/Sprites/aztec/column_bottom_diffuse.png" id="3_u7ytm"]
 [ext_resource type="Script" path="res://Scripts/LevelBuildingTools.gd" id="4_a7tgy"]
 
 [node name="Pillar" type="VBoxContainer"]
@@ -14,19 +14,19 @@ theme_override_constants/separation = 0
 
 [node name="Top" type="TextureRect" parent="."]
 layout_mode = 2
-texture = ExtResource("1_0yff5")
+texture = ExtResource("1_bnu6d")
 stretch_mode = 2
 
 [node name="Middle" type="TextureRect" parent="."]
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("2_3ja7x")
+texture = ExtResource("2_56h74")
 expand_mode = 4
 stretch_mode = 1
 
 [node name="Bottom" type="TextureRect" parent="."]
 layout_mode = 2
-texture = ExtResource("3_4itlj")
+texture = ExtResource("3_u7ytm")
 stretch_mode = 2
 
 [node name="LevelBuildingTools" type="Node" parent="."]

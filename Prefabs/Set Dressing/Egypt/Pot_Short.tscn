@@ -13,7 +13,7 @@ normal_texture = ExtResource("4_sdew1")
 [node name="Pot_Short" type="Area2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-15, -30)
+position = Vector2(-15, -31)
 texture = SubResource("CanvasTexture_1ndj3")
 centered = false
 

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgx704rt6s324"]
+
+[ext_resource type="PackedScene" uid="uid://skkd531ff5me" path="res://Prefabs/Set Dressing/SetDressingBase.tscn" id="1_iguah"]
+[ext_resource type="Texture2D" uid="uid://dxystceoh1eve" path="res://Art/Sprites/aztec/vines_hanging.png" id="2_om80x"]
+
+[node name="SetDressingBase" instance=ExtResource("1_iguah")]
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(0, -6)
+scale = Vector2(3.125, 3.125)
+texture = ExtResource("2_om80x")
+
+[node name="CollisionPolygon2D" parent="." index="2"]
+position = Vector2(37, -17)
+polygon = PackedVector2Array(-29, 13, -30, 5, 22, 5, 22, 14)

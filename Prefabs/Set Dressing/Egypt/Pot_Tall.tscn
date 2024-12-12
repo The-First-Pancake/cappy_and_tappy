@@ -13,7 +13,7 @@ normal_texture = ExtResource("4_eilgo")
 [node name="Pot_Tall" type="Area2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-12, -57)
+position = Vector2(-12, -59)
 texture = SubResource("CanvasTexture_wt6ac")
 centered = false
 
