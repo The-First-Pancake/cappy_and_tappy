@@ -5,9 +5,13 @@ extends Node
 @onready var squashable_parent: Area2D = $".."
 signal squashed
 @export var additional_destroy_on_squash: Array[Node] = []
+var starting_overlaps: Array[Node2D] = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	await get_tree().process_frame #makes sure we're ready to check for overlaps
+	starting_overlaps = squashable_parent.get_overlapping_bodies()
+	
 	squashable_parent.area_entered.connect(func(_area: Area2D)->void:
 		check_for_squash()
 	)
@@ -25,6 +29,8 @@ func check_for_squash() -> void:
 	
 	var bodies: Array[Node2D] = squashable_parent.get_overlapping_bodies()
 	for body: Node2D in bodies:
+		if body in starting_overlaps:
+			continue
 		if body is Placeable:
 			if body.state == body.PlaceState.FALLING:
 				await body.placed
