@@ -9,6 +9,7 @@ var start_pos: Vector2
 
 @onready var explosion_sound: AudioStreamPlayer = $"Explosion Sound"
 @onready var explosion_animation: AnimatedSprite2D = $"Explosion Animation"
+@onready var explosion_particles: CPUParticles2D = $"CPUParticles2D"
 
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
@@ -52,6 +53,8 @@ func try_to_detonate() -> void:
 	
 	explosion_animation.reparent(get_parent())
 	explosion_animation.play("explode")
+	explosion_particles.reparent(get_parent())
+	explosion_particles.restart()
 	explosion_animation.visible = true
 	explosion_animation.process_mode = Node.PROCESS_MODE_INHERIT
 	explosion_animation.animation_finished.connect(explosion_animation.queue_free)
