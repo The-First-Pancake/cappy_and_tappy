@@ -292,7 +292,7 @@ rotation = -2.77686
 scale = Vector2(1, -1)
 
 [node name="Cosmetic Dressing" parent="Environment Container" index="46" instance=ExtResource("13_ckc0b")]
-position = Vector2(1700, 1150)
+position = Vector2(1550, 1125)
 rotation = 4.39167e-05
 
 [node name="Cosmetic Dressing2" parent="Environment Container" index="47" instance=ExtResource("14_kxi8g")]
@@ -301,7 +301,7 @@ rotation = 4.39167e-05
 
 [node name="Cosmetic Dressing3" parent="Environment Container" index="48" instance=ExtResource("14_kxi8g")]
 position = Vector2(3100, 200)
-rotation = 12.5664
+rotation = 4.3265e-05
 
 [node name="Glyph" parent="Glyph Container" index="0" instance=ExtResource("3_m3gds")]
 position = Vector2(1650, 915)
