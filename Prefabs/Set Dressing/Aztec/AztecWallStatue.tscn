@@ -6,9 +6,10 @@
 [ext_resource type="Script" path="res://Scripts/Squashable.gd" id="4_ltyww"]
 
 [sub_resource type="Gradient" id="Gradient_mjwa8"]
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+offsets = PackedFloat32Array(0, 0.600649)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_p61h1"]
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0g612"]
 gradient = SubResource("Gradient_mjwa8")
 fill = 1
 fill_from = Vector2(0.517094, 0.457265)
@@ -60,7 +61,7 @@ scale = Vector2(9.20313, 9.20313)
 color = Color(1, 0.539063, 0, 1)
 energy = 0.75
 range_item_cull_mask = 3
-texture = SubResource("GradientTexture2D_p61h1")
+texture = SubResource("GradientTexture2D_0g612")
 height = 100.0
 script = ExtResource("2_ioodv")
 

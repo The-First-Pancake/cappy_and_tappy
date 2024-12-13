@@ -1,0 +1,145 @@
+[gd_scene load_steps=21 format=3 uid="uid://bt7ck2htkt55v"]
+
+[ext_resource type="Script" path="res://Scripts/LevelBuildingTools.gd" id="1_b375m"]
+[ext_resource type="Script" path="res://Scripts/SconceSetDressing.gd" id="1_csfv6"]
+[ext_resource type="Texture2D" uid="uid://dp4ktlytg0qdm" path="res://Art/Sprites/fire/brasier_stick.png" id="2_vdfhu"]
+[ext_resource type="Texture2D" uid="uid://dcxkuua4cd4st" path="res://Art/Sprites/fire_small.png" id="3_d50ro"]
+[ext_resource type="Script" path="res://Scripts/LightFlicker.gd" id="4_tmrif"]
+[ext_resource type="Texture2D" uid="uid://dff743tq0a8p" path="res://Art/Sprites/fire/brasier_diffuse.png" id="5_jx74q"]
+[ext_resource type="Texture2D" uid="uid://dmtwgjndb7tmo" path="res://Art/Sprites/fire/brasier_normal.png" id="6_n1at4"]
+[ext_resource type="Script" path="res://Scripts/Squashable.gd" id="7_okwwn"]
+[ext_resource type="Script" path="res://Scripts/Extinguishable.gd" id="8_ghclg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_va83x"]
+size = Vector2(6.5, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0fbj1"]
+size = Vector2(8, 8.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8is8u"]
+atlas = ExtResource("3_d50ro")
+region = Rect2(0, 0, 3, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udlu0"]
+atlas = ExtResource("3_d50ro")
+region = Rect2(3, 0, 3, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_deems"]
+atlas = ExtResource("3_d50ro")
+region = Rect2(6, 0, 3, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_auh6p"]
+atlas = ExtResource("3_d50ro")
+region = Rect2(9, 0, 3, 6)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_40mam"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8is8u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_udlu0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_deems")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_auh6p")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_mjwa8"]
+offsets = PackedFloat32Array(0, 0.600649)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0g612"]
+gradient = SubResource("Gradient_mjwa8")
+fill = 1
+fill_from = Vector2(0.517094, 0.457265)
+fill_to = Vector2(0.91453, 0.111111)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_hsrsl"]
+diffuse_texture = ExtResource("5_jx74q")
+normal_texture = ExtResource("6_n1at4")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c06ri"]
+size = Vector2(9, 10)
+
+[node name="Sconce" type="Area2D"]
+rotation = 3.14159
+scale = Vector2(-1, 1)
+script = ExtResource("1_csfv6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.25, -26)
+shape = SubResource("RectangleShape2D_va83x")
+
+[node name="Base" type="StaticBody2D" parent="."]
+position = Vector2(0, -43)
+collision_layer = 0
+collision_mask = 0
+
+[node name="Stick Sprite" type="Sprite2D" parent="Base"]
+position = Vector2(0, 22)
+scale = Vector2(3.125, 3.355)
+texture = ExtResource("2_vdfhu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Base"]
+shape = SubResource("RectangleShape2D_0fbj1")
+
+[node name="Fire" type="RigidBody2D" parent="."]
+position = Vector2(-6, -19)
+rotation = 0.261799
+collision_layer = 0
+collision_mask = 129
+mass = 0.2
+center_of_mass_mode = 1
+center_of_mass = Vector2(0, 20)
+angular_velocity = 6.10865
+angular_damp = 0.5
+
+[node name="flame" type="AnimatedSprite2D" parent="Fire"]
+position = Vector2(0, -3.125)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_40mam")
+autoplay = "default"
+frame_progress = 0.939399
+
+[node name="PointLight2D" type="PointLight2D" parent="Fire"]
+position = Vector2(4.50015, -25.4998)
+scale = Vector2(9.20313, 9.20313)
+color = Color(1, 0.539063, 0, 1)
+energy = 1.25
+range_item_cull_mask = 3
+texture = SubResource("GradientTexture2D_0g612")
+height = 100.0
+script = ExtResource("4_tmrif")
+
+[node name="Brasier" type="Sprite2D" parent="Fire"]
+position = Vector2(0, -8.125)
+scale = Vector2(3.125, 3.125)
+texture = SubResource("CanvasTexture_hsrsl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fire"]
+shape = SubResource("RectangleShape2D_c06ri")
+
+[node name="Squashable" type="Node" parent="."]
+script = ExtResource("7_okwwn")
+
+[node name="Extinguishable" type="Node" parent="." node_paths=PackedStringArray("nodes_to_disable")]
+script = ExtResource("8_ghclg")
+nodes_to_disable = [NodePath("../Fire")]
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2(0, -43)
+node_a = NodePath("../Base")
+node_b = NodePath("../Fire")
+bias = 0.9
+
+[node name="LevelBuildingTools" type="Node" parent="."]
+script = ExtResource("1_b375m")
+auto_parent_to = "Environment Container"

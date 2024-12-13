@@ -1,0 +1,98 @@
+[gd_scene load_steps=16 format=3 uid="uid://bth4efqt1s7xr"]
+
+[ext_resource type="Texture2D" uid="uid://cc5uns1b78ycy" path="res://Art/Sprites/fire/flag_gib.png" id="1_fisxm"]
+[ext_resource type="Script" path="res://Scripts/TorchSetDressing.gd" id="1_n4bvh"]
+[ext_resource type="Script" path="res://Scripts/LevelBuildingTools.gd" id="1_w61t8"]
+[ext_resource type="Texture2D" uid="uid://dcxkuua4cd4st" path="res://Art/Sprites/fire_small.png" id="2_v6eew"]
+[ext_resource type="Script" path="res://Scripts/LightFlicker.gd" id="3_sc0ka"]
+[ext_resource type="Script" path="res://Scripts/Squashable.gd" id="4_6nyw3"]
+[ext_resource type="Script" path="res://Scripts/Extinguishable.gd" id="5_x7cvl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8is8u"]
+atlas = ExtResource("2_v6eew")
+region = Rect2(0, 0, 3, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udlu0"]
+atlas = ExtResource("2_v6eew")
+region = Rect2(3, 0, 3, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_deems"]
+atlas = ExtResource("2_v6eew")
+region = Rect2(6, 0, 3, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_auh6p"]
+atlas = ExtResource("2_v6eew")
+region = Rect2(9, 0, 3, 6)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_40mam"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8is8u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_udlu0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_deems")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_auh6p")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_mjwa8"]
+offsets = PackedFloat32Array(0, 0.597403)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vudvn"]
+gradient = SubResource("Gradient_mjwa8")
+fill = 1
+fill_from = Vector2(0.517094, 0.457265)
+fill_to = Vector2(0.91453, 0.111111)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6tqst"]
+size = Vector2(12, 20)
+
+[node name="Torch" type="Area2D"]
+rotation = 6.28319
+script = ExtResource("1_n4bvh")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(2.50015, -8.49985)
+texture = ExtResource("1_fisxm")
+
+[node name="Flame" type="AnimatedSprite2D" parent="."]
+position = Vector2(4.50015, -25.4998)
+scale = Vector2(3.15, 3.15)
+sprite_frames = SubResource("SpriteFrames_40mam")
+autoplay = "default"
+frame_progress = 0.939399
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(4.50015, -25.4998)
+scale = Vector2(9.20313, 9.20313)
+color = Color(1, 0.539063, 0, 1)
+energy = 1.25
+range_item_cull_mask = 3
+texture = SubResource("GradientTexture2D_vudvn")
+height = 100.0
+script = ExtResource("3_sc0ka")
+
+[node name="Squashable" type="Node" parent="."]
+script = ExtResource("4_6nyw3")
+
+[node name="Extinguishable" type="Node" parent="." node_paths=PackedStringArray("nodes_to_disable")]
+script = ExtResource("5_x7cvl")
+nodes_to_disable = [NodePath("../Flame"), NodePath("../PointLight2D")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, -10)
+shape = SubResource("RectangleShape2D_6tqst")
+
+[node name="LevelBuildingTools" type="Node" parent="."]
+script = ExtResource("1_w61t8")
+auto_parent_to = "Environment Container"
