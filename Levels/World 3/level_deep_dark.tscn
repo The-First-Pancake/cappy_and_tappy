@@ -79,90 +79,148 @@ tile_set = ExtResource("2_3gao6")
 
 [node name="SetDressingBase14" parent="Environment Container" index="0" instance=ExtResource("11_sg68s")]
 position = Vector2(1450, 1050)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase15" parent="Environment Container" index="1" instance=ExtResource("12_ngjyq")]
 position = Vector2(1500, 1050)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase16" parent="Environment Container" index="2" instance=ExtResource("13_cjqau")]
 position = Vector2(1400, 1050)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase4" parent="Environment Container" index="3" instance=ExtResource("7_rp3nq")]
 position = Vector2(1000, -200)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase2" parent="Environment Container" index="4" instance=ExtResource("7_rp3nq")]
 position = Vector2(1150, -200)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase3" parent="Environment Container" index="5" instance=ExtResource("7_rp3nq")]
 position = Vector2(900, -150)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase6" parent="Environment Container" index="6" instance=ExtResource("7_rp3nq")]
 position = Vector2(1450, -200)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase7" parent="Environment Container" index="7" instance=ExtResource("7_rp3nq")]
 position = Vector2(1550, -200)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase8" parent="Environment Container" index="8" instance=ExtResource("7_rp3nq")]
-position = Vector2(1700, -150)
+position = Vector2(1750, -151)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase10" parent="Environment Container" index="9" instance=ExtResource("7_rp3nq")]
-position = Vector2(1850, -100)
+position = Vector2(1900, -100)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@56328" parent="Environment Container" index="10" instance=ExtResource("8_sp3ig")]
 position = Vector2(1050, -200)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@58293" parent="Environment Container" index="11" instance=ExtResource("9_uhbuw")]
 position = Vector2(1800, -100)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase" parent="Environment Container" index="12" instance=ExtResource("9_uhbuw")]
 position = Vector2(1600, -200)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase9" parent="Environment Container" index="13" instance=ExtResource("8_sp3ig")]
 position = Vector2(1500, -200)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase11" parent="Environment Container" index="14" instance=ExtResource("9_uhbuw")]
 position = Vector2(1300, -250)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@63700" parent="Environment Container" index="15" instance=ExtResource("8_sp3ig")]
 position = Vector2(1250, -250)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@64706" parent="Environment Container" index="16" instance=ExtResource("9_uhbuw")]
 position = Vector2(850, 50)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@66134" parent="Environment Container" index="17" instance=ExtResource("9_uhbuw")]
-position = Vector2(800, -100)
+position = Vector2(837, -100)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@69015" parent="Environment Container" index="18" instance=ExtResource("7_rp3nq")]
-position = Vector2(2150, 700)
+position = Vector2(2200, 690)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@74040" parent="Environment Container" index="19" instance=ExtResource("9_uhbuw")]
-position = Vector2(2100, 700)
+position = Vector2(2150, 700)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase5" parent="Environment Container" index="20" instance=ExtResource("8_sp3ig")]
-position = Vector2(2050, 700)
+position = Vector2(2098, 700)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@76014" parent="Environment Container" index="21" instance=ExtResource("7_rp3nq")]
-position = Vector2(2000, 250)
+position = Vector2(2053, 247)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@76948" parent="Environment Container" index="22" instance=ExtResource("8_sp3ig")]
-position = Vector2(1950, 150)
+position = Vector2(2000, 150)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase12" parent="Environment Container" index="23" instance=ExtResource("9_uhbuw")]
-position = Vector2(750, 150)
+position = Vector2(786, 150)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@78381" parent="Environment Container" index="24" instance=ExtResource("7_rp3nq")]
-position = Vector2(700, 200)
+position = Vector2(750, 200)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@80984" parent="Environment Container" index="25" instance=ExtResource("10_o3j3w")]
-position = Vector2(1400, -200)
+position = Vector2(1650, -200)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase13" parent="Environment Container" index="26" instance=ExtResource("10_o3j3w")]
 position = Vector2(1350, -250)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@88606" parent="Environment Container" index="27" instance=ExtResource("11_a150d")]
 position = Vector2(1300, 1050)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@26635" parent="Environment Container" index="28" instance=ExtResource("12_hey53")]
 position = Vector2(1329, 1050)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="Torch4" parent="Environment Container" index="29" instance=ExtResource("2_pdr2v")]
 position = Vector2(3450, 750)
@@ -177,7 +235,7 @@ position = Vector2(4150, 600)
 position = Vector2(1500, -450)
 
 [node name="Torch8" parent="Environment Container" index="33" instance=ExtResource("2_pdr2v")]
-position = Vector2(1200, -450)
+position = Vector2(1209, -449)
 
 [node name="Spikes" parent="Environment Container" index="34" instance=ExtResource("8_2jioi")]
 position = Vector2(2550, -150)
@@ -254,7 +312,7 @@ position = Vector2(950, 950)
 position = Vector2(1250, 950)
 
 [node name="Torch3" parent="Environment Container" index="56" instance=ExtResource("2_pdr2v")]
-position = Vector2(2104, 1000)
+position = Vector2(2100, 967)
 
 [node name="Torch9" parent="Environment Container" index="57" instance=ExtResource("2_pdr2v")]
 position = Vector2(2350, 1100)
@@ -264,45 +322,128 @@ position = Vector2(3900, -350)
 
 [node name="Cave Rock 1" parent="Environment Container" index="59" instance=ExtResource("19_gsqe4")]
 position = Vector2(1650, -350)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="Cave Rock 2" parent="Environment Container" index="60" instance=ExtResource("12_ngjyq")]
 position = Vector2(1850, -450)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="Stalagtite" parent="Environment Container" index="61" instance=ExtResource("7_rp3nq")]
-position = Vector2(3100, -450)
+position = Vector2(3150, -451)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="Stalagtite2" parent="Environment Container" index="62" instance=ExtResource("8_sp3ig")]
-position = Vector2(3086, -450)
+position = Vector2(3109, -450)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@43745" parent="Environment Container" index="63" instance=ExtResource("9_uhbuw")]
-position = Vector2(3759, -600)
+position = Vector2(3791, -600)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="Stalagmite 2" parent="Environment Container" index="64" instance=ExtResource("20_chsud")]
 position = Vector2(2452, -147)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="Stalagmite" parent="Environment Container" index="65" instance=ExtResource("12_hey53")]
 position = Vector2(2400, -200)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@47484" parent="Environment Container" index="66" instance=ExtResource("21_dbou4")]
-position = Vector2(3597, -150)
+position = Vector2(3650, -150)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@48963" parent="Environment Container" index="67" instance=ExtResource("12_ngjyq")]
 position = Vector2(3678, -250)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="Stalagmite 1" parent="Environment Container" index="68" instance=ExtResource("11_a150d")]
-position = Vector2(1950, -600)
+position = Vector2(2000, -600)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="Stalagtite3" parent="Environment Container" index="69" instance=ExtResource("9_uhbuw")]
-position = Vector2(1941, -750)
+position = Vector2(1982, -750)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="Cave Rock 3" parent="Environment Container" index="70" instance=ExtResource("13_cjqau")]
 position = Vector2(1578, -350)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="Stalagmite 3" parent="Environment Container" index="71" instance=ExtResource("11_a150d")]
 position = Vector2(1050, -350)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="Stalagmite 4" parent="Environment Container" index="72" instance=ExtResource("20_chsud")]
 position = Vector2(1086, -350)
+rotation = -3.14159
+scale = Vector2(1, -1)
+
+[node name="Cave Rock 4" parent="Environment Container" index="73" instance=ExtResource("12_ngjyq")]
+position = Vector2(2850, 1100)
+rotation = -3.14159
+scale = Vector2(1, -1)
+
+[node name="Cave Rock 6" parent="Environment Container" index="74" instance=ExtResource("19_gsqe4")]
+position = Vector2(2850, 1100)
+rotation = -3.14159
+scale = Vector2(1, -1)
+
+[node name="Cave Rock 5" parent="Environment Container" index="75" instance=ExtResource("13_cjqau")]
+position = Vector2(4600, 650)
+rotation = -3.14159
+scale = Vector2(1, -1)
+
+[node name="Cave Rock 7" parent="Environment Container" index="76" instance=ExtResource("19_gsqe4")]
+position = Vector2(4300, 650)
+rotation = -3.14159
+scale = Vector2(1, -1)
+
+[node name="Cave Rock 8" parent="Environment Container" index="77" instance=ExtResource("12_ngjyq")]
+position = Vector2(4500, 650)
+rotation = -3.14159
+scale = Vector2(1, -1)
+
+[node name="Stalagtite4" parent="Environment Container" index="78" instance=ExtResource("8_sp3ig")]
+position = Vector2(4650, -50)
+rotation = -3.14159
+scale = Vector2(1, -1)
+
+[node name="Stalagtite5" parent="Environment Container" index="79" instance=ExtResource("9_uhbuw")]
+position = Vector2(4600, -400)
+rotation = -3.14159
+scale = Vector2(1, -1)
+
+[node name="Stalagtite6" parent="Environment Container" index="80" instance=ExtResource("9_uhbuw")]
+position = Vector2(4500, -450)
+rotation = -3.14159
+scale = Vector2(1, -1)
+
+[node name="Stalagmite2" parent="Environment Container" index="81" instance=ExtResource("12_hey53")]
+position = Vector2(4200, 50)
+rotation = -3.14159
+scale = Vector2(1, -1)
+
+[node name="Stalagtite7" parent="Environment Container" index="82" instance=ExtResource("10_o3j3w")]
+position = Vector2(4200, -500)
+rotation = -3.14159
+scale = Vector2(1, -1)
+
+[node name="Cave Rock 5" parent="." index="8" instance=ExtResource("13_cjqau")]
+position = Vector2(2950, 1050)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="Glyph" parent="Glyph Container" index="0" instance=ExtResource("22_splno")]
 position = Vector2(1250, -650)
@@ -310,16 +451,16 @@ rotation = 1.5708
 texture = ExtResource("23_po1eh")
 offset = Vector2(-32, -32)
 
-[node name="Player" parent="." index="10"]
+[node name="Player" parent="." index="11"]
 position = Vector2(1027, 1000)
 
-[node name="Idol" parent="." index="11"]
+[node name="Idol" parent="." index="12"]
 position = Vector2(1350, -100)
 
-[node name="Idol2" parent="." index="12"]
+[node name="Idol2" parent="." index="13"]
 position = Vector2(2351, 640)
 
-[node name="Idol3" parent="." index="13"]
+[node name="Idol3" parent="." index="14"]
 position = Vector2(3825, -1050)
 
 [node name="NightLight" parent="Camera2D/UI" index="0"]
@@ -343,7 +484,7 @@ position = Vector2(-791, -87)
 [node name="Dynamite4" parent="Camera2D" index="6" instance=ExtResource("6_xmhdf")]
 position = Vector2(-717, -86)
 
-[node name="Water" parent="." index="16"]
+[node name="Water" parent="." index="17"]
 rise_speed = 0.0
 
 [node name="Music" parent="Music Player" index="0"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://66qq3h005we5"]
+[gd_scene load_steps=32 format=4 uid="uid://66qq3h005we5"]
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_bq42n"]
 [ext_resource type="Texture2D" uid="uid://drcbr0bwewvte" path="res://Art/Sprites/caves/cave elements/door_diffuse.png" id="2_8smbn"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Scripts/SpawnObject.gd" id="2_urr5l"]
 [ext_resource type="Texture2D" uid="uid://rpwwxk8bf3mk" path="res://Art/Sprites/caves/cave elements/door_normal.png" id="3_em5o7"]
 [ext_resource type="PackedScene" uid="uid://r1kjk04fwuou" path="res://Prefabs/Spawn On Blocks/Hold.tscn" id="3_m6bsr"]
+[ext_resource type="Texture2D" uid="uid://22dhetwgepde" path="res://Art/Tilemaps/Background_Cave.png" id="3_wfmap"]
 [ext_resource type="TileSet" uid="uid://qi31weyfqxcu" path="res://Art/Tilemaps/Tilemap_Cave.tres" id="4_p6l4r"]
 [ext_resource type="PackedScene" uid="uid://bkatak76uuoli" path="res://Prefabs/Spawn On Blocks/Campfire.tscn" id="4_snk40"]
 [ext_resource type="PackedScene" uid="uid://c8njjo4yfo85v" path="res://Prefabs/coffin.tscn" id="5_kuvvl"]
@@ -65,6 +66,7 @@ offset_left = -3400.0
 offset_top = -16350.0
 offset_right = -17.0002
 offset_bottom = -12665.0
+texture = ExtResource("3_wfmap")
 
 [node name="Dark Layer" parent="." index="1"]
 visible = true
@@ -152,183 +154,303 @@ scale = Vector2(0.32, 0.32)
 
 [node name="Cave Rock 1" parent="Environment Container" index="0" instance=ExtResource("8_2sdi0")]
 position = Vector2(1750, 1050)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="Stalagmite 2" parent="Environment Container" index="1" instance=ExtResource("9_n7fus")]
 position = Vector2(1300, 1050)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="Cave Rock 2" parent="Environment Container" index="2" instance=ExtResource("10_85e78")]
 position = Vector2(1350, 1050)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@45417" parent="Environment Container" index="3" instance=ExtResource("9_n7fus")]
 position = Vector2(1800, 1050)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="Stalagtite" parent="Environment Container" index="4" instance=ExtResource("11_hubew")]
 position = Vector2(2600, 100)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@45426" parent="Environment Container" index="5" instance=ExtResource("12_kfw4x")]
 position = Vector2(2637, 100)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="Stalagtite2" parent="Environment Container" index="6" instance=ExtResource("13_elage")]
-position = Vector2(2350, 100)
+position = Vector2(2400, 100)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="Stalagmite" parent="Environment Container" index="7" instance=ExtResource("14_w5cko")]
 position = Vector2(2650, 400)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="Stalagmite 1" parent="Environment Container" index="8" instance=ExtResource("15_mqwsj")]
 position = Vector2(2350, 350)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@46423" parent="Environment Container" index="9" instance=ExtResource("10_85e78")]
 position = Vector2(2650, -250)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@46428" parent="Environment Container" index="10" instance=ExtResource("10_85e78")]
 position = Vector2(2500, -250)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@46433" parent="Environment Container" index="11" instance=ExtResource("8_2sdi0")]
 position = Vector2(2550, -250)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@46438" parent="Environment Container" index="12" instance=ExtResource("15_mqwsj")]
-position = Vector2(3700, -750)
+position = Vector2(3800, -750)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@46443" parent="Environment Container" index="13" instance=ExtResource("16_as0dl")]
-position = Vector2(3900, -1200)
+position = Vector2(3922, -1200)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@46448" parent="Environment Container" index="14" instance=ExtResource("11_hubew")]
 position = Vector2(3850, -1200)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@46453" parent="Environment Container" index="15" instance=ExtResource("12_kfw4x")]
-position = Vector2(3750, -1150)
+position = Vector2(3792, -1150)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@46458" parent="Environment Container" index="16" instance=ExtResource("12_kfw4x")]
 position = Vector2(3877, -1200)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="Stalagmite 3" parent="Environment Container" index="17" instance=ExtResource("9_n7fus")]
-position = Vector2(3750, -750)
+position = Vector2(3750, -746)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@46961" parent="Environment Container" index="18" instance=ExtResource("9_n7fus")]
-position = Vector2(300, -850)
+position = Vector2(370, -846)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@46966" parent="Environment Container" index="19" instance=ExtResource("14_w5cko")]
-position = Vector2(338, -850)
+position = Vector2(351, -850)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="Cave Rock 3" parent="Environment Container" index="20" instance=ExtResource("8_2sdi0")]
 position = Vector2(400, -850)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@48445" parent="Environment Container" index="21" instance=ExtResource("15_mqwsj")]
 position = Vector2(150, -1250)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@48450" parent="Environment Container" index="22" instance=ExtResource("11_hubew")]
 position = Vector2(350, -1500)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@48455" parent="Environment Container" index="23" instance=ExtResource("11_hubew")]
-position = Vector2(300, -1500)
+position = Vector2(300, -1501)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="Stalagtite3" parent="Environment Container" index="24" instance=ExtResource("12_kfw4x")]
-position = Vector2(327, -1500)
+position = Vector2(326, -1500)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@50082" parent="Environment Container" index="25" instance=ExtResource("12_kfw4x")]
 position = Vector2(150, -1500)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@50725" parent="Environment Container" index="26" instance=ExtResource("16_as0dl")]
 position = Vector2(700, -1150)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@51368" parent="Environment Container" index="27" instance=ExtResource("10_85e78")]
 position = Vector2(900, -1350)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@51373" parent="Environment Container" index="28" instance=ExtResource("17_20sv6")]
 position = Vector2(850, -850)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@51378" parent="Environment Container" index="29" instance=ExtResource("17_20sv6")]
 position = Vector2(650, -2150)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@51383" parent="Environment Container" index="30" instance=ExtResource("18_h7fjd")]
-position = Vector2(700, -2050)
+position = Vector2(800, -2050)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@51388" parent="Environment Container" index="31" instance=ExtResource("9_n7fus")]
 position = Vector2(749, -2047)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@51393" parent="Environment Container" index="32" instance=ExtResource("15_mqwsj")]
 position = Vector2(850, -1950)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@51398" parent="Environment Container" index="33" instance=ExtResource("15_mqwsj")]
-position = Vector2(800, -1950)
+position = Vector2(900, -1950)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@51403" parent="Environment Container" index="34" instance=ExtResource("9_n7fus")]
 position = Vector2(950, -1847)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@51408" parent="Environment Container" index="35" instance=ExtResource("15_mqwsj")]
-position = Vector2(900, -1850)
+position = Vector2(985, -1850)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="Stalagtite4" parent="Environment Container" index="36" instance=ExtResource("16_as0dl")]
-position = Vector2(2150, -2100)
+position = Vector2(2250, -2100)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@52892" parent="Environment Container" index="37" instance=ExtResource("11_hubew")]
 position = Vector2(2100, -2200)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@52897" parent="Environment Container" index="38" instance=ExtResource("11_hubew")]
 position = Vector2(2200, -2100)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@52902" parent="Environment Container" index="39" instance=ExtResource("12_kfw4x")]
-position = Vector2(2050, -2200)
+position = Vector2(2150, -2200)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@52907" parent="Environment Container" index="40" instance=ExtResource("11_hubew")]
 position = Vector2(2000, -2300)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@52912" parent="Environment Container" index="41" instance=ExtResource("13_elage")]
-position = Vector2(1950, -2300)
+position = Vector2(2050, -2300)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@52922" parent="Environment Container" index="42" instance=ExtResource("10_85e78")]
 position = Vector2(3100, -1950)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@52927" parent="Environment Container" index="43" instance=ExtResource("17_20sv6")]
 position = Vector2(3000, -1950)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@52932" parent="Environment Container" index="44" instance=ExtResource("10_85e78")]
 position = Vector2(3050, -1950)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="Stalagmite 4" parent="Environment Container" index="45" instance=ExtResource("9_n7fus")]
 position = Vector2(3050, -1950)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@53844" parent="Environment Container" index="46" instance=ExtResource("14_w5cko")]
 position = Vector2(2850, -1950)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="Stalagmite 5" parent="Environment Container" index="47" instance=ExtResource("9_n7fus")]
 position = Vector2(2800, -1948)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@54348" parent="Environment Container" index="48" instance=ExtResource("15_mqwsj")]
 position = Vector2(2900, -1950)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="Cave Rock 4" parent="Environment Container" index="49" instance=ExtResource("17_20sv6")]
 position = Vector2(2750, -1500)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="Cave Rock 5" parent="Environment Container" index="50" instance=ExtResource("10_85e78")]
 position = Vector2(2900, -1500)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@55346" parent="Environment Container" index="51" instance=ExtResource("8_2sdi0")]
 position = Vector2(3250, -1500)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@55351" parent="Environment Container" index="52" instance=ExtResource("17_20sv6")]
 position = Vector2(3050, -1300)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="Cave Rock 6" parent="Environment Container" index="53" instance=ExtResource("10_85e78")]
 position = Vector2(3100, -1300)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@56488" parent="Environment Container" index="54" instance=ExtResource("8_2sdi0")]
 position = Vector2(3150, -1300)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="Cave Rock 7" parent="Environment Container" index="55" instance=ExtResource("8_2sdi0")]
 position = Vector2(2500, 1050)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="Stalagmite2" parent="Environment Container" index="56" instance=ExtResource("14_w5cko")]
 position = Vector2(2550, 1050)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="Stalagtite5" parent="Environment Container" index="57" instance=ExtResource("16_as0dl")]
 position = Vector2(2550, 750)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="Stalagmite3" parent="Environment Container" index="58" instance=ExtResource("18_h7fjd")]
 position = Vector2(2950, 1050)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@60774" parent="Environment Container" index="59" instance=ExtResource("11_hubew")]
-position = Vector2(2950, 750)
+position = Vector2(2996, 750)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="Idol" parent="." index="11"]
 position = Vector2(3400, 1050)

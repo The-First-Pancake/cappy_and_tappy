@@ -674,166 +674,274 @@ rotation = 9.42478
 scale = Vector2(0.32, 0.32)
 
 [node name="SetDressingBase" parent="Environment Container" index="0" instance=ExtResource("11_vvxym")]
-position = Vector2(1400, 1053)
+position = Vector2(1450, 1052)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase2" parent="Environment Container" index="1" instance=ExtResource("12_nu8ia")]
-position = Vector2(1350, 1050)
+position = Vector2(1400, 1052)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase3" parent="Environment Container" index="2" instance=ExtResource("13_71cwu")]
-position = Vector2(1350, 1050)
+position = Vector2(1400, 1052)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@22719" parent="Environment Container" index="3" instance=ExtResource("14_51pl3")]
-position = Vector2(2600, -1550)
+position = Vector2(2650, -1550)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase4" parent="Environment Container" index="4" instance=ExtResource("15_hq2u4")]
 position = Vector2(3100, -1150)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase5" parent="Environment Container" index="5" instance=ExtResource("16_2vyly")]
 position = Vector2(3150, -1150)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase6" parent="Environment Container" index="6" instance=ExtResource("15_hq2u4")]
 position = Vector2(3200, -1150)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@25135" parent="Environment Container" index="7" instance=ExtResource("16_2vyly")]
 position = Vector2(3000, -2750)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase7" parent="Environment Container" index="8" instance=ExtResource("17_d7hfk")]
 position = Vector2(3050, -2750)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase8" parent="Environment Container" index="9" instance=ExtResource("15_hq2u4")]
 position = Vector2(2900, -2750)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase9" parent="Environment Container" index="10" instance=ExtResource("14_51pl3")]
 position = Vector2(2750, -2750)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase10" parent="Environment Container" index="11" instance=ExtResource("15_hq2u4")]
 position = Vector2(2600, -2750)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase11" parent="Environment Container" index="12" instance=ExtResource("16_2vyly")]
 position = Vector2(2650, -2750)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase12" parent="Environment Container" index="13" instance=ExtResource("16_2vyly")]
 position = Vector2(3200, -2750)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase13" parent="Environment Container" index="14" instance=ExtResource("15_hq2u4")]
 position = Vector2(3450, -2750)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@29527" parent="Environment Container" index="15" instance=ExtResource("18_4caqg")]
 position = Vector2(1098, -1650)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase14" parent="Environment Container" index="16" instance=ExtResource("11_vvxym")]
 position = Vector2(1050, -1646)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase15" parent="Environment Container" index="17" instance=ExtResource("19_70fx8")]
 position = Vector2(1250, -1850)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase16" parent="Environment Container" index="18" instance=ExtResource("12_nu8ia")]
 position = Vector2(1300, -1850)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase17" parent="Environment Container" index="19" instance=ExtResource("20_r6tqu")]
 position = Vector2(1550, -1650)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase18" parent="Environment Container" index="20" instance=ExtResource("21_2n87k")]
 position = Vector2(1750, -1550)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@18744" parent="Environment Container" index="21" instance=ExtResource("11_vvxym")]
-position = Vector2(1154, -1046)
+position = Vector2(1200, -1046)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@19733" parent="Environment Container" index="22" instance=ExtResource("15_hq2u4")]
 position = Vector2(1550, -1150)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase19" parent="Environment Container" index="23" instance=ExtResource("19_70fx8")]
 position = Vector2(1250, -1050)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase20" parent="Environment Container" index="24" instance=ExtResource("12_nu8ia")]
 position = Vector2(1300, -1050)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase21" parent="Environment Container" index="25" instance=ExtResource("20_r6tqu")]
 position = Vector2(1450, -1050)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase22" parent="Environment Container" index="26" instance=ExtResource("18_4caqg")]
-position = Vector2(650, -1050)
+position = Vector2(750, -1050)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase23" parent="Environment Container" index="27" instance=ExtResource("13_71cwu")]
 position = Vector2(2800, -2950)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase24" parent="Environment Container" index="28" instance=ExtResource("18_4caqg")]
 position = Vector2(2750, -2950)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@25206" parent="Environment Container" index="29" instance=ExtResource("20_r6tqu")]
 position = Vector2(2900, -2850)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase25" parent="Environment Container" index="30" instance=ExtResource("16_2vyly")]
 position = Vector2(2850, -3550)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase26" parent="Environment Container" index="31" instance=ExtResource("15_hq2u4")]
 position = Vector2(2800, -3550)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase27" parent="Environment Container" index="32" instance=ExtResource("16_2vyly")]
 position = Vector2(2900, -3550)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase28" parent="Environment Container" index="33" instance=ExtResource("15_hq2u4")]
 position = Vector2(2950, -3550)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@30014" parent="Environment Container" index="34" instance=ExtResource("14_51pl3")]
 position = Vector2(-900, -1750)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase29" parent="Environment Container" index="35" instance=ExtResource("20_r6tqu")]
 position = Vector2(-900, -2350)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@31442" parent="Environment Container" index="36" instance=ExtResource("14_51pl3")]
 position = Vector2(200, -3750)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase30" parent="Environment Container" index="37" instance=ExtResource("15_hq2u4")]
 position = Vector2(250, -3750)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase31" parent="Environment Container" index="38" instance=ExtResource("19_70fx8")]
 position = Vector2(300, -3950)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@33346" parent="Environment Container" index="39" instance=ExtResource("21_2n87k")]
 position = Vector2(200, -3950)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase32" parent="Environment Container" index="40" instance=ExtResource("15_hq2u4")]
 position = Vector2(1450, -5150)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase33" parent="Environment Container" index="41" instance=ExtResource("17_d7hfk")]
 position = Vector2(1400, -5150)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@35329" parent="Environment Container" index="42" instance=ExtResource("16_2vyly")]
-position = Vector2(1350, -5150)
+position = Vector2(1500, -5150)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase34" parent="Environment Container" index="43" instance=ExtResource("17_d7hfk")]
 position = Vector2(1850, -5600)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase35" parent="Environment Container" index="44" instance=ExtResource("16_2vyly")]
 position = Vector2(1671, -5600)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase36" parent="Environment Container" index="45" instance=ExtResource("13_71cwu")]
 position = Vector2(1750, -5250)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase37" parent="Environment Container" index="46" instance=ExtResource("14_51pl3")]
 position = Vector2(1750, -5600)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase38" parent="Environment Container" index="47" instance=ExtResource("15_hq2u4")]
 position = Vector2(1731, -5600)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase39" parent="Environment Container" index="48" instance=ExtResource("11_vvxym")]
 position = Vector2(1688, -5246)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase40" parent="Environment Container" index="49" instance=ExtResource("18_4caqg")]
 position = Vector2(1714, -5250)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@40701" parent="Environment Container" index="50" instance=ExtResource("11_vvxym")]
 position = Vector2(1845, -5246)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase41" parent="Environment Container" index="51" instance=ExtResource("12_nu8ia")]
 position = Vector2(1450, -5250)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase42" parent="Environment Container" index="52" instance=ExtResource("12_nu8ia")]
 position = Vector2(1500, -5250)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@42623" parent="Environment Container" index="53" instance=ExtResource("19_70fx8")]
 position = Vector2(2000, -5250)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="Torch" parent="Environment Container" index="54" instance=ExtResource("22_mttbs")]
 position = Vector2(2000, -5350)
