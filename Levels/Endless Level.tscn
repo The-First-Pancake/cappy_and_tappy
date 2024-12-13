@@ -1,7 +1,7 @@
 [gd_scene load_steps=67 format=4 uid="uid://cfckjpuscavie"]
 
 [ext_resource type="Script" path="res://Scripts/LevelInfo.gd" id="1_u1kur"]
-[ext_resource type="Texture2D" uid="uid://bqfeqtdw7xcxo" path="res://Art/Sprites/Backgrounds/background.png" id="2_6e5ca"]
+[ext_resource type="Texture2D" uid="uid://bqfeqtdw7xcxo" path="res://Art/Tilemaps/Background_Aztec.png" id="2_6e5ca"]
 [ext_resource type="PackedScene" uid="uid://def2hxxjwwhvl" path="res://Prefabs/Door.tscn" id="2_d4khg"]
 [ext_resource type="Script" path="res://Scripts/CameraZone.gd" id="3_nyl6j"]
 [ext_resource type="PackedScene" uid="uid://dngf3odx0yf5k" path="res://Prefabs/player.tscn" id="4_irwxl"]
@@ -40,7 +40,7 @@
 [ext_resource type="PackedScene" uid="uid://2emoy8lav7a0" path="res://Prefabs/Spawn On Blocks/harpoon_launcher.tscn" id="26_qxi5a"]
 [ext_resource type="PackedScene" uid="uid://c8njjo4yfo85v" path="res://Prefabs/coffin.tscn" id="30_5hdnn"]
 [ext_resource type="Script" path="res://Scripts/MusicPlayer.gd" id="32_41nv7"]
-[ext_resource type="AudioStream" uid="uid://twgpbnyr1add" path="res://Sound/Music/music_main.wav" id="41_x6e3w"]
+[ext_resource type="AudioStream" uid="uid://twgpbnyr1add" path="res://Sound/music_main.wav" id="41_x6e3w"]
 [ext_resource type="Script" path="res://Scripts/PathFindingGraph.gd" id="42_ihhvf"]
 [ext_resource type="PackedScene" uid="uid://c5egotsf7fdg4" path="res://Prefabs/PathNode.tscn" id="43_p1272"]
 

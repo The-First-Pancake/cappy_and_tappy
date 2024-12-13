@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bqfeqtdw7xcxo"
-path="res://.godot/imported/background.png-0ea2ec607a21859f01bcf833501e32d1.ctex"
+path="res://.godot/imported/Background_Aztec.png-f758fad8a0464194c527ac87eabcfce8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Sprites/Backgrounds/background.png"
-dest_files=["res://.godot/imported/background.png-0ea2ec607a21859f01bcf833501e32d1.ctex"]
+source_file="res://Art/Tilemaps/Background_Aztec.png"
+dest_files=["res://.godot/imported/Background_Aztec.png-f758fad8a0464194c527ac87eabcfce8.ctex"]
 
 [params]
 

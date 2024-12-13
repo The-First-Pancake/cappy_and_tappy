@@ -58,9 +58,7 @@ func _ready() -> void:
 		completed_flames.show()
 	
 	if !unlocked:
-		modulate.r /= 3
-		modulate.g /= 3
-		modulate.b /= 3
+		modulate = Color("ffffff73")
 	if (!endless):
 		var idol_1: TextureRect = $"HBoxContainer/Idol 1"
 		var idol_2: TextureRect = $"HBoxContainer/Idol 2"

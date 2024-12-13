@@ -1,7 +1,7 @@
 [gd_scene load_steps=54 format=4 uid="uid://b63gbe5mojyrm"]
 
 [ext_resource type="Script" path="res://Scripts/LevelInfo.gd" id="1_04w0d"]
-[ext_resource type="Texture2D" uid="uid://bqfeqtdw7xcxo" path="res://Art/Sprites/Backgrounds/background.png" id="1_ny6uj"]
+[ext_resource type="Texture2D" uid="uid://bqfeqtdw7xcxo" path="res://Art/Tilemaps/Background_Aztec.png" id="1_ny6uj"]
 [ext_resource type="PackedScene" uid="uid://def2hxxjwwhvl" path="res://Prefabs/Door.tscn" id="2_loew8"]
 [ext_resource type="Material" uid="uid://cg4fprgafhcxd" path="res://Art/unshaded_material.tres" id="3_bvfeq"]
 [ext_resource type="TileSet" uid="uid://gg3bh8fgpw3d" path="res://Art/Tilemaps/Tilemap_Brown Bricks.tres" id="4_rprbn"]

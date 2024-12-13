@@ -1,6 +1,6 @@
 [gd_scene load_steps=51 format=4 uid="uid://6dd2cbybvcqg"]
 
-[ext_resource type="Texture2D" uid="uid://bqfeqtdw7xcxo" path="res://Art/Sprites/Backgrounds/background.png" id="1_dtx2u"]
+[ext_resource type="Texture2D" uid="uid://bqfeqtdw7xcxo" path="res://Art/Tilemaps/Background_Aztec.png" id="1_dtx2u"]
 [ext_resource type="Script" path="res://Scripts/LevelInfo.gd" id="1_jxryb"]
 [ext_resource type="PackedScene" uid="uid://dngf3odx0yf5k" path="res://Prefabs/player.tscn" id="2_hossx"]
 [ext_resource type="Script" path="res://Scripts/CameraController.gd" id="4_psc51"]

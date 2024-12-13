@@ -2,11 +2,12 @@ class_name LevelSelect
 extends Control
 
 @export var temples: Array[Control] = []
-@export var world_backgrounds: Array[Texture2D] = []
+@export var temple_backgrounds: Array[Texture2D] = []
 
 @onready var temple_container: Container = $"MarginContainer/VBoxContainer/Temple Container"
 @onready var next_temple_button: Button = $"Next Temple Button"
 @onready var previous_temple_button: Button = $"Previous Temple Button"
+@onready var background: TextureRect = $Background
 
 
 func _ready() -> void:
@@ -32,6 +33,8 @@ func change_temple(idx: int = 0) -> void:
 			temple.visible = true
 			temple.reparent(temple_container)
 			temple_container.move_child(temple,0)
+			if temple_backgrounds[i]:
+				background.texture = temple_backgrounds[i]
 			
 		else:
 			temple.visible = false

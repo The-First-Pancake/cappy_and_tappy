@@ -28,7 +28,7 @@ func update_temple_type() -> void:
 			music_player.stream = preload("res://Sound/Music/Aztec/Jungle Jammin.wav")
 			music_player.volume_db = -7
 		environment.tile_set = preload("res://Art/Tilemaps/Tilemap_Brown Bricks.tres")
-		background.texture = preload("res://Art/Sprites/Backgrounds/background.png")
+		background.texture = preload("res://Art/Tilemaps/Background_Aztec.png")
 		entrance_door.door_frame_texture = preload("res://Art/Sprites/door/Door_Foreground.png")
 		exit_door.door_frame_texture = preload("res://Art/Sprites/door/Door_Foreground.png")
 	
