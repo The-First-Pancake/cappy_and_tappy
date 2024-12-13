@@ -115,7 +115,10 @@ position = Vector2(1500, -50)
 [node name="AztecWallStatue" parent="Environment Container" index="14" instance=ExtResource("10_vvfm8")]
 position = Vector2(1300, 0)
 
-[node name="Pot_Tall2" parent="Environment Container" index="15" instance=ExtResource("9_3dnnt")]
+[node name="AztecWallStatue2" parent="Environment Container" index="15" instance=ExtResource("10_vvfm8")]
+position = Vector2(1725, 800)
+
+[node name="Pot_Tall2" parent="Environment Container" index="16" instance=ExtResource("9_3dnnt")]
 position = Vector2(1630, 1050)
 
 [node name="Glyph" parent="Glyph Container" index="0" instance=ExtResource("2_ekx62")]
@@ -168,11 +171,7 @@ rotation = 1.57079
 position = Vector2(1350, 650)
 rotation = -1.57073
 
-[node name="PlaceableCharacterBody2d26" parent="Block Container" index="10" instance=ExtResource("8_jnvga")]
-position = Vector2(1700, 700)
-rotation = 3.14154
-
-[node name="PlaceableCharacterBody2d29" parent="Block Container" index="11" instance=ExtResource("8_jnvga")]
+[node name="PlaceableCharacterBody2d29" parent="Block Container" index="10" instance=ExtResource("8_jnvga")]
 position = Vector2(1000, 0)
 rotation = 3.14156
 
@@ -180,55 +179,55 @@ rotation = 3.14156
 position = Vector2(99.9999, -100)
 rotation = 1.5708
 
-[node name="PlaceableCharacterBody2d25" parent="Block Container" index="12" instance=ExtResource("8_jnvga")]
-position = Vector2(1950, 900)
+[node name="PlaceableCharacterBody2d25" parent="Block Container" index="11" instance=ExtResource("8_jnvga")]
+position = Vector2(1900, 900)
 rotation = 3.14156
 
-[node name="PlaceableCharacterBody2d4" parent="Block Container" index="13" instance=ExtResource("9_yvapj")]
+[node name="PlaceableCharacterBody2d4" parent="Block Container" index="12" instance=ExtResource("9_yvapj")]
 position = Vector2(800, 900)
 rotation = -3.14159
 
-[node name="PlaceableCharacterBody2d5" parent="Block Container" index="14" instance=ExtResource("9_yvapj")]
+[node name="PlaceableCharacterBody2d5" parent="Block Container" index="13" instance=ExtResource("9_yvapj")]
 position = Vector2(900, 800)
 rotation = -3.14158
 
-[node name="2x2 Piiece2" parent="Block Container" index="15" instance=ExtResource("10_pj48o")]
+[node name="2x2 Piiece2" parent="Block Container" index="14" instance=ExtResource("10_pj48o")]
 position = Vector2(1400, 750)
 rotation = -3.14159
 
-[node name="2x2 Piiece3" parent="Block Container" index="16" instance=ExtResource("10_pj48o")]
+[node name="2x2 Piiece3" parent="Block Container" index="15" instance=ExtResource("10_pj48o")]
 position = Vector2(1400, 450)
 rotation = -3.14159
 
-[node name="PlaceableCharacterBody2d16" parent="Block Container" index="17" instance=ExtResource("11_i7adg")]
+[node name="PlaceableCharacterBody2d16" parent="Block Container" index="16" instance=ExtResource("11_i7adg")]
 position = Vector2(1850, 550)
 rotation = -1.57073
 
-[node name="PlaceableCharacterBody2d30" parent="Block Container" index="18" instance=ExtResource("11_i7adg")]
+[node name="PlaceableCharacterBody2d30" parent="Block Container" index="17" instance=ExtResource("11_i7adg")]
 position = Vector2(850, 250)
 rotation = -1.57073
 
-[node name="PlaceableCharacterBody2d31" parent="Block Container" index="19" instance=ExtResource("11_i7adg")]
+[node name="PlaceableCharacterBody2d31" parent="Block Container" index="18" instance=ExtResource("11_i7adg")]
 position = Vector2(950, 250)
 rotation = 1.57084
 
-[node name="PlaceableCharacterBody2d24" parent="Block Container" index="20" instance=ExtResource("11_i7adg")]
-position = Vector2(1900, 750)
-rotation = 1.5708
+[node name="PlaceableCharacterBody2d26" parent="Block Container" index="19" instance=ExtResource("11_i7adg")]
+position = Vector2(1750, 650)
+rotation = 10.9956
 
-[node name="PlaceableCharacterBody2d22" parent="Block Container" index="21" instance=ExtResource("11_i7adg")]
+[node name="PlaceableCharacterBody2d22" parent="Block Container" index="20" instance=ExtResource("11_i7adg")]
 position = Vector2(1150, 950)
 rotation = -1.57084
 
-[node name="PlaceableCharacterBody2d23" parent="Block Container" index="22" instance=ExtResource("11_i7adg")]
+[node name="PlaceableCharacterBody2d23" parent="Block Container" index="21" instance=ExtResource("11_i7adg")]
 position = Vector2(1450, 950)
 rotation = -1.57084
 
-[node name="PlaceableCharacterBody2d12" parent="Block Container" index="23" instance=ExtResource("11_i7adg")]
+[node name="PlaceableCharacterBody2d12" parent="Block Container" index="22" instance=ExtResource("11_i7adg")]
 position = Vector2(1950, 400)
 rotation = -3.14159
 
-[node name="PlaceableCharacterBody2d" parent="Block Container" index="24" instance=ExtResource("12_opbgf")]
+[node name="PlaceableCharacterBody2d" parent="Block Container" index="23" instance=ExtResource("12_opbgf")]
 position = Vector2(1150, 850)
 rotation = 1.5708
 
