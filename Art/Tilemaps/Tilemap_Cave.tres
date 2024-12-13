@@ -1,9 +1,9 @@
 [gd_resource type="TileSet" load_steps=3 format=3 uid="uid://qi31weyfqxcu"]
 
-[ext_resource type="Texture2D" uid="uid://6kmotymexln7" path="res://Art/Tilemaps/Tiles_Cave.png" id="1_dndq3"]
+[ext_resource type="Texture2D" uid="uid://6kmotymexln7" path="res://Art/Tilemaps/Tiles_Cave.png" id="1_06nwl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qv5ff"]
-texture = ExtResource("1_dndq3")
+texture = ExtResource("1_06nwl")
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 0
