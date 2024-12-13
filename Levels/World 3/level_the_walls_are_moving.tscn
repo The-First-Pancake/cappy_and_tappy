@@ -80,21 +80,33 @@ tile_set = ExtResource("5_gtrh7")
 
 [node name="SetDressingBase" parent="Environment Container" index="0" instance=ExtResource("6_u1hag")]
 position = Vector2(1750, 1051)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@42360" parent="Environment Container" index="1" instance=ExtResource("7_w6yy8")]
 position = Vector2(1700, 1054)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="SetDressingBase2" parent="Environment Container" index="2" instance=ExtResource("8_48dqk")]
 position = Vector2(1800, 1050)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@43349" parent="Environment Container" index="3" instance=ExtResource("9_p7hs0")]
 position = Vector2(1800, 1050)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@45797" parent="Environment Container" index="4" instance=ExtResource("10_n2h1r")]
 position = Vector2(1350, 1050)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="@Area2D@45802" parent="Environment Container" index="5" instance=ExtResource("11_x6ro6")]
 position = Vector2(1400, 1050)
+rotation = -3.14159
+scale = Vector2(1, -1)
 
 [node name="PlaceableCharacterBody2d" parent="Block Container" index="0" instance=ExtResource("5_dty44")]
 position = Vector2(1700, -600)

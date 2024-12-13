@@ -6,11 +6,12 @@ extends Area2D
 @export var is_exit: bool = false
 @export var door_frame_texture: Texture2D:
 	set(new_val):
-		await ready
 		door_frame_texture = new_val
+		if not is_inside_tree():
+			return
 		if door_frame_texture:
-			door_frame_texture = new_val
 			door_frame.texture = door_frame_texture
+
 var door_frame: Sprite2D:
 	get:
 		return $"Door Frame" as Sprite2D
@@ -22,6 +23,8 @@ var door_frame: Sprite2D:
 var player_inside: bool = false
 
 func _ready() -> void:
+	if door_frame_texture:
+			door_frame.texture = door_frame_texture
 	if !Engine.is_editor_hint():
 		await  get_tree().process_frame
 		if is_exit:
