@@ -119,7 +119,7 @@ position = Vector2(1300, 0)
 position = Vector2(1630, 1050)
 
 [node name="Glyph" parent="Glyph Container" index="0" instance=ExtResource("2_ekx62")]
-position = Vector2(1350, -100)
+position = Vector2(1280, -99)
 texture = ExtResource("3_mcg8p")
 offset = Vector2(2.43836, -1.56176)
 controller_texture = ExtResource("4_khff2")

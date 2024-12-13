@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Scripts/LevelBuildingTools.gd" id="5_cdf57"]
 
 [node name="Pot_Tall" type="Area2D"]
+modulate = Color(0.788235, 0.788235, 0.788235, 1)
 
 [node name="Squashable" type="Node" parent="."]
 script = ExtResource("4_xh7rm")
