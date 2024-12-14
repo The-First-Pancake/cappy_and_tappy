@@ -206,7 +206,7 @@ rotation = 1.5708
 stream = ExtResource("2_omn6i")
 
 [node name="Torch" parent="." index="36" instance=ExtResource("22_mvudh")]
-position = Vector2(1104, 841)
+position = Vector2(1250, 947)
 
 [node name="Torch2" parent="." index="37" instance=ExtResource("22_mvudh")]
-position = Vector2(1706, -849)
+position = Vector2(1537, -748)

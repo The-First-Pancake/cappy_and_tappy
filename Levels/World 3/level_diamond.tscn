@@ -996,5 +996,5 @@ visible = true
 stream = ExtResource("2_m1ge1")
 
 [node name="Torch" parent="." index="20" instance=ExtResource("22_mttbs")]
-position = Vector2(1072, 896)
+position = Vector2(1350, 932)
 scale = Vector2(-1, 1)

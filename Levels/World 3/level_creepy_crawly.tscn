@@ -267,4 +267,4 @@ position = Vector2(1350, -1050)
 position = Vector2(1050, -1050)
 
 [node name="Torch3" parent="." index="52" instance=ExtResource("21_a3x5b")]
-position = Vector2(1176, 936)
+position = Vector2(1250, 937)
