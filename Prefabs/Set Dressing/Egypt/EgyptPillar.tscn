@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Scripts/LevelBuildingTools.gd" id="4_0ixta"]
 
 [node name="Pillar" type="VBoxContainer"]
+modulate = Color(0.82606, 0.82606, 0.82606, 1)
 offset_left = -50.0
 offset_top = -350.0
 offset_right = 50.0

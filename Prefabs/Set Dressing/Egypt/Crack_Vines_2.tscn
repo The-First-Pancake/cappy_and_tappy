@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0rv8mrmfut7g"]
+
+[ext_resource type="PackedScene" uid="uid://bdr2y4c1vqaws" path="res://Prefabs/Set Dressing/Cosmetic_Dressing.tscn" id="1_01v03"]
+
+[node name="Cosmetic Dressing" instance=ExtResource("1_01v03")]
+rotation = 18.8496
+scale = Vector2(1, 1)
+
+[node name="Sprite2D" parent="." index="0"]
+modulate = Color(2.04, 1.23, 0.9, 1)
