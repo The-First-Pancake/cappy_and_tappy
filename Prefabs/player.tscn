@@ -620,7 +620,6 @@ stream = ExtResource("17_8twbf")
 
 [node name="Respawn" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("17_3wd0r")
-stream_paused = true
 
 [node name="Griddy" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("18_w2nvq")
