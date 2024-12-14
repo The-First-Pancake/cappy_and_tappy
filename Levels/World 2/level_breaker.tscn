@@ -237,8 +237,8 @@ scale = Vector2(1, -1)
 
 [node name="SetDressingBase5" parent="Environment Container" index="38" instance=ExtResource("15_2l0su")]
 position = Vector2(700, -2325)
-rotation = -3.14159
-scale = Vector2(-1, -1)
+rotation = 2.53518e-06
+scale = Vector2(1, 1)
 
 [node name="SetDressingBase6" parent="Environment Container" index="39" instance=ExtResource("14_h3vrk")]
 position = Vector2(2000, -1400)
@@ -247,8 +247,8 @@ scale = Vector2(1, -1)
 
 [node name="SetDressingBase7" parent="Environment Container" index="40" instance=ExtResource("14_h3vrk")]
 position = Vector2(1500, -575)
-rotation = -3.14159
-scale = Vector2(-1, -1)
+rotation = 2.53518e-06
+scale = Vector2(1, 1)
 
 [node name="SetDressingBase8" parent="Environment Container" index="41" instance=ExtResource("15_2l0su")]
 position = Vector2(2000, 0)
@@ -257,8 +257,8 @@ scale = Vector2(1, -1)
 
 [node name="SetDressingBase9" parent="Environment Container" index="42" instance=ExtResource("14_h3vrk")]
 position = Vector2(700, 725)
-rotation = -3.14159
-scale = Vector2(-1, -1)
+rotation = 2.53518e-06
+scale = Vector2(1, 1)
 
 [node name="2x2 Piiece" parent="Block Container" index="0" instance=ExtResource("8_mfjac")]
 position = Vector2(1500, 250)
