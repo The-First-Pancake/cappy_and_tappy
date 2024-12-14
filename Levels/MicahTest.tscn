@@ -1,10 +1,11 @@
-[gd_scene load_steps=54 format=4 uid="uid://b63gbe5mojyrm"]
+[gd_scene load_steps=55 format=4 uid="uid://b63gbe5mojyrm"]
 
 [ext_resource type="Script" path="res://Scripts/LevelInfo.gd" id="1_04w0d"]
 [ext_resource type="Texture2D" uid="uid://bqfeqtdw7xcxo" path="res://Art/Tilemaps/Background_Aztec.png" id="1_ny6uj"]
 [ext_resource type="PackedScene" uid="uid://def2hxxjwwhvl" path="res://Prefabs/Door.tscn" id="2_loew8"]
 [ext_resource type="Material" uid="uid://cg4fprgafhcxd" path="res://Art/unshaded_material.tres" id="3_bvfeq"]
 [ext_resource type="TileSet" uid="uid://gg3bh8fgpw3d" path="res://Art/Tilemaps/Tilemap_Brown Bricks.tres" id="4_rprbn"]
+[ext_resource type="Texture2D" uid="uid://cvjveityc31tt" path="res://Art/Sprites/door/Door_Foreground.png" id="5_163ps"]
 [ext_resource type="PackedScene" uid="uid://c8njjo4yfo85v" path="res://Prefabs/coffin.tscn" id="5_co7kh"]
 [ext_resource type="Script" path="res://Scripts/CameraZone.gd" id="5_rhqwm"]
 [ext_resource type="PackedScene" uid="uid://dngf3odx0yf5k" path="res://Prefabs/player.tscn" id="5_rxtx0"]
@@ -30,9 +31,9 @@
 [ext_resource type="Texture2D" uid="uid://dg585ad1tpgdc" path="res://Art/Sprites/Rope_Hook.png" id="23_7wd6d"]
 [ext_resource type="Script" path="res://Scripts/Rope.gd" id="24_5de22"]
 [ext_resource type="Script" path="res://Scripts/MusicPlayer.gd" id="25_ul27g"]
-[ext_resource type="AudioStream" uid="uid://twgpbnyr1add" path="res://Sound/music_main.wav" id="26_8dxtb"]
 [ext_resource type="Script" path="res://Scripts/PathFindingGraph.gd" id="29_8lxan"]
 [ext_resource type="PackedScene" uid="uid://c5egotsf7fdg4" path="res://Prefabs/PathNode.tscn" id="30_wiu1k"]
+[ext_resource type="AudioStream" uid="uid://b8wc5muowahkv" path="res://Sound/Music/Aztec/Jungle Jammin.wav" id="33_ktsjm"]
 [ext_resource type="PackedScene" uid="uid://boxcc56yjq7wc" path="res://Prefabs/Set Dressing/Egypt/Pot_Short.tscn" id="34_hbphy"]
 [ext_resource type="PackedScene" uid="uid://dqou2dcng8cvg" path="res://Prefabs/Set Dressing/Egypt/Pot_Tall.tscn" id="35_hm1cb"]
 
@@ -150,9 +151,11 @@ debug_color = Color(0.268719, 0, 0.701961, 0)
 [node name="Entrance Door" parent="." instance=ExtResource("2_loew8")]
 position = Vector2(1100, 1050)
 is_exit = false
+door_frame_texture = ExtResource("5_163ps")
 
 [node name="Exit Door" parent="." instance=ExtResource("2_loew8")]
 position = Vector2(1700, 550)
+door_frame_texture = ExtResource("5_163ps")
 
 [node name="Environment" type="TileMapLayer" parent="." groups=["terrain"]]
 scale = Vector2(3.125, 3.125)
@@ -442,7 +445,7 @@ script = ExtResource("25_ul27g")
 
 [node name="Music" type="AudioStreamPlayer" parent="Music Player"]
 unique_name_in_owner = true
-stream = ExtResource("26_8dxtb")
+stream = ExtResource("33_ktsjm")
 volume_db = -7.0
 
 [node name="Coffin" parent="." instance=ExtResource("5_co7kh")]
