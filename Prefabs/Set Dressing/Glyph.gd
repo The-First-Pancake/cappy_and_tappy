@@ -14,7 +14,10 @@ func _process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if is_instance_valid(controller_texture):
-		if event is InputEventJoypadButton or event is InputEventJoypadMotion:
+		if event is InputEventJoypadButton:
 			texture = controller_texture
+		if event is InputEventJoypadMotion:
+			if abs(event.axis_value) > 0.5:
+				texture = controller_texture
 		if event is InputEventKey:
 			texture = mkb_texture
