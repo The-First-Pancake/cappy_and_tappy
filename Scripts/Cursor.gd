@@ -9,7 +9,7 @@ var pl1_act_to_remap : Array[String] = ["move_up",
 										"grab_hold",
 										"controller_peek_left",
 										"controller_peek_right",
-										"controller_mouse_up",
+										"controller_peek_up",
 										"controller_peek_down"]
 var pl2_act_to_remap : Array[String] = ["controller_mouse_left", 
 										"controller_mouse_right", 
