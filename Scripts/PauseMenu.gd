@@ -1,7 +1,6 @@
 extends MarginContainer
 
 
-
 func unpause() -> void:
 	GameManager.toggle_pause(false)
 
@@ -12,3 +11,4 @@ func main_menu() -> void:
 func restart_level() -> void:
 	GameManager.restart_level()
 	GameManager.toggle_pause(false)
+	
