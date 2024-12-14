@@ -1,9 +1,9 @@
 [gd_resource type="TileSet" load_steps=3 format=3 uid="uid://bacxxl1c8ujj8"]
 
-[ext_resource type="Texture2D" uid="uid://dt65237dwabkw" path="res://Art/Tilemaps/Tiles_Egypt.png" id="1_82a8b"]
+[ext_resource type="Texture2D" uid="uid://bnsqpdjojt5rn" path="res://Art/Tilemaps/Tiles_Egypt_Var3.png" id="1_kbp8h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qv5ff"]
-texture = ExtResource("1_82a8b")
+texture = ExtResource("1_kbp8h")
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 0
