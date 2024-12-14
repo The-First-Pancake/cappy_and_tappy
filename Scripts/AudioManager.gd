@@ -10,9 +10,11 @@ func _process(delta: float) -> void:
 	
 	var haptics_mag : float = db_to_linear(AudioServer.get_bus_peak_volume_left_db(AudioServer.get_bus_index("Haptics"), 0))
 	if (haptics_mag > 0.01):
-		Input.start_joy_vibration(0, haptics_mag, haptics_mag)
+		for i in Input.get_connected_joypads():
+			Input.start_joy_vibration(i, haptics_mag, haptics_mag)
 	else:
-		Input.stop_joy_vibration(0)
+		for i in Input.get_connected_joypads():
+			Input.stop_joy_vibration(i)
 
 func toggle_mute() -> void:
 	GameManager.current_save.setting_mute = !GameManager.current_save.setting_mute
