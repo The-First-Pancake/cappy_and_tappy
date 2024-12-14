@@ -147,5 +147,4 @@ func player_die() -> void:
 		save_game()
 		load_level_from_packed(leaderboard_scene)
 	else:
-		get_tree().reload_current_scene()
-		loaded_new_scene.emit()
+		restart_level()

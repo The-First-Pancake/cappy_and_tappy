@@ -7,6 +7,7 @@ const ROPE_SEGMENT = preload("res://Prefabs/rope_segment.tscn")
 var rope_anchor: StaticBody2D:
 	get: return $"Rope Anchor" as StaticBody2D
 
+@export var segment_count: int = 10
 @export var regenerate_rope: bool:
 	set(new_val):
 		generate_segments()
@@ -17,15 +18,16 @@ func _ready() -> void:
 
 func generate_segments() -> void:
 	for child: Node in get_children():
-		if child != rope_anchor:
+		if child is PinJoint2D or child is RigidBody2D:
 			child.queue_free()
 	
 	await get_tree().process_frame
 	
-	var segment_count: int = 10
+
 	var last_segment: RigidBody2D = null
-	var segment_length: float = 30
-	var spawn_direction: Vector2 = Vector2.RIGHT
+	var segment_length: float = 25
+	var spawn_direction: Vector2 = Vector2.DOWN
+	
 	for i in range(segment_count):
 		var pin_joint: PinJoint2D = ROPE_PIN_JOINT.instantiate()
 		var segment: RigidBody2D = ROPE_SEGMENT.instantiate()

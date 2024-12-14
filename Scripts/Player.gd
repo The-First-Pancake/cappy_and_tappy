@@ -374,7 +374,7 @@ func die() -> void:
 	current_hold = null
 	sprite_animator.play("die")
 	if (is_instance_valid(slide_sound_playing)):
-			slide_sound_playing.queue_free()
+		slide_sound_playing.queue_free()
 	footstep_animator.stop()
 	AudioManager.PlayAudio(die_sound)
 	
@@ -387,6 +387,7 @@ func die() -> void:
 	tween.set_trans(Tween.TRANS_QUAD)
 	tween.tween_property(self, "global_position:y", global_position.y + 800, 0.5)
 	await tween.finished
+	await get_tree().process_frame
 
 	var respawn_fire: Campfire = null
 	for campfire: Campfire in campfires:

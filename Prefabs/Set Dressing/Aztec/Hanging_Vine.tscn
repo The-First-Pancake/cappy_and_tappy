@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfp2vgyun0as0"]
+
+[ext_resource type="Script" path="res://Scripts/HangingRope.gd" id="1_qjbe0"]
+[ext_resource type="Script" path="res://Scripts/LevelBuildingTools.gd" id="2_o5sbr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bjogn"]
+radius = 10.4403
+
+[node name="Hanging Vine" type="Node2D"]
+script = ExtResource("1_qjbe0")
+
+[node name="Rope Anchor" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rope Anchor"]
+shape = SubResource("CircleShape2D_bjogn")
+disabled = true
+
+[node name="LevelBuildingTools" type="Node" parent="."]
+script = ExtResource("2_o5sbr")
+auto_parent_to = "Environment Container"

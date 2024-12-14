@@ -10,7 +10,11 @@ var starting_overlaps: Array[Node2D] = []
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	await get_tree().process_frame #makes sure we're ready to check for overlaps
+	#await get_tree().physics_frame #makes sure we're ready to check for overlaps
+	
 	starting_overlaps = squashable_parent.get_overlapping_bodies()
+	if squashable_parent.get_parent() is Placeable and squashable_parent.get_parent().state == Placeable.PlaceState.QUEUED:
+		starting_overlaps = [] #clear out the starting overlaps if this a queued block 
 	
 	squashable_parent.area_entered.connect(func(_area: Area2D)->void:
 		check_for_squash()
