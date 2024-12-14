@@ -268,8 +268,14 @@ func holding_behavior() -> void:
 @onready var footstep_animator: AnimationPlayer = $"Sprite Animator/AnimationPlayer" as AnimationPlayer
 
 var slide_sound_playing : AudioStreamPlayer = null
-var griddy_sound_playing : bool = false
 var main_music_playing : bool = false
+
+func try_stop_griddy() -> void:
+	griddy_sound.stop()
+	#resume music
+	if is_instance_valid(AudioManager.current_music):
+		if AudioManager.current_music.stream_paused == true:
+			AudioManager.current_music.stream_paused = false
 
 func update_animations() -> void:
 	if sprite_animator.animation != "idle" and sprite_animator.animation != "dance":
@@ -278,10 +284,10 @@ func update_animations() -> void:
 	slide_particles.emitting = false
 	
 	if is_instance_valid(current_hold):
+		try_stop_griddy()
 		footstep_animator.stop()
 		if is_instance_valid(slide_sound_playing):
 			slide_sound_playing.queue_free()
-		griddy_sound_playing = false
 		var holding_cieling: bool = abs(angle_difference(current_hold.global_rotation, deg_to_rad(180))) < deg_to_rad(1)
 		if holding_cieling:
 			sprite_animator.play("hang_top")
@@ -298,10 +304,7 @@ func update_animations() -> void:
 		if is_instance_valid(slide_sound_playing):
 			slide_sound_playing.queue_free()
 		if abs(velocity.x) > 10:
-			if is_instance_valid(AudioManager.current_music):
-				if AudioManager.current_music.stream_paused == true:
-					AudioManager.current_music.stream_paused = false
-					griddy_sound.stop()
+			try_stop_griddy()
 			sprite_animator.play("walk")
 			footstep_animator.play("footsteps")
 			land_particles.emitting = true
@@ -315,19 +318,13 @@ func update_animations() -> void:
 			else:
 				sprite_animator.play("idle")
 				land_particles.emitting = false
-				if is_instance_valid(AudioManager.current_music):
-					if AudioManager.current_music.stream_paused == true:
-						AudioManager.current_music.stream_paused = false
-						griddy_sound.stop()
+				try_stop_griddy()
 				footstep_animator.stop()
 	else:
 		if (is_instance_valid(slide_sound_playing)):
 			slide_sound_playing.queue_free()
 		footstep_animator.stop()
-		if is_instance_valid(AudioManager.current_music):
-			if AudioManager.current_music.stream_paused == true:
-				AudioManager.current_music.stream_paused = false
-				griddy_sound.stop()
+		try_stop_griddy()
 		if abs(velocity.x) > 750:
 			sprite_animator.play("jump_reach")
 			land_particles.emitting = false

@@ -434,7 +434,7 @@ one_shot = true
 
 [node name="Griddy Timer" type="Timer" parent="."]
 unique_name_in_owner = true
-wait_time = 10.0
+wait_time = 15.0
 one_shot = true
 
 [node name="DieBox" type="Area2D" parent="."]
