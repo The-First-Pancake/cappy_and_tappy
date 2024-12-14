@@ -64,6 +64,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("escape") or Input.is_action_just_pressed("controller_start"):
 		if get_tree().current_scene.name == "LevelSelect":
 			load_level_from_packed(splash_screen_scene)
+			return
 		elif get_tree().current_scene.name != "SplashScreen":
 			if !get_tree().paused:
 				toggle_pause(true)
