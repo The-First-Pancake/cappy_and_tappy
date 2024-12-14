@@ -133,22 +133,26 @@ position = Vector2(736, -256)
 scale = Vector2(0.32, 0.32)
 
 [node name="Torch4" parent="Environment" index="9" instance=ExtResource("7_qy5t0")]
-position = Vector2(-256, -816)
+position = Vector2(-184, -832)
 scale = Vector2(0.32, 0.32)
 
-[node name="Torch5" parent="Environment" index="10" instance=ExtResource("7_qy5t0")]
+[node name="Torch9" parent="Environment" index="10" instance=ExtResource("7_qy5t0")]
+position = Vector2(-240, -824)
+scale = Vector2(0.32, 0.32)
+
+[node name="Torch5" parent="Environment" index="11" instance=ExtResource("7_qy5t0")]
 position = Vector2(1168, 112)
 scale = Vector2(0.32, 0.32)
 
-[node name="Torch6" parent="Environment" index="11" instance=ExtResource("7_qy5t0")]
+[node name="Torch6" parent="Environment" index="12" instance=ExtResource("7_qy5t0")]
 position = Vector2(1168, 0)
 scale = Vector2(0.32, 0.32)
 
-[node name="Torch7" parent="Environment" index="12" instance=ExtResource("7_qy5t0")]
+[node name="Torch7" parent="Environment" index="13" instance=ExtResource("7_qy5t0")]
 position = Vector2(1168, -112)
 scale = Vector2(0.32, 0.32)
 
-[node name="Torch8" parent="Environment" index="13" instance=ExtResource("7_qy5t0")]
+[node name="Torch8" parent="Environment" index="14" instance=ExtResource("7_qy5t0")]
 position = Vector2(1264, -272)
 scale = Vector2(0.32, 0.32)
 

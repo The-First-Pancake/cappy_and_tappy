@@ -978,7 +978,7 @@ position = Vector2(850, -3500)
 rotation = -1.57071
 
 [node name="Player" parent="." index="10"]
-position = Vector2(1084, 1000)
+position = Vector2(1090, 998)
 
 [node name="Idol" parent="." index="11"]
 position = Vector2(3300, -2200)
@@ -994,3 +994,7 @@ visible = true
 
 [node name="Music" parent="Music Player" index="0"]
 stream = ExtResource("2_m1ge1")
+
+[node name="Torch" parent="." index="20" instance=ExtResource("22_mttbs")]
+position = Vector2(1072, 896)
+scale = Vector2(-1, 1)

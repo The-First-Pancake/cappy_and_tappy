@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bsxmt0huibfmi"]
+[gd_scene load_steps=30 format=3 uid="uid://bsxmt0huibfmi"]
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_jhrg7"]
 [ext_resource type="Script" path="res://Scripts/SpawnObject.gd" id="2_kk4ad"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://bdyf8npx3i7xk" path="res://Prefabs/Blocks/2x2-Piece.tscn" id="9_xjyhq"]
 [ext_resource type="PackedScene" uid="uid://ow664p7dqy8t" path="res://Prefabs/Set Dressing/Caves/cave_rock_1.tscn" id="10_n2h1r"]
 [ext_resource type="PackedScene" uid="uid://ddfihgi7jv5e6" path="res://Prefabs/Set Dressing/Caves/cave_rock_3.tscn" id="11_x6ro6"]
+[ext_resource type="PackedScene" uid="uid://dep1x0fmlo6tj" path="res://Prefabs/Torch.tscn" id="22_mvudh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_235e4"]
 size = Vector2(1350, 17100)
@@ -203,3 +204,9 @@ rotation = 1.5708
 
 [node name="Music" parent="Music Player" index="0"]
 stream = ExtResource("2_omn6i")
+
+[node name="Torch" parent="." index="36" instance=ExtResource("22_mvudh")]
+position = Vector2(1104, 841)
+
+[node name="Torch2" parent="." index="37" instance=ExtResource("22_mvudh")]
+position = Vector2(1706, -849)

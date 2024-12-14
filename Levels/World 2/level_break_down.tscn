@@ -56,15 +56,6 @@ position = Vector2(1550, -3200)
 rotation = 1.56915
 texture = ExtResource("3_v34x3")
 
-[node name="Player" parent="." index="9"]
-position = Vector2(1300, -3100)
-
-[node name="Idol" parent="." index="10"]
-position = Vector2(900, -1579)
-
-[node name="Idol3" parent="." index="12"]
-position = Vector2(1350, -500)
-
 [node name="2x2 Piiece2" parent="Block Container" index="0" instance=ExtResource("9_i6e5t")]
 position = Vector2(1350, -2950)
 rotation = 2.89599e-05
@@ -508,6 +499,15 @@ rotation = 1.5708
 [node name="PlaceableCharacterBody2d68" parent="Block Container" index="79" instance=ExtResource("3_xds0s")]
 position = Vector2(1000, -2950)
 rotation = -1.5708
+
+[node name="Player" parent="." index="10"]
+position = Vector2(1300, -3100)
+
+[node name="Idol" parent="." index="11"]
+position = Vector2(900, -1579)
+
+[node name="Idol3" parent="." index="13"]
+position = Vector2(1350, -500)
 
 [node name="Camera2D" parent="." index="14"]
 position = Vector2(1150, 950)

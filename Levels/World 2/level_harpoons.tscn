@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c8jp0shc73si"]
+[gd_scene load_steps=16 format=3 uid="uid://c8jp0shc73si"]
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_bq2w4"]
 [ext_resource type="Texture2D" uid="uid://dkxik361t2ox1" path="res://Art/Tilemaps/Background_Egypt.png" id="2_n1uye"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bkatak76uuoli" path="res://Prefabs/Spawn On Blocks/Campfire.tscn" id="3_8e531"]
 [ext_resource type="TileSet" uid="uid://cdp351ovo7gk4" path="res://Art/Tilemaps/Tilemap_Egypt.tres" id="3_bdqn0"]
 [ext_resource type="PackedScene" uid="uid://r1kjk04fwuou" path="res://Prefabs/Spawn On Blocks/Hold.tscn" id="4_4oqit"]
+[ext_resource type="Texture2D" uid="uid://de7qarsddqn83" path="res://Art/Sprites/egypt/door_diffuse.png" id="4_6dvid"]
 [ext_resource type="PackedScene" uid="uid://dhrgrpwwax6i8" path="res://Prefabs/Spawn On Blocks/Spikes.tscn" id="5_jro00"]
 [ext_resource type="PackedScene" uid="uid://c4safo4pwme48" path="res://Prefabs/Blocks/1x4-Piece.tscn" id="6_r0jta"]
 [ext_resource type="PackedScene" uid="uid://2emoy8lav7a0" path="res://Prefabs/Spawn On Blocks/harpoon_launcher.tscn" id="7_f5f8t"]
@@ -39,8 +40,12 @@ texture = ExtResource("2_n1uye")
 [node name="CollisionShape2D" parent="Camera Zone" index="0"]
 shape = SubResource("RectangleShape2D_bn7ml")
 
+[node name="Entrance Door" parent="." index="4"]
+door_frame_texture = ExtResource("4_6dvid")
+
 [node name="Exit Door" parent="." index="5"]
 position = Vector2(1200, -750)
+door_frame_texture = ExtResource("4_6dvid")
 
 [node name="Environment" parent="." index="6"]
 tile_set = ExtResource("3_bdqn0")

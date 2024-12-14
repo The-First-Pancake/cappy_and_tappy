@@ -113,7 +113,7 @@ position = Vector2(608, -960)
 scale = Vector2(0.32, 0.32)
 
 [node name="Torch2" parent="Environment" index="10" instance=ExtResource("3_u1pl7")]
-position = Vector2(288, -960)
+position = Vector2(279.36, -965.44)
 scale = Vector2(0.32, 0.32)
 
 [node name="Spikes" parent="Environment" index="11" instance=ExtResource("2_mgcvm")]
