@@ -72,7 +72,8 @@ func _ready() -> void:
 	update_temple_type()
 	update_lights()
 	set_music_to_override()
-	GameManager.level_info = self
+	if !Engine.is_editor_hint():
+		GameManager.level_info = self
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

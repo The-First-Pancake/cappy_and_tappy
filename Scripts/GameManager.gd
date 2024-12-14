@@ -61,18 +61,19 @@ func _process(delta: float) -> void:
 	#if Input.is_action_just_pressed("restart"): 
 		#if get_tree().current_scene is not Control: #don't allow restart in menus
 			#restart_level()
-	if Input.is_action_just_pressed("ui_cancel"):
+	if Input.is_action_just_pressed("escape") or Input.is_action_just_pressed("controller_start"):
 		if get_tree().current_scene.name == "LevelSelect":
 			load_level_from_packed(splash_screen_scene)
-		elif get_tree().current_scene.name == "SplashScreen":
-			if OS.get_name() != "Web":
-				get_tree().quit()
-		else:
+		elif get_tree().current_scene.name != "SplashScreen":
 			if !get_tree().paused:
 				toggle_pause(true)
 			else:
 				toggle_pause(false)
-				#load_level_from_packed(level_select_scene)
+	if Input.is_action_just_pressed("escape"):
+		if get_tree().current_scene.name == "SplashScreen":
+			if OS.get_name() != "Web":
+				get_tree().quit()
+	
 	if Input.is_action_just_pressed("fullscreen"):
 		if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)

@@ -9,12 +9,20 @@ var parenting_debounce: bool = false
 var flip_debounce: bool = false
 
 func _ready() -> void:
+	try_auto_parent()
+	
+
+
+func try_auto_parent() -> void:
+	
+	#if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT): return #don't try to do this while dragging the object in
 	if Engine.is_editor_hint():
-		#await get_tree().process_frame
-		if auto_parent_to:
-			var new_parent: Node = get_tree().get_first_node_in_group(auto_parent_to)
-			if new_parent:
-				get_parent().reparent(new_parent)
+		if get_parent() in EditorInterface.get_selection().get_selected_nodes():
+			if auto_parent_to:
+				var new_parent: Node = get_tree().get_first_node_in_group(auto_parent_to)
+				if new_parent:
+					get_parent().reparent(new_parent)
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

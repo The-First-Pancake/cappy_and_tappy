@@ -13,14 +13,14 @@
 [ext_resource type="PackedScene" uid="uid://boxcc56yjq7wc" path="res://Prefabs/Set Dressing/Egypt/Pot_Short.tscn" id="11_2ws1q"]
 [ext_resource type="PackedScene" uid="uid://dqou2dcng8cvg" path="res://Prefabs/Set Dressing/Egypt/Pot_Tall.tscn" id="12_bwa5a"]
 [ext_resource type="PackedScene" uid="uid://b2m3shx51tdva" path="res://Prefabs/Set Dressing/Aztec/VinesCorner.tscn" id="12_q6jgr"]
-[ext_resource type="PackedScene" uid="uid://b3rqii3rrmyqb" path="res://Prefabs/Set Dressing/Egypt/VinesCorner.tscn" id="13_ayhgb"]
-[ext_resource type="PackedScene" uid="uid://b0rv8mrmfut7g" path="res://Prefabs/Set Dressing/Egypt/Crack_Vines_2.tscn" id="14_puhag"]
-[ext_resource type="PackedScene" uid="uid://dhgq7ixv5gfaq" path="res://Prefabs/Set Dressing/Egypt/Crack_Vines_1.tscn" id="15_3cuwg"]
+[ext_resource type="PackedScene" path="res://Prefabs/Set Dressing/Egypt/VinesCorner.tscn" id="13_ayhgb"]
+[ext_resource type="PackedScene" path="res://Prefabs/Set Dressing/Egypt/Crack_Vines_2.tscn" id="14_puhag"]
+[ext_resource type="PackedScene" path="res://Prefabs/Set Dressing/Egypt/Crack_Vines_1.tscn" id="15_3cuwg"]
 [ext_resource type="PackedScene" uid="uid://bt7ck2htkt55v" path="res://Prefabs/Set Dressing/SconceSetDressing.tscn" id="16_umgyq"]
 [ext_resource type="PackedScene" uid="uid://bth4efqt1s7xr" path="res://Prefabs/Set Dressing/TorchSetDressing.tscn" id="17_claxn"]
-[ext_resource type="PackedScene" uid="uid://c6rtaa334dmqd" path="res://Prefabs/Set Dressing/Egypt/VinesSide1.tscn" id="18_2hqil"]
-[ext_resource type="PackedScene" uid="uid://d1a0vpo2qi5kb" path="res://Prefabs/Set Dressing/Egypt/VinesSide2.tscn" id="19_l00we"]
-[ext_resource type="PackedScene" uid="uid://xd857eb5jwmu" path="res://Prefabs/Set Dressing/Egypt/VinesTop.tscn" id="20_y6oot"]
+[ext_resource type="PackedScene" path="res://Prefabs/Set Dressing/Egypt/VinesSide1.tscn" id="18_2hqil"]
+[ext_resource type="PackedScene" path="res://Prefabs/Set Dressing/Egypt/VinesSide2.tscn" id="19_l00we"]
+[ext_resource type="PackedScene" path="res://Prefabs/Set Dressing/Egypt/VinesTop.tscn" id="20_y6oot"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pnp7k"]
 size = Vector2(1350, 17100)
@@ -61,7 +61,7 @@ scale = Vector2(0.32, 0.32)
 
 [node name="Arrow_Spitter3" parent="Environment" index="2" instance=ExtResource("3_0s6mf")]
 position = Vector2(224, -640)
-rotation = 0.0
+rotation = 6.28319
 scale = Vector2(0.32, 0.32)
 
 [node name="Arrow_Spitter6" parent="Environment" index="3" instance=ExtResource("4_q65wd")]

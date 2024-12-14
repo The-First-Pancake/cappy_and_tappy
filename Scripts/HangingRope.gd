@@ -17,22 +17,24 @@ func _ready() -> void:
 
 
 func generate_segments() -> void:
+	
 	for child: Node in get_children():
 		if child is PinJoint2D or child is RigidBody2D:
 			child.queue_free()
 	
 	await get_tree().process_frame
-	
 
 	var last_segment: RigidBody2D = null
 	var segment_length: float = 25
 	var spawn_direction: Vector2 = Vector2.DOWN
-	
+
 	for i in range(segment_count):
 		var pin_joint: PinJoint2D = ROPE_PIN_JOINT.instantiate()
 		var segment: RigidBody2D = ROPE_SEGMENT.instantiate()
+		
 		add_child(segment)
 		add_child(pin_joint)
+		
 		segment.owner = owner
 		pin_joint.owner = owner
 		pin_joint.position = segment_length * i * spawn_direction
