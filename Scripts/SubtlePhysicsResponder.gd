@@ -1,7 +1,7 @@
 class_name SubtlePhysicsResponder
 extends Area2D
 
-var magnitude: float = 1000
+@export var magnitude: float = 1000
 
 
 func _on_body_entered(body: Node2D) -> void:

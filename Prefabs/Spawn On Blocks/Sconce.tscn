@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://di2wrjiflt752"]
+[gd_scene load_steps=21 format=3 uid="uid://di2wrjiflt752"]
 
 [ext_resource type="Script" path="res://Scripts/Sconce.gd" id="1_q8pus"]
 [ext_resource type="Texture2D" uid="uid://dp4ktlytg0qdm" path="res://Art/Sprites/fire/brasier_stick.png" id="2_pjmqv"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dff743tq0a8p" path="res://Art/Sprites/fire/brasier_diffuse.png" id="5_veta7"]
 [ext_resource type="Texture2D" uid="uid://dmtwgjndb7tmo" path="res://Art/Sprites/fire/brasier_normal.png" id="6_6hw1l"]
 [ext_resource type="Script" path="res://Scripts/Extinguishable.gd" id="6_vp8al"]
+[ext_resource type="PackedScene" uid="uid://b5ca8r6bdgb6w" path="res://Prefabs/subtle_physics_responder.tscn" id="7_45uwo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_va83x"]
 size = Vector2(6.5, 50)
@@ -91,7 +92,6 @@ shape = SubResource("RectangleShape2D_0fbj1")
 position = Vector2(0, -18)
 collision_layer = 0
 collision_mask = 129
-mass = 0.2
 center_of_mass_mode = 1
 center_of_mass = Vector2(0, 20)
 freeze = true
@@ -122,6 +122,9 @@ texture = SubResource("CanvasTexture_hsrsl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fire"]
 shape = SubResource("RectangleShape2D_c06ri")
+
+[node name="Subtle Physics Responder" parent="Fire" instance=ExtResource("7_45uwo")]
+magnitude = 250.0
 
 [node name="Squashable" type="Node" parent="."]
 script = ExtResource("5_tocvo")
