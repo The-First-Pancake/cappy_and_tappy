@@ -1,10 +1,11 @@
-[gd_scene load_steps=51 format=4 uid="uid://6dd2cbybvcqg"]
+[gd_scene load_steps=52 format=4 uid="uid://6dd2cbybvcqg"]
 
 [ext_resource type="Texture2D" uid="uid://bqfeqtdw7xcxo" path="res://Art/Tilemaps/Background_Aztec.png" id="1_dtx2u"]
 [ext_resource type="Script" path="res://Scripts/LevelInfo.gd" id="1_jxryb"]
 [ext_resource type="PackedScene" uid="uid://dngf3odx0yf5k" path="res://Prefabs/player.tscn" id="2_hossx"]
 [ext_resource type="Script" path="res://Scripts/CameraController.gd" id="4_psc51"]
 [ext_resource type="PackedScene" uid="uid://ctlx3qylqphyo" path="res://Prefabs/BlockSpawner.tscn" id="5_74oay"]
+[ext_resource type="Texture2D" uid="uid://cvjveityc31tt" path="res://Art/Sprites/door/Door_Foreground.png" id="5_jl5gd"]
 [ext_resource type="TileSet" uid="uid://gg3bh8fgpw3d" path="res://Art/Tilemaps/Tilemap_Brown Bricks.tres" id="5_tg1dj"]
 [ext_resource type="Script" path="res://Scripts/SpawnObject.gd" id="6_xpr8c"]
 [ext_resource type="PackedScene" uid="uid://r1kjk04fwuou" path="res://Prefabs/Spawn On Blocks/Hold.tscn" id="7_k1ys1"]
@@ -28,10 +29,10 @@
 [ext_resource type="Texture2D" uid="uid://dg585ad1tpgdc" path="res://Art/Sprites/Rope_Hook.png" id="20_71uq3"]
 [ext_resource type="Script" path="res://Scripts/Rope.gd" id="21_xxhgi"]
 [ext_resource type="Script" path="res://Scripts/MusicPlayer.gd" id="22_y5d0p"]
-[ext_resource type="AudioStream" uid="uid://twgpbnyr1add" path="res://Sound/music_main.wav" id="23_cdry0"]
 [ext_resource type="Script" path="res://Scripts/PathFindingGraph.gd" id="27_a2q43"]
 [ext_resource type="Script" path="res://Scripts/CameraZone.gd" id="27_rvwtg"]
 [ext_resource type="PackedScene" uid="uid://c5egotsf7fdg4" path="res://Prefabs/PathNode.tscn" id="28_ng7cu"]
+[ext_resource type="AudioStream" uid="uid://b8wc5muowahkv" path="res://Sound/Music/Aztec/Jungle Jammin.wav" id="33_0yrev"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_sacac"]
 
@@ -147,9 +148,11 @@ debug_color = Color(0.268719, 0, 0.701961, 0)
 [node name="Entrance Door" parent="." instance=ExtResource("19_owl44")]
 position = Vector2(1100, 1050)
 is_exit = false
+door_frame_texture = ExtResource("5_jl5gd")
 
 [node name="Exit Door" parent="." instance=ExtResource("19_owl44")]
 position = Vector2(1700, 550)
+door_frame_texture = ExtResource("5_jl5gd")
 
 [node name="Environment" type="TileMapLayer" parent="." groups=["terrain"]]
 scale = Vector2(3.125, 3.125)
@@ -159,6 +162,8 @@ tile_set = ExtResource("5_tg1dj")
 [node name="Environment Container" type="Node2D" parent="." groups=["Environment Container"]]
 
 [node name="Glyph Container" type="Node2D" parent="." groups=["Glyph Container"]]
+
+[node name="Interactable Container" type="Node2D" parent="." groups=["Interactable Container"]]
 
 [node name="Block Container" type="Node2D" parent="." groups=["Block Container"]]
 
@@ -439,5 +444,5 @@ script = ExtResource("22_y5d0p")
 
 [node name="Music" type="AudioStreamPlayer" parent="Music Player"]
 unique_name_in_owner = true
-stream = ExtResource("23_cdry0")
+stream = ExtResource("33_0yrev")
 volume_db = -7.0

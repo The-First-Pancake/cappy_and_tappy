@@ -26,3 +26,4 @@ script = ExtResource("2_ebffp")
 
 [node name="LevelBuildingTools" type="Node" parent="."]
 script = ExtResource("3_nf8t7")
+auto_parent_to = "Interactable Container"

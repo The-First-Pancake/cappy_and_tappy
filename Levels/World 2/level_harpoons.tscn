@@ -10,9 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://de7qarsddqn83" path="res://Art/Sprites/egypt/door_diffuse.png" id="4_6dvid"]
 [ext_resource type="PackedScene" uid="uid://dhrgrpwwax6i8" path="res://Prefabs/Spawn On Blocks/Spikes.tscn" id="5_jro00"]
 [ext_resource type="PackedScene" uid="uid://ds31ahkuh628o" path="res://Prefabs/Set Dressing/Egypt/EgyptPillar.tscn" id="6_h4sc0"]
-[ext_resource type="PackedScene" uid="uid://b3rqii3rrmyqb" path="res://Prefabs/Set Dressing/Egypt/VinesCorner.tscn" id="7_0yin5"]
+[ext_resource type="PackedScene" path="res://Prefabs/Set Dressing/Egypt/VinesCorner.tscn" id="7_0yin5"]
 [ext_resource type="PackedScene" uid="uid://2emoy8lav7a0" path="res://Prefabs/Spawn On Blocks/harpoon_launcher.tscn" id="7_f5f8t"]
-[ext_resource type="PackedScene" uid="uid://xd857eb5jwmu" path="res://Prefabs/Set Dressing/Egypt/VinesTop.tscn" id="8_nl4nr"]
+[ext_resource type="PackedScene" path="res://Prefabs/Set Dressing/Egypt/VinesTop.tscn" id="8_nl4nr"]
 [ext_resource type="PackedScene" uid="uid://dqou2dcng8cvg" path="res://Prefabs/Set Dressing/Egypt/Pot_Tall.tscn" id="9_nbea4"]
 [ext_resource type="PackedScene" uid="uid://boxcc56yjq7wc" path="res://Prefabs/Set Dressing/Egypt/Pot_Short.tscn" id="10_h52mh"]
 [ext_resource type="PackedScene" uid="uid://bth4efqt1s7xr" path="res://Prefabs/Set Dressing/TorchSetDressing.tscn" id="11_txpdm"]
@@ -42,6 +42,9 @@ override_music = ExtResource("2_stsre")
 
 [node name="Background" parent="Background Parallax" index="0"]
 texture = ExtResource("2_n1uye")
+
+[node name="Camera Zone" parent="." index="3"]
+visible = false
 
 [node name="CollisionShape2D" parent="Camera Zone" index="0"]
 shape = SubResource("RectangleShape2D_bn7ml")
@@ -133,108 +136,111 @@ position = Vector2(1850, -850)
 [node name="Pot_Tall6" parent="Environment Container" index="17" instance=ExtResource("9_nbea4")]
 position = Vector2(1875, -850)
 
-[node name="Idol" parent="." index="11"]
+[node name="Harpoon Launcher" parent="Interactable Container" index="0" instance=ExtResource("7_f5f8t")]
+position = Vector2(2050, 700)
+rotation = -1.5708
+
+[node name="Harpoon Launcher2" parent="Interactable Container" index="1" instance=ExtResource("7_f5f8t")]
+position = Vector2(2050, 600)
+rotation = -1.5708
+
+[node name="Harpoon Launcher3" parent="Interactable Container" index="2" instance=ExtResource("7_f5f8t")]
+position = Vector2(2050, 500)
+rotation = -1.5708
+
+[node name="Harpoon Launcher16" parent="Interactable Container" index="3" instance=ExtResource("7_f5f8t")]
+position = Vector2(2050, 1000)
+rotation = -1.5708
+
+[node name="Harpoon Launcher17" parent="Interactable Container" index="4" instance=ExtResource("7_f5f8t")]
+position = Vector2(2050, 900)
+rotation = -1.5708
+
+[node name="Harpoon Launcher18" parent="Interactable Container" index="5" instance=ExtResource("7_f5f8t")]
+position = Vector2(2050, 800)
+rotation = -1.5708
+
+[node name="Harpoon Launcher4" parent="Interactable Container" index="6" instance=ExtResource("7_f5f8t")]
+position = Vector2(2050, 400)
+rotation = -1.5708
+
+[node name="Harpoon Launcher5" parent="Interactable Container" index="7" instance=ExtResource("7_f5f8t")]
+position = Vector2(700, 300)
+rotation = 1.5708
+
+[node name="Harpoon Launcher6" parent="Interactable Container" index="8" instance=ExtResource("7_f5f8t")]
+position = Vector2(700, 200)
+rotation = 1.5708
+
+[node name="Harpoon Launcher7" parent="Interactable Container" index="9" instance=ExtResource("7_f5f8t")]
+position = Vector2(700, 100)
+rotation = 1.5708
+
+[node name="Harpoon Launcher8" parent="Interactable Container" index="10" instance=ExtResource("7_f5f8t")]
+position = Vector2(700, 6.10352e-05)
+rotation = 1.5708
+
+[node name="Harpoon Launcher9" parent="Interactable Container" index="11" instance=ExtResource("7_f5f8t")]
+position = Vector2(700, -100)
+rotation = 1.5708
+
+[node name="Harpoon Launcher15" parent="Interactable Container" index="12" instance=ExtResource("7_f5f8t")]
+position = Vector2(700, -200)
+rotation = 1.5708
+
+[node name="Harpoon Launcher19" parent="Interactable Container" index="13" instance=ExtResource("7_f5f8t")]
+position = Vector2(700, -300)
+rotation = 1.5708
+
+[node name="Harpoon Launcher20" parent="Interactable Container" index="14" instance=ExtResource("7_f5f8t")]
+position = Vector2(700, -400)
+rotation = 1.5708
+
+[node name="Harpoon Launcher21" parent="Interactable Container" index="15" instance=ExtResource("7_f5f8t")]
+position = Vector2(700, -500)
+rotation = 1.5708
+
+[node name="Harpoon Launcher22" parent="Interactable Container" index="16" instance=ExtResource("7_f5f8t")]
+position = Vector2(700, -600)
+rotation = 1.5708
+
+[node name="Harpoon Launcher10" parent="Interactable Container" index="17" instance=ExtResource("7_f5f8t")]
+position = Vector2(2050, -200)
+rotation = -1.5708
+
+[node name="Harpoon Launcher11" parent="Interactable Container" index="18" instance=ExtResource("7_f5f8t")]
+position = Vector2(2050, -300)
+rotation = -1.5708
+
+[node name="Harpoon Launcher12" parent="Interactable Container" index="19" instance=ExtResource("7_f5f8t")]
+position = Vector2(2050, -400)
+rotation = -1.5708
+
+[node name="Harpoon Launcher13" parent="Interactable Container" index="20" instance=ExtResource("7_f5f8t")]
+position = Vector2(2050, -500)
+rotation = -1.5708
+
+[node name="Harpoon Launcher14" parent="Interactable Container" index="21" instance=ExtResource("7_f5f8t")]
+position = Vector2(2050, -600)
+rotation = -1.5708
+
+[node name="Idol" parent="." index="12"]
 position = Vector2(724, 1145)
 
-[node name="Idol2" parent="." index="12"]
+[node name="Idol2" parent="." index="13"]
 position = Vector2(800, 250)
 
-[node name="Idol3" parent="." index="13"]
+[node name="Idol3" parent="." index="14"]
 position = Vector2(800, -450)
 
 [node name="BlockSpawner" parent="Camera2D" index="2"]
 spawn_objects = Array[ExtResource("2_xkwx5")]([SubResource("Resource_42wei"), SubResource("Resource_fa0pl"), SubResource("Resource_e12ps")])
 
-[node name="Water" parent="." index="16"]
+[node name="Water" parent="." index="17"]
 rise_speed = 10.0
 
-[node name="Harpoon Launcher" parent="." index="17" instance=ExtResource("7_f5f8t")]
-position = Vector2(2050, 700)
-rotation = -1.5708
-
-[node name="Harpoon Launcher2" parent="." index="18" instance=ExtResource("7_f5f8t")]
-position = Vector2(2050, 600)
-rotation = -1.5708
-
-[node name="Harpoon Launcher3" parent="." index="19" instance=ExtResource("7_f5f8t")]
-position = Vector2(2050, 500)
-rotation = -1.5708
-
-[node name="Harpoon Launcher16" parent="." index="20" instance=ExtResource("7_f5f8t")]
-position = Vector2(2050, 1000)
-rotation = -1.5708
-
-[node name="Harpoon Launcher17" parent="." index="21" instance=ExtResource("7_f5f8t")]
-position = Vector2(2050, 900)
-rotation = -1.5708
-
-[node name="Harpoon Launcher18" parent="." index="22" instance=ExtResource("7_f5f8t")]
-position = Vector2(2050, 800)
-rotation = -1.5708
-
-[node name="Harpoon Launcher4" parent="." index="23" instance=ExtResource("7_f5f8t")]
-position = Vector2(2050, 400)
-rotation = -1.5708
-
-[node name="Harpoon Launcher5" parent="." index="24" instance=ExtResource("7_f5f8t")]
-position = Vector2(700, 300)
-rotation = 1.5708
-
-[node name="Harpoon Launcher6" parent="." index="25" instance=ExtResource("7_f5f8t")]
-position = Vector2(700, 200)
-rotation = 1.5708
-
-[node name="Harpoon Launcher7" parent="." index="26" instance=ExtResource("7_f5f8t")]
-position = Vector2(700, 100)
-rotation = 1.5708
-
-[node name="Harpoon Launcher8" parent="." index="27" instance=ExtResource("7_f5f8t")]
-position = Vector2(700, 6.10352e-05)
-rotation = 1.5708
-
-[node name="Harpoon Launcher9" parent="." index="28" instance=ExtResource("7_f5f8t")]
-position = Vector2(700, -100)
-rotation = 1.5708
-
-[node name="Harpoon Launcher15" parent="." index="29" instance=ExtResource("7_f5f8t")]
-position = Vector2(700, -200)
-rotation = 1.5708
-
-[node name="Harpoon Launcher19" parent="." index="30" instance=ExtResource("7_f5f8t")]
-position = Vector2(700, -300)
-rotation = 1.5708
-
-[node name="Harpoon Launcher20" parent="." index="31" instance=ExtResource("7_f5f8t")]
-position = Vector2(700, -400)
-rotation = 1.5708
-
-[node name="Harpoon Launcher21" parent="." index="32" instance=ExtResource("7_f5f8t")]
-position = Vector2(700, -500)
-rotation = 1.5708
-
-[node name="Harpoon Launcher22" parent="." index="33" instance=ExtResource("7_f5f8t")]
-position = Vector2(700, -600)
-rotation = 1.5708
-
-[node name="Harpoon Launcher10" parent="." index="34" instance=ExtResource("7_f5f8t")]
-position = Vector2(2050, -200)
-rotation = -1.5708
-
-[node name="Harpoon Launcher11" parent="." index="35" instance=ExtResource("7_f5f8t")]
-position = Vector2(2050, -300)
-rotation = -1.5708
-
-[node name="Harpoon Launcher12" parent="." index="36" instance=ExtResource("7_f5f8t")]
-position = Vector2(2050, -400)
-rotation = -1.5708
-
-[node name="Harpoon Launcher13" parent="." index="37" instance=ExtResource("7_f5f8t")]
-position = Vector2(2050, -500)
-rotation = -1.5708
-
-[node name="Harpoon Launcher14" parent="." index="38" instance=ExtResource("7_f5f8t")]
-position = Vector2(2050, -600)
-rotation = -1.5708
+[node name="PathFindingGraph" parent="." index="19"]
+visible = false
 
 [node name="Music" parent="Music Player" index="0"]
 stream = ExtResource("2_stsre")

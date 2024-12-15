@@ -82,6 +82,7 @@ texture = SubResource("GradientTexture2D_x4vvd")
 
 [node name="LevelBuildingTools" type="Node" parent="."]
 script = ExtResource("6_skuvu")
+auto_parent_to = "Interactable Container"
 
 [node name="Hit Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_ad543")

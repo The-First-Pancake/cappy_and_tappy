@@ -44,5 +44,6 @@ script = ExtResource("6_ioq8a")
 
 [node name="LevelBuildingTools" type="Node" parent="."]
 script = ExtResource("5_blift")
+auto_parent_to = "Interactable Container"
 
 [connection signal="timeout" from="SpitTimer" to="." method="_on_spit_timer_timeout"]

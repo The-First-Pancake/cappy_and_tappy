@@ -13,10 +13,10 @@
 [ext_resource type="PackedScene" uid="uid://boxcc56yjq7wc" path="res://Prefabs/Set Dressing/Egypt/Pot_Short.tscn" id="7_0i3pk"]
 [ext_resource type="PackedScene" uid="uid://dqou2dcng8cvg" path="res://Prefabs/Set Dressing/Egypt/Pot_Tall.tscn" id="8_d80ch"]
 [ext_resource type="PackedScene" uid="uid://bth4efqt1s7xr" path="res://Prefabs/Set Dressing/TorchSetDressing.tscn" id="9_rsk1a"]
-[ext_resource type="PackedScene" uid="uid://b0rv8mrmfut7g" path="res://Prefabs/Set Dressing/Egypt/Crack_Vines_2.tscn" id="10_c3b0o"]
-[ext_resource type="PackedScene" uid="uid://dhgq7ixv5gfaq" path="res://Prefabs/Set Dressing/Egypt/Crack_Vines_1.tscn" id="11_ga3a2"]
-[ext_resource type="PackedScene" uid="uid://b3rqii3rrmyqb" path="res://Prefabs/Set Dressing/Egypt/VinesCorner.tscn" id="12_aucjx"]
-[ext_resource type="PackedScene" uid="uid://xd857eb5jwmu" path="res://Prefabs/Set Dressing/Egypt/VinesTop.tscn" id="13_rf4bo"]
+[ext_resource type="PackedScene" path="res://Prefabs/Set Dressing/Egypt/Crack_Vines_2.tscn" id="10_c3b0o"]
+[ext_resource type="PackedScene" path="res://Prefabs/Set Dressing/Egypt/Crack_Vines_1.tscn" id="11_ga3a2"]
+[ext_resource type="PackedScene" path="res://Prefabs/Set Dressing/Egypt/VinesCorner.tscn" id="12_aucjx"]
+[ext_resource type="PackedScene" path="res://Prefabs/Set Dressing/Egypt/VinesTop.tscn" id="13_rf4bo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kcyiy"]
 size = Vector2(1350, 17100)
@@ -190,13 +190,13 @@ position = Vector2(1800, -1875)
 rotation = -3.14159
 scale = Vector2(1, -1)
 
-[node name="Idol" parent="." index="11"]
+[node name="Idol" parent="." index="12"]
 position = Vector2(1950, -450)
 
-[node name="Idol2" parent="." index="12"]
+[node name="Idol2" parent="." index="13"]
 position = Vector2(800, -1450)
 
-[node name="Idol3" parent="." index="13"]
+[node name="Idol3" parent="." index="14"]
 position = Vector2(800, -50)
 
 [node name="BlockSpawner" parent="Camera2D" index="2"]

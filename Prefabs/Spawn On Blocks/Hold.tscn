@@ -36,5 +36,6 @@ position = Vector2(0, -32)
 
 [node name="LevelBuildingTools" type="Node" parent="."]
 script = ExtResource("5_4knqi")
+auto_parent_to = "Interactable Container"
 
 [connection signal="squashed" from="Squashable" to="." method="_on_squashable_squashed"]

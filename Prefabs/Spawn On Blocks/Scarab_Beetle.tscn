@@ -125,3 +125,4 @@ pitch_scale = 1.5
 
 [node name="LevelBuildingTools" type="Node" parent="."]
 script = ExtResource("8_thf5x")
+auto_parent_to = "Interactable Container"

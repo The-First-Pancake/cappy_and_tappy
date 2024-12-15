@@ -12,9 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://boxcc56yjq7wc" path="res://Prefabs/Set Dressing/Egypt/Pot_Short.tscn" id="9_8w3j0"]
 [ext_resource type="AudioStream" uid="uid://d2kuoqyw1rd57" path="res://Sound/Music/Egypt/the pharaoh's curse.wav" id="9_cj6vt"]
 [ext_resource type="PackedScene" uid="uid://dqou2dcng8cvg" path="res://Prefabs/Set Dressing/Egypt/Pot_Tall.tscn" id="10_hvchj"]
-[ext_resource type="PackedScene" uid="uid://b3rqii3rrmyqb" path="res://Prefabs/Set Dressing/Egypt/VinesCorner.tscn" id="11_ircq8"]
-[ext_resource type="PackedScene" uid="uid://xd857eb5jwmu" path="res://Prefabs/Set Dressing/Egypt/VinesTop.tscn" id="12_uoudy"]
-[ext_resource type="PackedScene" uid="uid://b0rv8mrmfut7g" path="res://Prefabs/Set Dressing/Egypt/Crack_Vines_2.tscn" id="13_qnw72"]
+[ext_resource type="PackedScene" path="res://Prefabs/Set Dressing/Egypt/VinesCorner.tscn" id="11_ircq8"]
+[ext_resource type="PackedScene" path="res://Prefabs/Set Dressing/Egypt/VinesTop.tscn" id="12_uoudy"]
+[ext_resource type="PackedScene" path="res://Prefabs/Set Dressing/Egypt/Crack_Vines_2.tscn" id="13_qnw72"]
 [ext_resource type="PackedScene" uid="uid://bth4efqt1s7xr" path="res://Prefabs/Set Dressing/TorchSetDressing.tscn" id="14_3efv3"]
 [ext_resource type="PackedScene" uid="uid://bt7ck2htkt55v" path="res://Prefabs/Set Dressing/SconceSetDressing.tscn" id="15_jv576"]
 
@@ -66,329 +66,228 @@ offset_top = -1450.0
 offset_right = 1100.0
 offset_bottom = -1050.0
 
-[node name="Spikes4" parent="Environment Container" index="4" instance=ExtResource("4_o72cf")]
-position = Vector2(1600, -1050)
-
-[node name="Spikes6" parent="Environment Container" index="5" instance=ExtResource("4_o72cf")]
-position = Vector2(1500, -1050)
-
-[node name="Spikes8" parent="Environment Container" index="6" instance=ExtResource("4_o72cf")]
-position = Vector2(1400, -1050)
-
-[node name="Spikes9" parent="Environment Container" index="7" instance=ExtResource("4_o72cf")]
-position = Vector2(1300, -1050)
-
-[node name="Arrow_Spitter5" parent="Environment Container" index="8" instance=ExtResource("5_hjthd")]
-position = Vector2(1300, -950)
-rotation = 1.5708
-fire_rate = 4.0
-
-[node name="Arrow_Spitter6" parent="Environment Container" index="9" instance=ExtResource("5_hjthd")]
-position = Vector2(1400, -950)
-rotation = 1.5708
-fire_rate = 4.0
-
-[node name="Arrow_Spitter7" parent="Environment Container" index="10" instance=ExtResource("5_hjthd")]
-position = Vector2(1500, -950)
-rotation = 1.5708
-fire_rate = 4.0
-
-[node name="Arrow_Spitter8" parent="Environment Container" index="11" instance=ExtResource("5_hjthd")]
-position = Vector2(1600, -950)
-rotation = 1.5708
-fire_rate = 4.0
-
-[node name="Hold2" parent="Environment Container" index="12" instance=ExtResource("6_4mqgu")]
-position = Vector2(1250, -1000)
-rotation = -1.5708
-
-[node name="Spikes7" parent="Environment Container" index="13" instance=ExtResource("4_o72cf")]
-position = Vector2(1900, -1050)
-
-[node name="Spikes10" parent="Environment Container" index="14" instance=ExtResource("4_o72cf")]
-position = Vector2(1800, -1050)
-
-[node name="Spikes11" parent="Environment Container" index="15" instance=ExtResource("4_o72cf")]
-position = Vector2(1700, -1050)
-
-[node name="Arrow_Spitter9" parent="Environment Container" index="16" instance=ExtResource("5_hjthd")]
-position = Vector2(1700, -950)
-rotation = 1.5708
-fire_rate = 4.0
-
-[node name="Arrow_Spitter10" parent="Environment Container" index="17" instance=ExtResource("5_hjthd")]
-position = Vector2(1800, -950)
-rotation = 1.5708
-fire_rate = 4.0
-
-[node name="Arrow_Spitter11" parent="Environment Container" index="18" instance=ExtResource("5_hjthd")]
-position = Vector2(1900, -950)
-rotation = 1.5708
-fire_rate = 4.0
-
-[node name="Arrow_Spitter12" parent="Environment Container" index="19" instance=ExtResource("5_hjthd")]
-position = Vector2(2000, -950)
-rotation = 1.5708
-fire_rate = 4.0
-
-[node name="Spikes5" parent="Environment Container" index="20" instance=ExtResource("4_o72cf")]
-position = Vector2(1050, -1050)
-
-[node name="Spikes12" parent="Environment Container" index="21" instance=ExtResource("4_o72cf")]
-position = Vector2(950, -1050)
-
-[node name="Spikes13" parent="Environment Container" index="22" instance=ExtResource("4_o72cf")]
-position = Vector2(850, -1050)
-
-[node name="Spikes14" parent="Environment Container" index="23" instance=ExtResource("4_o72cf")]
-position = Vector2(750, -1050)
-
-[node name="Arrow_Spitter13" parent="Environment Container" index="24" instance=ExtResource("5_hjthd")]
-position = Vector2(750, -950)
-rotation = 1.5708
-fire_rate = 4.0
-
-[node name="Arrow_Spitter14" parent="Environment Container" index="25" instance=ExtResource("5_hjthd")]
-position = Vector2(850, -950)
-rotation = 1.5708
-fire_rate = 4.0
-
-[node name="Arrow_Spitter15" parent="Environment Container" index="26" instance=ExtResource("5_hjthd")]
-position = Vector2(950, -950)
-rotation = 1.5708
-fire_rate = 4.0
-
-[node name="Arrow_Spitter16" parent="Environment Container" index="27" instance=ExtResource("5_hjthd")]
-position = Vector2(1050, -950)
-rotation = 1.5708
-fire_rate = 4.0
-
-[node name="Hold" parent="Environment Container" index="28" instance=ExtResource("6_4mqgu")]
-position = Vector2(1100, -1000)
-rotation = 1.5708
-
-[node name="Pot_Short" parent="Environment Container" index="29" instance=ExtResource("9_8w3j0")]
+[node name="Pot_Short" parent="Environment Container" index="4" instance=ExtResource("9_8w3j0")]
 position = Vector2(2000, -1050)
 
-[node name="Pot_Tall" parent="Environment Container" index="30" instance=ExtResource("10_hvchj")]
+[node name="Pot_Tall" parent="Environment Container" index="5" instance=ExtResource("10_hvchj")]
 position = Vector2(2024, -1050)
 
-[node name="Pot_Short2" parent="Environment Container" index="31" instance=ExtResource("9_8w3j0")]
+[node name="Pot_Short2" parent="Environment Container" index="6" instance=ExtResource("9_8w3j0")]
 position = Vector2(1382, 1050)
 
-[node name="@Area2D@61166" parent="Environment Container" index="32" instance=ExtResource("10_hvchj")]
+[node name="@Area2D@61166" parent="Environment Container" index="7" instance=ExtResource("10_hvchj")]
 position = Vector2(1400, 1050)
 
-[node name="Pot_Short3" parent="Environment Container" index="33" instance=ExtResource("9_8w3j0")]
+[node name="Pot_Short3" parent="Environment Container" index="8" instance=ExtResource("9_8w3j0")]
 position = Vector2(1550, 1050)
 
-[node name="@Area2D@61665" parent="Environment Container" index="34" instance=ExtResource("10_hvchj")]
+[node name="@Area2D@61665" parent="Environment Container" index="9" instance=ExtResource("10_hvchj")]
 position = Vector2(1700, 1050)
 
-[node name="@Area2D@61670" parent="Environment Container" index="35" instance=ExtResource("9_8w3j0")]
+[node name="@Area2D@61670" parent="Environment Container" index="10" instance=ExtResource("9_8w3j0")]
 position = Vector2(1719, 1050)
 
-[node name="Pot_Short4" parent="Environment Container" index="36" instance=ExtResource("9_8w3j0")]
+[node name="Pot_Short4" parent="Environment Container" index="11" instance=ExtResource("9_8w3j0")]
 position = Vector2(1682, 1050)
 
-[node name="@Area2D@64057" parent="Environment Container" index="37" instance=ExtResource("10_hvchj")]
+[node name="@Area2D@64057" parent="Environment Container" index="12" instance=ExtResource("10_hvchj")]
 position = Vector2(1750, 1050)
 
-[node name="@Area2D@64062" parent="Environment Container" index="38" instance=ExtResource("10_hvchj")]
+[node name="@Area2D@64062" parent="Environment Container" index="13" instance=ExtResource("10_hvchj")]
 position = Vector2(1350, 1050)
 
-[node name="@Area2D@64067" parent="Environment Container" index="39" instance=ExtResource("9_8w3j0")]
+[node name="@Area2D@64067" parent="Environment Container" index="14" instance=ExtResource("9_8w3j0")]
 position = Vector2(1300, 1050)
 
-[node name="@Area2D@64072" parent="Environment Container" index="40" instance=ExtResource("9_8w3j0")]
+[node name="@Area2D@64072" parent="Environment Container" index="15" instance=ExtResource("9_8w3j0")]
 position = Vector2(1330, 1050)
 
-[node name="Pot_Short5" parent="Environment Container" index="41" instance=ExtResource("9_8w3j0")]
+[node name="Pot_Short5" parent="Environment Container" index="16" instance=ExtResource("9_8w3j0")]
 position = Vector2(1450, 1050)
 
-[node name="@Area2D@66160" parent="Environment Container" index="42" instance=ExtResource("9_8w3j0")]
+[node name="@Area2D@66160" parent="Environment Container" index="17" instance=ExtResource("9_8w3j0")]
 position = Vector2(1500, 1050)
 
-[node name="@Area2D@66171" parent="Environment Container" index="43" instance=ExtResource("10_hvchj")]
+[node name="@Area2D@66171" parent="Environment Container" index="18" instance=ExtResource("10_hvchj")]
 position = Vector2(1524, 1050)
 
-[node name="Pot_Short6" parent="Environment Container" index="44" instance=ExtResource("9_8w3j0")]
+[node name="Pot_Short6" parent="Environment Container" index="19" instance=ExtResource("9_8w3j0")]
 position = Vector2(1800, 1050)
 
-[node name="@Area2D@67160" parent="Environment Container" index="45" instance=ExtResource("9_8w3j0")]
+[node name="@Area2D@67160" parent="Environment Container" index="20" instance=ExtResource("9_8w3j0")]
 position = Vector2(1822, 1050)
 
-[node name="Pot_Tall2" parent="Environment Container" index="46" instance=ExtResource("10_hvchj")]
+[node name="Pot_Tall2" parent="Environment Container" index="21" instance=ExtResource("10_hvchj")]
 position = Vector2(923, 1050)
 
-[node name="@Area2D@67664" parent="Environment Container" index="47" instance=ExtResource("10_hvchj")]
+[node name="@Area2D@67664" parent="Environment Container" index="22" instance=ExtResource("10_hvchj")]
 position = Vector2(950, 1050)
 
-[node name="Pot_Short7" parent="Environment Container" index="48" instance=ExtResource("9_8w3j0")]
+[node name="Pot_Short7" parent="Environment Container" index="23" instance=ExtResource("9_8w3j0")]
 position = Vector2(988, 1050)
 
-[node name="SetDressingBase" parent="Environment Container" index="49" instance=ExtResource("11_ircq8")]
+[node name="SetDressingBase" parent="Environment Container" index="24" instance=ExtResource("11_ircq8")]
 position = Vector2(950, 1050)
 rotation = -3.14159
 scale = Vector2(1, -1)
 
-[node name="SetDressingBase2" parent="Environment Container" index="50" instance=ExtResource("12_uoudy")]
+[node name="SetDressingBase2" parent="Environment Container" index="25" instance=ExtResource("12_uoudy")]
 position = Vector2(1475, 1050)
 rotation = -3.14159
 scale = Vector2(1, -1)
 
-[node name="Cosmetic Dressing19" parent="Environment Container" index="51" instance=ExtResource("13_qnw72")]
+[node name="Cosmetic Dressing19" parent="Environment Container" index="26" instance=ExtResource("13_qnw72")]
 position = Vector2(1776, 1180)
 rotation = 1.57084
 
-[node name="Cosmetic Dressing20" parent="Environment Container" index="52" instance=ExtResource("13_qnw72")]
+[node name="Cosmetic Dressing20" parent="Environment Container" index="27" instance=ExtResource("13_qnw72")]
 position = Vector2(1775, 948)
 rotation = 1.57084
 
-[node name="Cosmetic Dressing21" parent="Environment Container" index="53" instance=ExtResource("13_qnw72")]
+[node name="Cosmetic Dressing21" parent="Environment Container" index="28" instance=ExtResource("13_qnw72")]
 position = Vector2(1807, 667)
 rotation = -1.57075
 
-[node name="Cosmetic Dressing22" parent="Environment Container" index="54" instance=ExtResource("13_qnw72")]
+[node name="Cosmetic Dressing22" parent="Environment Container" index="29" instance=ExtResource("13_qnw72")]
 position = Vector2(1807, 207)
 rotation = -1.57075
 
-[node name="Cosmetic Dressing23" parent="Environment Container" index="55" instance=ExtResource("13_qnw72")]
+[node name="Cosmetic Dressing23" parent="Environment Container" index="30" instance=ExtResource("13_qnw72")]
 position = Vector2(1777, -109)
 rotation = -1.57075
 scale = Vector2(1, -1)
 
-[node name="Cosmetic Dressing24" parent="Environment Container" index="56" instance=ExtResource("13_qnw72")]
+[node name="Cosmetic Dressing24" parent="Environment Container" index="31" instance=ExtResource("13_qnw72")]
 position = Vector2(1776, -248)
 rotation = 1.57084
 
-[node name="Cosmetic Dressing43" parent="Environment Container" index="57" instance=ExtResource("13_qnw72")]
+[node name="Cosmetic Dressing43" parent="Environment Container" index="32" instance=ExtResource("13_qnw72")]
 position = Vector2(1060, -1182)
 rotation = -1.57075
 
-[node name="Cosmetic Dressing44" parent="Environment Container" index="58" instance=ExtResource("13_qnw72")]
+[node name="Cosmetic Dressing44" parent="Environment Container" index="33" instance=ExtResource("13_qnw72")]
 position = Vector2(1028, -1344)
 rotation = 1.57084
 
-[node name="Cosmetic Dressing37" parent="Environment Container" index="59" instance=ExtResource("13_qnw72")]
+[node name="Cosmetic Dressing37" parent="Environment Container" index="34" instance=ExtResource("13_qnw72")]
 position = Vector2(812, 933)
 rotation = 1.57084
 scale = Vector2(1, -1)
 
-[node name="Cosmetic Dressing38" parent="Environment Container" index="60" instance=ExtResource("13_qnw72")]
+[node name="Cosmetic Dressing38" parent="Environment Container" index="35" instance=ExtResource("13_qnw72")]
 position = Vector2(809, 651)
 rotation = 1.57084
 scale = Vector2(1, -1)
 
-[node name="Cosmetic Dressing39" parent="Environment Container" index="61" instance=ExtResource("13_qnw72")]
+[node name="Cosmetic Dressing39" parent="Environment Container" index="36" instance=ExtResource("13_qnw72")]
 position = Vector2(785, 361)
 rotation = -1.57075
 scale = Vector2(1, -1)
 
-[node name="Cosmetic Dressing40" parent="Environment Container" index="62" instance=ExtResource("13_qnw72")]
+[node name="Cosmetic Dressing40" parent="Environment Container" index="37" instance=ExtResource("13_qnw72")]
 position = Vector2(785, -99)
 rotation = -1.57075
 scale = Vector2(1, -1)
 
-[node name="Cosmetic Dressing41" parent="Environment Container" index="63" instance=ExtResource("13_qnw72")]
+[node name="Cosmetic Dressing41" parent="Environment Container" index="38" instance=ExtResource("13_qnw72")]
 position = Vector2(809, -397)
 rotation = -1.57075
 
-[node name="Cosmetic Dressing42" parent="Environment Container" index="64" instance=ExtResource("13_qnw72")]
+[node name="Cosmetic Dressing42" parent="Environment Container" index="39" instance=ExtResource("13_qnw72")]
 position = Vector2(811, -561)
 rotation = 1.57084
 scale = Vector2(1, -1)
 
-[node name="Cosmetic Dressing7" parent="Environment Container" index="65" instance=ExtResource("13_qnw72")]
+[node name="Cosmetic Dressing7" parent="Environment Container" index="40" instance=ExtResource("13_qnw72")]
 position = Vector2(1510, 898)
 rotation = -1.57076
 
-[node name="Cosmetic Dressing8" parent="Environment Container" index="66" instance=ExtResource("13_qnw72")]
+[node name="Cosmetic Dressing8" parent="Environment Container" index="41" instance=ExtResource("13_qnw72")]
 position = Vector2(1509, 666)
 rotation = -1.57076
 
-[node name="Cosmetic Dressing9" parent="Environment Container" index="67" instance=ExtResource("13_qnw72")]
+[node name="Cosmetic Dressing9" parent="Environment Container" index="42" instance=ExtResource("13_qnw72")]
 position = Vector2(1481, 387)
 rotation = 1.57084
 
-[node name="Cosmetic Dressing10" parent="Environment Container" index="68" instance=ExtResource("13_qnw72")]
+[node name="Cosmetic Dressing10" parent="Environment Container" index="43" instance=ExtResource("13_qnw72")]
 position = Vector2(1480, -77)
 rotation = 1.57084
 
-[node name="Cosmetic Dressing11" parent="Environment Container" index="69" instance=ExtResource("13_qnw72")]
+[node name="Cosmetic Dressing11" parent="Environment Container" index="44" instance=ExtResource("13_qnw72")]
 position = Vector2(1511, -391)
 rotation = 1.57084
 scale = Vector2(1, -1)
 
-[node name="Cosmetic Dressing12" parent="Environment Container" index="70" instance=ExtResource("13_qnw72")]
+[node name="Cosmetic Dressing12" parent="Environment Container" index="45" instance=ExtResource("13_qnw72")]
 position = Vector2(1510, -530)
 rotation = -1.57076
 
-[node name="@VBoxContainer@113085" parent="Environment Container" index="71" instance=ExtResource("4_k33py")]
+[node name="@VBoxContainer@113085" parent="Environment Container" index="46" instance=ExtResource("4_k33py")]
 offset_left = 708.0
 offset_top = -1900.0
 offset_right = 808.0
 offset_bottom = -1551.0
 
-[node name="Torch" parent="Environment Container" index="72" instance=ExtResource("14_3efv3")]
+[node name="Torch" parent="Environment Container" index="47" instance=ExtResource("14_3efv3")]
 position = Vector2(1000, -1650)
 rotation = 4.46638e-06
 
-[node name="Pot_Short8" parent="Environment Container" index="73" instance=ExtResource("9_8w3j0")]
+[node name="Pot_Short8" parent="Environment Container" index="48" instance=ExtResource("9_8w3j0")]
 position = Vector2(1000, -1550)
 
-[node name="Pot_Tall3" parent="Environment Container" index="74" instance=ExtResource("10_hvchj")]
+[node name="Pot_Tall3" parent="Environment Container" index="49" instance=ExtResource("10_hvchj")]
 position = Vector2(1025, -1550)
 
-[node name="Pot_Tall4" parent="Environment Container" index="75" instance=ExtResource("10_hvchj")]
+[node name="Pot_Tall4" parent="Environment Container" index="50" instance=ExtResource("10_hvchj")]
 position = Vector2(775, -1550)
 
-[node name="Pot_Short9" parent="Environment Container" index="76" instance=ExtResource("9_8w3j0")]
+[node name="Pot_Short9" parent="Environment Container" index="51" instance=ExtResource("9_8w3j0")]
 position = Vector2(675, -1750)
 
-[node name="Pot_Short10" parent="Environment Container" index="77" instance=ExtResource("9_8w3j0")]
+[node name="Pot_Short10" parent="Environment Container" index="52" instance=ExtResource("9_8w3j0")]
 position = Vector2(2075, -1350)
 
-[node name="Pot_Tall5" parent="Environment Container" index="78" instance=ExtResource("10_hvchj")]
+[node name="Pot_Tall5" parent="Environment Container" index="53" instance=ExtResource("10_hvchj")]
 position = Vector2(2075, -1750)
 
-[node name="Pot_Tall6" parent="Environment Container" index="79" instance=ExtResource("10_hvchj")]
+[node name="Pot_Tall6" parent="Environment Container" index="54" instance=ExtResource("10_hvchj")]
 position = Vector2(2075, -750)
 
-[node name="Pot_Short11" parent="Environment Container" index="80" instance=ExtResource("9_8w3j0")]
+[node name="Pot_Short11" parent="Environment Container" index="55" instance=ExtResource("9_8w3j0")]
 position = Vector2(2075, -350)
 
-[node name="Pot_Short12" parent="Environment Container" index="81" instance=ExtResource("9_8w3j0")]
+[node name="Pot_Short12" parent="Environment Container" index="56" instance=ExtResource("9_8w3j0")]
 position = Vector2(2075, -150)
 
-[node name="Pot_Short13" parent="Environment Container" index="82" instance=ExtResource("9_8w3j0")]
+[node name="Pot_Short13" parent="Environment Container" index="57" instance=ExtResource("9_8w3j0")]
 position = Vector2(2075, 450)
 
-[node name="Pot_Tall7" parent="Environment Container" index="83" instance=ExtResource("10_hvchj")]
+[node name="Pot_Tall7" parent="Environment Container" index="58" instance=ExtResource("10_hvchj")]
 position = Vector2(2075, 850)
 
-[node name="Pot_Tall8" parent="Environment Container" index="84" instance=ExtResource("10_hvchj")]
+[node name="Pot_Tall8" parent="Environment Container" index="59" instance=ExtResource("10_hvchj")]
 position = Vector2(675, 950)
 
-[node name="Pot_Tall9" parent="Environment Container" index="85" instance=ExtResource("10_hvchj")]
+[node name="Pot_Tall9" parent="Environment Container" index="60" instance=ExtResource("10_hvchj")]
 position = Vector2(675, 350)
 
-[node name="Pot_Short14" parent="Environment Container" index="86" instance=ExtResource("9_8w3j0")]
+[node name="Pot_Short14" parent="Environment Container" index="61" instance=ExtResource("9_8w3j0")]
 position = Vector2(675, 150)
 
-[node name="Pot_Short15" parent="Environment Container" index="87" instance=ExtResource("9_8w3j0")]
+[node name="Pot_Short15" parent="Environment Container" index="62" instance=ExtResource("9_8w3j0")]
 position = Vector2(675, -250)
 
-[node name="Pot_Short16" parent="Environment Container" index="88" instance=ExtResource("9_8w3j0")]
+[node name="Pot_Short16" parent="Environment Container" index="63" instance=ExtResource("9_8w3j0")]
 position = Vector2(675, -650)
 
-[node name="Pot_Short17" parent="Environment Container" index="89" instance=ExtResource("9_8w3j0")]
+[node name="Pot_Short17" parent="Environment Container" index="64" instance=ExtResource("9_8w3j0")]
 position = Vector2(675, -1050)
 
-[node name="Pot_Tall10" parent="Environment Container" index="90" instance=ExtResource("10_hvchj")]
+[node name="Pot_Tall10" parent="Environment Container" index="65" instance=ExtResource("10_hvchj")]
 position = Vector2(700, -1050)
 
-[node name="Sconce" parent="Environment Container" index="91" instance=ExtResource("15_jv576")]
+[node name="Sconce" parent="Environment Container" index="66" instance=ExtResource("15_jv576")]
 position = Vector2(1050, -1450)
 rotation = -2.53518e-06
 scale = Vector2(1, -1)
@@ -397,16 +296,117 @@ scale = Vector2(1, -1)
 self_modulate = Color(0.83, 0.676035, 0.3901, 0.380392)
 position = Vector2(1150, 500)
 
-[node name="Player" parent="." index="10"]
+[node name="Spikes4" parent="Interactable Container" index="0" instance=ExtResource("4_o72cf")]
+position = Vector2(1600, -1050)
+
+[node name="Spikes6" parent="Interactable Container" index="1" instance=ExtResource("4_o72cf")]
+position = Vector2(1500, -1050)
+
+[node name="Spikes8" parent="Interactable Container" index="2" instance=ExtResource("4_o72cf")]
+position = Vector2(1400, -1050)
+
+[node name="Spikes9" parent="Interactable Container" index="3" instance=ExtResource("4_o72cf")]
+position = Vector2(1300, -1050)
+
+[node name="Arrow_Spitter5" parent="Interactable Container" index="4" instance=ExtResource("5_hjthd")]
+position = Vector2(1300, -950)
+rotation = 1.5708
+fire_rate = 4.0
+
+[node name="Arrow_Spitter6" parent="Interactable Container" index="5" instance=ExtResource("5_hjthd")]
+position = Vector2(1400, -950)
+rotation = 1.5708
+fire_rate = 4.0
+
+[node name="Arrow_Spitter7" parent="Interactable Container" index="6" instance=ExtResource("5_hjthd")]
+position = Vector2(1500, -950)
+rotation = 1.5708
+fire_rate = 4.0
+
+[node name="Arrow_Spitter8" parent="Interactable Container" index="7" instance=ExtResource("5_hjthd")]
+position = Vector2(1600, -950)
+rotation = 1.5708
+fire_rate = 4.0
+
+[node name="Hold2" parent="Interactable Container" index="8" instance=ExtResource("6_4mqgu")]
+position = Vector2(1250, -1000)
+rotation = -1.5708
+
+[node name="Spikes7" parent="Interactable Container" index="9" instance=ExtResource("4_o72cf")]
+position = Vector2(1900, -1050)
+
+[node name="Spikes10" parent="Interactable Container" index="10" instance=ExtResource("4_o72cf")]
+position = Vector2(1800, -1050)
+
+[node name="Spikes11" parent="Interactable Container" index="11" instance=ExtResource("4_o72cf")]
+position = Vector2(1700, -1050)
+
+[node name="Arrow_Spitter9" parent="Interactable Container" index="12" instance=ExtResource("5_hjthd")]
+position = Vector2(1700, -950)
+rotation = 1.5708
+fire_rate = 4.0
+
+[node name="Arrow_Spitter10" parent="Interactable Container" index="13" instance=ExtResource("5_hjthd")]
+position = Vector2(1800, -950)
+rotation = 1.5708
+fire_rate = 4.0
+
+[node name="Arrow_Spitter11" parent="Interactable Container" index="14" instance=ExtResource("5_hjthd")]
+position = Vector2(1900, -950)
+rotation = 1.5708
+fire_rate = 4.0
+
+[node name="Arrow_Spitter12" parent="Interactable Container" index="15" instance=ExtResource("5_hjthd")]
+position = Vector2(2000, -950)
+rotation = 1.5708
+fire_rate = 4.0
+
+[node name="Spikes5" parent="Interactable Container" index="16" instance=ExtResource("4_o72cf")]
+position = Vector2(1050, -1050)
+
+[node name="Spikes12" parent="Interactable Container" index="17" instance=ExtResource("4_o72cf")]
+position = Vector2(950, -1050)
+
+[node name="Spikes13" parent="Interactable Container" index="18" instance=ExtResource("4_o72cf")]
+position = Vector2(850, -1050)
+
+[node name="Spikes14" parent="Interactable Container" index="19" instance=ExtResource("4_o72cf")]
+position = Vector2(750, -1050)
+
+[node name="Arrow_Spitter13" parent="Interactable Container" index="20" instance=ExtResource("5_hjthd")]
+position = Vector2(750, -950)
+rotation = 1.5708
+fire_rate = 4.0
+
+[node name="Arrow_Spitter14" parent="Interactable Container" index="21" instance=ExtResource("5_hjthd")]
+position = Vector2(850, -950)
+rotation = 1.5708
+fire_rate = 4.0
+
+[node name="Arrow_Spitter15" parent="Interactable Container" index="22" instance=ExtResource("5_hjthd")]
+position = Vector2(950, -950)
+rotation = 1.5708
+fire_rate = 4.0
+
+[node name="Arrow_Spitter16" parent="Interactable Container" index="23" instance=ExtResource("5_hjthd")]
+position = Vector2(1050, -950)
+rotation = 1.5708
+fire_rate = 4.0
+
+[node name="Hold" parent="Interactable Container" index="24" instance=ExtResource("6_4mqgu")]
+position = Vector2(1100, -1000)
+rotation = 1.5708
+
+[node name="Player" parent="." index="11"]
 position = Vector2(1073, 1000)
 
-[node name="Idol" parent="." index="11"]
+[node name="Idol" parent="." index="12"]
 position = Vector2(2011, -150)
 
-[node name="Idol2" parent="." index="12"]
+[node name="Idol2" parent="." index="13"]
 position = Vector2(869, -750)
 
-[node name="Idol3" parent="." index="13"]
+[node name="Idol3" parent="." index="14"]
 position = Vector2(2000, -1100)
 
 [node name="PathNode17" parent="PathFindingGraph" index="16"]
