@@ -18,8 +18,8 @@
 [ext_resource type="PackedScene" uid="uid://bth4efqt1s7xr" path="res://Prefabs/Set Dressing/TorchSetDressing.tscn" id="14_3efv3"]
 [ext_resource type="PackedScene" uid="uid://bt7ck2htkt55v" path="res://Prefabs/Set Dressing/SconceSetDressing.tscn" id="15_jv576"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jlamu"]
-size = Vector2(1350, 17100)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dk4cy"]
+size = Vector2(1450, 3500)
 
 [node name="Template Level" instance=ExtResource("1_3kpqd")]
 temple_type = 1
@@ -28,7 +28,8 @@ temple_type = 1
 texture = ExtResource("2_cq7e4")
 
 [node name="CollisionShape2D" parent="Camera Zone" index="0"]
-shape = SubResource("RectangleShape2D_jlamu")
+position = Vector2(1375, -500)
+shape = SubResource("RectangleShape2D_dk4cy")
 
 [node name="Entrance Door" parent="." index="4"]
 position = Vector2(1150, 1050)
