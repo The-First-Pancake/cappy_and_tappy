@@ -27,7 +27,7 @@
 [ext_resource type="PackedScene" path="res://Prefabs/Set Dressing/Egypt/Crack_Vines_2.tscn" id="19_8ndxe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m46el"]
-size = Vector2(1350, 17100)
+size = Vector2(1450, 17100)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_h8vdk"]
 load_path = "res://.godot/imported/idol clue.png-ed2f1a31871507f953f24687960712e6.ctex"
@@ -452,7 +452,6 @@ texture = SubResource("CompressedTexture2D_h8vdk")
 [node name="Arrow_Spitter9" parent="Interactable Container" index="0" instance=ExtResource("7_t561k")]
 position = Vector2(1350, -4650)
 rotation = 1.5708
-scale = Vector2(1, -1)
 
 [node name="Harpoon Launcher" parent="Interactable Container" index="1" instance=ExtResource("4_h6b51")]
 position = Vector2(2050, -800)
@@ -628,6 +627,9 @@ rotation = 1.57079
 position = Vector2(49.9995, -100)
 rotation = -1.5708
 scale = Vector2(1, -1)
+
+[node name="Player" parent="." index="14"]
+position = Vector2(1028, 1002)
 
 [node name="Idol" parent="." index="15"]
 position = Vector2(1250, -7400)
