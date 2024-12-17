@@ -7,8 +7,8 @@ assignees: ''
 
 ---
 
-**Describe the feature and who it benefits**
-A clear and concise description of what you want to happen.
+**Describe the feature**
+A clear and concise description of what the accessibility feature and the benefit or assistance it provides.
 
 **Additional context**
-Add any other context or screenshots about the feature request here.
+Add any other context.
