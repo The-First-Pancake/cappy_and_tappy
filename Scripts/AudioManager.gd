@@ -2,18 +2,20 @@ extends Node
 
 func _ready() -> void:
 	AudioServer.set_bus_mute(0,GameManager.current_save.setting_mute)
-	GameManager.loaded_new_scene.connect(func() -> void:
-		)
-
+	GameManager.loading_new_scene.connect(clear_looping_sounds)
+	GameManager.game_paused.connect(stop_controller_rumble)
 
 func _process(delta: float) -> void:
-	
 	var haptics_mag : float = db_to_linear(AudioServer.get_bus_peak_volume_left_db(AudioServer.get_bus_index("Haptics"), 0))
 	if (haptics_mag > 0.01):
 		for i in Input.get_connected_joypads():
 			Input.start_joy_vibration(i, haptics_mag, haptics_mag)
 	else:
 		for i in Input.get_connected_joypads():
+			Input.stop_joy_vibration(i)
+
+func stop_controller_rumble() -> void:
+	for i in Input.get_connected_joypads():
 			Input.stop_joy_vibration(i)
 
 func toggle_mute() -> void:
@@ -25,6 +27,15 @@ func clear_all_sounds() -> void:
 	for child: Node in get_children():
 		if child != current_music:
 			child.queue_free()
+			
+func clear_looping_sounds() -> void:
+	for child: Node in get_children():
+		if child != current_music and child is AudioStreamPlayer:
+			if is_instance_valid(child):
+				var stream : AudioStreamWAV = child.stream as AudioStreamWAV
+				if is_instance_valid(stream) and stream.loop_mode == AudioStreamWAV.LoopMode.LOOP_FORWARD:
+					child.queue_free()
+				
 
 func PlayAudio(audio: AudioStreamPlayer, is_haptics: bool = true) -> AudioStreamPlayer:
 	var audio_dupe: AudioStreamPlayer = audio.duplicate()
@@ -32,7 +43,7 @@ func PlayAudio(audio: AudioStreamPlayer, is_haptics: bool = true) -> AudioStream
 	if is_haptics:
 		audio_dupe.bus = "Haptics"
 	audio_dupe.play()
-
+	
 	audio_dupe.finished.connect(func() -> void:
 		audio_dupe.queue_free()
 	)

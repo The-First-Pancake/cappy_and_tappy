@@ -27,7 +27,9 @@ var current_level_info: LevelInfo:
 	get:
 		return get_tree().current_scene as LevelInfo
 
+signal loading_new_scene
 signal loaded_new_scene
+signal game_paused
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -84,6 +86,7 @@ func _process(delta: float) -> void:
 var victory_screen_scene: PackedScene = preload("res://Levels/victory_screen.tscn")
 
 func restart_level() -> void:
+	loading_new_scene.emit()
 	toggle_pause(false)
 	get_tree().reload_current_scene()
 	loaded_new_scene.emit()
@@ -96,6 +99,7 @@ func toggle_pause(on: bool = true) -> void:
 			pause_menu = pause_menu_prefab.instantiate() as CanvasLayer
 			pause_menu.follow_viewport_enabled = false #for some god forsaken reason this makes the pause menu follow the viewport. One would think the opposite would be true. I have no words. This took me like an hour
 			get_viewport().add_child(pause_menu)
+			game_paused.emit()
 		get_tree().paused = true
 	else: #unpause
 		time_since_unpause = 0
@@ -112,6 +116,7 @@ func level_complete() -> void:
 		load_level_from_packed(level_select_scene)
 	
 func load_level_from_packed(scene: PackedScene) -> void:
+	loading_new_scene.emit()
 	current_level = scene
 	get_tree().change_scene_to_packed(scene)
 	# Takes two frames for this to actually happen
