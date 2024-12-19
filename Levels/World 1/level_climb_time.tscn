@@ -200,7 +200,7 @@ angular_damp = 10.0
 node_a = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Template Level/Environment Container/Hanging Vine/Rope Anchor")
 node_b = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Template Level/Environment Container/Hanging Vine/Rope Segment")
 
-[node name="@RigidBody2D@22425" type="RigidBody2D" parent="Environment Container/Hanging Vine" index="4" instance=ExtResource("13_s1i8o")]
+[node name="@RigidBody2D@22015" type="RigidBody2D" parent="Environment Container/Hanging Vine" index="4" instance=ExtResource("13_s1i8o")]
 position = Vector2(0, 37.5)
 collision_layer = 0
 collision_mask = 0
@@ -208,10 +208,10 @@ physics_material_override = SubResource("PhysicsMaterial_h01xv")
 linear_damp = 3.0
 angular_damp = 10.0
 
-[node name="@PinJoint2D@22426" type="PinJoint2D" parent="Environment Container/Hanging Vine" index="5" instance=ExtResource("14_865q8")]
+[node name="@PinJoint2D@22016" type="PinJoint2D" parent="Environment Container/Hanging Vine" index="5" instance=ExtResource("14_865q8")]
 position = Vector2(0, 25)
 node_a = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Template Level/Environment Container/Hanging Vine/Rope Segment")
-node_b = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Template Level/Environment Container/Hanging Vine/@RigidBody2D@22425")
+node_b = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Template Level/Environment Container/Hanging Vine/@RigidBody2D@22015")
 
 [node name="Hanging Vine2" parent="Environment Container" index="28" instance=ExtResource("12_3poir")]
 position = Vector2(1464, -750)
@@ -229,7 +229,7 @@ angular_damp = 10.0
 node_a = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Template Level/Environment Container/Hanging Vine2/Rope Anchor")
 node_b = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Template Level/Environment Container/Hanging Vine2/Rope Segment")
 
-[node name="@RigidBody2D@22427" type="RigidBody2D" parent="Environment Container/Hanging Vine2" index="4" instance=ExtResource("13_s1i8o")]
+[node name="@RigidBody2D@22017" type="RigidBody2D" parent="Environment Container/Hanging Vine2" index="4" instance=ExtResource("13_s1i8o")]
 position = Vector2(0, 37.5)
 collision_layer = 0
 collision_mask = 0
@@ -237,12 +237,12 @@ physics_material_override = SubResource("PhysicsMaterial_h01xv")
 linear_damp = 3.0
 angular_damp = 10.0
 
-[node name="@PinJoint2D@22428" type="PinJoint2D" parent="Environment Container/Hanging Vine2" index="5" instance=ExtResource("14_865q8")]
+[node name="@PinJoint2D@22018" type="PinJoint2D" parent="Environment Container/Hanging Vine2" index="5" instance=ExtResource("14_865q8")]
 position = Vector2(0, 25)
 node_a = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Template Level/Environment Container/Hanging Vine2/Rope Segment")
-node_b = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Template Level/Environment Container/Hanging Vine2/@RigidBody2D@22427")
+node_b = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Template Level/Environment Container/Hanging Vine2/@RigidBody2D@22017")
 
-[node name="@RigidBody2D@22429" type="RigidBody2D" parent="Environment Container/Hanging Vine2" index="6" instance=ExtResource("13_s1i8o")]
+[node name="@RigidBody2D@22019" type="RigidBody2D" parent="Environment Container/Hanging Vine2" index="6" instance=ExtResource("13_s1i8o")]
 position = Vector2(0, 62.5)
 collision_layer = 0
 collision_mask = 0
@@ -250,10 +250,10 @@ physics_material_override = SubResource("PhysicsMaterial_h01xv")
 linear_damp = 3.0
 angular_damp = 10.0
 
-[node name="@PinJoint2D@22430" type="PinJoint2D" parent="Environment Container/Hanging Vine2" index="7" instance=ExtResource("14_865q8")]
+[node name="@PinJoint2D@22020" type="PinJoint2D" parent="Environment Container/Hanging Vine2" index="7" instance=ExtResource("14_865q8")]
 position = Vector2(0, 50)
-node_a = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Template Level/Environment Container/Hanging Vine2/@RigidBody2D@22427")
-node_b = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Template Level/Environment Container/Hanging Vine2/@RigidBody2D@22429")
+node_a = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Template Level/Environment Container/Hanging Vine2/@RigidBody2D@22017")
+node_b = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Template Level/Environment Container/Hanging Vine2/@RigidBody2D@22019")
 
 [node name="Hanging Vine3" parent="Environment Container" index="29" instance=ExtResource("12_3poir")]
 position = Vector2(1450, -750)
@@ -271,7 +271,7 @@ angular_damp = 10.0
 node_a = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Template Level/Environment Container/Hanging Vine3/Rope Anchor")
 node_b = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Template Level/Environment Container/Hanging Vine3/Rope Segment")
 
-[node name="@RigidBody2D@22431" type="RigidBody2D" parent="Environment Container/Hanging Vine3" index="4" instance=ExtResource("13_s1i8o")]
+[node name="@RigidBody2D@22021" type="RigidBody2D" parent="Environment Container/Hanging Vine3" index="4" instance=ExtResource("13_s1i8o")]
 position = Vector2(0, 37.5)
 collision_layer = 0
 collision_mask = 0
@@ -279,10 +279,10 @@ physics_material_override = SubResource("PhysicsMaterial_h01xv")
 linear_damp = 3.0
 angular_damp = 10.0
 
-[node name="@PinJoint2D@22432" type="PinJoint2D" parent="Environment Container/Hanging Vine3" index="5" instance=ExtResource("14_865q8")]
+[node name="@PinJoint2D@22022" type="PinJoint2D" parent="Environment Container/Hanging Vine3" index="5" instance=ExtResource("14_865q8")]
 position = Vector2(0, 25)
 node_a = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Template Level/Environment Container/Hanging Vine3/Rope Segment")
-node_b = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Template Level/Environment Container/Hanging Vine3/@RigidBody2D@22431")
+node_b = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Template Level/Environment Container/Hanging Vine3/@RigidBody2D@22021")
 
 [node name="Hanging Vine4" parent="Environment Container" index="30" instance=ExtResource("12_3poir")]
 position = Vector2(1400, -750)
@@ -300,7 +300,7 @@ angular_damp = 10.0
 node_a = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Template Level/Environment Container/Hanging Vine4/Rope Anchor")
 node_b = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Template Level/Environment Container/Hanging Vine4/Rope Segment")
 
-[node name="@RigidBody2D@22433" type="RigidBody2D" parent="Environment Container/Hanging Vine4" index="4" instance=ExtResource("13_s1i8o")]
+[node name="@RigidBody2D@22023" type="RigidBody2D" parent="Environment Container/Hanging Vine4" index="4" instance=ExtResource("13_s1i8o")]
 position = Vector2(0, 37.5)
 collision_layer = 0
 collision_mask = 0
@@ -308,12 +308,12 @@ physics_material_override = SubResource("PhysicsMaterial_h01xv")
 linear_damp = 3.0
 angular_damp = 10.0
 
-[node name="@PinJoint2D@22434" type="PinJoint2D" parent="Environment Container/Hanging Vine4" index="5" instance=ExtResource("14_865q8")]
+[node name="@PinJoint2D@22024" type="PinJoint2D" parent="Environment Container/Hanging Vine4" index="5" instance=ExtResource("14_865q8")]
 position = Vector2(0, 25)
 node_a = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Template Level/Environment Container/Hanging Vine4/Rope Segment")
-node_b = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Template Level/Environment Container/Hanging Vine4/@RigidBody2D@22433")
+node_b = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Template Level/Environment Container/Hanging Vine4/@RigidBody2D@22023")
 
-[node name="@RigidBody2D@22435" type="RigidBody2D" parent="Environment Container/Hanging Vine4" index="6" instance=ExtResource("13_s1i8o")]
+[node name="@RigidBody2D@22025" type="RigidBody2D" parent="Environment Container/Hanging Vine4" index="6" instance=ExtResource("13_s1i8o")]
 position = Vector2(0, 62.5)
 collision_layer = 0
 collision_mask = 0
@@ -321,12 +321,12 @@ physics_material_override = SubResource("PhysicsMaterial_h01xv")
 linear_damp = 3.0
 angular_damp = 10.0
 
-[node name="@PinJoint2D@22436" type="PinJoint2D" parent="Environment Container/Hanging Vine4" index="7" instance=ExtResource("14_865q8")]
+[node name="@PinJoint2D@22026" type="PinJoint2D" parent="Environment Container/Hanging Vine4" index="7" instance=ExtResource("14_865q8")]
 position = Vector2(0, 50)
-node_a = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Template Level/Environment Container/Hanging Vine4/@RigidBody2D@22433")
-node_b = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Template Level/Environment Container/Hanging Vine4/@RigidBody2D@22435")
+node_a = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Template Level/Environment Container/Hanging Vine4/@RigidBody2D@22023")
+node_b = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Template Level/Environment Container/Hanging Vine4/@RigidBody2D@22025")
 
-[node name="@RigidBody2D@22437" type="RigidBody2D" parent="Environment Container/Hanging Vine4" index="8" instance=ExtResource("13_s1i8o")]
+[node name="@RigidBody2D@22027" type="RigidBody2D" parent="Environment Container/Hanging Vine4" index="8" instance=ExtResource("13_s1i8o")]
 position = Vector2(0, 87.5)
 collision_layer = 0
 collision_mask = 0
@@ -334,10 +334,10 @@ physics_material_override = SubResource("PhysicsMaterial_h01xv")
 linear_damp = 3.0
 angular_damp = 10.0
 
-[node name="@PinJoint2D@22438" type="PinJoint2D" parent="Environment Container/Hanging Vine4" index="9" instance=ExtResource("14_865q8")]
+[node name="@PinJoint2D@22028" type="PinJoint2D" parent="Environment Container/Hanging Vine4" index="9" instance=ExtResource("14_865q8")]
 position = Vector2(0, 75)
-node_a = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Template Level/Environment Container/Hanging Vine4/@RigidBody2D@22435")
-node_b = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Template Level/Environment Container/Hanging Vine4/@RigidBody2D@22437")
+node_a = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Template Level/Environment Container/Hanging Vine4/@RigidBody2D@22025")
+node_b = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Template Level/Environment Container/Hanging Vine4/@RigidBody2D@22027")
 
 [node name="Hanging Vine5" parent="Environment Container" index="31" instance=ExtResource("12_3poir")]
 position = Vector2(1430, -750)
@@ -355,7 +355,7 @@ angular_damp = 10.0
 node_a = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Template Level/Environment Container/Hanging Vine5/Rope Anchor")
 node_b = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Template Level/Environment Container/Hanging Vine5/Rope Segment")
 
-[node name="@RigidBody2D@22439" type="RigidBody2D" parent="Environment Container/Hanging Vine5" index="4" instance=ExtResource("13_s1i8o")]
+[node name="@RigidBody2D@22029" type="RigidBody2D" parent="Environment Container/Hanging Vine5" index="4" instance=ExtResource("13_s1i8o")]
 position = Vector2(0, 37.5)
 collision_layer = 0
 collision_mask = 0
@@ -363,12 +363,12 @@ physics_material_override = SubResource("PhysicsMaterial_h01xv")
 linear_damp = 3.0
 angular_damp = 10.0
 
-[node name="@PinJoint2D@22440" type="PinJoint2D" parent="Environment Container/Hanging Vine5" index="5" instance=ExtResource("14_865q8")]
+[node name="@PinJoint2D@22030" type="PinJoint2D" parent="Environment Container/Hanging Vine5" index="5" instance=ExtResource("14_865q8")]
 position = Vector2(0, 25)
 node_a = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Template Level/Environment Container/Hanging Vine5/Rope Segment")
-node_b = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Template Level/Environment Container/Hanging Vine5/@RigidBody2D@22439")
+node_b = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Template Level/Environment Container/Hanging Vine5/@RigidBody2D@22029")
 
-[node name="@RigidBody2D@22441" type="RigidBody2D" parent="Environment Container/Hanging Vine5" index="6" instance=ExtResource("13_s1i8o")]
+[node name="@RigidBody2D@22031" type="RigidBody2D" parent="Environment Container/Hanging Vine5" index="6" instance=ExtResource("13_s1i8o")]
 position = Vector2(0, 62.5)
 collision_layer = 0
 collision_mask = 0
@@ -376,12 +376,12 @@ physics_material_override = SubResource("PhysicsMaterial_h01xv")
 linear_damp = 3.0
 angular_damp = 10.0
 
-[node name="@PinJoint2D@22442" type="PinJoint2D" parent="Environment Container/Hanging Vine5" index="7" instance=ExtResource("14_865q8")]
+[node name="@PinJoint2D@22032" type="PinJoint2D" parent="Environment Container/Hanging Vine5" index="7" instance=ExtResource("14_865q8")]
 position = Vector2(0, 50)
-node_a = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Template Level/Environment Container/Hanging Vine5/@RigidBody2D@22439")
-node_b = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Template Level/Environment Container/Hanging Vine5/@RigidBody2D@22441")
+node_a = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Template Level/Environment Container/Hanging Vine5/@RigidBody2D@22029")
+node_b = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Template Level/Environment Container/Hanging Vine5/@RigidBody2D@22031")
 
-[node name="@RigidBody2D@22443" type="RigidBody2D" parent="Environment Container/Hanging Vine5" index="8" instance=ExtResource("13_s1i8o")]
+[node name="@RigidBody2D@22033" type="RigidBody2D" parent="Environment Container/Hanging Vine5" index="8" instance=ExtResource("13_s1i8o")]
 position = Vector2(0, 87.5)
 collision_layer = 0
 collision_mask = 0
@@ -389,10 +389,10 @@ physics_material_override = SubResource("PhysicsMaterial_h01xv")
 linear_damp = 3.0
 angular_damp = 10.0
 
-[node name="@PinJoint2D@22444" type="PinJoint2D" parent="Environment Container/Hanging Vine5" index="9" instance=ExtResource("14_865q8")]
+[node name="@PinJoint2D@22034" type="PinJoint2D" parent="Environment Container/Hanging Vine5" index="9" instance=ExtResource("14_865q8")]
 position = Vector2(0, 75)
-node_a = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Template Level/Environment Container/Hanging Vine5/@RigidBody2D@22441")
-node_b = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Template Level/Environment Container/Hanging Vine5/@RigidBody2D@22443")
+node_a = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Template Level/Environment Container/Hanging Vine5/@RigidBody2D@22031")
+node_b = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Template Level/Environment Container/Hanging Vine5/@RigidBody2D@22033")
 
 [node name="Glyph" parent="Glyph Container" index="0" instance=ExtResource("2_jrqy3")]
 position = Vector2(1110.94, 575)

@@ -45,7 +45,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer2/CanvasModulate:color")
+tracks/0/path = NodePath("Fade To Black Canvas/CanvasModulate:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -57,7 +57,7 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CanvasLayer/Move to play:label_settings:font_color:r")
+tracks/1/path = NodePath("Demo Reel Canvas/Move to play:label_settings:font_color:r")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -68,7 +68,7 @@ tracks/1/keys = {
 tracks/2/type = "bezier"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("CanvasLayer/Move to play:label_settings:font_color:g")
+tracks/2/path = NodePath("Demo Reel Canvas/Move to play:label_settings:font_color:g")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -79,7 +79,7 @@ tracks/2/keys = {
 tracks/3/type = "bezier"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("CanvasLayer/Move to play:label_settings:font_color:b")
+tracks/3/path = NodePath("Demo Reel Canvas/Move to play:label_settings:font_color:b")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -90,7 +90,7 @@ tracks/3/keys = {
 tracks/4/type = "bezier"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("CanvasLayer/Move to play:label_settings:font_color:a")
+tracks/4/path = NodePath("Demo Reel Canvas/Move to play:label_settings:font_color:a")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -104,7 +104,7 @@ resource_name = "fade_to_black"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer2/CanvasModulate:color")
+tracks/0/path = NodePath("Fade To Black Canvas/CanvasModulate:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -116,7 +116,7 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CanvasLayer/Move to play:label_settings:font_color:r")
+tracks/1/path = NodePath("Demo Reel Canvas/Move to play:label_settings:font_color:r")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -127,7 +127,7 @@ tracks/1/keys = {
 tracks/2/type = "bezier"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("CanvasLayer/Move to play:label_settings:font_color:g")
+tracks/2/path = NodePath("Demo Reel Canvas/Move to play:label_settings:font_color:g")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -138,7 +138,7 @@ tracks/2/keys = {
 tracks/3/type = "bezier"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("CanvasLayer/Move to play:label_settings:font_color:b")
+tracks/3/path = NodePath("Demo Reel Canvas/Move to play:label_settings:font_color:b")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -149,7 +149,7 @@ tracks/3/keys = {
 tracks/4/type = "bezier"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("CanvasLayer/Move to play:label_settings:font_color:a")
+tracks/4/path = NodePath("Demo Reel Canvas/Move to play:label_settings:font_color:a")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -263,10 +263,10 @@ offset_bottom = 511.0
 text = "ESC to quit"
 label_settings = SubResource("LabelSettings_ex5la")
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+[node name="Fade To Black Canvas" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer2"]
+[node name="ColorRect" type="ColorRect" parent="Fade To Black Canvas"]
 custom_minimum_size = Vector2(1920, 1080)
 offset_left = -1062.0
 offset_top = -667.0
@@ -276,15 +276,15 @@ scale = Vector2(1.151, 1.22386)
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
-[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer2"]
+[node name="CanvasModulate" type="CanvasModulate" parent="Fade To Black Canvas"]
 position = Vector2(-1062, -667)
 scale = Vector2(1.151, 1.22386)
 color = Color(0, 0, 0, 0)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Demo Reel Canvas" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="CanvasLayer"]
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Demo Reel Canvas"]
 offset_left = -962.0
 offset_top = -543.0
 offset_right = 958.0
@@ -295,7 +295,7 @@ volume_db = -7.0
 expand = true
 loop = true
 
-[node name="Move to play" type="Label" parent="CanvasLayer"]
+[node name="Move to play" type="Label" parent="Demo Reel Canvas"]
 offset_left = -314.0
 offset_top = 490.0
 offset_right = 349.0

@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://deix8s3q3ucrs"]
+
+[ext_resource type="FontFile" uid="uid://cgi4dy0exfybn" path="res://Art/Fonts/FFFFORWA.TTF" id="1_bgmhn"]
+[ext_resource type="Script" path="res://Scripts/controls_spash_screen.gd" id="1_n63t0"]
+[ext_resource type="Texture2D" uid="uid://klcowlpna2qe" path="res://Art/Sprites/UI/Supported Controls Splash.png" id="3_s5wo2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vdjox"]
+font = ExtResource("1_bgmhn")
+font_size = 31
+
+[node name="ControlsSpashScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n63t0")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.133333, 0.121569, 0.211765, 1)
+
+[node name="Esc to Quit2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -259.5
+offset_top = 39.0
+offset_right = 259.5
+offset_bottom = 96.0
+grow_horizontal = 2
+text = "Play Solo or With a Friend!"
+label_settings = SubResource("LabelSettings_vdjox")
+
+[node name="Fade Out Rect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+z_index = 1000
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.133333, 0.121569, 0.211765, 1)
+
+[node name="SupportedControlsSplash" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_s5wo2")

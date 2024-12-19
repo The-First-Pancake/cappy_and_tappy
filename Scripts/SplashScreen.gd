@@ -1,9 +1,9 @@
 extends Node
 
 @onready var trailer_timer : Timer = $"Trailer Timer"
-@onready var gameplay_trailer : VideoStreamPlayer = $CanvasLayer/VideoStreamPlayer
+@onready var gameplay_trailer : VideoStreamPlayer = $"Demo Reel Canvas/VideoStreamPlayer"
 @onready var title_music : AudioStreamPlayer = %Music
-@onready var blackout: CanvasModulate = $CanvasLayer2/CanvasModulate
+@onready var blackout: CanvasModulate = $"Fade To Black Canvas/CanvasModulate"
 @onready var animation_player:AnimationPlayer = $AnimationPlayer
 
 # Called when the node enters the scene tree for the first time.

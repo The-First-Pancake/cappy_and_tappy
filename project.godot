@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Cappy & Tappy"
-run/main_scene="res://Levels/SplashScreen.tscn"
+run/main_scene="res://Levels/Controls Spash Screen.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 boot_splash/bg_color=Color(0.133333, 0.121569, 0.211765, 1)
 boot_splash/image="res://Art/Logos/first_pancake_splash.png"
