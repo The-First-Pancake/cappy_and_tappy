@@ -11,13 +11,14 @@ var pl1_act_to_remap : Array[String] = ["move_up",
 										"controller_peek_right",
 										"controller_peek_up",
 										"controller_peek_down"]
+
 var pl2_act_to_remap : Array[String] = ["controller_mouse_left", 
 										"controller_mouse_right", 
 										"controller_mouse_up", 
 										"controller_mouse_down",
 										"controller_mouse_click",
-										"block_rotate_left",
-										"block_rotate_right"]
+										"rotate_block_left",
+										"rotate_block_right"]
 var mouse_pos : Vector2 = Vector2()
 var mouse_speed : float = 25
 
@@ -42,7 +43,6 @@ func _process(_delta: float) -> void:
 	var mouse_rel : Vector2 = Vector2.ZERO
 	var move_dir : Vector2 = Input.get_vector("controller_mouse_left","controller_mouse_right",
 											  "controller_mouse_up","controller_mouse_down")
-	
 	
 	mouse_rel += move_dir * mouse_speed
 	if mouse_rel != Vector2.ZERO:
