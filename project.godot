@@ -49,7 +49,8 @@ folder_colors={
 "res://Builds/": "orange",
 "res://Levels/": "blue",
 "res://Prefabs/": "purple",
-"res://Scripts/": "green"
+"res://Scripts/": "green",
+"res://Shaders/": "pink"
 }
 
 [global_group]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://c3dgw1fpl6k3x"]
+[gd_scene load_steps=26 format=4 uid="uid://c3dgw1fpl6k3x"]
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_8tfe6"]
 [ext_resource type="Script" path="res://Scripts/SpawnObject.gd" id="2_h2nwq"]
@@ -17,7 +17,9 @@
 [ext_resource type="PackedScene" uid="uid://cu2taoo64nrva" path="res://Prefabs/Set Dressing/Aztec/VinesTop.tscn" id="9_5bkq4"]
 [ext_resource type="PackedScene" uid="uid://xc3aksbuoys1" path="res://Prefabs/Set Dressing/Aztec/AztecSmallIdol.tscn" id="10_t3nds"]
 [ext_resource type="PackedScene" uid="uid://cwbmn06hbsdre" path="res://Prefabs/Set Dressing/Aztec/AztecWallStatue.tscn" id="11_1m2hr"]
-[ext_resource type="AudioStream" uid="uid://b8wc5muowahkv" path="res://Sound/Music/Aztec/Jungle Jammin.wav" id="18_jsgtp"]
+[ext_resource type="Script" path="res://Scripts/LiquidPhysicsServer.gd" id="18_i06bg"]
+[ext_resource type="Texture2D" uid="uid://dthf4q6o2ncbj" path="res://Art/Sprites/circle.png" id="19_xafko"]
+[ext_resource type="Material" uid="uid://cpv36b0mg1ym8" path="res://Shaders/LavaShaderMaterial.tres" id="21_xx8rm"]
 
 [sub_resource type="Resource" id="Resource_6716m"]
 script = ExtResource("2_h2nwq")
@@ -56,7 +58,6 @@ tile_map_data = PackedByteArray("AAANACYAAAACAAEAAAANACUAAAACAAEAAAANACQAAAACAAE
 position = Vector2(1800, 1050)
 rotation = 3.14159
 scale = Vector2(1, -1)
-script = null
 
 [node name="Pillar" parent="Environment Container" index="1" instance=ExtResource("3_62xy3")]
 offset_left = 1500.0
@@ -71,60 +72,67 @@ position = Vector2(1650, 1050)
 position = Vector2(1600, 1050)
 
 [node name="SetDressingBase2" parent="Environment Container" index="4" instance=ExtResource("6_2tnh6")]
-position = Vector2(1500, 450)
+position = Vector2(1600, 450)
 rotation = 3.14159
 scale = Vector2(1, -1)
-script = null
 
 [node name="@Area2D@31781" parent="Environment Container" index="5" instance=ExtResource("6_2tnh6")]
-position = Vector2(1750, 450)
+position = Vector2(1800, 450)
 rotation = 3.14159
 scale = Vector2(1, -1)
-script = null
 
 [node name="@Area2D@39742" parent="Environment Container" index="6" instance=ExtResource("7_krj08")]
 position = Vector2(700, 600)
 rotation = 3.14159
 scale = Vector2(1, -1)
-script = null
 
 [node name="@Area2D@43440" parent="Environment Container" index="7" instance=ExtResource("8_eo6x4")]
 position = Vector2(2050, 650)
 rotation = 3.14159
 scale = Vector2(1, -1)
-script = null
 
 [node name="@Area2D@45234" parent="Environment Container" index="8" instance=ExtResource("9_5bkq4")]
 position = Vector2(1900, 550)
 rotation = 3.14159
 scale = Vector2(1, -1)
-script = null
 
 [node name="SetDressingBase3" parent="Environment Container" index="9" instance=ExtResource("9_5bkq4")]
 position = Vector2(1857, 550)
 rotation = 3.14159
 scale = Vector2(1, -1)
-script = null
 
 [node name="@Area2D@22879" parent="Environment Container" index="10" instance=ExtResource("10_t3nds")]
 position = Vector2(1350, 1050)
-script = null
 
 [node name="AztecWallStatue" parent="Environment Container" index="11" instance=ExtResource("11_1m2hr")]
 position = Vector2(1650, 950)
+scale = Vector2(-1, 1)
+
+[node name="Coffin" parent="." index="15" instance=ExtResource("8_84xjq")]
+position = Vector2(1750, 1046)
 
 [node name="BlockSpawner" parent="Camera2D" index="2"]
 position = Vector2(-689, -299)
 spawn_objects = Array[ExtResource("2_h2nwq")]([SubResource("Resource_6716m"), SubResource("Resource_b3o7y"), SubResource("Resource_mwrdh"), SubResource("Resource_2esob"), SubResource("Resource_cpvsc")])
 
-[node name="Coffin" parent="." index="15" instance=ExtResource("8_84xjq")]
-position = Vector2(1750, 1046)
-
-[node name="Water" parent="." index="17"]
+[node name="Water" parent="." index="18"]
 rise_speed = 0.0
 
-[node name="PathFindingGraph" parent="." index="19"]
+[node name="PathFindingGraph" parent="." index="20"]
 enabled = true
 
-[node name="Music" parent="Music Player" index="0"]
-stream = ExtResource("18_jsgtp")
+[node name="TestLava" type="Sprite2D" parent="." index="22"]
+modulate = Color(1, 0, 1, 1)
+position = Vector2(2000, 250)
+texture = ExtResource("19_xafko")
+
+[node name="LavaSpawner" type="Node2D" parent="." index="23"]
+position = Vector2(2000, 250)
+script = ExtResource("18_i06bg")
+particle_texture = ExtResource("19_xafko")
+
+[node name="LavaShader" type="Sprite2D" parent="." index="24"]
+material = ExtResource("21_xx8rm")
+position = Vector2(2000, 250)
+scale = Vector2(100, 100)
+texture = ExtResource("19_xafko")
