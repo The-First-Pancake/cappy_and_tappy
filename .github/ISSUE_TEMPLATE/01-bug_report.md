@@ -1,7 +1,7 @@
 ---
 name: Bug report
 about: Help us squash some bugs
-title: "[BUG]"
+title: ""
 labels: Bug
 assignees: ''
 
