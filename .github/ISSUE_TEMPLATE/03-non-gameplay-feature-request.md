@@ -1,7 +1,7 @@
 ---
 name: Non-gameplay feature request
 about: Suggest a non-gameplay idea for this project
-title: "[FEATURE]"
+title: ""
 labels: Feature
 assignees: ''
 
