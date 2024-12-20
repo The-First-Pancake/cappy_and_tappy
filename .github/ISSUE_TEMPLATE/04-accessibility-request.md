@@ -1,8 +1,8 @@
 ---
 name: Accessibility request
 about: Suggest an accessibility feature
-title: "[A11Y]"
-labels: Accessibility
+title: ""
+labels: Access
 assignees: ''
 
 ---
