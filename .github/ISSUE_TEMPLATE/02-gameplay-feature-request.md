@@ -1,7 +1,7 @@
 ---
 name: Gameplay feature request
 about: Suggest a new or updated gameplay element
-title: "[GAMEPLAY]"
+title: ""
 labels: Gameplay
 assignees: ''
 
