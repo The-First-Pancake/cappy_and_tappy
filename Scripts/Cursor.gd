@@ -43,6 +43,8 @@ func _process(_delta: float) -> void:
 	var mouse_rel : Vector2 = Vector2.ZERO
 	var move_dir : Vector2 = Input.get_vector("controller_mouse_left","controller_mouse_right",
 											  "controller_mouse_up","controller_mouse_down")
+	if GameManager.is_in_menu:
+		move_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	
 	mouse_rel += move_dir * mouse_speed
 	if mouse_rel != Vector2.ZERO:
@@ -51,7 +53,9 @@ func _process(_delta: float) -> void:
 		get_viewport().warp_mouse(mouse_pos + mouse_rel)
 	
 	global_position = get_global_mouse_position()
-	if (Input.is_action_just_pressed("controller_mouse_click")):
+	if Input.is_action_just_pressed("controller_mouse_click"):
+		fake_press()
+	if GameManager.is_in_menu and Input.is_action_just_pressed("ui_accept"):
 		fake_press()
 	
 	if is_instance_valid(GameManager.currently_held_object) and GameManager.currently_held_object is Placeable and GameManager.currently_held_object.check_for_collisions():
@@ -98,7 +102,7 @@ func remap_controllers(two_player: bool) -> void:
 					event.device = joypads[1]
 					InputMap.action_add_event(action, event)
 	else:
-		for action in InputMap.get_actions():
+		for action in pl1_act_to_remap + pl2_act_to_remap:
 			var events : Array[InputEvent] = InputMap.action_get_events(action)
 			for event in events:
 				if event is InputEventJoypadButton or event is InputEventJoypadMotion:

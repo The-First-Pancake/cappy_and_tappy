@@ -4,6 +4,7 @@ var player : Player = null
 var level_info : LevelInfo = null
 var entrance_door : Door = null
 var exit_door : Door = null
+var is_in_menu : bool = false
 
 const GRID_SIZE: float = 50
 
@@ -99,12 +100,14 @@ func toggle_pause(on: bool = true) -> void:
 			pause_menu = pause_menu_prefab.instantiate() as CanvasLayer
 			pause_menu.follow_viewport_enabled = false #for some god forsaken reason this makes the pause menu follow the viewport. One would think the opposite would be true. I have no words. This took me like an hour
 			get_viewport().add_child(pause_menu)
+			is_in_menu = true
 			game_paused.emit()
 		get_tree().paused = true
 	else: #unpause
 		time_since_unpause = 0
 		if is_instance_valid(pause_menu):
 			pause_menu.queue_free()
+			is_in_menu =  false
 		get_tree().paused = false
 
 func level_complete() -> void:

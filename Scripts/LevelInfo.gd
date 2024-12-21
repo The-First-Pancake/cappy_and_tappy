@@ -69,6 +69,7 @@ func set_music_to_override() -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	GameManager.is_in_menu = false
 	update_temple_type()
 	update_lights()
 	set_music_to_override()

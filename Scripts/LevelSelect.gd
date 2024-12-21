@@ -11,6 +11,7 @@ extends Control
 
 
 func _ready() -> void:
+	GameManager.is_in_menu = true
 	change_temple(GameManager.current_temple)
 	#var i: int = 0
 	#for level: PackedScene in GameManager.levels:
