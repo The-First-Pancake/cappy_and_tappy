@@ -87,7 +87,6 @@ func exit_level() -> void:
 func _physics_process(delta: float) -> void:
 	targeting_arrow.visible = false
 	
-	
 	if dying: return
 	
 	update_camera_zone()
@@ -445,4 +444,8 @@ func on_diebox_hit(area: Area2D) -> void:
 	if area.is_in_group("spike"):
 		die()
 	if area.is_in_group("water"):
+		die()
+
+func _on_die_box_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
+	if PhysicsServer2D.body_get_collision_layer(body_rid) & (1<<15):
 		die()

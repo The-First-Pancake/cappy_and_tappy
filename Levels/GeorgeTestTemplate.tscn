@@ -121,17 +121,28 @@ rise_speed = 0.0
 [node name="PathFindingGraph" parent="." index="20"]
 enabled = true
 
-[node name="TestLava" type="Sprite2D" parent="." index="22"]
-modulate = Color(1, 0, 1, 1)
-position = Vector2(2000, 250)
-texture = ExtResource("19_xafko")
-
-[node name="LavaSpawner" type="Node2D" parent="." index="23"]
-position = Vector2(2000, 250)
+[node name="LavaSpawner" type="Node2D" parent="." index="22"]
+position = Vector2(1450, -450)
 script = ExtResource("18_i06bg")
 particle_texture = ExtResource("19_xafko")
+collision_layers = 32768
+collision_mask = 32769
 
-[node name="LavaShader" type="Sprite2D" parent="." index="24"]
+[node name="LavaSpawner3" type="Node2D" parent="." index="23"]
+position = Vector2(1350, -450)
+script = ExtResource("18_i06bg")
+particle_texture = ExtResource("19_xafko")
+collision_layers = 32768
+collision_mask = 32769
+
+[node name="LavaSpawner2" type="Node2D" parent="." index="24"]
+position = Vector2(1400, -450)
+script = ExtResource("18_i06bg")
+particle_texture = ExtResource("19_xafko")
+collision_layers = 32768
+collision_mask = 32769
+
+[node name="LavaShader" type="Sprite2D" parent="." index="25"]
 material = ExtResource("21_xx8rm")
 position = Vector2(2000, 250)
 scale = Vector2(100, 100)
