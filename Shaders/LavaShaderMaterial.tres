@@ -2,21 +2,21 @@
 
 [ext_resource type="Shader" path="res://Shaders/GeorgeTestTemplate.gdshader" id="1_nkxag"]
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_2kjby"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_420vg"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_302l0"]
-width = 12
-height = 12
-seamless = true
-noise = SubResource("FastNoiseLite_2kjby")
+width = 5000
+height = 5000
+normalize = false
+noise = SubResource("FastNoiseLite_420vg")
 
 [resource]
 shader = ExtResource("1_nkxag")
-shader_parameter/water_speed = 0.01
+shader_parameter/water_speed = 0.001
 shader_parameter/color_detect_threshold = 1.0
 shader_parameter/border_threshold = 1.0
+shader_parameter/pixelation_amount = 750
 shader_parameter/water_dev_color = Color(1, 0, 1, 1)
-shader_parameter/water_color = Color(0.862745, 0.356863, 0.027451, 1)
-shader_parameter/bubble_color = Color(0.440163, 0.00874388, 9.62615e-08, 1)
-shader_parameter/border_color = Color(0.643137, 0.211765, 0, 1)
+shader_parameter/water_color = Color(0.67, 0.182017, 0.0335, 1)
+shader_parameter/border_color = Color(0.58, 0.193333, 0, 1)
 shader_parameter/noise = SubResource("NoiseTexture2D_302l0")

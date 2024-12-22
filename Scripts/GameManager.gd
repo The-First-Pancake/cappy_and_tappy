@@ -33,6 +33,7 @@ var current_level_info: LevelInfo:
 	get:
 		return get_tree().current_scene as LevelInfo
 
+var load_count : int= 0
 signal loading_new_scene
 signal loaded_new_scene
 signal game_paused
@@ -96,6 +97,7 @@ func restart_level() -> void:
 	toggle_pause(false)
 	get_tree().reload_current_scene()
 	loaded_new_scene.emit()
+	load_count += 1
 	time_since_level_loaded = 0
 
 var pause_menu: CanvasLayer = null
@@ -131,6 +133,8 @@ func load_level_from_packed(scene: PackedScene) -> void:
 	await get_tree().process_frame
 	await get_tree().process_frame
 	loaded_new_scene.emit()
+	load_count += 1
+	print(load_count)
 	time_since_unpause = 0
 	time_since_level_loaded = 0
 

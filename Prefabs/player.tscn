@@ -439,6 +439,7 @@ one_shot = true
 
 [node name="DieBox" type="Area2D" parent="."]
 unique_name_in_owner = true
+collision_mask = 32769
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DieBox"]
 position = Vector2(0, 9)
@@ -627,4 +628,5 @@ volume_db = -20.0
 
 [connection signal="area_entered" from="DieBox" to="." method="on_diebox_hit"]
 [connection signal="body_entered" from="DieBox" to="." method="_on_die_box_body_entered"]
+[connection signal="body_shape_entered" from="DieBox" to="." method="_on_die_box_body_shape_entered"]
 [connection signal="area_entered" from="CollectBox" to="." method="on_collectbox_hit"]
