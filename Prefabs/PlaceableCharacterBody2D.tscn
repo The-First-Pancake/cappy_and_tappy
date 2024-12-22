@@ -20,7 +20,6 @@ rotation = 26.7036
 input_pickable = true
 script = ExtResource("1_1yjnn")
 pathnode_prefab = ExtResource("2_htq13")
-minecraft_sand_behavior = true
 
 [node name="Explosion3003" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_g5u5i")

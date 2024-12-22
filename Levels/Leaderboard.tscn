@@ -7,7 +7,7 @@
 [ext_resource type="FontVariation" uid="uid://btbr0dkcrkg1g" path="res://Fonts/CenteredPixelFont.tres" id="5_1nslo"]
 [ext_resource type="PackedScene" uid="uid://bd754qqva43i1" path="res://Prefabs/leaderboard_entry.tscn" id="5_j83hf"]
 [ext_resource type="StyleBox" uid="uid://chxj0ri352x13" path="res://UI/Button Sytlebox.tres" id="6_ymys1"]
-[ext_resource type="Script" path="res://Scripts/LoadLevel.gd" id="7_1ve4r"]
+[ext_resource type="Script" path="res://Scripts/LoadLevelSelect.gd" id="7_1ve4r"]
 [ext_resource type="Script" path="res://Scripts/MusicPlayer.gd" id="14_17obq"]
 [ext_resource type="AudioStream" uid="uid://b7o0nfcidnbwd" path="res://Sound/Music/title_music.wav" id="15_7peww"]
 
