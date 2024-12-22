@@ -8,6 +8,7 @@ func _ready() -> void:
 	fade_out_rect.modulate = Color.WHITE
 	var tween: Tween = get_tree().create_tween()
 	tween.set_trans(Tween.TRANS_QUAD)
+	tween.set_ease(Tween.EASE_IN)
 	tween.tween_property(fade_out_rect,"modulate",Color.TRANSPARENT,1.5)
 	await tween.finished
 	
@@ -15,6 +16,7 @@ func _ready() -> void:
 	
 	var tween2: Tween = get_tree().create_tween()
 	tween2.set_trans(Tween.TRANS_QUAD)
+	tween2.set_ease(Tween.EASE_OUT)
 	tween2.tween_property(fade_out_rect,"modulate",Color.WHITE,1.5)
 	await tween2.finished
 	

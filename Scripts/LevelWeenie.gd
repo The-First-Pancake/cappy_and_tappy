@@ -4,6 +4,8 @@ extends Control
 
 var level_idx : int = 1
 
+#@export_file("*.tscn") var scene_path: String
+
 @export var scene_to_load: PackedScene:
 	set(new_val):
 		scene_to_load = new_val
@@ -19,11 +21,19 @@ var level_title: Label:
 		return $"Level Title"
 @onready var completed_flames: Node2D = $CompletedFlames
 
-var unlocked: bool = false
+var unlocked: bool = false:
+	set(new_val):
+		unlocked = new_val
+		if new_val == true:
+			modulate = Color.WHITE
+		else:
+			modulate = Color("ffffff73")
 
 func update_level_name() -> void:
 	var level_name: String = override_text
-	if override_text == "":
+	if !scene_to_load:
+		level_name = "Locked in Demo!"
+	if level_name == "":
 		level_name = scene_to_load.resource_path.get_file().get_basename()
 		level_name = level_name.get_slice(".",0)
 		level_name = level_name.replace("level_","")
@@ -33,7 +43,12 @@ func update_level_name() -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	unlocked = false
 	update_level_name()
+	
+	if !scene_to_load:
+		unlocked = false
+		return
 	
 	if Engine.is_editor_hint():
 		return
@@ -44,7 +59,7 @@ func _ready() -> void:
 	level_idx = get_index()
 	
 	if level_idx == 0:
-		#call_deferred("grab_focus") TODO: Idk what this did, but it was causing a lot of warnings
+		#call_deferred("grab_focus") TODO: Idk what this did, but it was causing a lot of warnings - op
 		unlocked = true
 	else:
 		var levels_in_this_world: Array[Node] = get_parent().get_children()
@@ -56,9 +71,9 @@ func _ready() -> void:
 	if (GameManager.current_save.is_level_complete(scene_to_load) or endless):
 		unlocked = true
 		completed_flames.show()
-	
-	if !unlocked:
-		modulate = Color("ffffff73")
+	else:
+		completed_flames.hide()
+
 	if (!endless):
 		var idol_1: TextureRect = $"HBoxContainer/Idol 1"
 		var idol_2: TextureRect = $"HBoxContainer/Idol 2"
@@ -81,6 +96,7 @@ func _ready() -> void:
 		high_score_height.text = "%03d"%GameManager.current_save.endless_high_height
 
 	pass # Replace with function body.
+
 
 func _on_mouse_entered() -> void:
 	if Engine.is_editor_hint():

@@ -1,82 +1,66 @@
-[gd_scene load_steps=64 format=3 uid="uid://bjdpxtqaavny0"]
+[gd_scene load_steps=48 format=3 uid="uid://bra88eflwwlqr"]
 
-[ext_resource type="Script" path="res://Scripts/LevelSelect.gd" id="1_7k26d"]
-[ext_resource type="Texture2D" uid="uid://bqfeqtdw7xcxo" path="res://Art/Tilemaps/Background_Aztec.png" id="1_24j1o"]
-[ext_resource type="PackedScene" uid="uid://b3q4i4rqf26xp" path="res://Prefabs/LevelWeenie.tscn" id="3_66fh1"]
-[ext_resource type="Texture2D" uid="uid://dkxik361t2ox1" path="res://Art/Tilemaps/Background_Egypt.png" id="3_a651p"]
-[ext_resource type="PackedScene" uid="uid://cotgqt74hr8q7" path="res://Levels/World 1/level_first_traverse.tscn" id="4_755wy"]
-[ext_resource type="Script" path="res://Scripts/LevelWeenie.gd" id="4_a2yic"]
-[ext_resource type="PackedScene" uid="uid://cfckjpuscavie" path="res://Levels/Endless Level.tscn" id="4_hscby"]
-[ext_resource type="FontVariation" uid="uid://btbr0dkcrkg1g" path="res://Fonts/CenteredPixelFont.tres" id="4_lwxxi"]
-[ext_resource type="PackedScene" uid="uid://7amxmfedeq7u" path="res://Levels/World 2/level_chamber_666.tscn" id="4_ptxlh"]
-[ext_resource type="Texture2D" uid="uid://22dhetwgepde" path="res://Art/Tilemaps/Background_Cave.png" id="4_uj67u"]
-[ext_resource type="PackedScene" uid="uid://dbg7ybfkkk4eo" path="res://Levels/World 1/level_first_climb.tscn" id="4_vtdfy"]
-[ext_resource type="Script" path="res://Scripts/Reset_Save.gd" id="5_14hdt"]
-[ext_resource type="PackedScene" uid="uid://bk36onmsb3e5e" path="res://Levels/World 1/level_campfires_&_spikes.tscn" id="5_jchui"]
-[ext_resource type="PackedScene" uid="uid://h0xc2uwab1j3" path="res://Levels/World 1/level_dynamite.tscn" id="5_v5v4l"]
-[ext_resource type="PackedScene" uid="uid://1fovc0qvw1oq" path="res://Levels/World 1/level_climbing_holds.tscn" id="6_6rq07"]
-[ext_resource type="Texture2D" uid="uid://cm1bxb5y7kb" path="res://Art/Sprites/UI/ui_throbber.png" id="6_gtpwf"]
-[ext_resource type="PackedScene" uid="uid://cge4flojubrju" path="res://Levels/World 1/level_up_&_up.tscn" id="7_2l6xq"]
-[ext_resource type="FontFile" uid="uid://ck4uibtfurjl4" path="res://Fonts/BlockyPixelFont.TTF" id="7_rccux"]
-[ext_resource type="PackedScene" uid="uid://bp3kgem2ebxnl" path="res://Levels/World 1/level_overhangs.tscn" id="8_4i4d7"]
-[ext_resource type="Texture2D" uid="uid://cra8a72oqq7vi" path="res://Art/Sprites/Idol.png" id="8_fxcsu"]
-[ext_resource type="PackedScene" uid="uid://df0wpkdny65ci" path="res://Levels/World 1/level_demolition.tscn" id="9_00ax2"]
-[ext_resource type="PackedScene" uid="uid://c10tw0ejl1xjv" path="res://Levels/World 1/level_climb_time.tscn" id="9_2x5l4"]
-[ext_resource type="PackedScene" uid="uid://b8ofjhklhy6o" path="res://Levels/World 1/level_overhangs_xtreme.tscn" id="9_gryrf"]
-[ext_resource type="Texture2D" uid="uid://dcxkuua4cd4st" path="res://Art/Sprites/fire_small.png" id="9_wrau7"]
-[ext_resource type="PackedScene" uid="uid://bhw8owhdmmapa" path="res://Levels/World 1/level_oops_all_long.tscn" id="10_353i2"]
-[ext_resource type="AudioStream" uid="uid://dlhhob0gaa3fn" path="res://Sound/Start Game FX.wav" id="10_rcq0l"]
-[ext_resource type="PackedScene" uid="uid://cr83b1gdrdbjg" path="res://Levels/World 2/level_arrows.tscn" id="11_1hlb2"]
-[ext_resource type="Script" path="res://Scripts/MusicPlayer.gd" id="12_8108v"]
-[ext_resource type="PackedScene" uid="uid://bsbavwvcn76q4" path="res://Levels/World 2/level_arrows_2.tscn" id="12_q0a2d"]
-[ext_resource type="PackedScene" uid="uid://fei84gx0n70r" path="res://Levels/World 1/level_deeper still.tscn" id="13_2gj7q"]
-[ext_resource type="PackedScene" uid="uid://d1iy60hbanyjr" path="res://Levels/World 2/level_rain.tscn" id="13_m7ssi"]
-[ext_resource type="AudioStream" uid="uid://b7o0nfcidnbwd" path="res://Sound/Music/title_music.wav" id="13_oohv8"]
-[ext_resource type="Script" path="res://Scripts/UnlockAll.gd" id="13_wubfr"]
-[ext_resource type="PackedScene" uid="uid://cwr06a2yerm2q" path="res://Levels/World 2/level_breaker.tscn" id="28_haa0c"]
-[ext_resource type="PackedScene" uid="uid://mvlbswmkxjca" path="res://Levels/World 2/level_breaker_2.tscn" id="29_ikqai"]
-[ext_resource type="PackedScene" uid="uid://cetdx52yqt2jy" path="res://Levels/World 2/level_break_down.tscn" id="30_r66fg"]
-[ext_resource type="PackedScene" uid="uid://bsxmt0huibfmi" path="res://Levels/World 3/level_the_walls_are_moving.tscn" id="31_8gmqv"]
-[ext_resource type="PackedScene" uid="uid://c8jp0shc73si" path="res://Levels/World 2/level_harpoons.tscn" id="31_slj0u"]
-[ext_resource type="PackedScene" uid="uid://cdt2acy760u6v" path="res://Levels/World 3/level_creepy_crawly.tscn" id="32_pcxxg"]
-[ext_resource type="PackedScene" uid="uid://bdadvrc0pl2ox" path="res://Levels/World 2/level_harpoon_traverse.tscn" id="32_un76u"]
-[ext_resource type="PackedScene" uid="uid://cfco1avf7mqdc" path="res://Levels/World 2/level_fastball.tscn" id="33_dlnxx"]
-[ext_resource type="PackedScene" uid="uid://dbuiky84u4biu" path="res://Levels/World 2/level_elevator.tscn" id="34_ylhnh"]
-[ext_resource type="PackedScene" uid="uid://cj80buvkjqk53" path="res://Levels/World 3/level_deep_dark.tscn" id="36_7har7"]
-[ext_resource type="PackedScene" uid="uid://dl6b1ro27n7pa" path="res://Levels/World 3/level_diamond.tscn" id="36_ydi2r"]
-[ext_resource type="PackedScene" uid="uid://bxpxsflrpgcu6" path="res://Levels/World 3/level_tomb.tscn" id="37_yrs1g"]
-[ext_resource type="PackedScene" uid="uid://dda8nqg6tucpi" path="res://Levels/World 3/level_dark_crawler.tscn" id="39_dxc67"]
-[ext_resource type="PackedScene" uid="uid://66qq3h005we5" path="res://Levels/World 3/level_escape.tscn" id="39_mjmu6"]
-[ext_resource type="PackedScene" uid="uid://b8yf51jyd28c5" path="res://Levels/World 3/level_choke.tscn" id="40_gi62s"]
-[ext_resource type="StyleBox" uid="uid://chxj0ri352x13" path="res://UI/Button Sytlebox.tres" id="42_n7y0p"]
+[ext_resource type="Script" path="res://Scripts/LevelSelect.gd" id="1_owcfl"]
+[ext_resource type="Texture2D" uid="uid://bqfeqtdw7xcxo" path="res://Art/Tilemaps/Background_Aztec.png" id="2_mapm1"]
+[ext_resource type="Texture2D" uid="uid://dkxik361t2ox1" path="res://Art/Tilemaps/Background_Egypt.png" id="3_iwuis"]
+[ext_resource type="Texture2D" uid="uid://22dhetwgepde" path="res://Art/Tilemaps/Background_Cave.png" id="4_v4e0u"]
+[ext_resource type="PackedScene" uid="uid://b3q4i4rqf26xp" path="res://Prefabs/LevelWeenie.tscn" id="5_8umqm"]
+[ext_resource type="PackedScene" uid="uid://cotgqt74hr8q7" path="res://Levels/World 1/level_first_traverse.tscn" id="6_ug7ql"]
+[ext_resource type="PackedScene" uid="uid://dbg7ybfkkk4eo" path="res://Levels/World 1/level_first_climb.tscn" id="7_uqix4"]
+[ext_resource type="PackedScene" uid="uid://h0xc2uwab1j3" path="res://Levels/World 1/level_dynamite.tscn" id="8_wk4it"]
+[ext_resource type="PackedScene" uid="uid://bk36onmsb3e5e" path="res://Levels/World 1/level_campfires_&_spikes.tscn" id="9_pu730"]
+[ext_resource type="PackedScene" uid="uid://1fovc0qvw1oq" path="res://Levels/World 1/level_climbing_holds.tscn" id="10_5dfwf"]
+[ext_resource type="PackedScene" uid="uid://c10tw0ejl1xjv" path="res://Levels/World 1/level_climb_time.tscn" id="11_osblb"]
+[ext_resource type="PackedScene" uid="uid://cge4flojubrju" path="res://Levels/World 1/level_up_&_up.tscn" id="12_trb8h"]
+[ext_resource type="PackedScene" uid="uid://df0wpkdny65ci" path="res://Levels/World 1/level_demolition.tscn" id="13_dcurv"]
+[ext_resource type="PackedScene" uid="uid://bp3kgem2ebxnl" path="res://Levels/World 1/level_overhangs.tscn" id="14_tltnp"]
+[ext_resource type="PackedScene" uid="uid://b8ofjhklhy6o" path="res://Levels/World 1/level_overhangs_xtreme.tscn" id="15_s2suy"]
+[ext_resource type="PackedScene" uid="uid://bhw8owhdmmapa" path="res://Levels/World 1/level_oops_all_long.tscn" id="16_dfwmf"]
+[ext_resource type="PackedScene" uid="uid://fei84gx0n70r" path="res://Levels/World 1/level_deeper still.tscn" id="17_2ny1v"]
+[ext_resource type="Script" path="res://Scripts/LevelWeenie.gd" id="18_flayq"]
+[ext_resource type="PackedScene" uid="uid://cfckjpuscavie" path="res://Levels/Endless Level.tscn" id="19_dcfmw"]
+[ext_resource type="Texture2D" uid="uid://cm1bxb5y7kb" path="res://Art/Sprites/UI/ui_throbber.png" id="20_t7vrn"]
+[ext_resource type="FontFile" uid="uid://ck4uibtfurjl4" path="res://Fonts/BlockyPixelFont.TTF" id="21_kp16u"]
+[ext_resource type="Texture2D" uid="uid://cra8a72oqq7vi" path="res://Art/Sprites/Idol.png" id="22_p7tbv"]
+[ext_resource type="Texture2D" uid="uid://dcxkuua4cd4st" path="res://Art/Sprites/fire_small.png" id="23_jq05j"]
+[ext_resource type="AudioStream" uid="uid://dlhhob0gaa3fn" path="res://Sound/Start Game FX.wav" id="24_hr7y5"]
+[ext_resource type="Script" path="res://Scripts/UnlockAll.gd" id="25_s1has"]
+[ext_resource type="Script" path="res://Scripts/Reset_Save.gd" id="26_cbhud"]
+[ext_resource type="FontVariation" uid="uid://btbr0dkcrkg1g" path="res://Fonts/CenteredPixelFont.tres" id="27_g8wim"]
+[ext_resource type="PackedScene" uid="uid://cr83b1gdrdbjg" path="res://Levels/World 2/level_arrows.tscn" id="28_27odo"]
+[ext_resource type="PackedScene" uid="uid://bsbavwvcn76q4" path="res://Levels/World 2/level_arrows_2.tscn" id="29_5mdin"]
+[ext_resource type="PackedScene" uid="uid://d1iy60hbanyjr" path="res://Levels/World 2/level_rain.tscn" id="30_ch0y3"]
+[ext_resource type="StyleBox" uid="uid://chxj0ri352x13" path="res://UI/Button Sytlebox.tres" id="47_xohe7"]
+[ext_resource type="Script" path="res://Scripts/MusicPlayer.gd" id="48_4b4fn"]
+[ext_resource type="AudioStream" uid="uid://b7o0nfcidnbwd" path="res://Sound/Music/title_music.wav" id="49_orqcn"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_pwuex"]
 light_mode = 1
 
 [sub_resource type="LabelSettings" id="LabelSettings_d7721"]
-font = ExtResource("7_rccux")
+font = ExtResource("21_kp16u")
 font_size = 35
 font_color = Color(0.7, 0.588, 0.42, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_0j0m7"]
-font = ExtResource("7_rccux")
+font = ExtResource("21_kp16u")
 font_size = 35
 font_color = Color(0.7, 0.588, 0.42, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8is8u"]
-atlas = ExtResource("9_wrau7")
+atlas = ExtResource("23_jq05j")
 region = Rect2(0, 0, 3, 6)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_udlu0"]
-atlas = ExtResource("9_wrau7")
+atlas = ExtResource("23_jq05j")
 region = Rect2(3, 0, 3, 6)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_deems"]
-atlas = ExtResource("9_wrau7")
+atlas = ExtResource("23_jq05j")
 region = Rect2(6, 0, 3, 6)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_auh6p"]
-atlas = ExtResource("9_wrau7")
+atlas = ExtResource("23_jq05j")
 region = Rect2(9, 0, 3, 6)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8jjmw"]
@@ -100,24 +84,24 @@ animations = [{
 }]
 
 [sub_resource type="LabelSettings" id="LabelSettings_th2se"]
-font = ExtResource("7_rccux")
+font = ExtResource("21_kp16u")
 font_size = 35
 font_color = Color(0.7, 0.588, 0.42, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2ingc"]
-atlas = ExtResource("9_wrau7")
+atlas = ExtResource("23_jq05j")
 region = Rect2(0, 0, 3, 6)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b7owo"]
-atlas = ExtResource("9_wrau7")
+atlas = ExtResource("23_jq05j")
 region = Rect2(3, 0, 3, 6)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0lk1t"]
-atlas = ExtResource("9_wrau7")
+atlas = ExtResource("23_jq05j")
 region = Rect2(6, 0, 3, 6)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_decim"]
-atlas = ExtResource("9_wrau7")
+atlas = ExtResource("23_jq05j")
 region = Rect2(9, 0, 3, 6)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tav7h"]
@@ -147,9 +131,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_7k26d")
+script = ExtResource("1_owcfl")
 temples = [NodePath("MarginContainer/VBoxContainer/Temple Container/Temple 1"), NodePath("Temple 2"), NodePath("Temple 3")]
-temple_backgrounds = Array[Texture2D]([ExtResource("1_24j1o"), ExtResource("3_a651p"), ExtResource("4_uj67u")])
+temple_backgrounds = Array[Texture2D]([ExtResource("2_mapm1"), ExtResource("3_iwuis"), ExtResource("4_v4e0u")])
 
 [node name="Background" type="TextureRect" parent="."]
 texture_filter = 1
@@ -165,7 +149,7 @@ offset_bottom = -742.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(3.125, 3.125)
-texture = ExtResource("1_24j1o")
+texture = ExtResource("2_mapm1")
 stretch_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -197,65 +181,65 @@ theme_override_constants/h_separation = 15
 theme_override_constants/v_separation = 20
 alignment = 1
 
-[node name="Level - First Traverse" parent="MarginContainer/VBoxContainer/Temple Container/Temple 1" instance=ExtResource("3_66fh1")]
+[node name="Level - First Traverse" parent="MarginContainer/VBoxContainer/Temple Container/Temple 1" instance=ExtResource("5_8umqm")]
 modulate = Color(1, 1, 1, 0.45098)
 layout_mode = 2
-scene_to_load = ExtResource("4_755wy")
+scene_to_load = ExtResource("6_ug7ql")
 
-[node name="Level - First Climb" parent="MarginContainer/VBoxContainer/Temple Container/Temple 1" instance=ExtResource("3_66fh1")]
+[node name="Level - First Climb" parent="MarginContainer/VBoxContainer/Temple Container/Temple 1" instance=ExtResource("5_8umqm")]
 modulate = Color(1, 1, 1, 0.45098)
 layout_mode = 2
-scene_to_load = ExtResource("4_vtdfy")
+scene_to_load = ExtResource("7_uqix4")
 
-[node name="Level - Dynamite" parent="MarginContainer/VBoxContainer/Temple Container/Temple 1" instance=ExtResource("3_66fh1")]
+[node name="Level - Dynamite" parent="MarginContainer/VBoxContainer/Temple Container/Temple 1" instance=ExtResource("5_8umqm")]
 modulate = Color(1, 1, 1, 0.45098)
 layout_mode = 2
-scene_to_load = ExtResource("5_v5v4l")
+scene_to_load = ExtResource("8_wk4it")
 
-[node name="Level - Campfires & Spikes" parent="MarginContainer/VBoxContainer/Temple Container/Temple 1" instance=ExtResource("3_66fh1")]
+[node name="Level - Campfires & Spikes" parent="MarginContainer/VBoxContainer/Temple Container/Temple 1" instance=ExtResource("5_8umqm")]
 modulate = Color(1, 1, 1, 0.45098)
 layout_mode = 2
-scene_to_load = ExtResource("5_jchui")
+scene_to_load = ExtResource("9_pu730")
 
-[node name="Level - Climbing Holds" parent="MarginContainer/VBoxContainer/Temple Container/Temple 1" instance=ExtResource("3_66fh1")]
+[node name="Level - Climbing Holds" parent="MarginContainer/VBoxContainer/Temple Container/Temple 1" instance=ExtResource("5_8umqm")]
 modulate = Color(1, 1, 1, 0.45098)
 layout_mode = 2
-scene_to_load = ExtResource("6_6rq07")
+scene_to_load = ExtResource("10_5dfwf")
 
-[node name="Level - Climb Time" parent="MarginContainer/VBoxContainer/Temple Container/Temple 1" instance=ExtResource("3_66fh1")]
+[node name="Level - Climb Time" parent="MarginContainer/VBoxContainer/Temple Container/Temple 1" instance=ExtResource("5_8umqm")]
 modulate = Color(1, 1, 1, 0.45098)
 layout_mode = 2
-scene_to_load = ExtResource("9_2x5l4")
+scene_to_load = ExtResource("11_osblb")
 
-[node name="Level - Up & Up" parent="MarginContainer/VBoxContainer/Temple Container/Temple 1" instance=ExtResource("3_66fh1")]
+[node name="Level - Up & Up" parent="MarginContainer/VBoxContainer/Temple Container/Temple 1" instance=ExtResource("5_8umqm")]
 modulate = Color(1, 1, 1, 0.45098)
 layout_mode = 2
-scene_to_load = ExtResource("7_2l6xq")
+scene_to_load = ExtResource("12_trb8h")
 
-[node name="Level - Demolition" parent="MarginContainer/VBoxContainer/Temple Container/Temple 1" instance=ExtResource("3_66fh1")]
+[node name="Level - Demolition" parent="MarginContainer/VBoxContainer/Temple Container/Temple 1" instance=ExtResource("5_8umqm")]
 modulate = Color(1, 1, 1, 0.45098)
 layout_mode = 2
-scene_to_load = ExtResource("9_00ax2")
+scene_to_load = ExtResource("13_dcurv")
 
-[node name="Level - Overhangs" parent="MarginContainer/VBoxContainer/Temple Container/Temple 1" instance=ExtResource("3_66fh1")]
+[node name="Level - Overhangs" parent="MarginContainer/VBoxContainer/Temple Container/Temple 1" instance=ExtResource("5_8umqm")]
 modulate = Color(1, 1, 1, 0.45098)
 layout_mode = 2
-scene_to_load = ExtResource("8_4i4d7")
+scene_to_load = ExtResource("14_tltnp")
 
-[node name="Level - Overhangs Xtreme" parent="MarginContainer/VBoxContainer/Temple Container/Temple 1" instance=ExtResource("3_66fh1")]
+[node name="Level - Overhangs Xtreme" parent="MarginContainer/VBoxContainer/Temple Container/Temple 1" instance=ExtResource("5_8umqm")]
 modulate = Color(1, 1, 1, 0.45098)
 layout_mode = 2
-scene_to_load = ExtResource("9_gryrf")
+scene_to_load = ExtResource("15_s2suy")
 
-[node name="Level - Oops All Long" parent="MarginContainer/VBoxContainer/Temple Container/Temple 1" instance=ExtResource("3_66fh1")]
+[node name="Level - Oops All Long" parent="MarginContainer/VBoxContainer/Temple Container/Temple 1" instance=ExtResource("5_8umqm")]
 modulate = Color(1, 1, 1, 0.45098)
 layout_mode = 2
-scene_to_load = ExtResource("10_353i2")
+scene_to_load = ExtResource("16_dfwmf")
 
-[node name="Level - Deeper Still" parent="MarginContainer/VBoxContainer/Temple Container/Temple 1" instance=ExtResource("3_66fh1")]
+[node name="Level - Deeper Still" parent="MarginContainer/VBoxContainer/Temple Container/Temple 1" instance=ExtResource("5_8umqm")]
 modulate = Color(1, 1, 1, 0.45098)
 layout_mode = 2
-scene_to_load = ExtResource("13_2gj7q")
+scene_to_load = ExtResource("17_2ny1v")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -267,15 +251,15 @@ modulate = Color(1, 1, 1, 0.45098)
 custom_minimum_size = Vector2(220, 330)
 layout_mode = 2
 theme_override_constants/separation = 10
-script = ExtResource("4_a2yic")
-scene_to_load = ExtResource("4_hscby")
+script = ExtResource("18_flayq")
+scene_to_load = ExtResource("19_dcfmw")
 override_text = "Endless"
 endless = true
 
 [node name="Level Icon" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/Level - Endless Level"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
-texture = ExtResource("6_gtpwf")
+texture = ExtResource("20_t7vrn")
 stretch_mode = 5
 
 [node name="Level Title" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Level - Endless Level"]
@@ -297,7 +281,7 @@ horizontal_alignment = 1
 
 [node name="Idol 1" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/Level - Endless Level/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("8_fxcsu")
+texture = ExtResource("22_p7tbv")
 expand_mode = 2
 stretch_mode = 4
 
@@ -336,7 +320,7 @@ autoplay = "default"
 frame_progress = 0.601985
 
 [node name="StartGameFx" type="AudioStreamPlayer" parent="MarginContainer/VBoxContainer/HBoxContainer/Level - Endless Level"]
-stream = ExtResource("10_rcq0l")
+stream = ExtResource("24_hr7y5")
 volume_db = -5.0
 
 [node name="Unlock All" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
@@ -344,12 +328,12 @@ modulate = Color(0.550781, 0.589386, 1, 1)
 custom_minimum_size = Vector2(220, 330)
 layout_mode = 2
 theme_override_constants/separation = 10
-script = ExtResource("13_wubfr")
+script = ExtResource("25_s1has")
 
 [node name="Level Icon" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/Unlock All"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
-texture = ExtResource("6_gtpwf")
+texture = ExtResource("20_t7vrn")
 stretch_mode = 5
 
 [node name="Level Title" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Unlock All"]
@@ -367,21 +351,21 @@ alignment = 1
 [node name="Idol 1" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/Unlock All/HBoxContainer"]
 visible = false
 layout_mode = 2
-texture = ExtResource("8_fxcsu")
+texture = ExtResource("22_p7tbv")
 expand_mode = 2
 stretch_mode = 4
 
 [node name="Idol 2" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/Unlock All/HBoxContainer"]
 visible = false
 layout_mode = 2
-texture = ExtResource("8_fxcsu")
+texture = ExtResource("22_p7tbv")
 expand_mode = 2
 stretch_mode = 4
 
 [node name="Idol 3" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/Unlock All/HBoxContainer"]
 visible = false
 layout_mode = 2
-texture = ExtResource("8_fxcsu")
+texture = ExtResource("22_p7tbv")
 expand_mode = 2
 stretch_mode = 4
 
@@ -407,12 +391,12 @@ modulate = Color(1, 0.92981, 0.550781, 1)
 custom_minimum_size = Vector2(220, 330)
 layout_mode = 2
 theme_override_constants/separation = 10
-script = ExtResource("5_14hdt")
+script = ExtResource("26_cbhud")
 
 [node name="Level Icon" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/Reset Save"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
-texture = ExtResource("6_gtpwf")
+texture = ExtResource("20_t7vrn")
 stretch_mode = 5
 
 [node name="Level Title" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Reset Save"]
@@ -430,21 +414,21 @@ alignment = 1
 [node name="Idol 1" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/Reset Save/HBoxContainer"]
 visible = false
 layout_mode = 2
-texture = ExtResource("8_fxcsu")
+texture = ExtResource("22_p7tbv")
 expand_mode = 2
 stretch_mode = 4
 
 [node name="Idol 2" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/Reset Save/HBoxContainer"]
 visible = false
 layout_mode = 2
-texture = ExtResource("8_fxcsu")
+texture = ExtResource("22_p7tbv")
 expand_mode = 2
 stretch_mode = 4
 
 [node name="Idol 3" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/Reset Save/HBoxContainer"]
 visible = false
 layout_mode = 2
-texture = ExtResource("8_fxcsu")
+texture = ExtResource("22_p7tbv")
 expand_mode = 2
 stretch_mode = 4
 
@@ -473,7 +457,7 @@ alignment = 2
 [node name="LinkButton2" type="LinkButton" parent="MarginContainer/VBoxContainer/Socials"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.338654, 0.373963, 0.535156, 1)
-theme_override_fonts/font = ExtResource("4_lwxxi")
+theme_override_fonts/font = ExtResource("27_g8wim")
 theme_override_font_sizes/font_size = 25
 text = "Steam"
 uri = "https://store.steampowered.com/app/3359860/Cappy__Tappy_Temples_of_Peril/"
@@ -481,7 +465,7 @@ uri = "https://store.steampowered.com/app/3359860/Cappy__Tappy_Temples_of_Peril/
 [node name="LinkButton4" type="LinkButton" parent="MarginContainer/VBoxContainer/Socials"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.698039, 0.321569, 0.231373, 1)
-theme_override_fonts/font = ExtResource("4_lwxxi")
+theme_override_fonts/font = ExtResource("27_g8wim")
 theme_override_font_sizes/font_size = 25
 text = "Youtube"
 uri = "https://www.youtube.com/@DaFirstPancake/videos"
@@ -489,7 +473,7 @@ uri = "https://www.youtube.com/@DaFirstPancake/videos"
 [node name="LinkButton" type="LinkButton" parent="MarginContainer/VBoxContainer/Socials"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.384314, 0.345098, 0.419608, 1)
-theme_override_fonts/font = ExtResource("4_lwxxi")
+theme_override_fonts/font = ExtResource("27_g8wim")
 theme_override_font_sizes/font_size = 25
 text = "Discord"
 uri = "https://discord.gg/ZXuGmGYHG9"
@@ -497,7 +481,7 @@ uri = "https://discord.gg/ZXuGmGYHG9"
 [node name="LinkButton3" type="LinkButton" parent="MarginContainer/VBoxContainer/Socials"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.698039, 0.545098, 0.231373, 1)
-theme_override_fonts/font = ExtResource("4_lwxxi")
+theme_override_fonts/font = ExtResource("27_g8wim")
 theme_override_font_sizes/font_size = 25
 text = "Instagram"
 uri = "https://www.instagram.com/wearethefirstpancake/"
@@ -514,60 +498,52 @@ theme_override_constants/h_separation = 15
 theme_override_constants/v_separation = 20
 alignment = 1
 
-[node name="Level - Arrows" parent="Temple 2" instance=ExtResource("3_66fh1")]
+[node name="Level - Arrows" parent="Temple 2" instance=ExtResource("5_8umqm")]
 modulate = Color(1, 1, 1, 0.45098)
 layout_mode = 2
-scene_to_load = ExtResource("11_1hlb2")
+scene_to_load = ExtResource("28_27odo")
 
-[node name="Level - Arrows 2" parent="Temple 2" instance=ExtResource("3_66fh1")]
+[node name="Level - Arrows 2" parent="Temple 2" instance=ExtResource("5_8umqm")]
 modulate = Color(1, 1, 1, 0.45098)
 layout_mode = 2
-scene_to_load = ExtResource("12_q0a2d")
+scene_to_load = ExtResource("29_5mdin")
 
-[node name="Level - Rain" parent="Temple 2" instance=ExtResource("3_66fh1")]
+[node name="Level - Rain" parent="Temple 2" instance=ExtResource("5_8umqm")]
 modulate = Color(1, 1, 1, 0.45098)
 layout_mode = 2
-scene_to_load = ExtResource("13_m7ssi")
+scene_to_load = ExtResource("30_ch0y3")
 
-[node name="Level - Breaker" parent="Temple 2" instance=ExtResource("3_66fh1")]
+[node name="Level - Breaker" parent="Temple 2" instance=ExtResource("5_8umqm")]
 modulate = Color(1, 1, 1, 0.45098)
 layout_mode = 2
-scene_to_load = ExtResource("28_haa0c")
 
-[node name="Level - Breaker 2" parent="Temple 2" instance=ExtResource("3_66fh1")]
+[node name="Level - Breaker 2" parent="Temple 2" instance=ExtResource("5_8umqm")]
 modulate = Color(1, 1, 1, 0.45098)
 layout_mode = 2
-scene_to_load = ExtResource("29_ikqai")
 
-[node name="Level - Break Down" parent="Temple 2" instance=ExtResource("3_66fh1")]
+[node name="Level - Break Down" parent="Temple 2" instance=ExtResource("5_8umqm")]
 modulate = Color(1, 1, 1, 0.45098)
 layout_mode = 2
-scene_to_load = ExtResource("30_r66fg")
 
-[node name="Level - Harpoons" parent="Temple 2" instance=ExtResource("3_66fh1")]
+[node name="Level - Harpoons" parent="Temple 2" instance=ExtResource("5_8umqm")]
 modulate = Color(1, 1, 1, 0.45098)
 layout_mode = 2
-scene_to_load = ExtResource("31_slj0u")
 
-[node name="Level - Harpoon Traverse" parent="Temple 2" instance=ExtResource("3_66fh1")]
+[node name="Level - Harpoon Traverse" parent="Temple 2" instance=ExtResource("5_8umqm")]
 modulate = Color(1, 1, 1, 0.45098)
 layout_mode = 2
-scene_to_load = ExtResource("32_un76u")
 
-[node name="Level - Fastball" parent="Temple 2" instance=ExtResource("3_66fh1")]
+[node name="Level - Fastball" parent="Temple 2" instance=ExtResource("5_8umqm")]
 modulate = Color(1, 1, 1, 0.45098)
 layout_mode = 2
-scene_to_load = ExtResource("33_dlnxx")
 
-[node name="Level - Elevator" parent="Temple 2" instance=ExtResource("3_66fh1")]
+[node name="Level - Elevator" parent="Temple 2" instance=ExtResource("5_8umqm")]
 modulate = Color(1, 1, 1, 0.45098)
 layout_mode = 2
-scene_to_load = ExtResource("34_ylhnh")
 
-[node name="Level - Chamber 666" parent="Temple 2" instance=ExtResource("3_66fh1")]
+[node name="Level - Chamber 666" parent="Temple 2" instance=ExtResource("5_8umqm")]
 modulate = Color(1, 1, 1, 0.45098)
 layout_mode = 2
-scene_to_load = ExtResource("4_ptxlh")
 
 [node name="Temple 3" type="HFlowContainer" parent="."]
 layout_mode = 2
@@ -581,45 +557,37 @@ theme_override_constants/h_separation = 15
 theme_override_constants/v_separation = 20
 alignment = 1
 
-[node name="Level - The Walls Are Moving" parent="Temple 3" instance=ExtResource("3_66fh1")]
+[node name="Level - The Walls Are Moving" parent="Temple 3" instance=ExtResource("5_8umqm")]
 modulate = Color(1, 1, 1, 0.45098)
 layout_mode = 2
-scene_to_load = ExtResource("31_8gmqv")
 
-[node name="Level - Deep Dark" parent="Temple 3" instance=ExtResource("3_66fh1")]
+[node name="Level - Deep Dark" parent="Temple 3" instance=ExtResource("5_8umqm")]
 modulate = Color(1, 1, 1, 0.45098)
 layout_mode = 2
-scene_to_load = ExtResource("36_7har7")
 
-[node name="Level - Creepy Crawly" parent="Temple 3" instance=ExtResource("3_66fh1")]
+[node name="Level - Creepy Crawly" parent="Temple 3" instance=ExtResource("5_8umqm")]
 modulate = Color(1, 1, 1, 0.45098)
 layout_mode = 2
-scene_to_load = ExtResource("32_pcxxg")
 
-[node name="Level - Dark Crawler" parent="Temple 3" instance=ExtResource("3_66fh1")]
+[node name="Level - Dark Crawler" parent="Temple 3" instance=ExtResource("5_8umqm")]
 modulate = Color(1, 1, 1, 0.45098)
 layout_mode = 2
-scene_to_load = ExtResource("39_dxc67")
 
-[node name="Level - Diamond" parent="Temple 3" instance=ExtResource("3_66fh1")]
+[node name="Level - Diamond" parent="Temple 3" instance=ExtResource("5_8umqm")]
 modulate = Color(1, 1, 1, 0.45098)
 layout_mode = 2
-scene_to_load = ExtResource("36_ydi2r")
 
-[node name="Level - Choke" parent="Temple 3" instance=ExtResource("3_66fh1")]
+[node name="Level - Choke" parent="Temple 3" instance=ExtResource("5_8umqm")]
 modulate = Color(1, 1, 1, 0.45098)
 layout_mode = 2
-scene_to_load = ExtResource("40_gi62s")
 
-[node name="Level - Tomb" parent="Temple 3" instance=ExtResource("3_66fh1")]
+[node name="Level - Tomb" parent="Temple 3" instance=ExtResource("5_8umqm")]
 modulate = Color(1, 1, 1, 0.45098)
 layout_mode = 2
-scene_to_load = ExtResource("37_yrs1g")
 
-[node name="Level - Escape" parent="Temple 3" instance=ExtResource("3_66fh1")]
+[node name="Level - Escape" parent="Temple 3" instance=ExtResource("5_8umqm")]
 modulate = Color(1, 1, 1, 0.45098)
 layout_mode = 2
-scene_to_load = ExtResource("39_mjmu6")
 
 [node name="Previous Temple Button" type="Button" parent="."]
 layout_mode = 0
@@ -627,9 +595,9 @@ offset_left = 44.0
 offset_top = 500.0
 offset_right = 314.0
 offset_bottom = 570.0
-theme_override_fonts/font = ExtResource("7_rccux")
+theme_override_fonts/font = ExtResource("21_kp16u")
 theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = ExtResource("42_n7y0p")
+theme_override_styles/normal = ExtResource("47_xohe7")
 text = " < Previous Temple "
 
 [node name="Next Temple Button" type="Button" parent="."]
@@ -638,17 +606,17 @@ offset_left = 1600.0
 offset_top = 500.0
 offset_right = 1870.0
 offset_bottom = 570.0
-theme_override_fonts/font = ExtResource("7_rccux")
+theme_override_fonts/font = ExtResource("21_kp16u")
 theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = ExtResource("42_n7y0p")
+theme_override_styles/normal = ExtResource("47_xohe7")
 text = "Next Temple >"
 
 [node name="Music Player" type="Node" parent="."]
-script = ExtResource("12_8108v")
+script = ExtResource("48_4b4fn")
 
 [node name="Music" type="AudioStreamPlayer" parent="Music Player"]
 unique_name_in_owner = true
-stream = ExtResource("13_oohv8")
+stream = ExtResource("49_orqcn")
 volume_db = -7.0
 
 [connection signal="gui_input" from="MarginContainer/VBoxContainer/HBoxContainer/Level - Endless Level" to="MarginContainer/VBoxContainer/HBoxContainer/Level - Endless Level" method="_on_gui_input"]

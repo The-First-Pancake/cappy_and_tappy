@@ -11,7 +11,12 @@ const GRID_SIZE: float = 50
 var levels : Array[PackedScene] = []
 
 var current_level : PackedScene = null
-var level_select_scene: PackedScene = preload("res://Levels/LevelSelect.tscn")
+var level_select_scene: PackedScene:
+	get:
+		if OS.has_feature('demo'):
+			return load("res://Levels/LevelSelect_Demo_Edition.tscn")
+		else:
+			return load("res://Levels/LevelSelect.tscn")
 var splash_screen_scene: PackedScene = preload("res://Levels/SplashScreen.tscn")
 var leaderboard_scene: PackedScene = preload("res://Levels/Leaderboard.tscn")
 var pause_menu_prefab: PackedScene = preload("res://Levels/Pause Menu.tscn")
