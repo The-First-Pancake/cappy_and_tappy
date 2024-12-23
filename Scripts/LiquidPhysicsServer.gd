@@ -9,6 +9,16 @@ var spawn_timer : float = 0
 @export var spawn_time : float = 1.0
 @export_flags_2d_physics var collision_layers : int
 @export_flags_2d_physics var collision_mask : int
+static var particle_list : Array[RID] = []
+
+func _ready() -> void:
+	GameManager.loading_new_scene.connect(clear_all_particles)
+	GameManager.loaded_new_scene.connect(clear_all_particles)
+
+func clear_all_particles() -> void:
+	for particle in particle_list:
+		PhysicsServer2D.free_rid(particle)
+	particle_list.clear()
 
 func create_particle() -> void:
 	# set position
@@ -32,7 +42,7 @@ func create_particle() -> void:
 	PhysicsServer2D.body_set_param(water_col,PhysicsServer2D.BODY_PARAM_MASS,0.05)
 	PhysicsServer2D.body_set_param(water_col,PhysicsServer2D.BODY_PARAM_GRAVITY_SCALE,0.25)
 	PhysicsServer2D.body_set_param(water_col,PhysicsServer2D.BODY_PARAM_INERTIA, 1)
-	PhysicsServer2D.body_set_param(water_col, PhysicsServer2D.BODY_PARAM_LINEAR_DAMP, 1)
+	PhysicsServer2D.body_set_param(water_col, PhysicsServer2D.BODY_PARAM_LINEAR_DAMP, 0.75)
 	PhysicsServer2D.body_set_state(water_col,PhysicsServer2D.BODY_STATE_TRANSFORM,trans)
 	#Visual
 	#create canvas item(all 2D objects are canvas items)
@@ -52,6 +62,8 @@ func create_particle() -> void:
 	# Add callback to do things with body
 	var particle_user_data : Array = [water_col, water_particle, Time.get_ticks_msec(), GameManager.load_count]
 	PhysicsServer2D.body_set_force_integration_callback(water_col, _body_moved, particle_user_data)
+	# Add physics object to particle list
+	particle_list.append(water_col)
 
 func _physics_process(delta: float) -> void:
 	#add particles while less than max amount set and timer < 0
@@ -66,14 +78,6 @@ func _body_moved(state: PhysicsDirectBodyState2D, user_data : Array) -> void:
 	var particle_rid : RID = user_data[1]
 	var spawn_time : int = user_data[2]
 	var spawn_load_count : float = user_data[3]
-	
-	# culls particles that somehow persist between scenes (I hope)
-	if spawn_load_count != GameManager.load_count:
-		# remove RIDs
-		PhysicsServer2D.free_rid(body_rid)
-		RenderingServer.free_rid(particle_rid)
-		return
-	
 	# Update particle to be where rigidbody is
 	var trans : Transform2D = state.transform
 	trans.origin = trans.origin - global_position
@@ -82,5 +86,6 @@ func _body_moved(state: PhysicsDirectBodyState2D, user_data : Array) -> void:
 		#remove RIDs
 		PhysicsServer2D.free_rid(body_rid)
 		RenderingServer.free_rid(particle_rid)
+		particle_list.erase(body_rid)
 		#decrement count
 		current_particle_count -= 1

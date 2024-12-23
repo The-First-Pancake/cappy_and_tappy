@@ -134,7 +134,6 @@ func load_level_from_packed(scene: PackedScene) -> void:
 	await get_tree().process_frame
 	loaded_new_scene.emit()
 	load_count += 1
-	print(load_count)
 	time_since_unpause = 0
 	time_since_level_loaded = 0
 

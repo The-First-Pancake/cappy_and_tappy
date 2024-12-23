@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=4 uid="uid://6dd2cbybvcqg"]
+[gd_scene load_steps=53 format=4 uid="uid://6dd2cbybvcqg"]
 
 [ext_resource type="Texture2D" uid="uid://bqfeqtdw7xcxo" path="res://Art/Tilemaps/Background_Aztec.png" id="1_dtx2u"]
 [ext_resource type="Script" path="res://Scripts/LevelInfo.gd" id="1_jxryb"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://b0vi320ea7lth" path="res://Art/Sprites/UI/ui_background.png" id="9_g2wcy"]
 [ext_resource type="Material" uid="uid://cg4fprgafhcxd" path="res://Art/unshaded_material.tres" id="9_tcfxi"]
 [ext_resource type="PackedScene" uid="uid://dhrgrpwwax6i8" path="res://Prefabs/Spawn On Blocks/Spikes.tscn" id="9_teir6"]
+[ext_resource type="PackedScene" uid="uid://c0aotmw4l08wg" path="res://Prefabs/lava_shader.tscn" id="10_0mf1v"]
 [ext_resource type="Script" path="res://Scripts/WaterLevel.gd" id="10_7kdmf"]
 [ext_resource type="Texture2D" uid="uid://b3oj42r81wxap" path="res://Art/Sprites/UI/ui_frame.png" id="10_ixs36"]
 [ext_resource type="Script" path="res://Scripts/ui.gd" id="10_wtk1j"]
@@ -182,6 +183,9 @@ position = Vector2(1350, 550)
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1133, 681)
 script = ExtResource("4_psc51")
+
+[node name="LavaShader" parent="Camera2D" instance=ExtResource("10_0mf1v")]
+position = Vector2(-106, -73)
 
 [node name="TextureRect" type="TextureRect" parent="Camera2D"]
 modulate = Color(0, 0, 0, 0.596078)

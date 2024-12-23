@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://c3dgw1fpl6k3x"]
+[gd_scene load_steps=24 format=4 uid="uid://c3dgw1fpl6k3x"]
 
 [ext_resource type="PackedScene" uid="uid://6dd2cbybvcqg" path="res://Levels/Template Level.tscn" id="1_8tfe6"]
 [ext_resource type="Script" path="res://Scripts/SpawnObject.gd" id="2_h2nwq"]
@@ -17,9 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://cu2taoo64nrva" path="res://Prefabs/Set Dressing/Aztec/VinesTop.tscn" id="9_5bkq4"]
 [ext_resource type="PackedScene" uid="uid://xc3aksbuoys1" path="res://Prefabs/Set Dressing/Aztec/AztecSmallIdol.tscn" id="10_t3nds"]
 [ext_resource type="PackedScene" uid="uid://cwbmn06hbsdre" path="res://Prefabs/Set Dressing/Aztec/AztecWallStatue.tscn" id="11_1m2hr"]
-[ext_resource type="Script" path="res://Scripts/LiquidPhysicsServer.gd" id="18_i06bg"]
-[ext_resource type="Texture2D" uid="uid://dthf4q6o2ncbj" path="res://Art/Sprites/circle.png" id="19_xafko"]
-[ext_resource type="Material" uid="uid://cpv36b0mg1ym8" path="res://Shaders/LavaShaderMaterial.tres" id="21_xx8rm"]
+[ext_resource type="PackedScene" uid="uid://c287j6qlogjnv" path="res://Prefabs/Spawn On Blocks/LavaSpawner.tscn" id="18_q0p8j"]
 
 [sub_resource type="Resource" id="Resource_6716m"]
 script = ExtResource("2_h2nwq")
@@ -108,10 +106,13 @@ position = Vector2(1350, 1050)
 position = Vector2(1650, 950)
 scale = Vector2(-1, 1)
 
+[node name="LavaSpawner" parent="Environment Container" index="12" instance=ExtResource("18_q0p8j")]
+position = Vector2(1850, 250)
+
 [node name="Coffin" parent="." index="15" instance=ExtResource("8_84xjq")]
 position = Vector2(1750, 1046)
 
-[node name="BlockSpawner" parent="Camera2D" index="2"]
+[node name="BlockSpawner" parent="Camera2D" index="3"]
 position = Vector2(-689, -299)
 spawn_objects = Array[ExtResource("2_h2nwq")]([SubResource("Resource_6716m"), SubResource("Resource_b3o7y"), SubResource("Resource_mwrdh"), SubResource("Resource_2esob"), SubResource("Resource_cpvsc")])
 
@@ -120,30 +121,3 @@ rise_speed = 0.0
 
 [node name="PathFindingGraph" parent="." index="20"]
 enabled = true
-
-[node name="LavaSpawner" type="Node2D" parent="." index="22"]
-position = Vector2(1450, -450)
-script = ExtResource("18_i06bg")
-particle_texture = ExtResource("19_xafko")
-collision_layers = 32768
-collision_mask = 32769
-
-[node name="LavaSpawner3" type="Node2D" parent="." index="23"]
-position = Vector2(1350, -450)
-script = ExtResource("18_i06bg")
-particle_texture = ExtResource("19_xafko")
-collision_layers = 32768
-collision_mask = 32769
-
-[node name="LavaSpawner2" type="Node2D" parent="." index="24"]
-position = Vector2(1400, -450)
-script = ExtResource("18_i06bg")
-particle_texture = ExtResource("19_xafko")
-collision_layers = 32768
-collision_mask = 32769
-
-[node name="LavaShader" type="Sprite2D" parent="." index="25"]
-material = ExtResource("21_xx8rm")
-position = Vector2(2000, 250)
-scale = Vector2(100, 100)
-texture = ExtResource("19_xafko")

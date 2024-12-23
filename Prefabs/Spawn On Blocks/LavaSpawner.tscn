@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://c287j6qlogjnv"]
+
+[ext_resource type="Script" path="res://Scripts/LiquidPhysicsServer.gd" id="1_056su"]
+[ext_resource type="Texture2D" uid="uid://dthf4q6o2ncbj" path="res://Art/Sprites/circle.png" id="2_bh0xt"]
+[ext_resource type="Script" path="res://Scripts/LevelBuildingTools.gd" id="3_xlv5m"]
+
+[node name="LavaSpawner" type="Node2D"]
+script = ExtResource("1_056su")
+particle_texture = ExtResource("2_bh0xt")
+collision_layers = 32768
+collision_mask = 32769
+
+[node name="LevelBuildingTools" type="Node" parent="."]
+script = ExtResource("3_xlv5m")
+auto_parent_to = "Environment Container"

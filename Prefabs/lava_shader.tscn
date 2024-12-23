@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0aotmw4l08wg"]
+
+[ext_resource type="Material" uid="uid://cpv36b0mg1ym8" path="res://Shaders/LavaShaderMaterial.tres" id="1_dm4ye"]
+[ext_resource type="Texture2D" uid="uid://dthf4q6o2ncbj" path="res://Art/Sprites/circle.png" id="2_0wkng"]
+
+[node name="LavaShader" type="Sprite2D"]
+material = ExtResource("1_dm4ye")
+scale = Vector2(100, 100)
+texture = ExtResource("2_0wkng")
