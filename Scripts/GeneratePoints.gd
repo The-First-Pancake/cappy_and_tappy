@@ -58,6 +58,7 @@ func get_cell_centers(points: PackedVector2Array) -> PackedVector2Array:
 	return center_points
 
 func generateHoldPoints(points: PackedVector2Array) -> Array[PackedVector2Array]:
+	var collider_inset_distance: float = 1 #how far the collider is inset from the block sprite. We outset the points by this ammount to compensate
 	var created_points: PackedVector2Array
 	var orth_points: PackedVector2Array
 	for i in points.size():
@@ -66,7 +67,7 @@ func generateHoldPoints(points: PackedVector2Array) -> Array[PackedVector2Array]
 			next_index = 0 #loop back to first index when on the last point in the array
 		var point1 : Vector2 = points[i]
 		var point2 : Vector2 = points[next_index]
-		var orthvector : Vector2 = (point2 - point1).rotated(deg_to_rad(-90))
+		var orthvector : Vector2 = (point2 - point1).rotated(deg_to_rad(-90)).normalized()
 		var distance: float = point1.distance_to(point2)
 		var direction : Vector2 = point1.direction_to(point2)
 		#print("Collision Point: ", point1)
@@ -78,7 +79,7 @@ func generateHoldPoints(points: PackedVector2Array) -> Array[PackedVector2Array]
 				var new_point : Vector2 = (distance_vector * direction) + working_point
 				working_point = new_point
 				#print("Created point: ", new_point)
-				created_points.push_back(new_point)
+				created_points.push_back(new_point + (orthvector * collider_inset_distance))
 				orth_points.push_back(orthvector)
 
 	return [created_points, orth_points]

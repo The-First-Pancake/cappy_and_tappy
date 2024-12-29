@@ -16,7 +16,6 @@ b = Vector2(981, -5)
 radius = 562.004
 
 [node name="Lightning Emitter" type="Area2D"]
-position = Vector2(1546, 652)
 script = ExtResource("1_ecwrw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -25,7 +24,7 @@ shape = SubResource("CircleShape2D_6ynli")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = ExtResource("2_2ms8p")
-position = Vector2(-1, -52)
+position = Vector2(0, -50)
 scale = Vector2(3.125, 3.125)
 texture = ExtResource("3_nxdyy")
 

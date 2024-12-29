@@ -230,7 +230,7 @@ scale = Vector2(3.125, 3.125)
 texture = ExtResource("4_tybef")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(-2, -14)
+position = Vector2(-2.38419e-07, -12)
 scale = Vector2(9.20313, 9.20313)
 color = Color(1, 0.539063, 0, 1)
 energy = 3.0
@@ -241,7 +241,7 @@ script = ExtResource("5_3u6so")
 
 [node name="Fire Pit" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(0, -12)
+position = Vector2(0, -11)
 scale = Vector2(3.125, 3.125)
 texture = ExtResource("3_cwdr7")
 
@@ -249,7 +249,7 @@ texture = ExtResource("3_cwdr7")
 unique_name_in_owner = true
 light_mask = 2
 visibility_layer = 2
-position = Vector2(0, -12)
+position = Vector2(0, -11)
 amount = 25
 lifetime = 5.0
 explosiveness = 0.1
@@ -293,20 +293,21 @@ color_ramp = SubResource("Gradient_o1yrh")
 unique_name_in_owner = true
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_ou0mu")
-position = Vector2(1, -44)
+position = Vector2(1, -45)
 scale = Vector2(3.125, 3.125)
 sprite_frames = SubResource("SpriteFrames_it03p")
 animation = &"ignite"
+frame_progress = 0.57975
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -14)
+position = Vector2(0, -13)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_1b7ag")
 debug_color = Color(0.168, 0.7392, 0.84, 0)
 
 [node name="Flag Sprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(37, -51)
+position = Vector2(37, -50)
 scale = Vector2(3.125, 3.125)
 sprite_frames = SubResource("SpriteFrames_yxi0w")
 animation = &"wave"

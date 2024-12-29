@@ -123,6 +123,8 @@ position = Vector2(923, 1050)
 
 [node name="@Area2D@67664" parent="Environment Container" index="22" instance=ExtResource("10_hvchj")]
 position = Vector2(950, 1050)
+rotation = -1.5708
+scale = Vector2(-1, 1)
 
 [node name="Pot_Short7" parent="Environment Container" index="23" instance=ExtResource("9_8w3j0")]
 position = Vector2(988, 1050)

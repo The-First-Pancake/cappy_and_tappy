@@ -16,17 +16,17 @@ script = ExtResource("1_b3v11")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 light_mask = 3
-position = Vector2(0.400001, 34.1)
+position = Vector2(0, 33)
 scale = Vector2(3.125, 3.125)
 texture = SubResource("CanvasTexture_v5sg8")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(0.400001, 34.1)
+position = Vector2(0, 32.1)
 polygon = PackedVector2Array(-26, -20, 0, 31, 26, -20, 26, -32, -26, -32)
 disabled = true
 
 [node name="ShatterPoint" type="Marker2D" parent="."]
-position = Vector2(0.400001, 64.1)
+position = Vector2(0, 64)
 
 [node name="LevelBuildingTools" type="Node" parent="."]
 script = ExtResource("4_vh6fc")

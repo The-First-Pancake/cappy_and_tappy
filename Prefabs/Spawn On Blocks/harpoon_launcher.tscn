@@ -35,7 +35,7 @@ texture = ExtResource("4_3lguc")
 texture_mode = 1
 
 [node name="Launcher Base" type="Sprite2D" parent="."]
-position = Vector2(0, -5)
+position = Vector2(0, -4.75)
 rotation = 1.5708
 scale = Vector2(3.125, 3.125)
 texture = ExtResource("6_yuaro")

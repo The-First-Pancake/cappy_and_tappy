@@ -7,21 +7,22 @@ extends Node
 var rotate_debounce: bool = false
 var parenting_debounce: bool = false
 var flip_debounce: bool = false
+var autoparent_debounce: bool = false
 
 func _ready() -> void:
-	try_auto_parent()
+	if Engine.is_editor_hint():
+		if get_parent().get_parent() is LevelInfo:
+			try_auto_parent()
 	
 
 
 func try_auto_parent() -> void:
-	
 	#if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT): return #don't try to do this while dragging the object in
-	if Engine.is_editor_hint():
-		if get_parent() in EditorInterface.get_selection().get_selected_nodes():
-			if auto_parent_to:
-				var new_parent: Node = get_tree().get_first_node_in_group(auto_parent_to)
-				if new_parent:
-					get_parent().reparent(new_parent)
+	#if get_parent() in EditorInterface.get_selection().get_selected_nodes():
+	if auto_parent_to != "":
+		var new_parent: Node = get_tree().get_first_node_in_group(auto_parent_to)
+		if new_parent:
+			get_parent().reparent(new_parent)
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -52,4 +53,10 @@ func _process(delta: float) -> void:
 								parent.reparent(EditorInterface.get_selection().get_selected_nodes()[1])
 					else:
 						parenting_debounce = false
-			return
+				
+				if Input.is_key_pressed(KEY_P):
+					if autoparent_debounce == false:
+						autoparent_debounce = true
+						try_auto_parent()
+				else:
+					autoparent_debounce = false

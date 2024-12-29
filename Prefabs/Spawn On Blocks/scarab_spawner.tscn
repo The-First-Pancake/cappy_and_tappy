@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://4tnwt4jcdig3" path="res://Art/white_pixel.png" id="2_5xrhy"]
 
 [node name="ScarabSpawner" type="Node2D"]
-position = Vector2(2327, 1024)
 script = ExtResource("1_bse4p")
 
 [node name="WhitePixel" type="Sprite2D" parent="."]

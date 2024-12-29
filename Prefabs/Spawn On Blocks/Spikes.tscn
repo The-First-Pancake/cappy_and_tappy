@@ -12,12 +12,12 @@ height = 54.0
 
 [node name="Default2" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(0, -14)
+position = Vector2(0, -12.5)
 scale = Vector2(3.15, 3.15)
 texture = ExtResource("1_qt3w2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -7)
+position = Vector2(0, -6)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_1b7ag")
 
