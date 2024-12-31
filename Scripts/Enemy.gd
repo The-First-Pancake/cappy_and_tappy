@@ -370,3 +370,7 @@ func _on_launch_timer_timeout() -> void:
 func _on_kill_box_body_entered(body: Node2D) -> void:
 	if body is Player:
 		body.die()
+
+func _on_die_box_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
+	if PhysicsServer2D.body_get_collision_layer(body_rid) & (1<<15):
+		die()

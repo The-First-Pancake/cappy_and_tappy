@@ -388,6 +388,7 @@ one_shot = true
 
 [node name="DieBox" type="Area2D" parent="."]
 unique_name_in_owner = true
+collision_mask = 32769
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DieBox"]
 position = Vector2(0, 9)
@@ -570,4 +571,5 @@ texture = ExtResource("18_ladjc")
 [connection signal="timeout" from="Pathfinding Timer" to="." method="_on_pathfinding_timer_timeout"]
 [connection signal="timeout" from="Launch Timer" to="." method="_on_launch_timer_timeout"]
 [connection signal="area_entered" from="DieBox" to="." method="on_diebox_hit"]
+[connection signal="body_shape_entered" from="DieBox" to="." method="_on_die_box_body_shape_entered"]
 [connection signal="body_entered" from="KillBox" to="." method="_on_kill_box_body_entered"]

@@ -13,6 +13,7 @@ diffuse_texture = ExtResource("3_p5hnx")
 normal_texture = ExtResource("4_hrdc6")
 
 [node name="Coffin" type="Area2D"]
+collision_mask = 32769
 script = ExtResource("1_n8hf1")
 enemy_prefab = ExtResource("2_seect")
 

@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://hetb2cu4cbew"]
+[gd_scene load_steps=7 format=3 uid="uid://hetb2cu4cbew"]
 
 [ext_resource type="Script" path="res://Scripts/BreakerSpike.gd" id="1_b3v11"]
 [ext_resource type="Texture2D" uid="uid://bhjcqf0cult3o" path="res://Art/Sprites/breaker spike/Breaker_Spike.png" id="1_ux1es"]
 [ext_resource type="Texture2D" uid="uid://bm64bp0o1vqey" path="res://Art/Sprites/breaker spike/Breaker_Spike_Normal.png" id="2_bpo5l"]
 [ext_resource type="Script" path="res://Scripts/LevelBuildingTools.gd" id="4_vh6fc"]
+[ext_resource type="Script" path="res://Scripts/Squashable.gd" id="5_dq1mk"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_v5sg8"]
 diffuse_texture = ExtResource("1_ux1es")
@@ -12,6 +13,7 @@ texture_filter = 1
 
 [node name="BreakerSpike" type="Area2D"]
 rotation = 3.14159
+collision_mask = 32769
 script = ExtResource("1_b3v11")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -31,5 +33,9 @@ position = Vector2(0, 64)
 [node name="LevelBuildingTools" type="Node" parent="."]
 script = ExtResource("4_vh6fc")
 auto_parent_to = "Interactable Container"
+
+[node name="Squashable" type="Node" parent="."]
+script = ExtResource("5_dq1mk")
+delete_parent_when_squashed = false
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

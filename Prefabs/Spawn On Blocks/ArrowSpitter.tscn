@@ -18,6 +18,7 @@ size = Vector2(10, 85)
 
 [node name="Arrow_Spitter" type="Area2D"]
 rotation = 4.71239
+collision_mask = 32769
 script = ExtResource("1_wqj1s")
 arrow_prefab = ExtResource("2_i3f76")
 

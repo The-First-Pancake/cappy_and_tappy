@@ -25,6 +25,7 @@ gradient = SubResource("Gradient_ijtng")
 
 [node name="Harpoon Launcher" type="Area2D"]
 show_behind_parent = true
+collision_mask = 32769
 script = ExtResource("1_dcokm")
 
 [node name="Rope" type="Line2D" parent="."]

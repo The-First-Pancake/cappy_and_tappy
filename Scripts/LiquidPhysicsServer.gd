@@ -3,7 +3,7 @@ extends Node2D
 #Water Gen with Physics2DServer
 @export var particle_texture : Texture2D
 @export var max_water_particles : int = 1000
-@export var lifetime_ms : int = 10000
+@export var lifetime_ms : int = 15000
 var current_particle_count : int = 0
 var spawn_timer : float = 0
 @export var spawn_time : float = 1.0
@@ -31,7 +31,7 @@ func create_particle() -> void:
 	PhysicsServer2D.body_set_space(water_col,get_world_2d().space)
 	#create circle shape for collision
 	var shape : RID = PhysicsServer2D.circle_shape_create()
-	PhysicsServer2D.shape_set_data(shape,7)
+	PhysicsServer2D.shape_set_data(shape, 7)
 	#add shape to rigid body
 	PhysicsServer2D.body_add_shape(water_col,shape,Transform2D.IDENTITY)
 	#set collision layer and mask

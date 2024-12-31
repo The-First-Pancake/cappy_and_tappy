@@ -176,6 +176,7 @@ animations = [{
 }]
 
 [node name="Campfire" type="Area2D"]
+collision_mask = 32769
 script = ExtResource("1_bl4yb")
 
 [node name="Gibs" type="Node2D" parent="."]

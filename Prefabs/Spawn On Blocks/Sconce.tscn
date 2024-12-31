@@ -69,6 +69,7 @@ normal_texture = ExtResource("6_6hw1l")
 size = Vector2(9, 10)
 
 [node name="Sconce" type="Area2D"]
+collision_mask = 32769
 script = ExtResource("1_q8pus")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

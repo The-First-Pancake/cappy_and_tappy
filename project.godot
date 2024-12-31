@@ -250,6 +250,7 @@ escape={
 2d_physics/layer_4="Creatures"
 2d_physics/layer_7="Unplaced"
 2d_physics/layer_8="gibs"
+2d_physics/layer_16="Lava"
 
 [rendering]
 
