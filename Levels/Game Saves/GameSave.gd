@@ -4,7 +4,9 @@ extends Resource
 @export var levels_complete: Array[LevelCompleteData] = []
 @export var endless_high_height: int = 0
 @export var endless_high_idols: int = 0
-@export var setting_mute: bool = false
+@export var setting_music_mute: bool = false
+@export var setting_sounds_mute: bool = false
+
 
 func is_level_complete(level: PackedScene) -> bool:
 	for level_data: LevelCompleteData in levels_complete:

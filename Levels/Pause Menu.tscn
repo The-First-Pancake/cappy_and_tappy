@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://de0qsyb0os4uo"]
+[gd_scene load_steps=9 format=3 uid="uid://de0qsyb0os4uo"]
 
 [ext_resource type="FontFile" uid="uid://ck4uibtfurjl4" path="res://Fonts/BlockyPixelFont.TTF" id="1_05e3d"]
 [ext_resource type="Script" path="res://Scripts/PauseMenu.gd" id="1_adfr0"]
 [ext_resource type="StyleBox" uid="uid://chxj0ri352x13" path="res://UI/Button Sytlebox.tres" id="2_u4wfa"]
-[ext_resource type="Script" path="res://Levels/toggle_mute.gd" id="4_33sf4"]
+[ext_resource type="Script" path="res://Scripts/ToggleMusicMuteButton.gd" id="4_51rbd"]
+[ext_resource type="Script" path="res://Scripts/ToggleSoundsMuteButton.gd" id="4_n1686"]
 [ext_resource type="Texture2D" uid="uid://d333a886vkf4p" path="res://Art/Sprites/UI/speaker.svg" id="5_4cucd"]
+[ext_resource type="Texture2D" uid="uid://2uhvaxqvbhq0" path="res://Art/Sprites/UI/music.svg" id="6_du8lb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ycq52"]
 font = ExtResource("1_05e3d")
@@ -53,6 +55,7 @@ alignment = 1
 [node name="HBoxContainer" type="HBoxContainer" parent="PauseMenu/Shrink Container/MarginContainer/Control"]
 layout_mode = 2
 size_flags_vertical = 4
+theme_override_constants/separation = 20
 
 [node name="Name Label" type="Label" parent="PauseMenu/Shrink Container/MarginContainer/Control/HBoxContainer"]
 unique_name_in_owner = true
@@ -63,7 +66,7 @@ label_settings = SubResource("LabelSettings_ycq52")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Toggle mute" type="Button" parent="PauseMenu/Shrink Container/MarginContainer/Control/HBoxContainer"]
+[node name="Toggle Music" type="Button" parent="PauseMenu/Shrink Container/MarginContainer/Control/HBoxContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -71,9 +74,29 @@ size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("1_05e3d")
 theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = ExtResource("2_u4wfa")
-script = ExtResource("4_33sf4")
+script = ExtResource("4_51rbd")
 
-[node name="TextureRect" type="TextureRect" parent="PauseMenu/Shrink Container/MarginContainer/Control/HBoxContainer/Toggle mute"]
+[node name="TextureRect" type="TextureRect" parent="PauseMenu/Shrink Container/MarginContainer/Control/HBoxContainer/Toggle Music"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_du8lb")
+expand_mode = 1
+
+[node name="Toggle Sounds" type="Button" parent="PauseMenu/Shrink Container/MarginContainer/Control/HBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("1_05e3d")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = ExtResource("2_u4wfa")
+script = ExtResource("4_n1686")
+
+[node name="TextureRect" type="TextureRect" parent="PauseMenu/Shrink Container/MarginContainer/Control/HBoxContainer/Toggle Sounds"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -107,7 +130,8 @@ theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = ExtResource("2_u4wfa")
 text = "Quit to Menu"
 
-[connection signal="pressed" from="PauseMenu/Shrink Container/MarginContainer/Control/HBoxContainer/Toggle mute" to="PauseMenu/Shrink Container/MarginContainer/Control/HBoxContainer/Toggle mute" method="toggle_mute"]
+[connection signal="pressed" from="PauseMenu/Shrink Container/MarginContainer/Control/HBoxContainer/Toggle Music" to="PauseMenu/Shrink Container/MarginContainer/Control/HBoxContainer/Toggle Music" method="toggle_mute"]
+[connection signal="pressed" from="PauseMenu/Shrink Container/MarginContainer/Control/HBoxContainer/Toggle Sounds" to="PauseMenu/Shrink Container/MarginContainer/Control/HBoxContainer/Toggle Sounds" method="toggle_mute"]
 [connection signal="pressed" from="PauseMenu/Shrink Container/MarginContainer/Control/Continue" to="PauseMenu" method="unpause"]
 [connection signal="pressed" from="PauseMenu/Shrink Container/MarginContainer/Control/Restart Level" to="PauseMenu" method="restart_level"]
 [connection signal="pressed" from="PauseMenu/Shrink Container/MarginContainer/Control/Quit to Menu" to="PauseMenu" method="main_menu"]

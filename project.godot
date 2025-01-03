@@ -61,6 +61,7 @@ water=""
 idol=""
 terrain=""
 player=""
+lightning_rod=""
 
 [input]
 

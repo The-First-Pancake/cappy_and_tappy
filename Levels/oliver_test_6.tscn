@@ -5,17 +5,17 @@
 
 [node name="Template Level" instance=ExtResource("1_8s1b8")]
 
-[node name="Exit Door" parent="." index="4"]
+[node name="Exit Door" parent="." index="5"]
 position = Vector2(1700, 400)
 
-[node name="Harpoon Launcher" parent="." index="36" instance=ExtResource("2_1n05o")]
+[node name="Harpoon Launcher" parent="." index="21" instance=ExtResource("2_1n05o")]
 position = Vector2(2050, 800)
 rotation = -1.5708
 
-[node name="Harpoon Launcher2" parent="." index="37" instance=ExtResource("2_1n05o")]
+[node name="Harpoon Launcher2" parent="." index="22" instance=ExtResource("2_1n05o")]
 position = Vector2(2050, 700)
 rotation = -1.5708
 
-[node name="Harpoon Launcher3" parent="." index="38" instance=ExtResource("2_1n05o")]
+[node name="Harpoon Launcher3" parent="." index="23" instance=ExtResource("2_1n05o")]
 position = Vector2(2050, 500)
 rotation = -1.5708

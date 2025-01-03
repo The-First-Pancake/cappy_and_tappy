@@ -279,22 +279,22 @@ scale = Vector2(1, -1)
 position = Vector2(850, -1350)
 rotation = -3.14153
 
-[node name="Player" parent="." index="10"]
+[node name="Player" parent="." index="11"]
 position = Vector2(1178, 1000)
 
-[node name="Idol" parent="." index="11"]
+[node name="Idol" parent="." index="12"]
 position = Vector2(1356, -1950)
 
-[node name="Idol2" parent="." index="12"]
+[node name="Idol2" parent="." index="13"]
 position = Vector2(750, -650)
 
-[node name="Idol3" parent="." index="13"]
+[node name="Idol3" parent="." index="14"]
 position = Vector2(1200, 50)
 
 [node name="NightLight" parent="Camera2D/UI" index="0"]
 visible = true
 
-[node name="BlockSpawner" parent="Camera2D" index="2"]
+[node name="BlockSpawner" parent="Camera2D" index="3"]
 every_block_spawn_objects = Array[ExtResource("21_xtkim")]([SubResource("Resource_ub1w8")])
 
 [node name="Music" parent="Music Player" index="0"]
